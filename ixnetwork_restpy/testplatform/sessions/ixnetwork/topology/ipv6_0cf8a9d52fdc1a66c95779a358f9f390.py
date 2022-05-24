@@ -442,13 +442,13 @@ class Ipv6(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.srv6oam_5e7ef824e326a477b44ccbc0c068a578.Srv6Oam): An instance of the Srv6Oam class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.srv6oam_2c2276a61daa7bd5cb5602114c35ba53.Srv6Oam): An instance of the Srv6Oam class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.srv6oam_5e7ef824e326a477b44ccbc0c068a578 import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.srv6oam_2c2276a61daa7bd5cb5602114c35ba53 import (
             Srv6Oam,
         )
 

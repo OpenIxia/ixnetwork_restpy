@@ -551,26 +551,6 @@ class Dhcpv6client(Base):
         return PimV6Interface(self)
 
     @property
-    def Srv6Oam(self):
-        """
-        Returns
-        -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.srv6oam_5e7ef824e326a477b44ccbc0c068a578.Srv6Oam): An instance of the Srv6Oam class
-
-        Raises
-        ------
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.srv6oam_5e7ef824e326a477b44ccbc0c068a578 import (
-            Srv6Oam,
-        )
-
-        if len(self._object_properties) > 0:
-            if self._properties.get("Srv6Oam", None) is not None:
-                return self._properties.get("Srv6Oam")
-        return Srv6Oam(self)
-
-    @property
     def Tag(self):
         """
         Returns

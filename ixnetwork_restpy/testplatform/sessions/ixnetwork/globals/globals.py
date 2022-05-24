@@ -45,6 +45,7 @@ class Globals(Base):
         "ProductVersion": "productVersion",
         "ProtocolbuildNumber": "protocolbuildNumber",
         "RpfPort": "rpfPort",
+        "SessionUpTime": "sessionUpTime",
         "Username": "username",
     }
     _SDM_ENUM_MAP = {}
@@ -432,6 +433,16 @@ class Globals(Base):
         return self._get_attribute(self._SDM_ATT_MAP["RpfPort"])
 
     @property
+    def SessionUpTime(self):
+        # type: () -> str
+        """
+        Returns
+        -------
+        - str: Amount of time IxNetwork session is up
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["SessionUpTime"])
+
+    @property
     def Username(self):
         # type: () -> str
         """
@@ -453,6 +464,7 @@ class Globals(Base):
         ProductVersion=None,
         ProtocolbuildNumber=None,
         RpfPort=None,
+        SessionUpTime=None,
         Username=None,
     ):
         """Finds and retrieves globals resources from the server.
@@ -473,6 +485,7 @@ class Globals(Base):
         - ProductVersion (str):
         - ProtocolbuildNumber (str): The build number of the protocol.
         - RpfPort (number):
+        - SessionUpTime (str): Amount of time IxNetwork session is up
         - Username (str): The name of the user.
 
         Returns

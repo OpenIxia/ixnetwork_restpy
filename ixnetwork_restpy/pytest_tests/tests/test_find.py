@@ -42,6 +42,23 @@ def test_find_ngpf(ixnetwork):
     ) == 3
 
 
+def test_find_with_kwargs(ixnetwork):
+    """
+    find() functions which takes more than 255 arguments is changed to **kwargs
+    This test basically checks those functions work properly with **kwargs
+    """
+
+    port_stats = ixnetwork.Globals.Statistics.StatFilter.PortStatistics
+    port_stats.Aal5FramesRx = False
+    port_stats.AtmCellsRx = True
+
+    stats = ixnetwork.Globals.Statistics.StatFilter.PortStatistics.find(
+        Aal5FramesRx=False, AtmCellsRx=True
+    )
+
+    assert len(stats) == 1
+
+
 if __name__ == "__main__":
     pytest.main(
         [

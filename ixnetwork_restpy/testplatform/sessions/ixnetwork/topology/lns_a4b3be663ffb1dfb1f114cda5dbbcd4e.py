@@ -116,13 +116,13 @@ class Lns(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pppoxserver_01e736fa724c12e1c2636295184e449c.Pppoxserver): An instance of the Pppoxserver class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pppoxserver_6001eb455946b79aa809976e25c5d004.Pppoxserver): An instance of the Pppoxserver class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pppoxserver_01e736fa724c12e1c2636295184e449c import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pppoxserver_6001eb455946b79aa809976e25c5d004 import (
             Pppoxserver,
         )
 

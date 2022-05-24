@@ -634,6 +634,10 @@ class Base(object):
 
     def _map_locals(self, sdm_att_map, locals_dict):
         mapped_dict = {}
+
+        # Should also handle functions with kwargs
+        locals_dict = locals_dict["kwargs"] if "kwargs" in locals_dict else locals_dict
+
         for key in locals_dict.keys():
             if key in sdm_att_map.keys():
                 mapped_dict[sdm_att_map[key]] = locals_dict[key]

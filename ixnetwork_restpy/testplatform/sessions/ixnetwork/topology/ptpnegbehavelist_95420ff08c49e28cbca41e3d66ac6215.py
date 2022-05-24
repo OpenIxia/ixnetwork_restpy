@@ -92,7 +92,7 @@ class PtpNegBehaveList(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): Delay To Follow in this message (ns)
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Delay To Follow in this message (milli second)
         """
         from ixnetwork_restpy.multivalue import Multivalue
 

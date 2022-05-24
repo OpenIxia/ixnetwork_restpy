@@ -53,5 +53,30 @@ def test_update_for_classic_nodes(ixnetwork):
         assert mac_range.Count == 10
 
 
+def test_update_for_nodes_with_kwargs(ixnetwork):
+    """
+    update() functions which takes more than 255 arguments is changed to **kwargs
+    This test basically checks those functions work properly with **kwargs
+    """
+
+    qt = ixnetwork.QuickTest.Rfc2544throughput.add()
+    test_conf = qt.TestConfig
+    framesize_list = ["68", "132", "256", "516", "1028", "1284", "1522"]
+    test_conf.update(
+        CalculateLatency=True,
+        EnableMinFrameSize=True,
+        FramesizeList=framesize_list,
+        FrameSizeMode="custom",
+    )
+
+    test_conf.refresh()
+
+    assert test_conf.CalculateLatency is True
+    assert test_conf.EnableMinFrameSize is True
+    assert test_conf.FrameSizeMode == "custom"
+    for frame in test_conf.FramesizeList:
+        assert frame in framesize_list
+
+
 if __name__ == "__main__":
     pytest.main(["-s", "--server", "localhost:11009:windows", __file__])

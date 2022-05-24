@@ -130,46 +130,6 @@ class Ethernet(Base):
         return Lagportstaticlag(self)
 
     @property
-    def Macsec(self):
-        """
-        Returns
-        -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.lag.macsec_b8fff0e525c0f50d0e7ed41aac1716c1.Macsec): An instance of the Macsec class
-
-        Raises
-        ------
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.lag.macsec_b8fff0e525c0f50d0e7ed41aac1716c1 import (
-            Macsec,
-        )
-
-        if len(self._object_properties) > 0:
-            if self._properties.get("Macsec", None) is not None:
-                return self._properties.get("Macsec")
-        return Macsec(self)
-
-    @property
-    def Mka(self):
-        """
-        Returns
-        -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.lag.mka_475a18c2ad627c9a3faafb381476e70b.Mka): An instance of the Mka class
-
-        Raises
-        ------
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.lag.mka_475a18c2ad627c9a3faafb381476e70b import (
-            Mka,
-        )
-
-        if len(self._object_properties) > 0:
-            if self._properties.get("Mka", None) is not None:
-                return self._properties.get("Mka")
-        return Mka(self)
-
-    @property
     def PbbEVpnParameter(self):
         """
         Returns

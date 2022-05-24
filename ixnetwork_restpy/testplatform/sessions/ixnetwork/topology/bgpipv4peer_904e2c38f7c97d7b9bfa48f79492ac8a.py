@@ -365,13 +365,13 @@ class BgpIpv4Peer(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv4evpnvxlan_022c0979cbf2439b68dd6a9ced73e283.BgpIPv4EvpnVXLAN): An instance of the BgpIPv4EvpnVXLAN class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv4evpnvxlan_ac7a890f916ca5599eb4618d697c2f6e.BgpIPv4EvpnVXLAN): An instance of the BgpIPv4EvpnVXLAN class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv4evpnvxlan_022c0979cbf2439b68dd6a9ced73e283 import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv4evpnvxlan_ac7a890f916ca5599eb4618d697c2f6e import (
             BgpIPv4EvpnVXLAN,
         )
 
@@ -385,13 +385,13 @@ class BgpIpv4Peer(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv4evpnvxlanvpws_790165459e0b33ceec2d2943df076aa5.BgpIPv4EvpnVXLANVpws): An instance of the BgpIPv4EvpnVXLANVpws class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv4evpnvxlanvpws_8885c446b89d80aaa511ee82c37e924f.BgpIPv4EvpnVXLANVpws): An instance of the BgpIPv4EvpnVXLANVpws class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv4evpnvxlanvpws_790165459e0b33ceec2d2943df076aa5 import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv4evpnvxlanvpws_8885c446b89d80aaa511ee82c37e924f import (
             BgpIPv4EvpnVXLANVpws,
         )
 

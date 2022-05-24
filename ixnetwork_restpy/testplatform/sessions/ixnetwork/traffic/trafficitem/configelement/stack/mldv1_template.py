@@ -4,23 +4,23 @@ from ixnetwork_restpy.files import Files
 
 class Mldv1(Base):
     __slots__ = ()
-    _SDM_NAME = "mldv1"
+    _SDM_NAME = "mldv1 "
     _SDM_ATT_MAP = {
-        "HeaderType": "mldv1 .header.type-1",
-        "HeaderCode": "mldv1 .header.code-2",
-        "HeaderMldv1Checksum": "mldv1 .header.mldv1Checksum-3",
+        "Type": "mldv1 .header.type-1",
+        "Code": "mldv1 .header.code-2",
+        "Mldv1Checksum": "mldv1 .header.mldv1Checksum-3",
         "MaximumResponseDelayValue": "mldv1 .header.maximumResponseDelay.value-4",
         "MaximumResponseDelayValue": "mldv1 .header.maximumResponseDelay.value-5",
         "MaximumResponseDelayValue": "mldv1 .header.maximumResponseDelay.value-6",
-        "HeaderReserved": "mldv1 .header.reserved-7",
-        "HeaderMulticastAddress": "mldv1 .header.multicastAddress-8",
+        "Reserved": "mldv1 .header.reserved-7",
+        "MulticastAddress": "mldv1 .header.multicastAddress-8",
     }
 
     def __init__(self, parent, list_op=False):
         super(Mldv1, self).__init__(parent, list_op)
 
     @property
-    def HeaderType(self):
+    def Type(self):
         """
         Display Name: Type
         Default Value: 130
@@ -29,10 +29,10 @@ class Mldv1(Base):
         """
         from ixnetwork_restpy.multivalue import Multivalue
 
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderType"]))
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Type"]))
 
     @property
-    def HeaderCode(self):
+    def Code(self):
         """
         Display Name: Code
         Default Value: 0
@@ -40,10 +40,10 @@ class Mldv1(Base):
         """
         from ixnetwork_restpy.multivalue import Multivalue
 
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HeaderCode"]))
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Code"]))
 
     @property
-    def HeaderMldv1Checksum(self):
+    def Mldv1Checksum(self):
         """
         Display Name: MLDv1 checksum
         Default Value: 0
@@ -51,9 +51,7 @@ class Mldv1(Base):
         """
         from ixnetwork_restpy.multivalue import Multivalue
 
-        return Multivalue(
-            self, self._get_attribute(self._SDM_ATT_MAP["HeaderMldv1Checksum"])
-        )
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Mldv1Checksum"]))
 
     @property
     def MaximumResponseDelayValue(self):
@@ -95,7 +93,7 @@ class Mldv1(Base):
         )
 
     @property
-    def HeaderReserved(self):
+    def Reserved(self):
         """
         Display Name: Reserved
         Default Value: 0
@@ -103,12 +101,10 @@ class Mldv1(Base):
         """
         from ixnetwork_restpy.multivalue import Multivalue
 
-        return Multivalue(
-            self, self._get_attribute(self._SDM_ATT_MAP["HeaderReserved"])
-        )
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Reserved"]))
 
     @property
-    def HeaderMulticastAddress(self):
+    def MulticastAddress(self):
         """
         Display Name: Multicast address
         Default Value: 0::0
@@ -117,7 +113,7 @@ class Mldv1(Base):
         from ixnetwork_restpy.multivalue import Multivalue
 
         return Multivalue(
-            self, self._get_attribute(self._SDM_ATT_MAP["HeaderMulticastAddress"])
+            self, self._get_attribute(self._SDM_ATT_MAP["MulticastAddress"])
         )
 
     def add(self):

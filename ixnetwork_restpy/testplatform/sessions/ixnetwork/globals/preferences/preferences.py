@@ -46,7 +46,6 @@ class Preferences(Base):
         "EnableCloudTools": "enableCloudTools",
         "EnableDpdkForNewConfig": "enableDpdkForNewConfig",
         "ForceLegacyPortNameInStats": "forceLegacyPortNameInStats",
-        "GenerateUniqueValueOnCopyPaste": "generateUniqueValueOnCopyPaste",
         "IncludeTroubleshootingComments": "includeTroubleshootingComments",
         "LatestConfigInDiagEnabled": "latestConfigInDiagEnabled",
         "PhyMode": "phyMode",
@@ -283,21 +282,6 @@ class Preferences(Base):
     def ForceLegacyPortNameInStats(self, value):
         # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP["ForceLegacyPortNameInStats"], value)
-
-    @property
-    def GenerateUniqueValueOnCopyPaste(self):
-        # type: () -> bool
-        """
-        Returns
-        -------
-        - bool: When true, Device Group copy/paste will generate Unique MAC on Ethernet Protocol, Address on Ipv4/v6(NGPF)
-        """
-        return self._get_attribute(self._SDM_ATT_MAP["GenerateUniqueValueOnCopyPaste"])
-
-    @GenerateUniqueValueOnCopyPaste.setter
-    def GenerateUniqueValueOnCopyPaste(self, value):
-        # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP["GenerateUniqueValueOnCopyPaste"], value)
 
     @property
     def IncludeTroubleshootingComments(self):
@@ -566,7 +550,6 @@ class Preferences(Base):
         EnableCloudTools=None,
         EnableDpdkForNewConfig=None,
         ForceLegacyPortNameInStats=None,
-        GenerateUniqueValueOnCopyPaste=None,
         IncludeTroubleshootingComments=None,
         LatestConfigInDiagEnabled=None,
         PhyMode=None,
@@ -584,7 +567,7 @@ class Preferences(Base):
         SyslogPort=None,
         TransmitMode=None,
     ):
-        # type: (bool, int, str, str, str, bool, int, bool, bool, bool, bool, bool, bool, bool, str, bool, bool, bool, str, List[str], str, str, bool, bool, bool, str, int, str) -> Preferences
+        # type: (bool, int, str, str, str, bool, int, bool, bool, bool, bool, bool, bool, str, bool, bool, bool, str, List[str], str, str, bool, bool, bool, str, int, str) -> Preferences
         """Updates preferences resource on the server.
 
         Args
@@ -600,7 +583,6 @@ class Preferences(Base):
         - EnableCloudTools (bool): Controls whether Cloud Tool options will be enabled or not. This is related to learning MAC / IP address for a topology running on VM ports, deployed in AWS
         - EnableDpdkForNewConfig (bool): Sets the default DPDK enable/disable state when a new config is created.
         - ForceLegacyPortNameInStats (bool): When false, IxNetwork statistics show port name in <Chassis/Front Panel Port Number> format. When true, it is in <Chassis/Card/Port> format
-        - GenerateUniqueValueOnCopyPaste (bool): When true, Device Group copy/paste will generate Unique MAC on Ethernet Protocol, Address on Ipv4/v6(NGPF)
         - IncludeTroubleshootingComments (bool): Includes troubleshooting comments in the script
         - LatestConfigInDiagEnabled (bool):
         - PhyMode (str(copper | fiber)): Set the media in Default Port Settings
@@ -637,7 +619,6 @@ class Preferences(Base):
         EnableCloudTools=None,
         EnableDpdkForNewConfig=None,
         ForceLegacyPortNameInStats=None,
-        GenerateUniqueValueOnCopyPaste=None,
         IncludeTroubleshootingComments=None,
         LatestConfigInDiagEnabled=None,
         PhyMode=None,
@@ -656,7 +637,7 @@ class Preferences(Base):
         SyslogPort=None,
         TransmitMode=None,
     ):
-        # type: (bool, int, str, str, str, bool, int, bool, bool, bool, bool, bool, bool, bool, str, bool, bool, bool, str, List[str], List[str], str, str, bool, bool, bool, str, int, str) -> Preferences
+        # type: (bool, int, str, str, str, bool, int, bool, bool, bool, bool, bool, bool, str, bool, bool, bool, str, List[str], List[str], str, str, bool, bool, bool, str, int, str) -> Preferences
         """Finds and retrieves preferences resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve preferences resources from the server.
@@ -676,7 +657,6 @@ class Preferences(Base):
         - EnableCloudTools (bool): Controls whether Cloud Tool options will be enabled or not. This is related to learning MAC / IP address for a topology running on VM ports, deployed in AWS
         - EnableDpdkForNewConfig (bool): Sets the default DPDK enable/disable state when a new config is created.
         - ForceLegacyPortNameInStats (bool): When false, IxNetwork statistics show port name in <Chassis/Front Panel Port Number> format. When true, it is in <Chassis/Card/Port> format
-        - GenerateUniqueValueOnCopyPaste (bool): When true, Device Group copy/paste will generate Unique MAC on Ethernet Protocol, Address on Ipv4/v6(NGPF)
         - IncludeTroubleshootingComments (bool): Includes troubleshooting comments in the script
         - LatestConfigInDiagEnabled (bool):
         - PhyMode (str(copper | fiber)): Set the media in Default Port Settings

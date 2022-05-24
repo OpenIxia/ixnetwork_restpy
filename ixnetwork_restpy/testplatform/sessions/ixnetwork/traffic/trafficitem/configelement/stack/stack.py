@@ -137,18 +137,18 @@ class Stack(Base):
         return H264csrc(self)
 
     @property
-    def H264sh(self):
+    def H264SH(self):
         """
         valid only with Batch Add
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.h264sh_template.H264sh): An instance of the H264sh traffic stack
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.h264SH_template.H264SH): An instance of the H264SH traffic stack
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.h264sh_template import (
-            H264sh,
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.h264SH_template import (
+            H264SH,
         )
 
-        return H264sh(self)
+        return H264SH(self)
 
     @property
     def Avtpdu(self):
@@ -865,18 +865,18 @@ class Stack(Base):
         return Ppp(self)
 
     @property
-    def PppWithoutHDLC(self):
+    def Pppnohdlc(self):
         """
         valid only with Batch Add
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.pppWithoutHDLC_template.PppWithoutHDLC): An instance of the PppWithoutHDLC traffic stack
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.pppnohdlc_template.Pppnohdlc): An instance of the Pppnohdlc traffic stack
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.pppWithoutHDLC_template import (
-            PppWithoutHDLC,
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.pppnohdlc_template import (
+            Pppnohdlc,
         )
 
-        return PppWithoutHDLC(self)
+        return Pppnohdlc(self)
 
     @property
     def PppLCP(self):
@@ -1131,18 +1131,18 @@ class Stack(Base):
         return FcoE(self)
 
     @property
-    def FCoEFabricLogoEnode(self):
+    def FCoEFabricLogo(self):
         """
         valid only with Batch Add
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCoEFabricLogoEnode_template.FCoEFabricLogoEnode): An instance of the FCoEFabricLogoEnode traffic stack
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCoEFabricLogo_template.FCoEFabricLogo): An instance of the FCoEFabricLogo traffic stack
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCoEFabricLogoEnode_template import (
-            FCoEFabricLogoEnode,
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCoEFabricLogo_template import (
+            FCoEFabricLogo,
         )
 
-        return FCoEFabricLogoEnode(self)
+        return FCoEFabricLogo(self)
 
     @property
     def FCoEFabricLogoLsAcc(self):
@@ -2900,9 +2900,9 @@ class Stack(Base):
         valid only with Batch Add
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGCSID_template.FCGCSID): An instance of the FCGCSID traffic stack
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGCSID_template.FCGCSID): An instance of the FCGCSID traffic stack
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGCSID_template import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGCSID_template import (
             FCGCSID,
         )
 
@@ -2914,9 +2914,9 @@ class Stack(Base):
         valid only with Batch Add
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGANXT_template.FCGANXT): An instance of the FCGANXT traffic stack
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGANXT_template.FCGANXT): An instance of the FCGANXT traffic stack
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGANXT_template import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGANXT_template import (
             FCGANXT,
         )
 
@@ -2928,9 +2928,9 @@ class Stack(Base):
         valid only with Batch Add
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGIEIL_template.FCGIEIL): An instance of the FCGIEIL traffic stack
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGIEIL_template.FCGIEIL): An instance of the FCGIEIL traffic stack
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGIEIL_template import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGIEIL_template import (
             FCGIEIL,
         )
 
@@ -2942,9 +2942,9 @@ class Stack(Base):
         valid only with Batch Add
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGIDPN_template.FCGIDPN): An instance of the FCGIDPN traffic stack
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGIDPN_template.FCGIDPN): An instance of the FCGIDPN traffic stack
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGIDPN_template import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGIDPN_template import (
             FCGIDPN,
         )
 
@@ -2956,9 +2956,9 @@ class Stack(Base):
         valid only with Batch Add
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGFPNID_template.FCGFPNID): An instance of the FCGFPNID traffic stack
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGFPNID_template.FCGFPNID): An instance of the FCGFPNID traffic stack
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGFPNID_template import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGFPNID_template import (
             FCGFPNID,
         )
 
@@ -2970,9 +2970,9 @@ class Stack(Base):
         valid only with Batch Add
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGPSC_template.FCGPSC): An instance of the FCGPSC traffic stack
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGPSC_template.FCGPSC): An instance of the FCGPSC traffic stack
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGPSC_template import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGPSC_template import (
             FCGPSC,
         )
 
@@ -2984,9 +2984,9 @@ class Stack(Base):
         valid only with Batch Add
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGSES_template.FCGSES): An instance of the FCGSES traffic stack
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGSES_template.FCGSES): An instance of the FCGSES traffic stack
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGSES_template import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGSES_template import (
             FCGSES,
         )
 
@@ -2998,9 +2998,9 @@ class Stack(Base):
         valid only with Batch Add
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGPNFT_template.FCGPNFT): An instance of the FCGPNFT traffic stack
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGPNFT_template.FCGPNFT): An instance of the FCGPNFT traffic stack
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGPNFT_template import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGPNFT_template import (
             FCGPNFT,
         )
 
@@ -3012,9 +3012,9 @@ class Stack(Base):
         valid only with Batch Add
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGIEILN_template.FCGIEILN): An instance of the FCGIEILN traffic stack
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGIEILN_template.FCGIEILN): An instance of the FCGIEILN traffic stack
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGIEILN_template import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGIEILN_template import (
             FCGIEILN,
         )
 
@@ -3026,9 +3026,9 @@ class Stack(Base):
         valid only with Batch Add
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGAPNL_template.FCGAPNL): An instance of the FCGAPNL traffic stack
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGAPNL_template.FCGAPNL): An instance of the FCGAPNL traffic stack
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGAPNL_template import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGAPNL_template import (
             FCGAPNL,
         )
 
@@ -3040,9 +3040,9 @@ class Stack(Base):
         valid only with Batch Add
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGSPNID_template.FCGSPNID): An instance of the FCGSPNID traffic stack
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGSPNID_template.FCGSPNID): An instance of the FCGSPNID traffic stack
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGSPNID_template import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGSPNID_template import (
             FCGSPNID,
         )
 
@@ -3054,9 +3054,9 @@ class Stack(Base):
         valid only with Batch Add
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCRSNNNN_template.FCRSNNNN): An instance of the FCRSNNNN traffic stack
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCRSNNNN_template.FCRSNNNN): An instance of the FCRSNNNN traffic stack
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCRSNNNN_template import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCRSNNNN_template import (
             FCRSNNNN,
         )
 
@@ -3068,9 +3068,9 @@ class Stack(Base):
         valid only with Batch Add
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGNPL_template.FCGNPL): An instance of the FCGNPL traffic stack
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGNPL_template.FCGNPL): An instance of the FCGNPL traffic stack
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGNPL_template import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGNPL_template import (
             FCGNPL,
         )
 
@@ -3082,9 +3082,9 @@ class Stack(Base):
         valid only with Batch Add
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGPL_template.FCGPL): An instance of the FCGPL traffic stack
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGPL_template.FCGPL): An instance of the FCGPL traffic stack
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGPL_template import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGPL_template import (
             FCGPL,
         )
 
@@ -3096,9 +3096,9 @@ class Stack(Base):
         valid only with Batch Add
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGNID_template.FCGNID): An instance of the FCGNID traffic stack
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGNID_template.FCGNID): An instance of the FCGNID traffic stack
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGNID_template import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGNID_template import (
             FCGNID,
         )
 
@@ -3110,9 +3110,9 @@ class Stack(Base):
         valid only with Batch Add
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCRPLT_template.FCRPLT): An instance of the FCRPLT traffic stack
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCRPLT_template.FCRPLT): An instance of the FCRPLT traffic stack
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCRPLT_template import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCRPLT_template import (
             FCRPLT,
         )
 
@@ -3124,9 +3124,9 @@ class Stack(Base):
         valid only with Batch Add
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCRIELN_template.FCRIELN): An instance of the FCRIELN traffic stack
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCRIELN_template.FCRIELN): An instance of the FCRIELN traffic stack
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCRIELN_template import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCRIELN_template import (
             FCRIELN,
         )
 
@@ -3138,9 +3138,9 @@ class Stack(Base):
         valid only with Batch Add
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGPNL_template.FCGPNL): An instance of the FCGPNL traffic stack
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGPNL_template.FCGPNL): An instance of the FCGPNL traffic stack
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGPNL_template import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGPNL_template import (
             FCGPNL,
         )
 
@@ -3152,9 +3152,9 @@ class Stack(Base):
         valid only with Batch Add
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGNNFT_template.FCGNNFT): An instance of the FCGNNFT traffic stack
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGNNFT_template.FCGNNFT): An instance of the FCGNNFT traffic stack
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGNNFT_template import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGNNFT_template import (
             FCGNNFT,
         )
 
@@ -3166,9 +3166,9 @@ class Stack(Base):
         valid only with Batch Add
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGPLNL_template.FCGPLNL): An instance of the FCGPLNL traffic stack
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGPLNL_template.FCGPLNL): An instance of the FCGPLNL traffic stack
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGPLNL_template import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGPLNL_template import (
             FCGPLNL,
         )
 
@@ -3180,9 +3180,9 @@ class Stack(Base):
         valid only with Batch Add
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCRFTID_template.FCRFTID): An instance of the FCRFTID traffic stack
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCRFTID_template.FCRFTID): An instance of the FCRFTID traffic stack
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCRFTID_template import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCRFTID_template import (
             FCRFTID,
         )
 
@@ -3194,9 +3194,9 @@ class Stack(Base):
         valid only with Batch Add
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGPLML_template.FCGPLML): An instance of the FCGPLML traffic stack
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGPLML_template.FCGPLML): An instance of the FCGPLML traffic stack
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGPLML_template import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGPLML_template import (
             FCGPLML,
         )
 
@@ -3208,9 +3208,9 @@ class Stack(Base):
         valid only with Batch Add
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGPS_template.FCGPS): An instance of the FCGPS traffic stack
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGPS_template.FCGPS): An instance of the FCGPS traffic stack
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGPS_template import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGPS_template import (
             FCGPS,
         )
 
@@ -3222,9 +3222,9 @@ class Stack(Base):
         valid only with Batch Add
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCRCSID_template.FCRCSID): An instance of the FCRCSID traffic stack
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCRCSID_template.FCRCSID): An instance of the FCRCSID traffic stack
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCRCSID_template import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCRCSID_template import (
             FCRCSID,
         )
 
@@ -3236,9 +3236,9 @@ class Stack(Base):
         valid only with Batch Add
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGSNNNN_template.FCGSNNNN): An instance of the FCGSNNNN traffic stack
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGSNNNN_template.FCGSNNNN): An instance of the FCGSNNNN traffic stack
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGSNNNN_template import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGSNNNN_template import (
             FCGSNNNN,
         )
 
@@ -3250,9 +3250,9 @@ class Stack(Base):
         valid only with Batch Add
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGNNID_template.FCGNNID): An instance of the FCGNNID traffic stack
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGNNID_template.FCGNNID): An instance of the FCGNNID traffic stack
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGNNID_template import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGNNID_template import (
             FCGNNID,
         )
 
@@ -3264,9 +3264,9 @@ class Stack(Base):
         valid only with Batch Add
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGMID_template.FCGMID): An instance of the FCGMID traffic stack
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGMID_template.FCGMID): An instance of the FCGMID traffic stack
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGMID_template import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGMID_template import (
             FCGMID,
         )
 
@@ -3278,9 +3278,9 @@ class Stack(Base):
         valid only with Batch Add
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGIET_template.FCGIET): An instance of the FCGIET traffic stack
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGIET_template.FCGIET): An instance of the FCGIET traffic stack
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGIET_template import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGIET_template import (
             FCGIET,
         )
 
@@ -3292,9 +3292,9 @@ class Stack(Base):
         valid only with Batch Add
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCRPLM_template.FCRPLM): An instance of the FCRPLM traffic stack
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCRPLM_template.FCRPLM): An instance of the FCRPLM traffic stack
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCRPLM_template import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCRPLM_template import (
             FCRPLM,
         )
 
@@ -3306,9 +3306,9 @@ class Stack(Base):
         valid only with Batch Add
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGPAB_template.FCGPAB): An instance of the FCGPAB traffic stack
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGPAB_template.FCGPAB): An instance of the FCGPAB traffic stack
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGPAB_template import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGPAB_template import (
             FCGPAB,
         )
 
@@ -3320,9 +3320,9 @@ class Stack(Base):
         valid only with Batch Add
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGIEAG_template.FCGIEAG): An instance of the FCGIEAG traffic stack
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGIEAG_template.FCGIEAG): An instance of the FCGIEAG traffic stack
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGIEAG_template import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGIEAG_template import (
             FCGIEAG,
         )
 
@@ -3334,9 +3334,9 @@ class Stack(Base):
         valid only with Batch Add
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGIEL_template.FCGIEL): An instance of the FCGIEL traffic stack
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGIEL_template.FCGIEL): An instance of the FCGIEL traffic stack
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGIEL_template import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGIEL_template import (
             FCGIEL,
         )
 
@@ -3348,9 +3348,9 @@ class Stack(Base):
         valid only with Batch Add
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGPAG_template.FCGPAG): An instance of the FCGPAG traffic stack
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGPAG_template.FCGPAG): An instance of the FCGPAG traffic stack
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGPAG_template import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGPAG_template import (
             FCGPAG,
         )
 
@@ -3362,9 +3362,9 @@ class Stack(Base):
         valid only with Batch Add
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGIDFT_template.FCGIDFT): An instance of the FCGIDFT traffic stack
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGIDFT_template.FCGIDFT): An instance of the FCGIDFT traffic stack
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGIDFT_template import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGIDFT_template import (
             FCGIDFT,
         )
 
@@ -3376,9 +3376,9 @@ class Stack(Base):
         valid only with Batch Add
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGFFID_template.FCGFFID): An instance of the FCGFFID traffic stack
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGFFID_template.FCGFFID): An instance of the FCGFFID traffic stack
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGFFID_template import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGFFID_template import (
             FCGFFID,
         )
 
@@ -3390,9 +3390,9 @@ class Stack(Base):
         valid only with Batch Add
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGMAL_template.FCGMAL): An instance of the FCGMAL traffic stack
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGMAL_template.FCGMAL): An instance of the FCGMAL traffic stack
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGMAL_template import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGMAL_template import (
             FCGMAL,
         )
 
@@ -3404,9 +3404,9 @@ class Stack(Base):
         valid only with Batch Add
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGPT_template.FCGPT): An instance of the FCGPT traffic stack
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGPT_template.FCGPT): An instance of the FCGPT traffic stack
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGPT_template import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGPT_template import (
             FCGPT,
         )
 
@@ -3418,9 +3418,9 @@ class Stack(Base):
         valid only with Batch Add
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGPTID_template.FCGPTID): An instance of the FCGPTID traffic stack
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGPTID_template.FCGPTID): An instance of the FCGPTID traffic stack
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGPTID_template import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGPTID_template import (
             FCGPTID,
         )
 
@@ -3432,9 +3432,9 @@ class Stack(Base):
         valid only with Batch Add
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGATIN_template.FCGATIN): An instance of the FCGATIN traffic stack
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGATIN_template.FCGATIN): An instance of the FCGATIN traffic stack
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGATIN_template import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGATIN_template import (
             FCGATIN,
         )
 
@@ -3446,9 +3446,9 @@ class Stack(Base):
         valid only with Batch Add
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCRFFID_template.FCRFFID): An instance of the FCRFFID traffic stack
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCRFFID_template.FCRFFID): An instance of the FCRFFID traffic stack
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCRFFID_template import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCRFFID_template import (
             FCRFFID,
         )
 
@@ -3460,9 +3460,9 @@ class Stack(Base):
         valid only with Batch Add
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCRPNL_template.FCRPNL): An instance of the FCRPNL traffic stack
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCRPNL_template.FCRPNL): An instance of the FCRPNL traffic stack
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCRPNL_template import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCRPNL_template import (
             FCRPNL,
         )
 
@@ -3474,9 +3474,9 @@ class Stack(Base):
         valid only with Batch Add
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGDID_template.FCGDID): An instance of the FCGDID traffic stack
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGDID_template.FCGDID): An instance of the FCGDID traffic stack
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGDID_template import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGDID_template import (
             FCGDID,
         )
 
@@ -3488,9 +3488,9 @@ class Stack(Base):
         valid only with Batch Add
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGTIN_template.FCGTIN): An instance of the FCGTIN traffic stack
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGTIN_template.FCGTIN): An instance of the FCGTIN traffic stack
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGTIN_template import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGTIN_template import (
             FCGTIN,
         )
 
@@ -3502,9 +3502,9 @@ class Stack(Base):
         valid only with Batch Add
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCRPL_template.FCRPL): An instance of the FCRPL traffic stack
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCRPL_template.FCRPL): An instance of the FCRPL traffic stack
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCRPL_template import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCRPL_template import (
             FCRPL,
         )
 
@@ -3516,9 +3516,9 @@ class Stack(Base):
         valid only with Batch Add
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGPLT_template.FCGPLT): An instance of the FCGPLT traffic stack
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGPLT_template.FCGPLT): An instance of the FCGPLT traffic stack
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGPLT_template import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGPLT_template import (
             FCGPLT,
         )
 
@@ -3530,9 +3530,9 @@ class Stack(Base):
         valid only with Batch Add
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCRNNID_template.FCRNNID): An instance of the FCRNNID traffic stack
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCRNNID_template.FCRNNID): An instance of the FCRNNID traffic stack
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCRNNID_template import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCRNNID_template import (
             FCRNNID,
         )
 
@@ -3544,9 +3544,9 @@ class Stack(Base):
         valid only with Batch Add
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGPPN_template.FCGPPN): An instance of the FCGPPN traffic stack
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGPPN_template.FCGPPN): An instance of the FCGPPN traffic stack
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGPPN_template import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGPPN_template import (
             FCGPPN,
         )
 
@@ -3558,9 +3558,9 @@ class Stack(Base):
         valid only with Batch Add
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGPFCP_template.FCGPFCP): An instance of the FCGPFCP traffic stack
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGPFCP_template.FCGPFCP): An instance of the FCGPFCP traffic stack
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGPFCP_template import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGPFCP_template import (
             FCGPFCP,
         )
 
@@ -3572,9 +3572,9 @@ class Stack(Base):
         valid only with Batch Add
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGPLI_template.FCGPLI): An instance of the FCGPLI traffic stack
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGPLI_template.FCGPLI): An instance of the FCGPLI traffic stack
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGPLI_template import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGPLI_template import (
             FCGPLI,
         )
 
@@ -3586,9 +3586,9 @@ class Stack(Base):
         valid only with Batch Add
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGFN_template.FCGFN): An instance of the FCGFN traffic stack
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGFN_template.FCGFN): An instance of the FCGFN traffic stack
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGFN_template import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGFN_template import (
             FCGFN,
         )
 
@@ -3600,9 +3600,9 @@ class Stack(Base):
         valid only with Batch Add
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCDAID_template.FCDAID): An instance of the FCDAID traffic stack
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCDAID_template.FCDAID): An instance of the FCDAID traffic stack
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCDAID_template import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCDAID_template import (
             FCDAID,
         )
 
@@ -3614,9 +3614,9 @@ class Stack(Base):
         valid only with Batch Add
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCRPAB_template.FCRPAB): An instance of the FCRPAB traffic stack
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCRPAB_template.FCRPAB): An instance of the FCRPAB traffic stack
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCRPAB_template import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCRPAB_template import (
             FCRPAB,
         )
 
@@ -3628,9 +3628,9 @@ class Stack(Base):
         valid only with Batch Add
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGFTID_template.FCGFTID): An instance of the FCGFTID traffic stack
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGFTID_template.FCGFTID): An instance of the FCGFTID traffic stack
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGFTID_template import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGFTID_template import (
             FCGFTID,
         )
 
@@ -3642,9 +3642,9 @@ class Stack(Base):
         valid only with Batch Add
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCRSPNID_template.FCRSPNID): An instance of the FCRSPNID traffic stack
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCRSPNID_template.FCRSPNID): An instance of the FCRSPNID traffic stack
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCRSPNID_template import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCRSPNID_template import (
             FCRSPNID,
         )
 
@@ -3656,9 +3656,9 @@ class Stack(Base):
         valid only with Batch Add
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGIDNN_template.FCGIDNN): An instance of the FCGIDNN traffic stack
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGIDNN_template.FCGIDNN): An instance of the FCGIDNN traffic stack
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGIDNN_template import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGIDNN_template import (
             FCGIDNN,
         )
 
@@ -3670,307 +3670,307 @@ class Stack(Base):
         valid only with Batch Add
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGPNID_template.FCGPNID): An instance of the FCGPNID traffic stack
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGPNID_template.FCGPNID): An instance of the FCGPNID traffic stack
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCGPNID_template import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fCGPNID_template import (
             FCGPNID,
         )
 
         return FCGPNID(self)
 
     @property
-    def FCEFPSWRJT(self):
+    def FcEFPSWRJT(self):
         """
         valid only with Batch Add
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCEFPSWRJT_template.FCEFPSWRJT): An instance of the FCEFPSWRJT traffic stack
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fcEFPSWRJT_template.FcEFPSWRJT): An instance of the FcEFPSWRJT traffic stack
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCEFPSWRJT_template import (
-            FCEFPSWRJT,
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fcEFPSWRJT_template import (
+            FcEFPSWRJT,
         )
 
-        return FCEFPSWRJT(self)
+        return FcEFPSWRJT(self)
 
     @property
-    def FCEFPSWACC(self):
+    def FcEFPSWACC(self):
         """
         valid only with Batch Add
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCEFPSWACC_template.FCEFPSWACC): An instance of the FCEFPSWACC traffic stack
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fcEFPSWACC_template.FcEFPSWACC): An instance of the FcEFPSWACC traffic stack
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCEFPSWACC_template import (
-            FCEFPSWACC,
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fcEFPSWACC_template import (
+            FcEFPSWACC,
         )
 
-        return FCEFPSWACC(self)
+        return FcEFPSWACC(self)
 
     @property
-    def FCESCSWACC(self):
+    def FcESCSWACC(self):
         """
         valid only with Batch Add
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCESCSWACC_template.FCESCSWACC): An instance of the FCESCSWACC traffic stack
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fcESCSWACC_template.FcESCSWACC): An instance of the FcESCSWACC traffic stack
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCESCSWACC_template import (
-            FCESCSWACC,
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fcESCSWACC_template import (
+            FcESCSWACC,
         )
 
-        return FCESCSWACC(self)
+        return FcESCSWACC(self)
 
     @property
-    def FCRDISWRJT(self):
+    def FcRDISWRJT(self):
         """
         valid only with Batch Add
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCRDISWRJT_template.FCRDISWRJT): An instance of the FCRDISWRJT traffic stack
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fcRDISWRJT_template.FcRDISWRJT): An instance of the FcRDISWRJT traffic stack
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCRDISWRJT_template import (
-            FCRDISWRJT,
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fcRDISWRJT_template import (
+            FcRDISWRJT,
         )
 
-        return FCRDISWRJT(self)
+        return FcRDISWRJT(self)
 
     @property
-    def FCMRRequest(self):
+    def FcMRRequest(self):
         """
         valid only with Batch Add
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCMRRequest_template.FCMRRequest): An instance of the FCMRRequest traffic stack
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fcMRRequest_template.FcMRRequest): An instance of the FcMRRequest traffic stack
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCMRRequest_template import (
-            FCMRRequest,
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fcMRRequest_template import (
+            FcMRRequest,
         )
 
-        return FCMRRequest(self)
+        return FcMRRequest(self)
 
     @property
-    def FCLSARequest(self):
+    def FcLSARequest(self):
         """
         valid only with Batch Add
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCLSARequest_template.FCLSARequest): An instance of the FCLSARequest traffic stack
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fcLSARequest_template.FcLSARequest): An instance of the FcLSARequest traffic stack
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCLSARequest_template import (
-            FCLSARequest,
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fcLSARequest_template import (
+            FcLSARequest,
         )
 
-        return FCLSARequest(self)
+        return FcLSARequest(self)
 
     @property
-    def FCDIASWRJT(self):
+    def FcDIASWRJT(self):
         """
         valid only with Batch Add
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCDIASWRJT_template.FCDIASWRJT): An instance of the FCDIASWRJT traffic stack
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fcDIASWRJT_template.FcDIASWRJT): An instance of the FcDIASWRJT traffic stack
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCDIASWRJT_template import (
-            FCDIASWRJT,
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fcDIASWRJT_template import (
+            FcDIASWRJT,
         )
 
-        return FCDIASWRJT(self)
+        return FcDIASWRJT(self)
 
     @property
-    def FCMRSWRJT(self):
+    def FcMRSWRJT(self):
         """
         valid only with Batch Add
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCMRSWRJT_template.FCMRSWRJT): An instance of the FCMRSWRJT traffic stack
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fcMRSWRJT_template.FcMRSWRJT): An instance of the FcMRSWRJT traffic stack
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCMRSWRJT_template import (
-            FCMRSWRJT,
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fcMRSWRJT_template import (
+            FcMRSWRJT,
         )
 
-        return FCMRSWRJT(self)
+        return FcMRSWRJT(self)
 
     @property
-    def FCDIASWACC(self):
+    def FcDIASWACC(self):
         """
         valid only with Batch Add
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCDIASWACC_template.FCDIASWACC): An instance of the FCDIASWACC traffic stack
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fcDIASWACC_template.FcDIASWACC): An instance of the FcDIASWACC traffic stack
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCDIASWACC_template import (
-            FCDIASWACC,
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fcDIASWACC_template import (
+            FcDIASWACC,
         )
 
-        return FCDIASWACC(self)
+        return FcDIASWACC(self)
 
     @property
-    def FCRDISWACC(self):
+    def FcRDISWACC(self):
         """
         valid only with Batch Add
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCRDISWACC_template.FCRDISWACC): An instance of the FCRDISWACC traffic stack
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fcRDISWACC_template.FcRDISWACC): An instance of the FcRDISWACC traffic stack
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCRDISWACC_template import (
-            FCRDISWACC,
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fcRDISWACC_template import (
+            FcRDISWACC,
         )
 
-        return FCRDISWACC(self)
+        return FcRDISWACC(self)
 
     @property
-    def FCESCSWRJT(self):
+    def FcESCSWRJT(self):
         """
         valid only with Batch Add
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCESCSWRJT_template.FCESCSWRJT): An instance of the FCESCSWRJT traffic stack
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fcESCSWRJT_template.FcESCSWRJT): An instance of the FcESCSWRJT traffic stack
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCESCSWRJT_template import (
-            FCESCSWRJT,
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fcESCSWRJT_template import (
+            FcESCSWRJT,
         )
 
-        return FCESCSWRJT(self)
+        return FcESCSWRJT(self)
 
     @property
-    def FCLSURequest(self):
+    def FcLSURequest(self):
         """
         valid only with Batch Add
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCLSURequest_template.FCLSURequest): An instance of the FCLSURequest traffic stack
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fcLSURequest_template.FcLSURequest): An instance of the FcLSURequest traffic stack
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCLSURequest_template import (
-            FCLSURequest,
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fcLSURequest_template import (
+            FcLSURequest,
         )
 
-        return FCLSURequest(self)
+        return FcLSURequest(self)
 
     @property
-    def FCESCRequest(self):
+    def FcESCRequest(self):
         """
         valid only with Batch Add
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCESCRequest_template.FCESCRequest): An instance of the FCESCRequest traffic stack
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fcESCRequest_template.FcESCRequest): An instance of the FcESCRequest traffic stack
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCESCRequest_template import (
-            FCESCRequest,
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fcESCRequest_template import (
+            FcESCRequest,
         )
 
-        return FCESCRequest(self)
+        return FcESCRequest(self)
 
     @property
-    def FCELPSWACC(self):
+    def FcELPSWACC(self):
         """
         valid only with Batch Add
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCELPSWACC_template.FCELPSWACC): An instance of the FCELPSWACC traffic stack
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fcELPSWACC_template.FcELPSWACC): An instance of the FcELPSWACC traffic stack
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCELPSWACC_template import (
-            FCELPSWACC,
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fcELPSWACC_template import (
+            FcELPSWACC,
         )
 
-        return FCELPSWACC(self)
+        return FcELPSWACC(self)
 
     @property
-    def FCELPSWRJT(self):
+    def FcELPSWRJT(self):
         """
         valid only with Batch Add
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCELPSWRJT_template.FCELPSWRJT): An instance of the FCELPSWRJT traffic stack
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fcELPSWRJT_template.FcELPSWRJT): An instance of the FcELPSWRJT traffic stack
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCELPSWRJT_template import (
-            FCELPSWRJT,
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fcELPSWRJT_template import (
+            FcELPSWRJT,
         )
 
-        return FCELPSWRJT(self)
+        return FcELPSWRJT(self)
 
     @property
-    def FCMRSWACC(self):
+    def FcMRSWACC(self):
         """
         valid only with Batch Add
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCMRSWACC_template.FCMRSWACC): An instance of the FCMRSWACC traffic stack
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fcMRSWACC_template.FcMRSWACC): An instance of the FcMRSWACC traffic stack
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCMRSWACC_template import (
-            FCMRSWACC,
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fcMRSWACC_template import (
+            FcMRSWACC,
         )
 
-        return FCMRSWACC(self)
+        return FcMRSWACC(self)
 
     @property
-    def FCELPRequest(self):
+    def FcELPRequest(self):
         """
         valid only with Batch Add
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCELPRequest_template.FCELPRequest): An instance of the FCELPRequest traffic stack
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fcELPRequest_template.FcELPRequest): An instance of the FcELPRequest traffic stack
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCELPRequest_template import (
-            FCELPRequest,
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fcELPRequest_template import (
+            FcELPRequest,
         )
 
-        return FCELPRequest(self)
+        return FcELPRequest(self)
 
     @property
-    def FCDIARequest(self):
+    def FcDIARequest(self):
         """
         valid only with Batch Add
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCDIARequest_template.FCDIARequest): An instance of the FCDIARequest traffic stack
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fcDIARequest_template.FcDIARequest): An instance of the FcDIARequest traffic stack
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCDIARequest_template import (
-            FCDIARequest,
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fcDIARequest_template import (
+            FcDIARequest,
         )
 
-        return FCDIARequest(self)
+        return FcDIARequest(self)
 
     @property
-    def FCRDIRequest(self):
+    def FcRDIRequest(self):
         """
         valid only with Batch Add
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCRDIRequest_template.FCRDIRequest): An instance of the FCRDIRequest traffic stack
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fcRDIRequest_template.FcRDIRequest): An instance of the FcRDIRequest traffic stack
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCRDIRequest_template import (
-            FCRDIRequest,
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fcRDIRequest_template import (
+            FcRDIRequest,
         )
 
-        return FCRDIRequest(self)
+        return FcRDIRequest(self)
 
     @property
-    def FCHLORequest(self):
+    def FcHLORequest(self):
         """
         valid only with Batch Add
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCHLORequest_template.FCHLORequest): An instance of the FCHLORequest traffic stack
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fcHLORequest_template.FcHLORequest): An instance of the FcHLORequest traffic stack
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCHLORequest_template import (
-            FCHLORequest,
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fcHLORequest_template import (
+            FcHLORequest,
         )
 
-        return FCHLORequest(self)
+        return FcHLORequest(self)
 
     @property
-    def FCEFPRequest(self):
+    def FcEFPRequest(self):
         """
         valid only with Batch Add
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCEFPRequest_template.FCEFPRequest): An instance of the FCEFPRequest traffic stack
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fcEFPRequest_template.FcEFPRequest): An instance of the FcEFPRequest traffic stack
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.FCEFPRequest_template import (
-            FCEFPRequest,
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.fcEFPRequest_template import (
+            FcEFPRequest,
         )
 
-        return FCEFPRequest(self)
+        return FcEFPRequest(self)
 
     @property
     def MacInMACv42(self):
@@ -4337,18 +4337,18 @@ class Stack(Base):
         return ITagHeader(self)
 
     @property
-    def PreferredPwMplsCw(self):
+    def PreferedPwMPlsCw(self):
         """
         valid only with Batch Add
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.preferredPwMplsCw_template.PreferredPwMplsCw): An instance of the PreferredPwMplsCw traffic stack
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.preferedPwMPlsCw_template.PreferedPwMPlsCw): An instance of the PreferedPwMPlsCw traffic stack
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.preferredPwMplsCw_template import (
-            PreferredPwMplsCw,
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.preferedPwMPlsCw_template import (
+            PreferedPwMPlsCw,
         )
 
-        return PreferredPwMplsCw(self)
+        return PreferedPwMPlsCw(self)
 
     @property
     def RTag(self):
@@ -4384,9 +4384,9 @@ class Stack(Base):
         valid only with Batch Add
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.macsecHw_template.MacsecHw): An instance of the MacsecHw traffic stack
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.MacsecHw_template.MacsecHw): An instance of the MacsecHw traffic stack
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.macsecHw_template import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.MacsecHw_template import (
             MacsecHw,
         )
 
@@ -4575,18 +4575,18 @@ class Stack(Base):
         return IsisL2PSNPDU(self)
 
     @property
-    def IsisPPPHelloPDU(self):
+    def IsisPointToPointHelloPDU(self):
         """
         valid only with Batch Add
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.isisPPPHelloPDU_template.IsisPPPHelloPDU): An instance of the IsisPPPHelloPDU traffic stack
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.isisPointToPointHelloPDU_template.IsisPointToPointHelloPDU): An instance of the IsisPointToPointHelloPDU traffic stack
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.isisPPPHelloPDU_template import (
-            IsisPPPHelloPDU,
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.isisPointToPointHelloPDU_template import (
+            IsisPointToPointHelloPDU,
         )
 
-        return IsisPPPHelloPDU(self)
+        return IsisPointToPointHelloPDU(self)
 
     @property
     def IsisL1McastCSNPDU(self):
@@ -5261,18 +5261,18 @@ class Stack(Base):
         return Ospfv3LSAUpdate(self)
 
     @property
-    def PimdmAssert(self):
+    def PimdmAssertMessage(self):
         """
         valid only with Batch Add
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.pimdmAssert_template.PimdmAssert): An instance of the PimdmAssert traffic stack
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.pimdmAssertMessage_template.PimdmAssertMessage): An instance of the PimdmAssertMessage traffic stack
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.pimdmAssert_template import (
-            PimdmAssert,
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.pimdmAssertMessage_template import (
+            PimdmAssertMessage,
         )
 
-        return PimdmAssert(self)
+        return PimdmAssertMessage(self)
 
     @property
     def PimdmGraftGraftAckMessage(self):
@@ -5317,32 +5317,32 @@ class Stack(Base):
         return PimdmJoinPruneMessage(self)
 
     @property
-    def PimdmStateRefresh(self):
+    def PimdmStateRefreshMessage(self):
         """
         valid only with Batch Add
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.pimdmStateRefresh_template.PimdmStateRefresh): An instance of the PimdmStateRefresh traffic stack
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.pimdmStateRefreshMessage_template.PimdmStateRefreshMessage): An instance of the PimdmStateRefreshMessage traffic stack
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.pimdmStateRefresh_template import (
-            PimdmStateRefresh,
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.pimdmStateRefreshMessage_template import (
+            PimdmStateRefreshMessage,
         )
 
-        return PimdmStateRefresh(self)
+        return PimdmStateRefreshMessage(self)
 
     @property
-    def PimAssert(self):
+    def PimAssertMessage(self):
         """
         valid only with Batch Add
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.pimAssert_template.PimAssert): An instance of the PimAssert traffic stack
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.pimAssertMessage_template.PimAssertMessage): An instance of the PimAssertMessage traffic stack
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.pimAssert_template import (
-            PimAssert,
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.pimAssertMessage_template import (
+            PimAssertMessage,
         )
 
-        return PimAssert(self)
+        return PimAssertMessage(self)
 
     @property
     def PimBootstrapMessage(self):
@@ -5541,18 +5541,18 @@ class Stack(Base):
         return Intshimheader(self)
 
     @property
-    def Intprobemarker(self):
+    def Probemarker(self):
         """
         valid only with Batch Add
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.intprobemarker_template.Intprobemarker): An instance of the Intprobemarker traffic stack
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.probemarker_template.Probemarker): An instance of the Probemarker traffic stack
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.intprobemarker_template import (
-            Intprobemarker,
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.probemarker_template import (
+            Probemarker,
         )
 
-        return Intprobemarker(self)
+        return Probemarker(self)
 
     @property
     def Bier(self):
@@ -5749,6 +5749,20 @@ class Stack(Base):
         )
 
         return Udp(self)
+
+    @property
+    def Guedata(self):
+        """
+        valid only with Batch Add
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.guedata_template.Guedata): An instance of the Guedata traffic stack
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.guedata_template import (
+            Guedata,
+        )
+
+        return Guedata(self)
 
     @property
     def Bfd(self):
@@ -6003,18 +6017,18 @@ class Stack(Base):
         return LdpAddress(self)
 
     @property
-    def LdpAddresWithdraw(self):
+    def LdpAddressWithdraw(self):
         """
         valid only with Batch Add
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.ldpAddresWithdraw_template.LdpAddresWithdraw): An instance of the LdpAddresWithdraw traffic stack
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.ldpAddressWithdraw_template.LdpAddressWithdraw): An instance of the LdpAddressWithdraw traffic stack
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.ldpAddresWithdraw_template import (
-            LdpAddresWithdraw,
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.ldpAddressWithdraw_template import (
+            LdpAddressWithdraw,
         )
 
-        return LdpAddresWithdraw(self)
+        return LdpAddressWithdraw(self)
 
     @property
     def LdpLabelMapping(self):

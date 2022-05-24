@@ -55,13 +55,13 @@ class Lag(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.lag.lagmode_53b365e7fdae49570043f8b9d07a18da.LagMode): An instance of the LagMode class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.lag.lagmode_d3c47f2148e3a3acd418ebf95f2b7b4e.LagMode): An instance of the LagMode class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.lag.lagmode_53b365e7fdae49570043f8b9d07a18da import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.lag.lagmode_d3c47f2148e3a3acd418ebf95f2b7b4e import (
             LagMode,
         )
 

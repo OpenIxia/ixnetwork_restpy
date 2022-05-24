@@ -87,7 +87,7 @@ class SbfdResponder(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): If enabled, the Responder will store all S-BFD sessions responded to based on requests from remote Initiators. Selected sessions can be paused and resumed by user. Enabling this will reduce supported scale by some amount.
+        - obj(ixnetwork_restpy.multivalue.Multivalue): If enabled, the Responder stores all S-BFD sessions responded to based on requests from remote Initiators.Selected sessions can be paused and resumed by user.If disabled, the Responder session count in stat remains 0.Enabling this will reduce supported scale by some amount.
         """
         from ixnetwork_restpy.multivalue import Multivalue
 
@@ -101,7 +101,7 @@ class SbfdResponder(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): Minimum Rx Interval in ms supported by the Responder.
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Minimum Rx Interval in milli seconds supported by the Responder.
         """
         from ixnetwork_restpy.multivalue import Multivalue
 

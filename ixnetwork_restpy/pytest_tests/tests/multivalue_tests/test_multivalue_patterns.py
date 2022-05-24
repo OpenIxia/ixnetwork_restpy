@@ -34,6 +34,7 @@ def test_multivalue_can_set_single_value(multivalue):
     multivalue.Single("1.1.1.1")
 
     assert multivalue.Pattern == "1.1.1.1"
+    assert multivalue.PatternType == "Single"
 
 
 def test_multivalue_can_set_increment_pattern(multivalue):
@@ -42,6 +43,7 @@ def test_multivalue_can_set_increment_pattern(multivalue):
     ipv4_obj = IPv4Address(base_ip)
     for index, value in enumerate(multivalue.Values):
         assert value == str(ipv4_obj + index)
+    assert multivalue.PatternType == "Increment"
 
 
 def test_multivalue_can_set_decrement_pattern(multivalue):
@@ -50,6 +52,7 @@ def test_multivalue_can_set_decrement_pattern(multivalue):
     ipv4_obj = IPv4Address(base_ip)
     for index, value in enumerate(multivalue.Values):
         assert value == str(ipv4_obj - index)
+    assert multivalue.PatternType == "Decrement"
 
 
 def test_multivalue_can_set_value_list(multivalue):
@@ -58,6 +61,7 @@ def test_multivalue_can_set_value_list(multivalue):
     multivalue.ValueList(values=hosts)
     for index, value in enumerate(multivalue.Values):
         assert value == hosts[index]
+    assert multivalue.PatternType == "ValueList"
 
 
 def test_set_random_multivalue(multivalue):
@@ -65,6 +69,7 @@ def test_set_random_multivalue(multivalue):
     multivalue.Overlay(6, "4.3.2.1")
     multivalue.Random()
     assert multivalue.Pattern.startswith("Rand") is True
+    assert multivalue.PatternType == "Random"
 
 
 def test_multivalue_can_set_random_range(multivalue):
@@ -75,6 +80,7 @@ def test_multivalue_can_set_random_range(multivalue):
         min_value="1.1.1.1", max_value="2.2.2.2", step_value="0.0.0.1", seed=7
     )
     assert multivalue.Pattern.startswith("Randr:") is True
+    assert multivalue.PatternType == "RandomRange"
 
 
 def test_multivalue_can_set_random_mask(multivalue):
@@ -83,6 +89,7 @@ def test_multivalue_can_set_random_mask(multivalue):
     # set repeatable random multivalue
     multivalue.RandomMask(fixed_value="1.1.1.1", mask_value="0.0.0.1", seed=7, count=6)
     assert multivalue.Pattern.startswith("Randb:") is True
+    assert multivalue.PatternType == "RandomMask"
 
 
 def test_mulivalue_can_set_distributed(multivalue):
@@ -91,6 +98,7 @@ def test_mulivalue_can_set_distributed(multivalue):
         algorithm="autoEven", mode="perPort", values=[("1.1.1.1", 60), ("2.2.2.2", 40)]
     )
     assert multivalue.Pattern.startswith("Dist:")
+    assert multivalue.PatternType == "Distributed"
 
 
 def test_multivalue_can_set_custom(multivalue):
@@ -100,6 +108,7 @@ def test_multivalue_can_set_custom(multivalue):
         increments=[("1.1.1.3", 6, [("1.1.1.4", 2, None)])],
     )
     assert multivalue.Pattern.startswith("Custom:")
+    assert multivalue.PatternType == "Custom"
 
 
 def test_multivalue_can_set_overlay(multivalue):
@@ -142,6 +151,7 @@ def test_multivalue_can_set_string(multivalue):
     ospf.Authentication.Single("password")
     ospf.AuthenticationPassword.String("ixia123")
     assert all([x == "ixia123" for x in ospf.AuthenticationPassword.Values])
+    assert ospf.AuthenticationPassword.PatternType == "String"
 
 
 def test_can_check_available_enums_from_multivalue(multivalue):
@@ -160,3 +170,4 @@ def test_multivalue_can_set_alternate_values(multivalue):
     # since device group multiplier is 50
     assert values.count("true") == 25
     assert values.count("false") == 25
+    assert ipv4.ResolveGateway.PatternType == "Alternate"

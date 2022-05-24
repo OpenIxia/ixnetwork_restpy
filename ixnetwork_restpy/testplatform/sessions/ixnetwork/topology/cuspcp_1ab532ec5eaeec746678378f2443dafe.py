@@ -71,13 +71,13 @@ class CuspCP(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.upgroupinfo_20235edbe32eb48e3acc3bd1091e84c4.UpGroupInfo): An instance of the UpGroupInfo class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.upgroupinfo_a6f4a99dcdd5ccbad002b6727b9165b1.UpGroupInfo): An instance of the UpGroupInfo class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.upgroupinfo_20235edbe32eb48e3acc3bd1091e84c4 import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.upgroupinfo_a6f4a99dcdd5ccbad002b6727b9165b1 import (
             UpGroupInfo,
         )
 

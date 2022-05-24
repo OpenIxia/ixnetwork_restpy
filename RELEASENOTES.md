@@ -1,4 +1,14 @@
 # Release Notes
+### May 2022
+* 1.1.6
+  * support ixnetwork version 9.20.2201.69 (9.20 Update-1)
+  * support uhd version 1.5
+  * fixed issue #65: quicktest testconfig configuration not updating parameters
+  * fixed issue #66: Read content of Multivalue
+    * exposed new property PatternType in Multivalue class
+      * samples - patternType_in_multivalue
+  * catagorical representation of samples in restpy documentation
+    * link: https://openixia.github.io/ixnetwork_restpy/#/samples
 ### Apr 2022
 * 1.1.5
   * support ixnetwork version 9.20.2199.45 (9.20 patch-1)

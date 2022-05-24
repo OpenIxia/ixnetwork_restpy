@@ -36,6 +36,7 @@ class Multivalue(Base):
         super(Multivalue, self).__init__(parent)
         self._href = href
         self._pattern = None
+        self._pattern_type = ""
         self._dirty = False
         self.parent_href = ""
         self._multiValueObj = {"multiValue": []}
@@ -79,17 +80,21 @@ class Multivalue(Base):
             self._custom_select()
         if self._properties["pattern"] == "singleValue":
             self._pattern = self._format_value(self._properties["singleValue"]["value"])
+            self._pattern_type = "Single"
         elif self._properties["pattern"] == "counter":
             start = self._format_value(self._properties["counter"]["start"])
             step = self._format_value(self._properties["counter"]["step"])
             if self._properties["counter"]["direction"] == "decrement":
                 self._pattern = "Dec: %s, %s" % (start, step)
+                self._pattern_type = "Decrement"
             else:
                 self._pattern = "Inc: %s, %s" % (start, step)
+                self._pattern_type = "Increment"
         elif self._properties["pattern"] == "valueList":
             self._pattern = "List: %s" % (
                 ", ".join(self._properties["valueList"]["values"])
             )
+            self._pattern_type = "ValueList"
         elif self._properties["pattern"] == "repeatableRandomRange":
             min_value = self._properties["repeatableRandomRange"]["min"]
             max_value = self._properties["repeatableRandomRange"]["max"]
@@ -101,6 +106,7 @@ class Multivalue(Base):
                 step_value,
                 seed,
             )
+            self._pattern_type = "RandomRange"
         elif self._properties["pattern"] == "repeatableRandom":
             fixed_value = self._properties["repeatableRandom"]["fixed"]
             mask_value = self._properties["repeatableRandom"]["mask"]
@@ -112,12 +118,15 @@ class Multivalue(Base):
                 seed,
                 count,
             )
+            self._pattern_type = "RandomMask"
         elif self._properties["pattern"] == "random":
             self._pattern = "Rand"
+            self._pattern_type = "Random"
         elif self._properties["pattern"] == "alternate":
             self._pattern = "Alt: %s" % self._format_value(
                 self._properties["alternate"]["value"]
             )
+            self._pattern_type = "Alternate"
         elif self._properties["pattern"] == "customDistributed":
             values = []
             for value_pair in self._properties["customDistributed"]["values"]:
@@ -128,6 +137,7 @@ class Multivalue(Base):
             algorithm = self._properties["customDistributed"]["algorithm"]
             mode = self._properties["customDistributed"]["mode"]
             self._pattern = "Dist: %s, %s, [%s]" % (algorithm, mode, ",".join(values))
+            self._pattern_type = "Distributed"
         elif self._properties["pattern"] == "custom":
             increments = []
             if "increment" in self._properties["custom"].keys():
@@ -137,8 +147,16 @@ class Multivalue(Base):
             start = self._properties["custom"]["start"]
             step = self._properties["custom"]["step"]
             self._pattern = "Custom: %s, %s, [%s]" % (start, step, ",".join(increments))
+            self._pattern_type = "Custom"
         elif self._properties["pattern"] == "string":
             self._pattern = self._properties["string"]["pattern"]
+            self._pattern_type = "String"
+
+        if self._pattern_type == "":
+            raise Exception(
+                "Could not retrieve Pattern type for the multivalue Instance"
+            )
+
         return self._pattern
 
     def _add_increments(self, increments, increment):
@@ -159,6 +177,19 @@ class Multivalue(Base):
 
     def __eq__(self, other):
         return self.Pattern == other
+
+    @property
+    def PatternType(self):
+        # type: () -> str
+        """
+        Returns
+        -------
+        - str: a string containing information about the type for this Multivalue.
+               possible return values (Alternate, Custom, Decrement, Distributed, Increment, Random, RandomRange,
+               RandomMask, Single, String, ValueList)
+        """
+        self.Pattern
+        return self._pattern_type
 
     @property
     def Info(self):

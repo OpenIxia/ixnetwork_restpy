@@ -21,7 +21,7 @@ class Udp(Base):
         Display Name: UDP-Source-Port
         Default Value: 63
         Value Format: decimal
-        Available enum values: Default, 63, DHCP, 68, DHCPv6, 546, LDP, 646, Mobile IP, 434, RIPng, 521, RIP, 520, RTP, 30000, NTP, 123
+        Available enum values: Default, 63, DHCP, 68, DHCPv6, 546, LDP, 646, Mobile IP, 434, RIPng, 521, RIP, 520, RTP, 30000, NTP, 123, GUE, 6080
         """
         from ixnetwork_restpy.multivalue import Multivalue
 
@@ -33,7 +33,7 @@ class Udp(Base):
         Display Name: UDP-Dest-Port
         Default Value: 63
         Value Format: decimal
-        Available enum values: Default, 63, DHCP, 67, DHCPv6, 547, BFD, 3784, L2TP, 1701, Mobile IP, 434, RIPng, 521, RIP, 520, RTP, 40392, NTP, 123
+        Available enum values: Default, 63, DHCP, 67, DHCPv6, 547, BFD, 3784, L2TP, 1701, Mobile IP, 434, RIPng, 521, RIP, 520, RTP, 40392, NTP, 123, GUE, 6080
         """
         from ixnetwork_restpy.multivalue import Multivalue
 

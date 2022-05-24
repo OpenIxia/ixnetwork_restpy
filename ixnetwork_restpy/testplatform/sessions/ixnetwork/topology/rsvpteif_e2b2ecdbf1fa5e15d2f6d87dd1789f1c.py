@@ -163,7 +163,7 @@ class RsvpteIf(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): Authentication Algorithm
+        - obj(ixnetwork_restpy.multivalue.Multivalue): The type of algorithm that the RSVP Node uses to ensure data integrity between source and destination in a session. Default: None. Other values: MD5/SHA1/SHA256.
         """
         from ixnetwork_restpy.multivalue import Multivalue
 

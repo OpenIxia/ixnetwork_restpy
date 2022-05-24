@@ -473,7 +473,7 @@ class Ixnetwork(Base):
         # type: (*Any, **Any) -> None
         """Executes the clearCPDPStats operation on the server.
 
-        Clear control pland and data plane statistics.
+        Clear control plane and data plane statistics.
 
         clearCPDPStats(async_operation=bool)
         ------------------------------------

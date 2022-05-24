@@ -288,9 +288,18 @@ class ProtocolStack(Base):
 
         Copy this node, paste it behind the destination node and return the newly copied node.
 
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
         copyPaste(Arg2=href, async_operation=bool)list
         ----------------------------------------------
         - Arg2 (str(None | /api/v1/sessions/1/ixnetwork//.../*)): The destination node below which the copied node will be pasted
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str[None | /api/v1/sessions/1/ixnetwork//.../*]): The newly copied node.
+
+        copyPaste(Arg2=href, Arg3=enum, async_operation=bool)list
+        ---------------------------------------------------------
+        - Arg2 (str(None | /api/v1/sessions/1/ixnetwork//.../*)): The destination node below which the copied node will be pasted
+        - Arg3 (str(regular | unique)): Type of Paste, regular or Unique. Unique generates unique Ethernet MAC address and Ipv4 address on Paste.
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns list(str[None | /api/v1/sessions/1/ixnetwork//.../*]): The newly copied node.
 

@@ -805,12 +805,12 @@ class Ixnetwork(Base):
         # type: (*Any, **Any) -> Union[str, None]
         """Executes the getChassisMode operation on the server.
 
-        Get current chassis mode(default/highRoute/unknown) for the default chassis.
+        Get current chassis mode(default/highRoute/ionvsFdb/unknown) for the default chassis.
 
         getChassisMode(async_operation=bool)enum
         ----------------------------------------
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
-        - Returns str(default\~highRoute\~unknown): current mode of chassis(default/highRoute/unknown).
+        - Returns str(default\~highRoute\~ionvsFdb\~unknown): current mode of chassis(default/highRoute/ionvsFdb/unknown).
 
         Raises
         ------
@@ -1612,11 +1612,11 @@ class Ixnetwork(Base):
     def SetChassisMode(self, *args, **kwargs):
         """Executes the setChassisMode operation on the server.
 
-        Switch Mode(default/highRoute) for the default chassis.
+        Switch Mode(default/highRoute/ionvsFdb) for the default chassis.
 
         setChassisMode(Arg1=enum, Arg2=bool, async_operation=bool)object
         ----------------------------------------------------------------
-        - Arg1 (str(default | highRoute)): Takes as input corresponding mode (default/highRoute).
+        - Arg1 (str(default | highRoute | ionvsFdb)): Takes as input corresponding mode (default/highRoute/ionvsFdb).
         - Arg2 (bool): take ownership if required.
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns dict(arg1:str,arg2:str): Result if succesful or not,chassis hostname and the response message.
