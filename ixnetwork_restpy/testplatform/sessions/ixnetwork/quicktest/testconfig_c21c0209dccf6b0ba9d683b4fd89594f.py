@@ -1072,7 +1072,7 @@ class TestConfig(Base):
         """
         Returns
         -------
-        - list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/.../lan]): Protocol Items
+        - list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/protocols/static/lan]): Protocol Items
         """
         return self._get_attribute(self._SDM_ATT_MAP["ProtocolItem"])
 
@@ -1374,7 +1374,7 @@ class TestConfig(Base):
         - PortDelayEnabled (bool): Enables the Port Delay
         - PortDelayUnit (str(bytes | nanoseconds)): Sets the port delay unit in which it will be measured
         - PortDelayValue (number): Sets the port delay value
-        - ProtocolItem (list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/.../lan])): Protocol Items
+        - ProtocolItem (list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/protocols/static/lan])): Protocol Items
         - ReportSequenceError (bool): Reports sequence errors in the test result.
         - ReportTputRateUnit (str(gbps | gBps | kbps | kBps | mbps | mBps)): Report identifying the unit for measuring the throughput rate in frames per second.
         - RouterAlert (bool): The router alert selected from the Hop-by-hop Options.
@@ -1539,7 +1539,7 @@ class TestConfig(Base):
         - PortDelayEnabled (bool): Enables the Port Delay
         - PortDelayUnit (str(bytes | nanoseconds)): Sets the port delay unit in which it will be measured
         - PortDelayValue (number): Sets the port delay value
-        - ProtocolItem (list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/.../lan])): Protocol Items
+        - ProtocolItem (list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/protocols/static/lan])): Protocol Items
         - ReportSequenceError (bool): Reports sequence errors in the test result.
         - ReportTputRateUnit (str(gbps | gBps | kbps | kBps | mbps | mBps)): Report identifying the unit for measuring the throughput rate in frames per second.
         - RouterAlert (bool): The router alert selected from the Hop-by-hop Options.

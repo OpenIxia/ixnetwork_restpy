@@ -54,13 +54,13 @@ class SimInterfaceIPv6Config(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfv3pseudointerface_327f4e2b6135eda641c61e8b406754f5.Ospfv3PseudoInterface): An instance of the Ospfv3PseudoInterface class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfv3pseudointerface_1f2c21f89a2195f0af73017a746752a7.Ospfv3PseudoInterface): An instance of the Ospfv3PseudoInterface class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfv3pseudointerface_327f4e2b6135eda641c61e8b406754f5 import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfv3pseudointerface_1f2c21f89a2195f0af73017a746752a7 import (
             Ospfv3PseudoInterface,
         )
 

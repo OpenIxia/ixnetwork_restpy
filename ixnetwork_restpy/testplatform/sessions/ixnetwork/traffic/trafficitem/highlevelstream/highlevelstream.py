@@ -721,7 +721,7 @@ class HighLevelStream(Base):
         -----------------------------------------------------------
         - Arg2 (number): Packet Index (0 based)
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
-        - Returns str: Packet in Hex format
+        - Returns str: Encrypted Packet in Hex format
 
         Raises
         ------

@@ -1010,7 +1010,7 @@ class LspPwRange(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/vport/.../lspPwRange): This signifies the type of Peer LSP Or PW Range.
+        - str(None | /api/v1/sessions/1/ixnetwork/vport/protocols/mplsTp/router/interface/lspPwRange): This signifies the type of Peer LSP Or PW Range.
         """
         return self._get_attribute(self._SDM_ATT_MAP["PeerLspOrPwRange"])
 
@@ -1025,7 +1025,7 @@ class LspPwRange(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/vport/.../lspPwRange): This signifies the peer range of the nested LSP PW value.
+        - str(None | /api/v1/sessions/1/ixnetwork/vport/protocols/mplsTp/router/interface/lspPwRange): This signifies the peer range of the nested LSP PW value.
         """
         return self._get_attribute(self._SDM_ATT_MAP["PeerNestedLspPwRange"])
 
@@ -1490,7 +1490,7 @@ class LspPwRange(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup): This signifies the Traffic Group Id.
+        - str(None | /api/v1/sessions/1/ixnetwork/traffic/trafficGroup): This signifies the Traffic Group Id.
         """
         return self._get_attribute(self._SDM_ATT_MAP["TrafficGroupId"])
 
@@ -1780,8 +1780,8 @@ class LspPwRange(Base):
         - NumberOfLsp (number): This signifies the total number of LSPs for this range.
         - NumberOfPwPerLsp (number): This signifies the total number of PWs per LSP.
         - OnDemandCvTrafficClass (number): This signifies the On Demand CV Traffic Class for LSP PW Range.
-        - PeerLspOrPwRange (str(None | /api/v1/sessions/1/ixnetwork/vport/.../lspPwRange)): This signifies the type of Peer LSP Or PW Range.
-        - PeerNestedLspPwRange (str(None | /api/v1/sessions/1/ixnetwork/vport/.../lspPwRange)): This signifies the peer range of the nested LSP PW value.
+        - PeerLspOrPwRange (str(None | /api/v1/sessions/1/ixnetwork/vport/protocols/mplsTp/router/interface/lspPwRange)): This signifies the type of Peer LSP Or PW Range.
+        - PeerNestedLspPwRange (str(None | /api/v1/sessions/1/ixnetwork/vport/protocols/mplsTp/router/interface/lspPwRange)): This signifies the peer range of the nested LSP PW value.
         - PwIncomingLabel (number): This signifies the PW Incoming Label value. All mpls-tp packets are expected to be received with this PW label value, if there is a mismatch of this value with the peer's outgoing PW label value, cccv sessions will not come up.
         - PwIncomingLabelStep (number): This signifies the PW Incoming Label Step value.
         - PwIncomingLabelStepAcrossLsp (number): This signifies the PW Incoming Label Step value across LSPs.
@@ -1812,7 +1812,7 @@ class LspPwRange(Base):
         - SrcVplsIdIpAddressStep (str): This signifies the step of ip address by which it is incremented if there are multiple LSP/PW in the range.
         - SrcVplsIdType (str(asNumber | ipAddress | asNumber4Bytes)): This specifies the source VplsId type.
         - SupportSlowStart (bool): This signifies the Support Slow Start. This field is valid only for cccv type bfd and grayed out for y1731. If this is enabled then cccv interval for the peer is not matched for bfd session establishment.
-        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup)): This signifies the Traffic Group Id.
+        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/trafficGroup)): This signifies the Traffic Group Id.
         - TypeOfProtectionSwitching (str(1+1Unidirectional | 1:1Bidirectional | 1+1Bidirectional)): This signifies different types of protection switching mechanism.
         - TypeOfRange (str(lsp | pw | nestedLspPw)): This signifies the type of range. Possible values include LSP, PW and Nested PW and LSP.
         - VlanCount (number): This signifies the number of VLANs configured for this MAC Range.
@@ -1989,8 +1989,8 @@ class LspPwRange(Base):
         - NumberOfLsp (number): This signifies the total number of LSPs for this range.
         - NumberOfPwPerLsp (number): This signifies the total number of PWs per LSP.
         - OnDemandCvTrafficClass (number): This signifies the On Demand CV Traffic Class for LSP PW Range.
-        - PeerLspOrPwRange (str(None | /api/v1/sessions/1/ixnetwork/vport/.../lspPwRange)): This signifies the type of Peer LSP Or PW Range.
-        - PeerNestedLspPwRange (str(None | /api/v1/sessions/1/ixnetwork/vport/.../lspPwRange)): This signifies the peer range of the nested LSP PW value.
+        - PeerLspOrPwRange (str(None | /api/v1/sessions/1/ixnetwork/vport/protocols/mplsTp/router/interface/lspPwRange)): This signifies the type of Peer LSP Or PW Range.
+        - PeerNestedLspPwRange (str(None | /api/v1/sessions/1/ixnetwork/vport/protocols/mplsTp/router/interface/lspPwRange)): This signifies the peer range of the nested LSP PW value.
         - PwIncomingLabel (number): This signifies the PW Incoming Label value. All mpls-tp packets are expected to be received with this PW label value, if there is a mismatch of this value with the peer's outgoing PW label value, cccv sessions will not come up.
         - PwIncomingLabelStep (number): This signifies the PW Incoming Label Step value.
         - PwIncomingLabelStepAcrossLsp (number): This signifies the PW Incoming Label Step value across LSPs.
@@ -2021,7 +2021,7 @@ class LspPwRange(Base):
         - SrcVplsIdIpAddressStep (str): This signifies the step of ip address by which it is incremented if there are multiple LSP/PW in the range.
         - SrcVplsIdType (str(asNumber | ipAddress | asNumber4Bytes)): This specifies the source VplsId type.
         - SupportSlowStart (bool): This signifies the Support Slow Start. This field is valid only for cccv type bfd and grayed out for y1731. If this is enabled then cccv interval for the peer is not matched for bfd session establishment.
-        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup)): This signifies the Traffic Group Id.
+        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/trafficGroup)): This signifies the Traffic Group Id.
         - TypeOfProtectionSwitching (str(1+1Unidirectional | 1:1Bidirectional | 1+1Bidirectional)): This signifies different types of protection switching mechanism.
         - TypeOfRange (str(lsp | pw | nestedLspPw)): This signifies the type of range. Possible values include LSP, PW and Nested PW and LSP.
         - VlanCount (number): This signifies the number of VLANs configured for this MAC Range.
@@ -2216,8 +2216,8 @@ class LspPwRange(Base):
         - NumberOfLsp (number): This signifies the total number of LSPs for this range.
         - NumberOfPwPerLsp (number): This signifies the total number of PWs per LSP.
         - OnDemandCvTrafficClass (number): This signifies the On Demand CV Traffic Class for LSP PW Range.
-        - PeerLspOrPwRange (str(None | /api/v1/sessions/1/ixnetwork/vport/.../lspPwRange)): This signifies the type of Peer LSP Or PW Range.
-        - PeerNestedLspPwRange (str(None | /api/v1/sessions/1/ixnetwork/vport/.../lspPwRange)): This signifies the peer range of the nested LSP PW value.
+        - PeerLspOrPwRange (str(None | /api/v1/sessions/1/ixnetwork/vport/protocols/mplsTp/router/interface/lspPwRange)): This signifies the type of Peer LSP Or PW Range.
+        - PeerNestedLspPwRange (str(None | /api/v1/sessions/1/ixnetwork/vport/protocols/mplsTp/router/interface/lspPwRange)): This signifies the peer range of the nested LSP PW value.
         - PwIncomingLabel (number): This signifies the PW Incoming Label value. All mpls-tp packets are expected to be received with this PW label value, if there is a mismatch of this value with the peer's outgoing PW label value, cccv sessions will not come up.
         - PwIncomingLabelStep (number): This signifies the PW Incoming Label Step value.
         - PwIncomingLabelStepAcrossLsp (number): This signifies the PW Incoming Label Step value across LSPs.
@@ -2248,7 +2248,7 @@ class LspPwRange(Base):
         - SrcVplsIdIpAddressStep (str): This signifies the step of ip address by which it is incremented if there are multiple LSP/PW in the range.
         - SrcVplsIdType (str(asNumber | ipAddress | asNumber4Bytes)): This specifies the source VplsId type.
         - SupportSlowStart (bool): This signifies the Support Slow Start. This field is valid only for cccv type bfd and grayed out for y1731. If this is enabled then cccv interval for the peer is not matched for bfd session establishment.
-        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup)): This signifies the Traffic Group Id.
+        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/trafficGroup)): This signifies the Traffic Group Id.
         - TypeOfProtectionSwitching (str(1+1Unidirectional | 1:1Bidirectional | 1+1Bidirectional)): This signifies different types of protection switching mechanism.
         - TypeOfRange (str(lsp | pw | nestedLspPw)): This signifies the type of range. Possible values include LSP, PW and Nested PW and LSP.
         - VlanCount (number): This signifies the number of VLANs configured for this MAC Range.

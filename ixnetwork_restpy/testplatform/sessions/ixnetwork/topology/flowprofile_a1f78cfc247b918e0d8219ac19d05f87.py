@@ -163,7 +163,7 @@ class FlowProfile(Base):
 
         addFromTemplate(Arg2=href, async_operation=bool)
         ------------------------------------------------
-        - Arg2 (str(None | /api/v1/sessions/1/ixnetwork//.../*)):
+        - Arg2 (str(None | /api/v1/sessions/1/ixnetwork/)):
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises

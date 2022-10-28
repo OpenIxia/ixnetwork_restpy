@@ -238,7 +238,7 @@ class Testworkflow(Base):
 
         startselected(Arg2=href, Arg3=bool, async_operation=bool)
         ---------------------------------------------------------
-        - Arg2 (str(None | /api/v1/sessions/1/ixnetwork/topology | /api/v1/sessions/1/ixnetwork/topology | /api/v1/sessions/1/ixnetwork/topology/.../deviceGroup)): objref to /topology or device group
+        - Arg2 (str(None | /api/v1/sessions/1/ixnetwork/topology | /api/v1/sessions/1/ixnetwork/topology/.../deviceGroup | /api/v1/sessions/1/ixnetwork/topology/deviceGroup)): objref to /topology or device group
         - Arg3 (bool): a boolean indicating if ownership should be taken forcefully
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 

@@ -1213,7 +1213,7 @@ class TestConfig(Base):
         """
         Returns
         -------
-        - list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/.../lan]): Protocol Items
+        - list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/protocols/static/lan]): Protocol Items
         """
         return self._get_attribute(self._SDM_ATT_MAP["ProtocolItem"])
 
@@ -2047,7 +2047,7 @@ class TestConfig(Base):
         - PortDelayEnabled (bool): NOT DEFINED
         - PortDelayUnit (str(bytes | nanoseconds)): Sets the port delay unit in which it will be measured.
         - PortDelayValue (number): Sets the port delay value.
-        - ProtocolItem (list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/.../lan])): Protocol Items
+        - ProtocolItem (list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/protocols/static/lan])): Protocol Items
         - ReportSequenceError (bool): If true, reports sequence error.
         - ReportTputRateUnit (str(gbps | gBps | kbps | kBps | mbps | mBps)): Reports throughput rate unit.
         - SaturationIteration (number): Signifies saturation iteration.
@@ -2282,7 +2282,7 @@ class TestConfig(Base):
         - PortDelayEnabled (bool): NOT DEFINED
         - PortDelayUnit (str(bytes | nanoseconds)): Sets the port delay unit in which it will be measured.
         - PortDelayValue (number): Sets the port delay value.
-        - ProtocolItem (list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/.../lan])): Protocol Items
+        - ProtocolItem (list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/protocols/static/lan])): Protocol Items
         - ReportSequenceError (bool): If true, reports sequence error.
         - ReportTputRateUnit (str(gbps | gBps | kbps | kBps | mbps | mBps)): Reports throughput rate unit.
         - SaturationIteration (number): Signifies saturation iteration.

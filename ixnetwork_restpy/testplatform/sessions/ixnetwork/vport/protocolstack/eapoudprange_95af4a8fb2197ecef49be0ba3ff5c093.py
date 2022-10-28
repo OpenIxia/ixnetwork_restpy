@@ -136,7 +136,7 @@ class EapoUdpRange(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/globals/.../nacSequence): Nac Sequence used by this range.
+        - str(None | /api/v1/sessions/1/ixnetwork/globals/protocolStack/eapoUdpGlobals/nacSettings/nacSequence): Nac Sequence used by this range.
         """
         return self._get_attribute(self._SDM_ATT_MAP["NacSequence"])
 
@@ -254,7 +254,7 @@ class EapoUdpRange(Base):
         - FastInnerMethod (str): FAST Inner Method.
         - FastProvisionMode (str): FAST Provision Mode.
         - FastStatelessResume (str): FAST Stateless Resume.
-        - NacSequence (str(None | /api/v1/sessions/1/ixnetwork/globals/.../nacSequence)): Nac Sequence used by this range.
+        - NacSequence (str(None | /api/v1/sessions/1/ixnetwork/globals/protocolStack/eapoUdpGlobals/nacSettings/nacSequence)): Nac Sequence used by this range.
         - Name (str): Name of range
         - Protocol (str): Authentification Protocol.
         - ResponseType (str): Messages types to responde.
@@ -291,7 +291,7 @@ class EapoUdpRange(Base):
         - FastInnerMethod (str): FAST Inner Method.
         - FastProvisionMode (str): FAST Provision Mode.
         - FastStatelessResume (str): FAST Stateless Resume.
-        - NacSequence (str(None | /api/v1/sessions/1/ixnetwork/globals/.../nacSequence)): Nac Sequence used by this range.
+        - NacSequence (str(None | /api/v1/sessions/1/ixnetwork/globals/protocolStack/eapoUdpGlobals/nacSettings/nacSequence)): Nac Sequence used by this range.
         - Name (str): Name of range
         - Protocol (str): Authentification Protocol.
         - ResponseType (str): Messages types to responde.
@@ -347,7 +347,7 @@ class EapoUdpRange(Base):
         - FastInnerMethod (str): FAST Inner Method.
         - FastProvisionMode (str): FAST Provision Mode.
         - FastStatelessResume (str): FAST Stateless Resume.
-        - NacSequence (str(None | /api/v1/sessions/1/ixnetwork/globals/.../nacSequence)): Nac Sequence used by this range.
+        - NacSequence (str(None | /api/v1/sessions/1/ixnetwork/globals/protocolStack/eapoUdpGlobals/nacSettings/nacSequence)): Nac Sequence used by this range.
         - Name (str): Name of range
         - ObjectId (str): Unique identifier for this object
         - Protocol (str): Authentification Protocol.

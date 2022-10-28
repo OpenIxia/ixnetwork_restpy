@@ -52,7 +52,7 @@ class Connector(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/lag/.../*): Scenario element this connector is connecting to
+        - str(None | /api/v1/sessions/1/ixnetwork/lag): Scenario element this connector is connecting to
         """
         return self._get_attribute(self._SDM_ATT_MAP["ConnectedTo"])
 
@@ -87,7 +87,7 @@ class Connector(Base):
 
         Args
         ----
-        - ConnectedTo (str(None | /api/v1/sessions/1/ixnetwork/lag/.../*)): Scenario element this connector is connecting to
+        - ConnectedTo (str(None | /api/v1/sessions/1/ixnetwork/lag)): Scenario element this connector is connecting to
 
         Raises
         ------
@@ -101,7 +101,7 @@ class Connector(Base):
 
         Args
         ----
-        - ConnectedTo (str(None | /api/v1/sessions/1/ixnetwork/lag/.../*)): Scenario element this connector is connecting to
+        - ConnectedTo (str(None | /api/v1/sessions/1/ixnetwork/lag)): Scenario element this connector is connecting to
 
         Returns
         -------
@@ -133,7 +133,7 @@ class Connector(Base):
 
         Args
         ----
-        - ConnectedTo (str(None | /api/v1/sessions/1/ixnetwork/lag/.../*)): Scenario element this connector is connecting to
+        - ConnectedTo (str(None | /api/v1/sessions/1/ixnetwork/lag)): Scenario element this connector is connecting to
         - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         - PropagateMultiplier (bool): The Connector will propagate the multiplicity of destination back to the source and its parent NetworkElementSet
 

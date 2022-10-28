@@ -56,7 +56,7 @@ class TrafficSelection(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficItem | /api/v1/sessions/1/ixnetwork/traffic/.../highLevelStream): This object configures the traffic that is already specified with the traffic wizard.
+        - str(None | /api/v1/sessions/1/ixnetwork/traffic/trafficItem | /api/v1/sessions/1/ixnetwork/traffic/trafficItem/highLevelStream): This object configures the traffic that is already specified with the traffic wizard.
         """
         return self._get_attribute(self._SDM_ATT_MAP["Id__"])
 
@@ -116,7 +116,7 @@ class TrafficSelection(Base):
 
         Args
         ----
-        - Id__ (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficItem | /api/v1/sessions/1/ixnetwork/traffic/.../highLevelStream)): This object configures the traffic that is already specified with the traffic wizard.
+        - Id__ (str(None | /api/v1/sessions/1/ixnetwork/traffic/trafficItem | /api/v1/sessions/1/ixnetwork/traffic/trafficItem/highLevelStream)): This object configures the traffic that is already specified with the traffic wizard.
         - IncludeMode (str(background | inTest)): Traffic type for the frame data
         - IsGenerated (bool): If true, the traffic selection is generated automatically.
         - ItemType (str(flowGroup | trafficItem)): Traffic type for the frame data
@@ -133,7 +133,7 @@ class TrafficSelection(Base):
 
         Args
         ----
-        - Id__ (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficItem | /api/v1/sessions/1/ixnetwork/traffic/.../highLevelStream)): This object configures the traffic that is already specified with the traffic wizard.
+        - Id__ (str(None | /api/v1/sessions/1/ixnetwork/traffic/trafficItem | /api/v1/sessions/1/ixnetwork/traffic/trafficItem/highLevelStream)): This object configures the traffic that is already specified with the traffic wizard.
         - IncludeMode (str(background | inTest)): Traffic type for the frame data
         - IsGenerated (bool): If true, the traffic selection is generated automatically.
         - ItemType (str(flowGroup | trafficItem)): Traffic type for the frame data
@@ -168,7 +168,7 @@ class TrafficSelection(Base):
 
         Args
         ----
-        - Id__ (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficItem | /api/v1/sessions/1/ixnetwork/traffic/.../highLevelStream)): This object configures the traffic that is already specified with the traffic wizard.
+        - Id__ (str(None | /api/v1/sessions/1/ixnetwork/traffic/trafficItem | /api/v1/sessions/1/ixnetwork/traffic/trafficItem/highLevelStream)): This object configures the traffic that is already specified with the traffic wizard.
         - IncludeMode (str(background | inTest)): Traffic type for the frame data
         - IsGenerated (bool): If true, the traffic selection is generated automatically.
         - ItemType (str(flowGroup | trafficItem)): Traffic type for the frame data

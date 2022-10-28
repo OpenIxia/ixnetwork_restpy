@@ -97,7 +97,7 @@ class Timeline(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/timeline/.../test): The id of the test under execution
+        - str(None | /api/v1/sessions/1/ixnetwork/timeline/test): The id of the test under execution
         """
         return self._get_attribute(self._SDM_ATT_MAP["ExecutingTest"])
 
@@ -166,7 +166,7 @@ class Timeline(Base):
         """
         Returns
         -------
-        - list(str[None | /api/v1/sessions/1/ixnetwork/timeline/.../test]): The desired order for the tests to run
+        - list(str[None | /api/v1/sessions/1/ixnetwork/timeline/test]): The desired order for the tests to run
         """
         return self._get_attribute(self._SDM_ATT_MAP["TestOrder"])
 
@@ -191,9 +191,9 @@ class Timeline(Base):
 
         Args
         ----
-        - ExecutingTest (str(None | /api/v1/sessions/1/ixnetwork/timeline/.../test)): The id of the test under execution
+        - ExecutingTest (str(None | /api/v1/sessions/1/ixnetwork/timeline/test)): The id of the test under execution
         - PauseOnError (bool): Pauses the test when an error is found
-        - TestOrder (list(str[None | /api/v1/sessions/1/ixnetwork/timeline/.../test])): The desired order for the tests to run
+        - TestOrder (list(str[None | /api/v1/sessions/1/ixnetwork/timeline/test])): The desired order for the tests to run
 
         Raises
         ------
@@ -224,13 +224,13 @@ class Timeline(Base):
         ----
         - CurrentTime (str): Current time
         - EndTime (str): The end time of the test
-        - ExecutingTest (str(None | /api/v1/sessions/1/ixnetwork/timeline/.../test)): The id of the test under execution
+        - ExecutingTest (str(None | /api/v1/sessions/1/ixnetwork/timeline/test)): The id of the test under execution
         - ExecutingTestProgress (str): Current specific state for the Quick Test after the ports are connected (e.g. preflightWaitingForChassisConnect, checkingPorts, checkingProtocols, sendinglearningframes, transmittingframes, etc)
         - MonitorTopologyId (str(None | /api/v1/sessions/1/ixnetwork/topology)): Id for the topology with monitor port (when a monitor port is used)
         - PauseOnError (bool): Pauses the test when an error is found
         - StartTime (str): Start time of the test
         - State (dict(arg1:str,arg2:str[cancelled | complete | idle | postflightReleasingPorts | postflightStoppingProtocols | postflightStoppingTimeline | preflightAggregatingCards | preflightCheckingPorts | preflightCheckingProtocols | preflightConnectingPorts | preflightFailed | preflightSettingUpPorts | preflightStart | preflightValidatingTimeline | preflightWaitingForChassisConnect | running])): The general state of the ports and QT (e.g. preflightConnectingPorts , prefligtCheckingPorts, running, complete)
-        - TestOrder (list(str[None | /api/v1/sessions/1/ixnetwork/timeline/.../test])): The desired order for the tests to run
+        - TestOrder (list(str[None | /api/v1/sessions/1/ixnetwork/timeline/test])): The desired order for the tests to run
         - TimingTopologyIds (list(str[None | /api/v1/sessions/1/ixnetwork/topology])): Id for the topology with timing port (when a timing port is used
 
         Returns
@@ -295,7 +295,7 @@ class Timeline(Base):
         ---------------------------------------------------
         - Arg2 (str(bgpBfdIpv4PeerIpv4Pools | bgpBfdIpv6PeerIpv6Pools | bgpBfdMixedPeerPools | bgpIpv4PeerIpv4Pools | bgpIpv6PeerIpv6Pools | bgpMixedPeerPools | chainedIpv4 | chainedIpv6 | ethernetVlan | ipv4 | ipv4IgmpHost | ipv4IgmpQuerierHost | ipv4ipv6 | ipv6 | ipv6MldHost | ipv6MldQuerierHost)): The protocol type (from the list of supported protocol types for QT) to be created
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
-        - Returns str(None | /api/v1/sessions/1/ixnetwork/topology/.../*):
+        - Returns str(None | /api/v1/sessions/1/ixnetwork/topology):
 
         Raises
         ------
@@ -319,7 +319,7 @@ class Timeline(Base):
         - Arg2 (str(rfc2544back2back | rfc2544frameLoss | rfc2544throughput | rfc2889addressCache | rfc2889addressRate | rfc3918joinLeaveDelay | rfc3918mixedClassThroughput | rfc7747failover | rfc7747ribIn | trafficTest)): The list with all supported tests
         - Arg3 (str(bgpBfdIpv4PeerIpv4Pools | bgpBfdIpv6PeerIpv6Pools | bgpBfdMixedPeerPools | bgpIpv4PeerIpv4Pools | bgpIpv6PeerIpv6Pools | bgpMixedPeerPools | chainedIpv4 | chainedIpv6 | ethernetVlan | ipv4 | ipv4IgmpHost | ipv4IgmpQuerierHost | ipv4ipv6 | ipv6 | ipv6MldHost | ipv6MldQuerierHost | none)): The list of supported protocols
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
-        - Returns dict(arg1:str[None | /api/v1/sessions/1/ixnetwork/timeline/.../test],arg2:str[None | /api/v1/sessions/1/ixnetwork/quickTest/.../*],arg3:list[str[None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficItem]]):
+        - Returns dict(arg1:str[None | /api/v1/sessions/1/ixnetwork/timeline/test],arg2:str[None | /api/v1/sessions/1/ixnetwork/quickTest],arg3:list[str[None | /api/v1/sessions/1/ixnetwork/traffic/trafficItem]]):
 
         Raises
         ------
@@ -343,7 +343,7 @@ class Timeline(Base):
         --------------------------------------------------
         - Arg2 (str(ethernetVlan | ipv4 | ipv4WithChainedDG | ipv4WithDG | ipv6 | ipv6WithChainedDG | ipv6WithDG)): The desired traffic added from Timeline
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
-        - Returns str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficItem):
+        - Returns str(None | /api/v1/sessions/1/ixnetwork/traffic/trafficItem):
 
         Raises
         ------

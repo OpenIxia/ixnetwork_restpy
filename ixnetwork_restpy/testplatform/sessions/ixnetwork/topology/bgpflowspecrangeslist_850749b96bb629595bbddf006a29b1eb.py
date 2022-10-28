@@ -35,14 +35,19 @@ class BgpFlowSpecRangesList(Base):
     __slots__ = ()
     _SDM_NAME = "bgpFlowSpecRangesList"
     _SDM_ATT_MAP = {
+        "ActivateSRv6Policy": "activateSRv6Policy",
         "Active": "active",
         "AggregatorAs": "aggregatorAs",
         "AggregatorId": "aggregatorId",
+        "ArgumentLengthFlowspec": "argumentLengthFlowspec",
         "AsNumber2Bytes": "asNumber2Bytes",
         "AsNumber4Bytes": "asNumber4Bytes",
         "AsSetMode": "asSetMode",
         "AssignedNumber2Bytes": "assignedNumber2Bytes",
         "AssignedNumber4Bytes": "assignedNumber4Bytes",
+        "ColorCOBitsFlowspec": "colorCOBitsFlowspec",
+        "ColorReservedBitsFlowspec": "colorReservedBitsFlowspec",
+        "ColorValueFlowspec": "colorValueFlowspec",
         "Count": "count",
         "DescriptiveName": "descriptiveName",
         "DestPortMatch": "destPortMatch",
@@ -63,21 +68,28 @@ class BgpFlowSpecRangesList(Base):
         "EnableOrigin": "enableOrigin",
         "EnableOriginatorId": "enableOriginatorId",
         "EnableRedirect": "enableRedirect",
+        "EnableRedirectIPv6NHop": "enableRedirectIPv6NHop",
         "EnableSourcePrefixV4": "enableSourcePrefixV4",
+        "EnableSrv6SidFlowspec": "enableSrv6SidFlowspec",
         "EnableTrafficAction": "enableTrafficAction",
         "EnableTrafficMarketing": "enableTrafficMarketing",
         "EnableTrafficMarking": "enableTrafficMarking",
         "EnableTrafficRate": "enableTrafficRate",
+        "EnableTrafficRatePacket": "enableTrafficRatePacket",
         "FlowSpecName": "flowSpecName",
         "FragmentMatch": "fragmentMatch",
+        "FunctionLengthFlowspec": "functionLengthFlowspec",
         "IcmpCodeMatch": "icmpCodeMatch",
         "IcmpTypeMatch": "icmpTypeMatch",
+        "IncSrv6SidStructSsTlvFlowspec": "incSrv6SidStructSsTlvFlowspec",
         "Ip": "ip",
         "IpPacketLenMatch": "ipPacketLenMatch",
         "IpProto": "ipProto",
         "IpV4": "ipV4",
         "Ipv4NextHop": "ipv4NextHop",
         "Ipv6NextHop": "ipv6NextHop",
+        "LocBlockLengthFlowspec": "locBlockLengthFlowspec",
+        "LocNodeLengthFlowspec": "locNodeLengthFlowspec",
         "LocalPreference": "localPreference",
         "MultiExitDiscriminator": "multiExitDiscriminator",
         "Name": "name",
@@ -92,18 +104,30 @@ class BgpFlowSpecRangesList(Base):
         "OverridePeerAsSetMode": "overridePeerAsSetMode",
         "PortMatch": "portMatch",
         "RedirectCBit": "redirectCBit",
+        "RedirectCBitIPv6NHop": "redirectCBitIPv6NHop",
         "RedirectExtCommunityType": "redirectExtCommunityType",
+        "RedirectIPv6NHop": "redirectIPv6NHop",
         "Redirectnexthop": "redirectnexthop",
         "SetNextHop": "setNextHop",
         "SetNextHopIpType": "setNextHopIpType",
         "SourcePortMatch": "sourcePortMatch",
         "SourcePrefixLengthV4": "sourcePrefixLengthV4",
         "SourcePrefixV4": "sourcePrefixV4",
+        "Srv6EndpointBehaviorFlowspec": "srv6EndpointBehaviorFlowspec",
+        "Srv6SidFlagsFlowspec": "srv6SidFlagsFlowspec",
+        "Srv6SidFuncAllocTypeFlowspec": "srv6SidFuncAllocTypeFlowspec",
+        "Srv6SidLocFlowspec": "srv6SidLocFlowspec",
+        "Srv6SidReserved": "srv6SidReserved",
+        "Srv6SidReserved1Flowspec": "srv6SidReserved1Flowspec",
+        "Srv6SidReserved2Flowspec": "srv6SidReserved2Flowspec",
         "TcpFlagsMatch": "tcpFlagsMatch",
         "TerminalAction": "terminalAction",
         "TrafficActionSample": "trafficActionSample",
         "TrafficDscp": "trafficDscp",
         "TrafficRate": "trafficRate",
+        "TrafficRatePacket": "trafficRatePacket",
+        "TranspositionLengthFlowspec": "transpositionLengthFlowspec",
+        "TranspositionOffsetFlowspec": "transpositionOffsetFlowspec",
     }
     _SDM_ENUM_MAP = {}
 
@@ -175,13 +199,13 @@ class BgpFlowSpecRangesList(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpextendedcommunitieslist_bac41900b4999f09d65f045cf8104248.BgpExtendedCommunitiesList): An instance of the BgpExtendedCommunitiesList class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpextendedcommunitieslist_7e5fc3453869b321189a54fc0c370254.BgpExtendedCommunitiesList): An instance of the BgpExtendedCommunitiesList class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpextendedcommunitieslist_bac41900b4999f09d65f045cf8104248 import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpextendedcommunitieslist_7e5fc3453869b321189a54fc0c370254 import (
             BgpExtendedCommunitiesList,
         )
 
@@ -209,6 +233,20 @@ class BgpFlowSpecRangesList(Base):
             if self._properties.get("BgpLargeCommunitiesList", None) is not None:
                 return self._properties.get("BgpLargeCommunitiesList")
         return BgpLargeCommunitiesList(self)
+
+    @property
+    def ActivateSRv6Policy(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): If set to True, then the current SRv6 Policy is sent for the Flow Specification. Default value is set to False.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ActivateSRv6Policy"])
+        )
 
     @property
     def Active(self):
@@ -245,6 +283,20 @@ class BgpFlowSpecRangesList(Base):
         from ixnetwork_restpy.multivalue import Multivalue
 
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["AggregatorId"]))
+
+    @property
+    def ArgumentLengthFlowspec(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Argument length for SRv6 SID for the current Flow Specification. Default value is set to 0.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ArgumentLengthFlowspec"])
+        )
 
     @property
     def AsNumber2Bytes(self):
@@ -315,6 +367,48 @@ class BgpFlowSpecRangesList(Base):
         )
 
     @property
+    def ColorCOBitsFlowspec(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): CO bits for the Color Extended Community attribute for the SRv6 Policy for current Flow Specification. Default value is set to 0.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ColorCOBitsFlowspec"])
+        )
+
+    @property
+    def ColorReservedBitsFlowspec(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Color Reserved Bits for the Color Extended Communtiy attribute for the SRv6 Policy for current Flow Specification. Default value is 0.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ColorReservedBitsFlowspec"])
+        )
+
+    @property
+    def ColorValueFlowspec(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Color Value for the Color Extended Communtiy attribute for the SRv6 Policy for current Flow Specification. Default value is 0.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ColorValueFlowspec"])
+        )
+
+    @property
     def Count(self):
         # type: () -> int
         """
@@ -340,7 +434,7 @@ class BgpFlowSpecRangesList(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): Supported Formats: value value1-value2 >value (!, >, <, >=, <= supported) join using | or & Eg. 100, 100-200, <100, 100&200, 100|200-300&!250|>=500 etc Keep Empty If Not Requried
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This is Destination Port Match in Flowspec Match Components. Supported Formats: a. value b. value1-value2 >value (!, >, <, >=, <= supported) join using | or & Eg. 100, 100-200, <100, 100&200, 100|200-300&!250|>=500 etc c. Keep Empty If Not Requried
         """
         from ixnetwork_restpy.multivalue import Multivalue
 
@@ -378,7 +472,7 @@ class BgpFlowSpecRangesList(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): Supported Formats: value value1-value2 >value (!, >, <, >=, <= supported) join using | or & Eg. 10, 10-20, <10, 10&20, 10|20-30&!25|>=50 etc Keep Empty If Not Requried
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This is DSCP Match in Flowspec Match Components. Supported Formats: a. value b. value1-value2 >value (!, >, <, >=, <= supported) join using | or & Eg. 10, 10-20, <10, 10&20, 10|20-30&!25|>=50 etc c. Keep Empty If Not Requried
         """
         from ixnetwork_restpy.multivalue import Multivalue
 
@@ -575,6 +669,20 @@ class BgpFlowSpecRangesList(Base):
         )
 
     @property
+    def EnableRedirectIPv6NHop(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Redirect To IPv6 Next Hop
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableRedirectIPv6NHop"])
+        )
+
+    @property
     def EnableSourcePrefixV4(self):
         # type: () -> 'Multivalue'
         """
@@ -586,6 +694,20 @@ class BgpFlowSpecRangesList(Base):
 
         return Multivalue(
             self, self._get_attribute(self._SDM_ATT_MAP["EnableSourcePrefixV4"])
+        )
+
+    @property
+    def EnableSrv6SidFlowspec(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): If set to True, then you can put SRv6 SID value and related informations for the current Flow Specification. Default value is False.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableSrv6SidFlowspec"])
         )
 
     @property
@@ -636,12 +758,26 @@ class BgpFlowSpecRangesList(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Traffic Rate
+        - obj(ixnetwork_restpy.multivalue.Multivalue): If set to True, the Traffic Rate Packets Column gets enabled. You can configure the Rate of Traffic in packets per second. Default value is False.
         """
         from ixnetwork_restpy.multivalue import Multivalue
 
         return Multivalue(
             self, self._get_attribute(self._SDM_ATT_MAP["EnableTrafficRate"])
+        )
+
+    @property
+    def EnableTrafficRatePacket(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): If set to True, the Traffic Rate Bytes Column gets enabled. You can configure the Rate of Traffic in bytes per second. Default value is False.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableTrafficRatePacket"])
         )
 
     @property
@@ -662,11 +798,25 @@ class BgpFlowSpecRangesList(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): Supported Flags: lf,ff,isf,df join different matchcriteria using | or & join flags using | (bitwise or) Eg. (lf), (lf|ff|isf|df), (not)(lf|isf), (not|match)(df|ff)|(isf|lf) Keep Empty If Not Requried
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This is fragment match in Flowspec Match Components. Supported Flags: lf,ff,isf,df join different matchcriteria using | or & join flags using | (bitwise or) Eg. (lf), (lf|ff|isf|df), (not)(lf|isf), (not|match)(df|ff)|(isf|lf) Keep Empty If Not Requried
         """
         from ixnetwork_restpy.multivalue import Multivalue
 
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["FragmentMatch"]))
+
+    @property
+    def FunctionLengthFlowspec(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Function Length of SRv6 SID for the current Flow Specification. Default value is set to 0.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FunctionLengthFlowspec"])
+        )
 
     @property
     def IcmpCodeMatch(self):
@@ -674,7 +824,7 @@ class BgpFlowSpecRangesList(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): Supported Formats: value value1-value2 >value (!, >, <, >=, <= supported) join using | or & Eg. 100, 100-200, <100, 100&200, 100|200-220&!210|>=230 etc Keep Empty If Not Requried
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This is ICMP Code Match in Flowspec Match Components. This field takes the string of ICMP Code matching criteria for a flow specification.Supported Formats:a. valueb. value1-value2>value (!, >, <, >=, <= supported)join using | or &Eg. 100, 100-200, <100, 100&200, 100|200-220&!210|>=230 etcc. Keep Empty If Not Requried
         """
         from ixnetwork_restpy.multivalue import Multivalue
 
@@ -686,11 +836,26 @@ class BgpFlowSpecRangesList(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): Supported Formats: value value1-value2 >value (!, >, <, >=, <= supported) join using | or & Eg. 100, 100-200, <100, 100&200, 100|200-220&!210|>=230 etc Keep Empty If Not Requried
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This is ICMP Type Match in Flowspec Match Components. This field takes the string of ICMP Type matching criteria for a flow specification.Supported Formats:a. valueb. value1-value2>value (!, >, <, >=, <= supported)join using | or &Eg. 100, 100-200, <100, 100&200, 100|200-220&!210|>=230 etcc. Keep Empty If Not Requried
         """
         from ixnetwork_restpy.multivalue import Multivalue
 
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["IcmpTypeMatch"]))
+
+    @property
+    def IncSrv6SidStructSsTlvFlowspec(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): If set to True, then the SRv6 Sid Structure Sub-Sub-TLV is sent in packet for the current Flow Specification. Default value is False.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["IncSrv6SidStructSsTlvFlowspec"]),
+        )
 
     @property
     def Ip(self):
@@ -710,7 +875,7 @@ class BgpFlowSpecRangesList(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): Supported Formats: value value1-value2 >value (!, >, <, >=, <= supported) join using | or & Eg. 100, 100-200, <100, 100&200, 100|200-300&!250|>=500 etc Keep Empty If Not Requried
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This is IP Packet Length Match in Flowspec Match Components. Supported Formats: a. value b. value1-value2 >value (!, >, <, >=, <= supported) join using | or & Eg. 100, 100-200, <100, 100&200, 100|200-300&!250|>=500 etc c. Keep Empty If Not Requried
         """
         from ixnetwork_restpy.multivalue import Multivalue
 
@@ -724,7 +889,7 @@ class BgpFlowSpecRangesList(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): Supported Formats: value value1-value2 >value (!, >, <, >=, <= supported) join using | or & Eg. 100, 100-200, <100, 100&200, 100|200-220&!210|>=230 etc Keep Empty If Not Requried
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This is Port Match in Flowspec Match Components. Supported Formats: a. value b. value1-value2 >value (!, >, <, >=, <= supported) join using | or & Eg. 100, 100-200, <100, 100&200, 100|200-220&!210|>=230 etc c. Keep Empty If Not Requried
         """
         from ixnetwork_restpy.multivalue import Multivalue
 
@@ -765,6 +930,34 @@ class BgpFlowSpecRangesList(Base):
         from ixnetwork_restpy.multivalue import Multivalue
 
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Ipv6NextHop"]))
+
+    @property
+    def LocBlockLengthFlowspec(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Locator Block length for SRv6 SID for the current Flow Specification. Default value is set to 40.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LocBlockLengthFlowspec"])
+        )
+
+    @property
+    def LocNodeLengthFlowspec(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Locator Node length for SRv6 SID for the current Flow Specification. Default value is set to 24.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LocNodeLengthFlowspec"])
+        )
 
     @property
     def LocalPreference(self):
@@ -940,7 +1133,7 @@ class BgpFlowSpecRangesList(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): Supported Formats: value value1-value2 >value (!, >, <, >=, <= supported) join using | or & Eg. 100, 100-200, <100, 100&200, 100|200-300&!250|>=500 etc Keep Empty If Not Requried This Field Matches Source OR Destination TCP/UDP Ports
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This is Port Match in Flowspec Match Components. Supported Formats: a. value b. value1-value2 >value (!, >, <, >=, <= supported) join using | or & Eg. 100, 100-200, <100, 100&200, 100|200-300&!250|>=500 etc c. Keep Empty If Not Requried This Field Matches Source OR Destination TCP/UDP Ports
         """
         from ixnetwork_restpy.multivalue import Multivalue
 
@@ -959,6 +1152,20 @@ class BgpFlowSpecRangesList(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["RedirectCBit"]))
 
     @property
+    def RedirectCBitIPv6NHop(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): C Bit(IPv6 Next Hop)
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["RedirectCBitIPv6NHop"])
+        )
+
+    @property
     def RedirectExtCommunityType(self):
         # type: () -> 'Multivalue'
         """
@@ -970,6 +1177,20 @@ class BgpFlowSpecRangesList(Base):
 
         return Multivalue(
             self, self._get_attribute(self._SDM_ATT_MAP["RedirectExtCommunityType"])
+        )
+
+    @property
+    def RedirectIPv6NHop(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Redirect To IPv6 Next Hop
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["RedirectIPv6NHop"])
         )
 
     @property
@@ -1018,7 +1239,7 @@ class BgpFlowSpecRangesList(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): Supported Formats: value value1-value2 >value (!, >, <, >=, <= supported) join using | or & Eg. 100, 100-200, <100, 100&200, 100|200-300&!250|>=500 etc Keep Empty If Not Requried
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This is Source Port Match in Flowspec Match Components. Supported Formats: a. value b. value1-value2 >value (!, >, <, >=, <= supported) join using | or & Eg. 100, 100-200, <100, 100&200, 100|200-300&!250|>=500 etc c. Keep Empty If Not Requried
         """
         from ixnetwork_restpy.multivalue import Multivalue
 
@@ -1055,12 +1276,110 @@ class BgpFlowSpecRangesList(Base):
         )
 
     @property
+    def Srv6EndpointBehaviorFlowspec(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This is SRv6 Endpoint Behaviour for the current Flow Specifcation. Default value is set to 0xFFFF.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Srv6EndpointBehaviorFlowspec"])
+        )
+
+    @property
+    def Srv6SidFlagsFlowspec(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This field is used to specify Sid Flags in SRv6 Service Information SubTLV. Default value is set to 0x00.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Srv6SidFlagsFlowspec"])
+        )
+
+    @property
+    def Srv6SidFuncAllocTypeFlowspec(self):
+        # type: () -> 'Multivalue'
+        """DEPRECATED
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): SRv6 Func Allocation Type
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Srv6SidFuncAllocTypeFlowspec"])
+        )
+
+    @property
+    def Srv6SidLocFlowspec(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): SRv6 SID. It consists of Locator, Func and Args.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Srv6SidLocFlowspec"])
+        )
+
+    @property
+    def Srv6SidReserved(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This field is used to specify Reserved value in SRv6 L3 Service TLV. Default value is set to 0x00.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Srv6SidReserved"])
+        )
+
+    @property
+    def Srv6SidReserved1Flowspec(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This field is used to specify Reserved1 field value in SRv6 Service Information SubTLV. Default value is set to 0x00.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Srv6SidReserved1Flowspec"])
+        )
+
+    @property
+    def Srv6SidReserved2Flowspec(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This field is used to specify Reserved2 field value in SRv6 Service Information SubTLV. Default value is set to 0x00.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Srv6SidReserved2Flowspec"])
+        )
+
+    @property
     def TcpFlagsMatch(self):
         # type: () -> 'Multivalue'
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): Supported Flags: ns,cwr,ece,urg,ack,psh,rst,syn,fin join different matchcriteria using | or & join flags using | (bitwise or) Eg. (cwr), (ece|urg|psh|syn), (not)(cwr|syn), (not|match)(ece|psh)|(psh|rst)&(not)(ns) Keep Empty If Not Requried
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This is TCP Flags Match in Flowspec Match Components. Supported Flags: ns,cwr,ece,urg,ack,psh,rst,syn,fin join different matchcriteria using | or & join flags using | (bitwise or) Eg. (cwr), (ece|urg|psh|syn), (not)(cwr|syn), (not|match)(ece|psh)|(psh|rst)&(not)(ns) Keep Empty If Not Requried
         """
         from ixnetwork_restpy.multivalue import Multivalue
 
@@ -1117,6 +1436,48 @@ class BgpFlowSpecRangesList(Base):
         from ixnetwork_restpy.multivalue import Multivalue
 
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["TrafficRate"]))
+
+    @property
+    def TrafficRatePacket(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Traffic Rate (Packets/s)
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["TrafficRatePacket"])
+        )
+
+    @property
+    def TranspositionLengthFlowspec(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Transposition length for SRv6 SID for the current Flow Specification. Default value is set to 0.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["TranspositionLengthFlowspec"])
+        )
+
+    @property
+    def TranspositionOffsetFlowspec(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Transposition offset for SRv6 SID for the current Flow Specification. Default value is set to 0.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["TranspositionOffsetFlowspec"])
+        )
 
     def update(
         self,
@@ -1208,14 +1569,19 @@ class BgpFlowSpecRangesList(Base):
     def get_device_ids(
         self,
         PortNames=None,
+        ActivateSRv6Policy=None,
         Active=None,
         AggregatorAs=None,
         AggregatorId=None,
+        ArgumentLengthFlowspec=None,
         AsNumber2Bytes=None,
         AsNumber4Bytes=None,
         AsSetMode=None,
         AssignedNumber2Bytes=None,
         AssignedNumber4Bytes=None,
+        ColorCOBitsFlowspec=None,
+        ColorReservedBitsFlowspec=None,
+        ColorValueFlowspec=None,
         DestPortMatch=None,
         DestPrefixLengthV4=None,
         DestPrefixV4=None,
@@ -1234,21 +1600,28 @@ class BgpFlowSpecRangesList(Base):
         EnableOrigin=None,
         EnableOriginatorId=None,
         EnableRedirect=None,
+        EnableRedirectIPv6NHop=None,
         EnableSourcePrefixV4=None,
+        EnableSrv6SidFlowspec=None,
         EnableTrafficAction=None,
         EnableTrafficMarketing=None,
         EnableTrafficMarking=None,
         EnableTrafficRate=None,
+        EnableTrafficRatePacket=None,
         FlowSpecName=None,
         FragmentMatch=None,
+        FunctionLengthFlowspec=None,
         IcmpCodeMatch=None,
         IcmpTypeMatch=None,
+        IncSrv6SidStructSsTlvFlowspec=None,
         Ip=None,
         IpPacketLenMatch=None,
         IpProto=None,
         IpV4=None,
         Ipv4NextHop=None,
         Ipv6NextHop=None,
+        LocBlockLengthFlowspec=None,
+        LocNodeLengthFlowspec=None,
         LocalPreference=None,
         MultiExitDiscriminator=None,
         NumberOfFlows=None,
@@ -1257,18 +1630,30 @@ class BgpFlowSpecRangesList(Base):
         OverridePeerAsSetMode=None,
         PortMatch=None,
         RedirectCBit=None,
+        RedirectCBitIPv6NHop=None,
         RedirectExtCommunityType=None,
+        RedirectIPv6NHop=None,
         Redirectnexthop=None,
         SetNextHop=None,
         SetNextHopIpType=None,
         SourcePortMatch=None,
         SourcePrefixLengthV4=None,
         SourcePrefixV4=None,
+        Srv6EndpointBehaviorFlowspec=None,
+        Srv6SidFlagsFlowspec=None,
+        Srv6SidFuncAllocTypeFlowspec=None,
+        Srv6SidLocFlowspec=None,
+        Srv6SidReserved=None,
+        Srv6SidReserved1Flowspec=None,
+        Srv6SidReserved2Flowspec=None,
         TcpFlagsMatch=None,
         TerminalAction=None,
         TrafficActionSample=None,
         TrafficDscp=None,
         TrafficRate=None,
+        TrafficRatePacket=None,
+        TranspositionLengthFlowspec=None,
+        TranspositionOffsetFlowspec=None,
     ):
         """Base class infrastructure that gets a list of bgpFlowSpecRangesList device ids encapsulated by this object.
 
@@ -1277,14 +1662,19 @@ class BgpFlowSpecRangesList(Base):
         Args
         ----
         - PortNames (str): optional regex of port names
+        - ActivateSRv6Policy (str): optional regex of activateSRv6Policy
         - Active (str): optional regex of active
         - AggregatorAs (str): optional regex of aggregatorAs
         - AggregatorId (str): optional regex of aggregatorId
+        - ArgumentLengthFlowspec (str): optional regex of argumentLengthFlowspec
         - AsNumber2Bytes (str): optional regex of asNumber2Bytes
         - AsNumber4Bytes (str): optional regex of asNumber4Bytes
         - AsSetMode (str): optional regex of asSetMode
         - AssignedNumber2Bytes (str): optional regex of assignedNumber2Bytes
         - AssignedNumber4Bytes (str): optional regex of assignedNumber4Bytes
+        - ColorCOBitsFlowspec (str): optional regex of colorCOBitsFlowspec
+        - ColorReservedBitsFlowspec (str): optional regex of colorReservedBitsFlowspec
+        - ColorValueFlowspec (str): optional regex of colorValueFlowspec
         - DestPortMatch (str): optional regex of destPortMatch
         - DestPrefixLengthV4 (str): optional regex of destPrefixLengthV4
         - DestPrefixV4 (str): optional regex of destPrefixV4
@@ -1303,21 +1693,28 @@ class BgpFlowSpecRangesList(Base):
         - EnableOrigin (str): optional regex of enableOrigin
         - EnableOriginatorId (str): optional regex of enableOriginatorId
         - EnableRedirect (str): optional regex of enableRedirect
+        - EnableRedirectIPv6NHop (str): optional regex of enableRedirectIPv6NHop
         - EnableSourcePrefixV4 (str): optional regex of enableSourcePrefixV4
+        - EnableSrv6SidFlowspec (str): optional regex of enableSrv6SidFlowspec
         - EnableTrafficAction (str): optional regex of enableTrafficAction
         - EnableTrafficMarketing (str): optional regex of enableTrafficMarketing
         - EnableTrafficMarking (str): optional regex of enableTrafficMarking
         - EnableTrafficRate (str): optional regex of enableTrafficRate
+        - EnableTrafficRatePacket (str): optional regex of enableTrafficRatePacket
         - FlowSpecName (str): optional regex of flowSpecName
         - FragmentMatch (str): optional regex of fragmentMatch
+        - FunctionLengthFlowspec (str): optional regex of functionLengthFlowspec
         - IcmpCodeMatch (str): optional regex of icmpCodeMatch
         - IcmpTypeMatch (str): optional regex of icmpTypeMatch
+        - IncSrv6SidStructSsTlvFlowspec (str): optional regex of incSrv6SidStructSsTlvFlowspec
         - Ip (str): optional regex of ip
         - IpPacketLenMatch (str): optional regex of ipPacketLenMatch
         - IpProto (str): optional regex of ipProto
         - IpV4 (str): optional regex of ipV4
         - Ipv4NextHop (str): optional regex of ipv4NextHop
         - Ipv6NextHop (str): optional regex of ipv6NextHop
+        - LocBlockLengthFlowspec (str): optional regex of locBlockLengthFlowspec
+        - LocNodeLengthFlowspec (str): optional regex of locNodeLengthFlowspec
         - LocalPreference (str): optional regex of localPreference
         - MultiExitDiscriminator (str): optional regex of multiExitDiscriminator
         - NumberOfFlows (str): optional regex of numberOfFlows
@@ -1326,18 +1723,30 @@ class BgpFlowSpecRangesList(Base):
         - OverridePeerAsSetMode (str): optional regex of overridePeerAsSetMode
         - PortMatch (str): optional regex of portMatch
         - RedirectCBit (str): optional regex of redirectCBit
+        - RedirectCBitIPv6NHop (str): optional regex of redirectCBitIPv6NHop
         - RedirectExtCommunityType (str): optional regex of redirectExtCommunityType
+        - RedirectIPv6NHop (str): optional regex of redirectIPv6NHop
         - Redirectnexthop (str): optional regex of redirectnexthop
         - SetNextHop (str): optional regex of setNextHop
         - SetNextHopIpType (str): optional regex of setNextHopIpType
         - SourcePortMatch (str): optional regex of sourcePortMatch
         - SourcePrefixLengthV4 (str): optional regex of sourcePrefixLengthV4
         - SourcePrefixV4 (str): optional regex of sourcePrefixV4
+        - Srv6EndpointBehaviorFlowspec (str): optional regex of srv6EndpointBehaviorFlowspec
+        - Srv6SidFlagsFlowspec (str): optional regex of srv6SidFlagsFlowspec
+        - Srv6SidFuncAllocTypeFlowspec (str): optional regex of srv6SidFuncAllocTypeFlowspec
+        - Srv6SidLocFlowspec (str): optional regex of srv6SidLocFlowspec
+        - Srv6SidReserved (str): optional regex of srv6SidReserved
+        - Srv6SidReserved1Flowspec (str): optional regex of srv6SidReserved1Flowspec
+        - Srv6SidReserved2Flowspec (str): optional regex of srv6SidReserved2Flowspec
         - TcpFlagsMatch (str): optional regex of tcpFlagsMatch
         - TerminalAction (str): optional regex of terminalAction
         - TrafficActionSample (str): optional regex of trafficActionSample
         - TrafficDscp (str): optional regex of trafficDscp
         - TrafficRate (str): optional regex of trafficRate
+        - TrafficRatePacket (str): optional regex of trafficRatePacket
+        - TranspositionLengthFlowspec (str): optional regex of transpositionLengthFlowspec
+        - TranspositionOffsetFlowspec (str): optional regex of transpositionOffsetFlowspec
 
         Returns
         -------

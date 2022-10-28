@@ -105,13 +105,13 @@ class Topology(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.bgpipv4peer.bgpipv4peer_5f62cc4449d2b3495027c62205d73814.BgpIpv4Peer): An instance of the BgpIpv4Peer class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.bgpipv4peer.bgpipv4peer_afa8d6e968f83567434da3bbaadcd5ec.BgpIpv4Peer): An instance of the BgpIpv4Peer class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.bgpipv4peer.bgpipv4peer_5f62cc4449d2b3495027c62205d73814 import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.bgpipv4peer.bgpipv4peer_afa8d6e968f83567434da3bbaadcd5ec import (
             BgpIpv4Peer,
         )
 
@@ -125,13 +125,13 @@ class Topology(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.bgpipv6peer.bgpipv6peer_d0158802a4f5bc87a5d65f2f6c02869e.BgpIpv6Peer): An instance of the BgpIpv6Peer class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.bgpipv6peer.bgpipv6peer_8ab1a4e13ad76078ea4d9cfab0bd1d95.BgpIpv6Peer): An instance of the BgpIpv6Peer class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.bgpipv6peer.bgpipv6peer_d0158802a4f5bc87a5d65f2f6c02869e import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.bgpipv6peer.bgpipv6peer_8ab1a4e13ad76078ea4d9cfab0bd1d95 import (
             BgpIpv6Peer,
         )
 
@@ -1800,7 +1800,7 @@ class Topology(Base):
 
         fetchScenarioObjectsShortenedNames(Arg2=href, Arg3=number, async_operation=bool)string
         --------------------------------------------------------------------------------------
-        - Arg2 (str(None | /api/v1/sessions/1/ixnetwork/topology | /api/v1/sessions/1/ixnetwork/topology | /api/v1/sessions/1/ixnetwork/topology | /api/v1/sessions/1/ixnetwork/topology/.../deviceGroup | /api/v1/sessions/1/ixnetwork/topology/.../networkGroup)): objref to /topology or device group or network group
+        - Arg2 (str(None | /api/v1/sessions/1/ixnetwork/topology | /api/v1/sessions/1/ixnetwork/topology/.../deviceGroup | /api/v1/sessions/1/ixnetwork/topology/.../networkGroup | /api/v1/sessions/1/ixnetwork/topology/deviceGroup | /api/v1/sessions/1/ixnetwork/topology/deviceGroup/networkGroup)): objref to /topology or device group or network group
         - Arg3 (number): Max number of characters to display
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns str: shortened Topology/Device Group/Network Group names in case of ver long names

@@ -1335,7 +1335,7 @@ class TestConfig(Base):
         """
         Returns
         -------
-        - list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/.../lan]): Protocol Items
+        - list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/protocols/static/lan]): Protocol Items
         """
         return self._get_attribute(self._SDM_ATT_MAP["ProtocolItem"])
 
@@ -1857,7 +1857,7 @@ class TestConfig(Base):
         - PortDelayEnabled (bool): NOT DEFINED
         - PortDelayUnit (str(bytes | nanoseconds)): Sets the port delay unit in which it will be measured
         - PortDelayValue (number): Sets the port delay value
-        - ProtocolItem (list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/.../lan])): Protocol Items
+        - ProtocolItem (list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/protocols/static/lan])): Protocol Items
         - QuickSearchFrameLossUnit (str(%)): Sets the quick search frame loss unit
         - QuickSearchLoadUnit (str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate)): Sets the quick search load unit
         - QuickSearchResolution (number): Sets the quick search resolution
@@ -2074,7 +2074,7 @@ class TestConfig(Base):
         - PortDelayEnabled (bool): NOT DEFINED
         - PortDelayUnit (str(bytes | nanoseconds)): Sets the port delay unit in which it will be measured
         - PortDelayValue (number): Sets the port delay value
-        - ProtocolItem (list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/.../lan])): Protocol Items
+        - ProtocolItem (list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/protocols/static/lan])): Protocol Items
         - QuickSearchFrameLossUnit (str(%)): Sets the quick search frame loss unit
         - QuickSearchLoadUnit (str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate)): Sets the quick search load unit
         - QuickSearchResolution (number): Sets the quick search resolution

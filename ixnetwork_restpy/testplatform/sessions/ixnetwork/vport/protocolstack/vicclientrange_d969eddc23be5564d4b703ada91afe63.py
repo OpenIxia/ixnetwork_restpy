@@ -160,7 +160,7 @@ class VicClientRange(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/globals/.../vicOptionSet): The provisioning TLVs associated with this range.
+        - str(None | /api/v1/sessions/1/ixnetwork/globals/protocolStack/vicClientGlobals/vicOptionSet): The provisioning TLVs associated with this range.
         """
         return self._get_attribute(self._SDM_ATT_MAP["ProvInfoTlvs"])
 
@@ -238,7 +238,7 @@ class VicClientRange(Base):
         - MacsPerVif (number): Number of MAC interfaces managed by a single VIF object.
         - Name (str): Name of range
         - ProvInfoOui (str): IEEE OUI owning the provisioning information type space.
-        - ProvInfoTlvs (str(None | /api/v1/sessions/1/ixnetwork/globals/.../vicOptionSet)): The provisioning TLVs associated with this range.
+        - ProvInfoTlvs (str(None | /api/v1/sessions/1/ixnetwork/globals/protocolStack/vicClientGlobals/vicOptionSet)): The provisioning TLVs associated with this range.
         - ProvInfoType (number): The type of the provisioning information (defined in each namespace).
         - TlvOffset (number): The number of TLV increments to apply before using the TLV values for this range.
         - VifActive (bool): The initial state of this interface set: true for Active, false for Standby.
@@ -273,7 +273,7 @@ class VicClientRange(Base):
         - MacsPerVif (number): Number of MAC interfaces managed by a single VIF object.
         - Name (str): Name of range
         - ProvInfoOui (str): IEEE OUI owning the provisioning information type space.
-        - ProvInfoTlvs (str(None | /api/v1/sessions/1/ixnetwork/globals/.../vicOptionSet)): The provisioning TLVs associated with this range.
+        - ProvInfoTlvs (str(None | /api/v1/sessions/1/ixnetwork/globals/protocolStack/vicClientGlobals/vicOptionSet)): The provisioning TLVs associated with this range.
         - ProvInfoType (number): The type of the provisioning information (defined in each namespace).
         - TlvOffset (number): The number of TLV increments to apply before using the TLV values for this range.
         - VifActive (bool): The initial state of this interface set: true for Active, false for Standby.
@@ -328,7 +328,7 @@ class VicClientRange(Base):
         - Name (str): Name of range
         - ObjectId (str): Unique identifier for this object
         - ProvInfoOui (str): IEEE OUI owning the provisioning information type space.
-        - ProvInfoTlvs (str(None | /api/v1/sessions/1/ixnetwork/globals/.../vicOptionSet)): The provisioning TLVs associated with this range.
+        - ProvInfoTlvs (str(None | /api/v1/sessions/1/ixnetwork/globals/protocolStack/vicClientGlobals/vicOptionSet)): The provisioning TLVs associated with this range.
         - ProvInfoType (number): The type of the provisioning information (defined in each namespace).
         - TlvOffset (number): The number of TLV increments to apply before using the TLV values for this range.
         - VifActive (bool): The initial state of this interface set: true for Active, false for Standby.

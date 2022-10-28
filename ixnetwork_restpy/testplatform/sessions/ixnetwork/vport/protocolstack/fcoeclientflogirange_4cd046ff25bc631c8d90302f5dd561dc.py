@@ -155,7 +155,7 @@ class FcoeClientFlogiRange(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/globals/.../fcoeClientOptionSet): List of TLV options used with FIP.
+        - str(None | /api/v1/sessions/1/ixnetwork/globals/protocolStack/fcoeClientGlobals/fcoeClientOptionSet): List of TLV options used with FIP.
         """
         return self._get_attribute(self._SDM_ATT_MAP["FipOptionSet"])
 
@@ -609,7 +609,7 @@ class FcoeClientFlogiRange(Base):
         - FipAddressingMode (str): The addressing mode specified by FLOGI/FDISC requests.
         - FipDestinationMacAddress (str): Represents the address to which FIP Solicit Unicast is sent.
         - FipEnabled (bool): Enable FCoE Initialization Protocol (FIP).
-        - FipOptionSet (str(None | /api/v1/sessions/1/ixnetwork/globals/.../fcoeClientOptionSet)): List of TLV options used with FIP.
+        - FipOptionSet (str(None | /api/v1/sessions/1/ixnetwork/globals/protocolStack/fcoeClientGlobals/fcoeClientOptionSet)): List of TLV options used with FIP.
         - FipOptionSetName (str): The name of the Option Set used by this range.
         - FipSolicitTimeout (number): Period of time (in seconds) that the client waits for a message of type FIP Discovery Advertisement Multicast before failing.
         - FipVendorId (str): The Vendor Identifier value (8-byte).
@@ -693,7 +693,7 @@ class FcoeClientFlogiRange(Base):
         - FipAddressingMode (str): The addressing mode specified by FLOGI/FDISC requests.
         - FipDestinationMacAddress (str): Represents the address to which FIP Solicit Unicast is sent.
         - FipEnabled (bool): Enable FCoE Initialization Protocol (FIP).
-        - FipOptionSet (str(None | /api/v1/sessions/1/ixnetwork/globals/.../fcoeClientOptionSet)): List of TLV options used with FIP.
+        - FipOptionSet (str(None | /api/v1/sessions/1/ixnetwork/globals/protocolStack/fcoeClientGlobals/fcoeClientOptionSet)): List of TLV options used with FIP.
         - FipOptionSetName (str): The name of the Option Set used by this range.
         - FipSolicitTimeout (number): Period of time (in seconds) that the client waits for a message of type FIP Discovery Advertisement Multicast before failing.
         - FipVendorId (str): The Vendor Identifier value (8-byte).

@@ -66,7 +66,7 @@ class Interface(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface):
+        - str(None | /api/v1/sessions/1/ixnetwork/vport/interface):
         """
         return self._get_attribute(self._SDM_ATT_MAP["ProtocolInterface"])
 
@@ -82,7 +82,7 @@ class Interface(Base):
         Args
         ----
         - Enabled (bool):
-        - ProtocolInterface (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface)):
+        - ProtocolInterface (str(None | /api/v1/sessions/1/ixnetwork/vport/interface)):
 
         Raises
         ------
@@ -97,7 +97,7 @@ class Interface(Base):
         Args
         ----
         - Enabled (bool):
-        - ProtocolInterface (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface)):
+        - ProtocolInterface (str(None | /api/v1/sessions/1/ixnetwork/vport/interface)):
 
         Returns
         -------
@@ -130,7 +130,7 @@ class Interface(Base):
         Args
         ----
         - Enabled (bool):
-        - ProtocolInterface (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface)):
+        - ProtocolInterface (str(None | /api/v1/sessions/1/ixnetwork/vport/interface)):
 
         Returns
         -------

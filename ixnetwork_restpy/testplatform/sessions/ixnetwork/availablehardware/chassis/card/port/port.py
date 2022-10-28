@@ -237,7 +237,7 @@ class Port(Base):
 
         copyTapSettings(Arg2=list, async_operation=bool)
         ------------------------------------------------
-        - Arg2 (list(str[None | /api/v1/sessions/1/ixnetwork/availableHardware/.../port])):
+        - Arg2 (list(str[None | /api/v1/sessions/1/ixnetwork/availableHardware/chassis/card/port])):
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises

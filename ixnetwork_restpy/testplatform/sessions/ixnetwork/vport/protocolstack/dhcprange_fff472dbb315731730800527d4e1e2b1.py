@@ -118,7 +118,7 @@ class DhcpRange(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/globals/.../dhcpOptionSet): The DHCP client options associated with this range.
+        - str(None | /api/v1/sessions/1/ixnetwork/globals/protocolStack/dhcpGlobals/dhcpOptionSet): The DHCP client options associated with this range.
         """
         return self._get_attribute(self._SDM_ATT_MAP["ClientOptionSet"])
 
@@ -343,7 +343,7 @@ class DhcpRange(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/vport/.../dhcpRange): The DHCP-PD range whose negotiated prefix will be used by this range to configure its addresses.
+        - str(None | /api/v1/sessions/1/ixnetwork/vport/protocolStack/ethernet/dhcpEndpoint/range/dhcpRange): The DHCP-PD range whose negotiated prefix will be used by this range to configure its addresses.
         """
         return self._get_attribute(self._SDM_ATT_MAP["Dhcp6MasterRange"])
 
@@ -608,7 +608,7 @@ class DhcpRange(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/globals/.../dhcpOptionSet): The DHCP relay options associated with this range.
+        - str(None | /api/v1/sessions/1/ixnetwork/globals/protocolStack/dhcpGlobals/dhcpOptionSet): The DHCP relay options associated with this range.
         """
         return self._get_attribute(self._SDM_ATT_MAP["RelayOptionSet"])
 
@@ -930,7 +930,7 @@ class DhcpRange(Base):
 
         Args
         ----
-        - ClientOptionSet (str(None | /api/v1/sessions/1/ixnetwork/globals/.../dhcpOptionSet)): The DHCP client options associated with this range.
+        - ClientOptionSet (str(None | /api/v1/sessions/1/ixnetwork/globals/protocolStack/dhcpGlobals/dhcpOptionSet)): The DHCP client options associated with this range.
         - Count (number): The number of DHCP clients to be created by this range.
         - Dhcp4Broadcast (bool): If enabled, ask the server or relay agent to use the broadcast IP address in the replies.
         - Dhcp4ParamRequestList (str): The Option Request option is used to identify a list of optionsin a message between a client and a server.Multiple options can be specified in a semicolon separated list.
@@ -945,7 +945,7 @@ class DhcpRange(Base):
         - Dhcp6IaT1 (number): The suggested time at which the client contacts the server from whichthe addresses were obtained to extend the lifetimes of the addresses assigned.
         - Dhcp6IaT2 (number): The suggested time at which the client contacts any available serverto extend the lifetimes of the addresses assigned.
         - Dhcp6IaType (str): Identity Association Type.
-        - Dhcp6MasterRange (str(None | /api/v1/sessions/1/ixnetwork/vport/.../dhcpRange)): The DHCP-PD range whose negotiated prefix will be used by this range to configure its addresses.
+        - Dhcp6MasterRange (str(None | /api/v1/sessions/1/ixnetwork/vport/protocolStack/ethernet/dhcpEndpoint/range/dhcpRange)): The DHCP-PD range whose negotiated prefix will be used by this range to configure its addresses.
         - Dhcp6ParamRequestList (str): The Option Request option is used to identify a list of optionsin a message between a client and a server.Multiple options can be specified in a semicolon separated list.
         - Enabled (bool): Disabled ranges won't be configured nor validated.
         - IpType (str): Defines the version of IP address style to be used for describing the range.
@@ -962,7 +962,7 @@ class DhcpRange(Base):
         - RelayGateway (str): The gateway address used for all relay agents.
         - RelayHostsPerCircuitId (number): Number of consecutive hosts with the same Circuit ID.
         - RelayHostsPerRemoteId (number): Number of consecutive hosts with the same Remote ID.
-        - RelayOptionSet (str(None | /api/v1/sessions/1/ixnetwork/globals/.../dhcpOptionSet)): The DHCP relay options associated with this range.
+        - RelayOptionSet (str(None | /api/v1/sessions/1/ixnetwork/globals/protocolStack/dhcpGlobals/dhcpOptionSet)): The DHCP relay options associated with this range.
         - RelayOverrideVlanSettings (bool): If true then we enable overriding of VLAN settings through relayFirstVlanId, relayVlanCount and relayVlanIncrement.
         - RelayRemoteId (str): This option is added by relay agents that terminate switched or permanent circuitsand have mechanisms to identify the remote host end of the circuit.The string can contain a sequence of values represented in form of [StartValue-EndValue].Examples: Decimals [11-22], Hexadecimals [0x00-0xFF], Characters [AA-ZZ].
         - RelaySubnet (number): The network mask used for all relay agents.
@@ -1050,7 +1050,7 @@ class DhcpRange(Base):
 
         Args
         ----
-        - ClientOptionSet (str(None | /api/v1/sessions/1/ixnetwork/globals/.../dhcpOptionSet)): The DHCP client options associated with this range.
+        - ClientOptionSet (str(None | /api/v1/sessions/1/ixnetwork/globals/protocolStack/dhcpGlobals/dhcpOptionSet)): The DHCP client options associated with this range.
         - Count (number): The number of DHCP clients to be created by this range.
         - Dhcp4Broadcast (bool): If enabled, ask the server or relay agent to use the broadcast IP address in the replies.
         - Dhcp4ParamRequestList (str): The Option Request option is used to identify a list of optionsin a message between a client and a server.Multiple options can be specified in a semicolon separated list.
@@ -1065,7 +1065,7 @@ class DhcpRange(Base):
         - Dhcp6IaT1 (number): The suggested time at which the client contacts the server from whichthe addresses were obtained to extend the lifetimes of the addresses assigned.
         - Dhcp6IaT2 (number): The suggested time at which the client contacts any available serverto extend the lifetimes of the addresses assigned.
         - Dhcp6IaType (str): Identity Association Type.
-        - Dhcp6MasterRange (str(None | /api/v1/sessions/1/ixnetwork/vport/.../dhcpRange)): The DHCP-PD range whose negotiated prefix will be used by this range to configure its addresses.
+        - Dhcp6MasterRange (str(None | /api/v1/sessions/1/ixnetwork/vport/protocolStack/ethernet/dhcpEndpoint/range/dhcpRange)): The DHCP-PD range whose negotiated prefix will be used by this range to configure its addresses.
         - Dhcp6ParamRequestList (str): The Option Request option is used to identify a list of optionsin a message between a client and a server.Multiple options can be specified in a semicolon separated list.
         - Enabled (bool): Disabled ranges won't be configured nor validated.
         - IpType (str): Defines the version of IP address style to be used for describing the range.
@@ -1083,7 +1083,7 @@ class DhcpRange(Base):
         - RelayGateway (str): The gateway address used for all relay agents.
         - RelayHostsPerCircuitId (number): Number of consecutive hosts with the same Circuit ID.
         - RelayHostsPerRemoteId (number): Number of consecutive hosts with the same Remote ID.
-        - RelayOptionSet (str(None | /api/v1/sessions/1/ixnetwork/globals/.../dhcpOptionSet)): The DHCP relay options associated with this range.
+        - RelayOptionSet (str(None | /api/v1/sessions/1/ixnetwork/globals/protocolStack/dhcpGlobals/dhcpOptionSet)): The DHCP relay options associated with this range.
         - RelayOverrideVlanSettings (bool): If true then we enable overriding of VLAN settings through relayFirstVlanId, relayVlanCount and relayVlanIncrement.
         - RelayRemoteId (str): This option is added by relay agents that terminate switched or permanent circuitsand have mechanisms to identify the remote host end of the circuit.The string can contain a sequence of values represented in form of [StartValue-EndValue].Examples: Decimals [11-22], Hexadecimals [0x00-0xFF], Characters [AA-ZZ].
         - RelaySubnet (number): The network mask used for all relay agents.

@@ -38,6 +38,7 @@ class Ospfv3PseudoInterface(Base):
     _SDM_ATT_MAP = {
         "AdjSID": "adjSID",
         "AdjSidCount": "adjSidCount",
+        "AdvertiseIntraAreaPrefixLSA": "advertiseIntraAreaPrefixLSA",
         "AdvertiseLinkMsd": "advertiseLinkMsd",
         "BFlag": "bFlag",
         "Count": "count",
@@ -114,6 +115,20 @@ class Ospfv3PseudoInterface(Base):
     def AdjSidCount(self, value):
         # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP["AdjSidCount"], value)
+
+    @property
+    def AdvertiseIntraAreaPrefixLSA(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): If enabled, IPv6 addresses of interface will be advertised in Intra-Area-Prefix LSA.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AdvertiseIntraAreaPrefixLSA"])
+        )
 
     @property
     def AdvertiseLinkMsd(self):
@@ -634,6 +649,7 @@ class Ospfv3PseudoInterface(Base):
         self,
         PortNames=None,
         AdjSID=None,
+        AdvertiseIntraAreaPrefixLSA=None,
         AdvertiseLinkMsd=None,
         BFlag=None,
         EnableAdjSID=None,
@@ -664,6 +680,7 @@ class Ospfv3PseudoInterface(Base):
         ----
         - PortNames (str): optional regex of port names
         - AdjSID (str): optional regex of adjSID
+        - AdvertiseIntraAreaPrefixLSA (str): optional regex of advertiseIntraAreaPrefixLSA
         - AdvertiseLinkMsd (str): optional regex of advertiseLinkMsd
         - BFlag (str): optional regex of bFlag
         - EnableAdjSID (str): optional regex of enableAdjSID

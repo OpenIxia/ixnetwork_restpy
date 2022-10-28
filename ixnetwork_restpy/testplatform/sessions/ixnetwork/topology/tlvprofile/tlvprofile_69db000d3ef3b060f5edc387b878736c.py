@@ -137,7 +137,7 @@ class TlvProfile(Base):
 
         copyTlv(Arg2=href, async_operation=bool)href
         --------------------------------------------
-        - Arg2 (str(None | /api/v1/sessions/1/ixnetwork/globals/.../topology)): An object reference to a source template tlv
+        - Arg2 (str(None | /api/v1/sessions/1/ixnetwork/globals/topology/.../tlv)): An object reference to a source template tlv
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns str(None): An object reference to the newly created topology tlv as a result of the copy operation
 

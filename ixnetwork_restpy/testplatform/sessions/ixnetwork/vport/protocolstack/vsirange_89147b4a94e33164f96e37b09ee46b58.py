@@ -563,7 +563,7 @@ class VsiRange(Base):
 
         changeParentRange(Target=href, async_operation=bool)
         ----------------------------------------------------
-        - Target (str(None | /api/v1/sessions/1/ixnetwork/vport/.../erRange)):
+        - Target (str(None | /api/v1/sessions/1/ixnetwork/vport/protocolStack/ethernet/vepaEndpoint/range/evbStationRange/erRange)):
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises

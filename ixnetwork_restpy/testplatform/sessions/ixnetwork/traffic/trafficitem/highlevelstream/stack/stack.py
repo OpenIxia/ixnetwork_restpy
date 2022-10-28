@@ -158,7 +158,7 @@ class Stack(Base):
 
         DEPRECATED append(Arg2=href, async_operation=bool)string
         --------------------------------------------------------
-        - Arg2 (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../protocolTemplate)): A valid /traffic/protocolTemplate object reference.
+        - Arg2 (str(None | /api/v1/sessions/1/ixnetwork/traffic/protocolTemplate)): A valid /traffic/protocolTemplate object reference.
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns str: This exec returns an object reference to the newly appended stack item.
 
@@ -182,9 +182,9 @@ class Stack(Base):
 
         appendProtocol(Arg2=href, async_operation=bool)href
         ---------------------------------------------------
-        - Arg2 (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../protocolTemplate)): A valid /traffic/protocolTemplate object reference.
+        - Arg2 (str(None | /api/v1/sessions/1/ixnetwork/traffic/protocolTemplate)): A valid /traffic/protocolTemplate object reference.
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
-        - Returns str(None | /api/v1/sessions/1/ixnetwork/traffic/.../stack): This exec returns an object reference to the newly appended stack item.
+        - Returns str(None | /api/v1/sessions/1/ixnetwork/traffic/trafficItem/highLevelStream/stack): This exec returns an object reference to the newly appended stack item.
 
         Raises
         ------
@@ -229,7 +229,7 @@ class Stack(Base):
 
         DEPRECATED insert(Arg2=href, async_operation=bool)string
         --------------------------------------------------------
-        - Arg2 (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../protocolTemplate)): A valid /traffic/protocolTemplate object reference
+        - Arg2 (str(None | /api/v1/sessions/1/ixnetwork/traffic/protocolTemplate)): A valid /traffic/protocolTemplate object reference
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns str: This exec returns an object reference to the newly inserted stack item.
 
@@ -253,9 +253,9 @@ class Stack(Base):
 
         insertProtocol(Arg2=href, async_operation=bool)href
         ---------------------------------------------------
-        - Arg2 (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../protocolTemplate)): A valid /traffic/protocolTemplate object reference
+        - Arg2 (str(None | /api/v1/sessions/1/ixnetwork/traffic/protocolTemplate)): A valid /traffic/protocolTemplate object reference
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
-        - Returns str(None | /api/v1/sessions/1/ixnetwork/traffic/.../stack): This exec returns an object reference to the newly inserted stack item.
+        - Returns str(None | /api/v1/sessions/1/ixnetwork/traffic/trafficItem/highLevelStream/stack): This exec returns an object reference to the newly inserted stack item.
 
         Raises
         ------

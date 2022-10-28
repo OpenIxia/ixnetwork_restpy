@@ -50,7 +50,7 @@ class Layer23TrafficItemFilter(Base):
         """
         Returns
         -------
-        - list(str[None | /api/v1/sessions/1/ixnetwork/statistics/.../availableTrafficItemFilter]): Selected traffic item filters from the availableTrafficItemFilter list.
+        - list(str[None | /api/v1/sessions/1/ixnetwork/statistics/view/availableTrafficItemFilter]): Selected traffic item filters from the availableTrafficItemFilter list.
         """
         return self._get_attribute(self._SDM_ATT_MAP["TrafficItemFilterIds"])
 
@@ -65,7 +65,7 @@ class Layer23TrafficItemFilter(Base):
 
         Args
         ----
-        - TrafficItemFilterIds (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/.../availableTrafficItemFilter])): Selected traffic item filters from the availableTrafficItemFilter list.
+        - TrafficItemFilterIds (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/view/availableTrafficItemFilter])): Selected traffic item filters from the availableTrafficItemFilter list.
 
         Raises
         ------
@@ -79,7 +79,7 @@ class Layer23TrafficItemFilter(Base):
 
         Args
         ----
-        - TrafficItemFilterIds (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/.../availableTrafficItemFilter])): Selected traffic item filters from the availableTrafficItemFilter list.
+        - TrafficItemFilterIds (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/view/availableTrafficItemFilter])): Selected traffic item filters from the availableTrafficItemFilter list.
 
         Returns
         -------
@@ -111,7 +111,7 @@ class Layer23TrafficItemFilter(Base):
 
         Args
         ----
-        - TrafficItemFilterIds (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/.../availableTrafficItemFilter])): Selected traffic item filters from the availableTrafficItemFilter list.
+        - TrafficItemFilterIds (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/view/availableTrafficItemFilter])): Selected traffic item filters from the availableTrafficItemFilter list.
 
         Returns
         -------

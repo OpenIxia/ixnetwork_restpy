@@ -221,7 +221,7 @@ class RadiusRange(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/globals/.../dhcpOptionSet): Defines the RADIUS tunnel attributes
+        - str(None | /api/v1/sessions/1/ixnetwork/globals/protocolStack/radiusGlobals/dhcpOptionSet): Defines the RADIUS tunnel attributes
         """
         return self._get_attribute(self._SDM_ATT_MAP["TunnelAttributeSet"])
 
@@ -259,7 +259,7 @@ class RadiusRange(Base):
         - Retries (number): RADIUS retry value
         - Secret (str): Shared secret used by Ixia RADIUS client and RADIUS server
         - Timeout (number): RADIUS timeout value
-        - TunnelAttributeSet (str(None | /api/v1/sessions/1/ixnetwork/globals/.../dhcpOptionSet)): Defines the RADIUS tunnel attributes
+        - TunnelAttributeSet (str(None | /api/v1/sessions/1/ixnetwork/globals/protocolStack/radiusGlobals/dhcpOptionSet)): Defines the RADIUS tunnel attributes
 
         Raises
         ------
@@ -296,7 +296,7 @@ class RadiusRange(Base):
         - Retries (number): RADIUS retry value
         - Secret (str): Shared secret used by Ixia RADIUS client and RADIUS server
         - Timeout (number): RADIUS timeout value
-        - TunnelAttributeSet (str(None | /api/v1/sessions/1/ixnetwork/globals/.../dhcpOptionSet)): Defines the RADIUS tunnel attributes
+        - TunnelAttributeSet (str(None | /api/v1/sessions/1/ixnetwork/globals/protocolStack/radiusGlobals/dhcpOptionSet)): Defines the RADIUS tunnel attributes
 
         Returns
         -------
@@ -353,7 +353,7 @@ class RadiusRange(Base):
         - Retries (number): RADIUS retry value
         - Secret (str): Shared secret used by Ixia RADIUS client and RADIUS server
         - Timeout (number): RADIUS timeout value
-        - TunnelAttributeSet (str(None | /api/v1/sessions/1/ixnetwork/globals/.../dhcpOptionSet)): Defines the RADIUS tunnel attributes
+        - TunnelAttributeSet (str(None | /api/v1/sessions/1/ixnetwork/globals/protocolStack/radiusGlobals/dhcpOptionSet)): Defines the RADIUS tunnel attributes
 
         Returns
         -------

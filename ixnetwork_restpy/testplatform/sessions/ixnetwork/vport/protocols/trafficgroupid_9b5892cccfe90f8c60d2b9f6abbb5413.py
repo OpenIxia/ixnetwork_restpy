@@ -50,7 +50,7 @@ class TrafficGroupId(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup):
+        - str(None | /api/v1/sessions/1/ixnetwork/traffic/trafficGroup):
         """
         return self._get_attribute(self._SDM_ATT_MAP["TrafficGroupId"])
 
@@ -65,7 +65,7 @@ class TrafficGroupId(Base):
 
         Args
         ----
-        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup)):
+        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/trafficGroup)):
 
         Raises
         ------
@@ -79,7 +79,7 @@ class TrafficGroupId(Base):
 
         Args
         ----
-        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup)):
+        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/trafficGroup)):
 
         Returns
         -------
@@ -111,7 +111,7 @@ class TrafficGroupId(Base):
 
         Args
         ----
-        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup)):
+        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/trafficGroup)):
 
         Returns
         -------

@@ -70,7 +70,7 @@ class GlobalTrafficProfileS5S8(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/globals/.../globalEgtpApnS5S8):
+        - str(None | /api/v1/sessions/1/ixnetwork/globals/protocolStack/egtpS5S8SgwGlobals/globalEgtpApnS5S8):
         """
         return self._get_attribute(self._SDM_ATT_MAP["Apn"])
 
@@ -402,7 +402,7 @@ class GlobalTrafficProfileS5S8(Base):
 
         Args
         ----
-        - Apn (str(None | /api/v1/sessions/1/ixnetwork/globals/.../globalEgtpApnS5S8)):
+        - Apn (str(None | /api/v1/sessions/1/ixnetwork/globals/protocolStack/egtpS5S8SgwGlobals/globalEgtpApnS5S8)):
         - Arp (number): Priority of allocation and retention
         - DefaultBearerFallback (bool): Fallback on default bearer if no dedicated bearer was created for this activity.
         - EnableSessionTimeout (bool): Deprecated. Kept for TCL bw compatibility
@@ -457,7 +457,7 @@ class GlobalTrafficProfileS5S8(Base):
 
         Args
         ----
-        - Apn (str(None | /api/v1/sessions/1/ixnetwork/globals/.../globalEgtpApnS5S8)):
+        - Apn (str(None | /api/v1/sessions/1/ixnetwork/globals/protocolStack/egtpS5S8SgwGlobals/globalEgtpApnS5S8)):
         - Arp (number): Priority of allocation and retention
         - DefaultBearerFallback (bool): Fallback on default bearer if no dedicated bearer was created for this activity.
         - EnableSessionTimeout (bool): Deprecated. Kept for TCL bw compatibility
@@ -531,7 +531,7 @@ class GlobalTrafficProfileS5S8(Base):
 
         Args
         ----
-        - Apn (str(None | /api/v1/sessions/1/ixnetwork/globals/.../globalEgtpApnS5S8)):
+        - Apn (str(None | /api/v1/sessions/1/ixnetwork/globals/protocolStack/egtpS5S8SgwGlobals/globalEgtpApnS5S8)):
         - Arp (number): Priority of allocation and retention
         - DefaultBearerFallback (bool): Fallback on default bearer if no dedicated bearer was created for this activity.
         - EnableSessionTimeout (bool): Deprecated. Kept for TCL bw compatibility

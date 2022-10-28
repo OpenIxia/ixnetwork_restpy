@@ -473,7 +473,7 @@ class TestConfig(Base):
         """
         Returns
         -------
-        - list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/.../lan]): Protocol Items
+        - list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/protocols/static/lan]): Protocol Items
         """
         return self._get_attribute(self._SDM_ATT_MAP["ProtocolItem"])
 
@@ -603,7 +603,7 @@ class TestConfig(Base):
         - MinRandomFrameSize (number): The minimum random frame size to be sent.
         - Numtrials (number): Number of trials that can be run
         - PacketsPerFlow (number): Indicates the number of packets per flow.
-        - ProtocolItem (list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/.../lan])): Protocol Items
+        - ProtocolItem (list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/protocols/static/lan])): Protocol Items
         - RangeCount (number): Indicates the range count.
         - StepLoadUnit (str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate)): Specifies the step rate of the load unit.
         - StepStepIntegerValues (number): Indicates the step integer value.
@@ -680,7 +680,7 @@ class TestConfig(Base):
         - MinRandomFrameSize (number): The minimum random frame size to be sent.
         - Numtrials (number): Number of trials that can be run
         - PacketsPerFlow (number): Indicates the number of packets per flow.
-        - ProtocolItem (list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/.../lan])): Protocol Items
+        - ProtocolItem (list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/protocols/static/lan])): Protocol Items
         - RangeCount (number): Indicates the range count.
         - StepLoadUnit (str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate)): Specifies the step rate of the load unit.
         - StepStepIntegerValues (number): Indicates the step integer value.

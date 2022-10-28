@@ -295,7 +295,7 @@ class Profile(Base):
         """
         Returns
         -------
-        - list(str[None | /api/v1/sessions/1/ixnetwork/impairment/.../link]): List of references to impairment links.
+        - list(str[None | /api/v1/sessions/1/ixnetwork/impairment/link]): List of references to impairment links.
         """
         return self._get_attribute(self._SDM_ATT_MAP["Links__"])
 
@@ -382,7 +382,7 @@ class Profile(Base):
 
         Args
         ----
-        - Links__ (list(str[None | /api/v1/sessions/1/ixnetwork/impairment/.../link])): List of references to impairment links.
+        - Links__ (list(str[None | /api/v1/sessions/1/ixnetwork/impairment/link])): List of references to impairment links.
         - AllLinks (bool): If true, apply the profile to all impairment links. If not, only apply the profile to packets on selected links.
         - Enabled (bool): If true, enables the profile.
         - Name (str): The name of the profile.
@@ -400,7 +400,7 @@ class Profile(Base):
 
         Args
         ----
-        - Links__ (list(str[None | /api/v1/sessions/1/ixnetwork/impairment/.../link])): List of references to impairment links.
+        - Links__ (list(str[None | /api/v1/sessions/1/ixnetwork/impairment/link])): List of references to impairment links.
         - AllLinks (bool): If true, apply the profile to all impairment links. If not, only apply the profile to packets on selected links.
         - Enabled (bool): If true, enables the profile.
         - Name (str): The name of the profile.
@@ -444,7 +444,7 @@ class Profile(Base):
 
         Args
         ----
-        - Links__ (list(str[None | /api/v1/sessions/1/ixnetwork/impairment/.../link])): List of references to impairment links.
+        - Links__ (list(str[None | /api/v1/sessions/1/ixnetwork/impairment/link])): List of references to impairment links.
         - AllLinks (bool): If true, apply the profile to all impairment links. If not, only apply the profile to packets on selected links.
         - Enabled (bool): If true, enables the profile.
         - Name (str): The name of the profile.

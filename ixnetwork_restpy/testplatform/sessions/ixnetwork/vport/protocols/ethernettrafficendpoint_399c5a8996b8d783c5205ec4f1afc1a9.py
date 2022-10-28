@@ -302,7 +302,7 @@ class EthernetTrafficEndPoint(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface): NOT DEFINED
+        - str(None | /api/v1/sessions/1/ixnetwork/vport/interface): NOT DEFINED
         """
         return self._get_attribute(self._SDM_ATT_MAP["ProtocolInterface"])
 
@@ -414,7 +414,7 @@ class EthernetTrafficEndPoint(Base):
         - PbbSourceMac (str): NOT DEFINED
         - PbbVlanId (str): NOT DEFINED
         - PbbVlanPcp (str): NOT DEFINED
-        - ProtocolInterface (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface)): NOT DEFINED
+        - ProtocolInterface (str(None | /api/v1/sessions/1/ixnetwork/vport/interface)): NOT DEFINED
         - RangeSize (number): Specify the size of the Range.
         - VlanCount (number): Specify the VLAN count. The default value is 1.
         - VlanId (str): Specify the VLAN ID (Outer and Inner).
@@ -469,7 +469,7 @@ class EthernetTrafficEndPoint(Base):
         - PbbSourceMac (str): NOT DEFINED
         - PbbVlanId (str): NOT DEFINED
         - PbbVlanPcp (str): NOT DEFINED
-        - ProtocolInterface (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface)): NOT DEFINED
+        - ProtocolInterface (str(None | /api/v1/sessions/1/ixnetwork/vport/interface)): NOT DEFINED
         - RangeSize (number): Specify the size of the Range.
         - VlanCount (number): Specify the VLAN count. The default value is 1.
         - VlanId (str): Specify the VLAN ID (Outer and Inner).
@@ -542,7 +542,7 @@ class EthernetTrafficEndPoint(Base):
         - PbbSourceMac (str): NOT DEFINED
         - PbbVlanId (str): NOT DEFINED
         - PbbVlanPcp (str): NOT DEFINED
-        - ProtocolInterface (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface)): NOT DEFINED
+        - ProtocolInterface (str(None | /api/v1/sessions/1/ixnetwork/vport/interface)): NOT DEFINED
         - RangeSize (number): Specify the size of the Range.
         - VlanCount (number): Specify the VLAN count. The default value is 1.
         - VlanId (str): Specify the VLAN ID (Outer and Inner).

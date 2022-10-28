@@ -1233,7 +1233,7 @@ class QuickTest(Base):
         """
         Returns
         -------
-        - list(str[None | /api/v1/sessions/1/ixnetwork/quickTest/.../*]): Returns list containing the currently running QuickTest
+        - list(str[None | /api/v1/sessions/1/ixnetwork/quickTest]): Returns list containing the currently running QuickTest
         """
         return self._get_attribute(self._SDM_ATT_MAP["RunningTest"])
 
@@ -1243,7 +1243,7 @@ class QuickTest(Base):
         """
         Returns
         -------
-        - list(str[None | /api/v1/sessions/1/ixnetwork/quickTest/.../*]): Returns list containing the currently running QuickTest
+        - list(str[None | /api/v1/sessions/1/ixnetwork/quickTest]): Returns list containing the currently running QuickTest
         """
         return self._get_attribute(self._SDM_ATT_MAP["RunningTestObj"])
 
@@ -1253,7 +1253,7 @@ class QuickTest(Base):
         """
         Returns
         -------
-        - list(str[None | /api/v1/sessions/1/ixnetwork/quickTest/.../*]): Returns list containing the QuickTest test in the configuration
+        - list(str[None | /api/v1/sessions/1/ixnetwork/quickTest]): Returns list containing the QuickTest test in the configuration
         """
         return self._get_attribute(self._SDM_ATT_MAP["TestIds"])
 
@@ -1267,9 +1267,9 @@ class QuickTest(Base):
 
         Args
         ----
-        - RunningTest (list(str[None | /api/v1/sessions/1/ixnetwork/quickTest/.../*])): Returns list containing the currently running QuickTest
-        - RunningTestObj (list(str[None | /api/v1/sessions/1/ixnetwork/quickTest/.../*])): Returns list containing the currently running QuickTest
-        - TestIds (list(str[None | /api/v1/sessions/1/ixnetwork/quickTest/.../*])): Returns list containing the QuickTest test in the configuration
+        - RunningTest (list(str[None | /api/v1/sessions/1/ixnetwork/quickTest])): Returns list containing the currently running QuickTest
+        - RunningTestObj (list(str[None | /api/v1/sessions/1/ixnetwork/quickTest])): Returns list containing the currently running QuickTest
+        - TestIds (list(str[None | /api/v1/sessions/1/ixnetwork/quickTest])): Returns list containing the QuickTest test in the configuration
 
         Returns
         -------

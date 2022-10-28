@@ -687,7 +687,7 @@ class NeighborRange(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range): The interfaces that are associated with the selected interface type.
+        - str(None | /api/v1/sessions/1/ixnetwork/vport/interface | /api/v1/sessions/1/ixnetwork/vport/protocolStack/atm/dhcpEndpoint/range | /api/v1/sessions/1/ixnetwork/vport/protocolStack/atm/ip/l2tpEndpoint/range | /api/v1/sessions/1/ixnetwork/vport/protocolStack/atm/ipEndpoint/range | /api/v1/sessions/1/ixnetwork/vport/protocolStack/atm/pppoxEndpoint/range | /api/v1/sessions/1/ixnetwork/vport/protocolStack/ethernet/dhcpEndpoint/range | /api/v1/sessions/1/ixnetwork/vport/protocolStack/ethernet/ip/l2tpEndpoint/range | /api/v1/sessions/1/ixnetwork/vport/protocolStack/ethernet/ipEndpoint/range | /api/v1/sessions/1/ixnetwork/vport/protocolStack/ethernet/pppoxEndpoint/range | /api/v1/sessions/1/ixnetwork/vport/protocolStack/ethernetEndpoint/range): The interfaces that are associated with the selected interface type.
         """
         return self._get_attribute(self._SDM_ATT_MAP["Interfaces"])
 
@@ -1097,7 +1097,7 @@ class NeighborRange(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
+        - str(None | /api/v1/sessions/1/ixnetwork/traffic/trafficGroup): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
         """
         return self._get_attribute(self._SDM_ATT_MAP["TrafficGroupId"])
 
@@ -1249,7 +1249,7 @@ class NeighborRange(Base):
         - HoldTimer (number): The period of time between KEEP-ALIVE messages sent to the DUT.
         - InterfaceStartIndex (number): The assigned protocol interface ID for this SM interface.
         - InterfaceType (str): The type of interface to be selected for this BGP interface. One of:Protocol Interface, DHCP, PPP
-        - Interfaces (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range)): The interfaces that are associated with the selected interface type.
+        - Interfaces (str(None | /api/v1/sessions/1/ixnetwork/vport/interface | /api/v1/sessions/1/ixnetwork/vport/protocolStack/atm/dhcpEndpoint/range | /api/v1/sessions/1/ixnetwork/vport/protocolStack/atm/ip/l2tpEndpoint/range | /api/v1/sessions/1/ixnetwork/vport/protocolStack/atm/ipEndpoint/range | /api/v1/sessions/1/ixnetwork/vport/protocolStack/atm/pppoxEndpoint/range | /api/v1/sessions/1/ixnetwork/vport/protocolStack/ethernet/dhcpEndpoint/range | /api/v1/sessions/1/ixnetwork/vport/protocolStack/ethernet/ip/l2tpEndpoint/range | /api/v1/sessions/1/ixnetwork/vport/protocolStack/ethernet/ipEndpoint/range | /api/v1/sessions/1/ixnetwork/vport/protocolStack/ethernet/pppoxEndpoint/range | /api/v1/sessions/1/ixnetwork/vport/protocolStack/ethernetEndpoint/range)): The interfaces that are associated with the selected interface type.
         - IpV4Mdt (bool): Enables the use of this Data MDT range on the simulated interface.
         - IpV4Mpls (bool): If enabled, this BGP router/peer supports the IPv4 MPLS address family.
         - IpV4MplsVpn (bool): If enabled, this BGP router/peer supports the IPv4 MPLS/VPN address family.
@@ -1275,7 +1275,7 @@ class NeighborRange(Base):
         - StaggeredStartPeriod (number): Controls the staggering and period of initial start messages.
         - StaleTime (number): Controls the operation of BGP Graceful Restart.
         - TcpWindowSize (number): (External neighbor only) The TCP window used for communications from the neighbor. (default = 8,192)
-        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup)): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
+        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/trafficGroup)): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
         - TtlValue (number): The limited number of iterations that a unit of data can experience before the data is discarded.
         - Type (str(internal | external)): Indicates that the neighbor is either an internal or external router.
         - UpdateInterval (number): The frequency with which UPDATE messages are sent to the DUT.
@@ -1370,7 +1370,7 @@ class NeighborRange(Base):
         - HoldTimer (number): The period of time between KEEP-ALIVE messages sent to the DUT.
         - InterfaceStartIndex (number): The assigned protocol interface ID for this SM interface.
         - InterfaceType (str): The type of interface to be selected for this BGP interface. One of:Protocol Interface, DHCP, PPP
-        - Interfaces (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range)): The interfaces that are associated with the selected interface type.
+        - Interfaces (str(None | /api/v1/sessions/1/ixnetwork/vport/interface | /api/v1/sessions/1/ixnetwork/vport/protocolStack/atm/dhcpEndpoint/range | /api/v1/sessions/1/ixnetwork/vport/protocolStack/atm/ip/l2tpEndpoint/range | /api/v1/sessions/1/ixnetwork/vport/protocolStack/atm/ipEndpoint/range | /api/v1/sessions/1/ixnetwork/vport/protocolStack/atm/pppoxEndpoint/range | /api/v1/sessions/1/ixnetwork/vport/protocolStack/ethernet/dhcpEndpoint/range | /api/v1/sessions/1/ixnetwork/vport/protocolStack/ethernet/ip/l2tpEndpoint/range | /api/v1/sessions/1/ixnetwork/vport/protocolStack/ethernet/ipEndpoint/range | /api/v1/sessions/1/ixnetwork/vport/protocolStack/ethernet/pppoxEndpoint/range | /api/v1/sessions/1/ixnetwork/vport/protocolStack/ethernetEndpoint/range)): The interfaces that are associated with the selected interface type.
         - IpV4Mdt (bool): Enables the use of this Data MDT range on the simulated interface.
         - IpV4Mpls (bool): If enabled, this BGP router/peer supports the IPv4 MPLS address family.
         - IpV4MplsVpn (bool): If enabled, this BGP router/peer supports the IPv4 MPLS/VPN address family.
@@ -1396,7 +1396,7 @@ class NeighborRange(Base):
         - StaggeredStartPeriod (number): Controls the staggering and period of initial start messages.
         - StaleTime (number): Controls the operation of BGP Graceful Restart.
         - TcpWindowSize (number): (External neighbor only) The TCP window used for communications from the neighbor. (default = 8,192)
-        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup)): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
+        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/trafficGroup)): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
         - TtlValue (number): The limited number of iterations that a unit of data can experience before the data is discarded.
         - Type (str(internal | external)): Indicates that the neighbor is either an internal or external router.
         - UpdateInterval (number): The frequency with which UPDATE messages are sent to the DUT.
@@ -1511,7 +1511,7 @@ class NeighborRange(Base):
         - HoldTimer (number): The period of time between KEEP-ALIVE messages sent to the DUT.
         - InterfaceStartIndex (number): The assigned protocol interface ID for this SM interface.
         - InterfaceType (str): The type of interface to be selected for this BGP interface. One of:Protocol Interface, DHCP, PPP
-        - Interfaces (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range)): The interfaces that are associated with the selected interface type.
+        - Interfaces (str(None | /api/v1/sessions/1/ixnetwork/vport/interface | /api/v1/sessions/1/ixnetwork/vport/protocolStack/atm/dhcpEndpoint/range | /api/v1/sessions/1/ixnetwork/vport/protocolStack/atm/ip/l2tpEndpoint/range | /api/v1/sessions/1/ixnetwork/vport/protocolStack/atm/ipEndpoint/range | /api/v1/sessions/1/ixnetwork/vport/protocolStack/atm/pppoxEndpoint/range | /api/v1/sessions/1/ixnetwork/vport/protocolStack/ethernet/dhcpEndpoint/range | /api/v1/sessions/1/ixnetwork/vport/protocolStack/ethernet/ip/l2tpEndpoint/range | /api/v1/sessions/1/ixnetwork/vport/protocolStack/ethernet/ipEndpoint/range | /api/v1/sessions/1/ixnetwork/vport/protocolStack/ethernet/pppoxEndpoint/range | /api/v1/sessions/1/ixnetwork/vport/protocolStack/ethernetEndpoint/range)): The interfaces that are associated with the selected interface type.
         - IpV4Mdt (bool): Enables the use of this Data MDT range on the simulated interface.
         - IpV4Mpls (bool): If enabled, this BGP router/peer supports the IPv4 MPLS address family.
         - IpV4MplsVpn (bool): If enabled, this BGP router/peer supports the IPv4 MPLS/VPN address family.
@@ -1539,7 +1539,7 @@ class NeighborRange(Base):
         - StaggeredStartPeriod (number): Controls the staggering and period of initial start messages.
         - StaleTime (number): Controls the operation of BGP Graceful Restart.
         - TcpWindowSize (number): (External neighbor only) The TCP window used for communications from the neighbor. (default = 8,192)
-        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup)): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
+        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/trafficGroup)): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
         - TtlValue (number): The limited number of iterations that a unit of data can experience before the data is discarded.
         - Type (str(internal | external)): Indicates that the neighbor is either an internal or external router.
         - UpdateInterval (number): The frequency with which UPDATE messages are sent to the DUT.

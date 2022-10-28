@@ -1,4 +1,10 @@
 # Release Notes
+### October 2022
+* 1.1.7
+  * support ixnetwork version 9.20.2206.84 (9.20 Update-3)
+  * support uhd version 1.5 patch-2
+  * bug fixes in batch add
+  * drill down statistics sample corrected
 ### May 2022
 * 1.1.6
   * support ixnetwork version 9.20.2201.69 (9.20 Update-1)

@@ -115,13 +115,13 @@ class Dhcpv6client(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv6peer_d4de2e9634d2dee11a9265d28434788b.BgpIpv6Peer): An instance of the BgpIpv6Peer class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv6peer_d1a9d481647a51c783f6ad2bd104f872.BgpIpv6Peer): An instance of the BgpIpv6Peer class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv6peer_d4de2e9634d2dee11a9265d28434788b import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv6peer_d1a9d481647a51c783f6ad2bd104f872 import (
             BgpIpv6Peer,
         )
 
@@ -646,7 +646,7 @@ class Dhcpv6client(Base):
         """DEPRECATED
         Returns
         -------
-        - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of layers this layer is used to connect with to the wire.
+        - list(str[None | /api/v1/sessions/1/ixnetwork/topology]): List of layers this layer is used to connect with to the wire.
         """
         return self._get_attribute(self._SDM_ATT_MAP["ConnectedVia"])
 
@@ -919,7 +919,7 @@ class Dhcpv6client(Base):
         """
         Returns
         -------
-        - list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str])): A list of errors that have occurred
+        - list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork/],arg2:list[str])): A list of errors that have occurred
         """
         return self._get_attribute(self._SDM_ATT_MAP["Errors"])
 
@@ -1026,7 +1026,7 @@ class Dhcpv6client(Base):
         """
         Returns
         -------
-        - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of secondary (many to one) child layer protocols
+        - list(str[None | /api/v1/sessions/1/ixnetwork/topology]): List of secondary (many to one) child layer protocols
         """
         return self._get_attribute(self._SDM_ATT_MAP["StackedLayers"])
 
@@ -1099,12 +1099,12 @@ class Dhcpv6client(Base):
 
         Args
         ----
-        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
+        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology])): List of layers this layer is used to connect with to the wire.
         - EnableStateless (bool): Enables DHCP stateless.
         - MaxNoPerClient (number): Maximum number of Addresses/Prefixes accepted by a Client in a negotiation.
         - Multiplier (number): Number of layer instances per parent instance (multiplier)
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
+        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology])): List of secondary (many to one) child layer protocols
 
         Raises
         ------
@@ -1126,12 +1126,12 @@ class Dhcpv6client(Base):
 
         Args
         ----
-        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
+        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology])): List of layers this layer is used to connect with to the wire.
         - EnableStateless (bool): Enables DHCP stateless.
         - MaxNoPerClient (number): Maximum number of Addresses/Prefixes accepted by a Client in a negotiation.
         - Multiplier (number): Number of layer instances per parent instance (multiplier)
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
+        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology])): List of secondary (many to one) child layer protocols
 
         Returns
         -------
@@ -1185,7 +1185,7 @@ class Dhcpv6client(Base):
         Args
         ----
         - ComputedIapdAddresses (list(str)): The computed IPv6 addresses.
-        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
+        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology])): List of layers this layer is used to connect with to the wire.
         - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         - DiscoveredAddresses (list(str)): The discovered IPv6 addresses.
@@ -1193,7 +1193,7 @@ class Dhcpv6client(Base):
         - DiscoveredPrefix (list(str)): The discovered IPv6 prefix.
         - DiscoveredPrefixLength (list(number)): The length of the discovered IPv6 prefix.
         - EnableStateless (bool): Enables DHCP stateless.
-        - Errors (list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str]))): A list of errors that have occurred
+        - Errors (list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork/],arg2:list[str]))): A list of errors that have occurred
         - MaxNoPerClient (number): Maximum number of Addresses/Prefixes accepted by a Client in a negotiation.
         - Multiplier (number): Number of layer instances per parent instance (multiplier)
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
@@ -1201,7 +1201,7 @@ class Dhcpv6client(Base):
         - NoOfPrefixes (list(number)): Number of Negotiated Addresses.
         - SessionInfo (list(str[duidNak | excessiveTlvs | noAddrsAvail | noAddrsBelow | none | noPrefixAvail | nsFailed | partiallyNegotiated | rebindTimeout | relayDown | renewTimeout | requestTimeout | solicitTimeout])): Logs additional information about the session state
         - SessionStatus (list(str[down | notStarted | up])): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
-        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
+        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology])): List of secondary (many to one) child layer protocols
         - StateCounts (dict(total:number,notStarted:number,down:number,up:number)): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
         - Status (str(configured | error | mixed | notStarted | started | starting | stopping)): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
 

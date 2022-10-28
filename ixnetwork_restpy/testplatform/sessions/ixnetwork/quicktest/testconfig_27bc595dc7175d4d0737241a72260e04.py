@@ -897,7 +897,7 @@ class TestConfig(Base):
         """
         Returns
         -------
-        - list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/.../lan]): Protocol Items
+        - list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/protocols/static/lan]): Protocol Items
         """
         return self._get_attribute(self._SDM_ATT_MAP["ProtocolItem"])
 
@@ -1143,7 +1143,7 @@ class TestConfig(Base):
         - PortDelayUnit (str(bytes | nanoseconds)): Sets the port delay unit in which it will be measured.
         - PortDelayValue (number): Sets the port delay value.
         - PortDownTime (number): The time interval during the port is down.
-        - ProtocolItem (list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/.../lan])): Protocol Items
+        - ProtocolItem (list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/protocols/static/lan])): Protocol Items
         - ShowDetailedBinaryResults (bool): NOT DEFINED
         - StaggeredStart (bool): If true, transmit start is staggered; if false, transmit starts on all ports at the same time.
         - StepIncrementFrameSize (number): The incremental step value of the frame size.
@@ -1280,7 +1280,7 @@ class TestConfig(Base):
         - PortDelayUnit (str(bytes | nanoseconds)): Sets the port delay unit in which it will be measured.
         - PortDelayValue (number): Sets the port delay value.
         - PortDownTime (number): The time interval during the port is down.
-        - ProtocolItem (list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/.../lan])): Protocol Items
+        - ProtocolItem (list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/protocols/static/lan])): Protocol Items
         - ShowDetailedBinaryResults (bool): NOT DEFINED
         - StaggeredStart (bool): If true, transmit start is staggered; if false, transmit starts on all ports at the same time.
         - StepIncrementFrameSize (number): The incremental step value of the frame size.

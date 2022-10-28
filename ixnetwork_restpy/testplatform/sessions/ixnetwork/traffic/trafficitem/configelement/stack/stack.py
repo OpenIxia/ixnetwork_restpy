@@ -5723,6 +5723,90 @@ class Stack(Base):
         return ECpriUserData(self)
 
     @property
+    def EcpriOranMsgs(self):
+        """
+        valid only with Batch Add
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.ecpriOranMsgs_template.EcpriOranMsgs): An instance of the EcpriOranMsgs traffic stack
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.ecpriOranMsgs_template import (
+            EcpriOranMsgs,
+        )
+
+        return EcpriOranMsgs(self)
+
+    @property
+    def OranCtlrMsgs(self):
+        """
+        valid only with Batch Add
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.oranCtlrMsgs_template.OranCtlrMsgs): An instance of the OranCtlrMsgs traffic stack
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.oranCtlrMsgs_template import (
+            OranCtlrMsgs,
+        )
+
+        return OranCtlrMsgs(self)
+
+    @property
+    def OranDataMsgs(self):
+        """
+        valid only with Batch Add
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.oranDataMsgs_template.OranDataMsgs): An instance of the OranDataMsgs traffic stack
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.oranDataMsgs_template import (
+            OranDataMsgs,
+        )
+
+        return OranDataMsgs(self)
+
+    @property
+    def IpEncapsulatingSecurityPayload(self):
+        """
+        valid only with Batch Add
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.ipEncapsulatingSecurityPayload_template.IpEncapsulatingSecurityPayload): An instance of the IpEncapsulatingSecurityPayload traffic stack
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.ipEncapsulatingSecurityPayload_template import (
+            IpEncapsulatingSecurityPayload,
+        )
+
+        return IpEncapsulatingSecurityPayload(self)
+
+    @property
+    def IpAuthenticationHeader(self):
+        """
+        valid only with Batch Add
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.ipAuthenticationHeader_template.IpAuthenticationHeader): An instance of the IpAuthenticationHeader traffic stack
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.ipAuthenticationHeader_template import (
+            IpAuthenticationHeader,
+        )
+
+        return IpAuthenticationHeader(self)
+
+    @property
+    def IpEspOverMACsec(self):
+        """
+        valid only with Batch Add
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.ipEspOverMACsec_template.IpEspOverMACsec): An instance of the IpEspOverMACsec traffic stack
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.ipEspOverMACsec_template import (
+            IpEspOverMACsec,
+        )
+
+        return IpEspOverMACsec(self)
+
+    @property
     def Tcp(self):
         """
         valid only with Batch Add
@@ -6599,7 +6683,7 @@ class Stack(Base):
 
         DEPRECATED append(Arg2=href, async_operation=bool)string
         --------------------------------------------------------
-        - Arg2 (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../protocolTemplate)): A valid /traffic/protocolTemplate object reference.
+        - Arg2 (str(None | /api/v1/sessions/1/ixnetwork/traffic/protocolTemplate)): A valid /traffic/protocolTemplate object reference.
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns str: This exec returns an object reference to the newly appended stack item.
 
@@ -6623,9 +6707,9 @@ class Stack(Base):
 
         appendProtocol(Arg2=href, async_operation=bool)href
         ---------------------------------------------------
-        - Arg2 (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../protocolTemplate)): A valid /traffic/protocolTemplate object reference.
+        - Arg2 (str(None | /api/v1/sessions/1/ixnetwork/traffic/protocolTemplate)): A valid /traffic/protocolTemplate object reference.
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
-        - Returns str(None | /api/v1/sessions/1/ixnetwork/traffic/.../stack): This exec returns an object reference to the newly appended stack item.
+        - Returns str(None | /api/v1/sessions/1/ixnetwork/traffic/trafficItem/configElement/stack): This exec returns an object reference to the newly appended stack item.
 
         Raises
         ------
@@ -6670,7 +6754,7 @@ class Stack(Base):
 
         DEPRECATED insert(Arg2=href, async_operation=bool)string
         --------------------------------------------------------
-        - Arg2 (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../protocolTemplate)): A valid /traffic/protocolTemplate object reference
+        - Arg2 (str(None | /api/v1/sessions/1/ixnetwork/traffic/protocolTemplate)): A valid /traffic/protocolTemplate object reference
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns str: This exec returns an object reference to the newly inserted stack item.
 
@@ -6694,9 +6778,9 @@ class Stack(Base):
 
         insertProtocol(Arg2=href, async_operation=bool)href
         ---------------------------------------------------
-        - Arg2 (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../protocolTemplate)): A valid /traffic/protocolTemplate object reference
+        - Arg2 (str(None | /api/v1/sessions/1/ixnetwork/traffic/protocolTemplate)): A valid /traffic/protocolTemplate object reference
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
-        - Returns str(None | /api/v1/sessions/1/ixnetwork/traffic/.../stack): This exec returns an object reference to the newly inserted stack item.
+        - Returns str(None | /api/v1/sessions/1/ixnetwork/traffic/trafficItem/configElement/stack): This exec returns an object reference to the newly inserted stack item.
 
         Raises
         ------

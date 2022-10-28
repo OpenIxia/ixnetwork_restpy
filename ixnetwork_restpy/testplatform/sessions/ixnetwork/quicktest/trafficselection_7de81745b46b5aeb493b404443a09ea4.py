@@ -58,7 +58,7 @@ class TrafficSelection(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficItem | /api/v1/sessions/1/ixnetwork/traffic/.../highLevelStream): Signifies the ID
+        - str(None | /api/v1/sessions/1/ixnetwork/traffic/trafficItem | /api/v1/sessions/1/ixnetwork/traffic/trafficItem/highLevelStream): Signifies the ID
         """
         return self._get_attribute(self._SDM_ATT_MAP["Id__"])
 
@@ -135,7 +135,7 @@ class TrafficSelection(Base):
 
         Args
         ----
-        - Id__ (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficItem | /api/v1/sessions/1/ixnetwork/traffic/.../highLevelStream)): Signifies the ID
+        - Id__ (str(None | /api/v1/sessions/1/ixnetwork/traffic/trafficItem | /api/v1/sessions/1/ixnetwork/traffic/trafficItem/highLevelStream)): Signifies the ID
         - IncludeMode (str(background | inTest)): Traffic type for the frame data
         - IsGenerated (bool): If true, the traffic is generated.
         - ItemType (str(flowGroup | trafficItem)): Traffic type for the frame data
@@ -155,7 +155,7 @@ class TrafficSelection(Base):
 
         Args
         ----
-        - Id__ (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficItem | /api/v1/sessions/1/ixnetwork/traffic/.../highLevelStream)): Signifies the ID
+        - Id__ (str(None | /api/v1/sessions/1/ixnetwork/traffic/trafficItem | /api/v1/sessions/1/ixnetwork/traffic/trafficItem/highLevelStream)): Signifies the ID
         - IncludeMode (str(background | inTest)): Traffic type for the frame data
         - IsGenerated (bool): If true, the traffic is generated.
         - ItemType (str(flowGroup | trafficItem)): Traffic type for the frame data
@@ -193,7 +193,7 @@ class TrafficSelection(Base):
 
         Args
         ----
-        - Id__ (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficItem | /api/v1/sessions/1/ixnetwork/traffic/.../highLevelStream)): Signifies the ID
+        - Id__ (str(None | /api/v1/sessions/1/ixnetwork/traffic/trafficItem | /api/v1/sessions/1/ixnetwork/traffic/trafficItem/highLevelStream)): Signifies the ID
         - IncludeMode (str(background | inTest)): Traffic type for the frame data
         - IsGenerated (bool): If true, the traffic is generated.
         - ItemType (str(flowGroup | trafficItem)): Traffic type for the frame data

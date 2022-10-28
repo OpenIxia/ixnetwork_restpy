@@ -1169,7 +1169,7 @@ class TestConfig(Base):
         """
         Returns
         -------
-        - list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/.../lan]): Protocol Items
+        - list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/protocols/static/lan]): Protocol Items
         """
         return self._get_attribute(self._SDM_ATT_MAP["ProtocolItem"])
 
@@ -1683,7 +1683,7 @@ class TestConfig(Base):
         - PortDelayEnabled (bool): NOT DEFINED
         - PortDelayUnit (str(bytes | nanoseconds)): NOT DEFINED
         - PortDelayValue (number): NOT DEFINED
-        - ProtocolItem (list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/.../lan])): Protocol Items
+        - ProtocolItem (list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/protocols/static/lan])): Protocol Items
         - QuickSearchFrameLossUnit (str(%)): NOT DEFINED
         - QuickSearchLoadUnit (str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate)): NOT DEFINED
         - QuickSearchResolution (number): NOT DEFINED
@@ -1878,7 +1878,7 @@ class TestConfig(Base):
         - PortDelayEnabled (bool): NOT DEFINED
         - PortDelayUnit (str(bytes | nanoseconds)): NOT DEFINED
         - PortDelayValue (number): NOT DEFINED
-        - ProtocolItem (list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/.../lan])): Protocol Items
+        - ProtocolItem (list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/protocols/static/lan])): Protocol Items
         - QuickSearchFrameLossUnit (str(%)): NOT DEFINED
         - QuickSearchLoadUnit (str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate)): NOT DEFINED
         - QuickSearchResolution (number): NOT DEFINED

@@ -93,7 +93,7 @@ class FlowCondition(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableTrackingFilter): Selected tracking filters from the availableTrackingFilter list.
+        - str(None | /api/v1/sessions/1/ixnetwork/statistics/view/availableTrackingFilter): Selected tracking filters from the availableTrackingFilter list.
         """
         return self._get_attribute(self._SDM_ATT_MAP["TrackingFilterId"])
 
@@ -131,7 +131,7 @@ class FlowCondition(Base):
         ----
         - Operator (str(isBetween | isDifferent | isEqual | isEqualOrGreater | isEqualOrSmaller | isGreater | isSmaller)): The logical operation to be performed.
         - ShowFirstMatchingSet (bool): If true, displays the first matching set.
-        - TrackingFilterId (str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableTrackingFilter)): Selected tracking filters from the availableTrackingFilter list.
+        - TrackingFilterId (str(None | /api/v1/sessions/1/ixnetwork/statistics/view/availableTrackingFilter)): Selected tracking filters from the availableTrackingFilter list.
         - Values (list(number)): Value to be matched for the condition.
 
         Raises
@@ -154,7 +154,7 @@ class FlowCondition(Base):
         ----
         - Operator (str(isBetween | isDifferent | isEqual | isEqualOrGreater | isEqualOrSmaller | isGreater | isSmaller)): The logical operation to be performed.
         - ShowFirstMatchingSet (bool): If true, displays the first matching set.
-        - TrackingFilterId (str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableTrackingFilter)): Selected tracking filters from the availableTrackingFilter list.
+        - TrackingFilterId (str(None | /api/v1/sessions/1/ixnetwork/statistics/view/availableTrackingFilter)): Selected tracking filters from the availableTrackingFilter list.
         - Values (list(number)): Value to be matched for the condition.
 
         Returns
@@ -195,7 +195,7 @@ class FlowCondition(Base):
         ----
         - Operator (str(isBetween | isDifferent | isEqual | isEqualOrGreater | isEqualOrSmaller | isGreater | isSmaller)): The logical operation to be performed.
         - ShowFirstMatchingSet (bool): If true, displays the first matching set.
-        - TrackingFilterId (str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableTrackingFilter)): Selected tracking filters from the availableTrackingFilter list.
+        - TrackingFilterId (str(None | /api/v1/sessions/1/ixnetwork/statistics/view/availableTrackingFilter)): Selected tracking filters from the availableTrackingFilter list.
         - Values (list(number)): Value to be matched for the condition.
 
         Returns

@@ -51,7 +51,7 @@ class MobilePathEntriesS5S8Sgw(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/vport/.../enbS5S8SecondaryRange):
+        - str(None | /api/v1/sessions/1/ixnetwork/vport/protocolStack/ethernet/ip/egtpS5S8SgwEndpoint/enbS5S8SecondaryRange):
         """
         return self._get_attribute(self._SDM_ATT_MAP["NextRange"])
 
@@ -76,7 +76,7 @@ class MobilePathEntriesS5S8Sgw(Base):
 
         Args
         ----
-        - NextRange (str(None | /api/v1/sessions/1/ixnetwork/vport/.../enbS5S8SecondaryRange)):
+        - NextRange (str(None | /api/v1/sessions/1/ixnetwork/vport/protocolStack/ethernet/ip/egtpS5S8SgwEndpoint/enbS5S8SecondaryRange)):
 
         Raises
         ------
@@ -90,7 +90,7 @@ class MobilePathEntriesS5S8Sgw(Base):
 
         Args
         ----
-        - NextRange (str(None | /api/v1/sessions/1/ixnetwork/vport/.../enbS5S8SecondaryRange)):
+        - NextRange (str(None | /api/v1/sessions/1/ixnetwork/vport/protocolStack/ethernet/ip/egtpS5S8SgwEndpoint/enbS5S8SecondaryRange)):
 
         Returns
         -------
@@ -122,7 +122,7 @@ class MobilePathEntriesS5S8Sgw(Base):
 
         Args
         ----
-        - NextRange (str(None | /api/v1/sessions/1/ixnetwork/vport/.../enbS5S8SecondaryRange)):
+        - NextRange (str(None | /api/v1/sessions/1/ixnetwork/vport/protocolStack/ethernet/ip/egtpS5S8SgwEndpoint/enbS5S8SecondaryRange)):
         - ObjectId (str): Unique identifier for this object
 
         Returns

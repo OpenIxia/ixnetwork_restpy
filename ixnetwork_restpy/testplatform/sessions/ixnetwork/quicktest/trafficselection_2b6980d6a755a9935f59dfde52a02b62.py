@@ -60,7 +60,7 @@ class TrafficSelection(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficItem | /api/v1/sessions/1/ixnetwork/traffic/.../highLevelStream): NOT DEFINED
+        - str(None | /api/v1/sessions/1/ixnetwork/traffic/trafficItem | /api/v1/sessions/1/ixnetwork/traffic/trafficItem/highLevelStream): NOT DEFINED
         """
         return self._get_attribute(self._SDM_ATT_MAP["Id__"])
 
@@ -158,7 +158,7 @@ class TrafficSelection(Base):
 
         Args
         ----
-        - Id__ (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficItem | /api/v1/sessions/1/ixnetwork/traffic/.../highLevelStream)): NOT DEFINED
+        - Id__ (str(None | /api/v1/sessions/1/ixnetwork/traffic/trafficItem | /api/v1/sessions/1/ixnetwork/traffic/trafficItem/highLevelStream)): NOT DEFINED
         - IncludeMode (str(background | inTest)): Traffic type for the frame data
         - IsGenerated (bool): NOT DEFINED
         - ItemType (str(flowGroup | trafficItem)): Traffic type for the frame data
@@ -185,7 +185,7 @@ class TrafficSelection(Base):
 
         Args
         ----
-        - Id__ (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficItem | /api/v1/sessions/1/ixnetwork/traffic/.../highLevelStream)): NOT DEFINED
+        - Id__ (str(None | /api/v1/sessions/1/ixnetwork/traffic/trafficItem | /api/v1/sessions/1/ixnetwork/traffic/trafficItem/highLevelStream)): NOT DEFINED
         - IncludeMode (str(background | inTest)): Traffic type for the frame data
         - IsGenerated (bool): NOT DEFINED
         - ItemType (str(flowGroup | trafficItem)): Traffic type for the frame data
@@ -230,7 +230,7 @@ class TrafficSelection(Base):
 
         Args
         ----
-        - Id__ (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficItem | /api/v1/sessions/1/ixnetwork/traffic/.../highLevelStream)): NOT DEFINED
+        - Id__ (str(None | /api/v1/sessions/1/ixnetwork/traffic/trafficItem | /api/v1/sessions/1/ixnetwork/traffic/trafficItem/highLevelStream)): NOT DEFINED
         - IncludeMode (str(background | inTest)): Traffic type for the frame data
         - IsGenerated (bool): NOT DEFINED
         - ItemType (str(flowGroup | trafficItem)): Traffic type for the frame data

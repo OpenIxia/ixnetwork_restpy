@@ -133,7 +133,7 @@ class Router(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
+        - str(None | /api/v1/sessions/1/ixnetwork/traffic/trafficGroup): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
         """
         return self._get_attribute(self._SDM_ATT_MAP["TrafficGroupId"])
 
@@ -150,7 +150,7 @@ class Router(Base):
         ----
         - Enabled (bool): Enables or disables the simulated router.
         - RouterId (str): The ID of the simulated router, expressed as an IP address.
-        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup)): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
+        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/trafficGroup)): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
 
         Raises
         ------
@@ -166,7 +166,7 @@ class Router(Base):
         ----
         - Enabled (bool): Enables or disables the simulated router.
         - RouterId (str): The ID of the simulated router, expressed as an IP address.
-        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup)): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
+        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/trafficGroup)): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
 
         Returns
         -------
@@ -207,7 +207,7 @@ class Router(Base):
         - Enabled (bool): Enables or disables the simulated router.
         - IsLearnedInfoRefreshed (bool): When true, indicates that the BFD router learned information is current.
         - RouterId (str): The ID of the simulated router, expressed as an IP address.
-        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup)): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
+        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/trafficGroup)): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
 
         Returns
         -------

@@ -51,7 +51,7 @@ class IptvChannels(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/globals/.../globalChannelList): Reference to the channel list from the global settings
+        - str(None | /api/v1/sessions/1/ixnetwork/globals/protocolStack/iptvGlobals/globalChannelList): Reference to the channel list from the global settings
         """
         return self._get_attribute(self._SDM_ATT_MAP["ChannelList"])
 
@@ -76,7 +76,7 @@ class IptvChannels(Base):
 
         Args
         ----
-        - ChannelList (str(None | /api/v1/sessions/1/ixnetwork/globals/.../globalChannelList)): Reference to the channel list from the global settings
+        - ChannelList (str(None | /api/v1/sessions/1/ixnetwork/globals/protocolStack/iptvGlobals/globalChannelList)): Reference to the channel list from the global settings
 
         Raises
         ------
@@ -90,7 +90,7 @@ class IptvChannels(Base):
 
         Args
         ----
-        - ChannelList (str(None | /api/v1/sessions/1/ixnetwork/globals/.../globalChannelList)): Reference to the channel list from the global settings
+        - ChannelList (str(None | /api/v1/sessions/1/ixnetwork/globals/protocolStack/iptvGlobals/globalChannelList)): Reference to the channel list from the global settings
 
         Returns
         -------
@@ -122,7 +122,7 @@ class IptvChannels(Base):
 
         Args
         ----
-        - ChannelList (str(None | /api/v1/sessions/1/ixnetwork/globals/.../globalChannelList)): Reference to the channel list from the global settings
+        - ChannelList (str(None | /api/v1/sessions/1/ixnetwork/globals/protocolStack/iptvGlobals/globalChannelList)): Reference to the channel list from the global settings
         - ObjectId (str): Unique identifier for this object
 
         Returns

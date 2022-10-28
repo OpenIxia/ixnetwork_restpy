@@ -110,7 +110,7 @@ class EvbStationRange(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/vport/.../erRange):
+        - str(None | /api/v1/sessions/1/ixnetwork/vport/protocolStack/ethernet/vepaEndpoint/range/evbStationRange/erRange):
         """
         return self._get_attribute(self._SDM_ATT_MAP["DefaultEr"])
 
@@ -286,7 +286,7 @@ class EvbStationRange(Base):
         ----
         - ChannelCapability (number): Advertised Channel Capability.
         - ChassisId (str): The Chassis ID that will be advertised in the mandatory LLDP TLVs.
-        - DefaultEr (str(None | /api/v1/sessions/1/ixnetwork/vport/.../erRange)):
+        - DefaultEr (str(None | /api/v1/sessions/1/ixnetwork/vport/protocolStack/ethernet/vepaEndpoint/range/evbStationRange/erRange)):
         - Enabled (bool): Disabled ranges won't be configured nor validated.
         - HoldTime (number): Multiplier to get actual TTL value used in an LLDPDU.
         - Name (str): Name of range
@@ -330,7 +330,7 @@ class EvbStationRange(Base):
         ----
         - ChannelCapability (number): Advertised Channel Capability.
         - ChassisId (str): The Chassis ID that will be advertised in the mandatory LLDP TLVs.
-        - DefaultEr (str(None | /api/v1/sessions/1/ixnetwork/vport/.../erRange)):
+        - DefaultEr (str(None | /api/v1/sessions/1/ixnetwork/vport/protocolStack/ethernet/vepaEndpoint/range/evbStationRange/erRange)):
         - Enabled (bool): Disabled ranges won't be configured nor validated.
         - HoldTime (number): Multiplier to get actual TTL value used in an LLDPDU.
         - Name (str): Name of range

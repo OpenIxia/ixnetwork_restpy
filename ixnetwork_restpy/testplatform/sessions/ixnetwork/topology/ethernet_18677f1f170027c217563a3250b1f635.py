@@ -274,13 +274,13 @@ class Ethernet(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ipv6_0cf8a9d52fdc1a66c95779a358f9f390.Ipv6): An instance of the Ipv6 class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ipv6_b40789fa49420009901a46b8dc683afc.Ipv6): An instance of the Ipv6 class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ipv6_0cf8a9d52fdc1a66c95779a358f9f390 import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ipv6_b40789fa49420009901a46b8dc683afc import (
             Ipv6,
         )
 
@@ -574,13 +574,13 @@ class Ethernet(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.mka_f83702f137304769ca29eeb7f114d871.Mka): An instance of the Mka class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.mka_263a86da717fe553c3af300d3bfb0cab.Mka): An instance of the Mka class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.mka_f83702f137304769ca29eeb7f114d871 import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.mka_263a86da717fe553c3af300d3bfb0cab import (
             Mka,
         )
 
@@ -674,13 +674,13 @@ class Ethernet(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pppoxclient_d7a99a629d894d9e4fc7eae719c12528.Pppoxclient): An instance of the Pppoxclient class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pppoxclient_f43b198156c11196dbbd8c4dbee2af9d.Pppoxclient): An instance of the Pppoxclient class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pppoxclient_d7a99a629d894d9e4fc7eae719c12528 import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pppoxclient_f43b198156c11196dbbd8c4dbee2af9d import (
             Pppoxclient,
         )
 
@@ -694,13 +694,13 @@ class Ethernet(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pppoxserver_6001eb455946b79aa809976e25c5d004.Pppoxserver): An instance of the Pppoxserver class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pppoxserver_622ad1c6d961bb8e246b079c72242bfa.Pppoxserver): An instance of the Pppoxserver class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pppoxserver_6001eb455946b79aa809976e25c5d004 import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pppoxserver_622ad1c6d961bb8e246b079c72242bfa import (
             Pppoxserver,
         )
 
@@ -714,13 +714,13 @@ class Ethernet(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ptp_0fccf1fcc99303d2707e822de949037f.Ptp): An instance of the Ptp class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ptp_24f2907f5a685b611f57469838b21337.Ptp): An instance of the Ptp class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ptp_0fccf1fcc99303d2707e822de949037f import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ptp_24f2907f5a685b611f57469838b21337 import (
             Ptp,
         )
 
@@ -855,7 +855,7 @@ class Ethernet(Base):
         """DEPRECATED
         Returns
         -------
-        - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of layers this layer is used to connect with to the wire.
+        - list(str[None | /api/v1/sessions/1/ixnetwork/topology]): List of layers this layer is used to connect with to the wire.
         """
         return self._get_attribute(self._SDM_ATT_MAP["ConnectedVia"])
 
@@ -901,7 +901,7 @@ class Ethernet(Base):
         """
         Returns
         -------
-        - list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str])): A list of errors that have occurred
+        - list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork/],arg2:list[str])): A list of errors that have occurred
         """
         return self._get_attribute(self._SDM_ATT_MAP["Errors"])
 
@@ -990,7 +990,7 @@ class Ethernet(Base):
         """
         Returns
         -------
-        - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of secondary (many to one) child layer protocols
+        - list(str[None | /api/v1/sessions/1/ixnetwork/topology]): List of secondary (many to one) child layer protocols
         """
         return self._get_attribute(self._SDM_ATT_MAP["StackedLayers"])
 
@@ -1066,11 +1066,11 @@ class Ethernet(Base):
 
         Args
         ----
-        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
+        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology])): List of layers this layer is used to connect with to the wire.
         - Multiplier (number): Number of layer instances per parent instance (multiplier)
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
         - NotifyMACMove (bool): Flag to determine if MAC move notification to be sent
-        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
+        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology])): List of secondary (many to one) child layer protocols
         - UseVlans (bool): Flag to determine whether VLANs are enabled
         - VlanCount (number): Number of active VLANs
 
@@ -1095,11 +1095,11 @@ class Ethernet(Base):
 
         Args
         ----
-        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
+        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology])): List of layers this layer is used to connect with to the wire.
         - Multiplier (number): Number of layer instances per parent instance (multiplier)
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
         - NotifyMACMove (bool): Flag to determine if MAC move notification to be sent
-        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
+        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology])): List of secondary (many to one) child layer protocols
         - UseVlans (bool): Flag to determine whether VLANs are enabled
         - VlanCount (number): Number of active VLANs
 
@@ -1147,15 +1147,15 @@ class Ethernet(Base):
 
         Args
         ----
-        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
+        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology])): List of layers this layer is used to connect with to the wire.
         - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
-        - Errors (list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str]))): A list of errors that have occurred
+        - Errors (list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork/],arg2:list[str]))): A list of errors that have occurred
         - Multiplier (number): Number of layer instances per parent instance (multiplier)
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
         - NotifyMACMove (bool): Flag to determine if MAC move notification to be sent
         - SessionStatus (list(str[down | notStarted | up])): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
-        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
+        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology])): List of secondary (many to one) child layer protocols
         - StateCounts (dict(total:number,notStarted:number,down:number,up:number)): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
         - Status (str(configured | error | mixed | notStarted | started | starting | stopping)): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
         - UseVlans (bool): Flag to determine whether VLANs are enabled

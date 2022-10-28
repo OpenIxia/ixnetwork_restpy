@@ -102,7 +102,7 @@ class Interface(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface): This signifies the Interface that has been assigned for this range.
+        - str(None | /api/v1/sessions/1/ixnetwork/vport/interface): This signifies the Interface that has been assigned for this range.
         """
         return self._get_attribute(self._SDM_ATT_MAP["Interfaces"])
 
@@ -119,7 +119,7 @@ class Interface(Base):
         ----
         - DutMacAddress (str): This signifies the MAC address of the DUT.
         - Enabled (bool): This signifies the enablement of the use of this interface for the simulated router.
-        - Interfaces (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface)): This signifies the Interface that has been assigned for this range.
+        - Interfaces (str(None | /api/v1/sessions/1/ixnetwork/vport/interface)): This signifies the Interface that has been assigned for this range.
 
         Raises
         ------
@@ -135,7 +135,7 @@ class Interface(Base):
         ----
         - DutMacAddress (str): This signifies the MAC address of the DUT.
         - Enabled (bool): This signifies the enablement of the use of this interface for the simulated router.
-        - Interfaces (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface)): This signifies the Interface that has been assigned for this range.
+        - Interfaces (str(None | /api/v1/sessions/1/ixnetwork/vport/interface)): This signifies the Interface that has been assigned for this range.
 
         Returns
         -------
@@ -169,7 +169,7 @@ class Interface(Base):
         ----
         - DutMacAddress (str): This signifies the MAC address of the DUT.
         - Enabled (bool): This signifies the enablement of the use of this interface for the simulated router.
-        - Interfaces (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface)): This signifies the Interface that has been assigned for this range.
+        - Interfaces (str(None | /api/v1/sessions/1/ixnetwork/vport/interface)): This signifies the Interface that has been assigned for this range.
 
         Returns
         -------

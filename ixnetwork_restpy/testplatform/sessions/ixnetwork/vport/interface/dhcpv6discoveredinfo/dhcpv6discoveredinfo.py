@@ -93,7 +93,7 @@ class DhcpV6DiscoveredInfo(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface): (Read Only) An Ixia protocol interface that is negotiating with the DHCPv6 Server.
+        - str(None | /api/v1/sessions/1/ixnetwork/vport/interface): (Read Only) An Ixia protocol interface that is negotiating with the DHCPv6 Server.
         """
         return self._get_attribute(self._SDM_ATT_MAP["ProtocolInterface"])
 
@@ -127,7 +127,7 @@ class DhcpV6DiscoveredInfo(Base):
         - IaRenewTime (number): (Read Only) The renew timer value (in seconds) specified by the DHCPv6 Server.
         - Ipv6Address (list(str)): (Read Only) A learned/allocated IPv6 address for this interface.
         - IsDhcpV6LearnedInfoRefreshed (bool): (Read Only) When true, the DHCPv6 discovered information is refreshed automatically.
-        - ProtocolInterface (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface)): (Read Only) An Ixia protocol interface that is negotiating with the DHCPv6 Server.
+        - ProtocolInterface (str(None | /api/v1/sessions/1/ixnetwork/vport/interface)): (Read Only) An Ixia protocol interface that is negotiating with the DHCPv6 Server.
         - Tlvs (list(dict(arg1:number,arg2:str))): (Read Only) The identifier or 'tag' for this DHCPv6 option. The DHCPv6 option value field may contain data for configuration parameter information.
 
         Returns

@@ -497,7 +497,7 @@ class Ospfv2Router(Base):
         """
         Returns
         -------
-        - list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str])): A list of errors that have occurred
+        - list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork/],arg2:list[str])): A list of errors that have occurred
         """
         return self._get_attribute(self._SDM_ATT_MAP["Errors"])
 
@@ -1193,7 +1193,7 @@ class Ospfv2Router(Base):
         - EnableBIER (bool): Enable BIER
         - EnableSegmentRouting (bool): Enable Segment Routing
         - EnableSrlb (bool): Enable SRLB
-        - Errors (list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str]))): A list of errors that have occurred
+        - Errors (list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork/],arg2:list[str]))): A list of errors that have occurred
         - FlexAlgoCount (number): If the count is greater than 0, then the Flex Algo tab will appear after OSPF RTR tab. Default is 0. Range is 0-128.
         - LocalRouterID (list(str)): Router ID
         - LoopBackAddress (list(str)): Router ID

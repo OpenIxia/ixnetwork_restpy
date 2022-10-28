@@ -218,5 +218,44 @@ def test_batch_add_with_quick_flow_traffic(ixnetwork):
             eth_st.DestinationAddress.Single("00:0c:29:68:05:1E")
 
 
+def test_batch_add_with_traffic_having_href_objects(ixnetwork):
+    vports = ixnetwork.Vport.add().add()
+    ipv4_1 = (
+        ixnetwork.Topology.add(Vports=vports[0])
+        .DeviceGroup.add(Name="dg1")
+        .Ethernet.add(Name="eth1")
+        .Ipv4.add(Name="ip1")
+    )
+    ipv4_2 = (
+        ixnetwork.Topology.add(Vports=vports[1])
+        .DeviceGroup.add(Name="dg2")
+        .Ethernet.add(Name="eth2")
+        .Ipv4.add(Name="ip2")
+    )
+
+    with BatchAdd(ixnetwork):
+        traffic = ixnetwork.Traffic.TrafficItem
+        scalable_sources = [
+            {"arg1": ipv4_2, "arg2": "1", "arg3": "1", "arg4": "1", "arg5": "2"},
+            {"arg1": ipv4_2, "arg2": "1", "arg3": "1", "arg4": "3", "arg5": "2"},
+        ]
+        scalable_destinations = [
+            {"arg1": ipv4_1, "arg2": "1", "arg3": "1", "arg4": "1", "arg5": "2"}
+        ]
+        tr3 = traffic.add(Name="Multicast", TrafficType="ipv4", TrafficItemType="l2L3")
+        endpoint_set = tr3.EndpointSet.add(
+            ScalableSources=scalable_sources, ScalableDestinations=scalable_destinations
+        )
+
+    assert (
+        endpoint_set.href
+        == "/api/v1/sessions/1/ixnetwork/traffic/trafficItem/1/endpointSet/1"
+    )
+    end_point = ixnetwork.Traffic.TrafficItem.find().EndpointSet.find()
+    assert end_point.ScalableSources[0]["arg1"] == ipv4_2.href
+    assert end_point.ScalableSources[1]["arg1"] == ipv4_2.href
+    assert end_point.ScalableDestinations[0]["arg1"] == ipv4_1.href
+
+
 if __name__ == "__main__":
     pytest.main(["-v", "-s", "--server", "localhost:11009:windows", __file__])

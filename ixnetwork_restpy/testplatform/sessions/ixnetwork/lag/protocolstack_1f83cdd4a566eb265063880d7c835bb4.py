@@ -117,7 +117,7 @@ class ProtocolStack(Base):
         """
         Returns
         -------
-        - list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str])): A list of errors that have occurred
+        - list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork/],arg2:list[str])): A list of errors that have occurred
         """
         return self._get_attribute(self._SDM_ATT_MAP["Errors"])
 
@@ -227,7 +227,7 @@ class ProtocolStack(Base):
         ----
         - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
-        - Errors (list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str]))): A list of errors that have occurred
+        - Errors (list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork/],arg2:list[str]))): A list of errors that have occurred
         - Multiplier (number): Number of device instances per parent device instance (multiplier)
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
         - Status (str(configured | error | mixed | notStarted | started | starting | stopping)): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
@@ -292,16 +292,16 @@ class ProtocolStack(Base):
 
         copyPaste(Arg2=href, async_operation=bool)list
         ----------------------------------------------
-        - Arg2 (str(None | /api/v1/sessions/1/ixnetwork//.../*)): The destination node below which the copied node will be pasted
+        - Arg2 (str(None | /api/v1/sessions/1/ixnetwork/)): The destination node below which the copied node will be pasted
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
-        - Returns list(str[None | /api/v1/sessions/1/ixnetwork//.../*]): The newly copied node.
+        - Returns list(str[None | /api/v1/sessions/1/ixnetwork/]): The newly copied node.
 
         copyPaste(Arg2=href, Arg3=enum, async_operation=bool)list
         ---------------------------------------------------------
-        - Arg2 (str(None | /api/v1/sessions/1/ixnetwork//.../*)): The destination node below which the copied node will be pasted
+        - Arg2 (str(None | /api/v1/sessions/1/ixnetwork/)): The destination node below which the copied node will be pasted
         - Arg3 (str(regular | unique)): Type of Paste, regular or Unique. Unique generates unique Ethernet MAC address and Ipv4 address on Paste.
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
-        - Returns list(str[None | /api/v1/sessions/1/ixnetwork//.../*]): The newly copied node.
+        - Returns list(str[None | /api/v1/sessions/1/ixnetwork/]): The newly copied node.
 
         Raises
         ------

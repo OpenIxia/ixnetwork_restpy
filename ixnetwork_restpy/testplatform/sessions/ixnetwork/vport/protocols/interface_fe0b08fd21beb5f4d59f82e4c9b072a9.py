@@ -347,7 +347,7 @@ class Interface(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface): The protocol interface associated with this LDP interface. There may be more than one protocol interface.
+        - str(None | /api/v1/sessions/1/ixnetwork/vport/interface): The protocol interface associated with this LDP interface. There may be more than one protocol interface.
         """
         return self._get_attribute(self._SDM_ATT_MAP["ProtocolInterface"])
 
@@ -385,7 +385,7 @@ class Interface(Base):
         - Enabled (bool): Enables the use of this interface for the simulated router.
         - LabelSpaceId (number): The LDP label space used by this interface.
         - Md5Key (str): Used with MD5 authentication. A user-defined string; maximum = 255 characters.
-        - ProtocolInterface (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface)): The protocol interface associated with this LDP interface. There may be more than one protocol interface.
+        - ProtocolInterface (str(None | /api/v1/sessions/1/ixnetwork/vport/interface)): The protocol interface associated with this LDP interface. There may be more than one protocol interface.
 
         Raises
         ------
@@ -422,7 +422,7 @@ class Interface(Base):
         - Enabled (bool): Enables the use of this interface for the simulated router.
         - LabelSpaceId (number): The LDP label space used by this interface.
         - Md5Key (str): Used with MD5 authentication. A user-defined string; maximum = 255 characters.
-        - ProtocolInterface (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface)): The protocol interface associated with this LDP interface. There may be more than one protocol interface.
+        - ProtocolInterface (str(None | /api/v1/sessions/1/ixnetwork/vport/interface)): The protocol interface associated with this LDP interface. There may be more than one protocol interface.
 
         Returns
         -------
@@ -479,7 +479,7 @@ class Interface(Base):
         - IsLdpLearnedInfoRefreshed (bool): When enabled, automatically refreshes the LDP learned info (from the DUT).
         - LabelSpaceId (number): The LDP label space used by this interface.
         - Md5Key (str): Used with MD5 authentication. A user-defined string; maximum = 255 characters.
-        - ProtocolInterface (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface)): The protocol interface associated with this LDP interface. There may be more than one protocol interface.
+        - ProtocolInterface (str(None | /api/v1/sessions/1/ixnetwork/vport/interface)): The protocol interface associated with this LDP interface. There may be more than one protocol interface.
 
         Returns
         -------

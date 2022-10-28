@@ -53,7 +53,7 @@ class TrafficProfileProxiesS5S8Pgw(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/globals/.../globalTrafficProfileS5S8):
+        - str(None | /api/v1/sessions/1/ixnetwork/globals/protocolStack/egtpS5S8SgwGlobals/globalTrafficProfileS5S8):
         """
         return self._get_attribute(self._SDM_ATT_MAP["ActualPluginSettingsRange"])
 
@@ -108,7 +108,7 @@ class TrafficProfileProxiesS5S8Pgw(Base):
 
         Args
         ----
-        - ActualPluginSettingsRange (str(None | /api/v1/sessions/1/ixnetwork/globals/.../globalTrafficProfileS5S8)):
+        - ActualPluginSettingsRange (str(None | /api/v1/sessions/1/ixnetwork/globals/protocolStack/egtpS5S8SgwGlobals/globalTrafficProfileS5S8)):
         - Enabled (bool): Disabled ranges won't be configured nor validated.
         - Name (str):
 
@@ -124,7 +124,7 @@ class TrafficProfileProxiesS5S8Pgw(Base):
 
         Args
         ----
-        - ActualPluginSettingsRange (str(None | /api/v1/sessions/1/ixnetwork/globals/.../globalTrafficProfileS5S8)):
+        - ActualPluginSettingsRange (str(None | /api/v1/sessions/1/ixnetwork/globals/protocolStack/egtpS5S8SgwGlobals/globalTrafficProfileS5S8)):
         - Enabled (bool): Disabled ranges won't be configured nor validated.
         - Name (str):
 
@@ -160,7 +160,7 @@ class TrafficProfileProxiesS5S8Pgw(Base):
 
         Args
         ----
-        - ActualPluginSettingsRange (str(None | /api/v1/sessions/1/ixnetwork/globals/.../globalTrafficProfileS5S8)):
+        - ActualPluginSettingsRange (str(None | /api/v1/sessions/1/ixnetwork/globals/protocolStack/egtpS5S8SgwGlobals/globalTrafficProfileS5S8)):
         - Enabled (bool): Disabled ranges won't be configured nor validated.
         - Name (str):
         - ObjectId (str): Unique identifier for this object

@@ -408,7 +408,7 @@ class Interface(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface): Indicates the name of the protocol interface being used for this OpenFlow configuration.
+        - str(None | /api/v1/sessions/1/ixnetwork/vport/interface): Indicates the name of the protocol interface being used for this OpenFlow configuration.
         """
         return self._get_attribute(self._SDM_ATT_MAP["ProtocolInterfaces"])
 
@@ -528,7 +528,7 @@ class Interface(Base):
         - ModeOfConnection (str(passive | active | mixed)): Indicates the mode of connection used for the Interface.
         - NonHelloMessageStartupAction (str(auxAcceptConnection | auxSendError)): Defines what action to take in case an auxiliary connection receives a non-hello message at startup.
         - PeriodicLldpInterval (number): Indicates the Periodic LLDP Packet Out Interval.
-        - ProtocolInterfaces (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface)): Indicates the name of the protocol interface being used for this OpenFlow configuration.
+        - ProtocolInterfaces (str(None | /api/v1/sessions/1/ixnetwork/vport/interface)): Indicates the name of the protocol interface being used for this OpenFlow configuration.
         - SendPortFeatureAtStartup (bool): If true , Port feature request is sent , once OF session is established.
         - TcpPort (number): Specify the TCP port for this interface.
         - TimeOutOption (str(multiplier | timeOutValue)): Indicates the types of timeout options supported.
@@ -591,7 +591,7 @@ class Interface(Base):
         - ModeOfConnection (str(passive | active | mixed)): Indicates the mode of connection used for the Interface.
         - NonHelloMessageStartupAction (str(auxAcceptConnection | auxSendError)): Defines what action to take in case an auxiliary connection receives a non-hello message at startup.
         - PeriodicLldpInterval (number): Indicates the Periodic LLDP Packet Out Interval.
-        - ProtocolInterfaces (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface)): Indicates the name of the protocol interface being used for this OpenFlow configuration.
+        - ProtocolInterfaces (str(None | /api/v1/sessions/1/ixnetwork/vport/interface)): Indicates the name of the protocol interface being used for this OpenFlow configuration.
         - SendPortFeatureAtStartup (bool): If true , Port feature request is sent , once OF session is established.
         - TcpPort (number): Specify the TCP port for this interface.
         - TimeOutOption (str(multiplier | timeOutValue)): Indicates the types of timeout options supported.
@@ -672,7 +672,7 @@ class Interface(Base):
         - ModeOfConnection (str(passive | active | mixed)): Indicates the mode of connection used for the Interface.
         - NonHelloMessageStartupAction (str(auxAcceptConnection | auxSendError)): Defines what action to take in case an auxiliary connection receives a non-hello message at startup.
         - PeriodicLldpInterval (number): Indicates the Periodic LLDP Packet Out Interval.
-        - ProtocolInterfaces (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface)): Indicates the name of the protocol interface being used for this OpenFlow configuration.
+        - ProtocolInterfaces (str(None | /api/v1/sessions/1/ixnetwork/vport/interface)): Indicates the name of the protocol interface being used for this OpenFlow configuration.
         - SendPortFeatureAtStartup (bool): If true , Port feature request is sent , once OF session is established.
         - TcpPort (number): Specify the TCP port for this interface.
         - TimeOutOption (str(multiplier | timeOutValue)): Indicates the types of timeout options supported.

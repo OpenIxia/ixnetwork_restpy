@@ -139,7 +139,7 @@ class Value(Base):
         getMVPropertyCandidatesToSharePatternWith(async_operation=bool)list
         -------------------------------------------------------------------
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
-        - Returns list(list[str[None | /api/v1/sessions/1/ixnetwork//.../*]]): list of MVProperties this pattern can be shared with
+        - Returns list(list[str[None | /api/v1/sessions/1/ixnetwork/]]): list of MVProperties this pattern can be shared with
 
         Raises
         ------
@@ -165,7 +165,7 @@ class Value(Base):
         getSharedPatternCandidates(async_operation=bool)list
         ----------------------------------------------------
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
-        - Returns list(list[str[None | /api/v1/sessions/1/ixnetwork//.../*]]): list of patterns may be shared
+        - Returns list(list[str[None | /api/v1/sessions/1/ixnetwork/]]): list of patterns may be shared
 
         Raises
         ------

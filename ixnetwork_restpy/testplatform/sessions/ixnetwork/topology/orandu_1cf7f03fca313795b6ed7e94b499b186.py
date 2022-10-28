@@ -27,35 +27,38 @@ if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
 
-class Srv6Oam(Base):
-    """
-    The Srv6Oam class encapsulates a list of srv6Oam resources that are managed by the user.
-    A list of resources can be retrieved from the server using the Srv6Oam.find() method.
-    The list can be managed by using the Srv6Oam.add() and Srv6Oam.remove() methods.
+class OranDU(Base):
+    """Oran DU Configuration
+    The OranDU class encapsulates a list of oranDU resources that are managed by the user.
+    A list of resources can be retrieved from the server using the OranDU.find() method.
+    The list can be managed by using the OranDU.add() and OranDU.remove() methods.
     """
 
     __slots__ = ()
-    _SDM_NAME = "srv6Oam"
+    _SDM_NAME = "oranDU"
     _SDM_ATT_MAP = {
         "Active": "active",
+        "CPlaneVlanId": "cPlaneVlanId",
+        "CPlaneVlanIdPriority": "cPlaneVlanIdPriority",
         "ConnectedVia": "connectedVia",
         "Count": "count",
         "DescriptiveName": "descriptiveName",
-        "EnableSBfdResponder": "enableSBfdResponder",
+        "DlCPlaneTimingAdvance": "dlCPlaneTimingAdvance",
+        "DlUPlaneTimingAdvance": "dlUPlaneTimingAdvance",
         "Errors": "errors",
-        "LocalRouterId": "localRouterId",
-        "LocatorBlkLen": "locatorBlkLen",
+        "IpDscp": "ipDscp",
         "Multiplier": "multiplier",
         "Name": "name",
-        "NumPingTraceRouteDest": "numPingTraceRouteDest",
-        "ReplyDestUnreachCode": "replyDestUnreachCode",
-        "RxCfgSrcAddrFlag": "rxCfgSrcAddrFlag",
-        "RxSrcAddr": "rxSrcAddr",
+        "NumberOfCarriers": "numberOfCarriers",
+        "NumberOfODuCUPlanes": "numberOfODuCUPlanes",
+        "OverrideVlan": "overrideVlan",
         "SessionStatus": "sessionStatus",
         "StackedLayers": "stackedLayers",
         "StateCounts": "stateCounts",
         "Status": "status",
-        "TracerouteDstPort": "tracerouteDstPort",
+        "UPlaneVlanId": "uPlaneVlanId",
+        "UPlaneVlanIdPriority": "uPlaneVlanIdPriority",
+        "UlCPlaneTimingAdvance": "ulCPlaneTimingAdvance",
     }
     _SDM_ENUM_MAP = {
         "status": [
@@ -70,107 +73,87 @@ class Srv6Oam(Base):
     }
 
     def __init__(self, parent, list_op=False):
-        super(Srv6Oam, self).__init__(parent, list_op)
+        super(OranDU, self).__init__(parent, list_op)
 
     @property
-    def LearnedInfo(self):
+    def DuCPlane(self):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.learnedinfo_ff4d5e5643a63bccb40b6cf64fc58100.LearnedInfo): An instance of the LearnedInfo class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ducplane_84f46276a04c4895c6fe4e96027e1f05.DuCPlane): An instance of the DuCPlane class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.learnedinfo_ff4d5e5643a63bccb40b6cf64fc58100 import (
-            LearnedInfo,
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ducplane_84f46276a04c4895c6fe4e96027e1f05 import (
+            DuCPlane,
         )
 
         if len(self._object_properties) > 0:
-            if self._properties.get("LearnedInfo", None) is not None:
-                return self._properties.get("LearnedInfo")
-        return LearnedInfo(self)
+            if self._properties.get("DuCPlane", None) is not None:
+                return self._properties.get("DuCPlane")
+        return DuCPlane(self)._select()
 
     @property
-    def LearnedInfoUpdate(self):
+    def DuCUPlane(self):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.learnedinfoupdate_b6503122c0a4a58877467964920e27b5.LearnedInfoUpdate): An instance of the LearnedInfoUpdate class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ducuplane_552b538c8627003544bf2ab434c809ef.DuCUPlane): An instance of the DuCUPlane class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.learnedinfoupdate_b6503122c0a4a58877467964920e27b5 import (
-            LearnedInfoUpdate,
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ducuplane_552b538c8627003544bf2ab434c809ef import (
+            DuCUPlane,
         )
 
         if len(self._object_properties) > 0:
-            if self._properties.get("LearnedInfoUpdate", None) is not None:
-                return self._properties.get("LearnedInfoUpdate")
-        return LearnedInfoUpdate(self)
+            if self._properties.get("DuCUPlane", None) is not None:
+                return self._properties.get("DuCUPlane")
+        return DuCUPlane(self)._select()
 
     @property
-    def SbfdResponder(self):
+    def DuCarrier(self):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.sbfdresponder_e89a7c6cba0a1f66c71ecb217db4ccfd.SbfdResponder): An instance of the SbfdResponder class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ducarrier_153ae93d502f0581e2ae35d9f51bca07.DuCarrier): An instance of the DuCarrier class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.sbfdresponder_e89a7c6cba0a1f66c71ecb217db4ccfd import (
-            SbfdResponder,
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ducarrier_153ae93d502f0581e2ae35d9f51bca07 import (
+            DuCarrier,
         )
 
         if len(self._object_properties) > 0:
-            if self._properties.get("SbfdResponder", None) is not None:
-                return self._properties.get("SbfdResponder")
-        return SbfdResponder(self)._select()
+            if self._properties.get("DuCarrier", None) is not None:
+                return self._properties.get("DuCarrier")
+        return DuCarrier(self)._select()
 
     @property
-    def Srv6OamDestination(self):
+    def DuUPlane(self):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.srv6oamdestination_db6b12442d0712e3252c53be323d3b83.Srv6OamDestination): An instance of the Srv6OamDestination class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.duuplane_c9477b2ed619d1459be1f2c472176a7e.DuUPlane): An instance of the DuUPlane class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.srv6oamdestination_db6b12442d0712e3252c53be323d3b83 import (
-            Srv6OamDestination,
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.duuplane_c9477b2ed619d1459be1f2c472176a7e import (
+            DuUPlane,
         )
 
         if len(self._object_properties) > 0:
-            if self._properties.get("Srv6OamDestination", None) is not None:
-                return self._properties.get("Srv6OamDestination")
-        return Srv6OamDestination(self)._select()
-
-    @property
-    def Srv6SbfdResponder(self):
-        """
-        Returns
-        -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.srv6sbfdresponder_aeecc02f1736a0513600da92f49c6d9f.Srv6SbfdResponder): An instance of the Srv6SbfdResponder class
-
-        Raises
-        ------
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.srv6sbfdresponder_aeecc02f1736a0513600da92f49c6d9f import (
-            Srv6SbfdResponder,
-        )
-
-        if len(self._object_properties) > 0:
-            if self._properties.get("Srv6SbfdResponder", None) is not None:
-                return self._properties.get("Srv6SbfdResponder")
-        return Srv6SbfdResponder(self)._select()
+            if self._properties.get("DuUPlane", None) is not None:
+                return self._properties.get("DuUPlane")
+        return DuUPlane(self)._select()
 
     @property
     def Active(self):
@@ -185,12 +168,38 @@ class Srv6Oam(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Active"]))
 
     @property
+    def CPlaneVlanId(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): 12-bit VLAN ID in the VLAN tag to be used for C-Plane messages.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["CPlaneVlanId"]))
+
+    @property
+    def CPlaneVlanIdPriority(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): 3-bit user priority field in the VLAN tag used for C-Plane messages.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["CPlaneVlanIdPriority"])
+        )
+
+    @property
     def ConnectedVia(self):
         # type: () -> List[str]
         """DEPRECATED
         Returns
         -------
-        - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of layers this layer is used to connect with to the wire.
+        - list(str[None | /api/v1/sessions/1/ixnetwork/topology]): List of layers this layer is used to connect with to the wire.
         """
         return self._get_attribute(self._SDM_ATT_MAP["ConnectedVia"])
 
@@ -220,50 +229,53 @@ class Srv6Oam(Base):
         return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
-    def EnableSBfdResponder(self):
-        # type: () -> bool
+    def DlCPlaneTimingAdvance(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
-        - bool: If selected, it enables the S-BFD Responder.
+        - obj(ixnetwork_restpy.multivalue.Multivalue): DL C-Plane Timing Advance (ns)
         """
-        return self._get_attribute(self._SDM_ATT_MAP["EnableSBfdResponder"])
+        from ixnetwork_restpy.multivalue import Multivalue
 
-    @EnableSBfdResponder.setter
-    def EnableSBfdResponder(self, value):
-        # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP["EnableSBfdResponder"], value)
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["DlCPlaneTimingAdvance"])
+        )
+
+    @property
+    def DlUPlaneTimingAdvance(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): DL U-Plane Timing Advance (ns)
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["DlUPlaneTimingAdvance"])
+        )
 
     @property
     def Errors(self):
         """
         Returns
         -------
-        - list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str])): A list of errors that have occurred
+        - list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork/],arg2:list[str])): A list of errors that have occurred
         """
         return self._get_attribute(self._SDM_ATT_MAP["Errors"])
 
     @property
-    def LocalRouterId(self):
-        # type: () -> List[str]
-        """
-        Returns
-        -------
-        - list(str): The MPLOAM Router ID value, in IPv4 format.
-        """
-        return self._get_attribute(self._SDM_ATT_MAP["LocalRouterId"])
-
-    @property
-    def LocatorBlkLen(self):
+    def IpDscp(self):
         # type: () -> 'Multivalue'
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): Locator Block Length, 48 or 64 bits. Useful while processing Compressed sids in SRH. SID (128 bits) = Locator Block Length + G-SID length + Arguments + G-sid index
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Configuration of the IP DSCP value.
         """
         from ixnetwork_restpy.multivalue import Multivalue
 
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["LocatorBlkLen"]))
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["IpDscp"]))
 
     @property
     def Multiplier(self):
@@ -296,59 +308,49 @@ class Srv6Oam(Base):
         self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
-    def NumPingTraceRouteDest(self):
+    def NumberOfCarriers(self):
         # type: () -> int
         """
         Returns
         -------
-        - number: Specify number of destinations to be configured for Ping/Trace Route/SBFD Requests.
+        - number: Number of carriers to be configured.
         """
-        return self._get_attribute(self._SDM_ATT_MAP["NumPingTraceRouteDest"])
+        return self._get_attribute(self._SDM_ATT_MAP["NumberOfCarriers"])
 
-    @NumPingTraceRouteDest.setter
-    def NumPingTraceRouteDest(self, value):
+    @NumberOfCarriers.setter
+    def NumberOfCarriers(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP["NumPingTraceRouteDest"], value)
+        self._set_attribute(self._SDM_ATT_MAP["NumberOfCarriers"], value)
 
     @property
-    def ReplyDestUnreachCode(self):
-        # type: () -> 'Multivalue'
+    def NumberOfODuCUPlanes(self):
+        # type: () -> int
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): Options to select the Error Code while sending Destination Unreachable Message.
+        - number: Represents control/user plane of O-DU.
         """
-        from ixnetwork_restpy.multivalue import Multivalue
+        return self._get_attribute(self._SDM_ATT_MAP["NumberOfODuCUPlanes"])
 
-        return Multivalue(
-            self, self._get_attribute(self._SDM_ATT_MAP["ReplyDestUnreachCode"])
-        )
+    @NumberOfODuCUPlanes.setter
+    def NumberOfODuCUPlanes(self, value):
+        # type: (int) -> None
+        self._set_attribute(self._SDM_ATT_MAP["NumberOfODuCUPlanes"], value)
 
     @property
-    def RxCfgSrcAddrFlag(self):
-        # type: () -> 'Multivalue'
+    def OverrideVlan(self):
+        # type: () -> bool
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): If enabled, Source Address of IPv6 header in Response packets will be taken as per configuration. If Disabled, Source Address of IPv6 will be taken from the Interface on which the received destination (Egress) is configured (emulated/loopback interface).
+        - bool: Override the ethernet VLAN with this for C-Plane and U-Plane messages.
         """
-        from ixnetwork_restpy.multivalue import Multivalue
+        return self._get_attribute(self._SDM_ATT_MAP["OverrideVlan"])
 
-        return Multivalue(
-            self, self._get_attribute(self._SDM_ATT_MAP["RxCfgSrcAddrFlag"])
-        )
-
-    @property
-    def RxSrcAddr(self):
-        # type: () -> 'Multivalue'
-        """
-        Returns
-        -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): Source Address of IPv6 header in Response packets.
-        """
-        from ixnetwork_restpy.multivalue import Multivalue
-
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["RxSrcAddr"]))
+    @OverrideVlan.setter
+    def OverrideVlan(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["OverrideVlan"], value)
 
     @property
     def SessionStatus(self):
@@ -366,7 +368,7 @@ class Srv6Oam(Base):
         """
         Returns
         -------
-        - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of secondary (many to one) child layer protocols
+        - list(str[None | /api/v1/sessions/1/ixnetwork/topology]): List of secondary (many to one) child layer protocols
         """
         return self._get_attribute(self._SDM_ATT_MAP["StackedLayers"])
 
@@ -395,45 +397,70 @@ class Srv6Oam(Base):
         return self._get_attribute(self._SDM_ATT_MAP["Status"])
 
     @property
-    def TracerouteDstPort(self):
-        # type: () -> int
+    def UPlaneVlanId(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
-        - number: Destination Port to be used for Trace Route
+        - obj(ixnetwork_restpy.multivalue.Multivalue): 12-bit VLAN ID in the VLAN tag to be used for U-Plane messages.
         """
-        return self._get_attribute(self._SDM_ATT_MAP["TracerouteDstPort"])
+        from ixnetwork_restpy.multivalue import Multivalue
 
-    @TracerouteDstPort.setter
-    def TracerouteDstPort(self, value):
-        # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP["TracerouteDstPort"], value)
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["UPlaneVlanId"]))
+
+    @property
+    def UPlaneVlanIdPriority(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): 3-bit user priority field in the VLAN tag used for U-Plane messages.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["UPlaneVlanIdPriority"])
+        )
+
+    @property
+    def UlCPlaneTimingAdvance(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): UL C-Plane Time Advance (ns)
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["UlCPlaneTimingAdvance"])
+        )
 
     def update(
         self,
         ConnectedVia=None,
-        EnableSBfdResponder=None,
         Multiplier=None,
         Name=None,
-        NumPingTraceRouteDest=None,
+        NumberOfCarriers=None,
+        NumberOfODuCUPlanes=None,
+        OverrideVlan=None,
         StackedLayers=None,
-        TracerouteDstPort=None,
     ):
-        # type: (List[str], bool, int, str, int, List[str], int) -> Srv6Oam
-        """Updates srv6Oam resource on the server.
+        # type: (List[str], int, str, int, int, bool, List[str]) -> OranDU
+        """Updates oranDU resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
         The Multivalue class has documentation that details the possible values for those named parameters.
 
         Args
         ----
-        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
-        - EnableSBfdResponder (bool): If selected, it enables the S-BFD Responder.
+        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology])): List of layers this layer is used to connect with to the wire.
         - Multiplier (number): Number of layer instances per parent instance (multiplier)
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-        - NumPingTraceRouteDest (number): Specify number of destinations to be configured for Ping/Trace Route/SBFD Requests.
-        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
-        - TracerouteDstPort (number): Destination Port to be used for Trace Route
+        - NumberOfCarriers (number): Number of carriers to be configured.
+        - NumberOfODuCUPlanes (number): Represents control/user plane of O-DU.
+        - OverrideVlan (bool): Override the ethernet VLAN with this for C-Plane and U-Plane messages.
+        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology])): List of secondary (many to one) child layer protocols
 
         Raises
         ------
@@ -444,29 +471,29 @@ class Srv6Oam(Base):
     def add(
         self,
         ConnectedVia=None,
-        EnableSBfdResponder=None,
         Multiplier=None,
         Name=None,
-        NumPingTraceRouteDest=None,
+        NumberOfCarriers=None,
+        NumberOfODuCUPlanes=None,
+        OverrideVlan=None,
         StackedLayers=None,
-        TracerouteDstPort=None,
     ):
-        # type: (List[str], bool, int, str, int, List[str], int) -> Srv6Oam
-        """Adds a new srv6Oam resource on the server and adds it to the container.
+        # type: (List[str], int, str, int, int, bool, List[str]) -> OranDU
+        """Adds a new oranDU resource on the server and adds it to the container.
 
         Args
         ----
-        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
-        - EnableSBfdResponder (bool): If selected, it enables the S-BFD Responder.
+        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology])): List of layers this layer is used to connect with to the wire.
         - Multiplier (number): Number of layer instances per parent instance (multiplier)
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-        - NumPingTraceRouteDest (number): Specify number of destinations to be configured for Ping/Trace Route/SBFD Requests.
-        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
-        - TracerouteDstPort (number): Destination Port to be used for Trace Route
+        - NumberOfCarriers (number): Number of carriers to be configured.
+        - NumberOfODuCUPlanes (number): Represents control/user plane of O-DU.
+        - OverrideVlan (bool): Override the ethernet VLAN with this for C-Plane and U-Plane messages.
+        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology])): List of secondary (many to one) child layer protocols
 
         Returns
         -------
-        - self: This instance with all currently retrieved srv6Oam resources using find and the newly added srv6Oam resources available through an iterator or index
+        - self: This instance with all currently retrieved oranDU resources using find and the newly added oranDU resources available through an iterator or index
 
         Raises
         ------
@@ -475,7 +502,7 @@ class Srv6Oam(Base):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def remove(self):
-        """Deletes all the contained srv6Oam resources in this instance from the server.
+        """Deletes all the contained oranDU resources in this instance from the server.
 
         Raises
         ------
@@ -489,44 +516,42 @@ class Srv6Oam(Base):
         ConnectedVia=None,
         Count=None,
         DescriptiveName=None,
-        EnableSBfdResponder=None,
         Errors=None,
-        LocalRouterId=None,
         Multiplier=None,
         Name=None,
-        NumPingTraceRouteDest=None,
+        NumberOfCarriers=None,
+        NumberOfODuCUPlanes=None,
+        OverrideVlan=None,
         SessionStatus=None,
         StackedLayers=None,
         StateCounts=None,
         Status=None,
-        TracerouteDstPort=None,
     ):
-        """Finds and retrieves srv6Oam resources from the server.
+        """Finds and retrieves oranDU resources from the server.
 
-        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve srv6Oam resources from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve oranDU resources from the server.
         To retrieve an exact match ensure the parameter value starts with ^ and ends with $
-        By default the find method takes no parameters and will retrieve all srv6Oam resources from the server.
+        By default the find method takes no parameters and will retrieve all oranDU resources from the server.
 
         Args
         ----
-        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
+        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology])): List of layers this layer is used to connect with to the wire.
         - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
-        - EnableSBfdResponder (bool): If selected, it enables the S-BFD Responder.
-        - Errors (list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str]))): A list of errors that have occurred
-        - LocalRouterId (list(str)): The MPLOAM Router ID value, in IPv4 format.
+        - Errors (list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork/],arg2:list[str]))): A list of errors that have occurred
         - Multiplier (number): Number of layer instances per parent instance (multiplier)
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-        - NumPingTraceRouteDest (number): Specify number of destinations to be configured for Ping/Trace Route/SBFD Requests.
+        - NumberOfCarriers (number): Number of carriers to be configured.
+        - NumberOfODuCUPlanes (number): Represents control/user plane of O-DU.
+        - OverrideVlan (bool): Override the ethernet VLAN with this for C-Plane and U-Plane messages.
         - SessionStatus (list(str[down | notStarted | up])): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
-        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
+        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology])): List of secondary (many to one) child layer protocols
         - StateCounts (dict(total:number,notStarted:number,down:number,up:number)): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
         - Status (str(configured | error | mixed | notStarted | started | starting | stopping)): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
-        - TracerouteDstPort (number): Destination Port to be used for Trace Route
 
         Returns
         -------
-        - self: This instance with matching srv6Oam resources retrieved from the server available through an iterator or index
+        - self: This instance with matching oranDU resources retrieved from the server available through an iterator or index
 
         Raises
         ------
@@ -535,7 +560,7 @@ class Srv6Oam(Base):
         return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
-        """Retrieves a single instance of srv6Oam data from the server.
+        """Retrieves a single instance of oranDU data from the server.
 
         Args
         ----
@@ -543,7 +568,7 @@ class Srv6Oam(Base):
 
         Returns
         -------
-        - self: This instance with the srv6Oam resources from the server available through an iterator or index
+        - self: This instance with the oranDU resources from the server available through an iterator or index
 
         Raises
         ------
@@ -692,12 +717,16 @@ class Srv6Oam(Base):
         self,
         PortNames=None,
         Active=None,
-        LocatorBlkLen=None,
-        ReplyDestUnreachCode=None,
-        RxCfgSrcAddrFlag=None,
-        RxSrcAddr=None,
+        CPlaneVlanId=None,
+        CPlaneVlanIdPriority=None,
+        DlCPlaneTimingAdvance=None,
+        DlUPlaneTimingAdvance=None,
+        IpDscp=None,
+        UPlaneVlanId=None,
+        UPlaneVlanIdPriority=None,
+        UlCPlaneTimingAdvance=None,
     ):
-        """Base class infrastructure that gets a list of srv6Oam device ids encapsulated by this object.
+        """Base class infrastructure that gets a list of oranDU device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 
@@ -705,10 +734,14 @@ class Srv6Oam(Base):
         ----
         - PortNames (str): optional regex of port names
         - Active (str): optional regex of active
-        - LocatorBlkLen (str): optional regex of locatorBlkLen
-        - ReplyDestUnreachCode (str): optional regex of replyDestUnreachCode
-        - RxCfgSrcAddrFlag (str): optional regex of rxCfgSrcAddrFlag
-        - RxSrcAddr (str): optional regex of rxSrcAddr
+        - CPlaneVlanId (str): optional regex of cPlaneVlanId
+        - CPlaneVlanIdPriority (str): optional regex of cPlaneVlanIdPriority
+        - DlCPlaneTimingAdvance (str): optional regex of dlCPlaneTimingAdvance
+        - DlUPlaneTimingAdvance (str): optional regex of dlUPlaneTimingAdvance
+        - IpDscp (str): optional regex of ipDscp
+        - UPlaneVlanId (str): optional regex of uPlaneVlanId
+        - UPlaneVlanIdPriority (str): optional regex of uPlaneVlanIdPriority
+        - UlCPlaneTimingAdvance (str): optional regex of ulCPlaneTimingAdvance
 
         Returns
         -------

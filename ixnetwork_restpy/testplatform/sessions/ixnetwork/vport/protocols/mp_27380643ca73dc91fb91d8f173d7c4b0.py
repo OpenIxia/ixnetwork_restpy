@@ -1404,7 +1404,7 @@ class Mp(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/vport/.../mdLevel): The MD level of the MP. The MD level must be previously configured.
+        - str(None | /api/v1/sessions/1/ixnetwork/vport/protocols/cfm/bridge/mdLevel): The MD level of the MP. The MD level must be previously configured.
         """
         return self._get_attribute(self._SDM_ATT_MAP["MdLevel"])
 
@@ -1794,7 +1794,7 @@ class Mp(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/vport/.../vlans): Assigns a VLAN to the MP. The VLAN must be previously configured.
+        - str(None | /api/v1/sessions/1/ixnetwork/vport/protocols/cfm/bridge/vlans): Assigns a VLAN to the MP. The VLAN must be previously configured.
         """
         return self._get_attribute(self._SDM_ATT_MAP["Vlan"])
 
@@ -1998,7 +1998,7 @@ class Mp(Base):
         - ManagementAddressDomain (str): Sets the MP management address domain. This will take HEX input (0-255 byte). Default is 4d 61 6e 61 67 65 6d 65 6e 74 20 41 64 64 72 20 44 6f 6d 61 69 6e (Management Addr Domain).
         - ManagementAddressDomainLength (number): Sets the length of the Management address domain field. Default is 22. Min: 0 Max: 255.
         - ManagementAddressLength (number): Sets the length of the Management address field. Default is 6. Min: 0 Max: 255.
-        - MdLevel (str(None | /api/v1/sessions/1/ixnetwork/vport/.../mdLevel)): The MD level of the MP. The MD level must be previously configured.
+        - MdLevel (str(None | /api/v1/sessions/1/ixnetwork/vport/protocols/cfm/bridge/mdLevel)): The MD level of the MP. The MD level must be previously configured.
         - MegId (str): The MEG identifier of the MP. This is for use with ITU-T Y.1731.
         - MegIdFormat (str(iccBasedFormat | primaryVid | characterString | 2octetInteger | rfc2685VpnId)): The MEG identifier format.
         - MepId (number): The MEP identifier.
@@ -2024,7 +2024,7 @@ class Mp(Base):
         - TstTestType (str(inService | outOfService)): NOT DEFINED
         - TstUnicastMac (str): NOT DEFINED
         - Ttl (number): Sets the MP Time-to-live value. Default is 64. Min: 1 Max: 255
-        - Vlan (str(None | /api/v1/sessions/1/ixnetwork/vport/.../vlans)): Assigns a VLAN to the MP. The VLAN must be previously configured.
+        - Vlan (str(None | /api/v1/sessions/1/ixnetwork/vport/protocols/cfm/bridge/vlans)): Assigns a VLAN to the MP. The VLAN must be previously configured.
 
         Raises
         ------
@@ -2227,7 +2227,7 @@ class Mp(Base):
         - ManagementAddressDomain (str): Sets the MP management address domain. This will take HEX input (0-255 byte). Default is 4d 61 6e 61 67 65 6d 65 6e 74 20 41 64 64 72 20 44 6f 6d 61 69 6e (Management Addr Domain).
         - ManagementAddressDomainLength (number): Sets the length of the Management address domain field. Default is 22. Min: 0 Max: 255.
         - ManagementAddressLength (number): Sets the length of the Management address field. Default is 6. Min: 0 Max: 255.
-        - MdLevel (str(None | /api/v1/sessions/1/ixnetwork/vport/.../mdLevel)): The MD level of the MP. The MD level must be previously configured.
+        - MdLevel (str(None | /api/v1/sessions/1/ixnetwork/vport/protocols/cfm/bridge/mdLevel)): The MD level of the MP. The MD level must be previously configured.
         - MegId (str): The MEG identifier of the MP. This is for use with ITU-T Y.1731.
         - MegIdFormat (str(iccBasedFormat | primaryVid | characterString | 2octetInteger | rfc2685VpnId)): The MEG identifier format.
         - MepId (number): The MEP identifier.
@@ -2253,7 +2253,7 @@ class Mp(Base):
         - TstTestType (str(inService | outOfService)): NOT DEFINED
         - TstUnicastMac (str): NOT DEFINED
         - Ttl (number): Sets the MP Time-to-live value. Default is 64. Min: 1 Max: 255
-        - Vlan (str(None | /api/v1/sessions/1/ixnetwork/vport/.../vlans)): Assigns a VLAN to the MP. The VLAN must be previously configured.
+        - Vlan (str(None | /api/v1/sessions/1/ixnetwork/vport/protocols/cfm/bridge/vlans)): Assigns a VLAN to the MP. The VLAN must be previously configured.
 
         Returns
         -------
@@ -2474,7 +2474,7 @@ class Mp(Base):
         - ManagementAddressDomain (str): Sets the MP management address domain. This will take HEX input (0-255 byte). Default is 4d 61 6e 61 67 65 6d 65 6e 74 20 41 64 64 72 20 44 6f 6d 61 69 6e (Management Addr Domain).
         - ManagementAddressDomainLength (number): Sets the length of the Management address domain field. Default is 22. Min: 0 Max: 255.
         - ManagementAddressLength (number): Sets the length of the Management address field. Default is 6. Min: 0 Max: 255.
-        - MdLevel (str(None | /api/v1/sessions/1/ixnetwork/vport/.../mdLevel)): The MD level of the MP. The MD level must be previously configured.
+        - MdLevel (str(None | /api/v1/sessions/1/ixnetwork/vport/protocols/cfm/bridge/mdLevel)): The MD level of the MP. The MD level must be previously configured.
         - MegId (str): The MEG identifier of the MP. This is for use with ITU-T Y.1731.
         - MegIdFormat (str(iccBasedFormat | primaryVid | characterString | 2octetInteger | rfc2685VpnId)): The MEG identifier format.
         - MepId (number): The MEP identifier.
@@ -2500,7 +2500,7 @@ class Mp(Base):
         - TstTestType (str(inService | outOfService)): NOT DEFINED
         - TstUnicastMac (str): NOT DEFINED
         - Ttl (number): Sets the MP Time-to-live value. Default is 64. Min: 1 Max: 255
-        - Vlan (str(None | /api/v1/sessions/1/ixnetwork/vport/.../vlans)): Assigns a VLAN to the MP. The VLAN must be previously configured.
+        - Vlan (str(None | /api/v1/sessions/1/ixnetwork/vport/protocols/cfm/bridge/vlans)): Assigns a VLAN to the MP. The VLAN must be previously configured.
 
         Returns
         -------

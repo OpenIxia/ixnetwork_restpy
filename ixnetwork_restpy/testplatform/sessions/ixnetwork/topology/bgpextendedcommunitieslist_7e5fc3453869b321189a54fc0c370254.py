@@ -44,6 +44,8 @@ class BgpExtendedCommunitiesList(Base):
         "ColorReservedBits": "colorReservedBits",
         "ColorValue": "colorValue",
         "Count": "count",
+        "CustomExtCommType": "customExtCommType",
+        "CustomExtCommValue": "customExtCommValue",
         "DescriptiveName": "descriptiveName",
         "Ip": "ip",
         "LinkBandwidth": "linkBandwidth",
@@ -160,6 +162,34 @@ class BgpExtendedCommunitiesList(Base):
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
         return self._get_attribute(self._SDM_ATT_MAP["Count"])
+
+    @property
+    def CustomExtCommType(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): If Custom Extended Community is selected from Extended Community Dropdown then this field is enabled for user input. You can put any value of length 2 bytes for the extended community attribute. Default value is set to 0.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["CustomExtCommType"])
+        )
+
+    @property
+    def CustomExtCommValue(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): If Custom Extended Community is selected from Extended Community Dropdown then this field is enabled for user input. You can put any value of length 6 bytes for the extended community attribute. Default value is set to 0.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["CustomExtCommValue"])
+        )
 
     @property
     def DescriptiveName(self):
@@ -333,6 +363,8 @@ class BgpExtendedCommunitiesList(Base):
         ColorCOBits=None,
         ColorReservedBits=None,
         ColorValue=None,
+        CustomExtCommType=None,
+        CustomExtCommValue=None,
         Ip=None,
         LinkBandwidth=None,
         OpaqueData=None,
@@ -353,6 +385,8 @@ class BgpExtendedCommunitiesList(Base):
         - ColorCOBits (str): optional regex of colorCOBits
         - ColorReservedBits (str): optional regex of colorReservedBits
         - ColorValue (str): optional regex of colorValue
+        - CustomExtCommType (str): optional regex of customExtCommType
+        - CustomExtCommValue (str): optional regex of customExtCommValue
         - Ip (str): optional regex of ip
         - LinkBandwidth (str): optional regex of linkBandwidth
         - OpaqueData (str): optional regex of opaqueData

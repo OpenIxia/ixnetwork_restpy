@@ -231,7 +231,7 @@ class TestConfig(Base):
         """
         Returns
         -------
-        - list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/.../lan]): Protocol Items
+        - list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/protocols/static/lan]): Protocol Items
         """
         return self._get_attribute(self._SDM_ATT_MAP["ProtocolItem"])
 
@@ -351,7 +351,7 @@ class TestConfig(Base):
         - PassCriteriaJoinLatencyValue (number): The amount of time, in milliseconds, elapsed between the time the client sent an IGMP JOIN (broadcast channel) and the time it received the first byte of data.
         - PassCriteriaLeaveFailuresValue (number): How many Leave actions were marked as Failed.
         - PassCriteriaLeaveLatencyValue (number): The amount of time, in milliseconds, elapsed between the time the client sent an IGMP LEAVE (broadcast channel) and the time it received the last byte of data.
-        - ProtocolItem (list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/.../lan])): Protocol Items
+        - ProtocolItem (list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/protocols/static/lan])): Protocol Items
         - StartIptvEndpointsBeforeTraffic (str): The IPTV Endpoints are set before sending traffic.
         - TestTrafficType (str): Indicates the type of traffic to be tested.
         - TrackByEgressVlanId (str): If true, Custom Offset from Packet Locations can be configured.
@@ -404,7 +404,7 @@ class TestConfig(Base):
         - PassCriteriaJoinLatencyValue (number): The amount of time, in milliseconds, elapsed between the time the client sent an IGMP JOIN (broadcast channel) and the time it received the first byte of data.
         - PassCriteriaLeaveFailuresValue (number): How many Leave actions were marked as Failed.
         - PassCriteriaLeaveLatencyValue (number): The amount of time, in milliseconds, elapsed between the time the client sent an IGMP LEAVE (broadcast channel) and the time it received the last byte of data.
-        - ProtocolItem (list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/.../lan])): Protocol Items
+        - ProtocolItem (list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/protocols/static/lan])): Protocol Items
         - StartIptvEndpointsBeforeTraffic (str): The IPTV Endpoints are set before sending traffic.
         - TestTrafficType (str): Indicates the type of traffic to be tested.
         - TrackByEgressVlanId (str): If true, Custom Offset from Packet Locations can be configured.

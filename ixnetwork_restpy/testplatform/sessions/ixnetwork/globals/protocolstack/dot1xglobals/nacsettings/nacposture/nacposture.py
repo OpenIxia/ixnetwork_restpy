@@ -69,7 +69,7 @@ class NacPosture(Base):
         """
         Returns
         -------
-        - list(str[None | /api/v1/sessions/1/ixnetwork/globals/.../nacTlv]): List of NacTLVs.
+        - list(str[None | /api/v1/sessions/1/ixnetwork/globals/protocolStack/dot1xGlobals/nacSettings/nacTlv]): List of NacTLVs.
         """
         return self._get_attribute(self._SDM_ATT_MAP["NacTlvs"])
 
@@ -125,7 +125,7 @@ class NacPosture(Base):
         Args
         ----
         - ExpectedSystemToken (number): Expected System Token.
-        - NacTlvs (list(str[None | /api/v1/sessions/1/ixnetwork/globals/.../nacTlv])): List of NacTLVs.
+        - NacTlvs (list(str[None | /api/v1/sessions/1/ixnetwork/globals/protocolStack/dot1xGlobals/nacSettings/nacTlv])): List of NacTLVs.
         - Name (str): Unique name for this NAC Posture.
         - Selected (bool): Add to postures list.
 
@@ -142,7 +142,7 @@ class NacPosture(Base):
         Args
         ----
         - ExpectedSystemToken (number): Expected System Token.
-        - NacTlvs (list(str[None | /api/v1/sessions/1/ixnetwork/globals/.../nacTlv])): List of NacTLVs.
+        - NacTlvs (list(str[None | /api/v1/sessions/1/ixnetwork/globals/protocolStack/dot1xGlobals/nacSettings/nacTlv])): List of NacTLVs.
         - Name (str): Unique name for this NAC Posture.
         - Selected (bool): Add to postures list.
 
@@ -184,7 +184,7 @@ class NacPosture(Base):
         Args
         ----
         - ExpectedSystemToken (number): Expected System Token.
-        - NacTlvs (list(str[None | /api/v1/sessions/1/ixnetwork/globals/.../nacTlv])): List of NacTLVs.
+        - NacTlvs (list(str[None | /api/v1/sessions/1/ixnetwork/globals/protocolStack/dot1xGlobals/nacSettings/nacTlv])): List of NacTLVs.
         - Name (str): Unique name for this NAC Posture.
         - ObjectId (str): Unique identifier for this object
         - Selected (bool): Add to postures list.

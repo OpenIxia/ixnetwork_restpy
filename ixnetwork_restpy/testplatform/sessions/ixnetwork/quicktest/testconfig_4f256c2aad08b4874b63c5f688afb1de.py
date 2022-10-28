@@ -232,7 +232,7 @@ class TestConfig(Base):
         """
         Returns
         -------
-        - list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/.../lan]): Protocol Items
+        - list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/protocols/static/lan]): Protocol Items
         """
         return self._get_attribute(self._SDM_ATT_MAP["ProtocolItem"])
 
@@ -368,7 +368,7 @@ class TestConfig(Base):
         - MaxOutstanding (number): Maximum number of connection requests or tear down requests that can be pending at any one time
         - NonExpectedMasterStatus (str): Clocks configured as Master are not Grand Master
         - Numtrials (number): Number of trials that can be run
-        - ProtocolItem (list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/.../lan])): Protocol Items
+        - ProtocolItem (list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/protocols/static/lan])): Protocol Items
         - Runmode (str(duration | noframes)): Running mode used
         - SetupRate (number): The number of PTP connections to be initiated per second
         - SlavePorts (str): The ports selected as slaves
@@ -423,7 +423,7 @@ class TestConfig(Base):
         - MaxOutstanding (number): Maximum number of connection requests or tear down requests that can be pending at any one time
         - NonExpectedMasterStatus (str): Clocks configured as Master are not Grand Master
         - Numtrials (number): Number of trials that can be run
-        - ProtocolItem (list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/.../lan])): Protocol Items
+        - ProtocolItem (list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/protocols/static/lan])): Protocol Items
         - Runmode (str(duration | noframes)): Running mode used
         - SetupRate (number): The number of PTP connections to be initiated per second
         - SlavePorts (str): The ports selected as slaves

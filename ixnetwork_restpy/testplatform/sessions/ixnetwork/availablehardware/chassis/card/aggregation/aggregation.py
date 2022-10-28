@@ -111,7 +111,7 @@ class Aggregation(Base):
         """DEPRECATED
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/availableHardware/.../port): Deprecated. Use activePorts instead.
+        - str(None | /api/v1/sessions/1/ixnetwork/availableHardware/chassis/card/port): Deprecated. Use activePorts instead.
         """
         return self._get_attribute(self._SDM_ATT_MAP["ActivePort"])
 
@@ -121,7 +121,7 @@ class Aggregation(Base):
         """
         Returns
         -------
-        - list(str[None | /api/v1/sessions/1/ixnetwork/availableHardware/.../port]): All active ports from Resource Group.
+        - list(str[None | /api/v1/sessions/1/ixnetwork/availableHardware/chassis/card/port]): All active ports from Resource Group.
         """
         return self._get_attribute(self._SDM_ATT_MAP["ActivePorts"])
 
@@ -156,7 +156,7 @@ class Aggregation(Base):
         """
         Returns
         -------
-        - list(str[None | /api/v1/sessions/1/ixnetwork/availableHardware/.../port]): All ports from Resource Group.
+        - list(str[None | /api/v1/sessions/1/ixnetwork/availableHardware/chassis/card/port]): All ports from Resource Group.
         """
         return self._get_attribute(self._SDM_ATT_MAP["ResourcePorts"])
 
@@ -209,11 +209,11 @@ class Aggregation(Base):
 
         Args
         ----
-        - ActivePort (str(None | /api/v1/sessions/1/ixnetwork/availableHardware/.../port)): Deprecated. Use activePorts instead.
-        - ActivePorts (list(str[None | /api/v1/sessions/1/ixnetwork/availableHardware/.../port])): All active ports from Resource Group.
+        - ActivePort (str(None | /api/v1/sessions/1/ixnetwork/availableHardware/chassis/card/port)): Deprecated. Use activePorts instead.
+        - ActivePorts (list(str[None | /api/v1/sessions/1/ixnetwork/availableHardware/chassis/card/port])): All active ports from Resource Group.
         - AvailableModes (list(str[normal | tenGig | fortyGig | singleMode | dualMode | hundredGigNonFanOut | fortyGigFanOut | threeByTenGigFanOut | eightByTenGigFanOut | fourByTwentyFiveGigNonFanOut | twoByTwentyFiveGigNonFanOut | oneByFiftyGigNonFanOut | fortyGigNonFanOut | oneByTenGigFanOut | fourByTenGigFanOut | incompatibleMode | hundredGigCapturePlayback | fortyGigCapturePlayback | novusHundredGigNonFanOut | novusFourByTwentyFiveGigNonFanOut | novusTwoByFiftyGigNonFanOut | novusOneByFortyGigNonFanOut | novusFourByTenGigNonFanOut | krakenOneByFourHundredGigNonFanOut | krakenOneByTwoHundredGigNonFanOut | krakenTwoByOneHundredGigFanOut | krakenFourByFiftyGigFanOut | aresOneOneByFourHundredGigNonFanOut | aresOneTwoByTwoHundredGigFanOut | aresOneFourByOneHundredGigFanOut | aresOneFourByOneHundredGigMacSecFanOut | aresOneEightByFiftyGigFanOut | uhdOneHundredEightByHundredGigNonFanOut | uhdOneHundredEightByFortyGigNonFanOut | uhdOneHundredSixteenByFiftyGigFanOut | uhdOneHundredThirtyTwoByTwentyFiveGigFanOut | uhdOneHundredThirtyTwoByTenGigFanOut | novus5GOneByTenGigNonFanOut | novus5GOneByTwentyFiveGigNonFanOut | novus5GOneByFiftyGigNonFanOut | novus5GOneByHundredGigNonFanOut | starTwoByFourHundredGigNonFannedOutPAM4 | starFourByTwoHundredGigFannedOutPAM4 | starEightByHundredGigFannedOutPAM4 | starFourByHundredGigFannedOutNRZ | starSixteenByFiftyGigFannedOutPAM4 | starEightByFiftyGigFannedOutNRZ | starFourByFortyGigFannedOutNRZ | starSixteenByTwentyFiveGigFannedOutNRZ | starSixteenByTenGigFannedOutNRZ | novusHundredGigNonFanOutHighStream | novusFourByTwentyFiveGigNonFanOutHighStream | novusTwoByFiftyGigNonFanOutHighStream | novusOneByFortyGigNonFanOutHighStream | novusFourByTenGigNonFanOutHighStream])): Gets the supported resource group modes.
         - Mode (str(normal | tenGig | fortyGig | singleMode | dualMode | hundredGigNonFanOut | fortyGigFanOut | threeByTenGigFanOut | eightByTenGigFanOut | fourByTwentyFiveGigNonFanOut | twoByTwentyFiveGigNonFanOut | oneByFiftyGigNonFanOut | fortyGigNonFanOut | oneByTenGigFanOut | fourByTenGigFanOut | incompatibleMode | hundredGigCapturePlayback | fortyGigCapturePlayback | novusHundredGigNonFanOut | novusFourByTwentyFiveGigNonFanOut | novusTwoByFiftyGigNonFanOut | novusOneByFortyGigNonFanOut | novusFourByTenGigNonFanOut | krakenOneByFourHundredGigNonFanOut | krakenOneByTwoHundredGigNonFanOut | krakenTwoByOneHundredGigFanOut | krakenFourByFiftyGigFanOut | aresOneOneByFourHundredGigNonFanOut | aresOneTwoByTwoHundredGigFanOut | aresOneFourByOneHundredGigFanOut | aresOneFourByOneHundredGigMacSecFanOut | aresOneEightByFiftyGigFanOut | uhdOneHundredEightByHundredGigNonFanOut | uhdOneHundredEightByFortyGigNonFanOut | uhdOneHundredSixteenByFiftyGigFanOut | uhdOneHundredThirtyTwoByTwentyFiveGigFanOut | uhdOneHundredThirtyTwoByTenGigFanOut | novus5GOneByTenGigNonFanOut | novus5GOneByTwentyFiveGigNonFanOut | novus5GOneByFiftyGigNonFanOut | novus5GOneByHundredGigNonFanOut | starTwoByFourHundredGigNonFannedOutPAM4 | starFourByTwoHundredGigFannedOutPAM4 | starEightByHundredGigFannedOutPAM4 | starFourByHundredGigFannedOutNRZ | starSixteenByFiftyGigFannedOutPAM4 | starEightByFiftyGigFannedOutNRZ | starFourByFortyGigFannedOutNRZ | starSixteenByTwentyFiveGigFannedOutNRZ | starSixteenByTenGigFannedOutNRZ | novusHundredGigNonFanOutHighStream | novusFourByTwentyFiveGigNonFanOutHighStream | novusTwoByFiftyGigNonFanOutHighStream | novusOneByFortyGigNonFanOutHighStream | novusFourByTenGigNonFanOutHighStream)): Resource Group mode.
-        - ResourcePorts (list(str[None | /api/v1/sessions/1/ixnetwork/availableHardware/.../port])): All ports from Resource Group.
+        - ResourcePorts (list(str[None | /api/v1/sessions/1/ixnetwork/availableHardware/chassis/card/port])): All ports from Resource Group.
 
         Returns
         -------

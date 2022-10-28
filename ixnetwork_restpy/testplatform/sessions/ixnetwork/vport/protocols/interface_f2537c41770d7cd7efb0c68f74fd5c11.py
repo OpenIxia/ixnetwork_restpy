@@ -454,7 +454,7 @@ class Interface(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range): The interfaces that are associated with the selected interface type.
+        - str(None | /api/v1/sessions/1/ixnetwork/vport/interface | /api/v1/sessions/1/ixnetwork/vport/protocolStack/atm/dhcpEndpoint/range | /api/v1/sessions/1/ixnetwork/vport/protocolStack/atm/ip/l2tpEndpoint/range | /api/v1/sessions/1/ixnetwork/vport/protocolStack/atm/ipEndpoint/range | /api/v1/sessions/1/ixnetwork/vport/protocolStack/atm/pppoxEndpoint/range | /api/v1/sessions/1/ixnetwork/vport/protocolStack/ethernet/dhcpEndpoint/range | /api/v1/sessions/1/ixnetwork/vport/protocolStack/ethernet/ip/l2tpEndpoint/range | /api/v1/sessions/1/ixnetwork/vport/protocolStack/ethernet/ipEndpoint/range | /api/v1/sessions/1/ixnetwork/vport/protocolStack/ethernet/pppoxEndpoint/range | /api/v1/sessions/1/ixnetwork/vport/protocolStack/ethernetEndpoint/range): The interfaces that are associated with the selected interface type.
         """
         return self._get_attribute(self._SDM_ATT_MAP["Interfaces"])
 
@@ -841,7 +841,7 @@ class Interface(Base):
         """DEPRECATED
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface): The name of the defined interface entry from which IP address and mask are extracted for this interface.
+        - str(None | /api/v1/sessions/1/ixnetwork/vport/interface): The name of the defined interface entry from which IP address and mask are extracted for this interface.
         """
         return self._get_attribute(self._SDM_ATT_MAP["ProtocolInterface"])
 
@@ -1065,7 +1065,7 @@ class Interface(Base):
         - InterfaceIpAddress (str): The IP address for this OSPF interface.
         - InterfaceIpMaskAddress (str): The IP mask associated with the IP address for this interface. Only used if protocolInterfaceDescription is empty. (default = 255.255.255.0)
         - InterfaceType (str): The type of interface to be selected for this OSPF interface.
-        - Interfaces (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range)): The interfaces that are associated with the selected interface type.
+        - Interfaces (str(None | /api/v1/sessions/1/ixnetwork/vport/interface | /api/v1/sessions/1/ixnetwork/vport/protocolStack/atm/dhcpEndpoint/range | /api/v1/sessions/1/ixnetwork/vport/protocolStack/atm/ip/l2tpEndpoint/range | /api/v1/sessions/1/ixnetwork/vport/protocolStack/atm/ipEndpoint/range | /api/v1/sessions/1/ixnetwork/vport/protocolStack/atm/pppoxEndpoint/range | /api/v1/sessions/1/ixnetwork/vport/protocolStack/ethernet/dhcpEndpoint/range | /api/v1/sessions/1/ixnetwork/vport/protocolStack/ethernet/ip/l2tpEndpoint/range | /api/v1/sessions/1/ixnetwork/vport/protocolStack/ethernet/ipEndpoint/range | /api/v1/sessions/1/ixnetwork/vport/protocolStack/ethernet/pppoxEndpoint/range | /api/v1/sessions/1/ixnetwork/vport/protocolStack/ethernetEndpoint/range)): The interfaces that are associated with the selected interface type.
         - LinkTypes (str(pointToPoint | transit | stub | virtual)): Indicates the type of network link for the interface.
         - Md5AuthenticationKey (str): If authenticationMethod is set to ospfInterfaceAuthenticationMD5, then this is MD5 key ID used for authentication. (default = 1)
         - Md5AuthenticationKeyId (number): A value to be used as a key ID associated with the MD5 key.
@@ -1090,7 +1090,7 @@ class Interface(Base):
         - NoOfRows (number): The number or rows in a grid.
         - Options (number): Options related to the interface. Multiple options may be or'd together.
         - Priority (number): The priority of the interface, for use in election of the designated or backup master.
-        - ProtocolInterface (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface)): The name of the defined interface entry from which IP address and mask are extracted for this interface.
+        - ProtocolInterface (str(None | /api/v1/sessions/1/ixnetwork/vport/interface)): The name of the defined interface entry from which IP address and mask are extracted for this interface.
         - ShowExternal (bool): Enables the use of External routes on this interface.
         - ShowNssa (bool): Enables the use of Not So Stubby Area routes on this interface.
         - TeAdminGroup (str): Assignment of traffic engineering administrative group numbers to the interface.
@@ -1189,7 +1189,7 @@ class Interface(Base):
         - InterfaceIpAddress (str): The IP address for this OSPF interface.
         - InterfaceIpMaskAddress (str): The IP mask associated with the IP address for this interface. Only used if protocolInterfaceDescription is empty. (default = 255.255.255.0)
         - InterfaceType (str): The type of interface to be selected for this OSPF interface.
-        - Interfaces (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range)): The interfaces that are associated with the selected interface type.
+        - Interfaces (str(None | /api/v1/sessions/1/ixnetwork/vport/interface | /api/v1/sessions/1/ixnetwork/vport/protocolStack/atm/dhcpEndpoint/range | /api/v1/sessions/1/ixnetwork/vport/protocolStack/atm/ip/l2tpEndpoint/range | /api/v1/sessions/1/ixnetwork/vport/protocolStack/atm/ipEndpoint/range | /api/v1/sessions/1/ixnetwork/vport/protocolStack/atm/pppoxEndpoint/range | /api/v1/sessions/1/ixnetwork/vport/protocolStack/ethernet/dhcpEndpoint/range | /api/v1/sessions/1/ixnetwork/vport/protocolStack/ethernet/ip/l2tpEndpoint/range | /api/v1/sessions/1/ixnetwork/vport/protocolStack/ethernet/ipEndpoint/range | /api/v1/sessions/1/ixnetwork/vport/protocolStack/ethernet/pppoxEndpoint/range | /api/v1/sessions/1/ixnetwork/vport/protocolStack/ethernetEndpoint/range)): The interfaces that are associated with the selected interface type.
         - LinkTypes (str(pointToPoint | transit | stub | virtual)): Indicates the type of network link for the interface.
         - Md5AuthenticationKey (str): If authenticationMethod is set to ospfInterfaceAuthenticationMD5, then this is MD5 key ID used for authentication. (default = 1)
         - Md5AuthenticationKeyId (number): A value to be used as a key ID associated with the MD5 key.
@@ -1214,7 +1214,7 @@ class Interface(Base):
         - NoOfRows (number): The number or rows in a grid.
         - Options (number): Options related to the interface. Multiple options may be or'd together.
         - Priority (number): The priority of the interface, for use in election of the designated or backup master.
-        - ProtocolInterface (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface)): The name of the defined interface entry from which IP address and mask are extracted for this interface.
+        - ProtocolInterface (str(None | /api/v1/sessions/1/ixnetwork/vport/interface)): The name of the defined interface entry from which IP address and mask are extracted for this interface.
         - ShowExternal (bool): Enables the use of External routes on this interface.
         - ShowNssa (bool): Enables the use of Not So Stubby Area routes on this interface.
         - TeAdminGroup (str): Assignment of traffic engineering administrative group numbers to the interface.
@@ -1332,7 +1332,7 @@ class Interface(Base):
         - InterfaceIpAddress (str): The IP address for this OSPF interface.
         - InterfaceIpMaskAddress (str): The IP mask associated with the IP address for this interface. Only used if protocolInterfaceDescription is empty. (default = 255.255.255.0)
         - InterfaceType (str): The type of interface to be selected for this OSPF interface.
-        - Interfaces (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range | /api/v1/sessions/1/ixnetwork/vport/.../range)): The interfaces that are associated with the selected interface type.
+        - Interfaces (str(None | /api/v1/sessions/1/ixnetwork/vport/interface | /api/v1/sessions/1/ixnetwork/vport/protocolStack/atm/dhcpEndpoint/range | /api/v1/sessions/1/ixnetwork/vport/protocolStack/atm/ip/l2tpEndpoint/range | /api/v1/sessions/1/ixnetwork/vport/protocolStack/atm/ipEndpoint/range | /api/v1/sessions/1/ixnetwork/vport/protocolStack/atm/pppoxEndpoint/range | /api/v1/sessions/1/ixnetwork/vport/protocolStack/ethernet/dhcpEndpoint/range | /api/v1/sessions/1/ixnetwork/vport/protocolStack/ethernet/ip/l2tpEndpoint/range | /api/v1/sessions/1/ixnetwork/vport/protocolStack/ethernet/ipEndpoint/range | /api/v1/sessions/1/ixnetwork/vport/protocolStack/ethernet/pppoxEndpoint/range | /api/v1/sessions/1/ixnetwork/vport/protocolStack/ethernetEndpoint/range)): The interfaces that are associated with the selected interface type.
         - IsLearnedInfoRefreshed (bool): If true, refreshes learned information automatically.
         - LinkTypes (str(pointToPoint | transit | stub | virtual)): Indicates the type of network link for the interface.
         - Md5AuthenticationKey (str): If authenticationMethod is set to ospfInterfaceAuthenticationMD5, then this is MD5 key ID used for authentication. (default = 1)
@@ -1358,7 +1358,7 @@ class Interface(Base):
         - NoOfRows (number): The number or rows in a grid.
         - Options (number): Options related to the interface. Multiple options may be or'd together.
         - Priority (number): The priority of the interface, for use in election of the designated or backup master.
-        - ProtocolInterface (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface)): The name of the defined interface entry from which IP address and mask are extracted for this interface.
+        - ProtocolInterface (str(None | /api/v1/sessions/1/ixnetwork/vport/interface)): The name of the defined interface entry from which IP address and mask are extracted for this interface.
         - ShowExternal (bool): Enables the use of External routes on this interface.
         - ShowNssa (bool): Enables the use of Not So Stubby Area routes on this interface.
         - TeAdminGroup (str): Assignment of traffic engineering administrative group numbers to the interface.

@@ -149,7 +149,7 @@ class EgtpNbS5S8Range(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/vport/.../mmeS5S8SecondaryRange): Id of parent MME range
+        - str(None | /api/v1/sessions/1/ixnetwork/vport/protocolStack/ethernet/ip/egtpS5S8SgwEndpoint/mmeS5S8SecondaryRange): Id of parent MME range
         """
         return self._get_attribute(self._SDM_ATT_MAP["ParentMme"])
 
@@ -164,7 +164,7 @@ class EgtpNbS5S8Range(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/vport/.../range): Id of parent SGW range
+        - str(None | /api/v1/sessions/1/ixnetwork/vport/protocolStack/ethernet/ip/egtpS5S8SgwEndpoint/range): Id of parent SGW range
         """
         return self._get_attribute(self._SDM_ATT_MAP["ParentSgw"])
 
@@ -337,8 +337,8 @@ class EgtpNbS5S8Range(Base):
         - MCC (str): Mobile Country Code
         - MNC (str): Mobile Network Code
         - Name (str): Name of range
-        - ParentMme (str(None | /api/v1/sessions/1/ixnetwork/vport/.../mmeS5S8SecondaryRange)): Id of parent MME range
-        - ParentSgw (str(None | /api/v1/sessions/1/ixnetwork/vport/.../range)): Id of parent SGW range
+        - ParentMme (str(None | /api/v1/sessions/1/ixnetwork/vport/protocolStack/ethernet/ip/egtpS5S8SgwEndpoint/mmeS5S8SecondaryRange)): Id of parent MME range
+        - ParentSgw (str(None | /api/v1/sessions/1/ixnetwork/vport/protocolStack/ethernet/ip/egtpS5S8SgwEndpoint/range)): Id of parent SGW range
         - RAILAC (str): LAC for UEs (Hexa value)
         - RAIMCC1 (number): First digit of MCC location for UEs
         - RAIMCC2 (number): Second digit of MCC location for UEs
@@ -390,8 +390,8 @@ class EgtpNbS5S8Range(Base):
         - MNC (str): Mobile Network Code
         - Name (str): Name of range
         - ObjectId (str): Unique identifier for this object
-        - ParentMme (str(None | /api/v1/sessions/1/ixnetwork/vport/.../mmeS5S8SecondaryRange)): Id of parent MME range
-        - ParentSgw (str(None | /api/v1/sessions/1/ixnetwork/vport/.../range)): Id of parent SGW range
+        - ParentMme (str(None | /api/v1/sessions/1/ixnetwork/vport/protocolStack/ethernet/ip/egtpS5S8SgwEndpoint/mmeS5S8SecondaryRange)): Id of parent MME range
+        - ParentSgw (str(None | /api/v1/sessions/1/ixnetwork/vport/protocolStack/ethernet/ip/egtpS5S8SgwEndpoint/range)): Id of parent SGW range
         - RAILAC (str): LAC for UEs (Hexa value)
         - RAIMCC1 (number): First digit of MCC location for UEs
         - RAIMCC2 (number): Second digit of MCC location for UEs

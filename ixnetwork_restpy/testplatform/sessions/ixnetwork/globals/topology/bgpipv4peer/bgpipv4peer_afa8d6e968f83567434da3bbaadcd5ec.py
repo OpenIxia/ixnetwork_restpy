@@ -27,16 +27,19 @@ if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
 
-class BgpIpv6Peer(Base):
+class BgpIpv4Peer(Base):
     """BGP Port level Configuration
-    The BgpIpv6Peer class encapsulates a required bgpIpv6Peer resource which will be retrieved from the server every time the property is accessed.
+    The BgpIpv4Peer class encapsulates a required bgpIpv4Peer resource which will be retrieved from the server every time the property is accessed.
     """
 
     __slots__ = ()
-    _SDM_NAME = "bgpIpv6Peer"
+    _SDM_NAME = "bgpIpv4Peer"
     _SDM_ATT_MAP = {
         "BIERTunnelType": "BIERTunnelType",
         "LLGRCapabilityCode": "LLGRCapabilityCode",
+        "RedirectIPv4NHopType": "RedirectIPv4NHopType",
+        "RedirectIPv6NHopType": "RedirectIPv6NHopType",
+        "RedirectIPv6Type": "RedirectIPv6Type",
         "BgpConfMemType": "bgpConfMemType",
         "BgpRouterId": "bgpRouterId",
         "BindingType": "bindingType",
@@ -58,6 +61,7 @@ class BgpIpv6Peer(Base):
         "Ipv4LocRemoteAddrType": "ipv4LocRemoteAddrType",
         "Ipv4NodeAddrType": "ipv4NodeAddrType",
         "Ipv6AddrIndexType": "ipv6AddrIndexType",
+        "Ipv6FlowspecDraftVersion": "ipv6FlowspecDraftVersion",
         "Ipv6LocRemoteAddrType": "ipv6LocRemoteAddrType",
         "Ipv6NodeAddrType": "ipv6NodeAddrType",
         "Ipv6SIDType": "ipv6SIDType",
@@ -102,7 +106,7 @@ class BgpIpv6Peer(Base):
     }
 
     def __init__(self, parent, list_op=False):
-        super(BgpIpv6Peer, self).__init__(parent, list_op)
+        super(BgpIpv4Peer, self).__init__(parent, list_op)
 
     @property
     def StartRate(self):
@@ -190,6 +194,48 @@ class BgpIpv6Peer(Base):
 
         return Multivalue(
             self, self._get_attribute(self._SDM_ATT_MAP["LLGRCapabilityCode"])
+        )
+
+    @property
+    def RedirectIPv4NHopType(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Redirect To IPv4 Next Hop Type
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["RedirectIPv4NHopType"])
+        )
+
+    @property
+    def RedirectIPv6NHopType(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Redirect IPv6 Next Hop Type
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["RedirectIPv6NHopType"])
+        )
+
+    @property
+    def RedirectIPv6Type(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This field is used to specify the Type value for RT Redirect IPv6 Action in Flowspec. By default it is set to 0x000d.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["RedirectIPv6Type"])
         )
 
     @property
@@ -467,6 +513,20 @@ class BgpIpv6Peer(Base):
 
         return Multivalue(
             self, self._get_attribute(self._SDM_ATT_MAP["Ipv6AddrIndexType"])
+        )
+
+    @property
+    def Ipv6FlowspecDraftVersion(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This field is used to specify the older draft version for IPv6 flowspec. By default, the value is set to RFC8956. You can change this field value to draft-ietf-idr-flow-spec-v6-08, if you want backward compatibility with the earlier implementation. If older draft is selected then IxNetwork performs the encoding of Destination Prefix and Source Prefix as per the older draft process.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Ipv6FlowspecDraftVersion"])
         )
 
     @property
@@ -995,8 +1055,8 @@ class BgpIpv6Peer(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["WeightType"]))
 
     def update(self, Name=None, Srv6DraftNum=None):
-        # type: (str, str) -> BgpIpv6Peer
-        """Updates bgpIpv6Peer resource on the server.
+        # type: (str, str) -> BgpIpv4Peer
+        """Updates bgpIpv4Peer resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
         The Multivalue class has documentation that details the possible values for those named parameters.
@@ -1020,12 +1080,12 @@ class BgpIpv6Peer(Base):
         RowNames=None,
         Srv6DraftNum=None,
     ):
-        # type: (int, str, str, List[str], str) -> BgpIpv6Peer
-        """Finds and retrieves bgpIpv6Peer resources from the server.
+        # type: (int, str, str, List[str], str) -> BgpIpv4Peer
+        """Finds and retrieves bgpIpv4Peer resources from the server.
 
-        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve bgpIpv6Peer resources from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve bgpIpv4Peer resources from the server.
         To retrieve an exact match ensure the parameter value starts with ^ and ends with $
-        By default the find method takes no parameters and will retrieve all bgpIpv6Peer resources from the server.
+        By default the find method takes no parameters and will retrieve all bgpIpv4Peer resources from the server.
 
         Args
         ----
@@ -1037,7 +1097,7 @@ class BgpIpv6Peer(Base):
 
         Returns
         -------
-        - self: This instance with matching bgpIpv6Peer resources retrieved from the server available through an iterator or index
+        - self: This instance with matching bgpIpv4Peer resources retrieved from the server available through an iterator or index
 
         Raises
         ------
@@ -1046,7 +1106,7 @@ class BgpIpv6Peer(Base):
         return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
-        """Retrieves a single instance of bgpIpv6Peer data from the server.
+        """Retrieves a single instance of bgpIpv4Peer data from the server.
 
         Args
         ----
@@ -1054,7 +1114,7 @@ class BgpIpv6Peer(Base):
 
         Returns
         -------
-        - self: This instance with the bgpIpv6Peer resources from the server available through an iterator or index
+        - self: This instance with the bgpIpv4Peer resources from the server available through an iterator or index
 
         Raises
         ------
@@ -1068,6 +1128,9 @@ class BgpIpv6Peer(Base):
         PortNames=None,
         BIERTunnelType=None,
         LLGRCapabilityCode=None,
+        RedirectIPv4NHopType=None,
+        RedirectIPv6NHopType=None,
+        RedirectIPv6Type=None,
         BgpConfMemType=None,
         BgpRouterId=None,
         BindingType=None,
@@ -1087,6 +1150,7 @@ class BgpIpv6Peer(Base):
         Ipv4LocRemoteAddrType=None,
         Ipv4NodeAddrType=None,
         Ipv6AddrIndexType=None,
+        Ipv6FlowspecDraftVersion=None,
         Ipv6LocRemoteAddrType=None,
         Ipv6NodeAddrType=None,
         Ipv6SIDType=None,
@@ -1123,7 +1187,7 @@ class BgpIpv6Peer(Base):
         VrfRouteImportExtendedCommunitySubType=None,
         WeightType=None,
     ):
-        """Base class infrastructure that gets a list of bgpIpv6Peer device ids encapsulated by this object.
+        """Base class infrastructure that gets a list of bgpIpv4Peer device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 
@@ -1132,6 +1196,9 @@ class BgpIpv6Peer(Base):
         - PortNames (str): optional regex of port names
         - BIERTunnelType (str): optional regex of BIERTunnelType
         - LLGRCapabilityCode (str): optional regex of LLGRCapabilityCode
+        - RedirectIPv4NHopType (str): optional regex of RedirectIPv4NHopType
+        - RedirectIPv6NHopType (str): optional regex of RedirectIPv6NHopType
+        - RedirectIPv6Type (str): optional regex of RedirectIPv6Type
         - BgpConfMemType (str): optional regex of bgpConfMemType
         - BgpRouterId (str): optional regex of bgpRouterId
         - BindingType (str): optional regex of bindingType
@@ -1151,6 +1218,7 @@ class BgpIpv6Peer(Base):
         - Ipv4LocRemoteAddrType (str): optional regex of ipv4LocRemoteAddrType
         - Ipv4NodeAddrType (str): optional regex of ipv4NodeAddrType
         - Ipv6AddrIndexType (str): optional regex of ipv6AddrIndexType
+        - Ipv6FlowspecDraftVersion (str): optional regex of ipv6FlowspecDraftVersion
         - Ipv6LocRemoteAddrType (str): optional regex of ipv6LocRemoteAddrType
         - Ipv6NodeAddrType (str): optional regex of ipv6NodeAddrType
         - Ipv6SIDType (str): optional regex of ipv6SIDType

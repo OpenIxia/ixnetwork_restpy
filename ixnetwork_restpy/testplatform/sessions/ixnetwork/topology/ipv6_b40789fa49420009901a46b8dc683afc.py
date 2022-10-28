@@ -40,6 +40,7 @@ class Ipv6(Base):
         "Address": "address",
         "ConnectedVia": "connectedVia",
         "Count": "count",
+        "CustomLinkLocalAddress": "customLinkLocalAddress",
         "DescriptiveName": "descriptiveName",
         "DiscoverGatewayIp": "discoverGatewayIp",
         "DiscoveredGatewayIp": "discoveredGatewayIp",
@@ -48,6 +49,7 @@ class Ipv6(Base):
         "GatewayIp": "gatewayIp",
         "IncludeRaPrefix": "includeRaPrefix",
         "LearnNeighbors": "learnNeighbors",
+        "LinkLocalAddress": "linkLocalAddress",
         "ManualGatewayMac": "manualGatewayMac",
         "Multiplier": "multiplier",
         "Name": "name",
@@ -60,6 +62,7 @@ class Ipv6(Base):
         "StackedLayers": "stackedLayers",
         "StateCounts": "stateCounts",
         "Status": "status",
+        "UseCustomLinkLocalAddress": "useCustomLinkLocalAddress",
     }
     _SDM_ENUM_MAP = {
         "gatewayDiscoveryOpt": ["ra", "nsNa"],
@@ -102,13 +105,13 @@ class Ipv6(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv6peer_d4de2e9634d2dee11a9265d28434788b.BgpIpv6Peer): An instance of the BgpIpv6Peer class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv6peer_d1a9d481647a51c783f6ad2bd104f872.BgpIpv6Peer): An instance of the BgpIpv6Peer class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv6peer_d4de2e9634d2dee11a9265d28434788b import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv6peer_d1a9d481647a51c783f6ad2bd104f872 import (
             BgpIpv6Peer,
         )
 
@@ -422,13 +425,13 @@ class Ipv6(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ptp_0fccf1fcc99303d2707e822de949037f.Ptp): An instance of the Ptp class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ptp_24f2907f5a685b611f57469838b21337.Ptp): An instance of the Ptp class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ptp_0fccf1fcc99303d2707e822de949037f import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ptp_24f2907f5a685b611f57469838b21337 import (
             Ptp,
         )
 
@@ -442,13 +445,13 @@ class Ipv6(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.srv6oam_2c2276a61daa7bd5cb5602114c35ba53.Srv6Oam): An instance of the Srv6Oam class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.srv6oam_222b2d34be60272a50cccc049cada4ef.Srv6Oam): An instance of the Srv6Oam class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.srv6oam_2c2276a61daa7bd5cb5602114c35ba53 import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.srv6oam_222b2d34be60272a50cccc049cada4ef import (
             Srv6Oam,
         )
 
@@ -535,7 +538,7 @@ class Ipv6(Base):
         """DEPRECATED
         Returns
         -------
-        - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of layers this layer is used to connect with to the wire.
+        - list(str[None | /api/v1/sessions/1/ixnetwork/topology]): List of layers this layer is used to connect with to the wire.
         """
         return self._get_attribute(self._SDM_ATT_MAP["ConnectedVia"])
 
@@ -553,6 +556,20 @@ class Ipv6(Base):
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
         return self._get_attribute(self._SDM_ATT_MAP["Count"])
+
+    @property
+    def CustomLinkLocalAddress(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Attribute to configure Custom Link Local Address(s).
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["CustomLinkLocalAddress"])
+        )
 
     @property
     def DescriptiveName(self):
@@ -593,7 +610,7 @@ class Ipv6(Base):
         """
         Returns
         -------
-        - list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str])): A list of errors that have occurred
+        - list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork/],arg2:list[str])): A list of errors that have occurred
         """
         return self._get_attribute(self._SDM_ATT_MAP["Errors"])
 
@@ -652,6 +669,16 @@ class Ipv6(Base):
     def LearnNeighbors(self, value):
         # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP["LearnNeighbors"], value)
+
+    @property
+    def LinkLocalAddress(self):
+        # type: () -> List[str]
+        """
+        Returns
+        -------
+        - list(str): Attribute to retrieve the configured Link Local Address(s).
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["LinkLocalAddress"])
 
     @property
     def ManualGatewayMac(self):
@@ -771,7 +798,7 @@ class Ipv6(Base):
         """
         Returns
         -------
-        - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of secondary (many to one) child layer protocols
+        - list(str[None | /api/v1/sessions/1/ixnetwork/topology]): List of secondary (many to one) child layer protocols
         """
         return self._get_attribute(self._SDM_ATT_MAP["StackedLayers"])
 
@@ -799,6 +826,21 @@ class Ipv6(Base):
         """
         return self._get_attribute(self._SDM_ATT_MAP["Status"])
 
+    @property
+    def UseCustomLinkLocalAddress(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: Flag to determine whether the custom Link Local Address is enabled. By default, it is set to false.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["UseCustomLinkLocalAddress"])
+
+    @UseCustomLinkLocalAddress.setter
+    def UseCustomLinkLocalAddress(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["UseCustomLinkLocalAddress"], value)
+
     def update(
         self,
         ConnectedVia=None,
@@ -807,8 +849,9 @@ class Ipv6(Base):
         Multiplier=None,
         Name=None,
         StackedLayers=None,
+        UseCustomLinkLocalAddress=None,
     ):
-        # type: (List[str], str, bool, int, str, List[str]) -> Ipv6
+        # type: (List[str], str, bool, int, str, List[str], bool) -> Ipv6
         """Updates ipv6 resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -816,12 +859,13 @@ class Ipv6(Base):
 
         Args
         ----
-        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
+        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology])): List of layers this layer is used to connect with to the wire.
         - GatewayDiscoveryOpt (str(ra | nsNa)): Options to discover the gateway IP.
         - LearnNeighbors (bool): Enable or disable the discover or learn neighbor(s) option.
         - Multiplier (number): Number of layer instances per parent instance (multiplier)
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
+        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology])): List of secondary (many to one) child layer protocols
+        - UseCustomLinkLocalAddress (bool): Flag to determine whether the custom Link Local Address is enabled. By default, it is set to false.
 
         Raises
         ------
@@ -837,18 +881,20 @@ class Ipv6(Base):
         Multiplier=None,
         Name=None,
         StackedLayers=None,
+        UseCustomLinkLocalAddress=None,
     ):
-        # type: (List[str], str, bool, int, str, List[str]) -> Ipv6
+        # type: (List[str], str, bool, int, str, List[str], bool) -> Ipv6
         """Adds a new ipv6 resource on the server and adds it to the container.
 
         Args
         ----
-        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
+        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology])): List of layers this layer is used to connect with to the wire.
         - GatewayDiscoveryOpt (str(ra | nsNa)): Options to discover the gateway IP.
         - LearnNeighbors (bool): Enable or disable the discover or learn neighbor(s) option.
         - Multiplier (number): Number of layer instances per parent instance (multiplier)
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
+        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology])): List of secondary (many to one) child layer protocols
+        - UseCustomLinkLocalAddress (bool): Flag to determine whether the custom Link Local Address is enabled. By default, it is set to false.
 
         Returns
         -------
@@ -879,6 +925,7 @@ class Ipv6(Base):
         Errors=None,
         GatewayDiscoveryOpt=None,
         LearnNeighbors=None,
+        LinkLocalAddress=None,
         Multiplier=None,
         Name=None,
         ResolvedGatewayMac=None,
@@ -887,6 +934,7 @@ class Ipv6(Base):
         StackedLayers=None,
         StateCounts=None,
         Status=None,
+        UseCustomLinkLocalAddress=None,
     ):
         """Finds and retrieves ipv6 resources from the server.
 
@@ -896,21 +944,23 @@ class Ipv6(Base):
 
         Args
         ----
-        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
+        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology])): List of layers this layer is used to connect with to the wire.
         - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         - DiscoveredGatewayIp (list(str)): The discovered gateway IP addresses.
-        - Errors (list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str]))): A list of errors that have occurred
+        - Errors (list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork/],arg2:list[str]))): A list of errors that have occurred
         - GatewayDiscoveryOpt (str(ra | nsNa)): Options to discover the gateway IP.
         - LearnNeighbors (bool): Enable or disable the discover or learn neighbor(s) option.
+        - LinkLocalAddress (list(str)): Attribute to retrieve the configured Link Local Address(s).
         - Multiplier (number): Number of layer instances per parent instance (multiplier)
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
         - ResolvedGatewayMac (list(str)): The resolved gateway's MAC addresses
         - SessionInfo (list(str[discoverIpFailed | duplicateAddress | interfaceRemoved | none | resolveMacFailed])): Logs additional information about the session state.
         - SessionStatus (list(str[down | notStarted | up])): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
-        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
+        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology])): List of secondary (many to one) child layer protocols
         - StateCounts (dict(total:number,notStarted:number,down:number,up:number)): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
         - Status (str(configured | error | mixed | notStarted | started | starting | stopping)): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
+        - UseCustomLinkLocalAddress (bool): Flag to determine whether the custom Link Local Address is enabled. By default, it is set to false.
 
         Returns
         -------
@@ -1451,6 +1501,7 @@ class Ipv6(Base):
         self,
         PortNames=None,
         Address=None,
+        CustomLinkLocalAddress=None,
         DiscoverGatewayIp=None,
         GatewayIp=None,
         IncludeRaPrefix=None,
@@ -1467,6 +1518,7 @@ class Ipv6(Base):
         ----
         - PortNames (str): optional regex of port names
         - Address (str): optional regex of address
+        - CustomLinkLocalAddress (str): optional regex of customLinkLocalAddress
         - DiscoverGatewayIp (str): optional regex of discoverGatewayIp
         - GatewayIp (str): optional regex of gatewayIp
         - IncludeRaPrefix (str): optional regex of includeRaPrefix

@@ -651,7 +651,7 @@ class TestConfig(Base):
         """
         Returns
         -------
-        - list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/.../lan]): Protocol Items
+        - list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/protocols/static/lan]): Protocol Items
         """
         return self._get_attribute(self._SDM_ATT_MAP["ProtocolItem"])
 
@@ -791,7 +791,7 @@ class TestConfig(Base):
         - PortDelayUnit (str(bytes | nanoseconds)): Sets the port delay unit in which it will be measured.
         - PortDelayValue (number): Sets the port delay value.
         - PortDownTime (number): During flapping, the amount of time during which the routes in the Route Range are withdrawn/down.
-        - ProtocolItem (list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/.../lan])): Protocol Items
+        - ProtocolItem (list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/protocols/static/lan])): Protocol Items
         - StaggeredStart (bool): Enables a staggered start to traffic transmit.
         - SupportedTrafficTypes (str): The traffic types supported.
         - TxDelay (number): Specifies the amount of delay after every transmit.
@@ -892,7 +892,7 @@ class TestConfig(Base):
         - PortDelayUnit (str(bytes | nanoseconds)): Sets the port delay unit in which it will be measured.
         - PortDelayValue (number): Sets the port delay value.
         - PortDownTime (number): During flapping, the amount of time during which the routes in the Route Range are withdrawn/down.
-        - ProtocolItem (list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/.../lan])): Protocol Items
+        - ProtocolItem (list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/protocols/static/lan])): Protocol Items
         - StaggeredStart (bool): Enables a staggered start to traffic transmit.
         - SupportedTrafficTypes (str): The traffic types supported.
         - TxDelay (number): Specifies the amount of delay after every transmit.

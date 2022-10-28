@@ -68,9 +68,12 @@ class Pppoxclient(Base):
         "ClientWinsOptions": "clientWinsOptions",
         "ClientWinsPrimaryAddress": "clientWinsPrimaryAddress",
         "ClientWinsSecondaryAddress": "clientWinsSecondaryAddress",
+        "CompMaxHeader": "compMaxHeader",
+        "CompSuboptions": "compSuboptions",
         "ConnectSpeedUpdateEnable": "connectSpeedUpdateEnable",
         "ConnectedVia": "connectedVia",
         "Count": "count",
+        "CustomAction": "customAction",
         "DataLink": "dataLink",
         "DescriptiveName": "descriptiveName",
         "DiscoveredIpv4Addresses": "discoveredIpv4Addresses",
@@ -95,12 +98,23 @@ class Pppoxclient(Base):
         "EndpointDiscNegotiation": "endpointDiscNegotiation",
         "EndpointDiscriminatorClass": "endpointDiscriminatorClass",
         "Errors": "errors",
+        "FcsAltOption": "fcsAltOption",
         "HostUniq": "hostUniq",
         "HostUniqLength": "hostUniqLength",
+        "IphcFMaxPeriod": "iphcFMaxPeriod",
+        "IphcFMaxTime": "iphcFMaxTime",
+        "IphcNonTcpSpace": "iphcNonTcpSpace",
+        "IphcTcpSpace": "iphcTcpSpace",
         "LastRxLcpReq": "lastRxLcpReq",
         "LastSentLcpReq": "lastSentLcpReq",
         "LcpAccm": "lcpAccm",
+        "LcpConfReqInterval": "lcpConfReqInterval",
+        "LcpConfReqMode": "lcpConfReqMode",
+        "LcpConfReqRetries": "lcpConfReqRetries",
         "LcpEnableAccm": "lcpEnableAccm",
+        "LcpEnableAcfc": "lcpEnableAcfc",
+        "LcpEnableFcsAlternatives": "lcpEnableFcsAlternatives",
+        "LcpEnablePfc": "lcpEnablePfc",
         "LcpMaxFailure": "lcpMaxFailure",
         "LcpRetries": "lcpRetries",
         "LcpStartDelay": "lcpStartDelay",
@@ -115,6 +129,11 @@ class Pppoxclient(Base):
         "Mtu": "mtu",
         "Multiplier": "multiplier",
         "Name": "name",
+        "NcpConfReqInterval": "ncpConfReqInterval",
+        "NcpConfReqMode": "ncpConfReqMode",
+        "NcpConfReqRetries": "ncpConfReqRetries",
+        "NcpEnableIPComp": "ncpEnableIPComp",
+        "NcpIPCompProtocol": "ncpIPCompProtocol",
         "NcpRetries": "ncpRetries",
         "NcpTimeout": "ncpTimeout",
         "NcpType": "ncpType",
@@ -132,6 +151,8 @@ class Pppoxclient(Base):
         "ProxyAuthType": "proxyAuthType",
         "RedialMax": "redialMax",
         "RedialTimeout": "redialTimeout",
+        "RohcMaxCid": "rohcMaxCid",
+        "RohcMrru": "rohcMrru",
         "RxConnectSpeed": "rxConnectSpeed",
         "ServiceName": "serviceName",
         "ServiceOptions": "serviceOptions",
@@ -144,6 +165,8 @@ class Pppoxclient(Base):
         "UnlimitedRedialAttempts": "unlimitedRedialAttempts",
         "UserDefinedDslType": "userDefinedDslType",
         "UserDefinedPonType": "userDefinedPonType",
+        "VjCompSlotId": "vjCompSlotId",
+        "VjMaxSlotId": "vjMaxSlotId",
     }
     _SDM_ENUM_MAP = {
         "status": [
@@ -205,13 +228,13 @@ class Pppoxclient(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv4peer_904e2c38f7c97d7b9bfa48f79492ac8a.BgpIpv4Peer): An instance of the BgpIpv4Peer class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv4peer_2e2c3c2ad1ad138953e43543afb88841.BgpIpv4Peer): An instance of the BgpIpv4Peer class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv4peer_904e2c38f7c97d7b9bfa48f79492ac8a import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv4peer_2e2c3c2ad1ad138953e43543afb88841 import (
             BgpIpv4Peer,
         )
 
@@ -225,13 +248,13 @@ class Pppoxclient(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv6peer_d4de2e9634d2dee11a9265d28434788b.BgpIpv6Peer): An instance of the BgpIpv6Peer class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv6peer_d1a9d481647a51c783f6ad2bd104f872.BgpIpv6Peer): An instance of the BgpIpv6Peer class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv6peer_d4de2e9634d2dee11a9265d28434788b import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv6peer_d1a9d481647a51c783f6ad2bd104f872 import (
             BgpIpv6Peer,
         )
 
@@ -1131,6 +1154,32 @@ class Pppoxclient(Base):
         )
 
     @property
+    def CompMaxHeader(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): The largest header size in octets that may be compressed.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["CompMaxHeader"]))
+
+    @property
+    def CompSuboptions(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This field contain suboptions data in hex format.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["CompSuboptions"])
+        )
+
+    @property
     def ConnectSpeedUpdateEnable(self):
         # type: () -> 'Multivalue'
         """
@@ -1150,7 +1199,7 @@ class Pppoxclient(Base):
         """DEPRECATED
         Returns
         -------
-        - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of layers this layer is used to connect with to the wire.
+        - list(str[None | /api/v1/sessions/1/ixnetwork/topology]): List of layers this layer is used to connect with to the wire.
         """
         return self._get_attribute(self._SDM_ATT_MAP["ConnectedVia"])
 
@@ -1168,6 +1217,18 @@ class Pppoxclient(Base):
         - number: Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         """
         return self._get_attribute(self._SDM_ATT_MAP["Count"])
+
+    @property
+    def CustomAction(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Custom action to be executed as per the configuration value.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["CustomAction"]))
 
     @property
     def DataLink(self):
@@ -1444,9 +1505,21 @@ class Pppoxclient(Base):
         """
         Returns
         -------
-        - list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str])): A list of errors that have occurred
+        - list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork/],arg2:list[str])): A list of errors that have occurred
         """
         return self._get_attribute(self._SDM_ATT_MAP["Errors"])
+
+    @property
+    def FcsAltOption(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): FCS Alternatives Configuration Options.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["FcsAltOption"]))
 
     @property
     def HostUniq(self):
@@ -1473,6 +1546,58 @@ class Pppoxclient(Base):
         return Multivalue(
             self, self._get_attribute(self._SDM_ATT_MAP["HostUniqLength"])
         )
+
+    @property
+    def IphcFMaxPeriod(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Maximum interval between full headers.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["IphcFMaxPeriod"])
+        )
+
+    @property
+    def IphcFMaxTime(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Maximum time interval between full headers.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["IphcFMaxTime"]))
+
+    @property
+    def IphcNonTcpSpace(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): The NON_TCP_SPACE field is two octets and indicates the maximum value of a context identifier in the space of context identifiers allocated for non-TCP.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["IphcNonTcpSpace"])
+        )
+
+    @property
+    def IphcTcpSpace(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): The TCP_SPACE field is two octets and indicates the maximum value of a context identifier in the space of context identifiers allocated for TCP.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["IphcTcpSpace"]))
 
     @property
     def LastRxLcpReq(self):
@@ -1513,6 +1638,48 @@ class Pppoxclient(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["LcpAccm"]))
 
     @property
+    def LcpConfReqInterval(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Time interval between config-reject received and config-request with same local options sent in response, in seconds.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LcpConfReqInterval"])
+        )
+
+    @property
+    def LcpConfReqMode(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This dropdown determines the behavior of LCP Config-Request on receiving config-reject. None or Default - Default workflow. Local and Close Connection - this will allow PPPoE client/server to ignore config-reject and will send config-req with the same local options in response to config-reject till the counter configured in LCP Config-Req Retries after which the connection will close by sending PADT.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LcpConfReqMode"])
+        )
+
+    @property
+    def LcpConfReqRetries(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Number of config-request retries with same local options in response to config-reject after which the connection will close.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LcpConfReqRetries"])
+        )
+
+    @property
     def LcpEnableAccm(self):
         # type: () -> 'Multivalue'
         """
@@ -1523,6 +1690,44 @@ class Pppoxclient(Base):
         from ixnetwork_restpy.multivalue import Multivalue
 
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["LcpEnableAccm"]))
+
+    @property
+    def LcpEnableAcfc(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Address and Control Field Compression (Option 8)
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["LcpEnableAcfc"]))
+
+    @property
+    def LcpEnableFcsAlternatives(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enable FCS Alternatives (Option 9)
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LcpEnableFcsAlternatives"])
+        )
+
+    @property
+    def LcpEnablePfc(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Protocol Field Compression (Option 7)
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["LcpEnablePfc"]))
 
     @property
     def LcpMaxFailure(self):
@@ -1707,6 +1912,76 @@ class Pppoxclient(Base):
     def Name(self, value):
         # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP["Name"], value)
+
+    @property
+    def NcpConfReqInterval(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Time interval between config-nak received and config-request with same local options sent in response, in seconds.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["NcpConfReqInterval"])
+        )
+
+    @property
+    def NcpConfReqMode(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This dropdown determines the behavior of NCP Config-Request on receiving config-nak. None or Default - Default workflow. Local and Close Connection - this will allow PPPoE client/server to ignore IPCP config-nak and will send config-req with the same local options in response to config-nak till the counter configured in NCP Config-Req Retries after which the connection will close by sending termination/PADT. This option is limited to only IPCP.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["NcpConfReqMode"])
+        )
+
+    @property
+    def NcpConfReqRetries(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Number of config-request retries with same local options in response to config-nak after which the connection will close.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["NcpConfReqRetries"])
+        )
+
+    @property
+    def NcpEnableIPComp(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enable IP Compression Protocol
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["NcpEnableIPComp"])
+        )
+
+    @property
+    def NcpIPCompProtocol(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Select IP Compression Protocol
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["NcpIPCompProtocol"])
+        )
 
     @property
     def NcpRetries(self):
@@ -1913,6 +2188,30 @@ class Pppoxclient(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["RedialTimeout"]))
 
     @property
+    def RohcMaxCid(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): The MAX_CID field is two octets and indicates the maximum value of a context identifier.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["RohcMaxCid"]))
+
+    @property
+    def RohcMrru(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): The MRRU field is two octets and indicates the maximum reconstructed reception unit for Robust Header Compression.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["RohcMrru"]))
+
+    @property
     def RxConnectSpeed(self):
         # type: () -> 'Multivalue'
         """
@@ -1978,7 +2277,7 @@ class Pppoxclient(Base):
         """
         Returns
         -------
-        - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of secondary (many to one) child layer protocols
+        - list(str[None | /api/v1/sessions/1/ixnetwork/topology]): List of secondary (many to one) child layer protocols
         """
         return self._get_attribute(self._SDM_ATT_MAP["StackedLayers"])
 
@@ -2062,6 +2361,30 @@ class Pppoxclient(Base):
             self, self._get_attribute(self._SDM_ATT_MAP["UserDefinedPonType"])
         )
 
+    @property
+    def VjCompSlotId(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This field indicates whether the slot identifier field may be compressed. 0 The slot identifier must not be compressed. 1 The slot identifer may be compressed.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["VjCompSlotId"]))
+
+    @property
+    def VjMaxSlotId(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This field indicates the maximum slot identifier.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["VjMaxSlotId"]))
+
     def update(self, ConnectedVia=None, Multiplier=None, Name=None, StackedLayers=None):
         # type: (List[str], int, str, List[str]) -> Pppoxclient
         """Updates pppoxclient resource on the server.
@@ -2071,10 +2394,10 @@ class Pppoxclient(Base):
 
         Args
         ----
-        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
+        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology])): List of layers this layer is used to connect with to the wire.
         - Multiplier (number): Number of layer instances per parent instance (multiplier)
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
+        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology])): List of secondary (many to one) child layer protocols
 
         Raises
         ------
@@ -2088,10 +2411,10 @@ class Pppoxclient(Base):
 
         Args
         ----
-        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
+        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology])): List of layers this layer is used to connect with to the wire.
         - Multiplier (number): Number of layer instances per parent instance (multiplier)
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
+        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology])): List of secondary (many to one) child layer protocols
 
         Returns
         -------
@@ -2143,7 +2466,7 @@ class Pppoxclient(Base):
 
         Args
         ----
-        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
+        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology])): List of layers this layer is used to connect with to the wire.
         - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         - DiscoveredIpv4Addresses (list(str)): The discovered IPv4 addresses.
@@ -2154,12 +2477,12 @@ class Pppoxclient(Base):
         - DiscoveredSessionIds (list(number)): The negotiated session ID.
         - DiscoveredTunnelIPs (list(str)): The discovered remote tunnel IP.
         - DiscoveredTunnelIds (list(number)): The negotiated tunnel ID.
-        - Errors (list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str]))): A list of errors that have occurred
+        - Errors (list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork/],arg2:list[str]))): A list of errors that have occurred
         - Multiplier (number): Number of layer instances per parent instance (multiplier)
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
         - SessionInfo (list(str[cLS_CFG_REJ_AUTH | cLS_CHAP_PEER_DET_FAIL | cLS_CHAP_PEER_RESP_BAD | cLS_CODE_REJ_IPCP | cLS_CODE_REJ_IPV6CP | cLS_CODE_REJ_LCP | cLS_ERR_PPP_NO_BUF | cLS_ERR_PPP_SEND_PKT | cLS_LINK_DISABLE | cLS_LOC_IPADDR_BROADCAST | cLS_LOC_IPADDR_CLASS_E | cLS_LOC_IPADDR_INVAL_ACKS_0 | cLS_LOC_IPADDR_INVAL_ACKS_DIFF | cLS_LOC_IPADDR_LOOPBACK | cLS_LOC_IPADDR_PEER_MATCH_LOC | cLS_LOC_IPADDR_PEER_NO_GIVE | cLS_LOC_IPADDR_PEER_NO_HELP | cLS_LOC_IPADDR_PEER_NO_TAKE | cLS_LOC_IPADDR_PEER_REJ | cLS_LOOPBACK_DETECT | cLS_NO_NCP | cLS_NONE | cLS_PAP_BAD_PASSWD | cLS_PEER_DISCONNECTED | cLS_PEER_DISCONNECTED_NEGO | cLS_PEER_IPADDR_MATCH_LOC | cLS_PEER_IPADDR_PEER_NO_SET | cLS_PPOE_AC_SYSTEM_ERROR | cLS_PPOE_GENERIC_ERROR | cLS_PPP_DISABLE | cLS_PPPOE_NO_HOST_UNIQ | cLS_PPPOE_PADI_TIMEOUT | cLS_PPPOE_PADO_TIMEOUT | cLS_PPPOE_PADR_TIMEOUT | cLS_PROTO_REJ_IPCP | cLS_PROTO_REJ_IPv6CP | cLS_TIMEOUT_CHAP_CHAL | cLS_TIMEOUT_CHAP_RESP | cLS_TIMEOUT_IPCP_CFG_REQ | cLS_TIMEOUT_IPV6CP_CFG_REQ | cLS_TIMEOUT_IPV6CP_RA | cLS_TIMEOUT_LCP_CFG_REQ | cLS_TIMEOUT_LCP_ECHO_REQ | cLS_TIMEOUT_PAP_AUTH_REQ | cLS_TUN_AUTH_FAILED | cLS_TUN_NO_RESOURCES | cLS_TUN_TIMEOUT_ICRQ | cLS_TUN_TIMEOUT_SCCRQ | cLS_TUN_VENDOR_SPECIFIC_ERR])): Logs additional information about the session state
         - SessionStatus (list(str[down | notStarted | up])): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
-        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
+        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology])): List of secondary (many to one) child layer protocols
         - StateCounts (dict(total:number,notStarted:number,down:number,up:number)): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
         - Status (str(configured | error | mixed | notStarted | started | starting | stopping)): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
 
@@ -2583,7 +2906,10 @@ class Pppoxclient(Base):
         ClientWinsOptions=None,
         ClientWinsPrimaryAddress=None,
         ClientWinsSecondaryAddress=None,
+        CompMaxHeader=None,
+        CompSuboptions=None,
         ConnectSpeedUpdateEnable=None,
+        CustomAction=None,
         DataLink=None,
         DomainList=None,
         DslTypeTlv=None,
@@ -2598,12 +2924,23 @@ class Pppoxclient(Base):
         Encaps2=None,
         EndpointDiscNegotiation=None,
         EndpointDiscriminatorClass=None,
+        FcsAltOption=None,
         HostUniq=None,
         HostUniqLength=None,
+        IphcFMaxPeriod=None,
+        IphcFMaxTime=None,
+        IphcNonTcpSpace=None,
+        IphcTcpSpace=None,
         LastRxLcpReq=None,
         LastSentLcpReq=None,
         LcpAccm=None,
+        LcpConfReqInterval=None,
+        LcpConfReqMode=None,
+        LcpConfReqRetries=None,
         LcpEnableAccm=None,
+        LcpEnableAcfc=None,
+        LcpEnableFcsAlternatives=None,
+        LcpEnablePfc=None,
         LcpMaxFailure=None,
         LcpRetries=None,
         LcpStartDelay=None,
@@ -2616,6 +2953,11 @@ class Pppoxclient(Base):
         MrruNegotiation=None,
         MruNegotiation=None,
         Mtu=None,
+        NcpConfReqInterval=None,
+        NcpConfReqMode=None,
+        NcpConfReqRetries=None,
+        NcpEnableIPComp=None,
+        NcpIPCompProtocol=None,
         NcpRetries=None,
         NcpTimeout=None,
         NcpType=None,
@@ -2633,6 +2975,8 @@ class Pppoxclient(Base):
         ProxyAuthType=None,
         RedialMax=None,
         RedialTimeout=None,
+        RohcMaxCid=None,
+        RohcMrru=None,
         RxConnectSpeed=None,
         ServiceName=None,
         ServiceOptions=None,
@@ -2640,6 +2984,8 @@ class Pppoxclient(Base):
         UnlimitedRedialAttempts=None,
         UserDefinedDslType=None,
         UserDefinedPonType=None,
+        VjCompSlotId=None,
+        VjMaxSlotId=None,
     ):
         """Base class infrastructure that gets a list of pppoxclient device ids encapsulated by this object.
 
@@ -2679,7 +3025,10 @@ class Pppoxclient(Base):
         - ClientWinsOptions (str): optional regex of clientWinsOptions
         - ClientWinsPrimaryAddress (str): optional regex of clientWinsPrimaryAddress
         - ClientWinsSecondaryAddress (str): optional regex of clientWinsSecondaryAddress
+        - CompMaxHeader (str): optional regex of compMaxHeader
+        - CompSuboptions (str): optional regex of compSuboptions
         - ConnectSpeedUpdateEnable (str): optional regex of connectSpeedUpdateEnable
+        - CustomAction (str): optional regex of customAction
         - DataLink (str): optional regex of dataLink
         - DomainList (str): optional regex of domainList
         - DslTypeTlv (str): optional regex of dslTypeTlv
@@ -2694,12 +3043,23 @@ class Pppoxclient(Base):
         - Encaps2 (str): optional regex of encaps2
         - EndpointDiscNegotiation (str): optional regex of endpointDiscNegotiation
         - EndpointDiscriminatorClass (str): optional regex of endpointDiscriminatorClass
+        - FcsAltOption (str): optional regex of fcsAltOption
         - HostUniq (str): optional regex of hostUniq
         - HostUniqLength (str): optional regex of hostUniqLength
+        - IphcFMaxPeriod (str): optional regex of iphcFMaxPeriod
+        - IphcFMaxTime (str): optional regex of iphcFMaxTime
+        - IphcNonTcpSpace (str): optional regex of iphcNonTcpSpace
+        - IphcTcpSpace (str): optional regex of iphcTcpSpace
         - LastRxLcpReq (str): optional regex of lastRxLcpReq
         - LastSentLcpReq (str): optional regex of lastSentLcpReq
         - LcpAccm (str): optional regex of lcpAccm
+        - LcpConfReqInterval (str): optional regex of lcpConfReqInterval
+        - LcpConfReqMode (str): optional regex of lcpConfReqMode
+        - LcpConfReqRetries (str): optional regex of lcpConfReqRetries
         - LcpEnableAccm (str): optional regex of lcpEnableAccm
+        - LcpEnableAcfc (str): optional regex of lcpEnableAcfc
+        - LcpEnableFcsAlternatives (str): optional regex of lcpEnableFcsAlternatives
+        - LcpEnablePfc (str): optional regex of lcpEnablePfc
         - LcpMaxFailure (str): optional regex of lcpMaxFailure
         - LcpRetries (str): optional regex of lcpRetries
         - LcpStartDelay (str): optional regex of lcpStartDelay
@@ -2712,6 +3072,11 @@ class Pppoxclient(Base):
         - MrruNegotiation (str): optional regex of mrruNegotiation
         - MruNegotiation (str): optional regex of mruNegotiation
         - Mtu (str): optional regex of mtu
+        - NcpConfReqInterval (str): optional regex of ncpConfReqInterval
+        - NcpConfReqMode (str): optional regex of ncpConfReqMode
+        - NcpConfReqRetries (str): optional regex of ncpConfReqRetries
+        - NcpEnableIPComp (str): optional regex of ncpEnableIPComp
+        - NcpIPCompProtocol (str): optional regex of ncpIPCompProtocol
         - NcpRetries (str): optional regex of ncpRetries
         - NcpTimeout (str): optional regex of ncpTimeout
         - NcpType (str): optional regex of ncpType
@@ -2729,6 +3094,8 @@ class Pppoxclient(Base):
         - ProxyAuthType (str): optional regex of proxyAuthType
         - RedialMax (str): optional regex of redialMax
         - RedialTimeout (str): optional regex of redialTimeout
+        - RohcMaxCid (str): optional regex of rohcMaxCid
+        - RohcMrru (str): optional regex of rohcMrru
         - RxConnectSpeed (str): optional regex of rxConnectSpeed
         - ServiceName (str): optional regex of serviceName
         - ServiceOptions (str): optional regex of serviceOptions
@@ -2736,6 +3103,8 @@ class Pppoxclient(Base):
         - UnlimitedRedialAttempts (str): optional regex of unlimitedRedialAttempts
         - UserDefinedDslType (str): optional regex of userDefinedDslType
         - UserDefinedPonType (str): optional regex of userDefinedPonType
+        - VjCompSlotId (str): optional regex of vjCompSlotId
+        - VjMaxSlotId (str): optional regex of vjMaxSlotId
 
         Returns
         -------

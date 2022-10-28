@@ -389,7 +389,7 @@ class Vport(Base):
         """DEPRECATED
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/availableHardware/.../port): The physical port to which the unassigned port is assigned.
+        - str(None | /api/v1/sessions/1/ixnetwork/availableHardware/chassis/card/port): The physical port to which the unassigned port is assigned.
         """
         return self._get_attribute(self._SDM_ATT_MAP["ConnectedTo"])
 
@@ -811,7 +811,7 @@ class Vport(Base):
 
         Args
         ----
-        - ConnectedTo (str(None | /api/v1/sessions/1/ixnetwork/availableHardware/.../port)): The physical port to which the unassigned port is assigned.
+        - ConnectedTo (str(None | /api/v1/sessions/1/ixnetwork/availableHardware/chassis/card/port)): The physical port to which the unassigned port is assigned.
         - IsPullOnly (bool): (This action only affects assigned ports.) This action will temporarily set the port as an Unassigned Port. This function is used to pull the configuration set by a Tcl script or an IxExplorer port file into the IxNetwork configuration.
         - Location (str): The current format is {chassisIp}/{frontPanelPort}.{fanoutPort} or {chassisIp};{cardId};{portId} for legacy systems.
         - Name (str): The description of the port: (1) For an assigned port, the format is: (Port type) (card no.): (port no.) - (chassis name or IP). (2) For an (unassigned) port configuration, the format is: (Port type) Port 00x.
@@ -852,7 +852,7 @@ class Vport(Base):
 
         Args
         ----
-        - ConnectedTo (str(None | /api/v1/sessions/1/ixnetwork/availableHardware/.../port)): The physical port to which the unassigned port is assigned.
+        - ConnectedTo (str(None | /api/v1/sessions/1/ixnetwork/availableHardware/chassis/card/port)): The physical port to which the unassigned port is assigned.
         - IsPullOnly (bool): (This action only affects assigned ports.) This action will temporarily set the port as an Unassigned Port. This function is used to pull the configuration set by a Tcl script or an IxExplorer port file into the IxNetwork configuration.
         - Location (str): The current format is {chassisIp}/{frontPanelPort}.{fanoutPort} or {chassisIp};{cardId};{portId} for legacy systems.
         - Name (str): The description of the port: (1) For an assigned port, the format is: (Port type) (card no.): (port no.) - (chassis name or IP). (2) For an (unassigned) port configuration, the format is: (Port type) Port 00x.
@@ -942,7 +942,7 @@ class Vport(Base):
         - AssignedTo (str): (Deprecated, Read Only) A new port is assigned with this option.
         - AssignedToDisplayName (str):
         - CaptureSupported (str(data | control | dataAndControl | none)):
-        - ConnectedTo (str(None | /api/v1/sessions/1/ixnetwork/availableHardware/.../port)): The physical port to which the unassigned port is assigned.
+        - ConnectedTo (str(None | /api/v1/sessions/1/ixnetwork/availableHardware/chassis/card/port)): The physical port to which the unassigned port is assigned.
         - ConnectionInfo (str): Detailed information about location of the physical port that is assigned to this port configuration.
         - ConnectionState (str(assignedInUseByOther | assignedUnconnected | connectedLinkDown | connectedLinkUp | connecting | unassigned)): Consolidated state of the vport. This combines the connection state with link state.
         - ConnectionStatus (str): A string describing the status of the hardware connected to this vport
@@ -1004,6 +1004,30 @@ class Vport(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
+
+    def AddEgressOnlyTracking(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the addEgressOnlyTracking operation on the server.
+
+        Add Egress Only Tracking to the configuration. Pass only those ports which do not have egress only tracking enabled
+
+        addEgressOnlyTracking(async_operation=bool)
+        -------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "addEgressOnlyTracking", payload=payload, response_object=None
+        )
 
     def AddGclEntry(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1706,7 +1730,7 @@ class Vport(Base):
 
         sendArp(Arg2=list, async_operation=bool)bool
         --------------------------------------------
-        - Arg2 (list(str[None | /api/v1/sessions/1/ixnetwork/vport/.../interface])): NOT DEFINED
+        - Arg2 (list(str[None | /api/v1/sessions/1/ixnetwork/vport/interface])): NOT DEFINED
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns bool: NOT DEFINED
 
@@ -1759,7 +1783,7 @@ class Vport(Base):
 
         sendNs(Arg2=list, async_operation=bool)bool
         -------------------------------------------
-        - Arg2 (list(str[None | /api/v1/sessions/1/ixnetwork/vport/.../interface])): NOT DEFINED
+        - Arg2 (list(str[None | /api/v1/sessions/1/ixnetwork/vport/interface])): NOT DEFINED
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns bool: NOT DEFINED
 
@@ -1812,7 +1836,7 @@ class Vport(Base):
 
         sendRs(Arg2=list, async_operation=bool)bool
         -------------------------------------------
-        - Arg2 (list(str[None | /api/v1/sessions/1/ixnetwork/vport/.../interface])): NOT DEFINED
+        - Arg2 (list(str[None | /api/v1/sessions/1/ixnetwork/vport/interface])): NOT DEFINED
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns bool: NOT DEFINED
 

@@ -1276,7 +1276,7 @@ class Router(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup): Contains the object reference to a traffic group identifier as configured with the trafficGroup object.
+        - str(None | /api/v1/sessions/1/ixnetwork/traffic/trafficGroup): Contains the object reference to a traffic group identifier as configured with the trafficGroup object.
         """
         return self._get_attribute(self._SDM_ATT_MAP["TrafficGroupId"])
 
@@ -1408,7 +1408,7 @@ class Router(Base):
         - SystemId (str): The neighbor's system ID.
         - TeEnable (bool): Enables traffic engineering (TE) on this emulated ISIS router.
         - TeRouterId (str): The ID of the simulated router, expressed as an IP address.
-        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup)): Contains the object reference to a traffic group identifier as configured with the trafficGroup object.
+        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/trafficGroup)): Contains the object reference to a traffic group identifier as configured with the trafficGroup object.
 
         Raises
         ------
@@ -1539,7 +1539,7 @@ class Router(Base):
         - SystemId (str): The neighbor's system ID.
         - TeEnable (bool): Enables traffic engineering (TE) on this emulated ISIS router.
         - TeRouterId (str): The ID of the simulated router, expressed as an IP address.
-        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup)): Contains the object reference to a traffic group identifier as configured with the trafficGroup object.
+        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/trafficGroup)): Contains the object reference to a traffic group identifier as configured with the trafficGroup object.
 
         Returns
         -------
@@ -1688,7 +1688,7 @@ class Router(Base):
         - SystemId (str): The neighbor's system ID.
         - TeEnable (bool): Enables traffic engineering (TE) on this emulated ISIS router.
         - TeRouterId (str): The ID of the simulated router, expressed as an IP address.
-        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup)): Contains the object reference to a traffic group identifier as configured with the trafficGroup object.
+        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/trafficGroup)): Contains the object reference to a traffic group identifier as configured with the trafficGroup object.
 
         Returns
         -------

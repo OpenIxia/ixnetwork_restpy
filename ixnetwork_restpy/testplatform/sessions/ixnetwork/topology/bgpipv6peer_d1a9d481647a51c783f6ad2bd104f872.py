@@ -27,24 +27,27 @@ if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
 
-class BgpIpv4Peer(Base):
-    """Bgp IPv4 Peer
-    The BgpIpv4Peer class encapsulates a list of bgpIpv4Peer resources that are managed by the user.
-    A list of resources can be retrieved from the server using the BgpIpv4Peer.find() method.
-    The list can be managed by using the BgpIpv4Peer.add() and BgpIpv4Peer.remove() methods.
+class BgpIpv6Peer(Base):
+    """Bgp IPv6 Peer
+    The BgpIpv6Peer class encapsulates a list of bgpIpv6Peer resources that are managed by the user.
+    A list of resources can be retrieved from the server using the BgpIpv6Peer.find() method.
+    The list can be managed by using the BgpIpv6Peer.add() and BgpIpv6Peer.remove() methods.
     """
 
     __slots__ = ()
-    _SDM_NAME = "bgpIpv4Peer"
+    _SDM_NAME = "bgpIpv6Peer"
     _SDM_ATT_MAP = {
         "ActAsRestarted": "actAsRestarted",
         "Active": "active",
+        "AdvSrv6SidInIgp": "advSrv6SidInIgp",
         "AdvertiseEndOfRib": "advertiseEndOfRib",
         "AdvertiseEvpnRoutesForOtherVtep": "advertiseEvpnRoutesForOtherVtep",
+        "AdvertiseSRv6SID": "advertiseSRv6SID",
         "AdvertiseTunnelEncapsulationExtendedCommunity": "advertiseTunnelEncapsulationExtendedCommunity",
         "AlwaysIncludeTunnelEncExtCommunity": "alwaysIncludeTunnelEncExtCommunity",
         "AsSetMode": "asSetMode",
         "Authentication": "authentication",
+        "AutoGenSegmentLeftValue": "autoGenSegmentLeftValue",
         "BgpFsmState": "bgpFsmState",
         "BgpId": "bgpId",
         "BgpLsAsSetMode": "bgpLsAsSetMode",
@@ -55,6 +58,8 @@ class BgpIpv4Peer(Base):
         "BgpLsNoOfClusters": "bgpLsNoOfClusters",
         "BgpLsNoOfCommunities": "bgpLsNoOfCommunities",
         "BgpLsOverridePeerAsSetMode": "bgpLsOverridePeerAsSetMode",
+        "BgpUnnumbered": "bgpUnnumbered",
+        "CapabilityExtendedMessage": "capabilityExtendedMessage",
         "CapabilityIpV4Mdt": "capabilityIpV4Mdt",
         "CapabilityIpV4Mpls": "capabilityIpV4Mpls",
         "CapabilityIpV4MplsVpn": "capabilityIpV4MplsVpn",
@@ -74,6 +79,7 @@ class BgpIpv4Peer(Base):
         "CapabilityIpv6UnicastAddPath": "capabilityIpv6UnicastAddPath",
         "CapabilityLinkStateNonVpn": "capabilityLinkStateNonVpn",
         "CapabilityLinkStateVpn": "capabilityLinkStateVpn",
+        "CapabilityNHEncodingCapabilities": "capabilityNHEncodingCapabilities",
         "CapabilityRouteConstraint": "capabilityRouteConstraint",
         "CapabilityRouteRefresh": "capabilityRouteRefresh",
         "CapabilitySRTEPoliciesV4": "capabilitySRTEPoliciesV4",
@@ -83,22 +89,27 @@ class BgpIpv4Peer(Base):
         "Capabilityipv6UnicastFlowSpec": "capabilityipv6UnicastFlowSpec",
         "ConfigureKeepaliveTimer": "configureKeepaliveTimer",
         "ConnectedVia": "connectedVia",
+        "CopyTtl": "copyTtl",
         "Count": "count",
         "CustomSidType": "customSidType",
         "DescriptiveName": "descriptiveName",
         "DiscardIxiaGeneratedRoutes": "discardIxiaGeneratedRoutes",
+        "DiscoveredDutIp": "discoveredDutIp",
         "DowntimeInSec": "downtimeInSec",
         "DutIp": "dutIp",
+        "EnSRv6DataPlane": "enSRv6DataPlane",
         "Enable4ByteAs": "enable4ByteAs",
         "EnableBfdRegistration": "enableBfdRegistration",
         "EnableBgpId": "enableBgpId",
-        "EnableBgpIdSameasRouterId": "enableBgpIdSameasRouterId",
+        "EnableBgpIdSameAsRouterId": "enableBgpIdSameAsRouterId",
         "EnableBgpLsCommunity": "enableBgpLsCommunity",
         "EnableEpeTraffic": "enableEpeTraffic",
         "EnableGracefulRestart": "enableGracefulRestart",
         "EnableLlgr": "enableLlgr",
+        "EnableReducedEncapsulation": "enableReducedEncapsulation",
+        "EnableSRv6OAMService": "enableSRv6OAMService",
         "Errors": "errors",
-        "EthernetSegmentsCountV4": "ethernetSegmentsCountV4",
+        "EthernetSegmentsCountV6": "ethernetSegmentsCountV6",
         "Evpn": "evpn",
         "FilterEvpn": "filterEvpn",
         "FilterIpV4Mpls": "filterIpV4Mpls",
@@ -136,13 +147,15 @@ class BgpIpv4Peer(Base):
         "Ipv6MultipleMplsLabelsCapability": "ipv6MultipleMplsLabelsCapability",
         "Ipv6UnicastAddPathMode": "ipv6UnicastAddPathMode",
         "IrbInterfaceLabel": "irbInterfaceLabel",
-        "IrbIpv4Address": "irbIpv4Address",
+        "IrbIpv6Address": "irbIpv6Address",
         "KeepaliveTimer": "keepaliveTimer",
         "L3VPNEncapsulationType": "l3VPNEncapsulationType",
         "LocalAs2Bytes": "localAs2Bytes",
         "LocalAs4Bytes": "localAs4Bytes",
-        "LocalIpv4Ver2": "localIpv4Ver2",
+        "LocalIpv6Ver2": "localIpv6Ver2",
         "LocalRouterID": "localRouterID",
+        "MaxBGPMsgLengthTx": "maxBGPMsgLengthTx",
+        "MaxSidPerSrh": "maxSidPerSrh",
         "Md5Key": "md5Key",
         "ModeOfBfdOperations": "modeOfBfdOperations",
         "MplsLabelsCountForIpv4MplsRoute": "mplsLabelsCountForIpv4MplsRoute",
@@ -160,12 +173,27 @@ class BgpIpv4Peer(Base):
         "NumberFlowSpecRangeV6": "numberFlowSpecRangeV6",
         "NumberSRTEPolicies": "numberSRTEPolicies",
         "OperationalModel": "operationalModel",
+        "OverrideCalculatedSRv6DestinationAddress": "overrideCalculatedSRv6DestinationAddress",
         "RestartTime": "restartTime",
         "RoutersMacOrIrbMacAddress": "routersMacOrIrbMacAddress",
         "SRGBRangeCount": "sRGBRangeCount",
+        "SRv6DestinationAddress": "sRv6DestinationAddress",
+        "SegmentLeftValue": "segmentLeftValue",
         "SendIxiaSignatureWithRoutes": "sendIxiaSignatureWithRoutes",
+        "SendSRv6SIDOptionalInfo": "sendSRv6SIDOptionalInfo",
         "SessionInfo": "sessionInfo",
         "SessionStatus": "sessionStatus",
+        "SiIndex": "siIndex",
+        "Srv6EndpointBehavior": "srv6EndpointBehavior",
+        "Srv6SIDOptionalInformation": "srv6SIDOptionalInformation",
+        "Srv6SidFlags": "srv6SidFlags",
+        "Srv6SidLoc": "srv6SidLoc",
+        "Srv6SidLocLen": "srv6SidLocLen",
+        "Srv6SidLocMetric": "srv6SidLocMetric",
+        "Srv6SidReserved": "srv6SidReserved",
+        "Srv6SidReserved1": "srv6SidReserved1",
+        "Srv6SidReserved2": "srv6SidReserved2",
+        "Srv6Ttl": "srv6Ttl",
         "StackedLayers": "stackedLayers",
         "StaleTime": "staleTime",
         "StateCounts": "stateCounts",
@@ -173,10 +201,14 @@ class BgpIpv4Peer(Base):
         "TcpWindowSizeInBytes": "tcpWindowSizeInBytes",
         "Ttl": "ttl",
         "Type": "type",
+        "TypeSIDEPE": "typeSIDEPE",
         "UdpPortEndValue": "udpPortEndValue",
         "UdpPortStartValue": "udpPortStartValue",
         "UpdateInterval": "updateInterval",
         "UptimeInSec": "uptimeInSec",
+        "UseGSRv6SI": "useGSRv6SI",
+        "UseGatewayAsDutIp": "useGatewayAsDutIp",
+        "UseStaticPolicy": "useStaticPolicy",
         "VplsEnableNextHop": "vplsEnableNextHop",
         "VplsNextHop": "vplsNextHop",
     }
@@ -195,30 +227,31 @@ class BgpIpv4Peer(Base):
             "starting",
             "stopping",
         ],
+        "typeSIDEPE": ["sRMPLS", "sRv6"],
     }
 
     def __init__(self, parent, list_op=False):
-        super(BgpIpv4Peer, self).__init__(parent, list_op)
+        super(BgpIpv6Peer, self).__init__(parent, list_op)
 
     @property
-    def BgpCustomAfiSafiv4(self):
+    def BgpCustomAfiSafiv6(self):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpcustomafisafiv4_3755a44fa17f2a2c8666f79d7f4bbce7.BgpCustomAfiSafiv4): An instance of the BgpCustomAfiSafiv4 class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpcustomafisafiv6_31ae8bd98f331c2119281ac977022fca.BgpCustomAfiSafiv6): An instance of the BgpCustomAfiSafiv6 class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpcustomafisafiv4_3755a44fa17f2a2c8666f79d7f4bbce7 import (
-            BgpCustomAfiSafiv4,
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpcustomafisafiv6_31ae8bd98f331c2119281ac977022fca import (
+            BgpCustomAfiSafiv6,
         )
 
         if len(self._object_properties) > 0:
-            if self._properties.get("BgpCustomAfiSafiv4", None) is not None:
-                return self._properties.get("BgpCustomAfiSafiv4")
-        return BgpCustomAfiSafiv4(self)._select()
+            if self._properties.get("BgpCustomAfiSafiv6", None) is not None:
+                return self._properties.get("BgpCustomAfiSafiv6")
+        return BgpCustomAfiSafiv6(self)._select()
 
     @property
     def BgpEpePeerList(self):
@@ -241,37 +274,57 @@ class BgpIpv4Peer(Base):
         return BgpEpePeerList(self)._select()
 
     @property
-    def BgpEthernetSegmentV4(self):
+    def BgpEpeSrv6PeerList(self):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpethernetsegmentv4_1cb5c56a2c9d4d061f97207a53f3a691.BgpEthernetSegmentV4): An instance of the BgpEthernetSegmentV4 class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpepesrv6peerlist_b7dca522ef99eb22707bd5da943fc120.BgpEpeSrv6PeerList): An instance of the BgpEpeSrv6PeerList class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpethernetsegmentv4_1cb5c56a2c9d4d061f97207a53f3a691 import (
-            BgpEthernetSegmentV4,
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpepesrv6peerlist_b7dca522ef99eb22707bd5da943fc120 import (
+            BgpEpeSrv6PeerList,
         )
 
         if len(self._object_properties) > 0:
-            if self._properties.get("BgpEthernetSegmentV4", None) is not None:
-                return self._properties.get("BgpEthernetSegmentV4")
-        return BgpEthernetSegmentV4(self)._select()
+            if self._properties.get("BgpEpeSrv6PeerList", None) is not None:
+                return self._properties.get("BgpEpeSrv6PeerList")
+        return BgpEpeSrv6PeerList(self)._select()
+
+    @property
+    def BgpEthernetSegmentV6(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpethernetsegmentv6_766c04a63efb3fe4eca969aac968fe4e.BgpEthernetSegmentV6): An instance of the BgpEthernetSegmentV6 class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpethernetsegmentv6_766c04a63efb3fe4eca969aac968fe4e import (
+            BgpEthernetSegmentV6,
+        )
+
+        if len(self._object_properties) > 0:
+            if self._properties.get("BgpEthernetSegmentV6", None) is not None:
+                return self._properties.get("BgpEthernetSegmentV6")
+        return BgpEthernetSegmentV6(self)._select()
 
     @property
     def BgpFlowSpecRangesList(self):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpflowspecrangeslist_789c16d44699974803aa7a2ecfa2c575.BgpFlowSpecRangesList): An instance of the BgpFlowSpecRangesList class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpflowspecrangeslist_6369634b1dc049c4e02574db74970dd8.BgpFlowSpecRangesList): An instance of the BgpFlowSpecRangesList class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpflowspecrangeslist_789c16d44699974803aa7a2ecfa2c575 import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpflowspecrangeslist_6369634b1dc049c4e02574db74970dd8 import (
             BgpFlowSpecRangesList,
         )
 
@@ -285,13 +338,13 @@ class BgpIpv4Peer(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpflowspecrangeslistv4_ab0c3185b027eff54394da27736dcb9a.BgpFlowSpecRangesListV4): An instance of the BgpFlowSpecRangesListV4 class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpflowspecrangeslistv4_0163de8cc99a19d1385a21d26b93a544.BgpFlowSpecRangesListV4): An instance of the BgpFlowSpecRangesListV4 class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpflowspecrangeslistv4_ab0c3185b027eff54394da27736dcb9a import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpflowspecrangeslistv4_0163de8cc99a19d1385a21d26b93a544 import (
             BgpFlowSpecRangesListV4,
         )
 
@@ -305,13 +358,13 @@ class BgpIpv4Peer(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpflowspecrangeslistv6_305d65dd8b0f124660b13211ca670c20.BgpFlowSpecRangesListV6): An instance of the BgpFlowSpecRangesListV6 class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpflowspecrangeslistv6_c579a493ccdc64a6383fef9d60aac4cc.BgpFlowSpecRangesListV6): An instance of the BgpFlowSpecRangesListV6 class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpflowspecrangeslistv6_305d65dd8b0f124660b13211ca670c20 import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpflowspecrangeslistv6_c579a493ccdc64a6383fef9d60aac4cc import (
             BgpFlowSpecRangesListV6,
         )
 
@@ -321,164 +374,164 @@ class BgpIpv4Peer(Base):
         return BgpFlowSpecRangesListV6(self)._select()
 
     @property
-    def BgpIPv4EvpnEvi(self):
+    def BgpIPv6EvpnEvi(self):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv4evpnevi_05f1ea70759fa1436b3981f124b83276.BgpIPv4EvpnEvi): An instance of the BgpIPv4EvpnEvi class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv6evpnevi_7c0bb620c8b4c2fccbb4102758771ea6.BgpIPv6EvpnEvi): An instance of the BgpIPv6EvpnEvi class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv4evpnevi_05f1ea70759fa1436b3981f124b83276 import (
-            BgpIPv4EvpnEvi,
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv6evpnevi_7c0bb620c8b4c2fccbb4102758771ea6 import (
+            BgpIPv6EvpnEvi,
         )
 
         if len(self._object_properties) > 0:
-            if self._properties.get("BgpIPv4EvpnEvi", None) is not None:
-                return self._properties.get("BgpIPv4EvpnEvi")
-        return BgpIPv4EvpnEvi(self)
+            if self._properties.get("BgpIPv6EvpnEvi", None) is not None:
+                return self._properties.get("BgpIPv6EvpnEvi")
+        return BgpIPv6EvpnEvi(self)
 
     @property
-    def BgpIPv4EvpnPbb(self):
+    def BgpIPv6EvpnPbb(self):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv4evpnpbb_f1db536c355bf8211909601b21790955.BgpIPv4EvpnPbb): An instance of the BgpIPv4EvpnPbb class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv6evpnpbb_7e3d31c960a96c76772f39596f4e0b6c.BgpIPv6EvpnPbb): An instance of the BgpIPv6EvpnPbb class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv4evpnpbb_f1db536c355bf8211909601b21790955 import (
-            BgpIPv4EvpnPbb,
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv6evpnpbb_7e3d31c960a96c76772f39596f4e0b6c import (
+            BgpIPv6EvpnPbb,
         )
 
         if len(self._object_properties) > 0:
-            if self._properties.get("BgpIPv4EvpnPbb", None) is not None:
-                return self._properties.get("BgpIPv4EvpnPbb")
-        return BgpIPv4EvpnPbb(self)
+            if self._properties.get("BgpIPv6EvpnPbb", None) is not None:
+                return self._properties.get("BgpIPv6EvpnPbb")
+        return BgpIPv6EvpnPbb(self)
 
     @property
-    def BgpIPv4EvpnVXLAN(self):
+    def BgpIPv6EvpnVXLAN(self):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv4evpnvxlan_ac7a890f916ca5599eb4618d697c2f6e.BgpIPv4EvpnVXLAN): An instance of the BgpIPv4EvpnVXLAN class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv6evpnvxlan_1a74cee0f392d412526e30bcedb3e032.BgpIPv6EvpnVXLAN): An instance of the BgpIPv6EvpnVXLAN class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv4evpnvxlan_ac7a890f916ca5599eb4618d697c2f6e import (
-            BgpIPv4EvpnVXLAN,
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv6evpnvxlan_1a74cee0f392d412526e30bcedb3e032 import (
+            BgpIPv6EvpnVXLAN,
         )
 
         if len(self._object_properties) > 0:
-            if self._properties.get("BgpIPv4EvpnVXLAN", None) is not None:
-                return self._properties.get("BgpIPv4EvpnVXLAN")
-        return BgpIPv4EvpnVXLAN(self)
+            if self._properties.get("BgpIPv6EvpnVXLAN", None) is not None:
+                return self._properties.get("BgpIPv6EvpnVXLAN")
+        return BgpIPv6EvpnVXLAN(self)
 
     @property
-    def BgpIPv4EvpnVXLANVpws(self):
+    def BgpIPv6EvpnVXLANVpws(self):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv4evpnvxlanvpws_8885c446b89d80aaa511ee82c37e924f.BgpIPv4EvpnVXLANVpws): An instance of the BgpIPv4EvpnVXLANVpws class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv6evpnvxlanvpws_4fb221f4b88d4df5dde7203f6194f25d.BgpIPv6EvpnVXLANVpws): An instance of the BgpIPv6EvpnVXLANVpws class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv4evpnvxlanvpws_8885c446b89d80aaa511ee82c37e924f import (
-            BgpIPv4EvpnVXLANVpws,
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv6evpnvxlanvpws_4fb221f4b88d4df5dde7203f6194f25d import (
+            BgpIPv6EvpnVXLANVpws,
         )
 
         if len(self._object_properties) > 0:
-            if self._properties.get("BgpIPv4EvpnVXLANVpws", None) is not None:
-                return self._properties.get("BgpIPv4EvpnVXLANVpws")
-        return BgpIPv4EvpnVXLANVpws(self)
+            if self._properties.get("BgpIPv6EvpnVXLANVpws", None) is not None:
+                return self._properties.get("BgpIPv6EvpnVXLANVpws")
+        return BgpIPv6EvpnVXLANVpws(self)
 
     @property
-    def BgpIPv4EvpnVpws(self):
+    def BgpIPv6EvpnVpws(self):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv4evpnvpws_e8af65dd80ab4466e956b1bd0656c202.BgpIPv4EvpnVpws): An instance of the BgpIPv4EvpnVpws class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv6evpnvpws_7e7a3dec141df7b1c974f723df7f4814.BgpIPv6EvpnVpws): An instance of the BgpIPv6EvpnVpws class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv4evpnvpws_e8af65dd80ab4466e956b1bd0656c202 import (
-            BgpIPv4EvpnVpws,
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv6evpnvpws_7e7a3dec141df7b1c974f723df7f4814 import (
+            BgpIPv6EvpnVpws,
         )
 
         if len(self._object_properties) > 0:
-            if self._properties.get("BgpIPv4EvpnVpws", None) is not None:
-                return self._properties.get("BgpIPv4EvpnVpws")
-        return BgpIPv4EvpnVpws(self)
+            if self._properties.get("BgpIPv6EvpnVpws", None) is not None:
+                return self._properties.get("BgpIPv6EvpnVpws")
+        return BgpIPv6EvpnVpws(self)
 
     @property
-    def BgpIpv4AdL2Vpn(self):
+    def BgpIpv6AdL2Vpn(self):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv4adl2vpn_08c7fedfc475cb9798d64a65caa67e97.BgpIpv4AdL2Vpn): An instance of the BgpIpv4AdL2Vpn class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv6adl2vpn_dfa30e45f6798c9ecc0ef8b85351cb5d.BgpIpv6AdL2Vpn): An instance of the BgpIpv6AdL2Vpn class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv4adl2vpn_08c7fedfc475cb9798d64a65caa67e97 import (
-            BgpIpv4AdL2Vpn,
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv6adl2vpn_dfa30e45f6798c9ecc0ef8b85351cb5d import (
+            BgpIpv6AdL2Vpn,
         )
 
         if len(self._object_properties) > 0:
-            if self._properties.get("BgpIpv4AdL2Vpn", None) is not None:
-                return self._properties.get("BgpIpv4AdL2Vpn")
-        return BgpIpv4AdL2Vpn(self)
+            if self._properties.get("BgpIpv6AdL2Vpn", None) is not None:
+                return self._properties.get("BgpIpv6AdL2Vpn")
+        return BgpIpv6AdL2Vpn(self)
 
     @property
-    def BgpIpv4L2Site(self):
+    def BgpIpv6L2Site(self):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv4l2site_3fc887aa9816db034ba10b85d4b057ee.BgpIpv4L2Site): An instance of the BgpIpv4L2Site class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv6l2site_91dde52dc0cc2c12360c0d436c8db2fe.BgpIpv6L2Site): An instance of the BgpIpv6L2Site class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv4l2site_3fc887aa9816db034ba10b85d4b057ee import (
-            BgpIpv4L2Site,
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv6l2site_91dde52dc0cc2c12360c0d436c8db2fe import (
+            BgpIpv6L2Site,
         )
 
         if len(self._object_properties) > 0:
-            if self._properties.get("BgpIpv4L2Site", None) is not None:
-                return self._properties.get("BgpIpv4L2Site")
-        return BgpIpv4L2Site(self)
+            if self._properties.get("BgpIpv6L2Site", None) is not None:
+                return self._properties.get("BgpIpv6L2Site")
+        return BgpIpv6L2Site(self)
 
     @property
-    def BgpIpv4MVrf(self):
+    def BgpIpv6MVrf(self):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv4mvrf_200ce763656bd00177bc416b83bf991a.BgpIpv4MVrf): An instance of the BgpIpv4MVrf class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv6mvrf_1027ad3d610d0cb975a481909144cac3.BgpIpv6MVrf): An instance of the BgpIpv6MVrf class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv4mvrf_200ce763656bd00177bc416b83bf991a import (
-            BgpIpv4MVrf,
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv6mvrf_1027ad3d610d0cb975a481909144cac3 import (
+            BgpIpv6MVrf,
         )
 
         if len(self._object_properties) > 0:
-            if self._properties.get("BgpIpv4MVrf", None) is not None:
-                return self._properties.get("BgpIpv4MVrf")
-        return BgpIpv4MVrf(self)
+            if self._properties.get("BgpIpv6MVrf", None) is not None:
+                return self._properties.get("BgpIpv6MVrf")
+        return BgpIpv6MVrf(self)
 
     @property
     def BgpLsAsPathSegmentList(self):
@@ -545,13 +598,13 @@ class BgpIpv4Peer(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgplsextendedcommunitieslist_835ffabe7ce10fa0b2a04b0ca4ed54d9.BgpLsExtendedCommunitiesList): An instance of the BgpLsExtendedCommunitiesList class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgplsextendedcommunitieslist_65060f604681a40b0c7dab490b2d6c5d.BgpLsExtendedCommunitiesList): An instance of the BgpLsExtendedCommunitiesList class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgplsextendedcommunitieslist_835ffabe7ce10fa0b2a04b0ca4ed54d9 import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgplsextendedcommunitieslist_65060f604681a40b0c7dab490b2d6c5d import (
             BgpLsExtendedCommunitiesList,
         )
 
@@ -581,44 +634,44 @@ class BgpIpv4Peer(Base):
         return BgpSRGBRangeSubObjectsList(self)
 
     @property
-    def BgpSRTEPoliciesListV4(self):
+    def BgpSRTEPoliciesListV6(self):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpsrtepolicieslistv4_f2d756189af5037098439a3ddb4c82c5.BgpSRTEPoliciesListV4): An instance of the BgpSRTEPoliciesListV4 class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpsrtepolicieslistv6_777d4342234c70b57248a06e0ef16746.BgpSRTEPoliciesListV6): An instance of the BgpSRTEPoliciesListV6 class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpsrtepolicieslistv4_f2d756189af5037098439a3ddb4c82c5 import (
-            BgpSRTEPoliciesListV4,
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpsrtepolicieslistv6_777d4342234c70b57248a06e0ef16746 import (
+            BgpSRTEPoliciesListV6,
         )
 
         if len(self._object_properties) > 0:
-            if self._properties.get("BgpSRTEPoliciesListV4", None) is not None:
-                return self._properties.get("BgpSRTEPoliciesListV4")
-        return BgpSRTEPoliciesListV4(self)._select()
+            if self._properties.get("BgpSRTEPoliciesListV6", None) is not None:
+                return self._properties.get("BgpSRTEPoliciesListV6")
+        return BgpSRTEPoliciesListV6(self)._select()
 
     @property
-    def BgpVrf(self):
+    def BgpV6Vrf(self):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpvrf_0cb79569071cf4c1cb6a19d71168e407.BgpVrf): An instance of the BgpVrf class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpv6vrf_4210da29fcbfb992a73dbc8ddd6c31ca.BgpV6Vrf): An instance of the BgpV6Vrf class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpvrf_0cb79569071cf4c1cb6a19d71168e407 import (
-            BgpVrf,
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpv6vrf_4210da29fcbfb992a73dbc8ddd6c31ca import (
+            BgpV6Vrf,
         )
 
         if len(self._object_properties) > 0:
-            if self._properties.get("BgpVrf", None) is not None:
-                return self._properties.get("BgpVrf")
-        return BgpVrf(self)
+            if self._properties.get("BgpV6Vrf", None) is not None:
+                return self._properties.get("BgpV6Vrf")
+        return BgpV6Vrf(self)
 
     @property
     def Connector(self):
@@ -727,6 +780,20 @@ class BgpIpv4Peer(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Active"]))
 
     @property
+    def AdvSrv6SidInIgp(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Advertise SRv6 SID in IGP
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AdvSrv6SidInIgp"])
+        )
+
+    @property
     def AdvertiseEndOfRib(self):
         # type: () -> 'Multivalue'
         """
@@ -754,6 +821,20 @@ class BgpIpv4Peer(Base):
     def AdvertiseEvpnRoutesForOtherVtep(self, value):
         # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP["AdvertiseEvpnRoutesForOtherVtep"], value)
+
+    @property
+    def AdvertiseSRv6SID(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Advertise SRv6 SID
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AdvertiseSRv6SID"])
+        )
 
     @property
     def AdvertiseTunnelEncapsulationExtendedCommunity(self):
@@ -814,6 +895,21 @@ class BgpIpv4Peer(Base):
         return Multivalue(
             self, self._get_attribute(self._SDM_ATT_MAP["Authentication"])
         )
+
+    @property
+    def AutoGenSegmentLeftValue(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: If enabled then Segment Left field value will be auto generated
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["AutoGenSegmentLeftValue"])
+
+    @AutoGenSegmentLeftValue.setter
+    def AutoGenSegmentLeftValue(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["AutoGenSegmentLeftValue"], value)
 
     @property
     def BgpFsmState(self):
@@ -950,6 +1046,32 @@ class BgpIpv4Peer(Base):
 
         return Multivalue(
             self, self._get_attribute(self._SDM_ATT_MAP["BgpLsOverridePeerAsSetMode"])
+        )
+
+    @property
+    def BgpUnnumbered(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): If enabled, BGP local IP will be Link-local IP.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["BgpUnnumbered"]))
+
+    @property
+    def CapabilityExtendedMessage(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Extended Message Capability (Capability code 6, length 0): If enabled, a BGP Peer is able to receive and handle BGP messages having a maximum size of 65535 bytes.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["CapabilityExtendedMessage"])
         )
 
     @property
@@ -1221,6 +1343,21 @@ class BgpIpv4Peer(Base):
         )
 
     @property
+    def CapabilityNHEncodingCapabilities(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Extended Next Hop Encoding Capability which needs to be used when advertising IPv4 or VPN-IPv4 routes over IPv6 Core
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["CapabilityNHEncodingCapabilities"]),
+        )
+
+    @property
     def CapabilityRouteConstraint(self):
         # type: () -> 'Multivalue'
         """
@@ -1340,7 +1477,7 @@ class BgpIpv4Peer(Base):
         """DEPRECATED
         Returns
         -------
-        - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of layers this layer is used to connect with to the wire.
+        - list(str[None | /api/v1/sessions/1/ixnetwork/topology]): List of layers this layer is used to connect with to the wire.
         """
         return self._get_attribute(self._SDM_ATT_MAP["ConnectedVia"])
 
@@ -1348,6 +1485,21 @@ class BgpIpv4Peer(Base):
     def ConnectedVia(self, value):
         # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP["ConnectedVia"], value)
+
+    @property
+    def CopyTtl(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: Copy TTL from customer packet to outer IPv6 header
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["CopyTtl"])
+
+    @CopyTtl.setter
+    def CopyTtl(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["CopyTtl"], value)
 
     @property
     def Count(self):
@@ -1396,6 +1548,16 @@ class BgpIpv4Peer(Base):
         )
 
     @property
+    def DiscoveredDutIp(self):
+        # type: () -> List[str]
+        """
+        Returns
+        -------
+        - list(str): The discovered DUT IP addresses.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["DiscoveredDutIp"])
+
+    @property
     def DowntimeInSec(self):
         # type: () -> 'Multivalue'
         """
@@ -1418,6 +1580,21 @@ class BgpIpv4Peer(Base):
         from ixnetwork_restpy.multivalue import Multivalue
 
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["DutIp"]))
+
+    @property
+    def EnSRv6DataPlane(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: Ingress Peer Supports SRv6
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["EnSRv6DataPlane"])
+
+    @EnSRv6DataPlane.setter
+    def EnSRv6DataPlane(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["EnSRv6DataPlane"], value)
 
     @property
     def Enable4ByteAs(self):
@@ -1458,7 +1635,7 @@ class BgpIpv4Peer(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EnableBgpId"]))
 
     @property
-    def EnableBgpIdSameasRouterId(self):
+    def EnableBgpIdSameAsRouterId(self):
         # type: () -> 'Multivalue'
         """
         Returns
@@ -1468,7 +1645,7 @@ class BgpIpv4Peer(Base):
         from ixnetwork_restpy.multivalue import Multivalue
 
         return Multivalue(
-            self, self._get_attribute(self._SDM_ATT_MAP["EnableBgpIdSameasRouterId"])
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableBgpIdSameAsRouterId"])
         )
 
     @property
@@ -1527,28 +1704,58 @@ class BgpIpv4Peer(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EnableLlgr"]))
 
     @property
+    def EnableReducedEncapsulation(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: Enable Reduced Encapsulation in Data-Plane for SRv6
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["EnableReducedEncapsulation"])
+
+    @EnableReducedEncapsulation.setter
+    def EnableReducedEncapsulation(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["EnableReducedEncapsulation"], value)
+
+    @property
+    def EnableSRv6OAMService(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: If enabled then SRv6 SID advertised to OAM
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["EnableSRv6OAMService"])
+
+    @EnableSRv6OAMService.setter
+    def EnableSRv6OAMService(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["EnableSRv6OAMService"], value)
+
+    @property
     def Errors(self):
         """
         Returns
         -------
-        - list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str])): A list of errors that have occurred
+        - list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork/],arg2:list[str])): A list of errors that have occurred
         """
         return self._get_attribute(self._SDM_ATT_MAP["Errors"])
 
     @property
-    def EthernetSegmentsCountV4(self):
+    def EthernetSegmentsCountV6(self):
         # type: () -> int
         """
         Returns
         -------
         - number: Number of Ethernet Segments
         """
-        return self._get_attribute(self._SDM_ATT_MAP["EthernetSegmentsCountV4"])
+        return self._get_attribute(self._SDM_ATT_MAP["EthernetSegmentsCountV6"])
 
-    @EthernetSegmentsCountV4.setter
-    def EthernetSegmentsCountV4(self, value):
+    @EthernetSegmentsCountV6.setter
+    def EthernetSegmentsCountV6(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP["EthernetSegmentsCountV4"], value)
+        self._set_attribute(self._SDM_ATT_MAP["EthernetSegmentsCountV6"], value)
 
     @property
     def Evpn(self):
@@ -2074,17 +2281,17 @@ class BgpIpv4Peer(Base):
         )
 
     @property
-    def IrbIpv4Address(self):
+    def IrbIpv6Address(self):
         # type: () -> 'Multivalue'
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): IRB IPv4 Address
+        - obj(ixnetwork_restpy.multivalue.Multivalue): IRB IPv6 Address
         """
         from ixnetwork_restpy.multivalue import Multivalue
 
         return Multivalue(
-            self, self._get_attribute(self._SDM_ATT_MAP["IrbIpv4Address"])
+            self, self._get_attribute(self._SDM_ATT_MAP["IrbIpv6Address"])
         )
 
     @property
@@ -2140,14 +2347,14 @@ class BgpIpv4Peer(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["LocalAs4Bytes"]))
 
     @property
-    def LocalIpv4Ver2(self):
+    def LocalIpv6Ver2(self):
         # type: () -> List[str]
         """
         Returns
         -------
         - list(str): Local IP
         """
-        return self._get_attribute(self._SDM_ATT_MAP["LocalIpv4Ver2"])
+        return self._get_attribute(self._SDM_ATT_MAP["LocalIpv6Ver2"])
 
     @property
     def LocalRouterID(self):
@@ -2158,6 +2365,35 @@ class BgpIpv4Peer(Base):
         - list(str): Router ID
         """
         return self._get_attribute(self._SDM_ATT_MAP["LocalRouterID"])
+
+    @property
+    def MaxBGPMsgLengthTx(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Max BGP Message Length (in bytes): The maximum size of a BGP message that can be transmitted. The minimum value is 4096 and the maximum size can be configured up to 65535. 4096 is the default value. This is not applicable for OPEN and KEEPALIVE messages as their maximum size limit is 4096.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MaxBGPMsgLengthTx"])
+        )
+
+    @property
+    def MaxSidPerSrh(self):
+        # type: () -> int
+        """
+        Returns
+        -------
+        - number: Max number of SIDs a SRH can have
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["MaxSidPerSrh"])
+
+    @MaxSidPerSrh.setter
+    def MaxSidPerSrh(self, value):
+        # type: (int) -> None
+        self._set_attribute(self._SDM_ATT_MAP["MaxSidPerSrh"], value)
 
     @property
     def Md5Key(self):
@@ -2281,7 +2517,7 @@ class BgpIpv4Peer(Base):
         """
         Returns
         -------
-        - number: Count of User Defined AFI SAFI
+        - number: Count of User defined AFI SAFI
         """
         return self._get_attribute(self._SDM_ATT_MAP["NoOfUserDefinedAfiSafi"])
 
@@ -2408,6 +2644,25 @@ class BgpIpv4Peer(Base):
         )
 
     @property
+    def OverrideCalculatedSRv6DestinationAddress(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: >Override Calculated SRv6 Destination Address
+        """
+        return self._get_attribute(
+            self._SDM_ATT_MAP["OverrideCalculatedSRv6DestinationAddress"]
+        )
+
+    @OverrideCalculatedSRv6DestinationAddress.setter
+    def OverrideCalculatedSRv6DestinationAddress(self, value):
+        # type: (bool) -> None
+        self._set_attribute(
+            self._SDM_ATT_MAP["OverrideCalculatedSRv6DestinationAddress"], value
+        )
+
+    @property
     def RestartTime(self):
         # type: () -> 'Multivalue'
         """
@@ -2449,6 +2704,36 @@ class BgpIpv4Peer(Base):
         self._set_attribute(self._SDM_ATT_MAP["SRGBRangeCount"], value)
 
     @property
+    def SRv6DestinationAddress(self):
+        # type: () -> str
+        """
+        Returns
+        -------
+        - str: SRv6 Destination Address.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["SRv6DestinationAddress"])
+
+    @SRv6DestinationAddress.setter
+    def SRv6DestinationAddress(self, value):
+        # type: (str) -> None
+        self._set_attribute(self._SDM_ATT_MAP["SRv6DestinationAddress"], value)
+
+    @property
+    def SegmentLeftValue(self):
+        # type: () -> int
+        """
+        Returns
+        -------
+        - number: Segment Left value to be used in top SRH. This zero index based value start from egress node.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["SegmentLeftValue"])
+
+    @SegmentLeftValue.setter
+    def SegmentLeftValue(self, value):
+        # type: (int) -> None
+        self._set_attribute(self._SDM_ATT_MAP["SegmentLeftValue"], value)
+
+    @property
     def SendIxiaSignatureWithRoutes(self):
         # type: () -> 'Multivalue'
         """
@@ -2460,6 +2745,20 @@ class BgpIpv4Peer(Base):
 
         return Multivalue(
             self, self._get_attribute(self._SDM_ATT_MAP["SendIxiaSignatureWithRoutes"])
+        )
+
+    @property
+    def SendSRv6SIDOptionalInfo(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): If we need to advertise SRv6 SID Optional Information (Service Information sub-TLV) which is specified in next column(s)
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SendSRv6SIDOptionalInfo"])
         )
 
     @property
@@ -2483,12 +2782,162 @@ class BgpIpv4Peer(Base):
         return self._get_attribute(self._SDM_ATT_MAP["SessionStatus"])
 
     @property
+    def SiIndex(self):
+        # type: () -> int
+        """
+        Returns
+        -------
+        - number: Segment Index.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["SiIndex"])
+
+    @SiIndex.setter
+    def SiIndex(self, value):
+        # type: (int) -> None
+        self._set_attribute(self._SDM_ATT_MAP["SiIndex"], value)
+
+    @property
+    def Srv6EndpointBehavior(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): SRv6 Endpoint Behavior field Value for all routes in this Route Range
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Srv6EndpointBehavior"])
+        )
+
+    @property
+    def Srv6SIDOptionalInformation(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): SRv6 SID Optional Information field Value (Service Information sub-TLV) for all routes in this Route Range
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Srv6SIDOptionalInformation"])
+        )
+
+    @property
+    def Srv6SidFlags(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): SRv6 SID Flags Value
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Srv6SidFlags"]))
+
+    @property
+    def Srv6SidLoc(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): SRv6 SID. It consists of Locator, Func and Args
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Srv6SidLoc"]))
+
+    @property
+    def Srv6SidLocLen(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): SRv6 SID Locator Length
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Srv6SidLocLen"]))
+
+    @property
+    def Srv6SidLocMetric(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): SRv6 SID Locator Metric
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Srv6SidLocMetric"])
+        )
+
+    @property
+    def Srv6SidReserved(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): SRv6 SID Reserved Value (SRv6 SID Service TLV Level)
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Srv6SidReserved"])
+        )
+
+    @property
+    def Srv6SidReserved1(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): SRv6 SID Reserved1 Field for Service Information sub-TLV
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Srv6SidReserved1"])
+        )
+
+    @property
+    def Srv6SidReserved2(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): SRv6 SID Reserved2 Field for Service Information sub-TLV
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Srv6SidReserved2"])
+        )
+
+    @property
+    def Srv6Ttl(self):
+        # type: () -> int
+        """
+        Returns
+        -------
+        - number: TTL value to be used in outer IPv6 header
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["Srv6Ttl"])
+
+    @Srv6Ttl.setter
+    def Srv6Ttl(self, value):
+        # type: (int) -> None
+        self._set_attribute(self._SDM_ATT_MAP["Srv6Ttl"], value)
+
+    @property
     def StackedLayers(self):
         # type: () -> List[str]
         """
         Returns
         -------
-        - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of secondary (many to one) child layer protocols
+        - list(str[None | /api/v1/sessions/1/ixnetwork/topology]): List of secondary (many to one) child layer protocols
         """
         return self._get_attribute(self._SDM_ATT_MAP["StackedLayers"])
 
@@ -2567,6 +3016,21 @@ class BgpIpv4Peer(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Type"]))
 
     @property
+    def TypeSIDEPE(self):
+        # type: () -> str
+        """
+        Returns
+        -------
+        - str(sRMPLS | sRv6): Type of EPE SID
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["TypeSIDEPE"])
+
+    @TypeSIDEPE.setter
+    def TypeSIDEPE(self, value):
+        # type: (str) -> None
+        self._set_attribute(self._SDM_ATT_MAP["TypeSIDEPE"], value)
+
+    @property
     def UdpPortEndValue(self):
         # type: () -> int
         """
@@ -2623,6 +3087,50 @@ class BgpIpv4Peer(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["UptimeInSec"]))
 
     @property
+    def UseGSRv6SI(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: Use G SRv6 SI
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["UseGSRv6SI"])
+
+    @UseGSRv6SI.setter
+    def UseGSRv6SI(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["UseGSRv6SI"], value)
+
+    @property
+    def UseGatewayAsDutIp(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): If enabled, Gateway IP will be used as DUT IP.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["UseGatewayAsDutIp"])
+        )
+
+    @property
+    def UseStaticPolicy(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: If enabled then SRTE policy will be advertised
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["UseStaticPolicy"])
+
+    @UseStaticPolicy.setter
+    def UseStaticPolicy(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["UseStaticPolicy"], value)
+
+    @property
     def VplsEnableNextHop(self):
         # type: () -> 'Multivalue'
         """
@@ -2651,19 +3159,25 @@ class BgpIpv4Peer(Base):
     def update(
         self,
         AdvertiseEvpnRoutesForOtherVtep=None,
+        AutoGenSegmentLeftValue=None,
         BgpLsNoOfASPathSegments=None,
         BgpLsNoOfClusters=None,
         BgpLsNoOfCommunities=None,
         CapabilityIpv4MplsAddPath=None,
         CapabilityIpv6MplsAddPath=None,
         ConnectedVia=None,
+        CopyTtl=None,
+        EnSRv6DataPlane=None,
         EnableEpeTraffic=None,
-        EthernetSegmentsCountV4=None,
+        EnableReducedEncapsulation=None,
+        EnableSRv6OAMService=None,
+        EthernetSegmentsCountV6=None,
         IpVrfToIpVrfType=None,
         Ipv4MplsCapability=None,
         Ipv4MultipleMplsLabelsCapability=None,
         Ipv6MplsCapability=None,
         Ipv6MultipleMplsLabelsCapability=None,
+        MaxSidPerSrh=None,
         MplsLabelsCountForIpv4MplsRoute=None,
         MplsLabelsCountForIpv6MplsRoute=None,
         Multiplier=None,
@@ -2675,13 +3189,21 @@ class BgpIpv4Peer(Base):
         NumberFlowSpecRangeV4=None,
         NumberFlowSpecRangeV6=None,
         NumberSRTEPolicies=None,
+        OverrideCalculatedSRv6DestinationAddress=None,
         SRGBRangeCount=None,
+        SRv6DestinationAddress=None,
+        SegmentLeftValue=None,
+        SiIndex=None,
+        Srv6Ttl=None,
         StackedLayers=None,
+        TypeSIDEPE=None,
         UdpPortEndValue=None,
         UdpPortStartValue=None,
+        UseGSRv6SI=None,
+        UseStaticPolicy=None,
     ):
-        # type: (bool, int, int, int, bool, bool, List[str], bool, int, str, bool, bool, bool, bool, int, int, int, str, int, int, int, int, int, int, int, int, List[str], int, int) -> BgpIpv4Peer
-        """Updates bgpIpv4Peer resource on the server.
+        # type: (bool, bool, int, int, int, bool, bool, List[str], bool, bool, bool, bool, bool, int, str, bool, bool, bool, bool, int, int, int, int, str, int, int, int, int, int, int, int, bool, int, str, int, int, int, List[str], str, int, int, bool, bool) -> BgpIpv6Peer
+        """Updates bgpIpv6Peer resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
         The Multivalue class has documentation that details the possible values for those named parameters.
@@ -2689,34 +3211,48 @@ class BgpIpv4Peer(Base):
         Args
         ----
         - AdvertiseEvpnRoutesForOtherVtep (bool): Advertise EVPN routes for other VTEPS
+        - AutoGenSegmentLeftValue (bool): If enabled then Segment Left field value will be auto generated
         - BgpLsNoOfASPathSegments (number): Number Of AS Path Segments Per Route Range
         - BgpLsNoOfClusters (number): Number of Clusters
         - BgpLsNoOfCommunities (number): Number of Communities
         - CapabilityIpv4MplsAddPath (bool): IPv4 MPLS Add Path Capability
         - CapabilityIpv6MplsAddPath (bool): IPv6 MPLS Add Path Capability
-        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
+        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology])): List of layers this layer is used to connect with to the wire.
+        - CopyTtl (bool): Copy TTL from customer packet to outer IPv6 header
+        - EnSRv6DataPlane (bool): Ingress Peer Supports SRv6
         - EnableEpeTraffic (bool): Enable EPE Traffic
-        - EthernetSegmentsCountV4 (number): Number of Ethernet Segments
+        - EnableReducedEncapsulation (bool): Enable Reduced Encapsulation in Data-Plane for SRv6
+        - EnableSRv6OAMService (bool): If enabled then SRv6 SID advertised to OAM
+        - EthernetSegmentsCountV6 (number): Number of Ethernet Segments
         - IpVrfToIpVrfType (str(interfaceLess | interfacefullWithCorefacingIRB | interfacefullWithUnnumberedCorefacingIRB)): IP-VRF-to-IP-VRF Model Type
         - Ipv4MplsCapability (bool): IPv4 MPLS Capability: AFI=1, SAFI=4
         - Ipv4MultipleMplsLabelsCapability (bool): IPv4 Multiple MPLS Labels Capability: AFI=1, SAFI=4
         - Ipv6MplsCapability (bool): IPv6 MPLS Capability: AFI=2, SAFI=4
         - Ipv6MultipleMplsLabelsCapability (bool): IPv6 Multiple MPLS Labels Capability: AFI=2, SAFI=4
+        - MaxSidPerSrh (number): Max number of SIDs a SRH can have
         - MplsLabelsCountForIpv4MplsRoute (number): MPLS Labels Count For IPv4 MPLS Route
         - MplsLabelsCountForIpv6MplsRoute (number): MPLS Labels Count For IPv6 MPLS Route
         - Multiplier (number): Number of layer instances per parent instance (multiplier)
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
         - NoOfEpePeers (number): Number of EPE Peers
         - NoOfExtendedCommunities (number): Number of Extended Communities
-        - NoOfUserDefinedAfiSafi (number): Count of User Defined AFI SAFI
+        - NoOfUserDefinedAfiSafi (number): Count of User defined AFI SAFI
         - NumberColorFlexAlgoMapping (number): Number of Color/Flex Algo Mapping Entries
         - NumberFlowSpecRangeV4 (number): Number of IPv4 Flow Spec Ranges
         - NumberFlowSpecRangeV6 (number): Number of IPv6 Flow Spec Ranges
         - NumberSRTEPolicies (number): Count of SR TE Policies
+        - OverrideCalculatedSRv6DestinationAddress (bool): >Override Calculated SRv6 Destination Address
         - SRGBRangeCount (number): SRGB Range Count
-        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
+        - SRv6DestinationAddress (str): SRv6 Destination Address.
+        - SegmentLeftValue (number): Segment Left value to be used in top SRH. This zero index based value start from egress node.
+        - SiIndex (number): Segment Index.
+        - Srv6Ttl (number): TTL value to be used in outer IPv6 header
+        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology])): List of secondary (many to one) child layer protocols
+        - TypeSIDEPE (str(sRMPLS | sRv6)): Type of EPE SID
         - UdpPortEndValue (number): UDP Port End Value
         - UdpPortStartValue (number): UDP Port Start Value
+        - UseGSRv6SI (bool): Use G SRv6 SI
+        - UseStaticPolicy (bool): If enabled then SRTE policy will be advertised
 
         Raises
         ------
@@ -2727,19 +3263,25 @@ class BgpIpv4Peer(Base):
     def add(
         self,
         AdvertiseEvpnRoutesForOtherVtep=None,
+        AutoGenSegmentLeftValue=None,
         BgpLsNoOfASPathSegments=None,
         BgpLsNoOfClusters=None,
         BgpLsNoOfCommunities=None,
         CapabilityIpv4MplsAddPath=None,
         CapabilityIpv6MplsAddPath=None,
         ConnectedVia=None,
+        CopyTtl=None,
+        EnSRv6DataPlane=None,
         EnableEpeTraffic=None,
-        EthernetSegmentsCountV4=None,
+        EnableReducedEncapsulation=None,
+        EnableSRv6OAMService=None,
+        EthernetSegmentsCountV6=None,
         IpVrfToIpVrfType=None,
         Ipv4MplsCapability=None,
         Ipv4MultipleMplsLabelsCapability=None,
         Ipv6MplsCapability=None,
         Ipv6MultipleMplsLabelsCapability=None,
+        MaxSidPerSrh=None,
         MplsLabelsCountForIpv4MplsRoute=None,
         MplsLabelsCountForIpv6MplsRoute=None,
         Multiplier=None,
@@ -2751,49 +3293,71 @@ class BgpIpv4Peer(Base):
         NumberFlowSpecRangeV4=None,
         NumberFlowSpecRangeV6=None,
         NumberSRTEPolicies=None,
+        OverrideCalculatedSRv6DestinationAddress=None,
         SRGBRangeCount=None,
+        SRv6DestinationAddress=None,
+        SegmentLeftValue=None,
+        SiIndex=None,
+        Srv6Ttl=None,
         StackedLayers=None,
+        TypeSIDEPE=None,
         UdpPortEndValue=None,
         UdpPortStartValue=None,
+        UseGSRv6SI=None,
+        UseStaticPolicy=None,
     ):
-        # type: (bool, int, int, int, bool, bool, List[str], bool, int, str, bool, bool, bool, bool, int, int, int, str, int, int, int, int, int, int, int, int, List[str], int, int) -> BgpIpv4Peer
-        """Adds a new bgpIpv4Peer resource on the server and adds it to the container.
+        # type: (bool, bool, int, int, int, bool, bool, List[str], bool, bool, bool, bool, bool, int, str, bool, bool, bool, bool, int, int, int, int, str, int, int, int, int, int, int, int, bool, int, str, int, int, int, List[str], str, int, int, bool, bool) -> BgpIpv6Peer
+        """Adds a new bgpIpv6Peer resource on the server and adds it to the container.
 
         Args
         ----
         - AdvertiseEvpnRoutesForOtherVtep (bool): Advertise EVPN routes for other VTEPS
+        - AutoGenSegmentLeftValue (bool): If enabled then Segment Left field value will be auto generated
         - BgpLsNoOfASPathSegments (number): Number Of AS Path Segments Per Route Range
         - BgpLsNoOfClusters (number): Number of Clusters
         - BgpLsNoOfCommunities (number): Number of Communities
         - CapabilityIpv4MplsAddPath (bool): IPv4 MPLS Add Path Capability
         - CapabilityIpv6MplsAddPath (bool): IPv6 MPLS Add Path Capability
-        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
+        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology])): List of layers this layer is used to connect with to the wire.
+        - CopyTtl (bool): Copy TTL from customer packet to outer IPv6 header
+        - EnSRv6DataPlane (bool): Ingress Peer Supports SRv6
         - EnableEpeTraffic (bool): Enable EPE Traffic
-        - EthernetSegmentsCountV4 (number): Number of Ethernet Segments
+        - EnableReducedEncapsulation (bool): Enable Reduced Encapsulation in Data-Plane for SRv6
+        - EnableSRv6OAMService (bool): If enabled then SRv6 SID advertised to OAM
+        - EthernetSegmentsCountV6 (number): Number of Ethernet Segments
         - IpVrfToIpVrfType (str(interfaceLess | interfacefullWithCorefacingIRB | interfacefullWithUnnumberedCorefacingIRB)): IP-VRF-to-IP-VRF Model Type
         - Ipv4MplsCapability (bool): IPv4 MPLS Capability: AFI=1, SAFI=4
         - Ipv4MultipleMplsLabelsCapability (bool): IPv4 Multiple MPLS Labels Capability: AFI=1, SAFI=4
         - Ipv6MplsCapability (bool): IPv6 MPLS Capability: AFI=2, SAFI=4
         - Ipv6MultipleMplsLabelsCapability (bool): IPv6 Multiple MPLS Labels Capability: AFI=2, SAFI=4
+        - MaxSidPerSrh (number): Max number of SIDs a SRH can have
         - MplsLabelsCountForIpv4MplsRoute (number): MPLS Labels Count For IPv4 MPLS Route
         - MplsLabelsCountForIpv6MplsRoute (number): MPLS Labels Count For IPv6 MPLS Route
         - Multiplier (number): Number of layer instances per parent instance (multiplier)
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
         - NoOfEpePeers (number): Number of EPE Peers
         - NoOfExtendedCommunities (number): Number of Extended Communities
-        - NoOfUserDefinedAfiSafi (number): Count of User Defined AFI SAFI
+        - NoOfUserDefinedAfiSafi (number): Count of User defined AFI SAFI
         - NumberColorFlexAlgoMapping (number): Number of Color/Flex Algo Mapping Entries
         - NumberFlowSpecRangeV4 (number): Number of IPv4 Flow Spec Ranges
         - NumberFlowSpecRangeV6 (number): Number of IPv6 Flow Spec Ranges
         - NumberSRTEPolicies (number): Count of SR TE Policies
+        - OverrideCalculatedSRv6DestinationAddress (bool): >Override Calculated SRv6 Destination Address
         - SRGBRangeCount (number): SRGB Range Count
-        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
+        - SRv6DestinationAddress (str): SRv6 Destination Address.
+        - SegmentLeftValue (number): Segment Left value to be used in top SRH. This zero index based value start from egress node.
+        - SiIndex (number): Segment Index.
+        - Srv6Ttl (number): TTL value to be used in outer IPv6 header
+        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology])): List of secondary (many to one) child layer protocols
+        - TypeSIDEPE (str(sRMPLS | sRv6)): Type of EPE SID
         - UdpPortEndValue (number): UDP Port End Value
         - UdpPortStartValue (number): UDP Port Start Value
+        - UseGSRv6SI (bool): Use G SRv6 SI
+        - UseStaticPolicy (bool): If enabled then SRTE policy will be advertised
 
         Returns
         -------
-        - self: This instance with all currently retrieved bgpIpv4Peer resources using find and the newly added bgpIpv4Peer resources available through an iterator or index
+        - self: This instance with all currently retrieved bgpIpv6Peer resources using find and the newly added bgpIpv6Peer resources available through an iterator or index
 
         Raises
         ------
@@ -2802,7 +3366,7 @@ class BgpIpv4Peer(Base):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def remove(self):
-        """Deletes all the contained bgpIpv4Peer resources in this instance from the server.
+        """Deletes all the contained bgpIpv6Peer resources in this instance from the server.
 
         Raises
         ------
@@ -2814,6 +3378,7 @@ class BgpIpv4Peer(Base):
     def find(
         self,
         AdvertiseEvpnRoutesForOtherVtep=None,
+        AutoGenSegmentLeftValue=None,
         BgpFsmState=None,
         BgpLsNoOfASPathSegments=None,
         BgpLsNoOfClusters=None,
@@ -2821,18 +3386,24 @@ class BgpIpv4Peer(Base):
         CapabilityIpv4MplsAddPath=None,
         CapabilityIpv6MplsAddPath=None,
         ConnectedVia=None,
+        CopyTtl=None,
         Count=None,
         DescriptiveName=None,
+        DiscoveredDutIp=None,
+        EnSRv6DataPlane=None,
         EnableEpeTraffic=None,
+        EnableReducedEncapsulation=None,
+        EnableSRv6OAMService=None,
         Errors=None,
-        EthernetSegmentsCountV4=None,
+        EthernetSegmentsCountV6=None,
         IpVrfToIpVrfType=None,
         Ipv4MplsCapability=None,
         Ipv4MultipleMplsLabelsCapability=None,
         Ipv6MplsCapability=None,
         Ipv6MultipleMplsLabelsCapability=None,
-        LocalIpv4Ver2=None,
+        LocalIpv6Ver2=None,
         LocalRouterID=None,
+        MaxSidPerSrh=None,
         MplsLabelsCountForIpv4MplsRoute=None,
         MplsLabelsCountForIpv6MplsRoute=None,
         Multiplier=None,
@@ -2844,66 +3415,89 @@ class BgpIpv4Peer(Base):
         NumberFlowSpecRangeV4=None,
         NumberFlowSpecRangeV6=None,
         NumberSRTEPolicies=None,
+        OverrideCalculatedSRv6DestinationAddress=None,
         SRGBRangeCount=None,
+        SRv6DestinationAddress=None,
+        SegmentLeftValue=None,
         SessionInfo=None,
         SessionStatus=None,
+        SiIndex=None,
+        Srv6Ttl=None,
         StackedLayers=None,
         StateCounts=None,
         Status=None,
+        TypeSIDEPE=None,
         UdpPortEndValue=None,
         UdpPortStartValue=None,
+        UseGSRv6SI=None,
+        UseStaticPolicy=None,
     ):
-        """Finds and retrieves bgpIpv4Peer resources from the server.
+        """Finds and retrieves bgpIpv6Peer resources from the server.
 
-        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve bgpIpv4Peer resources from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve bgpIpv6Peer resources from the server.
         To retrieve an exact match ensure the parameter value starts with ^ and ends with $
-        By default the find method takes no parameters and will retrieve all bgpIpv4Peer resources from the server.
+        By default the find method takes no parameters and will retrieve all bgpIpv6Peer resources from the server.
 
         Args
         ----
         - AdvertiseEvpnRoutesForOtherVtep (bool): Advertise EVPN routes for other VTEPS
+        - AutoGenSegmentLeftValue (bool): If enabled then Segment Left field value will be auto generated
         - BgpFsmState (list(str[active | connect | error | established | idle | none | openConfirm | openSent])): Logs additional information about the BGP Peer State
         - BgpLsNoOfASPathSegments (number): Number Of AS Path Segments Per Route Range
         - BgpLsNoOfClusters (number): Number of Clusters
         - BgpLsNoOfCommunities (number): Number of Communities
         - CapabilityIpv4MplsAddPath (bool): IPv4 MPLS Add Path Capability
         - CapabilityIpv6MplsAddPath (bool): IPv6 MPLS Add Path Capability
-        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
+        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology])): List of layers this layer is used to connect with to the wire.
+        - CopyTtl (bool): Copy TTL from customer packet to outer IPv6 header
         - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
+        - DiscoveredDutIp (list(str)): The discovered DUT IP addresses.
+        - EnSRv6DataPlane (bool): Ingress Peer Supports SRv6
         - EnableEpeTraffic (bool): Enable EPE Traffic
-        - Errors (list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str]))): A list of errors that have occurred
-        - EthernetSegmentsCountV4 (number): Number of Ethernet Segments
+        - EnableReducedEncapsulation (bool): Enable Reduced Encapsulation in Data-Plane for SRv6
+        - EnableSRv6OAMService (bool): If enabled then SRv6 SID advertised to OAM
+        - Errors (list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork/],arg2:list[str]))): A list of errors that have occurred
+        - EthernetSegmentsCountV6 (number): Number of Ethernet Segments
         - IpVrfToIpVrfType (str(interfaceLess | interfacefullWithCorefacingIRB | interfacefullWithUnnumberedCorefacingIRB)): IP-VRF-to-IP-VRF Model Type
         - Ipv4MplsCapability (bool): IPv4 MPLS Capability: AFI=1, SAFI=4
         - Ipv4MultipleMplsLabelsCapability (bool): IPv4 Multiple MPLS Labels Capability: AFI=1, SAFI=4
         - Ipv6MplsCapability (bool): IPv6 MPLS Capability: AFI=2, SAFI=4
         - Ipv6MultipleMplsLabelsCapability (bool): IPv6 Multiple MPLS Labels Capability: AFI=2, SAFI=4
-        - LocalIpv4Ver2 (list(str)): Local IP
+        - LocalIpv6Ver2 (list(str)): Local IP
         - LocalRouterID (list(str)): Router ID
+        - MaxSidPerSrh (number): Max number of SIDs a SRH can have
         - MplsLabelsCountForIpv4MplsRoute (number): MPLS Labels Count For IPv4 MPLS Route
         - MplsLabelsCountForIpv6MplsRoute (number): MPLS Labels Count For IPv6 MPLS Route
         - Multiplier (number): Number of layer instances per parent instance (multiplier)
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
         - NoOfEpePeers (number): Number of EPE Peers
         - NoOfExtendedCommunities (number): Number of Extended Communities
-        - NoOfUserDefinedAfiSafi (number): Count of User Defined AFI SAFI
+        - NoOfUserDefinedAfiSafi (number): Count of User defined AFI SAFI
         - NumberColorFlexAlgoMapping (number): Number of Color/Flex Algo Mapping Entries
         - NumberFlowSpecRangeV4 (number): Number of IPv4 Flow Spec Ranges
         - NumberFlowSpecRangeV6 (number): Number of IPv6 Flow Spec Ranges
         - NumberSRTEPolicies (number): Count of SR TE Policies
+        - OverrideCalculatedSRv6DestinationAddress (bool): >Override Calculated SRv6 Destination Address
         - SRGBRangeCount (number): SRGB Range Count
+        - SRv6DestinationAddress (str): SRv6 Destination Address.
+        - SegmentLeftValue (number): Segment Left value to be used in top SRH. This zero index based value start from egress node.
         - SessionInfo (list(str[aSRoutingLoopErrorRx | attributeFlagErrorRx | attributesLengthErrorRx | authenticationFailureErrorRx | badBGPIdentifierErrorRx | badMessageLengthErrorRx | badMessageTypeErrorRx | badPeerASErrorRx | bGPHeaderErrorRx | bGPHeaderErrorTx | bGPHoldTimerExpiredErrorRx | bGPOpenPacketErrorRx | bGPStateMachineErrorRx | bGPUpdatePacketErrorRx | ceaseErrorRx | ceaseNotificationErrorTx | connectionNotsynchronizedErrorRx | holdtimeExpiredErrorTx | invalidASPathErrorRx | invalidNetworkFieldErrorRx | invalidNextHopAttributeErrorRx | invalidOriginAttributeErrorRx | malformedAttributeListErrorRx | missingWellKnownAttributeErrorRx | none | openPacketErrTx | optionalAttributeErrorRx | stateMachineErrorTx | unacceptableHoldTimeErrorRx | unrecognizedWellKnownAttributeErrorRx | unspecifiedErrorRx | unspecifiedErrorTx | unspecifiedSubcodeErrorRx | unsupportedOptionalParameterErrorRx | unsupportedversionNumberErrorRx | updatePacketErrorTx])): Logs additional information about the session state
         - SessionStatus (list(str[down | notStarted | up])): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
-        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
+        - SiIndex (number): Segment Index.
+        - Srv6Ttl (number): TTL value to be used in outer IPv6 header
+        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology])): List of secondary (many to one) child layer protocols
         - StateCounts (dict(total:number,notStarted:number,down:number,up:number)): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
         - Status (str(configured | error | mixed | notStarted | started | starting | stopping)): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
+        - TypeSIDEPE (str(sRMPLS | sRv6)): Type of EPE SID
         - UdpPortEndValue (number): UDP Port End Value
         - UdpPortStartValue (number): UDP Port Start Value
+        - UseGSRv6SI (bool): Use G SRv6 SI
+        - UseStaticPolicy (bool): If enabled then SRTE policy will be advertised
 
         Returns
         -------
-        - self: This instance with matching bgpIpv4Peer resources retrieved from the server available through an iterator or index
+        - self: This instance with matching bgpIpv6Peer resources retrieved from the server available through an iterator or index
 
         Raises
         ------
@@ -2912,7 +3506,7 @@ class BgpIpv4Peer(Base):
         return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
-        """Retrieves a single instance of bgpIpv4Peer data from the server.
+        """Retrieves a single instance of bgpIpv6Peer data from the server.
 
         Args
         ----
@@ -2920,7 +3514,7 @@ class BgpIpv4Peer(Base):
 
         Returns
         -------
-        - self: This instance with the bgpIpv4Peer resources from the server available through an iterator or index
+        - self: This instance with the bgpIpv6Peer resources from the server available through an iterator or index
 
         Raises
         ------
@@ -4164,7 +4758,9 @@ class BgpIpv4Peer(Base):
         PortNames=None,
         ActAsRestarted=None,
         Active=None,
+        AdvSrv6SidInIgp=None,
         AdvertiseEndOfRib=None,
+        AdvertiseSRv6SID=None,
         AdvertiseTunnelEncapsulationExtendedCommunity=None,
         AlwaysIncludeTunnelEncExtCommunity=None,
         AsSetMode=None,
@@ -4175,6 +4771,8 @@ class BgpIpv4Peer(Base):
         BgpLsEnableCluster=None,
         BgpLsEnableExtendedCommunity=None,
         BgpLsOverridePeerAsSetMode=None,
+        BgpUnnumbered=None,
+        CapabilityExtendedMessage=None,
         CapabilityIpV4Mdt=None,
         CapabilityIpV4Mpls=None,
         CapabilityIpV4MplsVpn=None,
@@ -4192,6 +4790,7 @@ class BgpIpv4Peer(Base):
         CapabilityIpv6UnicastAddPath=None,
         CapabilityLinkStateNonVpn=None,
         CapabilityLinkStateVpn=None,
+        CapabilityNHEncodingCapabilities=None,
         CapabilityRouteConstraint=None,
         CapabilityRouteRefresh=None,
         CapabilitySRTEPoliciesV4=None,
@@ -4207,7 +4806,7 @@ class BgpIpv4Peer(Base):
         Enable4ByteAs=None,
         EnableBfdRegistration=None,
         EnableBgpId=None,
-        EnableBgpIdSameasRouterId=None,
+        EnableBgpIdSameAsRouterId=None,
         EnableBgpLsCommunity=None,
         EnableGracefulRestart=None,
         EnableLlgr=None,
@@ -4243,11 +4842,12 @@ class BgpIpv4Peer(Base):
         Ipv6MulticastBgpMplsVpn=None,
         Ipv6UnicastAddPathMode=None,
         IrbInterfaceLabel=None,
-        IrbIpv4Address=None,
+        IrbIpv6Address=None,
         KeepaliveTimer=None,
         L3VPNEncapsulationType=None,
         LocalAs2Bytes=None,
         LocalAs4Bytes=None,
+        MaxBGPMsgLengthTx=None,
         Md5Key=None,
         ModeOfBfdOperations=None,
         NumBgpLsId=None,
@@ -4257,16 +4857,27 @@ class BgpIpv4Peer(Base):
         RestartTime=None,
         RoutersMacOrIrbMacAddress=None,
         SendIxiaSignatureWithRoutes=None,
+        SendSRv6SIDOptionalInfo=None,
+        Srv6EndpointBehavior=None,
+        Srv6SIDOptionalInformation=None,
+        Srv6SidFlags=None,
+        Srv6SidLoc=None,
+        Srv6SidLocLen=None,
+        Srv6SidLocMetric=None,
+        Srv6SidReserved=None,
+        Srv6SidReserved1=None,
+        Srv6SidReserved2=None,
         StaleTime=None,
         TcpWindowSizeInBytes=None,
         Ttl=None,
         Type=None,
         UpdateInterval=None,
         UptimeInSec=None,
+        UseGatewayAsDutIp=None,
         VplsEnableNextHop=None,
         VplsNextHop=None,
     ):
-        """Base class infrastructure that gets a list of bgpIpv4Peer device ids encapsulated by this object.
+        """Base class infrastructure that gets a list of bgpIpv6Peer device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 
@@ -4275,7 +4886,9 @@ class BgpIpv4Peer(Base):
         - PortNames (str): optional regex of port names
         - ActAsRestarted (str): optional regex of actAsRestarted
         - Active (str): optional regex of active
+        - AdvSrv6SidInIgp (str): optional regex of advSrv6SidInIgp
         - AdvertiseEndOfRib (str): optional regex of advertiseEndOfRib
+        - AdvertiseSRv6SID (str): optional regex of advertiseSRv6SID
         - AdvertiseTunnelEncapsulationExtendedCommunity (str): optional regex of advertiseTunnelEncapsulationExtendedCommunity
         - AlwaysIncludeTunnelEncExtCommunity (str): optional regex of alwaysIncludeTunnelEncExtCommunity
         - AsSetMode (str): optional regex of asSetMode
@@ -4286,6 +4899,8 @@ class BgpIpv4Peer(Base):
         - BgpLsEnableCluster (str): optional regex of bgpLsEnableCluster
         - BgpLsEnableExtendedCommunity (str): optional regex of bgpLsEnableExtendedCommunity
         - BgpLsOverridePeerAsSetMode (str): optional regex of bgpLsOverridePeerAsSetMode
+        - BgpUnnumbered (str): optional regex of bgpUnnumbered
+        - CapabilityExtendedMessage (str): optional regex of capabilityExtendedMessage
         - CapabilityIpV4Mdt (str): optional regex of capabilityIpV4Mdt
         - CapabilityIpV4Mpls (str): optional regex of capabilityIpV4Mpls
         - CapabilityIpV4MplsVpn (str): optional regex of capabilityIpV4MplsVpn
@@ -4303,6 +4918,7 @@ class BgpIpv4Peer(Base):
         - CapabilityIpv6UnicastAddPath (str): optional regex of capabilityIpv6UnicastAddPath
         - CapabilityLinkStateNonVpn (str): optional regex of capabilityLinkStateNonVpn
         - CapabilityLinkStateVpn (str): optional regex of capabilityLinkStateVpn
+        - CapabilityNHEncodingCapabilities (str): optional regex of capabilityNHEncodingCapabilities
         - CapabilityRouteConstraint (str): optional regex of capabilityRouteConstraint
         - CapabilityRouteRefresh (str): optional regex of capabilityRouteRefresh
         - CapabilitySRTEPoliciesV4 (str): optional regex of capabilitySRTEPoliciesV4
@@ -4318,7 +4934,7 @@ class BgpIpv4Peer(Base):
         - Enable4ByteAs (str): optional regex of enable4ByteAs
         - EnableBfdRegistration (str): optional regex of enableBfdRegistration
         - EnableBgpId (str): optional regex of enableBgpId
-        - EnableBgpIdSameasRouterId (str): optional regex of enableBgpIdSameasRouterId
+        - EnableBgpIdSameAsRouterId (str): optional regex of enableBgpIdSameAsRouterId
         - EnableBgpLsCommunity (str): optional regex of enableBgpLsCommunity
         - EnableGracefulRestart (str): optional regex of enableGracefulRestart
         - EnableLlgr (str): optional regex of enableLlgr
@@ -4354,11 +4970,12 @@ class BgpIpv4Peer(Base):
         - Ipv6MulticastBgpMplsVpn (str): optional regex of ipv6MulticastBgpMplsVpn
         - Ipv6UnicastAddPathMode (str): optional regex of ipv6UnicastAddPathMode
         - IrbInterfaceLabel (str): optional regex of irbInterfaceLabel
-        - IrbIpv4Address (str): optional regex of irbIpv4Address
+        - IrbIpv6Address (str): optional regex of irbIpv6Address
         - KeepaliveTimer (str): optional regex of keepaliveTimer
         - L3VPNEncapsulationType (str): optional regex of l3VPNEncapsulationType
         - LocalAs2Bytes (str): optional regex of localAs2Bytes
         - LocalAs4Bytes (str): optional regex of localAs4Bytes
+        - MaxBGPMsgLengthTx (str): optional regex of maxBGPMsgLengthTx
         - Md5Key (str): optional regex of md5Key
         - ModeOfBfdOperations (str): optional regex of modeOfBfdOperations
         - NumBgpLsId (str): optional regex of numBgpLsId
@@ -4368,12 +4985,23 @@ class BgpIpv4Peer(Base):
         - RestartTime (str): optional regex of restartTime
         - RoutersMacOrIrbMacAddress (str): optional regex of routersMacOrIrbMacAddress
         - SendIxiaSignatureWithRoutes (str): optional regex of sendIxiaSignatureWithRoutes
+        - SendSRv6SIDOptionalInfo (str): optional regex of sendSRv6SIDOptionalInfo
+        - Srv6EndpointBehavior (str): optional regex of srv6EndpointBehavior
+        - Srv6SIDOptionalInformation (str): optional regex of srv6SIDOptionalInformation
+        - Srv6SidFlags (str): optional regex of srv6SidFlags
+        - Srv6SidLoc (str): optional regex of srv6SidLoc
+        - Srv6SidLocLen (str): optional regex of srv6SidLocLen
+        - Srv6SidLocMetric (str): optional regex of srv6SidLocMetric
+        - Srv6SidReserved (str): optional regex of srv6SidReserved
+        - Srv6SidReserved1 (str): optional regex of srv6SidReserved1
+        - Srv6SidReserved2 (str): optional regex of srv6SidReserved2
         - StaleTime (str): optional regex of staleTime
         - TcpWindowSizeInBytes (str): optional regex of tcpWindowSizeInBytes
         - Ttl (str): optional regex of ttl
         - Type (str): optional regex of type
         - UpdateInterval (str): optional regex of updateInterval
         - UptimeInSec (str): optional regex of uptimeInSec
+        - UseGatewayAsDutIp (str): optional regex of useGatewayAsDutIp
         - VplsEnableNextHop (str): optional regex of vplsEnableNextHop
         - VplsNextHop (str): optional regex of vplsNextHop
 

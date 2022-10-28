@@ -93,7 +93,7 @@ class FlowCondition(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableTrackingFilter):
+        - str(None | /api/v1/sessions/1/ixnetwork/statistics/view/availableTrackingFilter):
         """
         return self._get_attribute(self._SDM_ATT_MAP["TrackingFilterId"])
 
@@ -131,7 +131,7 @@ class FlowCondition(Base):
         ----
         - Operator (str(isBetween | isDifferent | isEqual | isEqualOrGreater | isEqualOrSmaller | isGreater | isSmaller)):
         - ShowFirstMatchingSet (bool):
-        - TrackingFilterId (str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableTrackingFilter)):
+        - TrackingFilterId (str(None | /api/v1/sessions/1/ixnetwork/statistics/view/availableTrackingFilter)):
         - Values (list(number)):
 
         Raises
@@ -154,7 +154,7 @@ class FlowCondition(Base):
         ----
         - Operator (str(isBetween | isDifferent | isEqual | isEqualOrGreater | isEqualOrSmaller | isGreater | isSmaller)):
         - ShowFirstMatchingSet (bool):
-        - TrackingFilterId (str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableTrackingFilter)):
+        - TrackingFilterId (str(None | /api/v1/sessions/1/ixnetwork/statistics/view/availableTrackingFilter)):
         - Values (list(number)):
 
         Returns
@@ -195,7 +195,7 @@ class FlowCondition(Base):
         ----
         - Operator (str(isBetween | isDifferent | isEqual | isEqualOrGreater | isEqualOrSmaller | isGreater | isSmaller)):
         - ShowFirstMatchingSet (bool):
-        - TrackingFilterId (str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableTrackingFilter)):
+        - TrackingFilterId (str(None | /api/v1/sessions/1/ixnetwork/statistics/view/availableTrackingFilter)):
         - Values (list(number)):
 
         Returns

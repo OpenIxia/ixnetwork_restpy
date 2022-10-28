@@ -298,3 +298,56 @@ class EgressOnlyTracking(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
+
+    def UpdateEgressSettings(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the updateEgressSettings operation on the server.
+
+        Update Egress settings
+
+        updateEgressSettings(Arg2=number, Arg3=number, Arg4=string, async_operation=bool)
+        ---------------------------------------------------------------------------------
+        - Arg2 (number): Integer indicating egress number - 0/1/2
+        - Arg3 (number): Integer indicating offset
+        - Arg4 (str): String indicating mask
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "updateEgressSettings", payload=payload, response_object=None
+        )
+
+    def UpdateQBVSettings(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the updateQBVSettings operation on the server.
+
+        Update QBV settings
+
+        updateQBVSettings(Arg2=number, Arg3=bool, Arg4=string, Arg5=bool, async_operation=bool)
+        ---------------------------------------------------------------------------------------
+        - Arg2 (number): Integer indicating gate number - 0-7 (valid values)
+        - Arg3 (bool): Bool indicating enabled/disabled
+        - Arg4 (str): String indicating PGID
+        - Arg5 (bool): Bool indicating track default is enabled
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("updateQBVSettings", payload=payload, response_object=None)

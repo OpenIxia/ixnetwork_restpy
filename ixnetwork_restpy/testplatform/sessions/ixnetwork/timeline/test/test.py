@@ -139,7 +139,7 @@ class Test(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficItem):
+        - str(None | /api/v1/sessions/1/ixnetwork/traffic/trafficItem):
         """
         return self._get_attribute(self._SDM_ATT_MAP["MonitorTrafficItemId"])
 
@@ -169,7 +169,7 @@ class Test(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/quickTest/.../*): The id of the QT
+        - str(None | /api/v1/sessions/1/ixnetwork/quickTest): The id of the QT
         """
         return self._get_attribute(self._SDM_ATT_MAP["QuickTestId"])
 
@@ -249,7 +249,7 @@ class Test(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficItem):
+        - str(None | /api/v1/sessions/1/ixnetwork/traffic/trafficItem):
         """
         return self._get_attribute(self._SDM_ATT_MAP["TimingTrafficItemId"])
 
@@ -274,7 +274,7 @@ class Test(Base):
         """
         Returns
         -------
-        - list(str[None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficItem]): Id(s) of traffic item(s)
+        - list(str[None | /api/v1/sessions/1/ixnetwork/traffic/trafficItem]): Id(s) of traffic item(s)
         """
         return self._get_attribute(self._SDM_ATT_MAP["TrafficItemIds"])
 
@@ -302,7 +302,7 @@ class Test(Base):
         - State (str(cancelled | cpDpConvergenceNotReached | fail | failedCriteria | pass | preflightCheck | preflightFail | ribInConvergenceThresholdNotReached | running | skipped | waitingForStart)): Current state of the QT
         - TimingPort (str): Showing the timing port, also the hardware
         - TrackBy (list(str)): Currently set tracking options
-        - TrafficItemIds (list(str[None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficItem])): Id(s) of traffic item(s)
+        - TrafficItemIds (list(str[None | /api/v1/sessions/1/ixnetwork/traffic/trafficItem])): Id(s) of traffic item(s)
 
         Raises
         ------
@@ -329,7 +329,7 @@ class Test(Base):
         - State (str(cancelled | cpDpConvergenceNotReached | fail | failedCriteria | pass | preflightCheck | preflightFail | ribInConvergenceThresholdNotReached | running | skipped | waitingForStart)): Current state of the QT
         - TimingPort (str): Showing the timing port, also the hardware
         - TrackBy (list(str)): Currently set tracking options
-        - TrafficItemIds (list(str[None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficItem])): Id(s) of traffic item(s)
+        - TrafficItemIds (list(str[None | /api/v1/sessions/1/ixnetwork/traffic/trafficItem])): Id(s) of traffic item(s)
 
         Returns
         -------
@@ -375,19 +375,19 @@ class Test(Base):
         - Enabled (bool): Boolean, If True, the test will be included in Timeline for running. If false, the test will be skipped from execution
         - EndTime (str): End time for the test
         - MonitorPorts (list(str)): Showing the monitor port , also the hardware
-        - MonitorTrafficItemId (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficItem)):
+        - MonitorTrafficItemId (str(None | /api/v1/sessions/1/ixnetwork/traffic/trafficItem)):
         - Name (str): Quick Test name property
         - NowTime (str): Current time
-        - QuickTestId (str(None | /api/v1/sessions/1/ixnetwork/quickTest/.../*)): The id of the QT
+        - QuickTestId (str(None | /api/v1/sessions/1/ixnetwork/quickTest)): The id of the QT
         - StartTime (str): Start time for the test
         - State (str(cancelled | cpDpConvergenceNotReached | fail | failedCriteria | pass | preflightCheck | preflightFail | ribInConvergenceThresholdNotReached | running | skipped | waitingForStart)): Current state of the QT
         - SupportsMonitoring (bool): Boolean, True if a monitor port is selected for a test
         - SupportsTiming (bool): Boolean, True if a timing port is selected for a test
         - TimingPort (str): Showing the timing port, also the hardware
         - TimingTopologyId (str(None | /api/v1/sessions/1/ixnetwork/topology)): The id for the topology with timing port (when a timing port is used)
-        - TimingTrafficItemId (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficItem)):
+        - TimingTrafficItemId (str(None | /api/v1/sessions/1/ixnetwork/traffic/trafficItem)):
         - TrackBy (list(str)): Currently set tracking options
-        - TrafficItemIds (list(str[None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficItem])): Id(s) of traffic item(s)
+        - TrafficItemIds (list(str[None | /api/v1/sessions/1/ixnetwork/traffic/trafficItem])): Id(s) of traffic item(s)
 
         Returns
         -------

@@ -51,7 +51,7 @@ class Layer23ProtocolRoutingFilter(Base):
         """
         Returns
         -------
-        - list(str[None | /api/v1/sessions/1/ixnetwork/statistics/.../availablePortFilter]): Ports that have been filtered.
+        - list(str[None | /api/v1/sessions/1/ixnetwork/statistics/view/availablePortFilter]): Ports that have been filtered.
         """
         return self._get_attribute(self._SDM_ATT_MAP["PortFilterIds"])
 
@@ -66,7 +66,7 @@ class Layer23ProtocolRoutingFilter(Base):
         """
         Returns
         -------
-        - list(str[None | /api/v1/sessions/1/ixnetwork/statistics/.../availableProtocolFilter]): Protocols that have been filtered.
+        - list(str[None | /api/v1/sessions/1/ixnetwork/statistics/view/availableProtocolFilter]): Protocols that have been filtered.
         """
         return self._get_attribute(self._SDM_ATT_MAP["ProtocolFilterIds"])
 
@@ -81,8 +81,8 @@ class Layer23ProtocolRoutingFilter(Base):
 
         Args
         ----
-        - PortFilterIds (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/.../availablePortFilter])): Ports that have been filtered.
-        - ProtocolFilterIds (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/.../availableProtocolFilter])): Protocols that have been filtered.
+        - PortFilterIds (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/view/availablePortFilter])): Ports that have been filtered.
+        - ProtocolFilterIds (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/view/availableProtocolFilter])): Protocols that have been filtered.
 
         Raises
         ------
@@ -96,8 +96,8 @@ class Layer23ProtocolRoutingFilter(Base):
 
         Args
         ----
-        - PortFilterIds (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/.../availablePortFilter])): Ports that have been filtered.
-        - ProtocolFilterIds (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/.../availableProtocolFilter])): Protocols that have been filtered.
+        - PortFilterIds (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/view/availablePortFilter])): Ports that have been filtered.
+        - ProtocolFilterIds (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/view/availableProtocolFilter])): Protocols that have been filtered.
 
         Returns
         -------
@@ -129,8 +129,8 @@ class Layer23ProtocolRoutingFilter(Base):
 
         Args
         ----
-        - PortFilterIds (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/.../availablePortFilter])): Ports that have been filtered.
-        - ProtocolFilterIds (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/.../availableProtocolFilter])): Protocols that have been filtered.
+        - PortFilterIds (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/view/availablePortFilter])): Ports that have been filtered.
+        - ProtocolFilterIds (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/view/availableProtocolFilter])): Protocols that have been filtered.
 
         Returns
         -------

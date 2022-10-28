@@ -321,7 +321,7 @@ class IptvRange(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/globals/.../iptvProfile): Template describing the behavior of how clients view the lists of channels.
+        - str(None | /api/v1/sessions/1/ixnetwork/globals/protocolStack/iptvGlobals/iptvProfile): Template describing the behavior of how clients view the lists of channels.
         """
         return self._get_attribute(self._SDM_ATT_MAP["ViewingProfile"])
 
@@ -369,7 +369,7 @@ class IptvRange(Base):
         - StbLeaveJoinDelay (number): Time in milliseconds between sending a Leave for the current channel and Join for the next channel.
         - UnsolicitedResponseMode (bool): If selected, causes the emulated IGMP host to automatically send full membership messages at regular intervals, without waiting for a query message.
         - Version (str): IGMP/MLD protocol version.
-        - ViewingProfile (str(None | /api/v1/sessions/1/ixnetwork/globals/.../iptvProfile)): Template describing the behavior of how clients view the lists of channels.
+        - ViewingProfile (str(None | /api/v1/sessions/1/ixnetwork/globals/protocolStack/iptvGlobals/iptvProfile)): Template describing the behavior of how clients view the lists of channels.
 
         Raises
         ------
@@ -416,7 +416,7 @@ class IptvRange(Base):
         - StbLeaveJoinDelay (number): Time in milliseconds between sending a Leave for the current channel and Join for the next channel.
         - UnsolicitedResponseMode (bool): If selected, causes the emulated IGMP host to automatically send full membership messages at regular intervals, without waiting for a query message.
         - Version (str): IGMP/MLD protocol version.
-        - ViewingProfile (str(None | /api/v1/sessions/1/ixnetwork/globals/.../iptvProfile)): Template describing the behavior of how clients view the lists of channels.
+        - ViewingProfile (str(None | /api/v1/sessions/1/ixnetwork/globals/protocolStack/iptvGlobals/iptvProfile)): Template describing the behavior of how clients view the lists of channels.
 
         Returns
         -------
@@ -483,7 +483,7 @@ class IptvRange(Base):
         - StbLeaveJoinDelay (number): Time in milliseconds between sending a Leave for the current channel and Join for the next channel.
         - UnsolicitedResponseMode (bool): If selected, causes the emulated IGMP host to automatically send full membership messages at regular intervals, without waiting for a query message.
         - Version (str): IGMP/MLD protocol version.
-        - ViewingProfile (str(None | /api/v1/sessions/1/ixnetwork/globals/.../iptvProfile)): Template describing the behavior of how clients view the lists of channels.
+        - ViewingProfile (str(None | /api/v1/sessions/1/ixnetwork/globals/protocolStack/iptvGlobals/iptvProfile)): Template describing the behavior of how clients view the lists of channels.
 
         Returns
         -------

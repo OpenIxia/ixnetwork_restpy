@@ -346,7 +346,7 @@ class EgtpUeS5S8Range(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/vport/.../enbS5S8SecondaryRange): Parent range
+        - str(None | /api/v1/sessions/1/ixnetwork/vport/protocolStack/ethernet/ip/egtpS5S8SgwEndpoint/enbS5S8SecondaryRange): Parent range
         """
         return self._get_attribute(self._SDM_ATT_MAP["ParentRange"])
 
@@ -506,7 +506,7 @@ class EgtpUeS5S8Range(Base):
         - MaxIntervalVariation (number): Randomize Mobility interval by max +/- X%
         - MobilityInterval (number): The total time (seconds) it will take the mobile to return to the starting node
         - Name (str): Name of range
-        - ParentRange (str(None | /api/v1/sessions/1/ixnetwork/vport/.../enbS5S8SecondaryRange)): Parent range
+        - ParentRange (str(None | /api/v1/sessions/1/ixnetwork/vport/protocolStack/ethernet/ip/egtpS5S8SgwEndpoint/enbS5S8SecondaryRange)): Parent range
         - SV (str): The software version number to be appended to the IMEI in order to generate IMEISV
         - SelectionMode (number): Indicates the origin of the APN in the message
         - StartDelay (number): How many seconds to wait before starting to move the UEs
@@ -573,7 +573,7 @@ class EgtpUeS5S8Range(Base):
         - MobilityInterval (number): The total time (seconds) it will take the mobile to return to the starting node
         - Name (str): Name of range
         - ObjectId (str): Unique identifier for this object
-        - ParentRange (str(None | /api/v1/sessions/1/ixnetwork/vport/.../enbS5S8SecondaryRange)): Parent range
+        - ParentRange (str(None | /api/v1/sessions/1/ixnetwork/vport/protocolStack/ethernet/ip/egtpS5S8SgwEndpoint/enbS5S8SecondaryRange)): Parent range
         - SV (str): The software version number to be appended to the IMEI in order to generate IMEISV
         - SelectionMode (number): Indicates the origin of the APN in the message
         - StartDelay (number): How many seconds to wait before starting to move the UEs

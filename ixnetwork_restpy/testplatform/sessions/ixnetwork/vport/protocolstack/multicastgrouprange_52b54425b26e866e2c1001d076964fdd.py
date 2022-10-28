@@ -51,7 +51,7 @@ class MulticastGroupRange(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/globals/.../igmpGroupRange): Reference to the multicast group range from the global settings
+        - str(None | /api/v1/sessions/1/ixnetwork/globals/protocolStack/igmpGlobals/igmpGroupRange): Reference to the multicast group range from the global settings
         """
         return self._get_attribute(self._SDM_ATT_MAP["GroupRange"])
 
@@ -76,7 +76,7 @@ class MulticastGroupRange(Base):
 
         Args
         ----
-        - GroupRange (str(None | /api/v1/sessions/1/ixnetwork/globals/.../igmpGroupRange)): Reference to the multicast group range from the global settings
+        - GroupRange (str(None | /api/v1/sessions/1/ixnetwork/globals/protocolStack/igmpGlobals/igmpGroupRange)): Reference to the multicast group range from the global settings
 
         Raises
         ------
@@ -90,7 +90,7 @@ class MulticastGroupRange(Base):
 
         Args
         ----
-        - GroupRange (str(None | /api/v1/sessions/1/ixnetwork/globals/.../igmpGroupRange)): Reference to the multicast group range from the global settings
+        - GroupRange (str(None | /api/v1/sessions/1/ixnetwork/globals/protocolStack/igmpGlobals/igmpGroupRange)): Reference to the multicast group range from the global settings
 
         Returns
         -------
@@ -122,7 +122,7 @@ class MulticastGroupRange(Base):
 
         Args
         ----
-        - GroupRange (str(None | /api/v1/sessions/1/ixnetwork/globals/.../igmpGroupRange)): Reference to the multicast group range from the global settings
+        - GroupRange (str(None | /api/v1/sessions/1/ixnetwork/globals/protocolStack/igmpGlobals/igmpGroupRange)): Reference to the multicast group range from the global settings
         - ObjectId (str): Unique identifier for this object
 
         Returns

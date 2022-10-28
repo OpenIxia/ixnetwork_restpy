@@ -44,6 +44,7 @@ class TrafficItem(Base):
         "EgressEnabled": "egressEnabled",
         "EnableDynamicMplsLabelValues": "enableDynamicMplsLabelValues",
         "EnableMacsecEgressOnlyAutoConfig": "enableMacsecEgressOnlyAutoConfig",
+        "EnableMacsecSwChecksumCalc": "enableMacsecSwChecksumCalc",
         "Enabled": "enabled",
         "Errors": "errors",
         "EvpnNextHopOrdinalValue": "evpnNextHopOrdinalValue",
@@ -100,6 +101,7 @@ class TrafficItem(Base):
             "ipv4ApplicationTraffic",
             "ipv6",
             "ipv6ApplicationTraffic",
+            "oran",
             "ppp",
             "raw",
         ],
@@ -379,6 +381,21 @@ class TrafficItem(Base):
         self._set_attribute(
             self._SDM_ATT_MAP["EnableMacsecEgressOnlyAutoConfig"], value
         )
+
+    @property
+    def EnableMacsecSwChecksumCalc(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool:
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["EnableMacsecSwChecksumCalc"])
+
+    @EnableMacsecSwChecksumCalc.setter
+    def EnableMacsecSwChecksumCalc(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["EnableMacsecSwChecksumCalc"], value)
 
     @property
     def Enabled(self):
@@ -739,7 +756,7 @@ class TrafficItem(Base):
         """
         Returns
         -------
-        - str(atm | avb1722 | avbRaw | ethernetVlan | fc | fcoe | frameRelay | hdlc | ipv4 | ipv4ApplicationTraffic | ipv6 | ipv6ApplicationTraffic | ppp | raw): Helps to select the type of traffic endpoint to be configured.
+        - str(atm | avb1722 | avbRaw | ethernetVlan | fc | fcoe | frameRelay | hdlc | ipv4 | ipv4ApplicationTraffic | ipv6 | ipv6ApplicationTraffic | oran | ppp | raw): Helps to select the type of traffic endpoint to be configured.
         """
         return self._get_attribute(self._SDM_ATT_MAP["TrafficType"])
 
@@ -842,6 +859,7 @@ class TrafficItem(Base):
         EgressEnabled=None,
         EnableDynamicMplsLabelValues=None,
         EnableMacsecEgressOnlyAutoConfig=None,
+        EnableMacsecSwChecksumCalc=None,
         Enabled=None,
         EvpnNextHopOrdinalValue=None,
         FrerDuplicateElimination=None,
@@ -881,6 +899,7 @@ class TrafficItem(Base):
         - EgressEnabled (bool): Enables the egress.
         - EnableDynamicMplsLabelValues (bool): Enables the dynamic MPLS label values.
         - EnableMacsecEgressOnlyAutoConfig (bool):
+        - EnableMacsecSwChecksumCalc (bool):
         - Enabled (bool): If true, this enables the selected traffic item.
         - EvpnNextHopOrdinalValue (number):
         - FrerDuplicateElimination (bool):
@@ -902,7 +921,7 @@ class TrafficItem(Base):
         - SrcDestMesh (str(fullMesh | manyToMany | none | oneToOne)): Select the options to set the traffic mesh type between the Source Endpoint and Destination endpoint.
         - Suspend (bool): uspends all traffic on this stream.<
         - TrafficItemType (str(application | applicationLibrary | l2L3 | quick)): Helps to configure and edit a traffic item that is sent across Ixia ports.
-        - TrafficType (str(atm | avb1722 | avbRaw | ethernetVlan | fc | fcoe | frameRelay | hdlc | ipv4 | ipv4ApplicationTraffic | ipv6 | ipv6ApplicationTraffic | ppp | raw)): Helps to select the type of traffic endpoint to be configured.
+        - TrafficType (str(atm | avb1722 | avbRaw | ethernetVlan | fc | fcoe | frameRelay | hdlc | ipv4 | ipv4ApplicationTraffic | ipv6 | ipv6ApplicationTraffic | oran | ppp | raw)): Helps to select the type of traffic endpoint to be configured.
         - TransmitMode (str(interleaved | sequential)): The transmit mode for this traffic item
         - TransportLdpPreference (str(one | two)): This attribute is deprecated. Use labelPreferences attribute instead.
         - TransportRsvpTePreference (str(one | two)): This attribute is deprecated. Use labelPreferences attribute instead.
@@ -924,6 +943,7 @@ class TrafficItem(Base):
         EgressEnabled=None,
         EnableDynamicMplsLabelValues=None,
         EnableMacsecEgressOnlyAutoConfig=None,
+        EnableMacsecSwChecksumCalc=None,
         Enabled=None,
         EvpnNextHopOrdinalValue=None,
         FrerDuplicateElimination=None,
@@ -963,6 +983,7 @@ class TrafficItem(Base):
         - EgressEnabled (bool): Enables the egress.
         - EnableDynamicMplsLabelValues (bool): Enables the dynamic MPLS label values.
         - EnableMacsecEgressOnlyAutoConfig (bool):
+        - EnableMacsecSwChecksumCalc (bool):
         - Enabled (bool): If true, this enables the selected traffic item.
         - EvpnNextHopOrdinalValue (number):
         - FrerDuplicateElimination (bool):
@@ -984,7 +1005,7 @@ class TrafficItem(Base):
         - SrcDestMesh (str(fullMesh | manyToMany | none | oneToOne)): Select the options to set the traffic mesh type between the Source Endpoint and Destination endpoint.
         - Suspend (bool): uspends all traffic on this stream.<
         - TrafficItemType (str(application | applicationLibrary | l2L3 | quick)): Helps to configure and edit a traffic item that is sent across Ixia ports.
-        - TrafficType (str(atm | avb1722 | avbRaw | ethernetVlan | fc | fcoe | frameRelay | hdlc | ipv4 | ipv4ApplicationTraffic | ipv6 | ipv6ApplicationTraffic | ppp | raw)): Helps to select the type of traffic endpoint to be configured.
+        - TrafficType (str(atm | avb1722 | avbRaw | ethernetVlan | fc | fcoe | frameRelay | hdlc | ipv4 | ipv4ApplicationTraffic | ipv6 | ipv6ApplicationTraffic | oran | ppp | raw)): Helps to select the type of traffic endpoint to be configured.
         - TransmitMode (str(interleaved | sequential)): The transmit mode for this traffic item
         - TransportLdpPreference (str(one | two)): This attribute is deprecated. Use labelPreferences attribute instead.
         - TransportRsvpTePreference (str(one | two)): This attribute is deprecated. Use labelPreferences attribute instead.
@@ -1020,6 +1041,7 @@ class TrafficItem(Base):
         EgressEnabled=None,
         EnableDynamicMplsLabelValues=None,
         EnableMacsecEgressOnlyAutoConfig=None,
+        EnableMacsecSwChecksumCalc=None,
         Enabled=None,
         Errors=None,
         EvpnNextHopOrdinalValue=None,
@@ -1068,6 +1090,7 @@ class TrafficItem(Base):
         - EgressEnabled (bool): Enables the egress.
         - EnableDynamicMplsLabelValues (bool): Enables the dynamic MPLS label values.
         - EnableMacsecEgressOnlyAutoConfig (bool):
+        - EnableMacsecSwChecksumCalc (bool):
         - Enabled (bool): If true, this enables the selected traffic item.
         - Errors (list(str)): Displays the errors.
         - EvpnNextHopOrdinalValue (number):
@@ -1093,7 +1116,7 @@ class TrafficItem(Base):
         - State (str): (Read only) A read-only field which indicates the current state of the traffic item.
         - Suspend (bool): uspends all traffic on this stream.<
         - TrafficItemType (str(application | applicationLibrary | l2L3 | quick)): Helps to configure and edit a traffic item that is sent across Ixia ports.
-        - TrafficType (str(atm | avb1722 | avbRaw | ethernetVlan | fc | fcoe | frameRelay | hdlc | ipv4 | ipv4ApplicationTraffic | ipv6 | ipv6ApplicationTraffic | ppp | raw)): Helps to select the type of traffic endpoint to be configured.
+        - TrafficType (str(atm | avb1722 | avbRaw | ethernetVlan | fc | fcoe | frameRelay | hdlc | ipv4 | ipv4ApplicationTraffic | ipv6 | ipv6ApplicationTraffic | oran | ppp | raw)): Helps to select the type of traffic endpoint to be configured.
         - TransmitMode (str(interleaved | sequential)): The transmit mode for this traffic item
         - TransportLdpPreference (str(one | two)): This attribute is deprecated. Use labelPreferences attribute instead.
         - TransportRsvpTePreference (str(one | two)): This attribute is deprecated. Use labelPreferences attribute instead.

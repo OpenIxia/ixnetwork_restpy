@@ -104,7 +104,7 @@ class DhcpV4DiscoveredInfo(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface): (Read only) An Ixia protocol interface that is negotiating with the DHCP Server.
+        - str(None | /api/v1/sessions/1/ixnetwork/vport/interface): (Read only) An Ixia protocol interface that is negotiating with the DHCP Server.
         """
         return self._get_attribute(self._SDM_ATT_MAP["ProtocolInterface"])
 
@@ -140,7 +140,7 @@ class DhcpV4DiscoveredInfo(Base):
         - Ipv4Mask (number): (Read only) A 32-bit address mask used in IP to indicate the bits of an IP address that are being used for the subnet address.
         - IsDhcpV4LearnedInfoRefreshed (bool): (Read Only) When true, the DHCPv4 discovered information is refreshed automatically.
         - LeaseDuration (number): (Read Only) The user-specified value and the lease timer (from the DHCP Server) are compared. The lowest value is used as the release/renew timer. After this time period has elapsed, the address will be renewed.
-        - ProtocolInterface (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface)): (Read only) An Ixia protocol interface that is negotiating with the DHCP Server.
+        - ProtocolInterface (str(None | /api/v1/sessions/1/ixnetwork/vport/interface)): (Read only) An Ixia protocol interface that is negotiating with the DHCP Server.
         - Tlv (list(dict(arg1:number,arg2:str))): (Read only) Type Length Value for DHCPv4.
 
         Returns

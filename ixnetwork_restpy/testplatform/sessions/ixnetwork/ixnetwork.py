@@ -939,7 +939,7 @@ class Ixnetwork(Base):
         getAggregatedDeviceGroupStatus(async_operation=bool)list
         --------------------------------------------------------
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
-        - Returns list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork/topology/.../*],arg2:list[dict(arg1:str,arg2:number)])):
+        - Returns list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork/topology],arg2:list[dict(arg1:str,arg2:number)])):
 
         Raises
         ------
@@ -1355,7 +1355,7 @@ class Ixnetwork(Base):
         getNetworkGroupSize(async_operation=bool)list
         ---------------------------------------------
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
-        - Returns list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork/topology/.../*],arg2:list[dict(arg1:str,arg2:number)])):
+        - Returns list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork/topology],arg2:list[dict(arg1:str,arg2:number)])):
 
         Raises
         ------
@@ -1457,7 +1457,7 @@ class Ixnetwork(Base):
         getRecommendedSettings(Arg1=string, Arg2=list, async_operation=bool)
         --------------------------------------------------------------------
         - Arg1 (str):
-        - Arg2 (list(str[None | /api/v1/sessions/1/ixnetwork/availableHardware/.../port])):
+        - Arg2 (list(str[None | /api/v1/sessions/1/ixnetwork/availableHardware/chassis/card/port])):
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         getRecommendedSettings(Arg1=string, Arg2=list, async_operation=bool)
@@ -1534,7 +1534,7 @@ class Ixnetwork(Base):
         getTopologyStatus(async_operation=bool)list
         -------------------------------------------
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
-        - Returns list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork/topology/.../*],arg2:list[dict(arg1:str,arg2:number)],arg3:str[notstarted\~starting\~started\~stopping\~error\~mixed])):
+        - Returns list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork/topology],arg2:list[dict(arg1:str,arg2:number)],arg3:str[notstarted\~starting\~started\~stopping\~error\~mixed])):
 
         Raises
         ------
@@ -1741,7 +1741,7 @@ class Ixnetwork(Base):
         mergeCapture(Arg1=string, Arg2=href, Arg3=enum, Arg4=string, async_operation=bool)
         ----------------------------------------------------------------------------------
         - Arg1 (str): Full path to the capture file.
-        - Arg2 (str(None | /api/v1/sessions/1/ixnetwork/vport/.../capture)): The port capture object.
+        - Arg2 (str(None | /api/v1/sessions/1/ixnetwork/vport/capture)): The port capture object.
         - Arg3 (str(control | data)): The type of the capture, either data or control.
         - Arg4 (str): The full path where the resulted merged capture will be saved, the result capture name needs to contain extension also.
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
@@ -2080,7 +2080,7 @@ class Ixnetwork(Base):
 
         select(Selects=list, async_operation=bool)string
         ------------------------------------------------
-        - Selects (list(dict(from:str[None | /api/v1/sessions/1/ixnetwork//.../*],properties:list[str],children:list[dict(child:str,properties:list[str],filters:list[dict(property:str,regex:str)])],inlines:list[dict(child:str,properties:list[str])]))): A list of select structures.Each select structure consists of a starting point in the hierarchy. This starting point must exist and is defined as the 'from' value.Properties for the 'from' value are optional and can be retrieved using the 'properties' list.To retrieve all properties specify the '*' wildcard. Regex is not supported in the 'properties' list.Individual nodes under the starting point can be retrieved. These are specified in the 'children' list.Each item in the children list contains a 'child' name, a list of 'properties' and a list of filters by which to reduce the result set.The 'child' name can be a single name or a regex.Properties that reference another object can have that object's content inlined by specifying inline children.Any child nodes below the object reference can be expanded as long as they are specified in the inline children.
+        - Selects (list(dict(from:str[None | /api/v1/sessions/1/ixnetwork/],properties:list[str],children:list[dict(child:str,properties:list[str],filters:list[dict(property:str,regex:str)])],inlines:list[dict(child:str,properties:list[str])]))): A list of select structures.Each select structure consists of a starting point in the hierarchy. This starting point must exist and is defined as the 'from' value.Properties for the 'from' value are optional and can be retrieved using the 'properties' list.To retrieve all properties specify the '*' wildcard. Regex is not supported in the 'properties' list.Individual nodes under the starting point can be retrieved. These are specified in the 'children' list.Each item in the children list contains a 'child' name, a list of 'properties' and a list of filters by which to reduce the result set.The 'child' name can be a single name or a regex.Properties that reference another object can have that object's content inlined by specifying inline children.Any child nodes below the object reference can be expanded as long as they are specified in the inline children.
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns str: A json encoded string of result sets.The encoded string will contain a list of result sets with each select producing a result set.
 
@@ -2240,7 +2240,7 @@ class Ixnetwork(Base):
 
         setPortTransmitDuration(Arg1=list, async_operation=bool)
         --------------------------------------------------------
-        - Arg1 (list(dict(arg1:number,arg2:list[str[None | /api/v1/sessions/1/ixnetwork/lag | /api/v1/sessions/1/ixnetwork/traffic | /api/v1/sessions/1/ixnetwork/traffic/.../trafficItem | /api/v1/sessions/1/ixnetwork/traffic/.../highLevelStream | /api/v1/sessions/1/ixnetwork/vport]]))): An array of structures. Each structure is an duration and a valid object reference.
+        - Arg1 (list(dict(arg1:number,arg2:list[str[None | /api/v1/sessions/1/ixnetwork/lag | /api/v1/sessions/1/ixnetwork/traffic | /api/v1/sessions/1/ixnetwork/traffic/trafficItem | /api/v1/sessions/1/ixnetwork/traffic/trafficItem/highLevelStream | /api/v1/sessions/1/ixnetwork/vport]]))): An array of structures. Each structure is an duration and a valid object reference.
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises

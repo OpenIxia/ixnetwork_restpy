@@ -264,7 +264,7 @@ class TestConfig(Base):
         """
         Returns
         -------
-        - list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/.../lan]): Protocol Items
+        - list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/protocols/static/lan]): Protocol Items
         """
         return self._get_attribute(self._SDM_ATT_MAP["ProtocolItem"])
 
@@ -388,7 +388,7 @@ class TestConfig(Base):
         - MinBinarySlaveNumber (number): The minimum binary value of the slave number.
         - NumberOfSlavesPassFail (number): The number of slaves pass fail.
         - Numtrials (number): The number of trials.
-        - ProtocolItem (list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/.../lan])): Protocol Items
+        - ProtocolItem (list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/protocols/static/lan])): Protocol Items
         - Runmode (str(duration | noframes)): It gives the run mode
         - SetupRate (number): The setup rate.
         - StartTraffic (str): It starts the traffic
@@ -445,7 +445,7 @@ class TestConfig(Base):
         - MinBinarySlaveNumber (number): The minimum binary value of the slave number.
         - NumberOfSlavesPassFail (number): The number of slaves pass fail.
         - Numtrials (number): The number of trials.
-        - ProtocolItem (list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/.../lan])): Protocol Items
+        - ProtocolItem (list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/protocols/static/lan])): Protocol Items
         - Runmode (str(duration | noframes)): It gives the run mode
         - SetupRate (number): The setup rate.
         - StartTraffic (str): It starts the traffic

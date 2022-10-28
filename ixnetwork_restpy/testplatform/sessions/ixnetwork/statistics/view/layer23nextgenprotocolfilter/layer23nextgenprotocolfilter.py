@@ -98,7 +98,7 @@ class Layer23NextGenProtocolFilter(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/statistics/.../advancedCVFilters): Sets the advanced filter for a custom view. Note: To change the filter on an existing view, you must first disable it.
+        - str(None | /api/v1/sessions/1/ixnetwork/statistics/view/advancedCVFilters): Sets the advanced filter for a custom view. Note: To change the filter on an existing view, you must first disable it.
         """
         return self._get_attribute(self._SDM_ATT_MAP["AdvancedCVFilter"])
 
@@ -143,7 +143,7 @@ class Layer23NextGenProtocolFilter(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableAdvancedFilters): Returns a list with all the filters that are present in the selected drill down views. This includes filters that cannot be applied for the current drill down view.
+        - str(None | /api/v1/sessions/1/ixnetwork/statistics/view/availableAdvancedFilters): Returns a list with all the filters that are present in the selected drill down views. This includes filters that cannot be applied for the current drill down view.
         """
         return self._get_attribute(self._SDM_ATT_MAP["AllAdvancedFilters"])
 
@@ -153,7 +153,7 @@ class Layer23NextGenProtocolFilter(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableAdvancedFilters): Returns a list that contains only the filters that can be applied on the current drill down view.
+        - str(None | /api/v1/sessions/1/ixnetwork/statistics/view/availableAdvancedFilters): Returns a list that contains only the filters that can be applied on the current drill down view.
         """
         return self._get_attribute(self._SDM_ATT_MAP["MatchingAdvancedFilters"])
 
@@ -163,7 +163,7 @@ class Layer23NextGenProtocolFilter(Base):
         """
         Returns
         -------
-        - list(str[None | /api/v1/sessions/1/ixnetwork/statistics/.../availablePortFilter]): Filters the port IDs
+        - list(str[None | /api/v1/sessions/1/ixnetwork/statistics/view/availablePortFilter]): Filters the port IDs
         """
         return self._get_attribute(self._SDM_ATT_MAP["PortFilterIds"])
 
@@ -178,7 +178,7 @@ class Layer23NextGenProtocolFilter(Base):
         """
         Returns
         -------
-        - list(str[None | /api/v1/sessions/1/ixnetwork/statistics/.../availableProtocolFilter]): Filters the protocol IDs
+        - list(str[None | /api/v1/sessions/1/ixnetwork/statistics/view/availableProtocolFilter]): Filters the protocol IDs
         """
         return self._get_attribute(self._SDM_ATT_MAP["ProtocolFilterIds"])
 
@@ -200,11 +200,11 @@ class Layer23NextGenProtocolFilter(Base):
 
         Args
         ----
-        - AdvancedCVFilter (str(None | /api/v1/sessions/1/ixnetwork/statistics/.../advancedCVFilters)): Sets the advanced filter for a custom view. Note: To change the filter on an existing view, you must first disable it.
+        - AdvancedCVFilter (str(None | /api/v1/sessions/1/ixnetwork/statistics/view/advancedCVFilters)): Sets the advanced filter for a custom view. Note: To change the filter on an existing view, you must first disable it.
         - AdvancedFilterName (str): Selects an advanced filter from the ones available in the selected drill down view.
         - AggregationType (str(perPort | perSession)): Signifies the type of aggregation of next gen protocols
-        - PortFilterIds (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/.../availablePortFilter])): Filters the port IDs
-        - ProtocolFilterIds (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/.../availableProtocolFilter])): Filters the protocol IDs
+        - PortFilterIds (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/view/availablePortFilter])): Filters the port IDs
+        - ProtocolFilterIds (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/view/availableProtocolFilter])): Filters the protocol IDs
 
         Raises
         ------
@@ -225,11 +225,11 @@ class Layer23NextGenProtocolFilter(Base):
 
         Args
         ----
-        - AdvancedCVFilter (str(None | /api/v1/sessions/1/ixnetwork/statistics/.../advancedCVFilters)): Sets the advanced filter for a custom view. Note: To change the filter on an existing view, you must first disable it.
+        - AdvancedCVFilter (str(None | /api/v1/sessions/1/ixnetwork/statistics/view/advancedCVFilters)): Sets the advanced filter for a custom view. Note: To change the filter on an existing view, you must first disable it.
         - AdvancedFilterName (str): Selects an advanced filter from the ones available in the selected drill down view.
         - AggregationType (str(perPort | perSession)): Signifies the type of aggregation of next gen protocols
-        - PortFilterIds (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/.../availablePortFilter])): Filters the port IDs
-        - ProtocolFilterIds (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/.../availableProtocolFilter])): Filters the protocol IDs
+        - PortFilterIds (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/view/availablePortFilter])): Filters the port IDs
+        - ProtocolFilterIds (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/view/availableProtocolFilter])): Filters the protocol IDs
 
         Returns
         -------
@@ -270,13 +270,13 @@ class Layer23NextGenProtocolFilter(Base):
 
         Args
         ----
-        - AdvancedCVFilter (str(None | /api/v1/sessions/1/ixnetwork/statistics/.../advancedCVFilters)): Sets the advanced filter for a custom view. Note: To change the filter on an existing view, you must first disable it.
+        - AdvancedCVFilter (str(None | /api/v1/sessions/1/ixnetwork/statistics/view/advancedCVFilters)): Sets the advanced filter for a custom view. Note: To change the filter on an existing view, you must first disable it.
         - AdvancedFilterName (str): Selects an advanced filter from the ones available in the selected drill down view.
         - AggregationType (str(perPort | perSession)): Signifies the type of aggregation of next gen protocols
-        - AllAdvancedFilters (str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableAdvancedFilters)): Returns a list with all the filters that are present in the selected drill down views. This includes filters that cannot be applied for the current drill down view.
-        - MatchingAdvancedFilters (str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableAdvancedFilters)): Returns a list that contains only the filters that can be applied on the current drill down view.
-        - PortFilterIds (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/.../availablePortFilter])): Filters the port IDs
-        - ProtocolFilterIds (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/.../availableProtocolFilter])): Filters the protocol IDs
+        - AllAdvancedFilters (str(None | /api/v1/sessions/1/ixnetwork/statistics/view/availableAdvancedFilters)): Returns a list with all the filters that are present in the selected drill down views. This includes filters that cannot be applied for the current drill down view.
+        - MatchingAdvancedFilters (str(None | /api/v1/sessions/1/ixnetwork/statistics/view/availableAdvancedFilters)): Returns a list that contains only the filters that can be applied on the current drill down view.
+        - PortFilterIds (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/view/availablePortFilter])): Filters the port IDs
+        - ProtocolFilterIds (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/view/availableProtocolFilter])): Filters the protocol IDs
 
         Returns
         -------
@@ -314,7 +314,7 @@ class Layer23NextGenProtocolFilter(Base):
 
         addAdvancedFilter(Arg2=href, async_operation=bool)
         --------------------------------------------------
-        - Arg2 (str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableAdvancedFilters)): NOT DEFINED
+        - Arg2 (str(None | /api/v1/sessions/1/ixnetwork/statistics/view/availableAdvancedFilters)): NOT DEFINED
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises

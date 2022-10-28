@@ -29,13 +29,13 @@ drill_down.TargetRowIndex = 0
 
 # print the drill down options for the view
 # drill down options are dynamic and are based on tracking options selected during traffic item creation
-for drill_down_option in drill_down.AvailableDrillDownOptions:
-    print(drill_down_option)
-drill_down.TargetDrillDownOption = drill_down.AvailableDrillDownOptions[1]
 for drill_down_filter in drill_down.AvailableTargetRowFilters:
     print(drill_down_filter)
 if len(drill_down.AvailableTargetRowFilters) > 0:
     drill_down.TargetRowFilter = drill_down.AvailableTargetRowFilters[0]
+for drill_down_option in drill_down.AvailableDrillDownOptions:
+    print(drill_down_option)
+drill_down.TargetDrillDownOption = drill_down.AvailableDrillDownOptions[1]
 
 # perform the drill down operation
 drill_down.DoDrillDown()

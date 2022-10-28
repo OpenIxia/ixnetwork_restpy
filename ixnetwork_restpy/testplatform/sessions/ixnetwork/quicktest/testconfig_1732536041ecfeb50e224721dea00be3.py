@@ -431,7 +431,7 @@ class TestConfig(Base):
         """
         Returns
         -------
-        - list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/.../lan]): Protocol Items
+        - list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/protocols/static/lan]): Protocol Items
         """
         return self._get_attribute(self._SDM_ATT_MAP["ProtocolItem"])
 
@@ -541,7 +541,7 @@ class TestConfig(Base):
         - LoadRateValue (number):
         - LoadType (str(binary | combo | custom | fixed | increment | quickSearch | random | step | unchanged)):
         - Numtrials (number):
-        - ProtocolItem (list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/.../lan])): Protocol Items
+        - ProtocolItem (list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/protocols/static/lan])): Protocol Items
         - ReportSequenceError (bool):
         - ReportTputRateUnit (str(gbps | gBps | kbps | kBps | mbps | mBps)):
         - TrafficType (str(burstyLoading | constantLoading)):
@@ -612,7 +612,7 @@ class TestConfig(Base):
         - LoadRateValue (number):
         - LoadType (str(binary | combo | custom | fixed | increment | quickSearch | random | step | unchanged)):
         - Numtrials (number):
-        - ProtocolItem (list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/.../lan])): Protocol Items
+        - ProtocolItem (list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/protocols/static/lan])): Protocol Items
         - ReportSequenceError (bool):
         - ReportTputRateUnit (str(gbps | gBps | kbps | kBps | mbps | mBps)):
         - TrafficType (str(burstyLoading | constantLoading)):

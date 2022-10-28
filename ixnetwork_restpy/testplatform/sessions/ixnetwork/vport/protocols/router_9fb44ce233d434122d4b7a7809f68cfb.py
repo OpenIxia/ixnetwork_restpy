@@ -158,7 +158,7 @@ class Router(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
+        - str(None | /api/v1/sessions/1/ixnetwork/traffic/trafficGroup): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
         """
         return self._get_attribute(self._SDM_ATT_MAP["TrafficGroupId"])
 
@@ -216,7 +216,7 @@ class Router(Base):
         - Enabled (bool): Enables the RIPing interface.
         - ReceiveType (str(ignore | store)): Determines how the emulated RIPng router will handle received RIPng update messages.
         - RouterId (number): The assigned router ID. The default is 1.
-        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup)): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
+        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/trafficGroup)): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
         - UpdateInterval (number): In seconds) Triggered events, such as sending of unsolicited response messages, are spaced at timed intervals.
         - UpdateIntervalOffset (number): (In seconds) To avoid synchronization of the update messages sent by all routers, the update interval is incremented/decremented by a small random time.
 
@@ -245,7 +245,7 @@ class Router(Base):
         - Enabled (bool): Enables the RIPing interface.
         - ReceiveType (str(ignore | store)): Determines how the emulated RIPng router will handle received RIPng update messages.
         - RouterId (number): The assigned router ID. The default is 1.
-        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup)): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
+        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/trafficGroup)): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
         - UpdateInterval (number): In seconds) Triggered events, such as sending of unsolicited response messages, are spaced at timed intervals.
         - UpdateIntervalOffset (number): (In seconds) To avoid synchronization of the update messages sent by all routers, the update interval is incremented/decremented by a small random time.
 
@@ -292,7 +292,7 @@ class Router(Base):
         - Enabled (bool): Enables the RIPing interface.
         - ReceiveType (str(ignore | store)): Determines how the emulated RIPng router will handle received RIPng update messages.
         - RouterId (number): The assigned router ID. The default is 1.
-        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup)): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
+        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/trafficGroup)): The name of the group to which this port is assigned, for the purpose of creating traffic streams among source/destination members of the group.
         - UpdateInterval (number): In seconds) Triggered events, such as sending of unsolicited response messages, are spaced at timed intervals.
         - UpdateIntervalOffset (number): (In seconds) To avoid synchronization of the update messages sent by all routers, the update interval is incremented/decremented by a small random time.
 

@@ -245,7 +245,7 @@ class Watch(Base):
 
         addSelectWatch(Selects=list, WatchTopic=string, async_operation=bool)object
         ---------------------------------------------------------------------------
-        - Selects (list(dict(from:str[None | /api/v1/sessions/1/ixnetwork//.../*],properties:list[str],children:list[dict(child:str,properties:list[str],filters:list[dict(property:str,regex:str)])],inlines:list[dict(child:str,properties:list[str])]))):
+        - Selects (list(dict(from:str[None | /api/v1/sessions/1/ixnetwork/],properties:list[str],children:list[dict(child:str,properties:list[str],filters:list[dict(property:str,regex:str)])],inlines:list[dict(child:str,properties:list[str])]))):
         - WatchTopic (str):
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns dict(arg1:str,arg2:number):
@@ -261,6 +261,28 @@ class Watch(Base):
         for item in kwargs.items():
             payload[item[0]] = item[1]
         return self._execute("addSelectWatch", payload=payload, response_object=None)
+
+    def ClearScriptWatchMessages(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the clearScriptWatchMessages operation on the server.
+
+        clearScriptWatchMessages(async_operation=bool)
+        ----------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "clearScriptWatchMessages", payload=payload, response_object=None
+        )
 
     def RemoveWatches(self, *args, **kwargs):
         # type: (*Any, **Any) -> None

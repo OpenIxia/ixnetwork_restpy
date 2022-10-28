@@ -429,7 +429,7 @@ class EgtpPcrfS5S8Range(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/vport/.../range): Id of parent PGW range
+        - str(None | /api/v1/sessions/1/ixnetwork/vport/protocolStack/ethernet/ip/egtpS5S8PgwEndpoint/range): Id of parent PGW range
         """
         return self._get_attribute(self._SDM_ATT_MAP["ParentPgw"])
 
@@ -647,7 +647,7 @@ class EgtpPcrfS5S8Range(Base):
         - IpType (str): The IP type of the address(es) that will be assigned to the UEs. When choosing IPv4v6 both an IPv4 address and an IPv6 address will be assigned to the UE.
         - Name (str): Name of range
         - NidbCreationDelay (number): Time to wait (in seconds), from the moment the UE is attached, before sending Create Bearer Request for Network Initiated Dedicated Bearers(NIDB). This does not apply to MS Initiated Dedicated Bearers
-        - ParentPgw (str(None | /api/v1/sessions/1/ixnetwork/vport/.../range)): Id of parent PGW range
+        - ParentPgw (str(None | /api/v1/sessions/1/ixnetwork/vport/protocolStack/ethernet/ip/egtpS5S8PgwEndpoint/range)): Id of parent PGW range
         - PoolSize (number): The number of UEs that will be accepted.
         - PoolStartIPv4 (str): The first IPv4 address to be assigned to an UE.
         - PoolStartIPv6 (str): The first IPv6 address to be assigned to an UE.
@@ -730,7 +730,7 @@ class EgtpPcrfS5S8Range(Base):
         - Name (str): Name of range
         - NidbCreationDelay (number): Time to wait (in seconds), from the moment the UE is attached, before sending Create Bearer Request for Network Initiated Dedicated Bearers(NIDB). This does not apply to MS Initiated Dedicated Bearers
         - ObjectId (str): Unique identifier for this object
-        - ParentPgw (str(None | /api/v1/sessions/1/ixnetwork/vport/.../range)): Id of parent PGW range
+        - ParentPgw (str(None | /api/v1/sessions/1/ixnetwork/vport/protocolStack/ethernet/ip/egtpS5S8PgwEndpoint/range)): Id of parent PGW range
         - PoolSize (number): The number of UEs that will be accepted.
         - PoolStartIPv4 (str): The first IPv4 address to be assigned to an UE.
         - PoolStartIPv6 (str): The first IPv6 address to be assigned to an UE.

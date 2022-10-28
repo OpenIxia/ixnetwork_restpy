@@ -40,6 +40,7 @@ class BgpV6IPRouteProperty(Base):
         "OverridePeerAsSetMode": "OverridePeerAsSetMode",
         "Active": "active",
         "AddPathId": "addPathId",
+        "AdvSrv6SidInIgp": "advSrv6SidInIgp",
         "AdvertiseAsBGPLSPrefix": "advertiseAsBGPLSPrefix",
         "AdvertiseAsBgp3107": "advertiseAsBgp3107",
         "AdvertiseAsBgp3107Sr": "advertiseAsBgp3107Sr",
@@ -49,6 +50,7 @@ class BgpV6IPRouteProperty(Base):
         "AggregatorAs": "aggregatorAs",
         "AggregatorId": "aggregatorId",
         "AggregatorIdMode": "aggregatorIdMode",
+        "ArgumentLength": "argumentLength",
         "AsNumSuffixRange": "asNumSuffixRange",
         "AsPathASString": "asPathASString",
         "AsPathPerRoute": "asPathPerRoute",
@@ -59,6 +61,7 @@ class BgpV6IPRouteProperty(Base):
         "Delay": "delay",
         "DescriptiveName": "descriptiveName",
         "Downtime": "downtime",
+        "EnSrv6SIDAdvertiseOpInfo": "enSrv6SIDAdvertiseOpInfo",
         "EnableAddPath": "enableAddPath",
         "EnableAggregatorId": "enableAggregatorId",
         "EnableAigp": "enableAigp",
@@ -77,15 +80,20 @@ class BgpV6IPRouteProperty(Base):
         "EnableOriginatorId": "enableOriginatorId",
         "EnableRandomAsPath": "enableRandomAsPath",
         "EnableSRGB": "enableSRGB",
+        "EnableSrv6Sid": "enableSrv6Sid",
         "EnableWeight": "enableWeight",
         "FlapFromRouteIndex": "flapFromRouteIndex",
         "FlapToRouteIndex": "flapToRouteIndex",
+        "FunctionLength": "functionLength",
+        "IncSrv6SidStructSsTlv": "incSrv6SidStructSsTlv",
         "IncrementMode": "incrementMode",
         "Ipv4NextHop": "ipv4NextHop",
         "Ipv6NextHop": "ipv6NextHop",
         "LabelEnd": "labelEnd",
         "LabelStart": "labelStart",
         "LabelStep": "labelStep",
+        "LocBlockLength": "locBlockLength",
+        "LocNodeLength": "locNodeLength",
         "LocalPreference": "localPreference",
         "MaxASNumPerSegment": "maxASNumPerSegment",
         "MaxNoOfASPathSegmentsPerRouteRange": "maxNoOfASPathSegmentsPerRouteRange",
@@ -114,6 +122,16 @@ class BgpV6IPRouteProperty(Base):
         "SendMulticastWithProperSAFI": "sendMulticastWithProperSAFI",
         "SkipMulticast": "skipMulticast",
         "SpecialLabel": "specialLabel",
+        "Srv6EndPointBehavior": "srv6EndPointBehavior",
+        "Srv6SIDOptionalInformation": "srv6SIDOptionalInformation",
+        "Srv6SidFlags": "srv6SidFlags",
+        "Srv6SidLoc": "srv6SidLoc",
+        "Srv6SidLocLen": "srv6SidLocLen",
+        "Srv6SidLocMetric": "srv6SidLocMetric",
+        "Srv6SidReserved": "srv6SidReserved",
+        "Srv6SidReserved1": "srv6SidReserved1",
+        "Srv6SidReserved2": "srv6SidReserved2",
+        "Srv6SidStep": "srv6SidStep",
         "Uptime": "uptime",
         "UseTraditionalNlri": "useTraditionalNlri",
         "Weight": "weight",
@@ -248,13 +266,13 @@ class BgpV6IPRouteProperty(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpextendedcommunitieslist_bac41900b4999f09d65f045cf8104248.BgpExtendedCommunitiesList): An instance of the BgpExtendedCommunitiesList class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpextendedcommunitieslist_7e5fc3453869b321189a54fc0c370254.BgpExtendedCommunitiesList): An instance of the BgpExtendedCommunitiesList class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpextendedcommunitieslist_bac41900b4999f09d65f045cf8104248 import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpextendedcommunitieslist_7e5fc3453869b321189a54fc0c370254 import (
             BgpExtendedCommunitiesList,
         )
 
@@ -445,6 +463,20 @@ class BgpV6IPRouteProperty(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["AddPathId"]))
 
     @property
+    def AdvSrv6SidInIgp(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Advertise SRv6 SID Locator in IGP (ISIS).
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AdvSrv6SidInIgp"])
+        )
+
+    @property
     def AdvertiseAsBGPLSPrefix(self):
         # type: () -> 'Multivalue'
         """
@@ -571,6 +603,20 @@ class BgpV6IPRouteProperty(Base):
         )
 
     @property
+    def ArgumentLength(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Contains length of SRv6 SID argument in bits.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ArgumentLength"])
+        )
+
+    @property
     def AsNumSuffixRange(self):
         # type: () -> 'Multivalue'
         """
@@ -687,6 +733,20 @@ class BgpV6IPRouteProperty(Base):
         from ixnetwork_restpy.multivalue import Multivalue
 
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Downtime"]))
+
+    @property
+    def EnSrv6SIDAdvertiseOpInfo(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enable to advertise SRv6 SID Optional Information (Service Information sub-sub-TLV).
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnSrv6SIDAdvertiseOpInfo"])
+        )
 
     @property
     def EnableAddPath(self):
@@ -929,6 +989,18 @@ class BgpV6IPRouteProperty(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EnableSRGB"]))
 
     @property
+    def EnableSrv6Sid(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enable SRv6 SID with IP Route.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EnableSrv6Sid"]))
+
+    @property
     def EnableWeight(self):
         # type: () -> 'Multivalue'
         """
@@ -966,6 +1038,34 @@ class BgpV6IPRouteProperty(Base):
 
         return Multivalue(
             self, self._get_attribute(self._SDM_ATT_MAP["FlapToRouteIndex"])
+        )
+
+    @property
+    def FunctionLength(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Contains length of SRv6 SID Function in bits.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FunctionLength"])
+        )
+
+    @property
+    def IncSrv6SidStructSsTlv(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enable to include SRv6 SID Structure Sub-Sub TLV for SRv6 Service.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["IncSrv6SidStructSsTlv"])
         )
 
     @property
@@ -1039,6 +1139,32 @@ class BgpV6IPRouteProperty(Base):
         from ixnetwork_restpy.multivalue import Multivalue
 
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["LabelStep"]))
+
+    @property
+    def LocBlockLength(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Contains length of SRv6 SID locator Block in bits.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LocBlockLength"])
+        )
+
+    @property
+    def LocNodeLength(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Contains length of SRv6 SID locator Node in bits.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["LocNodeLength"]))
 
     @property
     def LocalPreference(self):
@@ -1424,6 +1550,138 @@ class BgpV6IPRouteProperty(Base):
         from ixnetwork_restpy.multivalue import Multivalue
 
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SpecialLabel"]))
+
+    @property
+    def Srv6EndPointBehavior(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): SRv6 Endpoint Behavior field value for all routes in this Route Range.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Srv6EndPointBehavior"])
+        )
+
+    @property
+    def Srv6SIDOptionalInformation(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): SRv6 SID Optional Information field value (Service Information sub-sub-TLV) for all routes in this Route Range.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Srv6SIDOptionalInformation"])
+        )
+
+    @property
+    def Srv6SidFlags(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): SRv6 SID Flags field value for all route in this Route Range.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Srv6SidFlags"]))
+
+    @property
+    def Srv6SidLoc(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): SRv6 SID. It consists of Locator, Func and Args.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Srv6SidLoc"]))
+
+    @property
+    def Srv6SidLocLen(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): SRv6 SID Locator Length to be advertised in IGP.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Srv6SidLocLen"]))
+
+    @property
+    def Srv6SidLocMetric(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): SRv6 SID Locator Metric for advertisement in IGP.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Srv6SidLocMetric"])
+        )
+
+    @property
+    def Srv6SidReserved(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): SRv6 SID Reserved Value (SRv6 SID Service TLV Level).
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Srv6SidReserved"])
+        )
+
+    @property
+    def Srv6SidReserved1(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): SRv6 SID Reserved1 Field for Service Information sub-TLV.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Srv6SidReserved1"])
+        )
+
+    @property
+    def Srv6SidReserved2(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): SRv6 SID Reserved2 Field for Service Information sub-TLV.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Srv6SidReserved2"])
+        )
+
+    @property
+    def Srv6SidStep(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Route Range SRv6 SID Step.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Srv6SidStep"]))
 
     @property
     def Uptime(self):
@@ -1976,11 +2234,13 @@ class BgpV6IPRouteProperty(Base):
         OverridePeerAsSetMode=None,
         Active=None,
         AddPathId=None,
+        AdvSrv6SidInIgp=None,
         AdvertiseAsBGPLSPrefix=None,
         AdvertiseNexthopAsV4=None,
         AggregatorAs=None,
         AggregatorId=None,
         AggregatorIdMode=None,
+        ArgumentLength=None,
         AsNumSuffixRange=None,
         AsPathPerRoute=None,
         AsRandomSeed=None,
@@ -1988,6 +2248,7 @@ class BgpV6IPRouteProperty(Base):
         AsSetMode=None,
         Delay=None,
         Downtime=None,
+        EnSrv6SIDAdvertiseOpInfo=None,
         EnableAddPath=None,
         EnableAggregatorId=None,
         EnableAigp=None,
@@ -2006,15 +2267,20 @@ class BgpV6IPRouteProperty(Base):
         EnableOriginatorId=None,
         EnableRandomAsPath=None,
         EnableSRGB=None,
+        EnableSrv6Sid=None,
         EnableWeight=None,
         FlapFromRouteIndex=None,
         FlapToRouteIndex=None,
+        FunctionLength=None,
+        IncSrv6SidStructSsTlv=None,
         IncrementMode=None,
         Ipv4NextHop=None,
         Ipv6NextHop=None,
         LabelEnd=None,
         LabelStart=None,
         LabelStep=None,
+        LocBlockLength=None,
+        LocNodeLength=None,
         LocalPreference=None,
         MaxASNumPerSegment=None,
         MaxNoOfASPathSegmentsPerRouteRange=None,
@@ -2034,6 +2300,16 @@ class BgpV6IPRouteProperty(Base):
         SendMulticastWithProperSAFI=None,
         SkipMulticast=None,
         SpecialLabel=None,
+        Srv6EndPointBehavior=None,
+        Srv6SIDOptionalInformation=None,
+        Srv6SidFlags=None,
+        Srv6SidLoc=None,
+        Srv6SidLocLen=None,
+        Srv6SidLocMetric=None,
+        Srv6SidReserved=None,
+        Srv6SidReserved1=None,
+        Srv6SidReserved2=None,
+        Srv6SidStep=None,
         Uptime=None,
         UseTraditionalNlri=None,
         Weight=None,
@@ -2048,11 +2324,13 @@ class BgpV6IPRouteProperty(Base):
         - OverridePeerAsSetMode (str): optional regex of OverridePeerAsSetMode
         - Active (str): optional regex of active
         - AddPathId (str): optional regex of addPathId
+        - AdvSrv6SidInIgp (str): optional regex of advSrv6SidInIgp
         - AdvertiseAsBGPLSPrefix (str): optional regex of advertiseAsBGPLSPrefix
         - AdvertiseNexthopAsV4 (str): optional regex of advertiseNexthopAsV4
         - AggregatorAs (str): optional regex of aggregatorAs
         - AggregatorId (str): optional regex of aggregatorId
         - AggregatorIdMode (str): optional regex of aggregatorIdMode
+        - ArgumentLength (str): optional regex of argumentLength
         - AsNumSuffixRange (str): optional regex of asNumSuffixRange
         - AsPathPerRoute (str): optional regex of asPathPerRoute
         - AsRandomSeed (str): optional regex of asRandomSeed
@@ -2060,6 +2338,7 @@ class BgpV6IPRouteProperty(Base):
         - AsSetMode (str): optional regex of asSetMode
         - Delay (str): optional regex of delay
         - Downtime (str): optional regex of downtime
+        - EnSrv6SIDAdvertiseOpInfo (str): optional regex of enSrv6SIDAdvertiseOpInfo
         - EnableAddPath (str): optional regex of enableAddPath
         - EnableAggregatorId (str): optional regex of enableAggregatorId
         - EnableAigp (str): optional regex of enableAigp
@@ -2078,15 +2357,20 @@ class BgpV6IPRouteProperty(Base):
         - EnableOriginatorId (str): optional regex of enableOriginatorId
         - EnableRandomAsPath (str): optional regex of enableRandomAsPath
         - EnableSRGB (str): optional regex of enableSRGB
+        - EnableSrv6Sid (str): optional regex of enableSrv6Sid
         - EnableWeight (str): optional regex of enableWeight
         - FlapFromRouteIndex (str): optional regex of flapFromRouteIndex
         - FlapToRouteIndex (str): optional regex of flapToRouteIndex
+        - FunctionLength (str): optional regex of functionLength
+        - IncSrv6SidStructSsTlv (str): optional regex of incSrv6SidStructSsTlv
         - IncrementMode (str): optional regex of incrementMode
         - Ipv4NextHop (str): optional regex of ipv4NextHop
         - Ipv6NextHop (str): optional regex of ipv6NextHop
         - LabelEnd (str): optional regex of labelEnd
         - LabelStart (str): optional regex of labelStart
         - LabelStep (str): optional regex of labelStep
+        - LocBlockLength (str): optional regex of locBlockLength
+        - LocNodeLength (str): optional regex of locNodeLength
         - LocalPreference (str): optional regex of localPreference
         - MaxASNumPerSegment (str): optional regex of maxASNumPerSegment
         - MaxNoOfASPathSegmentsPerRouteRange (str): optional regex of maxNoOfASPathSegmentsPerRouteRange
@@ -2106,6 +2390,16 @@ class BgpV6IPRouteProperty(Base):
         - SendMulticastWithProperSAFI (str): optional regex of sendMulticastWithProperSAFI
         - SkipMulticast (str): optional regex of skipMulticast
         - SpecialLabel (str): optional regex of specialLabel
+        - Srv6EndPointBehavior (str): optional regex of srv6EndPointBehavior
+        - Srv6SIDOptionalInformation (str): optional regex of srv6SIDOptionalInformation
+        - Srv6SidFlags (str): optional regex of srv6SidFlags
+        - Srv6SidLoc (str): optional regex of srv6SidLoc
+        - Srv6SidLocLen (str): optional regex of srv6SidLocLen
+        - Srv6SidLocMetric (str): optional regex of srv6SidLocMetric
+        - Srv6SidReserved (str): optional regex of srv6SidReserved
+        - Srv6SidReserved1 (str): optional regex of srv6SidReserved1
+        - Srv6SidReserved2 (str): optional regex of srv6SidReserved2
+        - Srv6SidStep (str): optional regex of srv6SidStep
         - Uptime (str): optional regex of uptime
         - UseTraditionalNlri (str): optional regex of useTraditionalNlri
         - Weight (str): optional regex of weight

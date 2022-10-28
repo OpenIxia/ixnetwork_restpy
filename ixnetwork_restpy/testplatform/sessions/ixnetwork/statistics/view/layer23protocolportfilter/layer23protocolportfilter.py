@@ -50,7 +50,7 @@ class Layer23ProtocolPortFilter(Base):
         """
         Returns
         -------
-        - list(str[None | /api/v1/sessions/1/ixnetwork/statistics/.../availablePortFilter]): Selected port filters from the availablePortFilter list.
+        - list(str[None | /api/v1/sessions/1/ixnetwork/statistics/view/availablePortFilter]): Selected port filters from the availablePortFilter list.
         """
         return self._get_attribute(self._SDM_ATT_MAP["PortFilterIds"])
 
@@ -65,7 +65,7 @@ class Layer23ProtocolPortFilter(Base):
 
         Args
         ----
-        - PortFilterIds (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/.../availablePortFilter])): Selected port filters from the availablePortFilter list.
+        - PortFilterIds (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/view/availablePortFilter])): Selected port filters from the availablePortFilter list.
 
         Raises
         ------
@@ -79,7 +79,7 @@ class Layer23ProtocolPortFilter(Base):
 
         Args
         ----
-        - PortFilterIds (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/.../availablePortFilter])): Selected port filters from the availablePortFilter list.
+        - PortFilterIds (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/view/availablePortFilter])): Selected port filters from the availablePortFilter list.
 
         Returns
         -------
@@ -111,7 +111,7 @@ class Layer23ProtocolPortFilter(Base):
 
         Args
         ----
-        - PortFilterIds (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/.../availablePortFilter])): Selected port filters from the availablePortFilter list.
+        - PortFilterIds (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/view/availablePortFilter])): Selected port filters from the availablePortFilter list.
 
         Returns
         -------

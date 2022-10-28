@@ -405,7 +405,7 @@ class TestConfig(Base):
         """
         Returns
         -------
-        - list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/.../lan]): Protocol Items
+        - list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/protocols/static/lan]): Protocol Items
         """
         return self._get_attribute(self._SDM_ATT_MAP["ProtocolItem"])
 
@@ -529,7 +529,7 @@ class TestConfig(Base):
         - MaxRandomFrameSize (number): The maximum random frame size to be sent.
         - MinRandomFrameSize (number): The minimum random frame size to be sent.
         - Numtrials (number): The integer value that states the number of trials permitted.
-        - ProtocolItem (list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/.../lan])): Protocol Items
+        - ProtocolItem (list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/protocols/static/lan])): Protocol Items
         - ReportConvergenceUnit (str(ms | ns | us)): The unit in which convergence will be reported.
         - ReportTputRateUnit (str(gbps | gBps | kbps | kBps | mbps | mBps)): The unit of rate for throughput.
         - SecondaryRxPort (number): Sets the secondary receiving Port.
@@ -600,7 +600,7 @@ class TestConfig(Base):
         - MaxRandomFrameSize (number): The maximum random frame size to be sent.
         - MinRandomFrameSize (number): The minimum random frame size to be sent.
         - Numtrials (number): The integer value that states the number of trials permitted.
-        - ProtocolItem (list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/.../lan])): Protocol Items
+        - ProtocolItem (list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/protocols/static/lan])): Protocol Items
         - ReportConvergenceUnit (str(ms | ns | us)): The unit in which convergence will be reported.
         - ReportTputRateUnit (str(gbps | gBps | kbps | kBps | mbps | mBps)): The unit of rate for throughput.
         - SecondaryRxPort (number): Sets the secondary receiving Port.

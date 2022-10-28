@@ -127,7 +127,7 @@ class SelectWatch(Base):
         """
         Returns
         -------
-        - list(dict(from:str[None | /api/v1/sessions/1/ixnetwork//.../*],properties:list[str],children:list[dict(child:str,properties:list[str],filters:list[dict(property:str,regex:str)])],inlines:list[dict(node:str,properties:list[str])])):
+        - list(dict(from:str[None | /api/v1/sessions/1/ixnetwork/],properties:list[str],children:list[dict(child:str,properties:list[str],filters:list[dict(property:str,regex:str)])],inlines:list[dict(node:str,properties:list[str])])):
         """
         return self._get_attribute(self._SDM_ATT_MAP["Selects"])
 
@@ -169,7 +169,7 @@ class SelectWatch(Base):
         ----
         - MaxExecutionTime (number): The maximum amount of time a watch can take in milliseconds. If the execution time exceeds this value the watch will be disabled.To bypass this check set the value to 0.
         - PollInterval (number): The interval in milliseconds the watch will be polled. Minimum value is 100ms.
-        - Selects (list(dict(from:str[None | /api/v1/sessions/1/ixnetwork//.../*],properties:list[str],children:list[dict(child:str,properties:list[str],filters:list[dict(property:str,regex:str)])],inlines:list[dict(node:str,properties:list[str])]))):
+        - Selects (list(dict(from:str[None | /api/v1/sessions/1/ixnetwork/],properties:list[str],children:list[dict(child:str,properties:list[str],filters:list[dict(property:str,regex:str)])],inlines:list[dict(node:str,properties:list[str])]))):
         - Topic (str):
 
         Raises
@@ -185,7 +185,7 @@ class SelectWatch(Base):
         ----
         - MaxExecutionTime (number): The maximum amount of time a watch can take in milliseconds. If the execution time exceeds this value the watch will be disabled.To bypass this check set the value to 0.
         - PollInterval (number): The interval in milliseconds the watch will be polled. Minimum value is 100ms.
-        - Selects (list(dict(from:str[None | /api/v1/sessions/1/ixnetwork//.../*],properties:list[str],children:list[dict(child:str,properties:list[str],filters:list[dict(property:str,regex:str)])],inlines:list[dict(node:str,properties:list[str])]))):
+        - Selects (list(dict(from:str[None | /api/v1/sessions/1/ixnetwork/],properties:list[str],children:list[dict(child:str,properties:list[str],filters:list[dict(property:str,regex:str)])],inlines:list[dict(node:str,properties:list[str])]))):
         - Topic (str):
 
         Returns
@@ -234,7 +234,7 @@ class SelectWatch(Base):
         - LastNotification (str):
         - MaxExecutionTime (number): The maximum amount of time a watch can take in milliseconds. If the execution time exceeds this value the watch will be disabled.To bypass this check set the value to 0.
         - PollInterval (number): The interval in milliseconds the watch will be polled. Minimum value is 100ms.
-        - Selects (list(dict(from:str[None | /api/v1/sessions/1/ixnetwork//.../*],properties:list[str],children:list[dict(child:str,properties:list[str],filters:list[dict(property:str,regex:str)])],inlines:list[dict(node:str,properties:list[str])]))):
+        - Selects (list(dict(from:str[None | /api/v1/sessions/1/ixnetwork/],properties:list[str],children:list[dict(child:str,properties:list[str],filters:list[dict(property:str,regex:str)])],inlines:list[dict(node:str,properties:list[str])]))):
         - Token (number):
         - Topic (str):
 

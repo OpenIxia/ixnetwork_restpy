@@ -68,7 +68,7 @@ class EnumerationFilter(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableTrackingFilter): Selected tracking filters from the availableTrackingFilter list.
+        - str(None | /api/v1/sessions/1/ixnetwork/statistics/view/availableTrackingFilter): Selected tracking filters from the availableTrackingFilter list.
         """
         return self._get_attribute(self._SDM_ATT_MAP["TrackingFilterId"])
 
@@ -84,7 +84,7 @@ class EnumerationFilter(Base):
         Args
         ----
         - SortDirection (str(ascending | descending)): Sets the display order of the view.
-        - TrackingFilterId (str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableTrackingFilter)): Selected tracking filters from the availableTrackingFilter list.
+        - TrackingFilterId (str(None | /api/v1/sessions/1/ixnetwork/statistics/view/availableTrackingFilter)): Selected tracking filters from the availableTrackingFilter list.
 
         Raises
         ------
@@ -99,7 +99,7 @@ class EnumerationFilter(Base):
         Args
         ----
         - SortDirection (str(ascending | descending)): Sets the display order of the view.
-        - TrackingFilterId (str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableTrackingFilter)): Selected tracking filters from the availableTrackingFilter list.
+        - TrackingFilterId (str(None | /api/v1/sessions/1/ixnetwork/statistics/view/availableTrackingFilter)): Selected tracking filters from the availableTrackingFilter list.
 
         Returns
         -------
@@ -132,7 +132,7 @@ class EnumerationFilter(Base):
         Args
         ----
         - SortDirection (str(ascending | descending)): Sets the display order of the view.
-        - TrackingFilterId (str(None | /api/v1/sessions/1/ixnetwork/statistics/.../availableTrackingFilter)): Selected tracking filters from the availableTrackingFilter list.
+        - TrackingFilterId (str(None | /api/v1/sessions/1/ixnetwork/statistics/view/availableTrackingFilter)): Selected tracking filters from the availableTrackingFilter list.
 
         Returns
         -------

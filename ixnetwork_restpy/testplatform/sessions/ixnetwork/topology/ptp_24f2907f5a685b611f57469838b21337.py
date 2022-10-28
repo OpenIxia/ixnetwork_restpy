@@ -131,6 +131,11 @@ class Ptp(Base):
         "MeanLinkDelayThreshold": "meanLinkDelayThreshold",
         "MulticastAddress": "multicastAddress",
         "Multiplier": "multiplier",
+        "MvIncludeCustomTlv": "mvIncludeCustomTlv",
+        "MvTlvInsertionPoint": "mvTlvInsertionPoint",
+        "MvTlvLength": "mvTlvLength",
+        "MvTlvType": "mvTlvType",
+        "MvTlvdataValue": "mvTlvdataValue",
         "Name": "name",
         "NanosecondsPerSecond": "nanosecondsPerSecond",
         "NotSlave": "notSlave",
@@ -562,7 +567,7 @@ class Ptp(Base):
         """DEPRECATED
         Returns
         -------
-        - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of layers this layer is used to connect with to the wire.
+        - list(str[None | /api/v1/sessions/1/ixnetwork/topology]): List of layers this layer is used to connect with to the wire.
         """
         return self._get_attribute(self._SDM_ATT_MAP["ConnectedVia"])
 
@@ -989,7 +994,7 @@ class Ptp(Base):
         """
         Returns
         -------
-        - list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str])): A list of errors that have occurred
+        - list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork/],arg2:list[str])): A list of errors that have occurred
         """
         return self._get_attribute(self._SDM_ATT_MAP["Errors"])
 
@@ -1567,6 +1572,72 @@ class Ptp(Base):
     def Multiplier(self, value):
         # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP["Multiplier"], value)
+
+    @property
+    def MvIncludeCustomTlv(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Includes Custom TLV.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MvIncludeCustomTlv"])
+        )
+
+    @property
+    def MvTlvInsertionPoint(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): It describes at which packet and position TLV will be inserted.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MvTlvInsertionPoint"])
+        )
+
+    @property
+    def MvTlvLength(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Length of the TLV Data Field.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["MvTlvLength"]))
+
+    @property
+    def MvTlvType(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): TLV Type (2 bytes).
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["MvTlvType"]))
+
+    @property
+    def MvTlvdataValue(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Value field of the TLV without type and length.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MvTlvdataValue"])
+        )
 
     @property
     def Name(self):
@@ -2210,7 +2281,7 @@ class Ptp(Base):
         """
         Returns
         -------
-        - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of secondary (many to one) child layer protocols
+        - list(str[None | /api/v1/sessions/1/ixnetwork/topology]): List of secondary (many to one) child layer protocols
         """
         return self._get_attribute(self._SDM_ATT_MAP["StackedLayers"])
 
@@ -2518,7 +2589,7 @@ class Ptp(Base):
         - AtoiTlvCount (number): ATOI TLV Count
         - AvnuMode (str(aVNU_NA | aVNU_GPTP)): AVNU Mode
         - ConfiguredInterfaceSpeed (number): Configured Interface Speed
-        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
+        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology])): List of layers this layer is used to connect with to the wire.
         - EnableATOITlv (bool): Enable ATOI TLV
         - EnableCmlds (bool): Enable Cmlds
         - EnableMultipleSubnet (bool): If this field is enabled user can configure slaves of multiple subnet.
@@ -2530,7 +2601,7 @@ class Ptp(Base):
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
         - NumberOFMsgs (number): Messages Count
         - SlaveIPRangeCount (number): Number of subnets for a master.
-        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
+        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology])): List of secondary (many to one) child layer protocols
 
         Raises
         ------
@@ -2565,7 +2636,7 @@ class Ptp(Base):
         - AtoiTlvCount (number): ATOI TLV Count
         - AvnuMode (str(aVNU_NA | aVNU_GPTP)): AVNU Mode
         - ConfiguredInterfaceSpeed (number): Configured Interface Speed
-        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
+        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology])): List of layers this layer is used to connect with to the wire.
         - EnableATOITlv (bool): Enable ATOI TLV
         - EnableCmlds (bool): Enable Cmlds
         - EnableMultipleSubnet (bool): If this field is enabled user can configure slaves of multiple subnet.
@@ -2577,7 +2648,7 @@ class Ptp(Base):
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
         - NumberOFMsgs (number): Messages Count
         - SlaveIPRangeCount (number): Number of subnets for a master.
-        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
+        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology])): List of secondary (many to one) child layer protocols
 
         Returns
         -------
@@ -2637,14 +2708,14 @@ class Ptp(Base):
         - AtoiTlvCount (number): ATOI TLV Count
         - AvnuMode (str(aVNU_NA | aVNU_GPTP)): AVNU Mode
         - ConfiguredInterfaceSpeed (number): Configured Interface Speed
-        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
+        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology])): List of layers this layer is used to connect with to the wire.
         - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         - EnableATOITlv (bool): Enable ATOI TLV
         - EnableCmlds (bool): Enable Cmlds
         - EnableMultipleSubnet (bool): If this field is enabled user can configure slaves of multiple subnet.
         - EnableNegativeTesting (bool): Enable Negative Conformance Test
-        - Errors (list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str]))): A list of errors that have occurred
+        - Errors (list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork/],arg2:list[str]))): A list of errors that have occurred
         - Frequency (number): Frequency(N)
         - LogCleanUpOption (str(notClean | clean)): Debug Log Clean Up
         - LogFileAge (number): This field determines how old logs to be deleted.
@@ -2655,7 +2726,7 @@ class Ptp(Base):
         - SessionInfo (list(str[announceReceiptTimeout | aSCapable | delayRespReceiptTimeout | g82651Layer | g82751ClockAccuracy | g82751ClockClass | g82751Domain | g82751Layer | g82751LogVariance | g82751Priority1 | g82751Rates | g82751VLANs | g82752Layer | gPTPCapable | gPTPLayer | handleAnnounceTlvUnckecked | multipleP2PResponses | noAnnounce | none | p2PMixedMode | pathTraceDropAnnounce | signalAnnounceTimeout | signalDelayRespTimeout | signalIntervalGrantDelayRespDuration | signalIntervalGrantDuration | signalIntervalGrantSyncDuration | signalSyncTimeout | sMPTELayer | syncReceiptTimeout | syncReceiptTimeoutgPTP])): Logs additional information about the session state
         - SessionStatus (list(str[down | notStarted | up])): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
         - SlaveIPRangeCount (number): Number of subnets for a master.
-        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
+        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology])): List of secondary (many to one) child layer protocols
         - StateCounts (dict(total:number,notStarted:number,down:number,up:number)): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
         - Status (str(configured | error | mixed | notStarted | started | starting | stopping)): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
 
@@ -3046,6 +3117,11 @@ class Ptp(Base):
         MasterMacIncrementBy=None,
         MeanLinkDelayThreshold=None,
         MulticastAddress=None,
+        MvIncludeCustomTlv=None,
+        MvTlvInsertionPoint=None,
+        MvTlvLength=None,
+        MvTlvType=None,
+        MvTlvdataValue=None,
         NanosecondsPerSecond=None,
         NotSlave=None,
         NumRecords=None,
@@ -3194,6 +3270,11 @@ class Ptp(Base):
         - MasterMacIncrementBy (str): optional regex of masterMacIncrementBy
         - MeanLinkDelayThreshold (str): optional regex of meanLinkDelayThreshold
         - MulticastAddress (str): optional regex of multicastAddress
+        - MvIncludeCustomTlv (str): optional regex of mvIncludeCustomTlv
+        - MvTlvInsertionPoint (str): optional regex of mvTlvInsertionPoint
+        - MvTlvLength (str): optional regex of mvTlvLength
+        - MvTlvType (str): optional regex of mvTlvType
+        - MvTlvdataValue (str): optional regex of mvTlvdataValue
         - NanosecondsPerSecond (str): optional regex of nanosecondsPerSecond
         - NotSlave (str): optional regex of notSlave
         - NumRecords (str): optional regex of numRecords

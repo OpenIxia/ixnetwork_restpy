@@ -69,7 +69,7 @@ class Dhcpv6PdClientRange(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/globals/.../dhcpv6PdOptionSet): The DHCP client options associated with this range.
+        - str(None | /api/v1/sessions/1/ixnetwork/globals/protocolStack/dhcpv6PdClientGlobals/dhcpv6PdOptionSet): The DHCP client options associated with this range.
         """
         return self._get_attribute(self._SDM_ATT_MAP["ClientOptionSet"])
 
@@ -219,7 +219,7 @@ class Dhcpv6PdClientRange(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/vport/.../dhcpv6PdClientRange): The DHCP-PD range whose negotiated prefix will be used by this range to configure its addresses.
+        - str(None | /api/v1/sessions/1/ixnetwork/vport/protocolStack/ethernet/emulatedRouter/ip/l2tp/dhcpoLacEndpoint/range/dhcpv6PdClientRange): The DHCP-PD range whose negotiated prefix will be used by this range to configure its addresses.
         """
         return self._get_attribute(self._SDM_ATT_MAP["Dhcp6MasterRange"])
 
@@ -385,7 +385,7 @@ class Dhcpv6PdClientRange(Base):
 
         Args
         ----
-        - ClientOptionSet (str(None | /api/v1/sessions/1/ixnetwork/globals/.../dhcpv6PdOptionSet)): The DHCP client options associated with this range.
+        - ClientOptionSet (str(None | /api/v1/sessions/1/ixnetwork/globals/protocolStack/dhcpv6PdClientGlobals/dhcpv6PdOptionSet)): The DHCP client options associated with this range.
         - Dhcp6DuidEnterpriseId (number): The enterprise-number is the vendor's registeredPrivate Enterprise Number as maintained by IANA.
         - Dhcp6DuidType (str): DHCP Unique Identifier Type.
         - Dhcp6DuidVendorId (number): The vendor-assigned unique ID for this range.This ID is incremented automaticaly for each DHCP client.
@@ -395,7 +395,7 @@ class Dhcpv6PdClientRange(Base):
         - Dhcp6IaT1 (number): The suggested time at which the client contacts the server from which the addresses were obtained to extend the lifetimes of the addresses assigned.
         - Dhcp6IaT2 (number): The suggested time at which the client contacts any available server to extend the lifetimes of the addresses assigned.
         - Dhcp6IaType (str): Identity Association Type.
-        - Dhcp6MasterRange (str(None | /api/v1/sessions/1/ixnetwork/vport/.../dhcpv6PdClientRange)): The DHCP-PD range whose negotiated prefix will be used by this range to configure its addresses.
+        - Dhcp6MasterRange (str(None | /api/v1/sessions/1/ixnetwork/vport/protocolStack/ethernet/emulatedRouter/ip/l2tp/dhcpoLacEndpoint/range/dhcpv6PdClientRange)): The DHCP-PD range whose negotiated prefix will be used by this range to configure its addresses.
         - Dhcp6ParamRequestList (str): The Option Request option is used to identify a list of options in a message between a client and a server. Multiple options can be specified in a semicolon separated list.
         - Enabled (bool): Disabled ranges won't be configured nor validated.
         - IpType (str): Defines the version of IP address style to be used for describing the range.
@@ -438,7 +438,7 @@ class Dhcpv6PdClientRange(Base):
 
         Args
         ----
-        - ClientOptionSet (str(None | /api/v1/sessions/1/ixnetwork/globals/.../dhcpv6PdOptionSet)): The DHCP client options associated with this range.
+        - ClientOptionSet (str(None | /api/v1/sessions/1/ixnetwork/globals/protocolStack/dhcpv6PdClientGlobals/dhcpv6PdOptionSet)): The DHCP client options associated with this range.
         - Dhcp6DuidEnterpriseId (number): The enterprise-number is the vendor's registeredPrivate Enterprise Number as maintained by IANA.
         - Dhcp6DuidType (str): DHCP Unique Identifier Type.
         - Dhcp6DuidVendorId (number): The vendor-assigned unique ID for this range.This ID is incremented automaticaly for each DHCP client.
@@ -448,7 +448,7 @@ class Dhcpv6PdClientRange(Base):
         - Dhcp6IaT1 (number): The suggested time at which the client contacts the server from which the addresses were obtained to extend the lifetimes of the addresses assigned.
         - Dhcp6IaT2 (number): The suggested time at which the client contacts any available server to extend the lifetimes of the addresses assigned.
         - Dhcp6IaType (str): Identity Association Type.
-        - Dhcp6MasterRange (str(None | /api/v1/sessions/1/ixnetwork/vport/.../dhcpv6PdClientRange)): The DHCP-PD range whose negotiated prefix will be used by this range to configure its addresses.
+        - Dhcp6MasterRange (str(None | /api/v1/sessions/1/ixnetwork/vport/protocolStack/ethernet/emulatedRouter/ip/l2tp/dhcpoLacEndpoint/range/dhcpv6PdClientRange)): The DHCP-PD range whose negotiated prefix will be used by this range to configure its addresses.
         - Dhcp6ParamRequestList (str): The Option Request option is used to identify a list of options in a message between a client and a server. Multiple options can be specified in a semicolon separated list.
         - Enabled (bool): Disabled ranges won't be configured nor validated.
         - IpType (str): Defines the version of IP address style to be used for describing the range.
@@ -510,7 +510,7 @@ class Dhcpv6PdClientRange(Base):
 
         Args
         ----
-        - ClientOptionSet (str(None | /api/v1/sessions/1/ixnetwork/globals/.../dhcpv6PdOptionSet)): The DHCP client options associated with this range.
+        - ClientOptionSet (str(None | /api/v1/sessions/1/ixnetwork/globals/protocolStack/dhcpv6PdClientGlobals/dhcpv6PdOptionSet)): The DHCP client options associated with this range.
         - Dhcp6DuidEnterpriseId (number): The enterprise-number is the vendor's registeredPrivate Enterprise Number as maintained by IANA.
         - Dhcp6DuidType (str): DHCP Unique Identifier Type.
         - Dhcp6DuidVendorId (number): The vendor-assigned unique ID for this range.This ID is incremented automaticaly for each DHCP client.
@@ -520,7 +520,7 @@ class Dhcpv6PdClientRange(Base):
         - Dhcp6IaT1 (number): The suggested time at which the client contacts the server from which the addresses were obtained to extend the lifetimes of the addresses assigned.
         - Dhcp6IaT2 (number): The suggested time at which the client contacts any available server to extend the lifetimes of the addresses assigned.
         - Dhcp6IaType (str): Identity Association Type.
-        - Dhcp6MasterRange (str(None | /api/v1/sessions/1/ixnetwork/vport/.../dhcpv6PdClientRange)): The DHCP-PD range whose negotiated prefix will be used by this range to configure its addresses.
+        - Dhcp6MasterRange (str(None | /api/v1/sessions/1/ixnetwork/vport/protocolStack/ethernet/emulatedRouter/ip/l2tp/dhcpoLacEndpoint/range/dhcpv6PdClientRange)): The DHCP-PD range whose negotiated prefix will be used by this range to configure its addresses.
         - Dhcp6ParamRequestList (str): The Option Request option is used to identify a list of options in a message between a client and a server. Multiple options can be specified in a semicolon separated list.
         - Enabled (bool): Disabled ranges won't be configured nor validated.
         - IpType (str): Defines the version of IP address style to be used for describing the range.

@@ -860,7 +860,7 @@ class Capture(Base):
         mergeCapture(Arg2=enum, Arg3=href, Arg4=enum, Arg5=string, async_operation=bool)
         --------------------------------------------------------------------------------
         - Arg2 (str(control | data)): The type of the capture, either data or control.
-        - Arg3 (str(None | /api/v1/sessions/1/ixnetwork/vport/.../capture)): The capture object of a port.
+        - Arg3 (str(None | /api/v1/sessions/1/ixnetwork/vport/capture)): The capture object of a port.
         - Arg4 (str(control | data)): The type of the capture, either data or control.
         - Arg5 (str): The full path where the resulted merged capture will be saved, the result capture name needs to contain extension also.
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.

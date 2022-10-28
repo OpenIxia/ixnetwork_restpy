@@ -283,7 +283,7 @@ class Ipv4TrafficEndPoint(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface): NOT DEFINED
+        - str(None | /api/v1/sessions/1/ixnetwork/vport/interface): NOT DEFINED
         """
         return self._get_attribute(self._SDM_ATT_MAP["ProtocolInterface"])
 
@@ -441,7 +441,7 @@ class Ipv4TrafficEndPoint(Base):
         - Ipv4Ecn (str): The ECN value specified for the IP address.
         - MacAddress (str): The MAC Address of the source traffic endpoint. The default value is 00 00 00 00 00 00.
         - Name (str): The name of the Traffic endpoint. It is an auto-populated field but can be customized for convenience.
-        - ProtocolInterface (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface)): NOT DEFINED
+        - ProtocolInterface (str(None | /api/v1/sessions/1/ixnetwork/vport/interface)): NOT DEFINED
         - RangeSize (number): Specify the size of the traffic range.
         - SourcePort (str): NOT DEFINED
         - UdpDestination (str): Specify the UDP Destination. The default value is 1.
@@ -500,7 +500,7 @@ class Ipv4TrafficEndPoint(Base):
         - Ipv4Ecn (str): The ECN value specified for the IP address.
         - MacAddress (str): The MAC Address of the source traffic endpoint. The default value is 00 00 00 00 00 00.
         - Name (str): The name of the Traffic endpoint. It is an auto-populated field but can be customized for convenience.
-        - ProtocolInterface (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface)): NOT DEFINED
+        - ProtocolInterface (str(None | /api/v1/sessions/1/ixnetwork/vport/interface)): NOT DEFINED
         - RangeSize (number): Specify the size of the traffic range.
         - SourcePort (str): NOT DEFINED
         - UdpDestination (str): Specify the UDP Destination. The default value is 1.
@@ -577,7 +577,7 @@ class Ipv4TrafficEndPoint(Base):
         - Ipv4Ecn (str): The ECN value specified for the IP address.
         - MacAddress (str): The MAC Address of the source traffic endpoint. The default value is 00 00 00 00 00 00.
         - Name (str): The name of the Traffic endpoint. It is an auto-populated field but can be customized for convenience.
-        - ProtocolInterface (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface)): NOT DEFINED
+        - ProtocolInterface (str(None | /api/v1/sessions/1/ixnetwork/vport/interface)): NOT DEFINED
         - RangeSize (number): Specify the size of the traffic range.
         - SourcePort (str): NOT DEFINED
         - UdpDestination (str): Specify the UDP Destination. The default value is 1.

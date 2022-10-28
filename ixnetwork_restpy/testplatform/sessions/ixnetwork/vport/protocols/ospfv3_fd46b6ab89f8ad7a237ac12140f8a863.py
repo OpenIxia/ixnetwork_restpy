@@ -173,13 +173,13 @@ class OspfV3(Base):
 
         gracefulRouterRestart(Arg2=list, async_operation=bool)string
         ------------------------------------------------------------
-        - Arg2 (list(str[None | /api/v1/sessions/1/ixnetwork/vport/.../router])): NOT DEFINED
+        - Arg2 (list(str[None | /api/v1/sessions/1/ixnetwork/vport/protocols/ospfV3/router])): NOT DEFINED
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns str: NOT DEFINED
 
         gracefulRouterRestart(Arg2=list, Arg3=number, Arg4=enum, Arg5=number, async_operation=bool)string
         -------------------------------------------------------------------------------------------------
-        - Arg2 (list(str[None | /api/v1/sessions/1/ixnetwork/vport/.../router])): NOT DEFINED
+        - Arg2 (list(str[None | /api/v1/sessions/1/ixnetwork/vport/protocols/ospfV3/router])): NOT DEFINED
         - Arg3 (number): NOT DEFINED
         - Arg4 (str(softwareReloadOrUpgrade | softwareRestart | switchToRedundantControlProcessor | unknown)): NOT DEFINED
         - Arg5 (number): NOT DEFINED

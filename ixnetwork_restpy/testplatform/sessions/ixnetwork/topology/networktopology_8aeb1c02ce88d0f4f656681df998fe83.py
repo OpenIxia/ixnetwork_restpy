@@ -39,6 +39,7 @@ class NetworkTopology(Base):
     _SDM_ATT_MAP = {
         "Count": "count",
         "FromNodeIndex": "fromNodeIndex",
+        "IncludeAllTopologies": "includeAllTopologies",
         "LinksPerNetwork": "linksPerNetwork",
         "NodesPerNetwork": "nodesPerNetwork",
         "ToNodeIndex": "toNodeIndex",
@@ -472,6 +473,21 @@ class NetworkTopology(Base):
         return self._get_attribute(self._SDM_ATT_MAP["FromNodeIndex"])
 
     @property
+    def IncludeAllTopologies(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: Creates link(s) between one-to-many or many-to-one node(s) of different network topologies.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["IncludeAllTopologies"])
+
+    @IncludeAllTopologies.setter
+    def IncludeAllTopologies(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["IncludeAllTopologies"], value)
+
+    @property
     def LinksPerNetwork(self):
         # type: () -> int
         """
@@ -501,8 +517,27 @@ class NetworkTopology(Base):
         """
         return self._get_attribute(self._SDM_ATT_MAP["ToNodeIndex"])
 
-    def add(self):
+    def update(self, IncludeAllTopologies=None):
+        # type: (bool) -> NetworkTopology
+        """Updates networkTopology resource on the server.
+
+        Args
+        ----
+        - IncludeAllTopologies (bool): Creates link(s) between one-to-many or many-to-one node(s) of different network topologies.
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def add(self, IncludeAllTopologies=None):
+        # type: (bool) -> NetworkTopology
         """Adds a new networkTopology resource on the server and adds it to the container.
+
+        Args
+        ----
+        - IncludeAllTopologies (bool): Creates link(s) between one-to-many or many-to-one node(s) of different network topologies.
 
         Returns
         -------
@@ -528,11 +563,12 @@ class NetworkTopology(Base):
         self,
         Count=None,
         FromNodeIndex=None,
+        IncludeAllTopologies=None,
         LinksPerNetwork=None,
         NodesPerNetwork=None,
         ToNodeIndex=None,
     ):
-        # type: (int, List[str], int, int, List[str]) -> NetworkTopology
+        # type: (int, List[str], bool, int, int, List[str]) -> NetworkTopology
         """Finds and retrieves networkTopology resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve networkTopology resources from the server.
@@ -543,6 +579,7 @@ class NetworkTopology(Base):
         ----
         - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         - FromNodeIndex (list(str)): Link From Node Index
+        - IncludeAllTopologies (bool): Creates link(s) between one-to-many or many-to-one node(s) of different network topologies.
         - LinksPerNetwork (number): linksPerNetwork is controled by assigned topology
         - NodesPerNetwork (number): Number of nodes in the Network Topology, including the root node defined in the parent Device Group
         - ToNodeIndex (list(str)): Link To Node Index

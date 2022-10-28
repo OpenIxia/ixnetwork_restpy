@@ -1347,7 +1347,7 @@ class Traffic(Base):
 
         getFrameCountForDuration(Arg2=list, async_operation=bool)list
         -------------------------------------------------------------
-        - Arg2 (list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork/traffic/.../highLevelStream],arg2:number))): An array of structures. Each structure is one valid highLevelStream object reference and the duration to get the frame count for.
+        - Arg2 (list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork/traffic/trafficItem/highLevelStream],arg2:number))): An array of structures. Each structure is one valid highLevelStream object reference and the duration to get the frame count for.
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns list(number): An array of frame counts.
 

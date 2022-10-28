@@ -161,7 +161,7 @@ class Ovsdbcontroller(Base):
         """DEPRECATED
         Returns
         -------
-        - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of layers this layer is used to connect with to the wire.
+        - list(str[None | /api/v1/sessions/1/ixnetwork/topology]): List of layers this layer is used to connect with to the wire.
         """
         return self._get_attribute(self._SDM_ATT_MAP["ConnectedVia"])
 
@@ -358,7 +358,7 @@ class Ovsdbcontroller(Base):
         """
         Returns
         -------
-        - list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str])): A list of errors that have occurred
+        - list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork/],arg2:list[str])): A list of errors that have occurred
         """
         return self._get_attribute(self._SDM_ATT_MAP["Errors"])
 
@@ -520,7 +520,7 @@ class Ovsdbcontroller(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/topology/.../*): GUI-only connection
+        - str(None | /api/v1/sessions/1/ixnetwork/topology): GUI-only connection
         """
         return self._get_attribute(self._SDM_ATT_MAP["PseudoConnectedTo"])
 
@@ -535,7 +535,7 @@ class Ovsdbcontroller(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/topology/.../*): GUI-only connection
+        - str(None | /api/v1/sessions/1/ixnetwork/topology): GUI-only connection
         """
         return self._get_attribute(self._SDM_ATT_MAP["PseudoConnectedToBfd"])
 
@@ -550,7 +550,7 @@ class Ovsdbcontroller(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/topology/.../*): GUI-only connection
+        - str(None | /api/v1/sessions/1/ixnetwork/topology): GUI-only connection
         """
         return self._get_attribute(
             self._SDM_ATT_MAP["PseudoConnectedToVxlanReplicator"]
@@ -658,7 +658,7 @@ class Ovsdbcontroller(Base):
         """
         Returns
         -------
-        - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of secondary (many to one) child layer protocols
+        - list(str[None | /api/v1/sessions/1/ixnetwork/topology]): List of secondary (many to one) child layer protocols
         """
         return self._get_attribute(self._SDM_ATT_MAP["StackedLayers"])
 
@@ -747,7 +747,7 @@ class Ovsdbcontroller(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/topology/.../*):
+        - str(None | /api/v1/sessions/1/ixnetwork/topology):
         """
         return self._get_attribute(self._SDM_ATT_MAP["Vxlan"])
 
@@ -762,7 +762,7 @@ class Ovsdbcontroller(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/topology/.../*):
+        - str(None | /api/v1/sessions/1/ixnetwork/topology):
         """
         return self._get_attribute(self._SDM_ATT_MAP["VxlanReplicator"])
 
@@ -796,20 +796,20 @@ class Ovsdbcontroller(Base):
 
         Args
         ----
-        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
+        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology])): List of layers this layer is used to connect with to the wire.
         - EnableLogging (bool): If true, Port debug logs will be recorded, Maximum recording will be upto 500 MB .
         - LatestDumpDbFileNames (str): Api to fetch latest DumpDb Files
         - LatestErrorFileNames (str): Api to fetch latest Error Files
         - Multiplier (number): Number of layer instances per parent instance (multiplier)
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-        - PseudoConnectedTo (str(None | /api/v1/sessions/1/ixnetwork/topology/.../*)): GUI-only connection
-        - PseudoConnectedToBfd (str(None | /api/v1/sessions/1/ixnetwork/topology/.../*)): GUI-only connection
-        - PseudoConnectedToVxlanReplicator (str(None | /api/v1/sessions/1/ixnetwork/topology/.../*)): GUI-only connection
+        - PseudoConnectedTo (str(None | /api/v1/sessions/1/ixnetwork/topology)): GUI-only connection
+        - PseudoConnectedToBfd (str(None | /api/v1/sessions/1/ixnetwork/topology)): GUI-only connection
+        - PseudoConnectedToVxlanReplicator (str(None | /api/v1/sessions/1/ixnetwork/topology)): GUI-only connection
         - ServerAddDeleteConnectionError (str): API to retrieve error occured while Adding/ Deleting Server
-        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
+        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology])): List of secondary (many to one) child layer protocols
         - TimeOut (number): Transact request Time Out in seconds. For scale scenarios increase this Timeout value.
-        - Vxlan (str(None | /api/v1/sessions/1/ixnetwork/topology/.../*)):
-        - VxlanReplicator (str(None | /api/v1/sessions/1/ixnetwork/topology/.../*)):
+        - Vxlan (str(None | /api/v1/sessions/1/ixnetwork/topology)):
+        - VxlanReplicator (str(None | /api/v1/sessions/1/ixnetwork/topology)):
 
         Raises
         ------
@@ -839,20 +839,20 @@ class Ovsdbcontroller(Base):
 
         Args
         ----
-        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
+        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology])): List of layers this layer is used to connect with to the wire.
         - EnableLogging (bool): If true, Port debug logs will be recorded, Maximum recording will be upto 500 MB .
         - LatestDumpDbFileNames (str): Api to fetch latest DumpDb Files
         - LatestErrorFileNames (str): Api to fetch latest Error Files
         - Multiplier (number): Number of layer instances per parent instance (multiplier)
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-        - PseudoConnectedTo (str(None | /api/v1/sessions/1/ixnetwork/topology/.../*)): GUI-only connection
-        - PseudoConnectedToBfd (str(None | /api/v1/sessions/1/ixnetwork/topology/.../*)): GUI-only connection
-        - PseudoConnectedToVxlanReplicator (str(None | /api/v1/sessions/1/ixnetwork/topology/.../*)): GUI-only connection
+        - PseudoConnectedTo (str(None | /api/v1/sessions/1/ixnetwork/topology)): GUI-only connection
+        - PseudoConnectedToBfd (str(None | /api/v1/sessions/1/ixnetwork/topology)): GUI-only connection
+        - PseudoConnectedToVxlanReplicator (str(None | /api/v1/sessions/1/ixnetwork/topology)): GUI-only connection
         - ServerAddDeleteConnectionError (str): API to retrieve error occured while Adding/ Deleting Server
-        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
+        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology])): List of secondary (many to one) child layer protocols
         - TimeOut (number): Transact request Time Out in seconds. For scale scenarios increase this Timeout value.
-        - Vxlan (str(None | /api/v1/sessions/1/ixnetwork/topology/.../*)):
-        - VxlanReplicator (str(None | /api/v1/sessions/1/ixnetwork/topology/.../*)):
+        - Vxlan (str(None | /api/v1/sessions/1/ixnetwork/topology)):
+        - VxlanReplicator (str(None | /api/v1/sessions/1/ixnetwork/topology)):
 
         Returns
         -------
@@ -910,18 +910,18 @@ class Ovsdbcontroller(Base):
 
         Args
         ----
-        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
+        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology])): List of layers this layer is used to connect with to the wire.
         - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         - EnableLogging (bool): If true, Port debug logs will be recorded, Maximum recording will be upto 500 MB .
-        - Errors (list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str]))): A list of errors that have occurred
+        - Errors (list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork/],arg2:list[str]))): A list of errors that have occurred
         - LatestDumpDbFileNames (str): Api to fetch latest DumpDb Files
         - LatestErrorFileNames (str): Api to fetch latest Error Files
         - Multiplier (number): Number of layer instances per parent instance (multiplier)
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-        - PseudoConnectedTo (str(None | /api/v1/sessions/1/ixnetwork/topology/.../*)): GUI-only connection
-        - PseudoConnectedToBfd (str(None | /api/v1/sessions/1/ixnetwork/topology/.../*)): GUI-only connection
-        - PseudoConnectedToVxlanReplicator (str(None | /api/v1/sessions/1/ixnetwork/topology/.../*)): GUI-only connection
+        - PseudoConnectedTo (str(None | /api/v1/sessions/1/ixnetwork/topology)): GUI-only connection
+        - PseudoConnectedToBfd (str(None | /api/v1/sessions/1/ixnetwork/topology)): GUI-only connection
+        - PseudoConnectedToVxlanReplicator (str(None | /api/v1/sessions/1/ixnetwork/topology)): GUI-only connection
         - PseudoMultiplier (number): Multiplier for GUI-only connection
         - PseudoMultiplierBfd (number): Multiplier for GUI-only connection
         - PseudoMultiplierVxlanReplicator (number): Multiplier for GUI-only connection
@@ -929,12 +929,12 @@ class Ovsdbcontroller(Base):
         - ServerAddDeleteConnectionError (str): API to retrieve error occured while Adding/ Deleting Server
         - ServerAddDeleteStatus (str): Status of all servers Added/Deleted to Controller. Use Get Server Add/Delete Status, right click action to get current status
         - SessionStatus (list(str[down | notStarted | up])): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
-        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
+        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology])): List of secondary (many to one) child layer protocols
         - StateCounts (dict(total:number,notStarted:number,down:number,up:number)): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
         - Status (str(configured | error | mixed | notStarted | started | starting | stopping)): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
         - TimeOut (number): Transact request Time Out in seconds. For scale scenarios increase this Timeout value.
-        - Vxlan (str(None | /api/v1/sessions/1/ixnetwork/topology/.../*)):
-        - VxlanReplicator (str(None | /api/v1/sessions/1/ixnetwork/topology/.../*)):
+        - Vxlan (str(None | /api/v1/sessions/1/ixnetwork/topology)):
+        - VxlanReplicator (str(None | /api/v1/sessions/1/ixnetwork/topology)):
 
         Returns
         -------

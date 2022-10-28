@@ -114,7 +114,7 @@ class MacRanges(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup): Assigns a traffic group to the MAC range. The traffic group must be previously configured.
+        - str(None | /api/v1/sessions/1/ixnetwork/traffic/trafficGroup): Assigns a traffic group to the MAC range. The traffic group must be previously configured.
         """
         return self._get_attribute(self._SDM_ATT_MAP["TrafficGroupId"])
 
@@ -135,7 +135,7 @@ class MacRanges(Base):
         - Enabled (bool): If true, the MAC range is enabled.
         - MacAddress (str): The MAC address of the first entry in the range.
         - Step (str): The amount to increment each MAC address in the range.
-        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup)): Assigns a traffic group to the MAC range. The traffic group must be previously configured.
+        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/trafficGroup)): Assigns a traffic group to the MAC range. The traffic group must be previously configured.
 
         Raises
         ------
@@ -155,7 +155,7 @@ class MacRanges(Base):
         - Enabled (bool): If true, the MAC range is enabled.
         - MacAddress (str): The MAC address of the first entry in the range.
         - Step (str): The amount to increment each MAC address in the range.
-        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup)): Assigns a traffic group to the MAC range. The traffic group must be previously configured.
+        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/trafficGroup)): Assigns a traffic group to the MAC range. The traffic group must be previously configured.
 
         Returns
         -------
@@ -193,7 +193,7 @@ class MacRanges(Base):
         - Enabled (bool): If true, the MAC range is enabled.
         - MacAddress (str): The MAC address of the first entry in the range.
         - Step (str): The amount to increment each MAC address in the range.
-        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/.../trafficGroup)): Assigns a traffic group to the MAC range. The traffic group must be previously configured.
+        - TrafficGroupId (str(None | /api/v1/sessions/1/ixnetwork/traffic/trafficGroup)): Assigns a traffic group to the MAC range. The traffic group must be previously configured.
 
         Returns
         -------

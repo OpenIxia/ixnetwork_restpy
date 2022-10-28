@@ -196,7 +196,18 @@ class BatchAdd(object):
                             elif "arg1" in element and isinstance(
                                 element["arg1"], Base
                             ):
-                                element["arg1"] = element["arg1"]._properties["xpath"]
+                                if "href" in element["arg1"]._properties:
+                                    element["arg1"] = self._get_select_response(
+                                        element["arg1"]._properties["href"]
+                                    )[0]["xpath"]
+                                elif "xpath" in element["arg1"]._properties:
+                                    element["arg1"] = element["arg1"]._properties[
+                                        "xpath"
+                                    ]
+                                else:
+                                    raise Exception(
+                                        "neither xpath nor href present, something went wrong!"
+                                    )
                                 temp_list.append(element)
                             else:
                                 temp_list.append(element)

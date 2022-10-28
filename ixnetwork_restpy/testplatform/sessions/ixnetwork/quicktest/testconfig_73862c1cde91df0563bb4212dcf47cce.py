@@ -2036,7 +2036,7 @@ class TestConfig(Base):
         """
         Returns
         -------
-        - list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/.../lan]): Protocol Items
+        - list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/protocols/static/lan]): Protocol Items
         """
         return self._get_attribute(self._SDM_ATT_MAP["ProtocolItem"])
 
@@ -2748,7 +2748,7 @@ class TestConfig(Base):
         - PortDelayUnit (str(bytes | nanoseconds)): Sets the port delay unit in which it will be measured
         - PortDelayValue (number): Sets the port delay value
         - PortMACAddress (str): The MAC address of the port.
-        - ProtocolItem (list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/.../lan])): Protocol Items
+        - ProtocolItem (list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/protocols/static/lan])): Protocol Items
         - QuickBackoffIteration (number): Sets the quicksearch backoff iteration
         - QuickEnableBackoffIteration (bool): Enables the quick search backoff iteration
         - QuickEnableSaturationIteration (bool): Enables the Quick Search saturation iteration
@@ -3057,7 +3057,7 @@ class TestConfig(Base):
         - PortDelayUnit (str(bytes | nanoseconds)): Sets the port delay unit in which it will be measured
         - PortDelayValue (number): Sets the port delay value
         - PortMACAddress (str): The MAC address of the port.
-        - ProtocolItem (list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/.../lan])): Protocol Items
+        - ProtocolItem (list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/protocols/static/lan])): Protocol Items
         - QuickBackoffIteration (number): Sets the quicksearch backoff iteration
         - QuickEnableBackoffIteration (bool): Enables the quick search backoff iteration
         - QuickEnableSaturationIteration (bool): Enables the Quick Search saturation iteration

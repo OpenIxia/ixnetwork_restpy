@@ -217,7 +217,7 @@ class TestConfig(Base):
         """
         Returns
         -------
-        - list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/.../lan]): Protocol Items
+        - list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/protocols/static/lan]): Protocol Items
         """
         return self._get_attribute(self._SDM_ATT_MAP["ProtocolItem"])
 
@@ -367,7 +367,7 @@ class TestConfig(Base):
         - Numtrials (number): The number of trials that can be run
         - OffsetGraph (str): Offset graphing
         - PathDelayGraphing (str): Graphing of path delay
-        - ProtocolItem (list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/.../lan])): Protocol Items
+        - ProtocolItem (list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/protocols/static/lan])): Protocol Items
         - ResidenceTime (number): The time taken by a packet to move from the ingress port to the egress port
         - Runmode (str(duration | noframes)): Running mode used
         - SetupRate (number): The number of PTP connections to be initiated per second
@@ -422,7 +422,7 @@ class TestConfig(Base):
         - Numtrials (number): The number of trials that can be run
         - OffsetGraph (str): Offset graphing
         - PathDelayGraphing (str): Graphing of path delay
-        - ProtocolItem (list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/.../lan])): Protocol Items
+        - ProtocolItem (list(str[None | /api/v1/sessions/1/ixnetwork/vport | /api/v1/sessions/1/ixnetwork/vport/protocols/static/lan])): Protocol Items
         - ResidenceTime (number): The time taken by a packet to move from the ingress port to the egress port
         - Runmode (str(duration | noframes)): Running mode used
         - SetupRate (number): The number of PTP connections to be initiated per second

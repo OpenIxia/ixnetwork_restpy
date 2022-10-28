@@ -80,6 +80,7 @@ class Mka(Base):
         "StartingOLPN": "startingOLPN",
         "StateCounts": "stateCounts",
         "Status": "status",
+        "SupportedCipherSuites": "supportedCipherSuites",
         "TxChannelCount": "txChannelCount",
     }
     _SDM_ENUM_MAP = {
@@ -229,7 +230,7 @@ class Mka(Base):
         """DEPRECATED
         Returns
         -------
-        - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of layers this layer is used to connect with to the wire.
+        - list(str[None | /api/v1/sessions/1/ixnetwork/topology]): List of layers this layer is used to connect with to the wire.
         """
         return self._get_attribute(self._SDM_ATT_MAP["ConnectedVia"])
 
@@ -295,7 +296,7 @@ class Mka(Base):
         """
         Returns
         -------
-        - list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str])): A list of errors that have occurred
+        - list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork/],arg2:list[str])): A list of errors that have occurred
         """
         return self._get_attribute(self._SDM_ATT_MAP["Errors"])
 
@@ -628,7 +629,7 @@ class Mka(Base):
         """
         Returns
         -------
-        - list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*]): List of secondary (many to one) child layer protocols
+        - list(str[None | /api/v1/sessions/1/ixnetwork/topology]): List of secondary (many to one) child layer protocols
         """
         return self._get_attribute(self._SDM_ATT_MAP["StackedLayers"])
 
@@ -709,6 +710,20 @@ class Mka(Base):
         return self._get_attribute(self._SDM_ATT_MAP["Status"])
 
     @property
+    def SupportedCipherSuites(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): The list of cipher suites supported by the device. All options are selected by default.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SupportedCipherSuites"])
+        )
+
+    @property
     def TxChannelCount(self):
         # type: () -> int
         """
@@ -742,7 +757,7 @@ class Mka(Base):
         Args
         ----
         - CakCount (number): PSK Chain Size (Min 1, Max 10).
-        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
+        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology])): List of layers this layer is used to connect with to the wire.
         - KeyType (str(psk)): Indicates the source of CAK.
         - MkaLifeTime (number): Indicates MKA Life Time of a Peer.
         - Multiplier (number): Number of layer instances per parent instance (multiplier)
@@ -752,7 +767,7 @@ class Mka(Base):
         - RandomizeMemberIdentifier (bool): If this box is checked, then Ixia MKA devices will generate random member identifiers. Otherwise member identifiers of the form MAC Address-Counter will be generated to aid in debugging.
         - RekeyBehaviour (str(dontRekey | rekeyContinuous | rekeyFixedCount)): Determines the Rekey behavior.
         - RekeyMode (str(timerBased | pNBased)): Rekey criteria.
-        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
+        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology])): List of secondary (many to one) child layer protocols
 
         Raises
         ------
@@ -781,7 +796,7 @@ class Mka(Base):
         Args
         ----
         - CakCount (number): PSK Chain Size (Min 1, Max 10).
-        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
+        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology])): List of layers this layer is used to connect with to the wire.
         - KeyType (str(psk)): Indicates the source of CAK.
         - MkaLifeTime (number): Indicates MKA Life Time of a Peer.
         - Multiplier (number): Number of layer instances per parent instance (multiplier)
@@ -791,7 +806,7 @@ class Mka(Base):
         - RandomizeMemberIdentifier (bool): If this box is checked, then Ixia MKA devices will generate random member identifiers. Otherwise member identifiers of the form MAC Address-Counter will be generated to aid in debugging.
         - RekeyBehaviour (str(dontRekey | rekeyContinuous | rekeyFixedCount)): Determines the Rekey behavior.
         - RekeyMode (str(timerBased | pNBased)): Rekey criteria.
-        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
+        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology])): List of secondary (many to one) child layer protocols
 
         Returns
         -------
@@ -850,12 +865,12 @@ class Mka(Base):
         ----
         - AssociationNumber (list(str)): Displays the Association Number for the received SAK.
         - CakCount (number): PSK Chain Size (Min 1, Max 10).
-        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of layers this layer is used to connect with to the wire.
+        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology])): List of layers this layer is used to connect with to the wire.
         - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         - DelayProtectSimulation (list(str)): Displays the actual PN, simulated PN and the MKPDU message number.
         - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         - ElectedKeyServer (list(str)): Denotes whether this device has been elected as a Key Server or not.
-        - Errors (list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork//.../*],arg2:list[str]))): A list of errors that have occurred
+        - Errors (list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork/],arg2:list[str]))): A list of errors that have occurred
         - KeyType (str(psk)): Indicates the source of CAK.
         - MirroredMacAddr (list(str)): MAC address of the Ethernet devices configured in the Ethernet stack.
         - MkaLifeTime (number): Indicates MKA Life Time of a Peer.
@@ -868,7 +883,7 @@ class Mka(Base):
         - RekeyMode (str(timerBased | pNBased)): Rekey criteria.
         - Sak (list(str)): Displays the SAK received from the Key Server.
         - SessionStatus (list(str[down | notStarted | up])): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
-        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../*])): List of secondary (many to one) child layer protocols
+        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology])): List of secondary (many to one) child layer protocols
         - StateCounts (dict(total:number,notStarted:number,down:number,up:number)): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
         - Status (str(configured | error | mixed | notStarted | started | starting | stopping)): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
         - TxChannelCount (number): Determines the number of Tx Channels configured for each device.
@@ -1442,6 +1457,7 @@ class Mka(Base):
         StartingKeyNumber=None,
         StartingLLPN=None,
         StartingOLPN=None,
+        SupportedCipherSuites=None,
     ):
         """Base class infrastructure that gets a list of mka device ids encapsulated by this object.
 
@@ -1470,6 +1486,7 @@ class Mka(Base):
         - StartingKeyNumber (str): optional regex of startingKeyNumber
         - StartingLLPN (str): optional regex of startingLLPN
         - StartingOLPN (str): optional regex of startingOLPN
+        - SupportedCipherSuites (str): optional regex of supportedCipherSuites
 
         Returns
         -------

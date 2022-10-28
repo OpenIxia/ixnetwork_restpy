@@ -52,7 +52,7 @@ class DslProfileAllocationTable(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/globals/.../ancpDslProfile): The DSL profile.
+        - str(None | /api/v1/sessions/1/ixnetwork/globals/protocolStack/ancpGlobals/ancpDslProfile): The DSL profile.
         """
         return self._get_attribute(self._SDM_ATT_MAP["DslProfile"])
 
@@ -92,7 +92,7 @@ class DslProfileAllocationTable(Base):
 
         Args
         ----
-        - DslProfile (str(None | /api/v1/sessions/1/ixnetwork/globals/.../ancpDslProfile)): The DSL profile.
+        - DslProfile (str(None | /api/v1/sessions/1/ixnetwork/globals/protocolStack/ancpGlobals/ancpDslProfile)): The DSL profile.
         - Percentage (number): Percentage of this profile.
 
         Raises
@@ -107,7 +107,7 @@ class DslProfileAllocationTable(Base):
 
         Args
         ----
-        - DslProfile (str(None | /api/v1/sessions/1/ixnetwork/globals/.../ancpDslProfile)): The DSL profile.
+        - DslProfile (str(None | /api/v1/sessions/1/ixnetwork/globals/protocolStack/ancpGlobals/ancpDslProfile)): The DSL profile.
         - Percentage (number): Percentage of this profile.
 
         Returns
@@ -140,7 +140,7 @@ class DslProfileAllocationTable(Base):
 
         Args
         ----
-        - DslProfile (str(None | /api/v1/sessions/1/ixnetwork/globals/.../ancpDslProfile)): The DSL profile.
+        - DslProfile (str(None | /api/v1/sessions/1/ixnetwork/globals/protocolStack/ancpGlobals/ancpDslProfile)): The DSL profile.
         - ObjectId (str): Unique identifier for this object
         - Percentage (number): Percentage of this profile.
 

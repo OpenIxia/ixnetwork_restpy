@@ -37,9 +37,21 @@ class Srv6OamDestination(Base):
     _SDM_ATT_MAP = {
         "Active": "active",
         "AutoGenSegmentLeftValue": "autoGenSegmentLeftValue",
+        "BfdDiscriminator": "bfdDiscriminator",
+        "BfdEchoInterval": "bfdEchoInterval",
+        "BfdEnCtrlPlaneIndependent": "bfdEnCtrlPlaneIndependent",
+        "BfdEnPeerDiscriminatorLearned": "bfdEnPeerDiscriminatorLearned",
+        "BfdHopLimit": "bfdHopLimit",
+        "BfdMinRxInterval": "bfdMinRxInterval",
+        "BfdMode": "bfdMode",
+        "BfdPeerDiscriminator": "bfdPeerDiscriminator",
+        "BfdSessionInfo": "bfdSessionInfo",
+        "BfdTimeoutMultiplier": "bfdTimeoutMultiplier",
+        "BfdTxInterval": "bfdTxInterval",
         "Count": "count",
         "DescriptiveName": "descriptiveName",
         "EnReducedSRH": "enReducedSRH",
+        "EnableBfd": "enableBfd",
         "EnableSBfdInitiator": "enableSBfdInitiator",
         "MaxTtlForTR": "maxTtlForTR",
         "MyDiscriminator": "myDiscriminator",
@@ -119,6 +131,151 @@ class Srv6OamDestination(Base):
         )
 
     @property
+    def BfdDiscriminator(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): The value to be used for My Discriminator in BFD packets sent by this BFD session.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["BfdDiscriminator"])
+        )
+
+    @property
+    def BfdEchoInterval(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Echo Interval in Milli Seconds.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["BfdEchoInterval"])
+        )
+
+    @property
+    def BfdEnCtrlPlaneIndependent(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): If selected, it enables the Control Plane Independent flag BFD packet.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["BfdEnCtrlPlaneIndependent"])
+        )
+
+    @property
+    def BfdEnPeerDiscriminatorLearned(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): If selected, it enables BFD session to learn peer discriminator.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["BfdEnPeerDiscriminatorLearned"]),
+        )
+
+    @property
+    def BfdHopLimit(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Hop Limit to be set in IPv6 header in BFD packet.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["BfdHopLimit"]))
+
+    @property
+    def BfdMinRxInterval(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): The minimum interval, in milliseconds, between received BFD packets that this session is capable of supporting.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["BfdMinRxInterval"])
+        )
+
+    @property
+    def BfdMode(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Mode of BFD session.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["BfdMode"]))
+
+    @property
+    def BfdPeerDiscriminator(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): The value to be used for Your Discriminator in BFD packets sent by this BFD session.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["BfdPeerDiscriminator"])
+        )
+
+    @property
+    def BfdSessionInfo(self):
+        # type: () -> List[str]
+        """
+        Returns
+        -------
+        - list(str[adminDown | down | errorDupDisc | up]): Current state of the BFD Session.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["BfdSessionInfo"])
+
+    @property
+    def BfdTimeoutMultiplier(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): If reply packets are not recieved within Timeout Multiplier times Negotiated Transmit Interval, then session is brought down and Flap Count is increased in statistics.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["BfdTimeoutMultiplier"])
+        )
+
+    @property
+    def BfdTxInterval(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): The minimum inter, in milliseconds, thst the session would like to use when transmitting BFD packets.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["BfdTxInterval"]))
+
+    @property
     def Count(self):
         # type: () -> int
         """
@@ -149,6 +306,18 @@ class Srv6OamDestination(Base):
         from ixnetwork_restpy.multivalue import Multivalue
 
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EnReducedSRH"]))
+
+    @property
+    def EnableBfd(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): If selected, it enables the BFD.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EnableBfd"]))
 
     @property
     def EnableSBfdInitiator(self):
@@ -502,6 +671,7 @@ class Srv6OamDestination(Base):
 
     def find(
         self,
+        BfdSessionInfo=None,
         Count=None,
         DescriptiveName=None,
         Name=None,
@@ -512,7 +682,7 @@ class Srv6OamDestination(Base):
         SessionInfo=None,
         ValidateDestination=None,
     ):
-        # type: (int, str, str, int, int, int, str, List[str], bool) -> Srv6OamDestination
+        # type: (List[str], int, str, str, int, int, int, str, List[str], bool) -> Srv6OamDestination
         """Finds and retrieves srv6OamDestination resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve srv6OamDestination resources from the server.
@@ -521,6 +691,7 @@ class Srv6OamDestination(Base):
 
         Args
         ----
+        - BfdSessionInfo (list(str[adminDown | down | errorDupDisc | up])): Current state of the BFD Session.
         - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
@@ -583,6 +754,32 @@ class Srv6OamDestination(Base):
             payload[item[0]] = item[1]
         return self._execute(
             "clearAllLearnedInfo", payload=payload, response_object=None
+        )
+
+    def GetBfdSessionLearnedInfo(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the getBfdSessionLearnedInfo operation on the server.
+
+        Fetch BFD Session Learned Information.
+
+        getBfdSessionLearnedInfo(Arg2=list, async_operation=bool)list
+        -------------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the learned information corresponding to trigger data.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getBfdSessionLearnedInfo", payload=payload, response_object=None
         )
 
     def GetPeriodicOrContLearnedInfo(self, *args, **kwargs):
@@ -687,6 +884,30 @@ class Srv6OamDestination(Base):
             "sendTraceRouteRequest", payload=payload, response_object=None
         )
 
+    def StartBfd(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the startBfd operation on the server.
+
+        Trigger to start sending BFD packets.
+
+        startBfd(Arg2=list, async_operation=bool)list
+        ---------------------------------------------
+        - Arg2 (list(number)): List of indices into the learned information corresponding to trigger data.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("startBfd", payload=payload, response_object=None)
+
     def StartSbfd(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
         """Executes the startSbfd operation on the server.
@@ -710,6 +931,30 @@ class Srv6OamDestination(Base):
         for item in kwargs.items():
             payload[item[0]] = item[1]
         return self._execute("startSbfd", payload=payload, response_object=None)
+
+    def StopBfd(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the stopBfd operation on the server.
+
+        Trigger to stop sending BFD packets.
+
+        stopBfd(Arg2=list, async_operation=bool)list
+        --------------------------------------------
+        - Arg2 (list(number)): List of indices into the learned information corresponding to trigger data.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stopBfd", payload=payload, response_object=None)
 
     def StopPing(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -764,7 +1009,18 @@ class Srv6OamDestination(Base):
         PortNames=None,
         Active=None,
         AutoGenSegmentLeftValue=None,
+        BfdDiscriminator=None,
+        BfdEchoInterval=None,
+        BfdEnCtrlPlaneIndependent=None,
+        BfdEnPeerDiscriminatorLearned=None,
+        BfdHopLimit=None,
+        BfdMinRxInterval=None,
+        BfdMode=None,
+        BfdPeerDiscriminator=None,
+        BfdTimeoutMultiplier=None,
+        BfdTxInterval=None,
         EnReducedSRH=None,
+        EnableBfd=None,
         EnableSBfdInitiator=None,
         MaxTtlForTR=None,
         MyDiscriminator=None,
@@ -792,7 +1048,18 @@ class Srv6OamDestination(Base):
         - PortNames (str): optional regex of port names
         - Active (str): optional regex of active
         - AutoGenSegmentLeftValue (str): optional regex of autoGenSegmentLeftValue
+        - BfdDiscriminator (str): optional regex of bfdDiscriminator
+        - BfdEchoInterval (str): optional regex of bfdEchoInterval
+        - BfdEnCtrlPlaneIndependent (str): optional regex of bfdEnCtrlPlaneIndependent
+        - BfdEnPeerDiscriminatorLearned (str): optional regex of bfdEnPeerDiscriminatorLearned
+        - BfdHopLimit (str): optional regex of bfdHopLimit
+        - BfdMinRxInterval (str): optional regex of bfdMinRxInterval
+        - BfdMode (str): optional regex of bfdMode
+        - BfdPeerDiscriminator (str): optional regex of bfdPeerDiscriminator
+        - BfdTimeoutMultiplier (str): optional regex of bfdTimeoutMultiplier
+        - BfdTxInterval (str): optional regex of bfdTxInterval
         - EnReducedSRH (str): optional regex of enReducedSRH
+        - EnableBfd (str): optional regex of enableBfd
         - EnableSBfdInitiator (str): optional regex of enableSBfdInitiator
         - MaxTtlForTR (str): optional regex of maxTtlForTR
         - MyDiscriminator (str): optional regex of myDiscriminator

@@ -52,7 +52,7 @@ class JoinLeaveMulticastGroupRange(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/globals/.../igmpGroupRange): Reference to the multicast group range from the global settings
+        - str(None | /api/v1/sessions/1/ixnetwork/globals/protocolStack/igmpGlobals/igmpGroupRange): Reference to the multicast group range from the global settings
         """
         return self._get_attribute(self._SDM_ATT_MAP["GroupRange"])
 
@@ -92,7 +92,7 @@ class JoinLeaveMulticastGroupRange(Base):
 
         Args
         ----
-        - GroupRange (str(None | /api/v1/sessions/1/ixnetwork/globals/.../igmpGroupRange)): Reference to the multicast group range from the global settings
+        - GroupRange (str(None | /api/v1/sessions/1/ixnetwork/globals/protocolStack/igmpGlobals/igmpGroupRange)): Reference to the multicast group range from the global settings
         - SkipInTraffic (bool): If true, the associated groupRange will not participate in traffic as endpoint
 
         Raises
@@ -107,7 +107,7 @@ class JoinLeaveMulticastGroupRange(Base):
 
         Args
         ----
-        - GroupRange (str(None | /api/v1/sessions/1/ixnetwork/globals/.../igmpGroupRange)): Reference to the multicast group range from the global settings
+        - GroupRange (str(None | /api/v1/sessions/1/ixnetwork/globals/protocolStack/igmpGlobals/igmpGroupRange)): Reference to the multicast group range from the global settings
         - SkipInTraffic (bool): If true, the associated groupRange will not participate in traffic as endpoint
 
         Returns
@@ -140,7 +140,7 @@ class JoinLeaveMulticastGroupRange(Base):
 
         Args
         ----
-        - GroupRange (str(None | /api/v1/sessions/1/ixnetwork/globals/.../igmpGroupRange)): Reference to the multicast group range from the global settings
+        - GroupRange (str(None | /api/v1/sessions/1/ixnetwork/globals/protocolStack/igmpGlobals/igmpGroupRange)): Reference to the multicast group range from the global settings
         - ObjectId (str): Unique identifier for this object
         - SkipInTraffic (bool): If true, the associated groupRange will not participate in traffic as endpoint
 

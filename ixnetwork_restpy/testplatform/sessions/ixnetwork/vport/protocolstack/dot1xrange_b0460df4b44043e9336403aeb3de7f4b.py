@@ -168,7 +168,7 @@ class Dot1xRange(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/globals/.../nacSequence): Nac Sequence used by this range.
+        - str(None | /api/v1/sessions/1/ixnetwork/globals/protocolStack/dot1xGlobals/nacSettings/nacSequence): Nac Sequence used by this range.
         """
         return self._get_attribute(self._SDM_ATT_MAP["NacSequence"])
 
@@ -290,7 +290,7 @@ class Dot1xRange(Base):
         - HostAuthMode (str): Machine Authentification Method.
         - HostName (str): The MachineName used to authentificate the port.
         - HostPassword (str): The MachinePassword used to authentificate the port.
-        - NacSequence (str(None | /api/v1/sessions/1/ixnetwork/globals/.../nacSequence)): Nac Sequence used by this range.
+        - NacSequence (str(None | /api/v1/sessions/1/ixnetwork/globals/protocolStack/dot1xGlobals/nacSettings/nacSequence)): Nac Sequence used by this range.
         - Name (str): Name of range
         - Protocol (str): Authentification Protocol.
         - UserName (str): The UserName used to authentificate the port.
@@ -331,7 +331,7 @@ class Dot1xRange(Base):
         - HostAuthMode (str): Machine Authentification Method.
         - HostName (str): The MachineName used to authentificate the port.
         - HostPassword (str): The MachinePassword used to authentificate the port.
-        - NacSequence (str(None | /api/v1/sessions/1/ixnetwork/globals/.../nacSequence)): Nac Sequence used by this range.
+        - NacSequence (str(None | /api/v1/sessions/1/ixnetwork/globals/protocolStack/dot1xGlobals/nacSettings/nacSequence)): Nac Sequence used by this range.
         - Name (str): Name of range
         - Protocol (str): Authentification Protocol.
         - UserName (str): The UserName used to authentificate the port.
@@ -391,7 +391,7 @@ class Dot1xRange(Base):
         - HostAuthMode (str): Machine Authentification Method.
         - HostName (str): The MachineName used to authentificate the port.
         - HostPassword (str): The MachinePassword used to authentificate the port.
-        - NacSequence (str(None | /api/v1/sessions/1/ixnetwork/globals/.../nacSequence)): Nac Sequence used by this range.
+        - NacSequence (str(None | /api/v1/sessions/1/ixnetwork/globals/protocolStack/dot1xGlobals/nacSettings/nacSequence)): Nac Sequence used by this range.
         - Name (str): Name of range
         - ObjectId (str): Unique identifier for this object
         - Protocol (str): Authentification Protocol.

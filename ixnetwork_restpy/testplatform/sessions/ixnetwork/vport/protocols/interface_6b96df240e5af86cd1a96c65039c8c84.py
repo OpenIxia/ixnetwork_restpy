@@ -381,7 +381,7 @@ class Interface(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface): This signifies the interfaces that are associated with the selected interface type.Object references are:
+        - str(None | /api/v1/sessions/1/ixnetwork/vport/interface): This signifies the interfaces that are associated with the selected interface type.Object references are:
         """
         return self._get_attribute(self._SDM_ATT_MAP["Interfaces"])
 
@@ -549,7 +549,7 @@ class Interface(Base):
         - FlapTxIntervals (number): This signifies the number of seconds between route flaps for BFD. A value of zero means no flapping.
         - IncludePadTlv (bool): If true, includes Pad TLV in triggered ping.
         - IncludeVendorEnterpriseNumberTlv (bool): If true, includes the TLV number of the vendor, in triggered ping.
-        - Interfaces (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface)): This signifies the interfaces that are associated with the selected interface type.Object references are:
+        - Interfaces (str(None | /api/v1/sessions/1/ixnetwork/vport/interface)): This signifies the interfaces that are associated with the selected interface type.Object references are:
         - MinRxInterval (number): This signifies the minimum interval, in milliseconds, between received BFD Control packets that this interface is capable of supporting.
         - Multiplier (number): This signifies the negotiated transmit interval, multiplied by this value, provides the detection time for the interface.
         - PadTlvFirstOctet (str(dropPadTlvFromReply | copyPadTlvToReply)): This signifies the selection of the first octate of the Pad TLV. Possible values include:
@@ -618,7 +618,7 @@ class Interface(Base):
         - FlapTxIntervals (number): This signifies the number of seconds between route flaps for BFD. A value of zero means no flapping.
         - IncludePadTlv (bool): If true, includes Pad TLV in triggered ping.
         - IncludeVendorEnterpriseNumberTlv (bool): If true, includes the TLV number of the vendor, in triggered ping.
-        - Interfaces (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface)): This signifies the interfaces that are associated with the selected interface type.Object references are:
+        - Interfaces (str(None | /api/v1/sessions/1/ixnetwork/vport/interface)): This signifies the interfaces that are associated with the selected interface type.Object references are:
         - MinRxInterval (number): This signifies the minimum interval, in milliseconds, between received BFD Control packets that this interface is capable of supporting.
         - Multiplier (number): This signifies the negotiated transmit interval, multiplied by this value, provides the detection time for the interface.
         - PadTlvFirstOctet (str(dropPadTlvFromReply | copyPadTlvToReply)): This signifies the selection of the first octate of the Pad TLV. Possible values include:
@@ -705,7 +705,7 @@ class Interface(Base):
         - FlapTxIntervals (number): This signifies the number of seconds between route flaps for BFD. A value of zero means no flapping.
         - IncludePadTlv (bool): If true, includes Pad TLV in triggered ping.
         - IncludeVendorEnterpriseNumberTlv (bool): If true, includes the TLV number of the vendor, in triggered ping.
-        - Interfaces (str(None | /api/v1/sessions/1/ixnetwork/vport/.../interface)): This signifies the interfaces that are associated with the selected interface type.Object references are:
+        - Interfaces (str(None | /api/v1/sessions/1/ixnetwork/vport/interface)): This signifies the interfaces that are associated with the selected interface type.Object references are:
         - MinRxInterval (number): This signifies the minimum interval, in milliseconds, between received BFD Control packets that this interface is capable of supporting.
         - Multiplier (number): This signifies the negotiated transmit interval, multiplied by this value, provides the detection time for the interface.
         - PadTlvFirstOctet (str(dropPadTlvFromReply | copyPadTlvToReply)): This signifies the selection of the first octate of the Pad TLV. Possible values include:
