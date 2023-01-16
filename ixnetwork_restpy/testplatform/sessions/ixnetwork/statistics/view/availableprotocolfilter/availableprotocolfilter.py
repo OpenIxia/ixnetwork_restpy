@@ -49,7 +49,7 @@ class AvailableProtocolFilter(Base):
         """
         Returns
         -------
-        - str: The unique identifier of the object.
+        - str: The unique identifier of the protocol filter object.
         """
         return self._get_attribute(self._SDM_ATT_MAP["Name"])
 
@@ -76,7 +76,7 @@ class AvailableProtocolFilter(Base):
 
         Args
         ----
-        - Name (str): The unique identifier of the object.
+        - Name (str): The unique identifier of the protocol filter object.
 
         Returns
         -------

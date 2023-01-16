@@ -79,7 +79,9 @@ class Ports(Base):
             "krakenTwoByOneHundredGigFanOut",
             "krakenFourByFiftyGigFanOut",
             "aresOneOneByFourHundredGigNonFanOut",
+            "aresOneOneByFourHundredGigMacSecNonFanOut",
             "aresOneTwoByTwoHundredGigFanOut",
+            "aresOneTwoByTwoHundredGigMacSecFanOut",
             "aresOneFourByOneHundredGigFanOut",
             "aresOneFourByOneHundredGigMacSecFanOut",
             "aresOneEightByFiftyGigFanOut",
@@ -92,6 +94,7 @@ class Ports(Base):
             "novus5GOneByTwentyFiveGigNonFanOut",
             "novus5GOneByFiftyGigNonFanOut",
             "novus5GOneByHundredGigNonFanOut",
+            "novus5GOneByHundredGigNonFanOutHighStream",
             "starTwoByFourHundredGigNonFannedOutPAM4",
             "starFourByTwoHundredGigFannedOutPAM4",
             "starEightByHundredGigFannedOutPAM4",
@@ -101,11 +104,32 @@ class Ports(Base):
             "starFourByFortyGigFannedOutNRZ",
             "starSixteenByTwentyFiveGigFannedOutNRZ",
             "starSixteenByTenGigFannedOutNRZ",
+            "starFourByHundredGigFannedOutPAM4HalfDensityHighStream",
+            "starEightByFiftyGigFannedOutPAM4HalfDensityHighStream",
+            "starEightByTwentyFiveGigFannedOutNRZHalfDensityHighStream",
+            "starEightByTenGigFannedOutNRZHalfDensityHighStream",
             "novusHundredGigNonFanOutHighStream",
             "novusFourByTwentyFiveGigNonFanOutHighStream",
             "novusTwoByFiftyGigNonFanOutHighStream",
             "novusOneByFortyGigNonFanOutHighStream",
             "novusFourByTenGigNonFanOutHighStream",
+            "ravenEightByHundredGigFannedOutPAM4",
+            "ravenFourByTwoHundredGigFannedOutPAM4",
+            "ravenTwoByFourHundredGigFannedOutPAM4",
+            "ravenOneByEightHundredGigNonFannedOutPAM4",
+            "aresOneEightHundredQddCEightByHundredGigFannedOutPAM4",
+            "aresOneEightHundredQddCFourByTwoHundredGigFannedOutPAM4",
+            "aresOneEightHundredQddCTwoByFourHundredGigFannedOutPAM4",
+            "aresOneEightHundredQddCOneByEightHundredGigNonFannedOutPAM4",
+            "rangerHundredGig",
+            "rangerFiftyGig",
+            "rangerFourtyGig",
+            "rangerTwentyFiveGig",
+            "rangerTenGig",
+            "aresOneEightHundredOsfpCEightByHundredGigFannedOutPAM4",
+            "aresOneEightHundredOsfpCFourByTwoHundredGigFannedOutPAM4",
+            "aresOneEightHundredOsfpCTwoByFourHundredGigFannedOutPAM4",
+            "aresOneEightHundredOsfpCOneByEightHundredGigNonFannedOutPAM4",
             "notApplicable",
         ],
     }
@@ -119,7 +143,7 @@ class Ports(Base):
         """
         Returns
         -------
-        - str:
+        - str: Port description.
         """
         return self._get_attribute(self._SDM_ATT_MAP["Description"])
 
@@ -129,7 +153,7 @@ class Ports(Base):
         """
         Returns
         -------
-        - bool:
+        - bool: Is port ownership with current user.
         """
         return self._get_attribute(self._SDM_ATT_MAP["IsAvailable"])
 
@@ -139,7 +163,7 @@ class Ports(Base):
         """
         Returns
         -------
-        - bool:
+        - bool: Is port in transition, being connected or released.
         """
         return self._get_attribute(self._SDM_ATT_MAP["IsBusy"])
 
@@ -149,7 +173,7 @@ class Ports(Base):
         """
         Returns
         -------
-        - bool:
+        - bool: Is port in link up state.
         """
         return self._get_attribute(self._SDM_ATT_MAP["IsLinkUp"])
 
@@ -159,7 +183,7 @@ class Ports(Base):
         """
         Returns
         -------
-        - str:
+        - str: Connecton information of this port. When location is assigned IxNetwork will try to connect to the device if the device is not connected.
         """
         return self._get_attribute(self._SDM_ATT_MAP["Location"])
 
@@ -169,7 +193,7 @@ class Ports(Base):
         """
         Returns
         -------
-        - str:
+        - str: Port owner.
         """
         return self._get_attribute(self._SDM_ATT_MAP["Owner"])
 
@@ -229,7 +253,7 @@ class Ports(Base):
         """
         Returns
         -------
-        - str(normal | tenGig | fortyGig | singleMode | dualMode | hundredGigNonFanOut | fortyGigFanOut | threeByTenGigFanOut | eightByTenGigFanOut | fourByTwentyFiveGigNonFanOut | twoByTwentyFiveGigNonFanOut | oneByFiftyGigNonFanOut | fortyGigNonFanOut | oneByTenGigFanOut | fourByTenGigFanOut | incompatibleMode | hundredGigCapturePlayback | fortyGigCapturePlayback | novusHundredGigNonFanOut | novusFourByTwentyFiveGigNonFanOut | novusTwoByFiftyGigNonFanOut | novusOneByFortyGigNonFanOut | novusFourByTenGigNonFanOut | krakenOneByFourHundredGigNonFanOut | krakenOneByTwoHundredGigNonFanOut | krakenTwoByOneHundredGigFanOut | krakenFourByFiftyGigFanOut | aresOneOneByFourHundredGigNonFanOut | aresOneTwoByTwoHundredGigFanOut | aresOneFourByOneHundredGigFanOut | aresOneFourByOneHundredGigMacSecFanOut | aresOneEightByFiftyGigFanOut | uhdOneHundredEightByHundredGigNonFanOut | uhdOneHundredEightByFortyGigNonFanOut | uhdOneHundredSixteenByFiftyGigFanOut | uhdOneHundredThirtyTwoByTwentyFiveGigFanOut | uhdOneHundredThirtyTwoByTenGigFanOut | novus5GOneByTenGigNonFanOut | novus5GOneByTwentyFiveGigNonFanOut | novus5GOneByFiftyGigNonFanOut | novus5GOneByHundredGigNonFanOut | starTwoByFourHundredGigNonFannedOutPAM4 | starFourByTwoHundredGigFannedOutPAM4 | starEightByHundredGigFannedOutPAM4 | starFourByHundredGigFannedOutNRZ | starSixteenByFiftyGigFannedOutPAM4 | starEightByFiftyGigFannedOutNRZ | starFourByFortyGigFannedOutNRZ | starSixteenByTwentyFiveGigFannedOutNRZ | starSixteenByTenGigFannedOutNRZ | novusHundredGigNonFanOutHighStream | novusFourByTwentyFiveGigNonFanOutHighStream | novusTwoByFiftyGigNonFanOutHighStream | novusOneByFortyGigNonFanOutHighStream | novusFourByTenGigNonFanOutHighStream | notApplicable):
+        - str(normal | tenGig | fortyGig | singleMode | dualMode | hundredGigNonFanOut | fortyGigFanOut | threeByTenGigFanOut | eightByTenGigFanOut | fourByTwentyFiveGigNonFanOut | twoByTwentyFiveGigNonFanOut | oneByFiftyGigNonFanOut | fortyGigNonFanOut | oneByTenGigFanOut | fourByTenGigFanOut | incompatibleMode | hundredGigCapturePlayback | fortyGigCapturePlayback | novusHundredGigNonFanOut | novusFourByTwentyFiveGigNonFanOut | novusTwoByFiftyGigNonFanOut | novusOneByFortyGigNonFanOut | novusFourByTenGigNonFanOut | krakenOneByFourHundredGigNonFanOut | krakenOneByTwoHundredGigNonFanOut | krakenTwoByOneHundredGigFanOut | krakenFourByFiftyGigFanOut | aresOneOneByFourHundredGigNonFanOut | aresOneOneByFourHundredGigMacSecNonFanOut | aresOneTwoByTwoHundredGigFanOut | aresOneTwoByTwoHundredGigMacSecFanOut | aresOneFourByOneHundredGigFanOut | aresOneFourByOneHundredGigMacSecFanOut | aresOneEightByFiftyGigFanOut | uhdOneHundredEightByHundredGigNonFanOut | uhdOneHundredEightByFortyGigNonFanOut | uhdOneHundredSixteenByFiftyGigFanOut | uhdOneHundredThirtyTwoByTwentyFiveGigFanOut | uhdOneHundredThirtyTwoByTenGigFanOut | novus5GOneByTenGigNonFanOut | novus5GOneByTwentyFiveGigNonFanOut | novus5GOneByFiftyGigNonFanOut | novus5GOneByHundredGigNonFanOut | novus5GOneByHundredGigNonFanOutHighStream | starTwoByFourHundredGigNonFannedOutPAM4 | starFourByTwoHundredGigFannedOutPAM4 | starEightByHundredGigFannedOutPAM4 | starFourByHundredGigFannedOutNRZ | starSixteenByFiftyGigFannedOutPAM4 | starEightByFiftyGigFannedOutNRZ | starFourByFortyGigFannedOutNRZ | starSixteenByTwentyFiveGigFannedOutNRZ | starSixteenByTenGigFannedOutNRZ | starFourByHundredGigFannedOutPAM4HalfDensityHighStream | starEightByFiftyGigFannedOutPAM4HalfDensityHighStream | starEightByTwentyFiveGigFannedOutNRZHalfDensityHighStream | starEightByTenGigFannedOutNRZHalfDensityHighStream | novusHundredGigNonFanOutHighStream | novusFourByTwentyFiveGigNonFanOutHighStream | novusTwoByFiftyGigNonFanOutHighStream | novusOneByFortyGigNonFanOutHighStream | novusFourByTenGigNonFanOutHighStream | ravenEightByHundredGigFannedOutPAM4 | ravenFourByTwoHundredGigFannedOutPAM4 | ravenTwoByFourHundredGigFannedOutPAM4 | ravenOneByEightHundredGigNonFannedOutPAM4 | aresOneEightHundredQddCEightByHundredGigFannedOutPAM4 | aresOneEightHundredQddCFourByTwoHundredGigFannedOutPAM4 | aresOneEightHundredQddCTwoByFourHundredGigFannedOutPAM4 | aresOneEightHundredQddCOneByEightHundredGigNonFannedOutPAM4 | rangerHundredGig | rangerFiftyGig | rangerFourtyGig | rangerTwentyFiveGig | rangerTenGig | aresOneEightHundredOsfpCEightByHundredGigFannedOutPAM4 | aresOneEightHundredOsfpCFourByTwoHundredGigFannedOutPAM4 | aresOneEightHundredOsfpCTwoByFourHundredGigFannedOutPAM4 | aresOneEightHundredOsfpCOneByEightHundredGigNonFannedOutPAM4 | notApplicable): Gets the current port resource group mode.
         """
         return self._get_attribute(self._SDM_ATT_MAP["ResourceMode"])
 
@@ -270,18 +294,18 @@ class Ports(Base):
 
         Args
         ----
-        - Description (str):
-        - IsAvailable (bool):
-        - IsBusy (bool):
-        - IsLinkUp (bool):
-        - Location (str):
-        - Owner (str):
+        - Description (str): Port description.
+        - IsAvailable (bool): Is port ownership with current user.
+        - IsBusy (bool): Is port in transition, being connected or released.
+        - IsLinkUp (bool): Is port in link up state.
+        - Location (str): Connecton information of this port. When location is assigned IxNetwork will try to connect to the device if the device is not connected.
+        - Owner (str): Port owner.
         - PeerPortDescription (str): Discovered peer port description.
         - PeerPortId (str): The port ID of the discovered peer port.
         - PeerSystemIp (str): The IP address of the discovered peer system.
         - PeerSystemMac (str): The MAC address of the discovered peer system.
         - PeerSystemName (str): The system name of the discovered peer.
-        - ResourceMode (str(normal | tenGig | fortyGig | singleMode | dualMode | hundredGigNonFanOut | fortyGigFanOut | threeByTenGigFanOut | eightByTenGigFanOut | fourByTwentyFiveGigNonFanOut | twoByTwentyFiveGigNonFanOut | oneByFiftyGigNonFanOut | fortyGigNonFanOut | oneByTenGigFanOut | fourByTenGigFanOut | incompatibleMode | hundredGigCapturePlayback | fortyGigCapturePlayback | novusHundredGigNonFanOut | novusFourByTwentyFiveGigNonFanOut | novusTwoByFiftyGigNonFanOut | novusOneByFortyGigNonFanOut | novusFourByTenGigNonFanOut | krakenOneByFourHundredGigNonFanOut | krakenOneByTwoHundredGigNonFanOut | krakenTwoByOneHundredGigFanOut | krakenFourByFiftyGigFanOut | aresOneOneByFourHundredGigNonFanOut | aresOneTwoByTwoHundredGigFanOut | aresOneFourByOneHundredGigFanOut | aresOneFourByOneHundredGigMacSecFanOut | aresOneEightByFiftyGigFanOut | uhdOneHundredEightByHundredGigNonFanOut | uhdOneHundredEightByFortyGigNonFanOut | uhdOneHundredSixteenByFiftyGigFanOut | uhdOneHundredThirtyTwoByTwentyFiveGigFanOut | uhdOneHundredThirtyTwoByTenGigFanOut | novus5GOneByTenGigNonFanOut | novus5GOneByTwentyFiveGigNonFanOut | novus5GOneByFiftyGigNonFanOut | novus5GOneByHundredGigNonFanOut | starTwoByFourHundredGigNonFannedOutPAM4 | starFourByTwoHundredGigFannedOutPAM4 | starEightByHundredGigFannedOutPAM4 | starFourByHundredGigFannedOutNRZ | starSixteenByFiftyGigFannedOutPAM4 | starEightByFiftyGigFannedOutNRZ | starFourByFortyGigFannedOutNRZ | starSixteenByTwentyFiveGigFannedOutNRZ | starSixteenByTenGigFannedOutNRZ | novusHundredGigNonFanOutHighStream | novusFourByTwentyFiveGigNonFanOutHighStream | novusTwoByFiftyGigNonFanOutHighStream | novusOneByFortyGigNonFanOutHighStream | novusFourByTenGigNonFanOutHighStream | notApplicable)):
+        - ResourceMode (str(normal | tenGig | fortyGig | singleMode | dualMode | hundredGigNonFanOut | fortyGigFanOut | threeByTenGigFanOut | eightByTenGigFanOut | fourByTwentyFiveGigNonFanOut | twoByTwentyFiveGigNonFanOut | oneByFiftyGigNonFanOut | fortyGigNonFanOut | oneByTenGigFanOut | fourByTenGigFanOut | incompatibleMode | hundredGigCapturePlayback | fortyGigCapturePlayback | novusHundredGigNonFanOut | novusFourByTwentyFiveGigNonFanOut | novusTwoByFiftyGigNonFanOut | novusOneByFortyGigNonFanOut | novusFourByTenGigNonFanOut | krakenOneByFourHundredGigNonFanOut | krakenOneByTwoHundredGigNonFanOut | krakenTwoByOneHundredGigFanOut | krakenFourByFiftyGigFanOut | aresOneOneByFourHundredGigNonFanOut | aresOneOneByFourHundredGigMacSecNonFanOut | aresOneTwoByTwoHundredGigFanOut | aresOneTwoByTwoHundredGigMacSecFanOut | aresOneFourByOneHundredGigFanOut | aresOneFourByOneHundredGigMacSecFanOut | aresOneEightByFiftyGigFanOut | uhdOneHundredEightByHundredGigNonFanOut | uhdOneHundredEightByFortyGigNonFanOut | uhdOneHundredSixteenByFiftyGigFanOut | uhdOneHundredThirtyTwoByTwentyFiveGigFanOut | uhdOneHundredThirtyTwoByTenGigFanOut | novus5GOneByTenGigNonFanOut | novus5GOneByTwentyFiveGigNonFanOut | novus5GOneByFiftyGigNonFanOut | novus5GOneByHundredGigNonFanOut | novus5GOneByHundredGigNonFanOutHighStream | starTwoByFourHundredGigNonFannedOutPAM4 | starFourByTwoHundredGigFannedOutPAM4 | starEightByHundredGigFannedOutPAM4 | starFourByHundredGigFannedOutNRZ | starSixteenByFiftyGigFannedOutPAM4 | starEightByFiftyGigFannedOutNRZ | starFourByFortyGigFannedOutNRZ | starSixteenByTwentyFiveGigFannedOutNRZ | starSixteenByTenGigFannedOutNRZ | starFourByHundredGigFannedOutPAM4HalfDensityHighStream | starEightByFiftyGigFannedOutPAM4HalfDensityHighStream | starEightByTwentyFiveGigFannedOutNRZHalfDensityHighStream | starEightByTenGigFannedOutNRZHalfDensityHighStream | novusHundredGigNonFanOutHighStream | novusFourByTwentyFiveGigNonFanOutHighStream | novusTwoByFiftyGigNonFanOutHighStream | novusOneByFortyGigNonFanOutHighStream | novusFourByTenGigNonFanOutHighStream | ravenEightByHundredGigFannedOutPAM4 | ravenFourByTwoHundredGigFannedOutPAM4 | ravenTwoByFourHundredGigFannedOutPAM4 | ravenOneByEightHundredGigNonFannedOutPAM4 | aresOneEightHundredQddCEightByHundredGigFannedOutPAM4 | aresOneEightHundredQddCFourByTwoHundredGigFannedOutPAM4 | aresOneEightHundredQddCTwoByFourHundredGigFannedOutPAM4 | aresOneEightHundredQddCOneByEightHundredGigNonFannedOutPAM4 | rangerHundredGig | rangerFiftyGig | rangerFourtyGig | rangerTwentyFiveGig | rangerTenGig | aresOneEightHundredOsfpCEightByHundredGigFannedOutPAM4 | aresOneEightHundredOsfpCFourByTwoHundredGigFannedOutPAM4 | aresOneEightHundredOsfpCTwoByFourHundredGigFannedOutPAM4 | aresOneEightHundredOsfpCOneByEightHundredGigNonFannedOutPAM4 | notApplicable)): Gets the current port resource group mode.
 
         Returns
         -------

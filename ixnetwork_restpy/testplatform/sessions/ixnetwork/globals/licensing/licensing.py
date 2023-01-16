@@ -35,16 +35,62 @@ class Licensing(Base):
     __slots__ = ()
     _SDM_NAME = "licensing"
     _SDM_ATT_MAP = {
+        "AvailableTierOptions": "availableTierOptions",
+        "HwMode": "hwMode",
+        "HwTier": "hwTier",
         "LicensingServers": "licensingServers",
         "Mode": "mode",
         "Tier": "tier",
+        "VmMode": "vmMode",
+        "VmTier": "vmTier",
     }
     _SDM_ENUM_MAP = {
+        "hwMode": ["perpetual", "subscription"],
         "mode": ["aggregation", "mixed", "perpetual", "subscription"],
+        "vmMode": ["aggregation", "perpetual", "subscription"],
     }
 
     def __init__(self, parent, list_op=False):
         super(Licensing, self).__init__(parent, list_op)
+
+    @property
+    def AvailableTierOptions(self):
+        """
+        Returns
+        -------
+        - list(dict(arg1:str,arg2:list[str])): Gets list of available tier options for applicable license modes
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["AvailableTierOptions"])
+
+    @property
+    def HwMode(self):
+        # type: () -> str
+        """
+        Returns
+        -------
+        - str(perpetual | subscription): Set license mode to either perpetual mode or subscription mode. This setting is applicable for hardware ports only.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["HwMode"])
+
+    @HwMode.setter
+    def HwMode(self, value):
+        # type: (str) -> None
+        self._set_attribute(self._SDM_ATT_MAP["HwMode"], value)
+
+    @property
+    def HwTier(self):
+        # type: () -> str
+        """
+        Returns
+        -------
+        - str: Set or get the tier level, by using the tier ID. This setting is applicable for hardware ports only.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["HwTier"])
+
+    @HwTier.setter
+    def HwTier(self, value):
+        # type: (str) -> None
+        self._set_attribute(self._SDM_ATT_MAP["HwTier"], value)
 
     @property
     def LicensingServers(self):
@@ -64,7 +110,7 @@ class Licensing(Base):
     @property
     def Mode(self):
         # type: () -> str
-        """
+        """DEPRECATED
         Returns
         -------
         - str(aggregation | mixed | perpetual | subscription): Set license mode to either of perpetual,subscription,mixed or aggregation
@@ -79,7 +125,7 @@ class Licensing(Base):
     @property
     def Tier(self):
         # type: () -> str
-        """
+        """DEPRECATED
         Returns
         -------
         - str: set or get the tier level, using the tier ID.
@@ -91,15 +137,58 @@ class Licensing(Base):
         # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP["Tier"], value)
 
-    def update(self, LicensingServers=None, Mode=None, Tier=None):
-        # type: (List[str], str, str) -> Licensing
+    @property
+    def VmMode(self):
+        # type: () -> str
+        """
+        Returns
+        -------
+        - str(aggregation | perpetual | subscription): Set license mode to either perpetual mode, subscription mode or aggregation mode. This setting is applicable for virtual ports only.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["VmMode"])
+
+    @VmMode.setter
+    def VmMode(self, value):
+        # type: (str) -> None
+        self._set_attribute(self._SDM_ATT_MAP["VmMode"], value)
+
+    @property
+    def VmTier(self):
+        # type: () -> str
+        """
+        Returns
+        -------
+        - str: Set or get the tier level, by using the tier ID. This setting is applicable for virtual ports only.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["VmTier"])
+
+    @VmTier.setter
+    def VmTier(self, value):
+        # type: (str) -> None
+        self._set_attribute(self._SDM_ATT_MAP["VmTier"], value)
+
+    def update(
+        self,
+        HwMode=None,
+        HwTier=None,
+        LicensingServers=None,
+        Mode=None,
+        Tier=None,
+        VmMode=None,
+        VmTier=None,
+    ):
+        # type: (str, str, List[str], str, str, str, str) -> Licensing
         """Updates licensing resource on the server.
 
         Args
         ----
+        - HwMode (str(perpetual | subscription)): Set license mode to either perpetual mode or subscription mode. This setting is applicable for hardware ports only.
+        - HwTier (str): Set or get the tier level, by using the tier ID. This setting is applicable for hardware ports only.
         - LicensingServers (list(str)): List of license servers to use
         - Mode (str(aggregation | mixed | perpetual | subscription)): Set license mode to either of perpetual,subscription,mixed or aggregation
         - Tier (str): set or get the tier level, using the tier ID.
+        - VmMode (str(aggregation | perpetual | subscription)): Set license mode to either perpetual mode, subscription mode or aggregation mode. This setting is applicable for virtual ports only.
+        - VmTier (str): Set or get the tier level, by using the tier ID. This setting is applicable for virtual ports only.
 
         Raises
         ------
@@ -107,8 +196,17 @@ class Licensing(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, LicensingServers=None, Mode=None, Tier=None):
-        # type: (List[str], str, str) -> Licensing
+    def find(
+        self,
+        AvailableTierOptions=None,
+        HwMode=None,
+        HwTier=None,
+        LicensingServers=None,
+        Mode=None,
+        Tier=None,
+        VmMode=None,
+        VmTier=None,
+    ):
         """Finds and retrieves licensing resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve licensing resources from the server.
@@ -117,9 +215,14 @@ class Licensing(Base):
 
         Args
         ----
+        - AvailableTierOptions (list(dict(arg1:str,arg2:list[str]))): Gets list of available tier options for applicable license modes
+        - HwMode (str(perpetual | subscription)): Set license mode to either perpetual mode or subscription mode. This setting is applicable for hardware ports only.
+        - HwTier (str): Set or get the tier level, by using the tier ID. This setting is applicable for hardware ports only.
         - LicensingServers (list(str)): List of license servers to use
         - Mode (str(aggregation | mixed | perpetual | subscription)): Set license mode to either of perpetual,subscription,mixed or aggregation
         - Tier (str): set or get the tier level, using the tier ID.
+        - VmMode (str(aggregation | perpetual | subscription)): Set license mode to either perpetual mode, subscription mode or aggregation mode. This setting is applicable for virtual ports only.
+        - VmTier (str): Set or get the tier level, by using the tier ID. This setting is applicable for virtual ports only.
 
         Returns
         -------

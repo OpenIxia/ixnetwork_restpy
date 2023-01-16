@@ -28,7 +28,7 @@ if sys.version_info >= (3, 5):
 
 
 class DuCPlane(Base):
-    """ORAN DU C Plane for traffic wizard.
+    """ORAN DU C Plane represents the source endpoint used in traffic wizard which is used to configure control message.
     The DuCPlane class encapsulates a required duCPlane resource which will be retrieved from the server every time the property is accessed.
     """
 

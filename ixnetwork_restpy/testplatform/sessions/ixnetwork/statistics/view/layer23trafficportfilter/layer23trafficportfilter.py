@@ -45,12 +45,32 @@ class Layer23TrafficPortFilter(Base):
         super(Layer23TrafficPortFilter, self).__init__(parent, list_op)
 
     @property
+    def PortFilters(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.layer23trafficportfilter.portfilters.portfilters.PortFilters): An instance of the PortFilters class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.layer23trafficportfilter.portfilters.portfilters import (
+            PortFilters,
+        )
+
+        if len(self._object_properties) > 0:
+            if self._properties.get("PortFilters", None) is not None:
+                return self._properties.get("PortFilters")
+        return PortFilters(self)
+
+    @property
     def PortFilterIds(self):
         # type: () -> List[str]
         """
         Returns
         -------
-        - list(str[None | /api/v1/sessions/1/ixnetwork/statistics/view/availablePortFilter]): Selected port filters from the availablePortFilter list.
+        - list(str[None | /api/v1/sessions/1/ixnetwork/statistics/view/.../availablePortFilter]): Selected port filters from the availablePortFilter list.
         """
         return self._get_attribute(self._SDM_ATT_MAP["PortFilterIds"])
 
@@ -65,7 +85,7 @@ class Layer23TrafficPortFilter(Base):
 
         Args
         ----
-        - PortFilterIds (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/view/availablePortFilter])): Selected port filters from the availablePortFilter list.
+        - PortFilterIds (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/view/.../availablePortFilter])): Selected port filters from the availablePortFilter list.
 
         Raises
         ------
@@ -79,7 +99,7 @@ class Layer23TrafficPortFilter(Base):
 
         Args
         ----
-        - PortFilterIds (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/view/availablePortFilter])): Selected port filters from the availablePortFilter list.
+        - PortFilterIds (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/view/.../availablePortFilter])): Selected port filters from the availablePortFilter list.
 
         Returns
         -------
@@ -111,7 +131,7 @@ class Layer23TrafficPortFilter(Base):
 
         Args
         ----
-        - PortFilterIds (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/view/availablePortFilter])): Selected port filters from the availablePortFilter list.
+        - PortFilterIds (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/view/.../availablePortFilter])): Selected port filters from the availablePortFilter list.
 
         Returns
         -------

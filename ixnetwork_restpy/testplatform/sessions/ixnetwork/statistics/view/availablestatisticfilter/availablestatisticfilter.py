@@ -49,7 +49,7 @@ class AvailableStatisticFilter(Base):
         """
         Returns
         -------
-        - str: Name of the statistic.
+        - str: The reference statistic by which the data will be sorted in created SV.
         """
         return self._get_attribute(self._SDM_ATT_MAP["Caption"])
 
@@ -76,7 +76,7 @@ class AvailableStatisticFilter(Base):
 
         Args
         ----
-        - Caption (str): Name of the statistic.
+        - Caption (str): The reference statistic by which the data will be sorted in created SV.
 
         Returns
         -------

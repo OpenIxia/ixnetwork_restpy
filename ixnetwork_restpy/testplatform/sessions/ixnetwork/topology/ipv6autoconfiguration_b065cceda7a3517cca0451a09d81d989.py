@@ -93,13 +93,13 @@ class Ipv6Autoconfiguration(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv6peer_d1a9d481647a51c783f6ad2bd104f872.BgpIpv6Peer): An instance of the BgpIpv6Peer class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv6peer_cc4b2c56b540aa17ec1d2d616e50cd4b.BgpIpv6Peer): An instance of the BgpIpv6Peer class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv6peer_d1a9d481647a51c783f6ad2bd104f872 import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv6peer_cc4b2c56b540aa17ec1d2d616e50cd4b import (
             BgpIpv6Peer,
         )
 
@@ -107,6 +107,46 @@ class Ipv6Autoconfiguration(Base):
             if self._properties.get("BgpIpv6Peer", None) is not None:
                 return self._properties.get("BgpIpv6Peer")
         return BgpIpv6Peer(self)
+
+    @property
+    def ECpriRe(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ecprire_51f1030cbafd2e567d3b517032a1b011.ECpriRe): An instance of the ECpriRe class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ecprire_51f1030cbafd2e567d3b517032a1b011 import (
+            ECpriRe,
+        )
+
+        if len(self._object_properties) > 0:
+            if self._properties.get("ECpriRe", None) is not None:
+                return self._properties.get("ECpriRe")
+        return ECpriRe(self)
+
+    @property
+    def ECpriRec(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ecprirec_129f1d43f285a4f806ade4e0df814255.ECpriRec): An instance of the ECpriRec class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ecprirec_129f1d43f285a4f806ade4e0df814255 import (
+            ECpriRec,
+        )
+
+        if len(self._object_properties) > 0:
+            if self._properties.get("ECpriRec", None) is not None:
+                return self._properties.get("ECpriRec")
+        return ECpriRec(self)
 
     @property
     def MldHost(self):

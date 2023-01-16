@@ -49,7 +49,7 @@ class InnerGlobalStats(Base):
         """
         Returns
         -------
-        - list(str): NOT DEFINED
+        - list(str): The statistics column caption.
         """
         return self._get_attribute(self._SDM_ATT_MAP["ColumnCaptions"])
 
@@ -59,7 +59,7 @@ class InnerGlobalStats(Base):
         """
         Returns
         -------
-        - list(str): NOT DEFINED
+        - list(str): All statistics values in a row.
         """
         return self._get_attribute(self._SDM_ATT_MAP["RowValues"])
 
@@ -73,8 +73,8 @@ class InnerGlobalStats(Base):
 
         Args
         ----
-        - ColumnCaptions (list(str)): NOT DEFINED
-        - RowValues (list(str)): NOT DEFINED
+        - ColumnCaptions (list(str)): The statistics column caption.
+        - RowValues (list(str)): All statistics values in a row.
 
         Returns
         -------

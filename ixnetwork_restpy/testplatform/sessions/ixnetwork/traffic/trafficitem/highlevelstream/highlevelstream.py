@@ -49,6 +49,7 @@ class HighLevelStream(Base):
         "Name": "name",
         "OverSubscribed": "overSubscribed",
         "Pause": "pause",
+        "PreambleCustomData": "preambleCustomData",
         "PreambleCustomSize": "preambleCustomSize",
         "PreambleFrameSizeMode": "preambleFrameSizeMode",
         "RxPortIds": "rxPortIds",
@@ -61,7 +62,7 @@ class HighLevelStream(Base):
     _SDM_ENUM_MAP = {
         "crc": ["badCrc", "goodCrc"],
         "destinationMacMode": ["arp", "manual"],
-        "preambleFrameSizeMode": ["auto", "custom"],
+        "preambleFrameSizeMode": ["auto", "custom", "customBytes"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -402,6 +403,21 @@ class HighLevelStream(Base):
         self._set_attribute(self._SDM_ATT_MAP["Pause"], value)
 
     @property
+    def PreambleCustomData(self):
+        # type: () -> str
+        """
+        Returns
+        -------
+        - str: Customizes the preamble of the frame. Provide space separated hexadecimal bytes.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["PreambleCustomData"])
+
+    @PreambleCustomData.setter
+    def PreambleCustomData(self, value):
+        # type: (str) -> None
+        self._set_attribute(self._SDM_ATT_MAP["PreambleCustomData"], value)
+
+    @property
     def PreambleCustomSize(self):
         # type: () -> int
         """
@@ -422,7 +438,7 @@ class HighLevelStream(Base):
         """
         Returns
         -------
-        - str(auto | custom): The starting size of the frame.
+        - str(auto | custom | customBytes): The starting size of the frame.
         """
         return self._get_attribute(self._SDM_ATT_MAP["PreambleFrameSizeMode"])
 
@@ -513,13 +529,14 @@ class HighLevelStream(Base):
         Enabled=None,
         Name=None,
         Pause=None,
+        PreambleCustomData=None,
         PreambleCustomSize=None,
         PreambleFrameSizeMode=None,
         RxPortIds=None,
         Suspend=None,
         TxPortId=None,
     ):
-        # type: (str, str, bool, str, bool, int, str, List[str], bool, str) -> HighLevelStream
+        # type: (str, str, bool, str, bool, str, int, str, List[str], bool, str) -> HighLevelStream
         """Updates highLevelStream resource on the server.
 
         Args
@@ -529,8 +546,9 @@ class HighLevelStream(Base):
         - Enabled (bool):
         - Name (str): An alphanumeric string that returns the name of the field.
         - Pause (bool): If true then pause is enabled.
+        - PreambleCustomData (str): Customizes the preamble of the frame. Provide space separated hexadecimal bytes.
         - PreambleCustomSize (number): >Customizes the preamble size of the frame.
-        - PreambleFrameSizeMode (str(auto | custom)): The starting size of the frame.
+        - PreambleFrameSizeMode (str(auto | custom | customBytes)): The starting size of the frame.
         - RxPortIds (list(str[None | /api/v1/sessions/1/ixnetwork/lag | /api/v1/sessions/1/ixnetwork/vport])): A list of virtual ports that are the receiving ports
         - Suspend (bool): Suspends all traffic on this high level stream.
         - TxPortId (str(None | /api/v1/sessions/1/ixnetwork/lag | /api/v1/sessions/1/ixnetwork/vport)): The virtual port that is the transmitting port.
@@ -548,13 +566,14 @@ class HighLevelStream(Base):
         Enabled=None,
         Name=None,
         Pause=None,
+        PreambleCustomData=None,
         PreambleCustomSize=None,
         PreambleFrameSizeMode=None,
         RxPortIds=None,
         Suspend=None,
         TxPortId=None,
     ):
-        # type: (str, str, bool, str, bool, int, str, List[str], bool, str) -> HighLevelStream
+        # type: (str, str, bool, str, bool, str, int, str, List[str], bool, str) -> HighLevelStream
         """Adds a new highLevelStream resource on the json, only valid with batch add utility
 
         Args
@@ -564,8 +583,9 @@ class HighLevelStream(Base):
         - Enabled (bool):
         - Name (str): An alphanumeric string that returns the name of the field.
         - Pause (bool): If true then pause is enabled.
+        - PreambleCustomData (str): Customizes the preamble of the frame. Provide space separated hexadecimal bytes.
         - PreambleCustomSize (number): >Customizes the preamble size of the frame.
-        - PreambleFrameSizeMode (str(auto | custom)): The starting size of the frame.
+        - PreambleFrameSizeMode (str(auto | custom | customBytes)): The starting size of the frame.
         - RxPortIds (list(str[None | /api/v1/sessions/1/ixnetwork/lag | /api/v1/sessions/1/ixnetwork/vport])): A list of virtual ports that are the receiving ports
         - Suspend (bool): Suspends all traffic on this high level stream.
         - TxPortId (str(None | /api/v1/sessions/1/ixnetwork/lag | /api/v1/sessions/1/ixnetwork/vport)): The virtual port that is the transmitting port.
@@ -595,6 +615,7 @@ class HighLevelStream(Base):
         Name=None,
         OverSubscribed=None,
         Pause=None,
+        PreambleCustomData=None,
         PreambleCustomSize=None,
         PreambleFrameSizeMode=None,
         RxPortIds=None,
@@ -625,8 +646,9 @@ class HighLevelStream(Base):
         - Name (str): An alphanumeric string that returns the name of the field.
         - OverSubscribed (bool): If true, the rate is oversubscribed.
         - Pause (bool): If true then pause is enabled.
+        - PreambleCustomData (str): Customizes the preamble of the frame. Provide space separated hexadecimal bytes.
         - PreambleCustomSize (number): >Customizes the preamble size of the frame.
-        - PreambleFrameSizeMode (str(auto | custom)): The starting size of the frame.
+        - PreambleFrameSizeMode (str(auto | custom | customBytes)): The starting size of the frame.
         - RxPortIds (list(str[None | /api/v1/sessions/1/ixnetwork/lag | /api/v1/sessions/1/ixnetwork/vport])): A list of virtual ports that are the receiving ports
         - RxPortNames (list(str)): A list of names from the receiving virtual ports.
         - State (str): (Read only) Denotes the current state of the stream.

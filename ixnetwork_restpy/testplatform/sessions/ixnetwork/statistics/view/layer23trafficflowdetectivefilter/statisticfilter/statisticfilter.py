@@ -79,7 +79,7 @@ class StatisticFilter(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/statistics/view/availableStatisticFilter): Selected statistic filters from the availableStatisticFilter list.
+        - str(None | /api/v1/sessions/1/ixnetwork/statistics/view/.../availableStatisticFilter): Selected statistic filters from the availableStatisticFilter list.
         """
         return self._get_attribute(self._SDM_ATT_MAP["StatisticFilterId"])
 
@@ -94,7 +94,7 @@ class StatisticFilter(Base):
         """
         Returns
         -------
-        - str: Value of statistic to be matched based on operator.
+        - str: Value of the object.
         """
         return self._get_attribute(self._SDM_ATT_MAP["Value"])
 
@@ -110,8 +110,8 @@ class StatisticFilter(Base):
         Args
         ----
         - Operator (str(isAnyOf | isDifferent | isEqual | isEqualOrGreater | isEqualOrSmaller | isGreater | isLike | isNotLike | isSmaller)): The logical operation to be performed.
-        - StatisticFilterId (str(None | /api/v1/sessions/1/ixnetwork/statistics/view/availableStatisticFilter)): Selected statistic filters from the availableStatisticFilter list.
-        - Value (str): Value of statistic to be matched based on operator.
+        - StatisticFilterId (str(None | /api/v1/sessions/1/ixnetwork/statistics/view/.../availableStatisticFilter)): Selected statistic filters from the availableStatisticFilter list.
+        - Value (str): Value of the object.
 
         Raises
         ------
@@ -126,8 +126,8 @@ class StatisticFilter(Base):
         Args
         ----
         - Operator (str(isAnyOf | isDifferent | isEqual | isEqualOrGreater | isEqualOrSmaller | isGreater | isLike | isNotLike | isSmaller)): The logical operation to be performed.
-        - StatisticFilterId (str(None | /api/v1/sessions/1/ixnetwork/statistics/view/availableStatisticFilter)): Selected statistic filters from the availableStatisticFilter list.
-        - Value (str): Value of statistic to be matched based on operator.
+        - StatisticFilterId (str(None | /api/v1/sessions/1/ixnetwork/statistics/view/.../availableStatisticFilter)): Selected statistic filters from the availableStatisticFilter list.
+        - Value (str): Value of the object.
 
         Returns
         -------
@@ -160,8 +160,8 @@ class StatisticFilter(Base):
         Args
         ----
         - Operator (str(isAnyOf | isDifferent | isEqual | isEqualOrGreater | isEqualOrSmaller | isGreater | isLike | isNotLike | isSmaller)): The logical operation to be performed.
-        - StatisticFilterId (str(None | /api/v1/sessions/1/ixnetwork/statistics/view/availableStatisticFilter)): Selected statistic filters from the availableStatisticFilter list.
-        - Value (str): Value of statistic to be matched based on operator.
+        - StatisticFilterId (str(None | /api/v1/sessions/1/ixnetwork/statistics/view/.../availableStatisticFilter)): Selected statistic filters from the availableStatisticFilter list.
+        - Value (str): Value of the object.
 
         Returns
         -------

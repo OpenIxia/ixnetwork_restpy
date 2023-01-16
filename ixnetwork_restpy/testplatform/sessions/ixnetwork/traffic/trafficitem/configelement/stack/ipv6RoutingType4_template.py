@@ -53,9 +53,16 @@ class Ipv6RoutingType4(Base):
         "Sripv6OpaqueContainerTLVTclReserved": "ipv6RoutingType4.segmentRoutingHeader.srhTLVs.sripv6OpaqueContainerTLV.tclReserved-45",
         "Sripv6OpaqueContainerTLVTclFlags": "ipv6RoutingType4.segmentRoutingHeader.srhTLVs.sripv6OpaqueContainerTLV.tclFlags-46",
         "Sripv6OpaqueContainerTLVTclValue": "ipv6RoutingType4.segmentRoutingHeader.srhTLVs.sripv6OpaqueContainerTLV.tclValue-47",
-        "Sripv6PaddingTLVTclType": "ipv6RoutingType4.segmentRoutingHeader.srhTLVs.sripv6PaddingTLV.tclType-48",
-        "Sripv6PaddingTLVTclLength": "ipv6RoutingType4.segmentRoutingHeader.srhTLVs.sripv6PaddingTLV.tclLength-49",
-        "Sripv6PaddingTLVPad": "ipv6RoutingType4.segmentRoutingHeader.srhTLVs.sripv6PaddingTLV.pad-50",
+        "PathTraceTLVTclType": "ipv6RoutingType4.segmentRoutingHeader.srhTLVs.pathTraceTLV.tclType-48",
+        "PathTraceTLVTclLength": "ipv6RoutingType4.segmentRoutingHeader.srhTLVs.pathTraceTLV.tclLength-49",
+        "PathTraceTLVIfId": "ipv6RoutingType4.segmentRoutingHeader.srhTLVs.pathTraceTLV.ifId-50",
+        "PathTraceTLVIfLd": "ipv6RoutingType4.segmentRoutingHeader.srhTLVs.pathTraceTLV.ifLd-51",
+        "PathTraceTLVTimeStamp": "ipv6RoutingType4.segmentRoutingHeader.srhTLVs.pathTraceTLV.timeStamp-52",
+        "PathTraceTLVSessionId": "ipv6RoutingType4.segmentRoutingHeader.srhTLVs.pathTraceTLV.sessionId-53",
+        "PathTraceTLVSequenceNo": "ipv6RoutingType4.segmentRoutingHeader.srhTLVs.pathTraceTLV.sequenceNo-54",
+        "Sripv6PaddingTLVTclType": "ipv6RoutingType4.segmentRoutingHeader.srhTLVs.sripv6PaddingTLV.tclType-55",
+        "Sripv6PaddingTLVTclLength": "ipv6RoutingType4.segmentRoutingHeader.srhTLVs.sripv6PaddingTLV.tclLength-56",
+        "Sripv6PaddingTLVPad": "ipv6RoutingType4.segmentRoutingHeader.srhTLVs.sripv6PaddingTLV.pad-57",
     }
 
     def __init__(self, parent, list_op=False):
@@ -678,6 +685,97 @@ class Ipv6RoutingType4(Base):
         return Multivalue(
             self,
             self._get_attribute(self._SDM_ATT_MAP["Sripv6OpaqueContainerTLVTclValue"]),
+        )
+
+    @property
+    def PathTraceTLVTclType(self):
+        """
+        Display Name: Type
+        Default Value: 128
+        Value Format: decimal
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["PathTraceTLVTclType"])
+        )
+
+    @property
+    def PathTraceTLVTclLength(self):
+        """
+        Display Name: Length
+        Default Value: 14
+        Value Format: decimal
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["PathTraceTLVTclLength"])
+        )
+
+    @property
+    def PathTraceTLVIfId(self):
+        """
+        Display Name: Interface ID
+        Default Value: 0
+        Value Format: decimal
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["PathTraceTLVIfId"])
+        )
+
+    @property
+    def PathTraceTLVIfLd(self):
+        """
+        Display Name: Interface Load
+        Default Value: 0
+        Value Format: decimal
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["PathTraceTLVIfLd"])
+        )
+
+    @property
+    def PathTraceTLVTimeStamp(self):
+        """
+        Display Name: Timestamp
+        Default Value: 0
+        Value Format: hex
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["PathTraceTLVTimeStamp"])
+        )
+
+    @property
+    def PathTraceTLVSessionId(self):
+        """
+        Display Name: Session ID
+        Default Value: 0
+        Value Format: decimal
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["PathTraceTLVSessionId"])
+        )
+
+    @property
+    def PathTraceTLVSequenceNo(self):
+        """
+        Display Name: Sequence Number
+        Default Value: 0
+        Value Format: decimal
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["PathTraceTLVSequenceNo"])
         )
 
     @property

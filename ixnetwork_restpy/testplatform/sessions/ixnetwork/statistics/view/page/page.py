@@ -118,7 +118,7 @@ class Page(Base):
         """
         Returns
         -------
-        - list(str): The statistics column caption.
+        - list(str): The statistics column captions.
         """
         return self._get_attribute(self._SDM_ATT_MAP["ColumnCaptions"])
 
@@ -208,7 +208,7 @@ class Page(Base):
         """
         Returns
         -------
-        - bool: If true, the counter is ready to record the statistics.
+        - bool: If true, the counter is ready to record statistics.
         """
         return self._get_attribute(self._SDM_ATT_MAP["IsReady"])
 
@@ -233,7 +233,7 @@ class Page(Base):
         """
         Returns
         -------
-        - number:
+        - number: The number of statistics in the last page.
         """
         return self._get_attribute(self._SDM_ATT_MAP["LastPageSize"])
 
@@ -306,7 +306,7 @@ class Page(Base):
         """
         Returns
         -------
-        - number: NOT DEFINED
+        - number: Total number of statistic rows.
         """
         return self._get_attribute(self._SDM_ATT_MAP["TotalRows"])
 
@@ -367,23 +367,23 @@ class Page(Base):
         Args
         ----
         - AllowPaging (bool): If true, statistics will be displayed in multiple pages.
-        - ColumnCaptions (list(str)): The statistics column caption.
+        - ColumnCaptions (list(str)): The statistics column captions.
         - ColumnCount (number): Displays the particular column number in the view.
         - CurrentPage (number): The current page number being displayed.
         - EgressMode (str(conditional | paged)): Emulates conditional or paged egress tracking view based on selected mode.
         - EgressOption (str(rowsWithNoPackets | rowsWithPackets | showAll)):
         - EgressPageSize (number): The current egress page size across all ingress rows. Default = 3
         - IsBlocked (bool): Is a flag used to fetch the status of view (returns true if the views was blocked by Guard Rail, false otherwise)
-        - IsReady (bool): If true, the counter is ready to record the statistics.
+        - IsReady (bool): If true, the counter is ready to record statistics.
         - IsReadyTimeout (number): The maximum time (in seconds) for the -isReady attribute to wait before it returns false in case the page has no data.
-        - LastPageSize (number):
+        - LastPageSize (number): The number of statistics in the last page.
         - PageSize (number): The number of statistics per page.
         - PageValues (list(list[list[str]])): Returns the values in the current page. The ingress row is grouped with its corresponding egress rows
         - RowCount (number): Displays the particular row number in the view.
         - RowValues (dict(arg1:list[list[list[str]]])): All statistics values in a row.
         - Timestamp (number): Describes the date and time of the event.
         - TotalPages (number): The total number of statistics pages.
-        - TotalRows (number): NOT DEFINED
+        - TotalRows (number): Total number of statistic rows.
 
         Returns
         -------

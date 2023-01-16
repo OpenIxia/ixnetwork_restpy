@@ -28,7 +28,7 @@ if sys.version_info >= (3, 5):
 
 
 class DuCUPlane(Base):
-    """ORAN DU CU-Plane for traffic destination endpoint.
+    """ORAN DU CU-Plane represents the destination endpoint in traffic wizard which is used for both control and user data messages.
     The DuCUPlane class encapsulates a required duCUPlane resource which will be retrieved from the server every time the property is accessed.
     """
 

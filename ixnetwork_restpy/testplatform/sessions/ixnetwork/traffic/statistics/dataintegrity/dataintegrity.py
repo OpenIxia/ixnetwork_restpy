@@ -35,12 +35,28 @@ class DataIntegrity(Base):
     __slots__ = ()
     _SDM_NAME = "dataIntegrity"
     _SDM_ATT_MAP = {
+        "DataIntegrityVirtualPorts": "dataIntegrityVirtualPorts",
         "Enabled": "enabled",
     }
     _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(DataIntegrity, self).__init__(parent, list_op)
+
+    @property
+    def DataIntegrityVirtualPorts(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: If true, enables and fetches data integrity statistics on Virtual Ports
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["DataIntegrityVirtualPorts"])
+
+    @DataIntegrityVirtualPorts.setter
+    def DataIntegrityVirtualPorts(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["DataIntegrityVirtualPorts"], value)
 
     @property
     def Enabled(self):
@@ -57,12 +73,13 @@ class DataIntegrity(Base):
         # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
-    def update(self, Enabled=None):
-        # type: (bool) -> DataIntegrity
+    def update(self, DataIntegrityVirtualPorts=None, Enabled=None):
+        # type: (bool, bool) -> DataIntegrity
         """Updates dataIntegrity resource on the server.
 
         Args
         ----
+        - DataIntegrityVirtualPorts (bool): If true, enables and fetches data integrity statistics on Virtual Ports
         - Enabled (bool): If true, enables and fetches data integrity statistics
 
         Raises
@@ -71,8 +88,8 @@ class DataIntegrity(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, Enabled=None):
-        # type: (bool) -> DataIntegrity
+    def find(self, DataIntegrityVirtualPorts=None, Enabled=None):
+        # type: (bool, bool) -> DataIntegrity
         """Finds and retrieves dataIntegrity resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve dataIntegrity resources from the server.
@@ -81,6 +98,7 @@ class DataIntegrity(Base):
 
         Args
         ----
+        - DataIntegrityVirtualPorts (bool): If true, enables and fetches data integrity statistics on Virtual Ports
         - Enabled (bool): If true, enables and fetches data integrity statistics
 
         Returns

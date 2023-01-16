@@ -637,13 +637,13 @@ class Ipv4(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pcc_4548de1a5046938dd4962870dfbd425f.Pcc): An instance of the Pcc class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pcc_80e0369b498001415dc4db6533e36cc5.Pcc): An instance of the Pcc class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pcc_4548de1a5046938dd4962870dfbd425f import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pcc_80e0369b498001415dc4db6533e36cc5 import (
             Pcc,
         )
 
@@ -697,13 +697,13 @@ class Ipv4(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ptp_24f2907f5a685b611f57469838b21337.Ptp): An instance of the Ptp class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ptp_10b9c21d9c7cf77e86ec2d87b28de348.Ptp): An instance of the Ptp class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ptp_24f2907f5a685b611f57469838b21337 import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ptp_10b9c21d9c7cf77e86ec2d87b28de348 import (
             Ptp,
         )
 
@@ -771,6 +771,26 @@ class Ipv4(Base):
             if self._properties.get("Tag", None) is not None:
                 return self._properties.get("Tag")
         return Tag(self)
+
+    @property
+    def TwampIpv4(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.twampipv4_f2b0095d1b19a5361901666837fd27ba.TwampIpv4): An instance of the TwampIpv4 class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.twampipv4_f2b0095d1b19a5361901666837fd27ba import (
+            TwampIpv4,
+        )
+
+        if len(self._object_properties) > 0:
+            if self._properties.get("TwampIpv4", None) is not None:
+                return self._properties.get("TwampIpv4")
+        return TwampIpv4(self)
 
     @property
     def Vxlan(self):

@@ -79,7 +79,7 @@ class DynamicRate(Base):
         """
         Returns
         -------
-        - str(bitsPerSec | bytesPerSec | kbitsPerSec | kbytesPerSec | mbitsPerSec | mbytesPerSec): The rate units for transmitting packet.
+        - str(bitsPerSec | bytesPerSec | kbitsPerSec | kbytesPerSec | mbitsPerSec | mbytesPerSec): The unit of rate for transmitting packet.
         """
         return self._get_attribute(self._SDM_ATT_MAP["BitRateUnitsType"])
 
@@ -109,7 +109,7 @@ class DynamicRate(Base):
         """
         Returns
         -------
-        - str: The name of the high level stream
+        - str: The name of the high level stream.
         """
         return self._get_attribute(self._SDM_ATT_MAP["HighLevelStreamName"])
 
@@ -119,7 +119,7 @@ class DynamicRate(Base):
         """
         Returns
         -------
-        - str(bytes | microseconds | milliseconds | nanoseconds | seconds): The inter-packet gap expressed in units.
+        - str(bytes | microseconds | milliseconds | nanoseconds | seconds): The inter-packet gap expressed in units of time. Available units of time: bytes, nanoseconds, microseconds, milliseconds, seconds.
         """
         return self._get_attribute(self._SDM_ATT_MAP["InterPacketGapUnitsType"])
 
@@ -134,7 +134,7 @@ class DynamicRate(Base):
         """
         Returns
         -------
-        - bool: If true, the packet transmission rate is oversubscribed.
+        - bool: Determines whether the packet transmission rate is oversubscribed.
         """
         return self._get_attribute(self._SDM_ATT_MAP["OverSubscribed"])
 
@@ -159,7 +159,7 @@ class DynamicRate(Base):
         """
         Returns
         -------
-        - str(bitsPerSecond | framesPerSecond | interPacketGap | percentLineRate): The types of packet rate transmission.
+        - str(bitsPerSecond | framesPerSecond | interPacketGap | percentLineRate): The type of packet rate transmission.
         """
         return self._get_attribute(self._SDM_ATT_MAP["RateType"])
 
@@ -184,7 +184,7 @@ class DynamicRate(Base):
         """
         Returns
         -------
-        - number: The transmitting port.
+        - number: Returns the transmitting (Tx) port, the port sending the data.
         """
         return self._get_attribute(self._SDM_ATT_MAP["TxPort"])
 
@@ -201,11 +201,11 @@ class DynamicRate(Base):
 
         Args
         ----
-        - BitRateUnitsType (str(bitsPerSec | bytesPerSec | kbitsPerSec | kbytesPerSec | mbitsPerSec | mbytesPerSec)): The rate units for transmitting packet.
+        - BitRateUnitsType (str(bitsPerSec | bytesPerSec | kbitsPerSec | kbytesPerSec | mbitsPerSec | mbytesPerSec)): The unit of rate for transmitting packet.
         - EnforceMinimumInterPacketGap (number): Sets the minimum inter-packet gap allowed for Ethernet ports only. The default is 12 bytes.
-        - InterPacketGapUnitsType (str(bytes | microseconds | milliseconds | nanoseconds | seconds)): The inter-packet gap expressed in units.
+        - InterPacketGapUnitsType (str(bytes | microseconds | milliseconds | nanoseconds | seconds)): The inter-packet gap expressed in units of time. Available units of time: bytes, nanoseconds, microseconds, milliseconds, seconds.
         - Rate (number): The rate at which packet is transmitted.
-        - RateType (str(bitsPerSecond | framesPerSecond | interPacketGap | percentLineRate)): The types of packet rate transmission.
+        - RateType (str(bitsPerSecond | framesPerSecond | interPacketGap | percentLineRate)): The type of packet rate transmission.
 
         Raises
         ------
@@ -226,11 +226,11 @@ class DynamicRate(Base):
 
         Args
         ----
-        - BitRateUnitsType (str(bitsPerSec | bytesPerSec | kbitsPerSec | kbytesPerSec | mbitsPerSec | mbytesPerSec)): The rate units for transmitting packet.
+        - BitRateUnitsType (str(bitsPerSec | bytesPerSec | kbitsPerSec | kbytesPerSec | mbitsPerSec | mbytesPerSec)): The unit of rate for transmitting packet.
         - EnforceMinimumInterPacketGap (number): Sets the minimum inter-packet gap allowed for Ethernet ports only. The default is 12 bytes.
-        - InterPacketGapUnitsType (str(bytes | microseconds | milliseconds | nanoseconds | seconds)): The inter-packet gap expressed in units.
+        - InterPacketGapUnitsType (str(bytes | microseconds | milliseconds | nanoseconds | seconds)): The inter-packet gap expressed in units of time. Available units of time: bytes, nanoseconds, microseconds, milliseconds, seconds.
         - Rate (number): The rate at which packet is transmitted.
-        - RateType (str(bitsPerSecond | framesPerSecond | interPacketGap | percentLineRate)): The types of packet rate transmission.
+        - RateType (str(bitsPerSecond | framesPerSecond | interPacketGap | percentLineRate)): The type of packet rate transmission.
 
         Returns
         -------
@@ -263,15 +263,15 @@ class DynamicRate(Base):
 
         Args
         ----
-        - BitRateUnitsType (str(bitsPerSec | bytesPerSec | kbitsPerSec | kbytesPerSec | mbitsPerSec | mbytesPerSec)): The rate units for transmitting packet.
+        - BitRateUnitsType (str(bitsPerSec | bytesPerSec | kbitsPerSec | kbytesPerSec | mbitsPerSec | mbytesPerSec)): The unit of rate for transmitting packet.
         - EnforceMinimumInterPacketGap (number): Sets the minimum inter-packet gap allowed for Ethernet ports only. The default is 12 bytes.
-        - HighLevelStreamName (str): The name of the high level stream
-        - InterPacketGapUnitsType (str(bytes | microseconds | milliseconds | nanoseconds | seconds)): The inter-packet gap expressed in units.
-        - OverSubscribed (bool): If true, the packet transmission rate is oversubscribed.
+        - HighLevelStreamName (str): The name of the high level stream.
+        - InterPacketGapUnitsType (str(bytes | microseconds | milliseconds | nanoseconds | seconds)): The inter-packet gap expressed in units of time. Available units of time: bytes, nanoseconds, microseconds, milliseconds, seconds.
+        - OverSubscribed (bool): Determines whether the packet transmission rate is oversubscribed.
         - Rate (number): The rate at which packet is transmitted.
-        - RateType (str(bitsPerSecond | framesPerSecond | interPacketGap | percentLineRate)): The types of packet rate transmission.
+        - RateType (str(bitsPerSecond | framesPerSecond | interPacketGap | percentLineRate)): The type of packet rate transmission.
         - TrafficItemName (str): The name of the parent traffic item.
-        - TxPort (number): The transmitting port.
+        - TxPort (number): Returns the transmitting (Tx) port, the port sending the data.
 
         Returns
         -------

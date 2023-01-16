@@ -301,13 +301,13 @@ class Dhcpv4client(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pcc_4548de1a5046938dd4962870dfbd425f.Pcc): An instance of the Pcc class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pcc_80e0369b498001415dc4db6533e36cc5.Pcc): An instance of the Pcc class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pcc_4548de1a5046938dd4962870dfbd425f import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pcc_80e0369b498001415dc4db6533e36cc5 import (
             Pcc,
         )
 

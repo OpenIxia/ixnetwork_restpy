@@ -369,13 +369,13 @@ class QuickTest(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.globals_605c8d39970b93a1aba6b6a97467871c.Globals): An instance of the Globals class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.globals_69a5d2805874fa9bd7dc448d50ded673.Globals): An instance of the Globals class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.globals_605c8d39970b93a1aba6b6a97467871c import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.globals_69a5d2805874fa9bd7dc448d50ded673 import (
             Globals,
         )
 

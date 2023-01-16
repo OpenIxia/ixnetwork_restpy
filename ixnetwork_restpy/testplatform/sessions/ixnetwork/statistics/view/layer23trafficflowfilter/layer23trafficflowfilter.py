@@ -76,6 +76,46 @@ class Layer23TrafficFlowFilter(Base):
         return EnumerationFilter(self)
 
     @property
+    def EnumerationFilters(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.layer23trafficflowfilter.enumerationfilters.enumerationfilters.EnumerationFilters): An instance of the EnumerationFilters class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.layer23trafficflowfilter.enumerationfilters.enumerationfilters import (
+            EnumerationFilters,
+        )
+
+        if len(self._object_properties) > 0:
+            if self._properties.get("EnumerationFilters", None) is not None:
+                return self._properties.get("EnumerationFilters")
+        return EnumerationFilters(self)
+
+    @property
+    def PortFilters(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.layer23trafficflowfilter.portfilters.portfilters.PortFilters): An instance of the PortFilters class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.layer23trafficflowfilter.portfilters.portfilters import (
+            PortFilters,
+        )
+
+        if len(self._object_properties) > 0:
+            if self._properties.get("PortFilters", None) is not None:
+                return self._properties.get("PortFilters")
+        return PortFilters(self)
+
+    @property
     def TrackingFilter(self):
         """
         Returns
@@ -94,6 +134,26 @@ class Layer23TrafficFlowFilter(Base):
             if self._properties.get("TrackingFilter", None) is not None:
                 return self._properties.get("TrackingFilter")
         return TrackingFilter(self)
+
+    @property
+    def TrafficItemFilters(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.layer23trafficflowfilter.trafficitemfilters.trafficitemfilters.TrafficItemFilters): An instance of the TrafficItemFilters class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.layer23trafficflowfilter.trafficitemfilters.trafficitemfilters import (
+            TrafficItemFilters,
+        )
+
+        if len(self._object_properties) > 0:
+            if self._properties.get("TrafficItemFilters", None) is not None:
+                return self._properties.get("TrafficItemFilters")
+        return TrafficItemFilters(self)
 
     @property
     def AggregatedAcrossPorts(self):
@@ -131,7 +191,7 @@ class Layer23TrafficFlowFilter(Base):
         """
         Returns
         -------
-        - list(str[None | /api/v1/sessions/1/ixnetwork/statistics/view/availablePortFilter]): Selected port filters from the availablePortFilter list.
+        - list(str[None | /api/v1/sessions/1/ixnetwork/statistics/view/.../availablePortFilter]): Selected port filters from the availablePortFilter list.
         """
         return self._get_attribute(self._SDM_ATT_MAP["PortFilterIds"])
 
@@ -146,7 +206,7 @@ class Layer23TrafficFlowFilter(Base):
         """DEPRECATED
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/statistics/view/availableTrafficItemFilter): Selected traffic item filter from the availableTrafficItemFilter list.
+        - str(None | /api/v1/sessions/1/ixnetwork/statistics/view/.../availableTrafficItemFilter): Selected traffic item filter from the availableTrafficItemFilter list.
         """
         return self._get_attribute(self._SDM_ATT_MAP["TrafficItemFilterId"])
 
@@ -161,7 +221,7 @@ class Layer23TrafficFlowFilter(Base):
         """
         Returns
         -------
-        - list(str[None | /api/v1/sessions/1/ixnetwork/statistics/view/availableTrafficItemFilter]): Selected traffic item filters from the availableTrafficItemFilter list.
+        - list(str[None | /api/v1/sessions/1/ixnetwork/statistics/view/.../availableTrafficItemFilter]): Selected traffic item filters from the availableTrafficItemFilter list.
         """
         return self._get_attribute(self._SDM_ATT_MAP["TrafficItemFilterIds"])
 
@@ -185,9 +245,9 @@ class Layer23TrafficFlowFilter(Base):
         ----
         - AggregatedAcrossPorts (bool): If true, displays aggregated stat value across ports selected by portFilterIds. Default = false
         - EgressLatencyBinDisplayOption (str(none | showEgressFlatView | showEgressRows | showLatencyBinStats)): Emulates Latency Bin SV or Egress Tracking SV.
-        - PortFilterIds (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/view/availablePortFilter])): Selected port filters from the availablePortFilter list.
-        - TrafficItemFilterId (str(None | /api/v1/sessions/1/ixnetwork/statistics/view/availableTrafficItemFilter)): Selected traffic item filter from the availableTrafficItemFilter list.
-        - TrafficItemFilterIds (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/view/availableTrafficItemFilter])): Selected traffic item filters from the availableTrafficItemFilter list.
+        - PortFilterIds (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/view/.../availablePortFilter])): Selected port filters from the availablePortFilter list.
+        - TrafficItemFilterId (str(None | /api/v1/sessions/1/ixnetwork/statistics/view/.../availableTrafficItemFilter)): Selected traffic item filter from the availableTrafficItemFilter list.
+        - TrafficItemFilterIds (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/view/.../availableTrafficItemFilter])): Selected traffic item filters from the availableTrafficItemFilter list.
 
         Raises
         ------
@@ -210,9 +270,9 @@ class Layer23TrafficFlowFilter(Base):
         ----
         - AggregatedAcrossPorts (bool): If true, displays aggregated stat value across ports selected by portFilterIds. Default = false
         - EgressLatencyBinDisplayOption (str(none | showEgressFlatView | showEgressRows | showLatencyBinStats)): Emulates Latency Bin SV or Egress Tracking SV.
-        - PortFilterIds (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/view/availablePortFilter])): Selected port filters from the availablePortFilter list.
-        - TrafficItemFilterId (str(None | /api/v1/sessions/1/ixnetwork/statistics/view/availableTrafficItemFilter)): Selected traffic item filter from the availableTrafficItemFilter list.
-        - TrafficItemFilterIds (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/view/availableTrafficItemFilter])): Selected traffic item filters from the availableTrafficItemFilter list.
+        - PortFilterIds (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/view/.../availablePortFilter])): Selected port filters from the availablePortFilter list.
+        - TrafficItemFilterId (str(None | /api/v1/sessions/1/ixnetwork/statistics/view/.../availableTrafficItemFilter)): Selected traffic item filter from the availableTrafficItemFilter list.
+        - TrafficItemFilterIds (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/view/.../availableTrafficItemFilter])): Selected traffic item filters from the availableTrafficItemFilter list.
 
         Returns
         -------
@@ -253,9 +313,9 @@ class Layer23TrafficFlowFilter(Base):
         ----
         - AggregatedAcrossPorts (bool): If true, displays aggregated stat value across ports selected by portFilterIds. Default = false
         - EgressLatencyBinDisplayOption (str(none | showEgressFlatView | showEgressRows | showLatencyBinStats)): Emulates Latency Bin SV or Egress Tracking SV.
-        - PortFilterIds (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/view/availablePortFilter])): Selected port filters from the availablePortFilter list.
-        - TrafficItemFilterId (str(None | /api/v1/sessions/1/ixnetwork/statistics/view/availableTrafficItemFilter)): Selected traffic item filter from the availableTrafficItemFilter list.
-        - TrafficItemFilterIds (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/view/availableTrafficItemFilter])): Selected traffic item filters from the availableTrafficItemFilter list.
+        - PortFilterIds (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/view/.../availablePortFilter])): Selected port filters from the availablePortFilter list.
+        - TrafficItemFilterId (str(None | /api/v1/sessions/1/ixnetwork/statistics/view/.../availableTrafficItemFilter)): Selected traffic item filter from the availableTrafficItemFilter list.
+        - TrafficItemFilterIds (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/view/.../availableTrafficItemFilter])): Selected traffic item filters from the availableTrafficItemFilter list.
 
         Returns
         -------

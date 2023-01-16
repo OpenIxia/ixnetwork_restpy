@@ -45,7 +45,10 @@ class Field(Base):
         "DisplayName": "displayName",
         "EnumValues": "enumValues",
         "FieldChoice": "fieldChoice",
+        "FieldGroupDataType": "fieldGroupDataType",
         "FieldGroupName": "fieldGroupName",
+        "FieldGroupOptional": "fieldGroupOptional",
+        "FieldGroupOptionalEnabled": "fieldGroupOptionalEnabled",
         "FieldTypeId": "fieldTypeId",
         "FieldValue": "fieldValue",
         "FixedBits": "fixedBits",
@@ -223,6 +226,16 @@ class Field(Base):
         return self._get_attribute(self._SDM_ATT_MAP["FieldChoice"])
 
     @property
+    def FieldGroupDataType(self):
+        # type: () -> str
+        """
+        Returns
+        -------
+        - str: A read-only field that indicates whether the sub fields are Select/Sequence
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["FieldGroupDataType"])
+
+    @property
     def FieldGroupName(self):
         # type: () -> str
         """
@@ -231,6 +244,26 @@ class Field(Base):
         - str:
         """
         return self._get_attribute(self._SDM_ATT_MAP["FieldGroupName"])
+
+    @property
+    def FieldGroupOptional(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: A read-only field that accepts true/false to make the field optional.<
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["FieldGroupOptional"])
+
+    @property
+    def FieldGroupOptionalEnabled(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: A read-only field that accepts true/false to make the field optional.<
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["FieldGroupOptionalEnabled"])
 
     @property
     def FieldTypeId(self):
@@ -734,7 +767,10 @@ class Field(Base):
         DisplayName=None,
         EnumValues=None,
         FieldChoice=None,
+        FieldGroupDataType=None,
         FieldGroupName=None,
+        FieldGroupOptional=None,
+        FieldGroupOptionalEnabled=None,
         FieldTypeId=None,
         FieldValue=None,
         FixedBits=None,
@@ -767,7 +803,7 @@ class Field(Base):
         ValueList=None,
         ValueType=None,
     ):
-        # type: (str, bool, bool, List[str], str, str, str, List[str], bool, str, str, str, str, str, bool, int, bool, str, str, str, int, int, str, bool, bool, str, bool, bool, bool, str, str, str, str, bool, bool, bool, bool, bool, str, List[str], str) -> Field
+        # type: (str, bool, bool, List[str], str, str, str, List[str], bool, str, str, bool, bool, str, str, str, str, bool, int, bool, str, str, str, int, int, str, bool, bool, str, bool, bool, bool, str, str, str, str, bool, bool, bool, bool, bool, str, List[str], str) -> Field
         """Finds and retrieves field resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve field resources from the server.
@@ -785,7 +821,10 @@ class Field(Base):
         - DisplayName (str): It is used to get the name of the particular field as available in Packet/Qos
         - EnumValues (list(str)): If the field has string options, then each string is associated with a particular integer value. This attribute is used to get the mapping of integer value with the corresponding string option.
         - FieldChoice (bool): It is true for all the field options active in the GUI.
+        - FieldGroupDataType (str): A read-only field that indicates whether the sub fields are Select/Sequence
         - FieldGroupName (str):
+        - FieldGroupOptional (bool): A read-only field that accepts true/false to make the field optional.<
+        - FieldGroupOptionalEnabled (bool): A read-only field that accepts true/false to make the field optional.<
         - FieldTypeId (str):
         - FieldValue (str): An alphanumeric string that returns the value of the field.
         - FixedBits (str): Sets all the fields to a constant specified size.

@@ -113,7 +113,7 @@ class AppLibProfile(Base):
         """
         Returns
         -------
-        - bool: Enable Per IP Stats. When true then Per IP statistic drilldown is available.
+        - bool: Enable Per IP Stats. When true, the Per IP statistic drilldown is available.
         """
         return self._get_attribute(self._SDM_ATT_MAP["EnablePerIPStats"])
 
@@ -143,7 +143,7 @@ class AppLibProfile(Base):
         """
         Returns
         -------
-        - str(simulatedUsers | throughputGbps | throughputKbps | throughputMbps): The objective type of the test.A Test Objective is the way the user sets the actual rate of the Application Library Traffic transmission.
+        - str(simulatedUsers | throughputGbps | throughputKbps | throughputMbps): The objective type of the test. A Test Objective is the way the user sets the actual rate of the Application Library Traffic transmission.
         """
         return self._get_attribute(self._SDM_ATT_MAP["ObjectiveType"])
 
@@ -158,7 +158,7 @@ class AppLibProfile(Base):
         """
         Returns
         -------
-        - number: The absolute value of either simulated users or throughput in its measure unit.
+        - number: The absolute value of either simulated users or throughput in its unit of measurement.
         """
         return self._get_attribute(self._SDM_ATT_MAP["ObjectiveValue"])
 
@@ -173,7 +173,7 @@ class AppLibProfile(Base):
         """
         Returns
         -------
-        - str(Configured | Interim | Running | Unconfigured): (Read only) A read-only field which indicates the current state of the traffic item.
+        - str(Configured | Interim | Running | Unconfigured): (Read only) A read-only field that indicates the current state of the traffic item.
         """
         return self._get_attribute(self._SDM_ATT_MAP["TrafficState"])
 
@@ -191,10 +191,10 @@ class AppLibProfile(Base):
         Args
         ----
         - ConfiguredFlows (list(str[Bandwidth_HTTP | Bandwidth_Raw | BBC_iPlayer | BitTorrent_Cisco_EMIX | eDonkey_Data_Transfer | Evergreen_Web_ICQ_Jul_17_Send_Message | Facebook | Flash_Enterprise | HTTPS_Simulated_Enterprise])): Configured application library flows within profile.
-        - EnablePerIPStats (bool): Enable Per IP Stats. When true then Per IP statistic drilldown is available.
+        - EnablePerIPStats (bool): Enable Per IP Stats. When true, the Per IP statistic drilldown is available.
         - ObjectiveDistribution (str(applyFullObjectiveToEachPort | splitObjectiveEvenlyAmongPorts)): Objective distribution value.
-        - ObjectiveType (str(simulatedUsers | throughputGbps | throughputKbps | throughputMbps)): The objective type of the test.A Test Objective is the way the user sets the actual rate of the Application Library Traffic transmission.
-        - ObjectiveValue (number): The absolute value of either simulated users or throughput in its measure unit.
+        - ObjectiveType (str(simulatedUsers | throughputGbps | throughputKbps | throughputMbps)): The objective type of the test. A Test Objective is the way the user sets the actual rate of the Application Library Traffic transmission.
+        - ObjectiveValue (number): The absolute value of either simulated users or throughput in its unit of measurement.
 
         Raises
         ------
@@ -216,10 +216,10 @@ class AppLibProfile(Base):
         Args
         ----
         - ConfiguredFlows (list(str[Bandwidth_HTTP | Bandwidth_Raw | BBC_iPlayer | BitTorrent_Cisco_EMIX | eDonkey_Data_Transfer | Evergreen_Web_ICQ_Jul_17_Send_Message | Facebook | Flash_Enterprise | HTTPS_Simulated_Enterprise])): Configured application library flows within profile.
-        - EnablePerIPStats (bool): Enable Per IP Stats. When true then Per IP statistic drilldown is available.
+        - EnablePerIPStats (bool): Enable Per IP Stats. When true, the Per IP statistic drilldown is available.
         - ObjectiveDistribution (str(applyFullObjectiveToEachPort | splitObjectiveEvenlyAmongPorts)): Objective distribution value.
-        - ObjectiveType (str(simulatedUsers | throughputGbps | throughputKbps | throughputMbps)): The objective type of the test.A Test Objective is the way the user sets the actual rate of the Application Library Traffic transmission.
-        - ObjectiveValue (number): The absolute value of either simulated users or throughput in its measure unit.
+        - ObjectiveType (str(simulatedUsers | throughputGbps | throughputKbps | throughputMbps)): The objective type of the test. A Test Objective is the way the user sets the actual rate of the Application Library Traffic transmission.
+        - ObjectiveValue (number): The absolute value of either simulated users or throughput in its unit of measurement.
 
         Returns
         -------
@@ -262,11 +262,11 @@ class AppLibProfile(Base):
         ----
         - AvailableFlows (list(str[Bandwidth_HTTP | Bandwidth_Raw | BBC_iPlayer | BitTorrent_Cisco_EMIX | eDonkey_Data_Transfer | Evergreen_Web_ICQ_Jul_17_Send_Message | Facebook | Flash_Enterprise | HTTPS_Simulated_Enterprise])): (Read only) All available application library flows.
         - ConfiguredFlows (list(str[Bandwidth_HTTP | Bandwidth_Raw | BBC_iPlayer | BitTorrent_Cisco_EMIX | eDonkey_Data_Transfer | Evergreen_Web_ICQ_Jul_17_Send_Message | Facebook | Flash_Enterprise | HTTPS_Simulated_Enterprise])): Configured application library flows within profile.
-        - EnablePerIPStats (bool): Enable Per IP Stats. When true then Per IP statistic drilldown is available.
+        - EnablePerIPStats (bool): Enable Per IP Stats. When true, the Per IP statistic drilldown is available.
         - ObjectiveDistribution (str(applyFullObjectiveToEachPort | splitObjectiveEvenlyAmongPorts)): Objective distribution value.
-        - ObjectiveType (str(simulatedUsers | throughputGbps | throughputKbps | throughputMbps)): The objective type of the test.A Test Objective is the way the user sets the actual rate of the Application Library Traffic transmission.
-        - ObjectiveValue (number): The absolute value of either simulated users or throughput in its measure unit.
-        - TrafficState (str(Configured | Interim | Running | Unconfigured)): (Read only) A read-only field which indicates the current state of the traffic item.
+        - ObjectiveType (str(simulatedUsers | throughputGbps | throughputKbps | throughputMbps)): The objective type of the test. A Test Objective is the way the user sets the actual rate of the Application Library Traffic transmission.
+        - ObjectiveValue (number): The absolute value of either simulated users or throughput in its unit of measurement.
+        - TrafficState (str(Configured | Interim | Running | Unconfigured)): (Read only) A read-only field that indicates the current state of the traffic item.
 
         Returns
         -------

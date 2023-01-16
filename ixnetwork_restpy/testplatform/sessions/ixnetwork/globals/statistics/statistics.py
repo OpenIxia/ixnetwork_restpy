@@ -84,6 +84,26 @@ class Statistics(Base):
         return Datacenter(self)._select()
 
     @property
+    def ReportGenerator(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.statistics.reportgenerator.reportgenerator.ReportGenerator): An instance of the ReportGenerator class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.statistics.reportgenerator.reportgenerator import (
+            ReportGenerator,
+        )
+
+        if len(self._object_properties) > 0:
+            if self._properties.get("ReportGenerator", None) is not None:
+                return self._properties.get("ReportGenerator")
+        return ReportGenerator(self)._select()
+
+    @property
     def StatFilter(self):
         """
         Returns

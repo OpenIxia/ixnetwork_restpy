@@ -28,7 +28,7 @@ if sys.version_info >= (3, 5):
 
 
 class RuCUPlane(Base):
-    """ORAN RU CU-Plane for traffic destination endpoint.
+    """ORAN RU CU-Plane represents the destination endpoint in traffic wizard which is used for both control and user data messages.
     The RuCUPlane class encapsulates a required ruCUPlane resource which will be retrieved from the server every time the property is accessed.
     """
 

@@ -58,7 +58,7 @@ class EgressOnlyTracking(Base):
         """
         Returns
         -------
-        - list(dict(arg1:number,arg2:str)): Struct contains: egress offset and egress mask
+        - list(dict(arg1:number,arg2:str)): The list of structures containing Egress Mask and Offset to be placed in the packet. There can be at most 3 Egress values on a port and Egress Offset values should be always even.
         """
         return self._get_attribute(self._SDM_ATT_MAP["Egress"])
 
@@ -87,7 +87,7 @@ class EgressOnlyTracking(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/lag | /api/v1/sessions/1/ixnetwork/vport):
+        - str(None | /api/v1/sessions/1/ixnetwork/lag | /api/v1/sessions/1/ixnetwork/vport): Sets the port on which Egress Tracking is enabled.
         """
         return self._get_attribute(self._SDM_ATT_MAP["Port"])
 
@@ -115,7 +115,7 @@ class EgressOnlyTracking(Base):
         """
         Returns
         -------
-        - str(fourByte | twelveByte):
+        - str(fourByte | twelveByte): Sets the Signature Length Type.
         """
         return self._get_attribute(self._SDM_ATT_MAP["SignatureLengthType"])
 
@@ -130,7 +130,7 @@ class EgressOnlyTracking(Base):
         """
         Returns
         -------
-        - str: Signature maks to be placed inside the packet.
+        - str: Signature mask to be placed inside the packet.
         """
         return self._get_attribute(self._SDM_ATT_MAP["SignatureMask"])
 
@@ -184,12 +184,12 @@ class EgressOnlyTracking(Base):
 
         Args
         ----
-        - Egress (list(dict(arg1:number,arg2:str))): Struct contains: egress offset and egress mask
+        - Egress (list(dict(arg1:number,arg2:str))): The list of structures containing Egress Mask and Offset to be placed in the packet. There can be at most 3 Egress values on a port and Egress Offset values should be always even.
         - Enabled (bool): Enables the egress only tracking for the given port.
-        - Port (str(None | /api/v1/sessions/1/ixnetwork/lag | /api/v1/sessions/1/ixnetwork/vport)):
+        - Port (str(None | /api/v1/sessions/1/ixnetwork/lag | /api/v1/sessions/1/ixnetwork/vport)): Sets the port on which Egress Tracking is enabled.
         - QbvSettings (list(dict(arg1:bool,arg2:number,arg3:bool,arg4:str))): Structure contains a mapping between the gate and the field value in the packet pointed to by egress offset. Besides, it also denotes if an entry is enabled and the gate number is to be treated as the default gate.
-        - SignatureLengthType (str(fourByte | twelveByte)):
-        - SignatureMask (str): Signature maks to be placed inside the packet.
+        - SignatureLengthType (str(fourByte | twelveByte)): Sets the Signature Length Type.
+        - SignatureMask (str): Signature mask to be placed inside the packet.
         - SignatureOffset (number): Offset where the signature value will be placed in the packet.
         - SignatureValue (str): Signature value to be placed inside the packet.
 
@@ -214,12 +214,12 @@ class EgressOnlyTracking(Base):
 
         Args
         ----
-        - Egress (list(dict(arg1:number,arg2:str))): Struct contains: egress offset and egress mask
+        - Egress (list(dict(arg1:number,arg2:str))): The list of structures containing Egress Mask and Offset to be placed in the packet. There can be at most 3 Egress values on a port and Egress Offset values should be always even.
         - Enabled (bool): Enables the egress only tracking for the given port.
-        - Port (str(None | /api/v1/sessions/1/ixnetwork/lag | /api/v1/sessions/1/ixnetwork/vport)):
+        - Port (str(None | /api/v1/sessions/1/ixnetwork/lag | /api/v1/sessions/1/ixnetwork/vport)): Sets the port on which Egress Tracking is enabled.
         - QbvSettings (list(dict(arg1:bool,arg2:number,arg3:bool,arg4:str))): Structure contains a mapping between the gate and the field value in the packet pointed to by egress offset. Besides, it also denotes if an entry is enabled and the gate number is to be treated as the default gate.
-        - SignatureLengthType (str(fourByte | twelveByte)):
-        - SignatureMask (str): Signature maks to be placed inside the packet.
+        - SignatureLengthType (str(fourByte | twelveByte)): Sets the Signature Length Type.
+        - SignatureMask (str): Signature mask to be placed inside the packet.
         - SignatureOffset (number): Offset where the signature value will be placed in the packet.
         - SignatureValue (str): Signature value to be placed inside the packet.
 
@@ -262,12 +262,12 @@ class EgressOnlyTracking(Base):
 
         Args
         ----
-        - Egress (list(dict(arg1:number,arg2:str))): Struct contains: egress offset and egress mask
+        - Egress (list(dict(arg1:number,arg2:str))): The list of structures containing Egress Mask and Offset to be placed in the packet. There can be at most 3 Egress values on a port and Egress Offset values should be always even.
         - Enabled (bool): Enables the egress only tracking for the given port.
-        - Port (str(None | /api/v1/sessions/1/ixnetwork/lag | /api/v1/sessions/1/ixnetwork/vport)):
+        - Port (str(None | /api/v1/sessions/1/ixnetwork/lag | /api/v1/sessions/1/ixnetwork/vport)): Sets the port on which Egress Tracking is enabled.
         - QbvSettings (list(dict(arg1:bool,arg2:number,arg3:bool,arg4:str))): Structure contains a mapping between the gate and the field value in the packet pointed to by egress offset. Besides, it also denotes if an entry is enabled and the gate number is to be treated as the default gate.
-        - SignatureLengthType (str(fourByte | twelveByte)):
-        - SignatureMask (str): Signature maks to be placed inside the packet.
+        - SignatureLengthType (str(fourByte | twelveByte)): Sets the Signature Length Type.
+        - SignatureMask (str): Signature mask to be placed inside the packet.
         - SignatureOffset (number): Offset where the signature value will be placed in the packet.
         - SignatureValue (str): Signature value to be placed inside the packet.
 

@@ -468,7 +468,7 @@ class BgpV6IPRouteProperty(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): Advertise SRv6 SID Locator in IGP (ISIS).
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Advertise SRv6 SID Locator's Reachability in IGP (ISIS).
         """
         from ixnetwork_restpy.multivalue import Multivalue
 
@@ -1060,7 +1060,7 @@ class BgpV6IPRouteProperty(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): Enable to include SRv6 SID Structure Sub-Sub TLV for SRv6 Service.
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enable to Include SRv6 SID Structure Sub-Sub TLV for SRv6 Service
         """
         from ixnetwork_restpy.multivalue import Multivalue
 

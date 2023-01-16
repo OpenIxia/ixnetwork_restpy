@@ -136,7 +136,7 @@ class AdvancedCVFilters(Base):
         """
         Returns
         -------
-        - str: Specifies the list of statistics by which the view is sorted.
+        - str: Returns the list of statistics by which the view will be sorted.
         """
         return self._get_attribute(self._SDM_ATT_MAP["SortingStats"])
 
@@ -162,7 +162,7 @@ class AdvancedCVFilters(Base):
         - Expression (str): Specifies the filter body. This is a string that must have the specific format. This can be empty or no filter.The available operations and statistics can be obtained from availableFilterOptions.
         - Grouping (str): Sets a grouping for the filter.
         - Protocol (str): Sets a protocol for the filter.
-        - SortingStats (str): Specifies the list of statistics by which the view is sorted.
+        - SortingStats (str): Returns the list of statistics by which the view will be sorted.
 
         Raises
         ------
@@ -187,7 +187,7 @@ class AdvancedCVFilters(Base):
         - Expression (str): Specifies the filter body. This is a string that must have the specific format. This can be empty or no filter.The available operations and statistics can be obtained from availableFilterOptions.
         - Grouping (str): Sets a grouping for the filter.
         - Protocol (str): Sets a protocol for the filter.
-        - SortingStats (str): Specifies the list of statistics by which the view is sorted.
+        - SortingStats (str): Returns the list of statistics by which the view will be sorted.
 
         Returns
         -------
@@ -234,7 +234,7 @@ class AdvancedCVFilters(Base):
         - Expression (str): Specifies the filter body. This is a string that must have the specific format. This can be empty or no filter.The available operations and statistics can be obtained from availableFilterOptions.
         - Grouping (str): Sets a grouping for the filter.
         - Protocol (str): Sets a protocol for the filter.
-        - SortingStats (str): Specifies the list of statistics by which the view is sorted.
+        - SortingStats (str): Returns the list of statistics by which the view will be sorted.
 
         Returns
         -------

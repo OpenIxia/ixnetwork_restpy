@@ -40,6 +40,7 @@ class Layer23TrafficFlowDetectiveFilter(Base):
         "DeadFlowsCount": "deadFlowsCount",
         "DeadFlowsThreshold": "deadFlowsThreshold",
         "FlowFilterType": "flowFilterType",
+        "NumberOfResults": "numberOfResults",
         "PortFilterIds": "portFilterIds",
         "ShowEgressFlows": "showEgressFlows",
         "TrafficItemFilterId": "trafficItemFilterId",
@@ -113,6 +114,46 @@ class Layer23TrafficFlowDetectiveFilter(Base):
         return LiveFlowsFilter(self)
 
     @property
+    def PortFilters(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.layer23trafficflowdetectivefilter.portfilters.portfilters.PortFilters): An instance of the PortFilters class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.layer23trafficflowdetectivefilter.portfilters.portfilters import (
+            PortFilters,
+        )
+
+        if len(self._object_properties) > 0:
+            if self._properties.get("PortFilters", None) is not None:
+                return self._properties.get("PortFilters")
+        return PortFilters(self)
+
+    @property
+    def SortingStatisticsFilters(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.layer23trafficflowdetectivefilter.sortingstatisticsfilters.sortingstatisticsfilters.SortingStatisticsFilters): An instance of the SortingStatisticsFilters class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.layer23trafficflowdetectivefilter.sortingstatisticsfilters.sortingstatisticsfilters import (
+            SortingStatisticsFilters,
+        )
+
+        if len(self._object_properties) > 0:
+            if self._properties.get("SortingStatisticsFilters", None) is not None:
+                return self._properties.get("SortingStatisticsFilters")
+        return SortingStatisticsFilters(self)
+
+    @property
     def StatisticFilter(self):
         """
         Returns
@@ -151,6 +192,26 @@ class Layer23TrafficFlowDetectiveFilter(Base):
             if self._properties.get("TrackingFilter", None) is not None:
                 return self._properties.get("TrackingFilter")
         return TrackingFilter(self)
+
+    @property
+    def TrafficItemFilters(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.layer23trafficflowdetectivefilter.trafficitemfilters.trafficitemfilters.TrafficItemFilters): An instance of the TrafficItemFilters class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.layer23trafficflowdetectivefilter.trafficitemfilters.trafficitemfilters import (
+            TrafficItemFilters,
+        )
+
+        if len(self._object_properties) > 0:
+            if self._properties.get("TrafficItemFilters", None) is not None:
+                return self._properties.get("TrafficItemFilters")
+        return TrafficItemFilters(self)
 
     @property
     def DeadFlowsCount(self):
@@ -193,12 +254,27 @@ class Layer23TrafficFlowDetectiveFilter(Base):
         self._set_attribute(self._SDM_ATT_MAP["FlowFilterType"], value)
 
     @property
+    def NumberOfResults(self):
+        # type: () -> int
+        """
+        Returns
+        -------
+        - number: Number of traffic flows to be displayed.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["NumberOfResults"])
+
+    @NumberOfResults.setter
+    def NumberOfResults(self, value):
+        # type: (int) -> None
+        self._set_attribute(self._SDM_ATT_MAP["NumberOfResults"], value)
+
+    @property
     def PortFilterIds(self):
         # type: () -> List[str]
         """
         Returns
         -------
-        - list(str[None | /api/v1/sessions/1/ixnetwork/statistics/view/availablePortFilter]): Selected port filters from the availablePortFilter list.
+        - list(str[None | /api/v1/sessions/1/ixnetwork/statistics/view/.../availablePortFilter]): Selected port filters from the availablePortFilter list.
         """
         return self._get_attribute(self._SDM_ATT_MAP["PortFilterIds"])
 
@@ -213,7 +289,7 @@ class Layer23TrafficFlowDetectiveFilter(Base):
         """
         Returns
         -------
-        - bool: NOT DEFINED
+        - bool: Is a flag used to fetch the setting whether to show egress flows or not.
         """
         return self._get_attribute(self._SDM_ATT_MAP["ShowEgressFlows"])
 
@@ -228,7 +304,7 @@ class Layer23TrafficFlowDetectiveFilter(Base):
         """DEPRECATED
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/statistics/view/availableTrafficItemFilter): Selected traffic flow detective filter from the availableTrafficItemFilter list.
+        - str(None | /api/v1/sessions/1/ixnetwork/statistics/view/.../availableTrafficItemFilter): Selected traffic flow detective filter from the availableTrafficItemFilter list.
         """
         return self._get_attribute(self._SDM_ATT_MAP["TrafficItemFilterId"])
 
@@ -243,7 +319,7 @@ class Layer23TrafficFlowDetectiveFilter(Base):
         """
         Returns
         -------
-        - list(str[None | /api/v1/sessions/1/ixnetwork/statistics/view/availableTrafficItemFilter]): Selected traffic item filters from the availableTrafficItemFilter list.
+        - list(str[None | /api/v1/sessions/1/ixnetwork/statistics/view/.../availableTrafficItemFilter]): Selected traffic item filters from the availableTrafficItemFilter list.
         """
         return self._get_attribute(self._SDM_ATT_MAP["TrafficItemFilterIds"])
 
@@ -256,22 +332,24 @@ class Layer23TrafficFlowDetectiveFilter(Base):
         self,
         DeadFlowsThreshold=None,
         FlowFilterType=None,
+        NumberOfResults=None,
         PortFilterIds=None,
         ShowEgressFlows=None,
         TrafficItemFilterId=None,
         TrafficItemFilterIds=None,
     ):
-        # type: (int, str, List[str], bool, str, List[str]) -> Layer23TrafficFlowDetectiveFilter
+        # type: (int, str, int, List[str], bool, str, List[str]) -> Layer23TrafficFlowDetectiveFilter
         """Updates layer23TrafficFlowDetectiveFilter resource on the server.
 
         Args
         ----
         - DeadFlowsThreshold (number): Threshold in seconds after which the flows are declared dead if there are no packets received for a specified number of seconds. This is a global attibute and hence the latest value entered takes precedence over previous values in all the custom views.
         - FlowFilterType (str(allFlows | deadFlows | liveFlows)): Indicates the flow detective filter settings.
-        - PortFilterIds (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/view/availablePortFilter])): Selected port filters from the availablePortFilter list.
-        - ShowEgressFlows (bool): NOT DEFINED
-        - TrafficItemFilterId (str(None | /api/v1/sessions/1/ixnetwork/statistics/view/availableTrafficItemFilter)): Selected traffic flow detective filter from the availableTrafficItemFilter list.
-        - TrafficItemFilterIds (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/view/availableTrafficItemFilter])): Selected traffic item filters from the availableTrafficItemFilter list.
+        - NumberOfResults (number): Number of traffic flows to be displayed.
+        - PortFilterIds (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/view/.../availablePortFilter])): Selected port filters from the availablePortFilter list.
+        - ShowEgressFlows (bool): Is a flag used to fetch the setting whether to show egress flows or not.
+        - TrafficItemFilterId (str(None | /api/v1/sessions/1/ixnetwork/statistics/view/.../availableTrafficItemFilter)): Selected traffic flow detective filter from the availableTrafficItemFilter list.
+        - TrafficItemFilterIds (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/view/.../availableTrafficItemFilter])): Selected traffic item filters from the availableTrafficItemFilter list.
 
         Raises
         ------
@@ -283,22 +361,24 @@ class Layer23TrafficFlowDetectiveFilter(Base):
         self,
         DeadFlowsThreshold=None,
         FlowFilterType=None,
+        NumberOfResults=None,
         PortFilterIds=None,
         ShowEgressFlows=None,
         TrafficItemFilterId=None,
         TrafficItemFilterIds=None,
     ):
-        # type: (int, str, List[str], bool, str, List[str]) -> Layer23TrafficFlowDetectiveFilter
+        # type: (int, str, int, List[str], bool, str, List[str]) -> Layer23TrafficFlowDetectiveFilter
         """Adds a new layer23TrafficFlowDetectiveFilter resource on the server and adds it to the container.
 
         Args
         ----
         - DeadFlowsThreshold (number): Threshold in seconds after which the flows are declared dead if there are no packets received for a specified number of seconds. This is a global attibute and hence the latest value entered takes precedence over previous values in all the custom views.
         - FlowFilterType (str(allFlows | deadFlows | liveFlows)): Indicates the flow detective filter settings.
-        - PortFilterIds (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/view/availablePortFilter])): Selected port filters from the availablePortFilter list.
-        - ShowEgressFlows (bool): NOT DEFINED
-        - TrafficItemFilterId (str(None | /api/v1/sessions/1/ixnetwork/statistics/view/availableTrafficItemFilter)): Selected traffic flow detective filter from the availableTrafficItemFilter list.
-        - TrafficItemFilterIds (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/view/availableTrafficItemFilter])): Selected traffic item filters from the availableTrafficItemFilter list.
+        - NumberOfResults (number): Number of traffic flows to be displayed.
+        - PortFilterIds (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/view/.../availablePortFilter])): Selected port filters from the availablePortFilter list.
+        - ShowEgressFlows (bool): Is a flag used to fetch the setting whether to show egress flows or not.
+        - TrafficItemFilterId (str(None | /api/v1/sessions/1/ixnetwork/statistics/view/.../availableTrafficItemFilter)): Selected traffic flow detective filter from the availableTrafficItemFilter list.
+        - TrafficItemFilterIds (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/view/.../availableTrafficItemFilter])): Selected traffic item filters from the availableTrafficItemFilter list.
 
         Returns
         -------
@@ -325,12 +405,13 @@ class Layer23TrafficFlowDetectiveFilter(Base):
         DeadFlowsCount=None,
         DeadFlowsThreshold=None,
         FlowFilterType=None,
+        NumberOfResults=None,
         PortFilterIds=None,
         ShowEgressFlows=None,
         TrafficItemFilterId=None,
         TrafficItemFilterIds=None,
     ):
-        # type: (int, int, str, List[str], bool, str, List[str]) -> Layer23TrafficFlowDetectiveFilter
+        # type: (int, int, str, int, List[str], bool, str, List[str]) -> Layer23TrafficFlowDetectiveFilter
         """Finds and retrieves layer23TrafficFlowDetectiveFilter resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve layer23TrafficFlowDetectiveFilter resources from the server.
@@ -342,10 +423,11 @@ class Layer23TrafficFlowDetectiveFilter(Base):
         - DeadFlowsCount (number): The number of flows declared dead. A flow is declared dead if no traffic is received for a specified number of seconds. To change this threshold use the deadFlowsThreshold attribute.
         - DeadFlowsThreshold (number): Threshold in seconds after which the flows are declared dead if there are no packets received for a specified number of seconds. This is a global attibute and hence the latest value entered takes precedence over previous values in all the custom views.
         - FlowFilterType (str(allFlows | deadFlows | liveFlows)): Indicates the flow detective filter settings.
-        - PortFilterIds (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/view/availablePortFilter])): Selected port filters from the availablePortFilter list.
-        - ShowEgressFlows (bool): NOT DEFINED
-        - TrafficItemFilterId (str(None | /api/v1/sessions/1/ixnetwork/statistics/view/availableTrafficItemFilter)): Selected traffic flow detective filter from the availableTrafficItemFilter list.
-        - TrafficItemFilterIds (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/view/availableTrafficItemFilter])): Selected traffic item filters from the availableTrafficItemFilter list.
+        - NumberOfResults (number): Number of traffic flows to be displayed.
+        - PortFilterIds (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/view/.../availablePortFilter])): Selected port filters from the availablePortFilter list.
+        - ShowEgressFlows (bool): Is a flag used to fetch the setting whether to show egress flows or not.
+        - TrafficItemFilterId (str(None | /api/v1/sessions/1/ixnetwork/statistics/view/.../availableTrafficItemFilter)): Selected traffic flow detective filter from the availableTrafficItemFilter list.
+        - TrafficItemFilterIds (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/view/.../availableTrafficItemFilter])): Selected traffic item filters from the availableTrafficItemFilter list.
 
         Returns
         -------

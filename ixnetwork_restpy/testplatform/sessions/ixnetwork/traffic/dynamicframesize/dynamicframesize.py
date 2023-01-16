@@ -71,7 +71,7 @@ class DynamicFrameSize(Base):
         """
         Returns
         -------
-        - str: The name of the high level stream
+        - str: The name of the high level stream.
         """
         return self._get_attribute(self._SDM_ATT_MAP["HighLevelStreamName"])
 
@@ -121,7 +121,7 @@ class DynamicFrameSize(Base):
         """
         Returns
         -------
-        - str(fixed | random): Sets the frame size to either fixed or random lengths in bytes.
+        - str(fixed | random): Sets the frame size type to either fixed or random lengths in bytes.
         """
         return self._get_attribute(self._SDM_ATT_MAP["Type"])
 
@@ -139,7 +139,7 @@ class DynamicFrameSize(Base):
         - FixedSize (number): Sets all frames to a specified constant size. The default is 64 bytes.
         - RandomMax (number): Sets frame size to maximum length in bytes. The maximum length is 65536 bytes.
         - RandomMin (number): Sets frame size to minimum length in bytes. The minimum length is 12 bytes.
-        - Type (str(fixed | random)): Sets the frame size to either fixed or random lengths in bytes.
+        - Type (str(fixed | random)): Sets the frame size type to either fixed or random lengths in bytes.
 
         Raises
         ------
@@ -156,7 +156,7 @@ class DynamicFrameSize(Base):
         - FixedSize (number): Sets all frames to a specified constant size. The default is 64 bytes.
         - RandomMax (number): Sets frame size to maximum length in bytes. The maximum length is 65536 bytes.
         - RandomMin (number): Sets frame size to minimum length in bytes. The minimum length is 12 bytes.
-        - Type (str(fixed | random)): Sets the frame size to either fixed or random lengths in bytes.
+        - Type (str(fixed | random)): Sets the frame size type to either fixed or random lengths in bytes.
 
         Returns
         -------
@@ -187,11 +187,11 @@ class DynamicFrameSize(Base):
         Args
         ----
         - FixedSize (number): Sets all frames to a specified constant size. The default is 64 bytes.
-        - HighLevelStreamName (str): The name of the high level stream
+        - HighLevelStreamName (str): The name of the high level stream.
         - RandomMax (number): Sets frame size to maximum length in bytes. The maximum length is 65536 bytes.
         - RandomMin (number): Sets frame size to minimum length in bytes. The minimum length is 12 bytes.
         - TrafficItemName (str): The name of the parent traffic item.
-        - Type (str(fixed | random)): Sets the frame size to either fixed or random lengths in bytes.
+        - Type (str(fixed | random)): Sets the frame size type to either fixed or random lengths in bytes.
 
         Returns
         -------

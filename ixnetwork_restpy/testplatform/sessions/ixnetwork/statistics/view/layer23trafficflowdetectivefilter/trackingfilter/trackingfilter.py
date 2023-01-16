@@ -79,7 +79,7 @@ class TrackingFilter(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/statistics/view/availableTrackingFilter): Selected tracking filters from the availableTrackingFilter list.
+        - str(None | /api/v1/sessions/1/ixnetwork/statistics/view/.../availableTrackingFilter): Selected tracking filters from the availableTrackingFilter list.
         """
         return self._get_attribute(self._SDM_ATT_MAP["TrackingFilterId"])
 
@@ -94,7 +94,7 @@ class TrackingFilter(Base):
         """
         Returns
         -------
-        - list(str): Value of the object
+        - list(str): Value of the object.
         """
         return self._get_attribute(self._SDM_ATT_MAP["Value"])
 
@@ -110,8 +110,8 @@ class TrackingFilter(Base):
         Args
         ----
         - Operator (str(isAnyOf | isDifferent | isEqual | isEqualOrGreater | isEqualOrSmaller | isGreater | isInAnyRange | isNoneOf | isSmaller)): The logical operation to be performed.
-        - TrackingFilterId (str(None | /api/v1/sessions/1/ixnetwork/statistics/view/availableTrackingFilter)): Selected tracking filters from the availableTrackingFilter list.
-        - Value (list(str)): Value of the object
+        - TrackingFilterId (str(None | /api/v1/sessions/1/ixnetwork/statistics/view/.../availableTrackingFilter)): Selected tracking filters from the availableTrackingFilter list.
+        - Value (list(str)): Value of the object.
 
         Raises
         ------
@@ -126,8 +126,8 @@ class TrackingFilter(Base):
         Args
         ----
         - Operator (str(isAnyOf | isDifferent | isEqual | isEqualOrGreater | isEqualOrSmaller | isGreater | isInAnyRange | isNoneOf | isSmaller)): The logical operation to be performed.
-        - TrackingFilterId (str(None | /api/v1/sessions/1/ixnetwork/statistics/view/availableTrackingFilter)): Selected tracking filters from the availableTrackingFilter list.
-        - Value (list(str)): Value of the object
+        - TrackingFilterId (str(None | /api/v1/sessions/1/ixnetwork/statistics/view/.../availableTrackingFilter)): Selected tracking filters from the availableTrackingFilter list.
+        - Value (list(str)): Value of the object.
 
         Returns
         -------
@@ -160,8 +160,8 @@ class TrackingFilter(Base):
         Args
         ----
         - Operator (str(isAnyOf | isDifferent | isEqual | isEqualOrGreater | isEqualOrSmaller | isGreater | isInAnyRange | isNoneOf | isSmaller)): The logical operation to be performed.
-        - TrackingFilterId (str(None | /api/v1/sessions/1/ixnetwork/statistics/view/availableTrackingFilter)): Selected tracking filters from the availableTrackingFilter list.
-        - Value (list(str)): Value of the object
+        - TrackingFilterId (str(None | /api/v1/sessions/1/ixnetwork/statistics/view/.../availableTrackingFilter)): Selected tracking filters from the availableTrackingFilter list.
+        - Value (list(str)): Value of the object.
 
         Returns
         -------

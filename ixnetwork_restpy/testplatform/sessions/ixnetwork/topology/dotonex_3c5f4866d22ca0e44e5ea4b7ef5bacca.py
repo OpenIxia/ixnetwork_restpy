@@ -534,13 +534,13 @@ class DotOneX(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.macsec_e234f4bb7910f70ddb27cb1e585d5040.Macsec): An instance of the Macsec class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.macsec_8816f28c50db5a9224d83bc7b8e0744d.Macsec): An instance of the Macsec class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.macsec_e234f4bb7910f70ddb27cb1e585d5040 import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.macsec_8816f28c50db5a9224d83bc7b8e0744d import (
             Macsec,
         )
 
@@ -674,13 +674,13 @@ class DotOneX(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ptp_24f2907f5a685b611f57469838b21337.Ptp): An instance of the Ptp class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ptp_10b9c21d9c7cf77e86ec2d87b28de348.Ptp): An instance of the Ptp class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ptp_24f2907f5a685b611f57469838b21337 import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ptp_10b9c21d9c7cf77e86ec2d87b28de348 import (
             Ptp,
         )
 
@@ -714,13 +714,13 @@ class DotOneX(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.staticmacsec_334bb16ed0f82339d219d0d5f058cee4.StaticMacsec): An instance of the StaticMacsec class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.staticmacsec_b2bfb1c8c259661514373bf3afb4450d.StaticMacsec): An instance of the StaticMacsec class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.staticmacsec_334bb16ed0f82339d219d0d5f058cee4 import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.staticmacsec_b2bfb1c8c259661514373bf3afb4450d import (
             StaticMacsec,
         )
 
@@ -1456,6 +1456,32 @@ class DotOneX(Base):
         for item in kwargs.items():
             payload[item[0]] = item[1]
         return self._execute("stop", payload=payload, response_object=None)
+
+    def UploadFile(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the uploadFile operation on the server.
+
+        For secure sessions, upload necessary certificate files to chassis before test is run.
+
+        uploadFile(Arg2=list, Arg3=number, Arg4=href, async_operation=bool)list
+        -----------------------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the device group.
+        - Arg3 (number): Select files(s) to upload.
+        - Arg4 (obj(ixnetwork_restpy.files.Files)):
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("uploadFile", payload=payload, response_object=None)
 
     def get_device_ids(
         self,

@@ -173,7 +173,7 @@ class Parameter(Base):
         """
         Returns
         -------
-        - str: Current parameter UI Display Value
+        - str: Current parameter UI Display Value.
         """
         return self._get_attribute(self._SDM_ATT_MAP["DisplayValue"])
 
@@ -183,7 +183,7 @@ class Parameter(Base):
         """
         Returns
         -------
-        - str(choice | range | value): Each parameter has one or multiple options. Runtime supported options for specific parameter can be retrieved from supportedOptions attribute
+        - str(choice | range | value): Each parameter has one or multiple options. Runtime supported options for specific parameter can be retrieved from supportedOptions attribute.
         """
         return self._get_attribute(self._SDM_ATT_MAP["Option"])
 
@@ -198,7 +198,7 @@ class Parameter(Base):
         """
         Returns
         -------
-        - list(str[choice | range | value]): Runtime supported options for a specific parameter
+        - list(str[choice | range | value]): Runtime supported options for a specific parameter.
         """
         return self._get_attribute(self._SDM_ATT_MAP["SupportedOptions"])
 
@@ -208,7 +208,7 @@ class Parameter(Base):
 
         Args
         ----
-        - Option (str(choice | range | value)): Each parameter has one or multiple options. Runtime supported options for specific parameter can be retrieved from supportedOptions attribute
+        - Option (str(choice | range | value)): Each parameter has one or multiple options. Runtime supported options for specific parameter can be retrieved from supportedOptions attribute.
 
         Raises
         ------
@@ -222,7 +222,7 @@ class Parameter(Base):
 
         Args
         ----
-        - Option (str(choice | range | value)): Each parameter has one or multiple options. Runtime supported options for specific parameter can be retrieved from supportedOptions attribute
+        - Option (str(choice | range | value)): Each parameter has one or multiple options. Runtime supported options for specific parameter can be retrieved from supportedOptions attribute.
 
         Returns
         -------
@@ -244,9 +244,9 @@ class Parameter(Base):
 
         Args
         ----
-        - DisplayValue (str): Current parameter UI Display Value
-        - Option (str(choice | range | value)): Each parameter has one or multiple options. Runtime supported options for specific parameter can be retrieved from supportedOptions attribute
-        - SupportedOptions (list(str[choice | range | value])): Runtime supported options for a specific parameter
+        - DisplayValue (str): Current parameter UI Display Value.
+        - Option (str(choice | range | value)): Each parameter has one or multiple options. Runtime supported options for specific parameter can be retrieved from supportedOptions attribute.
+        - SupportedOptions (list(str[choice | range | value])): Runtime supported options for a specific parameter.
 
         Returns
         -------

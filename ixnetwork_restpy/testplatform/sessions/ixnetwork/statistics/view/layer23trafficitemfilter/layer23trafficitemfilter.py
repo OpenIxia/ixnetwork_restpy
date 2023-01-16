@@ -45,12 +45,32 @@ class Layer23TrafficItemFilter(Base):
         super(Layer23TrafficItemFilter, self).__init__(parent, list_op)
 
     @property
+    def TrafficItemFilters(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.layer23trafficitemfilter.trafficitemfilters.trafficitemfilters.TrafficItemFilters): An instance of the TrafficItemFilters class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.layer23trafficitemfilter.trafficitemfilters.trafficitemfilters import (
+            TrafficItemFilters,
+        )
+
+        if len(self._object_properties) > 0:
+            if self._properties.get("TrafficItemFilters", None) is not None:
+                return self._properties.get("TrafficItemFilters")
+        return TrafficItemFilters(self)
+
+    @property
     def TrafficItemFilterIds(self):
         # type: () -> List[str]
         """
         Returns
         -------
-        - list(str[None | /api/v1/sessions/1/ixnetwork/statistics/view/availableTrafficItemFilter]): Selected traffic item filters from the availableTrafficItemFilter list.
+        - list(str[None | /api/v1/sessions/1/ixnetwork/statistics/view/.../availableTrafficItemFilter]): Selected traffic item filters from the availableTrafficItemFilter list.
         """
         return self._get_attribute(self._SDM_ATT_MAP["TrafficItemFilterIds"])
 
@@ -65,7 +85,7 @@ class Layer23TrafficItemFilter(Base):
 
         Args
         ----
-        - TrafficItemFilterIds (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/view/availableTrafficItemFilter])): Selected traffic item filters from the availableTrafficItemFilter list.
+        - TrafficItemFilterIds (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/view/.../availableTrafficItemFilter])): Selected traffic item filters from the availableTrafficItemFilter list.
 
         Raises
         ------
@@ -79,7 +99,7 @@ class Layer23TrafficItemFilter(Base):
 
         Args
         ----
-        - TrafficItemFilterIds (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/view/availableTrafficItemFilter])): Selected traffic item filters from the availableTrafficItemFilter list.
+        - TrafficItemFilterIds (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/view/.../availableTrafficItemFilter])): Selected traffic item filters from the availableTrafficItemFilter list.
 
         Returns
         -------
@@ -111,7 +131,7 @@ class Layer23TrafficItemFilter(Base):
 
         Args
         ----
-        - TrafficItemFilterIds (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/view/availableTrafficItemFilter])): Selected traffic item filters from the availableTrafficItemFilter list.
+        - TrafficItemFilterIds (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/view/.../availableTrafficItemFilter])): Selected traffic item filters from the availableTrafficItemFilter list.
 
         Returns
         -------

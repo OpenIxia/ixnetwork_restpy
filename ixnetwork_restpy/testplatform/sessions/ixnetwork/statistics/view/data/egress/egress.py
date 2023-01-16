@@ -72,7 +72,7 @@ class Egress(Base):
         """
         Returns
         -------
-        - bool:
+        - bool: Attribute used to commit egress paging from script.
         """
         return self._get_attribute(self._SDM_ATT_MAP["CommitEgressPage"])
 
@@ -87,7 +87,7 @@ class Egress(Base):
         """
         Returns
         -------
-        - number:
+        - number: The current page number being displayed.
         """
         return self._get_attribute(self._SDM_ATT_MAP["CurrentPage"])
 
@@ -102,7 +102,7 @@ class Egress(Base):
         """
         Returns
         -------
-        - number:
+        - number: Displays the particular row number in the view.
         """
         return self._get_attribute(self._SDM_ATT_MAP["RowCount"])
 
@@ -112,7 +112,7 @@ class Egress(Base):
         """
         Returns
         -------
-        - number:
+        - number: The total number of statistics pages.
         """
         return self._get_attribute(self._SDM_ATT_MAP["TotalPages"])
 
@@ -122,8 +122,8 @@ class Egress(Base):
 
         Args
         ----
-        - CommitEgressPage (bool):
-        - CurrentPage (number):
+        - CommitEgressPage (bool): Attribute used to commit egress paging from script.
+        - CurrentPage (number): The current page number being displayed.
 
         Raises
         ------
@@ -137,8 +137,8 @@ class Egress(Base):
 
         Args
         ----
-        - CommitEgressPage (bool):
-        - CurrentPage (number):
+        - CommitEgressPage (bool): Attribute used to commit egress paging from script.
+        - CurrentPage (number): The current page number being displayed.
 
         Returns
         -------
@@ -162,10 +162,10 @@ class Egress(Base):
 
         Args
         ----
-        - CommitEgressPage (bool):
-        - CurrentPage (number):
-        - RowCount (number):
-        - TotalPages (number):
+        - CommitEgressPage (bool): Attribute used to commit egress paging from script.
+        - CurrentPage (number): The current page number being displayed.
+        - RowCount (number): Displays the particular row number in the view.
+        - TotalPages (number): The total number of statistics pages.
 
         Returns
         -------

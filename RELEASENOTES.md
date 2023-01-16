@@ -1,4 +1,7 @@
 # Release Notes
+### January 2023
+* 1.1.8
+  * support ixnetwork version  9.30.2212.7 (9.30 EA)
 ### October 2022
 * 1.1.7
   * support ixnetwork version 9.20.2206.84 (9.20 Update-3)

@@ -87,7 +87,7 @@ class Statistic(Base):
         """
         Returns
         -------
-        - str:
+        - str: Name of the statistic.
         """
         return self._get_attribute(self._SDM_ATT_MAP["Caption"])
 
@@ -102,7 +102,7 @@ class Statistic(Base):
         """
         Returns
         -------
-        - str:
+        - str: Default name of the statistic.
         """
         return self._get_attribute(self._SDM_ATT_MAP["DefaultCaption"])
 
@@ -112,7 +112,7 @@ class Statistic(Base):
         """
         Returns
         -------
-        - bool:
+        - bool: If true, enables the view that is created.
         """
         return self._get_attribute(self._SDM_ATT_MAP["Enabled"])
 
@@ -155,8 +155,8 @@ class Statistic(Base):
         Args
         ----
         - AggregationType (str(average | averageRate | ax | axRate | intervalAverage | min | minRate | none | rate | runStateAgg | runStateAggIgnoreRamp | sum | vectorMax | vectorMin | weightedAverage)):
-        - Caption (str):
-        - Enabled (bool):
+        - Caption (str): Name of the statistic.
+        - Enabled (bool): If true, enables the view that is created.
         - ScaleFactor (number):
 
         Raises
@@ -172,8 +172,8 @@ class Statistic(Base):
         Args
         ----
         - AggregationType (str(average | averageRate | ax | axRate | intervalAverage | min | minRate | none | rate | runStateAgg | runStateAggIgnoreRamp | sum | vectorMax | vectorMin | weightedAverage)):
-        - Caption (str):
-        - Enabled (bool):
+        - Caption (str): Name of the statistic.
+        - Enabled (bool): If true, enables the view that is created.
         - ScaleFactor (number):
 
         Returns
@@ -205,9 +205,9 @@ class Statistic(Base):
         Args
         ----
         - AggregationType (str(average | averageRate | ax | axRate | intervalAverage | min | minRate | none | rate | runStateAgg | runStateAggIgnoreRamp | sum | vectorMax | vectorMin | weightedAverage)):
-        - Caption (str):
-        - DefaultCaption (str):
-        - Enabled (bool):
+        - Caption (str): Name of the statistic.
+        - DefaultCaption (str): Default name of the statistic.
+        - Enabled (bool): If true, enables the view that is created.
         - ScaleFactor (number):
         - SourceTypes (list(str)):
 

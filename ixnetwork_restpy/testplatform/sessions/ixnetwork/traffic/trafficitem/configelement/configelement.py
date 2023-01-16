@@ -41,13 +41,17 @@ class ConfigElement(Base):
         "EnableDisparityError": "enableDisparityError",
         "EncapsulationName": "encapsulationName",
         "EndpointSetId": "endpointSetId",
+        "PacketFrameSize": "packetFrameSize",
+        "PacketPayloadOffset": "packetPayloadOffset",
+        "PacketPayloadSize": "packetPayloadSize",
+        "PreambleCustomData": "preambleCustomData",
         "PreambleCustomSize": "preambleCustomSize",
         "PreambleFrameSizeMode": "preambleFrameSizeMode",
     }
     _SDM_ENUM_MAP = {
         "crc": ["badCrc", "goodCrc"],
         "destinationMacMode": ["arp", "manual"],
-        "preambleFrameSizeMode": ["auto", "custom"],
+        "preambleFrameSizeMode": ["auto", "custom", "customBytes"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -279,6 +283,51 @@ class ConfigElement(Base):
         return self._get_attribute(self._SDM_ATT_MAP["EndpointSetId"])
 
     @property
+    def PacketFrameSize(self):
+        # type: () -> int
+        """
+        Returns
+        -------
+        - number: Packet Frame Size(bytes)
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["PacketFrameSize"])
+
+    @property
+    def PacketPayloadOffset(self):
+        # type: () -> int
+        """
+        Returns
+        -------
+        - number: Packet payload offset
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["PacketPayloadOffset"])
+
+    @property
+    def PacketPayloadSize(self):
+        # type: () -> int
+        """
+        Returns
+        -------
+        - number: Packet Payload size(bits)
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["PacketPayloadSize"])
+
+    @property
+    def PreambleCustomData(self):
+        # type: () -> int
+        """
+        Returns
+        -------
+        - number: Indicates the customized preamble of the frame. Provide space separated hexadecimal bytes.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["PreambleCustomData"])
+
+    @PreambleCustomData.setter
+    def PreambleCustomData(self, value):
+        # type: (int) -> None
+        self._set_attribute(self._SDM_ATT_MAP["PreambleCustomData"], value)
+
+    @property
     def PreambleCustomSize(self):
         # type: () -> int
         """
@@ -299,7 +348,7 @@ class ConfigElement(Base):
         """
         Returns
         -------
-        - str(auto | custom): The preamble size to synchronize sender and receiver of the configured encapsulation set.
+        - str(auto | custom | customBytes): The preamble size to synchronize sender and receiver of the configured encapsulation set.
         """
         return self._get_attribute(self._SDM_ATT_MAP["PreambleFrameSizeMode"])
 
@@ -313,10 +362,11 @@ class ConfigElement(Base):
         Crc=None,
         DestinationMacMode=None,
         EnableDisparityError=None,
+        PreambleCustomData=None,
         PreambleCustomSize=None,
         PreambleFrameSizeMode=None,
     ):
-        # type: (str, str, bool, int, str) -> ConfigElement
+        # type: (str, str, bool, int, int, str) -> ConfigElement
         """Updates configElement resource on the server.
 
         Args
@@ -324,8 +374,9 @@ class ConfigElement(Base):
         - Crc (str(badCrc | goodCrc)): The Cyclic Redundancy Check frame of the configured encapsulation set.
         - DestinationMacMode (str(arp | manual)): The destination MAC address that is to be configured.
         - EnableDisparityError (bool): If true, enables disparity error
+        - PreambleCustomData (number): Indicates the customized preamble of the frame. Provide space separated hexadecimal bytes.
         - PreambleCustomSize (number): Indicates the customized preamble size of the frame.
-        - PreambleFrameSizeMode (str(auto | custom)): The preamble size to synchronize sender and receiver of the configured encapsulation set.
+        - PreambleFrameSizeMode (str(auto | custom | customBytes)): The preamble size to synchronize sender and receiver of the configured encapsulation set.
 
         Raises
         ------
@@ -338,10 +389,11 @@ class ConfigElement(Base):
         Crc=None,
         DestinationMacMode=None,
         EnableDisparityError=None,
+        PreambleCustomData=None,
         PreambleCustomSize=None,
         PreambleFrameSizeMode=None,
     ):
-        # type: (str, str, bool, int, str) -> ConfigElement
+        # type: (str, str, bool, int, int, str) -> ConfigElement
         """Adds a new configElement resource on the json, only valid with batch add utility
 
         Args
@@ -349,8 +401,9 @@ class ConfigElement(Base):
         - Crc (str(badCrc | goodCrc)): The Cyclic Redundancy Check frame of the configured encapsulation set.
         - DestinationMacMode (str(arp | manual)): The destination MAC address that is to be configured.
         - EnableDisparityError (bool): If true, enables disparity error
+        - PreambleCustomData (number): Indicates the customized preamble of the frame. Provide space separated hexadecimal bytes.
         - PreambleCustomSize (number): Indicates the customized preamble size of the frame.
-        - PreambleFrameSizeMode (str(auto | custom)): The preamble size to synchronize sender and receiver of the configured encapsulation set.
+        - PreambleFrameSizeMode (str(auto | custom | customBytes)): The preamble size to synchronize sender and receiver of the configured encapsulation set.
 
         Returns
         -------
@@ -369,10 +422,14 @@ class ConfigElement(Base):
         EnableDisparityError=None,
         EncapsulationName=None,
         EndpointSetId=None,
+        PacketFrameSize=None,
+        PacketPayloadOffset=None,
+        PacketPayloadSize=None,
+        PreambleCustomData=None,
         PreambleCustomSize=None,
         PreambleFrameSizeMode=None,
     ):
-        # type: (str, str, bool, str, int, int, str) -> ConfigElement
+        # type: (str, str, bool, str, int, int, int, int, int, int, str) -> ConfigElement
         """Finds and retrieves configElement resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve configElement resources from the server.
@@ -386,8 +443,12 @@ class ConfigElement(Base):
         - EnableDisparityError (bool): If true, enables disparity error
         - EncapsulationName (str): Indicates the name of the encapsulation set.
         - EndpointSetId (number): Indicates the identification of the endpoint set.
+        - PacketFrameSize (number): Packet Frame Size(bytes)
+        - PacketPayloadOffset (number): Packet payload offset
+        - PacketPayloadSize (number): Packet Payload size(bits)
+        - PreambleCustomData (number): Indicates the customized preamble of the frame. Provide space separated hexadecimal bytes.
         - PreambleCustomSize (number): Indicates the customized preamble size of the frame.
-        - PreambleFrameSizeMode (str(auto | custom)): The preamble size to synchronize sender and receiver of the configured encapsulation set.
+        - PreambleFrameSizeMode (str(auto | custom | customBytes)): The preamble size to synchronize sender and receiver of the configured encapsulation set.
 
         Returns
         -------

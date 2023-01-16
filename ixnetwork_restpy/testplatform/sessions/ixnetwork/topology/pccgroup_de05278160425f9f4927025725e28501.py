@@ -502,7 +502,7 @@ class PccGroup(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): PCE TE-PATH-BINDING TLV Type is a TLV that carries MPLS label binding or SRv6 Binding SID. This is only configurable if the Binding SID Draft Version is set to ietf-pce-binding-label-sid. The minimum value is 0. The maximum value is 65535. The default value is 31.
+        - obj(ixnetwork_restpy.multivalue.Multivalue): PCE TE-PATH-BINDING TLV Type is a TLV that carries MPLS label binding or SRv6 Binding SID.This is only configurable if the Binding SID Draft Version is set to ietf-pce-binding-label-sid.The minimum value is 0.The maximum value is 65535.The default value is 31.
         """
         from ixnetwork_restpy.multivalue import Multivalue
 
@@ -552,7 +552,7 @@ class PccGroup(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): The SRv6 PCE Capability TLV is a sub-TLV that comes under PATH-SETUP-TYPE-CAPABILITY TLV if PST List contains SRv6 PST type. This TLV is associated with the OPEN Object to exchange SRv6 capability of PCEP speakers.
+        - obj(ixnetwork_restpy.multivalue.Multivalue): The SRv6 PCE Capability TLV is a sub-TLV that comes under PATH-SETUP-TYPE-CAPABILITY TLV if PST List contains SRv6 PST type.This TLV is associated with the OPEN Object to exchange SRv6 capability of PCEP speakers.
         """
         from ixnetwork_restpy.multivalue import Multivalue
 
@@ -801,7 +801,7 @@ class PccGroup(Base):
 
         clearPceAllLearnedInfo(Arg2=list, async_operation=bool)list
         -----------------------------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns list(str): ID to associate each async action invocation
 
@@ -843,7 +843,7 @@ class PccGroup(Base):
 
         getPceBasicAllRsvpLspLearnedInfo(Arg2=list, async_operation=bool)list
         ---------------------------------------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns list(str): ID to associate each async action invocation
 
@@ -885,7 +885,7 @@ class PccGroup(Base):
 
         getPceBasicAllSrLspLearnedInfo(Arg2=list, async_operation=bool)list
         -------------------------------------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns list(str): ID to associate each async action invocation
 
@@ -927,7 +927,7 @@ class PccGroup(Base):
 
         getPceBasicAllSrv6LspLearnedInfo(Arg2=list, async_operation=bool)list
         ---------------------------------------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns list(str): ID to associate each async action invocation
 
@@ -969,7 +969,7 @@ class PccGroup(Base):
 
         getPceBasicRsvpPccRequestedLspLearnedInfo(Arg2=list, async_operation=bool)list
         ------------------------------------------------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns list(str): ID to associate each async action invocation
 
@@ -1013,7 +1013,7 @@ class PccGroup(Base):
 
         getPceBasicRsvpPccSyncLspLearnedInfo(Arg2=list, async_operation=bool)list
         -------------------------------------------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns list(str): ID to associate each async action invocation
 
@@ -1057,7 +1057,7 @@ class PccGroup(Base):
 
         getPceBasicRsvpPceInitiatedLspLearnedInfo(Arg2=list, async_operation=bool)list
         ------------------------------------------------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns list(str): ID to associate each async action invocation
 
@@ -1101,7 +1101,7 @@ class PccGroup(Base):
 
         getPceBasicSrPccRequestedLspLearnedInfo(Arg2=list, async_operation=bool)list
         ----------------------------------------------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns list(str): ID to associate each async action invocation
 
@@ -1145,7 +1145,7 @@ class PccGroup(Base):
 
         getPceBasicSrPccSyncLspLearnedInfo(Arg2=list, async_operation=bool)list
         -----------------------------------------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns list(str): ID to associate each async action invocation
 
@@ -1187,7 +1187,7 @@ class PccGroup(Base):
 
         getPceBasicSrPceInitiatedLspLearnedInfo(Arg2=list, async_operation=bool)list
         ----------------------------------------------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns list(str): ID to associate each async action invocation
 
@@ -1231,7 +1231,7 @@ class PccGroup(Base):
 
         getPceBasicSrv6PccRequestedLspLearnedInfo(Arg2=list, async_operation=bool)list
         ------------------------------------------------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns list(str): ID to associate each async action invocation
 
@@ -1275,7 +1275,7 @@ class PccGroup(Base):
 
         getPceBasicSrv6PccSyncLspLearnedInfo(Arg2=list, async_operation=bool)list
         -------------------------------------------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns list(str): ID to associate each async action invocation
 
@@ -1319,7 +1319,7 @@ class PccGroup(Base):
 
         getPceBasicSrv6PceInitiatedLspLearnedInfo(Arg2=list, async_operation=bool)list
         ------------------------------------------------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns list(str): ID to associate each async action invocation
 
@@ -1363,7 +1363,7 @@ class PccGroup(Base):
 
         getPceDetailedAllRsvpLspLearnedInfo(Arg2=list, async_operation=bool)list
         ------------------------------------------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns list(str): ID to associate each async action invocation
 
@@ -1405,7 +1405,7 @@ class PccGroup(Base):
 
         getPceDetailedAllSrLspLearnedInfo(Arg2=list, async_operation=bool)list
         ----------------------------------------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns list(str): ID to associate each async action invocation
 
@@ -1447,7 +1447,7 @@ class PccGroup(Base):
 
         getPceDetailedAllSrv6LspLearnedInfo(Arg2=list, async_operation=bool)list
         ------------------------------------------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns list(str): ID to associate each async action invocation
 
@@ -1489,7 +1489,7 @@ class PccGroup(Base):
 
         getPceDetailedRsvpPccRequestedLspLearnedInfo(Arg2=list, async_operation=bool)list
         ---------------------------------------------------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns list(str): ID to associate each async action invocation
 
@@ -1533,7 +1533,7 @@ class PccGroup(Base):
 
         getPceDetailedRsvpPccSyncLspLearnedInfo(Arg2=list, async_operation=bool)list
         ----------------------------------------------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns list(str): ID to associate each async action invocation
 
@@ -1577,7 +1577,7 @@ class PccGroup(Base):
 
         getPceDetailedRsvpPceInitiatedLspLearnedInfo(Arg2=list, async_operation=bool)list
         ---------------------------------------------------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns list(str): ID to associate each async action invocation
 
@@ -1621,7 +1621,7 @@ class PccGroup(Base):
 
         getPceDetailedSrPccRequestedLspLearnedInfo(Arg2=list, async_operation=bool)list
         -------------------------------------------------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns list(str): ID to associate each async action invocation
 
@@ -1665,7 +1665,7 @@ class PccGroup(Base):
 
         getPceDetailedSrPccSyncLspLearnedInfo(Arg2=list, async_operation=bool)list
         --------------------------------------------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns list(str): ID to associate each async action invocation
 
@@ -1709,7 +1709,7 @@ class PccGroup(Base):
 
         getPceDetailedSrPceInitiatedLspLearnedInfo(Arg2=list, async_operation=bool)list
         -------------------------------------------------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns list(str): ID to associate each async action invocation
 
@@ -1753,7 +1753,7 @@ class PccGroup(Base):
 
         getPceDetailedSrv6PccRequestedLspLearnedInfo(Arg2=list, async_operation=bool)list
         ---------------------------------------------------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns list(str): ID to associate each async action invocation
 
@@ -1797,7 +1797,7 @@ class PccGroup(Base):
 
         getPceDetailedSrv6PccSyncLspLearnedInfo(Arg2=list, async_operation=bool)list
         ----------------------------------------------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns list(str): ID to associate each async action invocation
 
@@ -1841,7 +1841,7 @@ class PccGroup(Base):
 
         getPceDetailedSrv6PceInitiatedLspLearnedInfo(Arg2=list, async_operation=bool)list
         ---------------------------------------------------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - Arg2 (list(number)): List of indices into the protocol plugin.An empty list indicates all instances in the plugin.
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns list(str): ID to associate each async action invocation
 

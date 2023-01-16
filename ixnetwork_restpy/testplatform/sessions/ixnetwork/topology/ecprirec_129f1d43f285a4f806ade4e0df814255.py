@@ -141,13 +141,13 @@ class ECpriRec(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.orandu_1cf7f03fca313795b6ed7e94b499b186.OranDU): An instance of the OranDU class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.orandu_3c913d8352aa36ef882a1ba8a0683584.OranDU): An instance of the OranDU class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.orandu_1cf7f03fca313795b6ed7e94b499b186 import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.orandu_3c913d8352aa36ef882a1ba8a0683584 import (
             OranDU,
         )
 
@@ -161,13 +161,13 @@ class ECpriRec(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.oranru_38317a0c7fd50491419113310eba9bb0.OranRU): An instance of the OranRU class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.oranru_c5d61b81f2557e778753a97ef8b7363b.OranRU): An instance of the OranRU class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.oranru_38317a0c7fd50491419113310eba9bb0 import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.oranru_c5d61b81f2557e778753a97ef8b7363b import (
             OranRU,
         )
 

@@ -554,13 +554,13 @@ class Ethernet(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.macsec_e234f4bb7910f70ddb27cb1e585d5040.Macsec): An instance of the Macsec class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.macsec_8816f28c50db5a9224d83bc7b8e0744d.Macsec): An instance of the Macsec class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.macsec_e234f4bb7910f70ddb27cb1e585d5040 import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.macsec_8816f28c50db5a9224d83bc7b8e0744d import (
             Macsec,
         )
 
@@ -714,13 +714,13 @@ class Ethernet(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ptp_24f2907f5a685b611f57469838b21337.Ptp): An instance of the Ptp class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ptp_10b9c21d9c7cf77e86ec2d87b28de348.Ptp): An instance of the Ptp class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ptp_24f2907f5a685b611f57469838b21337 import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ptp_10b9c21d9c7cf77e86ec2d87b28de348 import (
             Ptp,
         )
 
@@ -754,13 +754,13 @@ class Ethernet(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.staticmacsec_334bb16ed0f82339d219d0d5f058cee4.StaticMacsec): An instance of the StaticMacsec class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.staticmacsec_b2bfb1c8c259661514373bf3afb4450d.StaticMacsec): An instance of the StaticMacsec class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.staticmacsec_334bb16ed0f82339d219d0d5f058cee4 import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.staticmacsec_b2bfb1c8c259661514373bf3afb4450d import (
             StaticMacsec,
         )
 

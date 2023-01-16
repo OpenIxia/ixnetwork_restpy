@@ -114,13 +114,13 @@ class Rfc3918groupCapacity(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.testconfig_5889cc38d331ea876ad698ef4dcc8344.TestConfig): An instance of the TestConfig class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.testconfig_6ecc050475b14b80814d357227c4f1bf.TestConfig): An instance of the TestConfig class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.testconfig_5889cc38d331ea876ad698ef4dcc8344 import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.testconfig_6ecc050475b14b80814d357227c4f1bf import (
             TestConfig,
         )
 

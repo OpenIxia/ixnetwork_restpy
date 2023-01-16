@@ -28,7 +28,7 @@ if sys.version_info >= (3, 5):
 
 
 class Mka(Base):
-    """Mka Configuration
+    """Mka
     The Mka class encapsulates a list of mka resources that are managed by the user.
     A list of resources can be retrieved from the server using the Mka.find() method.
     The list can be managed by using the Mka.add() and Mka.remove() methods.

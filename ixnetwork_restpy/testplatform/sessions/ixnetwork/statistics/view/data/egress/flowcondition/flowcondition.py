@@ -78,7 +78,7 @@ class FlowCondition(Base):
         """
         Returns
         -------
-        - bool:
+        - bool: If true, displays the first matching set.
         """
         return self._get_attribute(self._SDM_ATT_MAP["ShowFirstMatchingSet"])
 
@@ -93,7 +93,7 @@ class FlowCondition(Base):
         """
         Returns
         -------
-        - str(None | /api/v1/sessions/1/ixnetwork/statistics/view/availableTrackingFilter):
+        - str(None | /api/v1/sessions/1/ixnetwork/statistics/view/availableTrackingFilter): Selected tracking filters from the availableTrackingFilter list.
         """
         return self._get_attribute(self._SDM_ATT_MAP["TrackingFilterId"])
 
@@ -108,7 +108,7 @@ class FlowCondition(Base):
         """
         Returns
         -------
-        - list(number):
+        - list(number): Value to be matched for the condition.
         """
         return self._get_attribute(self._SDM_ATT_MAP["Values"])
 
@@ -130,9 +130,9 @@ class FlowCondition(Base):
         Args
         ----
         - Operator (str(isBetween | isDifferent | isEqual | isEqualOrGreater | isEqualOrSmaller | isGreater | isSmaller)):
-        - ShowFirstMatchingSet (bool):
-        - TrackingFilterId (str(None | /api/v1/sessions/1/ixnetwork/statistics/view/availableTrackingFilter)):
-        - Values (list(number)):
+        - ShowFirstMatchingSet (bool): If true, displays the first matching set.
+        - TrackingFilterId (str(None | /api/v1/sessions/1/ixnetwork/statistics/view/availableTrackingFilter)): Selected tracking filters from the availableTrackingFilter list.
+        - Values (list(number)): Value to be matched for the condition.
 
         Raises
         ------
@@ -153,9 +153,9 @@ class FlowCondition(Base):
         Args
         ----
         - Operator (str(isBetween | isDifferent | isEqual | isEqualOrGreater | isEqualOrSmaller | isGreater | isSmaller)):
-        - ShowFirstMatchingSet (bool):
-        - TrackingFilterId (str(None | /api/v1/sessions/1/ixnetwork/statistics/view/availableTrackingFilter)):
-        - Values (list(number)):
+        - ShowFirstMatchingSet (bool): If true, displays the first matching set.
+        - TrackingFilterId (str(None | /api/v1/sessions/1/ixnetwork/statistics/view/availableTrackingFilter)): Selected tracking filters from the availableTrackingFilter list.
+        - Values (list(number)): Value to be matched for the condition.
 
         Returns
         -------
@@ -194,9 +194,9 @@ class FlowCondition(Base):
         Args
         ----
         - Operator (str(isBetween | isDifferent | isEqual | isEqualOrGreater | isEqualOrSmaller | isGreater | isSmaller)):
-        - ShowFirstMatchingSet (bool):
-        - TrackingFilterId (str(None | /api/v1/sessions/1/ixnetwork/statistics/view/availableTrackingFilter)):
-        - Values (list(number)):
+        - ShowFirstMatchingSet (bool): If true, displays the first matching set.
+        - TrackingFilterId (str(None | /api/v1/sessions/1/ixnetwork/statistics/view/availableTrackingFilter)): Selected tracking filters from the availableTrackingFilter list.
+        - Values (list(number)): Value to be matched for the condition.
 
         Returns
         -------

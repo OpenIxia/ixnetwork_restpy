@@ -17,7 +17,69 @@ class Ipv6HopByHopOptions(Base):
         "PadNLength": "ipv6HopByHopOptions.header.hopByHopOptionsHeader.options.option.padN.length-9",
         "PadNData": "ipv6HopByHopOptions.header.hopByHopOptionsHeader.options.option.padN.data-10",
         "OptionPad1": "ipv6HopByHopOptions.header.hopByHopOptionsHeader.options.option.pad1-11",
-        "HeaderPad": "ipv6HopByHopOptions.header.pad-12",
+        "PathTracingType": "ipv6HopByHopOptions.header.hopByHopOptionsHeader.options.option.pathTracing.type-12",
+        "PathTracingLength": "ipv6HopByHopOptions.header.hopByHopOptionsHeader.options.option.pathTracing.length-13",
+        "Mcd1OifId": "ipv6HopByHopOptions.header.hopByHopOptionsHeader.options.option.pathTracing.data.mcd1.oifId-14",
+        "Mcd1Oil": "ipv6HopByHopOptions.header.hopByHopOptionsHeader.options.option.pathTracing.data.mcd1.oil-15",
+        "Mcd1Tts": "ipv6HopByHopOptions.header.hopByHopOptionsHeader.options.option.pathTracing.data.mcd1.tts-16",
+        "Mcd2OifId": "ipv6HopByHopOptions.header.hopByHopOptionsHeader.options.option.pathTracing.data.mcd2.oifId-17",
+        "Mcd2Oil": "ipv6HopByHopOptions.header.hopByHopOptionsHeader.options.option.pathTracing.data.mcd2.oil-18",
+        "Mcd2Tts": "ipv6HopByHopOptions.header.hopByHopOptionsHeader.options.option.pathTracing.data.mcd2.tts-19",
+        "Mcd3OifId": "ipv6HopByHopOptions.header.hopByHopOptionsHeader.options.option.pathTracing.data.mcd3.oifId-20",
+        "Mcd3Oil": "ipv6HopByHopOptions.header.hopByHopOptionsHeader.options.option.pathTracing.data.mcd3.oil-21",
+        "Mcd3Tts": "ipv6HopByHopOptions.header.hopByHopOptionsHeader.options.option.pathTracing.data.mcd3.tts-22",
+        "Mcd4OifId": "ipv6HopByHopOptions.header.hopByHopOptionsHeader.options.option.pathTracing.data.mcd4.oifId-23",
+        "Mcd4Oil": "ipv6HopByHopOptions.header.hopByHopOptionsHeader.options.option.pathTracing.data.mcd4.oil-24",
+        "Mcd4Tts": "ipv6HopByHopOptions.header.hopByHopOptionsHeader.options.option.pathTracing.data.mcd4.tts-25",
+        "Mcd5OifId": "ipv6HopByHopOptions.header.hopByHopOptionsHeader.options.option.pathTracing.data.mcd5.oifId-26",
+        "Mcd5Oil": "ipv6HopByHopOptions.header.hopByHopOptionsHeader.options.option.pathTracing.data.mcd5.oil-27",
+        "Mcd5Tts": "ipv6HopByHopOptions.header.hopByHopOptionsHeader.options.option.pathTracing.data.mcd5.tts-28",
+        "Mcd6OifId": "ipv6HopByHopOptions.header.hopByHopOptionsHeader.options.option.pathTracing.data.mcd6.oifId-29",
+        "Mcd6Oil": "ipv6HopByHopOptions.header.hopByHopOptionsHeader.options.option.pathTracing.data.mcd6.oil-30",
+        "Mcd6Tts": "ipv6HopByHopOptions.header.hopByHopOptionsHeader.options.option.pathTracing.data.mcd6.tts-31",
+        "Mcd7OifId": "ipv6HopByHopOptions.header.hopByHopOptionsHeader.options.option.pathTracing.data.mcd7.oifId-32",
+        "Mcd7Oil": "ipv6HopByHopOptions.header.hopByHopOptionsHeader.options.option.pathTracing.data.mcd7.oil-33",
+        "Mcd7Tts": "ipv6HopByHopOptions.header.hopByHopOptionsHeader.options.option.pathTracing.data.mcd7.tts-34",
+        "Mcd8OifId": "ipv6HopByHopOptions.header.hopByHopOptionsHeader.options.option.pathTracing.data.mcd8.oifId-35",
+        "Mcd8Oil": "ipv6HopByHopOptions.header.hopByHopOptionsHeader.options.option.pathTracing.data.mcd8.oil-36",
+        "Mcd8Tts": "ipv6HopByHopOptions.header.hopByHopOptionsHeader.options.option.pathTracing.data.mcd8.tts-37",
+        "Mcd9OifId": "ipv6HopByHopOptions.header.hopByHopOptionsHeader.options.option.pathTracing.data.mcd9.oifId-38",
+        "Mcd9Oil": "ipv6HopByHopOptions.header.hopByHopOptionsHeader.options.option.pathTracing.data.mcd9.oil-39",
+        "Mcd9Tts": "ipv6HopByHopOptions.header.hopByHopOptionsHeader.options.option.pathTracing.data.mcd9.tts-40",
+        "Mcd10OifId": "ipv6HopByHopOptions.header.hopByHopOptionsHeader.options.option.pathTracing.data.mcd10.oifId-41",
+        "Mcd10Oil": "ipv6HopByHopOptions.header.hopByHopOptionsHeader.options.option.pathTracing.data.mcd10.oil-42",
+        "Mcd10Tts": "ipv6HopByHopOptions.header.hopByHopOptionsHeader.options.option.pathTracing.data.mcd10.tts-43",
+        "Mcd11OifId": "ipv6HopByHopOptions.header.hopByHopOptionsHeader.options.option.pathTracing.data.mcd11.oifId-44",
+        "Mcd11Oil": "ipv6HopByHopOptions.header.hopByHopOptionsHeader.options.option.pathTracing.data.mcd11.oil-45",
+        "Mcd11Tts": "ipv6HopByHopOptions.header.hopByHopOptionsHeader.options.option.pathTracing.data.mcd11.tts-46",
+        "Mcd12OifId": "ipv6HopByHopOptions.header.hopByHopOptionsHeader.options.option.pathTracing.data.mcd12.oifId-47",
+        "Mcd12Oil": "ipv6HopByHopOptions.header.hopByHopOptionsHeader.options.option.pathTracing.data.mcd12.oil-48",
+        "Mcd12Tts": "ipv6HopByHopOptions.header.hopByHopOptionsHeader.options.option.pathTracing.data.mcd12.tts-49",
+        "Mcd13OifId": "ipv6HopByHopOptions.header.hopByHopOptionsHeader.options.option.pathTracing.data.mcd13.oifId-50",
+        "Mcd13Oil": "ipv6HopByHopOptions.header.hopByHopOptionsHeader.options.option.pathTracing.data.mcd13.oil-51",
+        "Mcd13Tts": "ipv6HopByHopOptions.header.hopByHopOptionsHeader.options.option.pathTracing.data.mcd13.tts-52",
+        "Mcd14OifId": "ipv6HopByHopOptions.header.hopByHopOptionsHeader.options.option.pathTracing.data.mcd14.oifId-53",
+        "Mcd14Oil": "ipv6HopByHopOptions.header.hopByHopOptionsHeader.options.option.pathTracing.data.mcd14.oil-54",
+        "Mcd14Tts": "ipv6HopByHopOptions.header.hopByHopOptionsHeader.options.option.pathTracing.data.mcd14.tts-55",
+        "Mcd15OifId": "ipv6HopByHopOptions.header.hopByHopOptionsHeader.options.option.pathTracing.data.mcd15.oifId-56",
+        "Mcd15Oil": "ipv6HopByHopOptions.header.hopByHopOptionsHeader.options.option.pathTracing.data.mcd15.oil-57",
+        "Mcd15Tts": "ipv6HopByHopOptions.header.hopByHopOptionsHeader.options.option.pathTracing.data.mcd15.tts-58",
+        "Mcd16OifId": "ipv6HopByHopOptions.header.hopByHopOptionsHeader.options.option.pathTracing.data.mcd16.oifId-59",
+        "Mcd16Oil": "ipv6HopByHopOptions.header.hopByHopOptionsHeader.options.option.pathTracing.data.mcd16.oil-60",
+        "Mcd16Tts": "ipv6HopByHopOptions.header.hopByHopOptionsHeader.options.option.pathTracing.data.mcd16.tts-61",
+        "Mcd17OifId": "ipv6HopByHopOptions.header.hopByHopOptionsHeader.options.option.pathTracing.data.mcd17.oifId-62",
+        "Mcd17Oil": "ipv6HopByHopOptions.header.hopByHopOptionsHeader.options.option.pathTracing.data.mcd17.oil-63",
+        "Mcd17Tts": "ipv6HopByHopOptions.header.hopByHopOptionsHeader.options.option.pathTracing.data.mcd17.tts-64",
+        "Mcd18OifId": "ipv6HopByHopOptions.header.hopByHopOptionsHeader.options.option.pathTracing.data.mcd18.oifId-65",
+        "Mcd18Oil": "ipv6HopByHopOptions.header.hopByHopOptionsHeader.options.option.pathTracing.data.mcd18.oil-66",
+        "Mcd18Tts": "ipv6HopByHopOptions.header.hopByHopOptionsHeader.options.option.pathTracing.data.mcd18.tts-67",
+        "Mcd19OifId": "ipv6HopByHopOptions.header.hopByHopOptionsHeader.options.option.pathTracing.data.mcd19.oifId-68",
+        "Mcd19Oil": "ipv6HopByHopOptions.header.hopByHopOptionsHeader.options.option.pathTracing.data.mcd19.oil-69",
+        "Mcd19Tts": "ipv6HopByHopOptions.header.hopByHopOptionsHeader.options.option.pathTracing.data.mcd19.tts-70",
+        "Mcd20OifId": "ipv6HopByHopOptions.header.hopByHopOptionsHeader.options.option.pathTracing.data.mcd20.oifId-71",
+        "Mcd20Oil": "ipv6HopByHopOptions.header.hopByHopOptionsHeader.options.option.pathTracing.data.mcd20.oil-72",
+        "Mcd20Tts": "ipv6HopByHopOptions.header.hopByHopOptionsHeader.options.option.pathTracing.data.mcd20.tts-73",
+        "HeaderPad": "ipv6HopByHopOptions.header.pad-74",
     }
 
     def __init__(self, parent, list_op=False):
@@ -74,7 +136,7 @@ class Ipv6HopByHopOptions(Base):
         Display Name: Allow Packet Change
         Default Value: 0
         Value Format: decimal
-        Available enum values: Option Data can change en-route, 0, Option Data cannot change en-route, 1
+        Available enum values: Option Data cannot change en-route, 0, Option Data can change en-route, 1
         """
         from ixnetwork_restpy.multivalue import Multivalue
 
@@ -164,6 +226,692 @@ class Ipv6HopByHopOptions(Base):
         from ixnetwork_restpy.multivalue import Multivalue
 
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["OptionPad1"]))
+
+    @property
+    def PathTracingType(self):
+        """
+        Display Name: Option type
+        Default Value: 50
+        Value Format: decimal
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["PathTracingType"])
+        )
+
+    @property
+    def PathTracingLength(self):
+        """
+        Display Name: Option length (octets)
+        Default Value: 36
+        Value Format: decimal
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["PathTracingLength"])
+        )
+
+    @property
+    def Mcd1OifId(self):
+        """
+        Display Name: Outgoing Interface ID
+        Default Value: 0
+        Value Format: hex
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Mcd1OifId"]))
+
+    @property
+    def Mcd1Oil(self):
+        """
+        Display Name: Outgoing Interface Load
+        Default Value: 0
+        Value Format: hex
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Mcd1Oil"]))
+
+    @property
+    def Mcd1Tts(self):
+        """
+        Display Name: Truncated Timestamp
+        Default Value: 0
+        Value Format: hex
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Mcd1Tts"]))
+
+    @property
+    def Mcd2OifId(self):
+        """
+        Display Name: Outgoing Interface ID
+        Default Value: 0
+        Value Format: hex
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Mcd2OifId"]))
+
+    @property
+    def Mcd2Oil(self):
+        """
+        Display Name: Outgoing Interface Load
+        Default Value: 0
+        Value Format: hex
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Mcd2Oil"]))
+
+    @property
+    def Mcd2Tts(self):
+        """
+        Display Name: Truncated Timestamp
+        Default Value: 0
+        Value Format: hex
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Mcd2Tts"]))
+
+    @property
+    def Mcd3OifId(self):
+        """
+        Display Name: Outgoing Interface ID
+        Default Value: 0
+        Value Format: hex
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Mcd3OifId"]))
+
+    @property
+    def Mcd3Oil(self):
+        """
+        Display Name: Outgoing Interface Load
+        Default Value: 0
+        Value Format: hex
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Mcd3Oil"]))
+
+    @property
+    def Mcd3Tts(self):
+        """
+        Display Name: Truncated Timestamp
+        Default Value: 0
+        Value Format: hex
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Mcd3Tts"]))
+
+    @property
+    def Mcd4OifId(self):
+        """
+        Display Name: Outgoing Interface ID
+        Default Value: 0
+        Value Format: hex
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Mcd4OifId"]))
+
+    @property
+    def Mcd4Oil(self):
+        """
+        Display Name: Outgoing Interface Load
+        Default Value: 0
+        Value Format: hex
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Mcd4Oil"]))
+
+    @property
+    def Mcd4Tts(self):
+        """
+        Display Name: Truncated Timestamp
+        Default Value: 0
+        Value Format: hex
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Mcd4Tts"]))
+
+    @property
+    def Mcd5OifId(self):
+        """
+        Display Name: Outgoing Interface ID
+        Default Value: 0
+        Value Format: hex
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Mcd5OifId"]))
+
+    @property
+    def Mcd5Oil(self):
+        """
+        Display Name: Outgoing Interface Load
+        Default Value: 0
+        Value Format: hex
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Mcd5Oil"]))
+
+    @property
+    def Mcd5Tts(self):
+        """
+        Display Name: Truncated Timestamp
+        Default Value: 0
+        Value Format: hex
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Mcd5Tts"]))
+
+    @property
+    def Mcd6OifId(self):
+        """
+        Display Name: Outgoing Interface ID
+        Default Value: 0
+        Value Format: hex
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Mcd6OifId"]))
+
+    @property
+    def Mcd6Oil(self):
+        """
+        Display Name: Outgoing Interface Load
+        Default Value: 0
+        Value Format: hex
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Mcd6Oil"]))
+
+    @property
+    def Mcd6Tts(self):
+        """
+        Display Name: Truncated Timestamp
+        Default Value: 0
+        Value Format: hex
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Mcd6Tts"]))
+
+    @property
+    def Mcd7OifId(self):
+        """
+        Display Name: Outgoing Interface ID
+        Default Value: 0
+        Value Format: hex
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Mcd7OifId"]))
+
+    @property
+    def Mcd7Oil(self):
+        """
+        Display Name: Outgoing Interface Load
+        Default Value: 0
+        Value Format: hex
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Mcd7Oil"]))
+
+    @property
+    def Mcd7Tts(self):
+        """
+        Display Name: Truncated Timestamp
+        Default Value: 0
+        Value Format: hex
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Mcd7Tts"]))
+
+    @property
+    def Mcd8OifId(self):
+        """
+        Display Name: Outgoing Interface ID
+        Default Value: 0
+        Value Format: hex
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Mcd8OifId"]))
+
+    @property
+    def Mcd8Oil(self):
+        """
+        Display Name: Outgoing Interface Load
+        Default Value: 0
+        Value Format: hex
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Mcd8Oil"]))
+
+    @property
+    def Mcd8Tts(self):
+        """
+        Display Name: Truncated Timestamp
+        Default Value: 0
+        Value Format: hex
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Mcd8Tts"]))
+
+    @property
+    def Mcd9OifId(self):
+        """
+        Display Name: Outgoing Interface ID
+        Default Value: 0
+        Value Format: hex
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Mcd9OifId"]))
+
+    @property
+    def Mcd9Oil(self):
+        """
+        Display Name: Outgoing Interface Load
+        Default Value: 0
+        Value Format: hex
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Mcd9Oil"]))
+
+    @property
+    def Mcd9Tts(self):
+        """
+        Display Name: Truncated Timestamp
+        Default Value: 0
+        Value Format: hex
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Mcd9Tts"]))
+
+    @property
+    def Mcd10OifId(self):
+        """
+        Display Name: Outgoing Interface ID
+        Default Value: 0
+        Value Format: hex
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Mcd10OifId"]))
+
+    @property
+    def Mcd10Oil(self):
+        """
+        Display Name: Outgoing Interface Load
+        Default Value: 0
+        Value Format: hex
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Mcd10Oil"]))
+
+    @property
+    def Mcd10Tts(self):
+        """
+        Display Name: Truncated Timestamp
+        Default Value: 0
+        Value Format: hex
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Mcd10Tts"]))
+
+    @property
+    def Mcd11OifId(self):
+        """
+        Display Name: Outgoing Interface ID
+        Default Value: 0
+        Value Format: hex
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Mcd11OifId"]))
+
+    @property
+    def Mcd11Oil(self):
+        """
+        Display Name: Outgoing Interface Load
+        Default Value: 0
+        Value Format: hex
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Mcd11Oil"]))
+
+    @property
+    def Mcd11Tts(self):
+        """
+        Display Name: Truncated Timestamp
+        Default Value: 0
+        Value Format: hex
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Mcd11Tts"]))
+
+    @property
+    def Mcd12OifId(self):
+        """
+        Display Name: Outgoing Interface ID
+        Default Value: 0
+        Value Format: hex
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Mcd12OifId"]))
+
+    @property
+    def Mcd12Oil(self):
+        """
+        Display Name: Outgoing Interface Load
+        Default Value: 0
+        Value Format: hex
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Mcd12Oil"]))
+
+    @property
+    def Mcd12Tts(self):
+        """
+        Display Name: Truncated Timestamp
+        Default Value: 0
+        Value Format: hex
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Mcd12Tts"]))
+
+    @property
+    def Mcd13OifId(self):
+        """
+        Display Name: Outgoing Interface ID
+        Default Value: 0
+        Value Format: hex
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Mcd13OifId"]))
+
+    @property
+    def Mcd13Oil(self):
+        """
+        Display Name: Outgoing Interface Load
+        Default Value: 0
+        Value Format: hex
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Mcd13Oil"]))
+
+    @property
+    def Mcd13Tts(self):
+        """
+        Display Name: Truncated Timestamp
+        Default Value: 0
+        Value Format: hex
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Mcd13Tts"]))
+
+    @property
+    def Mcd14OifId(self):
+        """
+        Display Name: Outgoing Interface ID
+        Default Value: 0
+        Value Format: hex
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Mcd14OifId"]))
+
+    @property
+    def Mcd14Oil(self):
+        """
+        Display Name: Outgoing Interface Load
+        Default Value: 0
+        Value Format: hex
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Mcd14Oil"]))
+
+    @property
+    def Mcd14Tts(self):
+        """
+        Display Name: Truncated Timestamp
+        Default Value: 0
+        Value Format: hex
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Mcd14Tts"]))
+
+    @property
+    def Mcd15OifId(self):
+        """
+        Display Name: Outgoing Interface ID
+        Default Value: 0
+        Value Format: hex
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Mcd15OifId"]))
+
+    @property
+    def Mcd15Oil(self):
+        """
+        Display Name: Outgoing Interface Load
+        Default Value: 0
+        Value Format: hex
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Mcd15Oil"]))
+
+    @property
+    def Mcd15Tts(self):
+        """
+        Display Name: Truncated Timestamp
+        Default Value: 0
+        Value Format: hex
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Mcd15Tts"]))
+
+    @property
+    def Mcd16OifId(self):
+        """
+        Display Name: Outgoing Interface ID
+        Default Value: 0
+        Value Format: hex
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Mcd16OifId"]))
+
+    @property
+    def Mcd16Oil(self):
+        """
+        Display Name: Outgoing Interface Load
+        Default Value: 0
+        Value Format: hex
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Mcd16Oil"]))
+
+    @property
+    def Mcd16Tts(self):
+        """
+        Display Name: Truncated Timestamp
+        Default Value: 0
+        Value Format: hex
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Mcd16Tts"]))
+
+    @property
+    def Mcd17OifId(self):
+        """
+        Display Name: Outgoing Interface ID
+        Default Value: 0
+        Value Format: hex
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Mcd17OifId"]))
+
+    @property
+    def Mcd17Oil(self):
+        """
+        Display Name: Outgoing Interface Load
+        Default Value: 0
+        Value Format: hex
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Mcd17Oil"]))
+
+    @property
+    def Mcd17Tts(self):
+        """
+        Display Name: Truncated Timestamp
+        Default Value: 0
+        Value Format: hex
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Mcd17Tts"]))
+
+    @property
+    def Mcd18OifId(self):
+        """
+        Display Name: Outgoing Interface ID
+        Default Value: 0
+        Value Format: hex
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Mcd18OifId"]))
+
+    @property
+    def Mcd18Oil(self):
+        """
+        Display Name: Outgoing Interface Load
+        Default Value: 0
+        Value Format: hex
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Mcd18Oil"]))
+
+    @property
+    def Mcd18Tts(self):
+        """
+        Display Name: Truncated Timestamp
+        Default Value: 0
+        Value Format: hex
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Mcd18Tts"]))
+
+    @property
+    def Mcd19OifId(self):
+        """
+        Display Name: Outgoing Interface ID
+        Default Value: 0
+        Value Format: hex
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Mcd19OifId"]))
+
+    @property
+    def Mcd19Oil(self):
+        """
+        Display Name: Outgoing Interface Load
+        Default Value: 0
+        Value Format: hex
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Mcd19Oil"]))
+
+    @property
+    def Mcd19Tts(self):
+        """
+        Display Name: Truncated Timestamp
+        Default Value: 0
+        Value Format: hex
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Mcd19Tts"]))
+
+    @property
+    def Mcd20OifId(self):
+        """
+        Display Name: Outgoing Interface ID
+        Default Value: 0
+        Value Format: hex
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Mcd20OifId"]))
+
+    @property
+    def Mcd20Oil(self):
+        """
+        Display Name: Outgoing Interface Load
+        Default Value: 0
+        Value Format: hex
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Mcd20Oil"]))
+
+    @property
+    def Mcd20Tts(self):
+        """
+        Display Name: Truncated Timestamp
+        Default Value: 0
+        Value Format: hex
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Mcd20Tts"]))
 
     @property
     def HeaderPad(self):

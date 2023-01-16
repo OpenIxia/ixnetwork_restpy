@@ -115,13 +115,13 @@ class PcReplyLspParameters(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pceperosubobjectslist_7ea27079d1a1d53cebc6e1e83b2ca0b4.PcepEroSubObjectsList): An instance of the PcepEroSubObjectsList class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pceperosubobjectslist_86d5cc1708b448f03a004b8dddbd83d7.PcepEroSubObjectsList): An instance of the PcepEroSubObjectsList class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pceperosubobjectslist_7ea27079d1a1d53cebc6e1e83b2ca0b4 import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pceperosubobjectslist_86d5cc1708b448f03a004b8dddbd83d7 import (
             PcepEroSubObjectsList,
         )
 
@@ -149,6 +149,26 @@ class PcReplyLspParameters(Base):
             if self._properties.get("PcepMetricSubObjectsList", None) is not None:
                 return self._properties.get("PcepMetricSubObjectsList")
         return PcepMetricSubObjectsList(self)
+
+    @property
+    def PcepSRv6EROObjectsList(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pcepsrv6eroobjectslist_205ff487307c7e9626812588ef2b6684.PcepSRv6EROObjectsList): An instance of the PcepSRv6EROObjectsList class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pcepsrv6eroobjectslist_205ff487307c7e9626812588ef2b6684 import (
+            PcepSRv6EROObjectsList,
+        )
+
+        if len(self._object_properties) > 0:
+            if self._properties.get("PcepSRv6EROObjectsList", None) is not None:
+                return self._properties.get("PcepSRv6EROObjectsList")
+        return PcepSRv6EROObjectsList(self)
 
     @property
     def Active(self):

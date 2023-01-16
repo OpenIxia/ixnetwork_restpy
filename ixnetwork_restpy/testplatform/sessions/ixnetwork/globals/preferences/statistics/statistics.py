@@ -36,6 +36,7 @@ class Statistics(Base):
     _SDM_NAME = "statistics"
     _SDM_ATT_MAP = {
         "ForceLegacyPortNameInStats": "forceLegacyPortNameInStats",
+        "GraphHistoryClockTime": "graphHistoryClockTime",
         "PersistenceMode": "persistenceMode",
         "SnapshotCSVMode": "snapshotCSVMode",
         "SnapshotCSVPath": "snapshotCSVPath",
@@ -69,6 +70,21 @@ class Statistics(Base):
     def ForceLegacyPortNameInStats(self, value):
         # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP["ForceLegacyPortNameInStats"], value)
+
+    @property
+    def GraphHistoryClockTime(self):
+        # type: () -> int
+        """
+        Returns
+        -------
+        - number: Tells us amount of time for which data is to be shown (in mint). Min:1, Max:30
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["GraphHistoryClockTime"])
+
+    @GraphHistoryClockTime.setter
+    def GraphHistoryClockTime(self, value):
+        # type: (int) -> None
+        self._set_attribute(self._SDM_ATT_MAP["GraphHistoryClockTime"], value)
 
     @property
     def PersistenceMode(self):
@@ -118,16 +134,18 @@ class Statistics(Base):
     def update(
         self,
         ForceLegacyPortNameInStats=None,
+        GraphHistoryClockTime=None,
         PersistenceMode=None,
         SnapshotCSVMode=None,
         SnapshotCSVPath=None,
     ):
-        # type: (bool, str, str, str) -> Statistics
+        # type: (bool, int, str, str, str) -> Statistics
         """Updates statistics resource on the server.
 
         Args
         ----
         - ForceLegacyPortNameInStats (bool): When false, IxNetwork statistics show port name in <Chassis/Front Panel Port Number> format. When true, it is in <Chassis/Card/Port> format
+        - GraphHistoryClockTime (number): Tells us amount of time for which data is to be shown (in mint). Min:1, Max:30
         - PersistenceMode (str(mixed | none | persistInBothLocations | persistInConfiguration | persistInUserSettings | preferencesNotSet)): Set the Persistence Mode: whether to store the data in user location or configuration or both/none
         - SnapshotCSVMode (str(appendCSVFile | newCSVFile | overwriteCSVFile)): Set the CSV Generation Mode
         - SnapshotCSVPath (str): Set the Snapshot CSV Path
@@ -141,11 +159,12 @@ class Statistics(Base):
     def find(
         self,
         ForceLegacyPortNameInStats=None,
+        GraphHistoryClockTime=None,
         PersistenceMode=None,
         SnapshotCSVMode=None,
         SnapshotCSVPath=None,
     ):
-        # type: (bool, str, str, str) -> Statistics
+        # type: (bool, int, str, str, str) -> Statistics
         """Finds and retrieves statistics resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve statistics resources from the server.
@@ -155,6 +174,7 @@ class Statistics(Base):
         Args
         ----
         - ForceLegacyPortNameInStats (bool): When false, IxNetwork statistics show port name in <Chassis/Front Panel Port Number> format. When true, it is in <Chassis/Card/Port> format
+        - GraphHistoryClockTime (number): Tells us amount of time for which data is to be shown (in mint). Min:1, Max:30
         - PersistenceMode (str(mixed | none | persistInBothLocations | persistInConfiguration | persistInUserSettings | preferencesNotSet)): Set the Persistence Mode: whether to store the data in user location or configuration or both/none
         - SnapshotCSVMode (str(appendCSVFile | newCSVFile | overwriteCSVFile)): Set the CSV Generation Mode
         - SnapshotCSVPath (str): Set the Snapshot CSV Path

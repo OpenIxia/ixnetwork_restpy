@@ -316,6 +316,30 @@ class Ixnetwork(Base):
                 return self._properties.get("Watch")
         return Watch(self)._select()
 
+    def AddOfflinePorts(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the addOfflinePorts operation on the server.
+
+        Add Ports (offline)
+
+        addOfflinePorts(Arg1=number, Arg2=string, async_operation=bool)
+        ---------------------------------------------------------------
+        - Arg1 (number): Number of Ports to add (1-100)
+        - Arg2 (str): Type of Ports to add, 'Ethernet' by default
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("addOfflinePorts", payload=payload, response_object=None)
+
     def ApplyITWizardConfiguration(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
         """Executes the applyITWizardConfiguration operation on the server.
@@ -679,6 +703,36 @@ class Ixnetwork(Base):
             payload[item[0]] = item[1]
         return self._execute("collectLogs", payload=payload, response_object=None)
 
+    def ConfigureCustomGraphWebUI(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the configureCustomGraphWebUI operation on the server.
+
+        Creates Custom Graph WebUI View
+
+        configureCustomGraphWebUI(Operation=string, ViewCaption=string, RowIdentifier=list, ColumnIdentifier=list, CustomGraphCaption=string, ExtraPayload=list, async_operation=bool)
+        ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        - Operation (str): The Operation to perform
+        - ViewCaption (str): View Caption
+        - RowIdentifier (list(str)): Row Identifier
+        - ColumnIdentifier (list(str)): Column Identifier
+        - CustomGraphCaption (str): Custom Graph Web UI Caption
+        - ExtraPayload (list(str)): Extra Payload
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "configureCustomGraphWebUI", payload=payload, response_object=None
+        )
+
     def ConnectCardById(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[int, None]
         """Executes the connectCardById operation on the server.
@@ -773,6 +827,32 @@ class Ixnetwork(Base):
         for item in kwargs.items():
             payload[item[0]] = item[1]
         return self._execute("copyFile", payload=payload, response_object=None)
+
+    def CreateFDWebUIView(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the createFDWebUIView operation on the server.
+
+        Creates Flow Detective WebUI View
+
+        createFDWebUIView(TrafficItems=list, RxPorts=list, FlowState=enum, FlowPerformers=enum, async_operation=bool)
+        -------------------------------------------------------------------------------------------------------------
+        - TrafficItems (list(str)): A list of Traffic Items.
+        - RxPorts (list(str)): A list of Ports.
+        - FlowState (str(kShowAllFlows | kShowOnlyDeadFlows | kShowOnlyLiveFlows)): The Flow State
+        - FlowPerformers (str(kBestCondition | kWorstCondition)): Best/Worst Performers
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("createFDWebUIView", payload=payload, response_object=None)
 
     def DisconnectCardById(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[int, None]
@@ -978,6 +1058,56 @@ class Ixnetwork(Base):
             payload[item[0]] = item[1]
         return self._execute("getAllPorts", payload=payload, response_object=None)
 
+    def GetAvailableGlobalStatsActions(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
+        """Executes the getAvailableGlobalStatsActions operation on the server.
+
+        The command to get the available global statistics actions.
+
+        getAvailableGlobalStatsActions(async_operation=bool)string
+        ----------------------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns str: A string containing the list of all available global statistics actions.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getAvailableGlobalStatsActions", payload=payload, response_object=None
+        )
+
+    def GetAvailableOfflinePortTypes(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
+        """Executes the getAvailableOfflinePortTypes operation on the server.
+
+        gets all Available Offline Port Types
+
+        getAvailableOfflinePortTypes(async_operation=bool)string
+        --------------------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns str:
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getAvailableOfflinePortTypes", payload=payload, response_object=None
+        )
+
     def GetAvailableProtocolStats(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
         """Executes the getAvailableProtocolStats operation on the server.
@@ -1085,12 +1215,12 @@ class Ixnetwork(Base):
         # type: (*Any, **Any) -> Union[str, None]
         """Executes the getChassisMode operation on the server.
 
-        Get current chassis mode(default/highRoute/unknown) for the default chassis.
+        Get current chassis mode(default/highRoute/ionvsFdb/unknown) for the default chassis.
 
         getChassisMode(async_operation=bool)enum
         ----------------------------------------
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
-        - Returns str(default\~highRoute\~unknown): current mode of chassis(default/highRoute/unknown).
+        - Returns str(default\~highRoute\~ionvsFdb\~unknown): current mode of chassis(default/highRoute/ionvsFdb/unknown).
 
         Raises
         ------
@@ -1225,6 +1355,31 @@ class Ixnetwork(Base):
             payload[item[0]] = item[1]
         return self._execute(
             "GetDefaultSnapshotSettings", payload=payload, response_object=None
+        )
+
+    def GetFDViewEnabledObjects(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
+        """Executes the getFDViewEnabledObjects operation on the server.
+
+        Fetches TI and Ports that are enabled for the FD WebUI Stat view
+
+        getFDViewEnabledObjects(async_operation=bool)string
+        ---------------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns str:
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getFDViewEnabledObjects", payload=payload, response_object=None
         )
 
     def GetInstalledSlotLicenseCount(self, *args, **kwargs):
@@ -1504,6 +1659,32 @@ class Ixnetwork(Base):
             payload[item[0]] = item[1]
         return self._execute(
             "getSlotLicenseInUse", payload=payload, response_object=None
+        )
+
+    def GetSystemResources(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
+        """Executes the getSystemResources operation on the server.
+
+        This command collects system resources include System Memory and Disk Usage and all processes running
+
+        getSystemResources(Arg1=bool, async_operation=bool)string
+        ---------------------------------------------------------
+        - Arg1 (bool): Whether we want to see system processes in the output list.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns str:
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getSystemResources", payload=payload, response_object=None
         )
 
     def GetTapSettings(self, *args, **kwargs):
@@ -2020,6 +2201,31 @@ class Ixnetwork(Base):
             payload[item[0]] = item[1]
         return self._execute("saveConfig", payload=payload, response_object=None)
 
+    def SaveSystemResources(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
+        """Executes the saveSystemResources operation on the server.
+
+        This command collects system resources include System Memory and Disk Usage and all processes running and saves into a csv
+
+        saveSystemResources(async_operation=bool)string
+        -----------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns str: Returns the save file path.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "saveSystemResources", payload=payload, response_object=None
+        )
+
     def Scriptgen(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
         """Executes the scriptgen operation on the server.
@@ -2165,11 +2371,11 @@ class Ixnetwork(Base):
     def SetChassisMode(self, *args, **kwargs):
         """Executes the setChassisMode operation on the server.
 
-        Switch Mode(default/highRoute) for the default chassis.
+        Switch Mode(default/highRoute/ionvsFdb) for the default chassis.
 
         setChassisMode(Arg1=enum, Arg2=bool, async_operation=bool)object
         ----------------------------------------------------------------
-        - Arg1 (str(default | highRoute)): Takes as input corresponding mode (default/highRoute).
+        - Arg1 (str(default | highRoute | ionvsFdb)): Takes as input corresponding mode (default/highRoute/ionvsFdb).
         - Arg2 (bool): take ownership if required.
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns dict(arg1:str,arg2:str): Result if succesful or not,chassis hostname and the response message.

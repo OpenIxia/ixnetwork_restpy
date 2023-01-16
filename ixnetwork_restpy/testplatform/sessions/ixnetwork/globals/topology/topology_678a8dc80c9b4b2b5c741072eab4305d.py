@@ -1265,13 +1265,13 @@ class Topology(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.pcc.pcc_91c1343cca1ebf407382f361cdaac3e7.Pcc): An instance of the Pcc class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.pcc.pcc_b9da1d5a5cf31906067f29bdfc78e860.Pcc): An instance of the Pcc class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.pcc.pcc_91c1343cca1ebf407382f361cdaac3e7 import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.pcc.pcc_b9da1d5a5cf31906067f29bdfc78e860 import (
             Pcc,
         )
 
@@ -1285,13 +1285,13 @@ class Topology(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.pce.pce_5defd13c57ea406c73fd4b2cb010a30f.Pce): An instance of the Pce class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.pce.pce_01d903d1ebbc310362aec8b4e7dc8176.Pce): An instance of the Pce class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.pce.pce_5defd13c57ea406c73fd4b2cb010a30f import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.pce.pce_01d903d1ebbc310362aec8b4e7dc8176 import (
             Pce,
         )
 
@@ -1459,6 +1459,46 @@ class Topology(Base):
             if self._properties.get("StaticMacsec", None) is not None:
                 return self._properties.get("StaticMacsec")
         return StaticMacsec(self)._select()
+
+    @property
+    def TwampIpv4(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.twampipv4.twampipv4_83456029c1debac8b6bdcdd43fd80f00.TwampIpv4): An instance of the TwampIpv4 class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.twampipv4.twampipv4_83456029c1debac8b6bdcdd43fd80f00 import (
+            TwampIpv4,
+        )
+
+        if len(self._object_properties) > 0:
+            if self._properties.get("TwampIpv4", None) is not None:
+                return self._properties.get("TwampIpv4")
+        return TwampIpv4(self)._select()
+
+    @property
+    def TwampIpv6(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.twampipv6.twampipv6_38ebcf9adafea940a522a0879aa08fb0.TwampIpv6): An instance of the TwampIpv6 class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.twampipv6.twampipv6_38ebcf9adafea940a522a0879aa08fb0 import (
+            TwampIpv6,
+        )
+
+        if len(self._object_properties) > 0:
+            if self._properties.get("TwampIpv6", None) is not None:
+                return self._properties.get("TwampIpv6")
+        return TwampIpv6(self)._select()
 
     @property
     def UpGroupInfo(self):
@@ -1790,6 +1830,31 @@ class Topology(Base):
             payload[item[0]] = item[1]
         return self._execute(
             "fetchAndUpdateConfigFromCloud", payload=payload, response_object=None
+        )
+
+    def FetchDeviceGroupCount(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[int, None]
+        """Executes the fetchDeviceGroupCount operation on the server.
+
+        Get Device Group Count for the Entire Scenario
+
+        fetchDeviceGroupCount(async_operation=bool)number
+        -------------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns number: Device Group Count for the Entire Scenario
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "fetchDeviceGroupCount", payload=payload, response_object=None
         )
 
     def FetchScenarioObjectsShortenedNames(self, *args, **kwargs):

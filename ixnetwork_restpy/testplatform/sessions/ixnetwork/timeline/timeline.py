@@ -28,7 +28,7 @@ if sys.version_info >= (3, 5):
 
 
 class Timeline(Base):
-    """
+    """It helps to run a sequence of QT tests, create configuration with test/protocol and interfaces/traffic items etc. Currently it's supported only in Linux API server
     The Timeline class encapsulates a required timeline resource which will be retrieved from the server every time the property is accessed.
     """
 

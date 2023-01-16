@@ -81,7 +81,7 @@ class ProtocolTemplate(Base):
         """
         Returns
         -------
-        - str:
+        - str: A unique identifier to recognize the protocol stack.
         """
         return self._get_attribute(self._SDM_ATT_MAP["StackTypeId"])
 
@@ -119,7 +119,7 @@ class ProtocolTemplate(Base):
         Args
         ----
         - DisplayName (str): The display name of the template.
-        - StackTypeId (str):
+        - StackTypeId (str): A unique identifier to recognize the protocol stack.
         - TemplateName (str): Indicates the protocol template name that is added to a packet.
 
         Returns

@@ -73,7 +73,7 @@ class Field(Base):
         """
         Returns
         -------
-        - str:
+        - str: A unique identifier to recognize the field in protocol template stack.
         """
         return self._get_attribute(self._SDM_ATT_MAP["FieldTypeId"])
 
@@ -93,7 +93,7 @@ class Field(Base):
         """
         Returns
         -------
-        - bool: The trackable fields.
+        - bool: Denotes whether the field can be tracked or not.
         """
         return self._get_attribute(self._SDM_ATT_MAP["Trackable"])
 
@@ -124,9 +124,9 @@ class Field(Base):
         ----
         - Id__ (str): An alphanumeric string that defines the internal field ID.
         - DisplayName (str): It is used to get the name of the particular field as available in the protocol template.
-        - FieldTypeId (str):
+        - FieldTypeId (str): A unique identifier to recognize the field in protocol template stack.
         - Length (number): It is used to get the length of the field in bits.
-        - Trackable (bool): The trackable fields.
+        - Trackable (bool): Denotes whether the field can be tracked or not.
 
         Returns
         -------

@@ -42,6 +42,8 @@ class Preferences(Base):
         "ConfigurationAtIxNetworkStartup": "configurationAtIxNetworkStartup",
         "ConnectPortsOnLoadConfig": "connectPortsOnLoadConfig",
         "DeleteDumpFilesOlderThan": "deleteDumpFilesOlderThan",
+        "DisableMinimizedScenario": "disableMinimizedScenario",
+        "DisableProtoSpecificConnectors": "disableProtoSpecificConnectors",
         "EnableAutoSave": "enableAutoSave",
         "EnableCloudTools": "enableCloudTools",
         "EnableDpdkForNewConfig": "enableDpdkForNewConfig",
@@ -222,6 +224,36 @@ class Preferences(Base):
     def DeleteDumpFilesOlderThan(self, value):
         # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP["DeleteDumpFilesOlderThan"], value)
+
+    @property
+    def DisableMinimizedScenario(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: When true, Device Group will be auto selected in Scenario on a new Topology creation
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["DisableMinimizedScenario"])
+
+    @DisableMinimizedScenario.setter
+    def DisableMinimizedScenario(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["DisableMinimizedScenario"], value)
+
+    @property
+    def DisableProtoSpecificConnectors(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: When true, Device Group will be auto selected in Scenario on a new Topology creation
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["DisableProtoSpecificConnectors"])
+
+    @DisableProtoSpecificConnectors.setter
+    def DisableProtoSpecificConnectors(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["DisableProtoSpecificConnectors"], value)
 
     @property
     def EnableAutoSave(self):
@@ -546,6 +578,8 @@ class Preferences(Base):
         ConfigurationAtIxNetworkStartup=None,
         ConnectPortsOnLoadConfig=None,
         DeleteDumpFilesOlderThan=None,
+        DisableMinimizedScenario=None,
+        DisableProtoSpecificConnectors=None,
         EnableAutoSave=None,
         EnableCloudTools=None,
         EnableDpdkForNewConfig=None,
@@ -567,7 +601,7 @@ class Preferences(Base):
         SyslogPort=None,
         TransmitMode=None,
     ):
-        # type: (bool, int, str, str, str, bool, int, bool, bool, bool, bool, bool, bool, str, bool, bool, bool, str, List[str], str, str, bool, bool, bool, str, int, str) -> Preferences
+        # type: (bool, int, str, str, str, bool, int, bool, bool, bool, bool, bool, bool, bool, bool, str, bool, bool, bool, str, List[str], str, str, bool, bool, bool, str, int, str) -> Preferences
         """Updates preferences resource on the server.
 
         Args
@@ -579,6 +613,8 @@ class Preferences(Base):
         - ConfigurationAtIxNetworkStartup (str(useEmptyConfiguration | useLastSavedConfiguration)): Controls which configuration to load when IxNetwork starts
         - ConnectPortsOnLoadConfig (bool): If true the application will connect the virtual ports to any assigned hardware ports when the configuration is loaded (Should be used only in IxNetwork Desktop App)
         - DeleteDumpFilesOlderThan (number): Dump Files older than the days set are deleted automatically. Need to restart IxNetwork for this option to take effect.
+        - DisableMinimizedScenario (bool): When true, Device Group will be auto selected in Scenario on a new Topology creation
+        - DisableProtoSpecificConnectors (bool): When true, Device Group will be auto selected in Scenario on a new Topology creation
         - EnableAutoSave (bool): If true,saves the configuration automatically. IxNetwork wont prompt to open the auto backup file when running in TCL Server mode. For performance reasons users additionally have to add a decimal registry key ForceAutoSave in Computer/HKEY_CURRENT_USER/Software/Ixia Communications/IxNetwork/Debug to do the auto save. Doesnt work yet on Linux
         - EnableCloudTools (bool): Controls whether Cloud Tool options will be enabled or not. This is related to learning MAC / IP address for a topology running on VM ports, deployed in AWS
         - EnableDpdkForNewConfig (bool): Sets the default DPDK enable/disable state when a new config is created.
@@ -615,6 +651,8 @@ class Preferences(Base):
         ConfigurationAtIxNetworkStartup=None,
         ConnectPortsOnLoadConfig=None,
         DeleteDumpFilesOlderThan=None,
+        DisableMinimizedScenario=None,
+        DisableProtoSpecificConnectors=None,
         EnableAutoSave=None,
         EnableCloudTools=None,
         EnableDpdkForNewConfig=None,
@@ -637,7 +675,7 @@ class Preferences(Base):
         SyslogPort=None,
         TransmitMode=None,
     ):
-        # type: (bool, int, str, str, str, bool, int, bool, bool, bool, bool, bool, bool, str, bool, bool, bool, str, List[str], List[str], str, str, bool, bool, bool, str, int, str) -> Preferences
+        # type: (bool, int, str, str, str, bool, int, bool, bool, bool, bool, bool, bool, bool, bool, str, bool, bool, bool, str, List[str], List[str], str, str, bool, bool, bool, str, int, str) -> Preferences
         """Finds and retrieves preferences resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve preferences resources from the server.
@@ -653,6 +691,8 @@ class Preferences(Base):
         - ConfigurationAtIxNetworkStartup (str(useEmptyConfiguration | useLastSavedConfiguration)): Controls which configuration to load when IxNetwork starts
         - ConnectPortsOnLoadConfig (bool): If true the application will connect the virtual ports to any assigned hardware ports when the configuration is loaded (Should be used only in IxNetwork Desktop App)
         - DeleteDumpFilesOlderThan (number): Dump Files older than the days set are deleted automatically. Need to restart IxNetwork for this option to take effect.
+        - DisableMinimizedScenario (bool): When true, Device Group will be auto selected in Scenario on a new Topology creation
+        - DisableProtoSpecificConnectors (bool): When true, Device Group will be auto selected in Scenario on a new Topology creation
         - EnableAutoSave (bool): If true,saves the configuration automatically. IxNetwork wont prompt to open the auto backup file when running in TCL Server mode. For performance reasons users additionally have to add a decimal registry key ForceAutoSave in Computer/HKEY_CURRENT_USER/Software/Ixia Communications/IxNetwork/Debug to do the auto save. Doesnt work yet on Linux
         - EnableCloudTools (bool): Controls whether Cloud Tool options will be enabled or not. This is related to learning MAC / IP address for a topology running on VM ports, deployed in AWS
         - EnableDpdkForNewConfig (bool): Sets the default DPDK enable/disable state when a new config is created.

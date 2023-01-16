@@ -88,7 +88,7 @@ class DuCarrier(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): Band Sector ID.
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Aggregated Cell identifier which distinguishes bands and sectors supported by O-RU.
         """
         from ixnetwork_restpy.multivalue import Multivalue
 
@@ -112,7 +112,7 @@ class DuCarrier(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): CC ID.
+        - obj(ixnetwork_restpy.multivalue.Multivalue): CC(Component Carrier) identifier which distinguishes carrier components supported by O-RU.
         """
         from ixnetwork_restpy.multivalue import Multivalue
 
@@ -144,7 +144,7 @@ class DuCarrier(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): DU Port ID.
+        - obj(ixnetwork_restpy.multivalue.Multivalue): DU(Distributed Unit)identifier used to differentiate processing units at DU.
         """
         from ixnetwork_restpy.multivalue import Multivalue
 
@@ -156,7 +156,7 @@ class DuCarrier(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): Depends on the selected compression mthod No compression - represents the bitwidth of each uncompressed I and Q value. Block floating point - represents the bitwidth of each I and Q mantissa value.
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Depends on the selected compression method. No compression: Represents the bitwidth of each uncompressed I and Q value. Block floating point: Represents the bitwidth of each I and Q mantissa value.
         """
         from ixnetwork_restpy.multivalue import Multivalue
 
@@ -168,7 +168,7 @@ class DuCarrier(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): IQ Compression Method.
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Indicates the compression algorithm used for the IQ samples.
         """
         from ixnetwork_restpy.multivalue import Multivalue
 
@@ -195,7 +195,7 @@ class DuCarrier(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): Number which is used in the formula to calculate sub-carrier spacing.
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Numerology indicates the sub-carrier spacing.
         """
         from ixnetwork_restpy.multivalue import Multivalue
 
@@ -207,7 +207,7 @@ class DuCarrier(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): Number of PRBs(Physical Resource Blocks).
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Number of PRBs(Physical Resource Blocks) for a symbol.
         """
         from ixnetwork_restpy.multivalue import Multivalue
 
@@ -219,7 +219,7 @@ class DuCarrier(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): RU Port ID.
+        - obj(ixnetwork_restpy.multivalue.Multivalue): RU(Radio Unit) identifier which designates logical flows.
         """
         from ixnetwork_restpy.multivalue import Multivalue
 
@@ -231,7 +231,7 @@ class DuCarrier(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): Configuration of the slot.
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Configuration of the slot which has 14 symbols.
         """
         from ixnetwork_restpy.multivalue import Multivalue
 
@@ -243,7 +243,7 @@ class DuCarrier(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): Symbol 0 of carrier.
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Symbol 0 of slot.
         """
         from ixnetwork_restpy.multivalue import Multivalue
 
@@ -255,7 +255,7 @@ class DuCarrier(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): Symbol 1 of carrier.
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Symbol 1 of slot.
         """
         from ixnetwork_restpy.multivalue import Multivalue
 
@@ -267,7 +267,7 @@ class DuCarrier(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): Symbol 10 of carrier.
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Symbol 10 of slot.
         """
         from ixnetwork_restpy.multivalue import Multivalue
 
@@ -279,7 +279,7 @@ class DuCarrier(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): Symbol 11 of carrier.
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Symbol 11 of slot.
         """
         from ixnetwork_restpy.multivalue import Multivalue
 
@@ -291,7 +291,7 @@ class DuCarrier(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): Symbol 12 of carrier.
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Symbol 12 of slot.
         """
         from ixnetwork_restpy.multivalue import Multivalue
 
@@ -303,7 +303,7 @@ class DuCarrier(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): Symbol 13 of carrier.
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Symbol 13 of slot.
         """
         from ixnetwork_restpy.multivalue import Multivalue
 
@@ -315,7 +315,7 @@ class DuCarrier(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): Symbol 2 of carrier.
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Symbol 2 of slot.
         """
         from ixnetwork_restpy.multivalue import Multivalue
 
@@ -327,7 +327,7 @@ class DuCarrier(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): Symbol 3 of carrier.
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Symbol 3 of slot.
         """
         from ixnetwork_restpy.multivalue import Multivalue
 
@@ -339,7 +339,7 @@ class DuCarrier(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): Symbol 4 of carrier.
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Symbol 4 of slot.
         """
         from ixnetwork_restpy.multivalue import Multivalue
 
@@ -351,7 +351,7 @@ class DuCarrier(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): Symbol 5 of carrier.
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Symbol 5 of slot.
         """
         from ixnetwork_restpy.multivalue import Multivalue
 
@@ -363,7 +363,7 @@ class DuCarrier(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): Symbol 6 of carrier.
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Symbol 6 of slot.
         """
         from ixnetwork_restpy.multivalue import Multivalue
 
@@ -375,7 +375,7 @@ class DuCarrier(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): Symbol 7 of carrier.
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Symbol 7 of slot.
         """
         from ixnetwork_restpy.multivalue import Multivalue
 
@@ -387,7 +387,7 @@ class DuCarrier(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): Symbol 8 of carrier.
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Symbol 8 of slot.
         """
         from ixnetwork_restpy.multivalue import Multivalue
 
@@ -399,7 +399,7 @@ class DuCarrier(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): Symbol 9 of carrier.
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Symbol 9 of slot.
         """
         from ixnetwork_restpy.multivalue import Multivalue
 
@@ -411,7 +411,7 @@ class DuCarrier(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): udCompHeader in U-plane
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Include udCompHdr value in the U-plane message.
         """
         from ixnetwork_restpy.multivalue import Multivalue
 

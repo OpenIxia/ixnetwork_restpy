@@ -46,12 +46,52 @@ class Layer23ProtocolAuthAccessFilter(Base):
         super(Layer23ProtocolAuthAccessFilter, self).__init__(parent, list_op)
 
     @property
+    def PortFilters(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.layer23protocolauthaccessfilter.portfilters.portfilters.PortFilters): An instance of the PortFilters class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.layer23protocolauthaccessfilter.portfilters.portfilters import (
+            PortFilters,
+        )
+
+        if len(self._object_properties) > 0:
+            if self._properties.get("PortFilters", None) is not None:
+                return self._properties.get("PortFilters")
+        return PortFilters(self)
+
+    @property
+    def ProtocolFilters(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.layer23protocolauthaccessfilter.protocolfilters.protocolfilters.ProtocolFilters): An instance of the ProtocolFilters class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.statistics.view.layer23protocolauthaccessfilter.protocolfilters.protocolfilters import (
+            ProtocolFilters,
+        )
+
+        if len(self._object_properties) > 0:
+            if self._properties.get("ProtocolFilters", None) is not None:
+                return self._properties.get("ProtocolFilters")
+        return ProtocolFilters(self)
+
+    @property
     def PortFilterIds(self):
         # type: () -> List[str]
         """
         Returns
         -------
-        - list(str[None | /api/v1/sessions/1/ixnetwork/statistics/view/availablePortFilter]): Ports that have been filtered.
+        - list(str[None | /api/v1/sessions/1/ixnetwork/statistics/view/.../availablePortFilter]): Ports that have been filtered.
         """
         return self._get_attribute(self._SDM_ATT_MAP["PortFilterIds"])
 
@@ -66,7 +106,7 @@ class Layer23ProtocolAuthAccessFilter(Base):
         """
         Returns
         -------
-        - list(str[None | /api/v1/sessions/1/ixnetwork/statistics/view/availableProtocolFilter]): Protocols that have been filtered.
+        - list(str[None | /api/v1/sessions/1/ixnetwork/statistics/view/.../availableProtocolFilter]): Protocols that have been filtered.
         """
         return self._get_attribute(self._SDM_ATT_MAP["ProtocolFilterIds"])
 
@@ -81,8 +121,8 @@ class Layer23ProtocolAuthAccessFilter(Base):
 
         Args
         ----
-        - PortFilterIds (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/view/availablePortFilter])): Ports that have been filtered.
-        - ProtocolFilterIds (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/view/availableProtocolFilter])): Protocols that have been filtered.
+        - PortFilterIds (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/view/.../availablePortFilter])): Ports that have been filtered.
+        - ProtocolFilterIds (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/view/.../availableProtocolFilter])): Protocols that have been filtered.
 
         Raises
         ------
@@ -96,8 +136,8 @@ class Layer23ProtocolAuthAccessFilter(Base):
 
         Args
         ----
-        - PortFilterIds (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/view/availablePortFilter])): Ports that have been filtered.
-        - ProtocolFilterIds (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/view/availableProtocolFilter])): Protocols that have been filtered.
+        - PortFilterIds (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/view/.../availablePortFilter])): Ports that have been filtered.
+        - ProtocolFilterIds (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/view/.../availableProtocolFilter])): Protocols that have been filtered.
 
         Returns
         -------
@@ -129,8 +169,8 @@ class Layer23ProtocolAuthAccessFilter(Base):
 
         Args
         ----
-        - PortFilterIds (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/view/availablePortFilter])): Ports that have been filtered.
-        - ProtocolFilterIds (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/view/availableProtocolFilter])): Protocols that have been filtered.
+        - PortFilterIds (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/view/.../availablePortFilter])): Ports that have been filtered.
+        - ProtocolFilterIds (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/view/.../availableProtocolFilter])): Protocols that have been filtered.
 
         Returns
         -------

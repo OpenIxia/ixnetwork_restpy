@@ -248,13 +248,13 @@ class Pppoxclient(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv6peer_d1a9d481647a51c783f6ad2bd104f872.BgpIpv6Peer): An instance of the BgpIpv6Peer class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv6peer_cc4b2c56b540aa17ec1d2d616e50cd4b.BgpIpv6Peer): An instance of the BgpIpv6Peer class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv6peer_d1a9d481647a51c783f6ad2bd104f872 import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv6peer_cc4b2c56b540aa17ec1d2d616e50cd4b import (
             BgpIpv6Peer,
         )
 
@@ -548,13 +548,13 @@ class Pppoxclient(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pcc_4548de1a5046938dd4962870dfbd425f.Pcc): An instance of the Pcc class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pcc_80e0369b498001415dc4db6533e36cc5.Pcc): An instance of the Pcc class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pcc_4548de1a5046938dd4962870dfbd425f import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pcc_80e0369b498001415dc4db6533e36cc5 import (
             Pcc,
         )
 

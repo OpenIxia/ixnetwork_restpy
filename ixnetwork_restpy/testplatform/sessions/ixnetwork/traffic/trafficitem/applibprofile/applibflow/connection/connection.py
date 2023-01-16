@@ -91,7 +91,7 @@ class Connection(Base):
         """
         Returns
         -------
-        - bool: (Read only) Application library flow connection type - true is the type is TCP, false if it's UDP.
+        - bool: (Read only) Application library flow connection types. True: When the type is TCP. False: When type is UDP.
         """
         return self._get_attribute(self._SDM_ATT_MAP["IsTCP"])
 
@@ -120,7 +120,7 @@ class Connection(Base):
         ----
         - ConnectionId (number): (Read only) Application library flow connection id.
         - ConnectionParams (list(str)): (Read only) Names of parameter available on application flow connection.
-        - IsTCP (bool): (Read only) Application library flow connection type - true is the type is TCP, false if it's UDP.
+        - IsTCP (bool): (Read only) Application library flow connection types. True: When the type is TCP. False: When type is UDP.
 
         Returns
         -------

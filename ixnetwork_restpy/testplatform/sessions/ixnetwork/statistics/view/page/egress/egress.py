@@ -72,7 +72,7 @@ class Egress(Base):
         """
         Returns
         -------
-        - bool: Attribute used to commit egress paging from TCL
+        - bool: Attribute used to commit egress paging from script.
         """
         return self._get_attribute(self._SDM_ATT_MAP["CommitEgressPage"])
 
@@ -87,7 +87,7 @@ class Egress(Base):
         """
         Returns
         -------
-        - number: Determines the current egress page for the indicated ingress page.
+        - number: The current page number being displayed.
         """
         return self._get_attribute(self._SDM_ATT_MAP["CurrentPage"])
 
@@ -112,7 +112,7 @@ class Egress(Base):
         """
         Returns
         -------
-        - number: The total number of egress pages.
+        - number: The total number of statistics pages.
         """
         return self._get_attribute(self._SDM_ATT_MAP["TotalPages"])
 
@@ -122,8 +122,8 @@ class Egress(Base):
 
         Args
         ----
-        - CommitEgressPage (bool): Attribute used to commit egress paging from TCL
-        - CurrentPage (number): Determines the current egress page for the indicated ingress page.
+        - CommitEgressPage (bool): Attribute used to commit egress paging from script.
+        - CurrentPage (number): The current page number being displayed.
 
         Raises
         ------
@@ -137,8 +137,8 @@ class Egress(Base):
 
         Args
         ----
-        - CommitEgressPage (bool): Attribute used to commit egress paging from TCL
-        - CurrentPage (number): Determines the current egress page for the indicated ingress page.
+        - CommitEgressPage (bool): Attribute used to commit egress paging from script.
+        - CurrentPage (number): The current page number being displayed.
 
         Returns
         -------
@@ -162,10 +162,10 @@ class Egress(Base):
 
         Args
         ----
-        - CommitEgressPage (bool): Attribute used to commit egress paging from TCL
-        - CurrentPage (number): Determines the current egress page for the indicated ingress page.
+        - CommitEgressPage (bool): Attribute used to commit egress paging from script.
+        - CurrentPage (number): The current page number being displayed.
         - RowCount (number): Displays the particular row number in the view.
-        - TotalPages (number): The total number of egress pages.
+        - TotalPages (number): The total number of statistics pages.
 
         Returns
         -------

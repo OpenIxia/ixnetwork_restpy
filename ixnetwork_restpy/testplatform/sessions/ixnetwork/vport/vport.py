@@ -62,6 +62,7 @@ class Vport(Base):
         "Licenses": "licenses",
         "Location": "location",
         "MacsecEnabled": "macsecEnabled",
+        "MaxStreamsSupported": "maxStreamsSupported",
         "Name": "name",
         "ResourceMode": "resourceMode",
         "RxMode": "rxMode",
@@ -147,6 +148,10 @@ class Vport(Base):
             "novus5GTenTwentyFiveGigLanFcoe",
             "starFourHundredGigLan",
             "starFourHundredGigLanFcoe",
+            "ravenEightHundredGigLan",
+            "ravenEightHundredGigLanFcoe",
+            "aresOneEightHundredGigLanQddC",
+            "aresOneEightHundredGigLanQddCFcoe",
         ],
     }
 
@@ -601,6 +606,16 @@ class Vport(Base):
         return self._get_attribute(self._SDM_ATT_MAP["MacsecEnabled"])
 
     @property
+    def MaxStreamsSupported(self):
+        # type: () -> str
+        """
+        Returns
+        -------
+        - str:
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["MaxStreamsSupported"])
+
+    @property
     def Name(self):
         # type: () -> str
         """
@@ -756,7 +771,7 @@ class Vport(Base):
         """
         Returns
         -------
-        - str(ethernet | ethernetvm | ethernetFcoe | atm | pos | tenGigLan | tenGigLanFcoe | fortyGigLan | fortyGigLanFcoe | tenGigWan | tenGigWanFcoe | hundredGigLan | hundredGigLanFcoe | tenFortyHundredGigLan | tenFortyHundredGigLanFcoe | fc | ethernetImpairment | novusHundredGigLan | novusHundredGigLanFcoe | novusTenGigLan | novusTenGigLanFcoe | krakenFourHundredGigLan | krakenFourHundredGigLanFcoe | aresOneFourHundredGigLan | aresOneFourHundredGigLanFcoe | uhdOneHundredGigLan | novus5GTenTwentyFiveGigLan | novus5GTenTwentyFiveGigLanFcoe | starFourHundredGigLan | starFourHundredGigLanFcoe): The type of port selection.
+        - str(ethernet | ethernetvm | ethernetFcoe | atm | pos | tenGigLan | tenGigLanFcoe | fortyGigLan | fortyGigLanFcoe | tenGigWan | tenGigWanFcoe | hundredGigLan | hundredGigLanFcoe | tenFortyHundredGigLan | tenFortyHundredGigLanFcoe | fc | ethernetImpairment | novusHundredGigLan | novusHundredGigLanFcoe | novusTenGigLan | novusTenGigLanFcoe | krakenFourHundredGigLan | krakenFourHundredGigLanFcoe | aresOneFourHundredGigLan | aresOneFourHundredGigLanFcoe | uhdOneHundredGigLan | novus5GTenTwentyFiveGigLan | novus5GTenTwentyFiveGigLanFcoe | starFourHundredGigLan | starFourHundredGigLanFcoe | ravenEightHundredGigLan | ravenEightHundredGigLanFcoe | aresOneEightHundredGigLanQddC | aresOneEightHundredGigLanQddCFcoe): The type of port selection.
         """
         return self._get_attribute(self._SDM_ATT_MAP["Type"])
 
@@ -822,7 +837,7 @@ class Vport(Base):
         - TransmitIgnoreLinkStatus (bool): If true, the port ingores the link status when transmitting data.
         - TxGapControlMode (str(fixedMode | averageMode)): This object controls the Gap Control mode of the port.
         - TxMode (str(sequential | interleaved | sequentialCoarse | interleavedCoarse | packetImpairment)): The transmit mode.
-        - Type (str(ethernet | ethernetvm | ethernetFcoe | atm | pos | tenGigLan | tenGigLanFcoe | fortyGigLan | fortyGigLanFcoe | tenGigWan | tenGigWanFcoe | hundredGigLan | hundredGigLanFcoe | tenFortyHundredGigLan | tenFortyHundredGigLanFcoe | fc | ethernetImpairment | novusHundredGigLan | novusHundredGigLanFcoe | novusTenGigLan | novusTenGigLanFcoe | krakenFourHundredGigLan | krakenFourHundredGigLanFcoe | aresOneFourHundredGigLan | aresOneFourHundredGigLanFcoe | uhdOneHundredGigLan | novus5GTenTwentyFiveGigLan | novus5GTenTwentyFiveGigLanFcoe | starFourHundredGigLan | starFourHundredGigLanFcoe)): The type of port selection.
+        - Type (str(ethernet | ethernetvm | ethernetFcoe | atm | pos | tenGigLan | tenGigLanFcoe | fortyGigLan | fortyGigLanFcoe | tenGigWan | tenGigWanFcoe | hundredGigLan | hundredGigLanFcoe | tenFortyHundredGigLan | tenFortyHundredGigLanFcoe | fc | ethernetImpairment | novusHundredGigLan | novusHundredGigLanFcoe | novusTenGigLan | novusTenGigLanFcoe | krakenFourHundredGigLan | krakenFourHundredGigLanFcoe | aresOneFourHundredGigLan | aresOneFourHundredGigLanFcoe | uhdOneHundredGigLan | novus5GTenTwentyFiveGigLan | novus5GTenTwentyFiveGigLanFcoe | starFourHundredGigLan | starFourHundredGigLanFcoe | ravenEightHundredGigLan | ravenEightHundredGigLanFcoe | aresOneEightHundredGigLanQddC | aresOneEightHundredGigLanQddCFcoe)): The type of port selection.
         - UseGlobalSettings (bool): Enables/Disables use of global settings instead of local settings on port
 
         Raises
@@ -863,7 +878,7 @@ class Vport(Base):
         - TransmitIgnoreLinkStatus (bool): If true, the port ingores the link status when transmitting data.
         - TxGapControlMode (str(fixedMode | averageMode)): This object controls the Gap Control mode of the port.
         - TxMode (str(sequential | interleaved | sequentialCoarse | interleavedCoarse | packetImpairment)): The transmit mode.
-        - Type (str(ethernet | ethernetvm | ethernetFcoe | atm | pos | tenGigLan | tenGigLanFcoe | fortyGigLan | fortyGigLanFcoe | tenGigWan | tenGigWanFcoe | hundredGigLan | hundredGigLanFcoe | tenFortyHundredGigLan | tenFortyHundredGigLanFcoe | fc | ethernetImpairment | novusHundredGigLan | novusHundredGigLanFcoe | novusTenGigLan | novusTenGigLanFcoe | krakenFourHundredGigLan | krakenFourHundredGigLanFcoe | aresOneFourHundredGigLan | aresOneFourHundredGigLanFcoe | uhdOneHundredGigLan | novus5GTenTwentyFiveGigLan | novus5GTenTwentyFiveGigLanFcoe | starFourHundredGigLan | starFourHundredGigLanFcoe)): The type of port selection.
+        - Type (str(ethernet | ethernetvm | ethernetFcoe | atm | pos | tenGigLan | tenGigLanFcoe | fortyGigLan | fortyGigLanFcoe | tenGigWan | tenGigWanFcoe | hundredGigLan | hundredGigLanFcoe | tenFortyHundredGigLan | tenFortyHundredGigLanFcoe | fc | ethernetImpairment | novusHundredGigLan | novusHundredGigLanFcoe | novusTenGigLan | novusTenGigLanFcoe | krakenFourHundredGigLan | krakenFourHundredGigLanFcoe | aresOneFourHundredGigLan | aresOneFourHundredGigLanFcoe | uhdOneHundredGigLan | novus5GTenTwentyFiveGigLan | novus5GTenTwentyFiveGigLanFcoe | starFourHundredGigLan | starFourHundredGigLanFcoe | ravenEightHundredGigLan | ravenEightHundredGigLanFcoe | aresOneEightHundredGigLanQddC | aresOneEightHundredGigLanQddCFcoe)): The type of port selection.
         - UseGlobalSettings (bool): Enables/Disables use of global settings instead of local settings on port
 
         Returns
@@ -913,6 +928,7 @@ class Vport(Base):
         Licenses=None,
         Location=None,
         MacsecEnabled=None,
+        MaxStreamsSupported=None,
         Name=None,
         ResourceMode=None,
         RxMode=None,
@@ -928,7 +944,7 @@ class Vport(Base):
         UseGlobalSettings=None,
         ValidTxModes=None,
     ):
-        # type: (int, str, str, str, str, str, str, str, str, str, str, int, bool, bool, bool, bool, bool, bool, str, str, str, str, str, str, bool, str, str, str, str, str, bool, str, str, bool, str, str, str, bool, List[str]) -> Vport
+        # type: (int, str, str, str, str, str, str, str, str, str, str, int, bool, bool, bool, bool, bool, bool, str, str, str, str, str, str, bool, str, str, str, str, str, str, bool, str, str, bool, str, str, str, bool, List[str]) -> Vport
         """Finds and retrieves vport resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve vport resources from the server.
@@ -962,6 +978,7 @@ class Vport(Base):
         - Licenses (str): Number of licenses.
         - Location (str): The current format is {chassisIp}/{frontPanelPort}.{fanoutPort} or {chassisIp};{cardId};{portId} for legacy systems.
         - MacsecEnabled (bool):
+        - MaxStreamsSupported (str):
         - Name (str): The description of the port: (1) For an assigned port, the format is: (Port type) (card no.): (port no.) - (chassis name or IP). (2) For an (unassigned) port configuration, the format is: (Port type) Port 00x.
         - ResourceMode (str):
         - RxMode (str(capture | measure | captureAndMeasure | packetImpairment)): The receive mode of the virtual port.
@@ -973,7 +990,7 @@ class Vport(Base):
         - TransmitIgnoreLinkStatus (bool): If true, the port ingores the link status when transmitting data.
         - TxGapControlMode (str(fixedMode | averageMode)): This object controls the Gap Control mode of the port.
         - TxMode (str(sequential | interleaved | sequentialCoarse | interleavedCoarse | packetImpairment)): The transmit mode.
-        - Type (str(ethernet | ethernetvm | ethernetFcoe | atm | pos | tenGigLan | tenGigLanFcoe | fortyGigLan | fortyGigLanFcoe | tenGigWan | tenGigWanFcoe | hundredGigLan | hundredGigLanFcoe | tenFortyHundredGigLan | tenFortyHundredGigLanFcoe | fc | ethernetImpairment | novusHundredGigLan | novusHundredGigLanFcoe | novusTenGigLan | novusTenGigLanFcoe | krakenFourHundredGigLan | krakenFourHundredGigLanFcoe | aresOneFourHundredGigLan | aresOneFourHundredGigLanFcoe | uhdOneHundredGigLan | novus5GTenTwentyFiveGigLan | novus5GTenTwentyFiveGigLanFcoe | starFourHundredGigLan | starFourHundredGigLanFcoe)): The type of port selection.
+        - Type (str(ethernet | ethernetvm | ethernetFcoe | atm | pos | tenGigLan | tenGigLanFcoe | fortyGigLan | fortyGigLanFcoe | tenGigWan | tenGigWanFcoe | hundredGigLan | hundredGigLanFcoe | tenFortyHundredGigLan | tenFortyHundredGigLanFcoe | fc | ethernetImpairment | novusHundredGigLan | novusHundredGigLanFcoe | novusTenGigLan | novusTenGigLanFcoe | krakenFourHundredGigLan | krakenFourHundredGigLanFcoe | aresOneFourHundredGigLan | aresOneFourHundredGigLanFcoe | uhdOneHundredGigLan | novus5GTenTwentyFiveGigLan | novus5GTenTwentyFiveGigLanFcoe | starFourHundredGigLan | starFourHundredGigLanFcoe | ravenEightHundredGigLan | ravenEightHundredGigLanFcoe | aresOneEightHundredGigLanQddC | aresOneEightHundredGigLanQddCFcoe)): The type of port selection.
         - UseGlobalSettings (bool): Enables/Disables use of global settings instead of local settings on port
         - ValidTxModes (list(str[interleaved | interleavedCoarse | packetImpairment | sequential | sequentialCoarse])):
 

@@ -242,7 +242,7 @@ class CsvSnapshot(Base):
         """
         Returns
         -------
-        - list(str[None | /api/v1/sessions/1/ixnetwork/statistics/view]): NOT DEFINED
+        - list(str[None | /api/v1/sessions/1/ixnetwork/statistics/view]): The root node for all statistics view.
         """
         return self._get_attribute(self._SDM_ATT_MAP["Views"])
 
@@ -282,7 +282,7 @@ class CsvSnapshot(Base):
         - OpenViewer (bool):
         - SnapshotViewContents (str(allPages | currentPage)): NOT DEFINED
         - SnapshotViewCsvGenerationMode (str(appendCSVFile | newCSVFile | overwriteCSVFile)): NOT DEFINED
-        - Views (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/view])): NOT DEFINED
+        - Views (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/view])): The root node for all statistics view.
 
         Raises
         ------
@@ -327,7 +327,7 @@ class CsvSnapshot(Base):
         - SnapshotSettingsName (str): NOT DEFINED
         - SnapshotViewContents (str(allPages | currentPage)): NOT DEFINED
         - SnapshotViewCsvGenerationMode (str(appendCSVFile | newCSVFile | overwriteCSVFile)): NOT DEFINED
-        - Views (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/view])): NOT DEFINED
+        - Views (list(str[None | /api/v1/sessions/1/ixnetwork/statistics/view])): The root node for all statistics view.
 
         Returns
         -------

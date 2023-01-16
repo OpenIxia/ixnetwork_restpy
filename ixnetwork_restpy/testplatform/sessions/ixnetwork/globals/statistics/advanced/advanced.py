@@ -101,6 +101,26 @@ class Advanced(Base):
         return DataStoreSettings(self)._select()
 
     @property
+    def EgressView(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.statistics.advanced.egressview.egressview.EgressView): An instance of the EgressView class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.statistics.advanced.egressview.egressview import (
+            EgressView,
+        )
+
+        if len(self._object_properties) > 0:
+            if self._properties.get("EgressView", None) is not None:
+                return self._properties.get("EgressView")
+        return EgressView(self)._select()
+
+    @property
     def GuardRail(self):
         """
         Returns

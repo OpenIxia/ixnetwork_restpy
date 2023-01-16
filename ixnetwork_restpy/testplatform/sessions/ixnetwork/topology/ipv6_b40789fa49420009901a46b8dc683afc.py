@@ -105,13 +105,13 @@ class Ipv6(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv6peer_d1a9d481647a51c783f6ad2bd104f872.BgpIpv6Peer): An instance of the BgpIpv6Peer class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv6peer_cc4b2c56b540aa17ec1d2d616e50cd4b.BgpIpv6Peer): An instance of the BgpIpv6Peer class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv6peer_d1a9d481647a51c783f6ad2bd104f872 import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv6peer_cc4b2c56b540aa17ec1d2d616e50cd4b import (
             BgpIpv6Peer,
         )
 
@@ -199,6 +199,46 @@ class Ipv6(Base):
             if self._properties.get("Dhcpv6server", None) is not None:
                 return self._properties.get("Dhcpv6server")
         return Dhcpv6server(self)
+
+    @property
+    def ECpriRe(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ecprire_51f1030cbafd2e567d3b517032a1b011.ECpriRe): An instance of the ECpriRe class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ecprire_51f1030cbafd2e567d3b517032a1b011 import (
+            ECpriRe,
+        )
+
+        if len(self._object_properties) > 0:
+            if self._properties.get("ECpriRe", None) is not None:
+                return self._properties.get("ECpriRe")
+        return ECpriRe(self)
+
+    @property
+    def ECpriRec(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ecprirec_129f1d43f285a4f806ade4e0df814255.ECpriRec): An instance of the ECpriRec class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ecprirec_129f1d43f285a4f806ade4e0df814255 import (
+            ECpriRec,
+        )
+
+        if len(self._object_properties) > 0:
+            if self._properties.get("ECpriRec", None) is not None:
+                return self._properties.get("ECpriRec")
+        return ECpriRec(self)
 
     @property
     def Greoipv6(self):
@@ -425,13 +465,13 @@ class Ipv6(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ptp_24f2907f5a685b611f57469838b21337.Ptp): An instance of the Ptp class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ptp_10b9c21d9c7cf77e86ec2d87b28de348.Ptp): An instance of the Ptp class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ptp_24f2907f5a685b611f57469838b21337 import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ptp_10b9c21d9c7cf77e86ec2d87b28de348 import (
             Ptp,
         )
 
@@ -479,6 +519,26 @@ class Ipv6(Base):
             if self._properties.get("Tag", None) is not None:
                 return self._properties.get("Tag")
         return Tag(self)
+
+    @property
+    def TwampIpv6(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.twampipv6_b1455e534d3dddd1d3626dedd3cd5690.TwampIpv6): An instance of the TwampIpv6 class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.twampipv6_b1455e534d3dddd1d3626dedd3cd5690 import (
+            TwampIpv6,
+        )
+
+        if len(self._object_properties) > 0:
+            if self._properties.get("TwampIpv6", None) is not None:
+                return self._properties.get("TwampIpv6")
+        return TwampIpv6(self)
 
     @property
     def Vxlanv6(self):

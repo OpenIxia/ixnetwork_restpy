@@ -28,7 +28,7 @@ if sys.version_info >= (3, 5):
 
 
 class DuUPlane(Base):
-    """ORAN DU U Plane for traffic wizard.
+    """ORAN DU U Plane represents the source endpoint used in traffic wizard which is used to configure user data message.
     The DuUPlane class encapsulates a required duUPlane resource which will be retrieved from the server every time the property is accessed.
     """
 

@@ -6,20 +6,31 @@ class MacsecHw(Base):
     __slots__ = ()
     _SDM_NAME = "MacsecHw"
     _SDM_ATT_MAP = {
-        "MetadataScIndex": "MacsecHw.secTag.metadata.scIndex-1",
-        "MetadataConfEnabled": "MacsecHw.secTag.metadata.confEnabled-2",
-        "MetadataBadIcv": "MacsecHw.secTag.metadata.badIcv-3",
-        "TciVer": "MacsecHw.secTag.tci.ver-4",
-        "TciEs": "MacsecHw.secTag.tci.es-5",
-        "TciSc": "MacsecHw.secTag.tci.sc-6",
-        "TciScb": "MacsecHw.secTag.tci.scb-7",
-        "TciE": "MacsecHw.secTag.tci.e-8",
-        "TciC": "MacsecHw.secTag.tci.c-9",
-        "SecTagAn": "MacsecHw.secTag.an-10",
-        "SecTagSl": "MacsecHw.secTag.sl-11",
-        "SecTagPn": "MacsecHw.secTag.pn-12",
-        "SciSysid": "MacsecHw.secTag.sci.sysid-13",
-        "SciPortid": "MacsecHw.secTag.sci.portid-14",
+        "MetadataScIndex": "MacsecHw.header.secTag.metadata.scIndex-1",
+        "MetadataConfEnabled": "MacsecHw.header.secTag.metadata.confEnabled-2",
+        "MetadataBadIcv": "MacsecHw.header.secTag.metadata.badIcv-3",
+        "TciVer": "MacsecHw.header.secTag.tci.ver-4",
+        "TciEs": "MacsecHw.header.secTag.tci.es-5",
+        "TciSc": "MacsecHw.header.secTag.tci.sc-6",
+        "TciScb": "MacsecHw.header.secTag.tci.scb-7",
+        "TciE": "MacsecHw.header.secTag.tci.e-8",
+        "TciC": "MacsecHw.header.secTag.tci.c-9",
+        "SecTagAn": "MacsecHw.header.secTag.an-10",
+        "SecTagSl": "MacsecHw.header.secTag.sl-11",
+        "SecTagPn": "MacsecHw.header.secTag.pn-12",
+        "SciSysid": "MacsecHw.header.secTag.sci.sysid-13",
+        "SciPortid": "MacsecHw.header.secTag.sci.portid-14",
+        "LagMemberPortMetadataLagMemberPortId": "MacsecHw.header.lagMemberPortsMetadata.lagMemberPortMetadata.lagMemberPortId-15",
+        "LagMemberPortMetadataScIndex": "MacsecHw.header.lagMemberPortsMetadata.lagMemberPortMetadata.scIndex-16",
+        "LagMemberPortMetadataConfEnabled": "MacsecHw.header.lagMemberPortsMetadata.lagMemberPortMetadata.confEnabled-17",
+        "LagmemberportmetadataTciVer": "MacsecHw.header.lagMemberPortsMetadata.lagMemberPortMetadata.tci.ver-18",
+        "LagmemberportmetadataTciEs": "MacsecHw.header.lagMemberPortsMetadata.lagMemberPortMetadata.tci.es-19",
+        "LagmemberportmetadataTciSc": "MacsecHw.header.lagMemberPortsMetadata.lagMemberPortMetadata.tci.sc-20",
+        "LagmemberportmetadataTciScb": "MacsecHw.header.lagMemberPortsMetadata.lagMemberPortMetadata.tci.scb-21",
+        "LagmemberportmetadataTciE": "MacsecHw.header.lagMemberPortsMetadata.lagMemberPortMetadata.tci.e-22",
+        "LagmemberportmetadataTciC": "MacsecHw.header.lagMemberPortsMetadata.lagMemberPortMetadata.tci.c-23",
+        "LagmemberportmetadataSciSysid": "MacsecHw.header.lagMemberPortsMetadata.lagMemberPortMetadata.sci.sysid-24",
+        "LagmemberportmetadataSciPortid": "MacsecHw.header.lagMemberPortsMetadata.lagMemberPortMetadata.sci.portid-25",
     }
 
     def __init__(self, parent, list_op=False):
@@ -191,6 +202,161 @@ class MacsecHw(Base):
         from ixnetwork_restpy.multivalue import Multivalue
 
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SciPortid"]))
+
+    @property
+    def LagMemberPortMetadataLagMemberPortId(self):
+        """
+        Display Name: LAG Member Port Id
+        Default Value: 0
+        Value Format: decimal
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["LagMemberPortMetadataLagMemberPortId"]
+            ),
+        )
+
+    @property
+    def LagMemberPortMetadataScIndex(self):
+        """
+        Display Name: Secure Channel Index
+        Default Value: 0
+        Value Format: decimal
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LagMemberPortMetadataScIndex"])
+        )
+
+    @property
+    def LagMemberPortMetadataConfEnabled(self):
+        """
+        Display Name: Confidentiality Enabled
+        Default Value: 1
+        Value Format: decimal
+        Available enum values: False, 0, True, 1
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["LagMemberPortMetadataConfEnabled"]),
+        )
+
+    @property
+    def LagmemberportmetadataTciVer(self):
+        """
+        Display Name: Version
+        Default Value: 0
+        Value Format: decimal
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LagmemberportmetadataTciVer"])
+        )
+
+    @property
+    def LagmemberportmetadataTciEs(self):
+        """
+        Display Name: End Station (ES) bit
+        Default Value: 1
+        Value Format: decimal
+        Available enum values: Not Set, 0, Set, 1
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LagmemberportmetadataTciEs"])
+        )
+
+    @property
+    def LagmemberportmetadataTciSc(self):
+        """
+        Display Name: Secure Channel (SC) bit
+        Default Value: 1
+        Value Format: decimal
+        Available enum values: Not Set, 0, Set, 1
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LagmemberportmetadataTciSc"])
+        )
+
+    @property
+    def LagmemberportmetadataTciScb(self):
+        """
+        Display Name: Single Copy Broadcast (SCB) bit
+        Default Value: 0
+        Value Format: decimal
+        Available enum values: Not Set, 0, Set, 1
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LagmemberportmetadataTciScb"])
+        )
+
+    @property
+    def LagmemberportmetadataTciE(self):
+        """
+        Display Name: Encryption (E) bit
+        Default Value: 0
+        Value Format: decimal
+        Available enum values: Not Set, 0, Set, 1
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LagmemberportmetadataTciE"])
+        )
+
+    @property
+    def LagmemberportmetadataTciC(self):
+        """
+        Display Name: Changed Text (C) bit
+        Default Value: 0
+        Value Format: decimal
+        Available enum values: Not Set, 0, Set, 1
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LagmemberportmetadataTciC"])
+        )
+
+    @property
+    def LagmemberportmetadataSciSysid(self):
+        """
+        Display Name: System Identifier
+        Default Value: 00:11:01:00:00:01
+        Value Format: mAC
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["LagmemberportmetadataSciSysid"]),
+        )
+
+    @property
+    def LagmemberportmetadataSciPortid(self):
+        """
+        Display Name: Port Identifier
+        Default Value: 1
+        Value Format: decimal
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["LagmemberportmetadataSciPortid"]),
+        )
 
     def add(self):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))

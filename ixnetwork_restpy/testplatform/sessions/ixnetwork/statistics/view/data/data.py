@@ -107,7 +107,7 @@ class Data(Base):
         """
         Returns
         -------
-        - bool:
+        - bool: If true, statistics will be displayed in multiple pages.
         """
         return self._get_attribute(self._SDM_ATT_MAP["AllowPaging"])
 
@@ -117,7 +117,7 @@ class Data(Base):
         """
         Returns
         -------
-        - list(str):
+        - list(str): The statistics column captions.
         """
         return self._get_attribute(self._SDM_ATT_MAP["ColumnCaptions"])
 
@@ -127,7 +127,7 @@ class Data(Base):
         """
         Returns
         -------
-        - number:
+        - number: Displays the particular column number in the view.
         """
         return self._get_attribute(self._SDM_ATT_MAP["ColumnCount"])
 
@@ -137,7 +137,7 @@ class Data(Base):
         """
         Returns
         -------
-        - number:
+        - number: The current page number being displayed.
         """
         return self._get_attribute(self._SDM_ATT_MAP["CurrentPage"])
 
@@ -182,7 +182,7 @@ class Data(Base):
         """
         Returns
         -------
-        - number:
+        - number: The current egress page size across all ingress rows. Default = 3
         """
         return self._get_attribute(self._SDM_ATT_MAP["EgressPageSize"])
 
@@ -197,7 +197,7 @@ class Data(Base):
         """
         Returns
         -------
-        - bool:
+        - bool: Is a flag used to fetch the status of view (returns true if the views was blocked by Guard Rail, false otherwise)
         """
         return self._get_attribute(self._SDM_ATT_MAP["IsBlocked"])
 
@@ -207,7 +207,7 @@ class Data(Base):
         """
         Returns
         -------
-        - bool:
+        - bool: If true, the counter is ready to record statistics.
         """
         return self._get_attribute(self._SDM_ATT_MAP["IsReady"])
 
@@ -217,7 +217,7 @@ class Data(Base):
         """
         Returns
         -------
-        - number:
+        - number: The number of statistics in the last page.
         """
         return self._get_attribute(self._SDM_ATT_MAP["LastPageSize"])
 
@@ -227,7 +227,7 @@ class Data(Base):
         """
         Returns
         -------
-        - number:
+        - number: The number of statistics per page.
         """
         return self._get_attribute(self._SDM_ATT_MAP["PageSize"])
 
@@ -251,7 +251,7 @@ class Data(Base):
         """
         Returns
         -------
-        - number:
+        - number: Displays the particular row number in the view.
         """
         return self._get_attribute(self._SDM_ATT_MAP["RowCount"])
 
@@ -260,7 +260,7 @@ class Data(Base):
         """DEPRECATED
         Returns
         -------
-        - dict(arg1:list[list[list[str]]]):
+        - dict(arg1:list[list[list[str]]]): All statistics values in a row.
         """
         return self._get_attribute(self._SDM_ATT_MAP["RowValues"])
 
@@ -270,7 +270,7 @@ class Data(Base):
         """
         Returns
         -------
-        - number:
+        - number: Describes the date and time of the event.
         """
         return self._get_attribute(self._SDM_ATT_MAP["Timestamp"])
 
@@ -280,7 +280,7 @@ class Data(Base):
         """
         Returns
         -------
-        - number:
+        - number: The total number of statistics pages.
         """
         return self._get_attribute(self._SDM_ATT_MAP["TotalPages"])
 
@@ -290,7 +290,7 @@ class Data(Base):
         """
         Returns
         -------
-        - number:
+        - number: Total number of statistic rows.
         """
         return self._get_attribute(self._SDM_ATT_MAP["TotalRows"])
 
@@ -307,11 +307,11 @@ class Data(Base):
 
         Args
         ----
-        - CurrentPage (number):
+        - CurrentPage (number): The current page number being displayed.
         - EgressMode (str(conditional | paged)):
         - EgressOption (str(rowsWithNoPackets | rowsWithPackets | showAll)):
-        - EgressPageSize (number):
-        - PageSize (number):
+        - EgressPageSize (number): The current egress page size across all ingress rows. Default = 3
+        - PageSize (number): The number of statistics per page.
 
         Raises
         ------
@@ -347,23 +347,23 @@ class Data(Base):
 
         Args
         ----
-        - AllowPaging (bool):
-        - ColumnCaptions (list(str)):
-        - ColumnCount (number):
-        - CurrentPage (number):
+        - AllowPaging (bool): If true, statistics will be displayed in multiple pages.
+        - ColumnCaptions (list(str)): The statistics column captions.
+        - ColumnCount (number): Displays the particular column number in the view.
+        - CurrentPage (number): The current page number being displayed.
         - EgressMode (str(conditional | paged)):
         - EgressOption (str(rowsWithNoPackets | rowsWithPackets | showAll)):
-        - EgressPageSize (number):
-        - IsBlocked (bool):
-        - IsReady (bool):
-        - LastPageSize (number):
-        - PageSize (number):
+        - EgressPageSize (number): The current egress page size across all ingress rows. Default = 3
+        - IsBlocked (bool): Is a flag used to fetch the status of view (returns true if the views was blocked by Guard Rail, false otherwise)
+        - IsReady (bool): If true, the counter is ready to record statistics.
+        - LastPageSize (number): The number of statistics in the last page.
+        - PageSize (number): The number of statistics per page.
         - PageValues (list(list[list[str]])): Returns the values in the current page. The ingress row is grouped with its corresponding egress rows
-        - RowCount (number):
-        - RowValues (dict(arg1:list[list[list[str]]])):
-        - Timestamp (number):
-        - TotalPages (number):
-        - TotalRows (number):
+        - RowCount (number): Displays the particular row number in the view.
+        - RowValues (dict(arg1:list[list[list[str]]])): All statistics values in a row.
+        - Timestamp (number): Describes the date and time of the event.
+        - TotalPages (number): The total number of statistics pages.
+        - TotalRows (number): Total number of statistic rows.
 
         Returns
         -------

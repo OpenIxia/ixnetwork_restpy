@@ -28,7 +28,7 @@ if sys.version_info >= (3, 5):
 
 
 class Statistic(Base):
-    """
+    """Raw data statistics parameters.
     The Statistic class encapsulates a list of statistic resources that are managed by the system.
     A list of resources can be retrieved from the server using the Statistic.find() method.
     """

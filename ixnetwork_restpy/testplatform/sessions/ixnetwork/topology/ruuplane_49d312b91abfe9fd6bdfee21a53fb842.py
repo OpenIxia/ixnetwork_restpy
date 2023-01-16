@@ -28,7 +28,7 @@ if sys.version_info >= (3, 5):
 
 
 class RuUPlane(Base):
-    """ORAN RU U Plane for traffic wizard.
+    """ORAN RU U Plane represents the source endpoint used in traffic wizard which is used to configure user data message.
     The RuUPlane class encapsulates a required ruUPlane resource which will be retrieved from the server every time the property is accessed.
     """
 
