@@ -406,12 +406,7 @@ class Base(object):
                 for item in self:
                     item_dict = {}
                     item_dict.update(payload)
-                    last_href_segment = item.href.split("/")[-1]
-                    if last_href_segment.isdigit():
-                        href = "/".join(item.href.split("/")[:-1])
-                        item_dict["id"] = last_href_segment
-                    else:
-                        href = item.href
+                    href = item.href
                     if payload_dict.get(href, None) is None:
                         payload_dict[href] = [item_dict]
                     else:
