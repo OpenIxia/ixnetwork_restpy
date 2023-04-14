@@ -1,4 +1,12 @@
 # Release Notes
+### April 2023
+* 1.1.9
+  * support ixnetwork version 9.30.2304.57 (9.30 Update-1)
+  * bug fixes in batch update for traffic configuration
+  * Addition of new samples
+    * two samples related to l1 config - l1_config_pcs_error_generation.py, l1_config_tx_lane_and_skew.py
+    * two samples related to custom views - port_cust_view.py, traffic_flow_custom_view.py
+    * one sample related to learned info - bgp_learned_info.py
 ### January 2023
 * 1.1.8
   * support ixnetwork version  9.30.2212.7 (9.30 EA)

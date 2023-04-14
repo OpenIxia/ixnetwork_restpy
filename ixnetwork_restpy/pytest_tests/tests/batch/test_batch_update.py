@@ -202,6 +202,48 @@ def test_batch_update_mix_of_multivalue_and_primitive_attributes(ixnetwork):
     )
 
 
+def test_batch_update_with_nodes_of_multiplicity_one(ixnetwork):
+    vport = ixnetwork.Vport.add().add()
+    traffic = ixnetwork.Traffic.TrafficItem
+    for i in range(10):
+        tr1 = traffic.add(
+            Name="RAW TCP " + str(i),
+            BiDirectional=False,
+            TrafficType="raw",
+            TrafficItemType="l2L3",
+        )
+        tr1.EndpointSet.add(
+            Sources=vport[0].Protocols.find(), Destinations=vport[1].Protocols.find()
+        )
+    ixia_mac_space = "11 22 33 44 55 66"
+    with BatchUpdate(ixnetwork):
+        for item in ixnetwork.Traffic.TrafficItem.find():
+            config_element = item.ConfigElement.find()
+            config_element.FramePayload.update(
+                Type="custom",
+                CustomRepeat=False,
+                CustomPattern=f'{"11 " * 40}ff ee 22 11 {ixia_mac_space}',
+            )
+            config_element.FrameRate.update(Type="framesPerSecond", Rate=99)
+            config_element.FrameRateDistribution.update(
+                StreamDistribution="applyRateToAll"
+            )
+            config_element.FrameSize.update(Type="fixed", FixedSize="900")
+            config_element.TransmissionControl.update(
+                Type="fixedFrameCount", FrameCount=99
+            )  # was 2
+            config_element.TransmissionDistribution.find().update(
+                Distributions=["ipv4SourceIp0", "ipv4DestIp0", "vlanVlanId0"]
+            )
+
+    for item in ixnetwork.Traffic.TrafficItem.find():
+        ce = item.ConfigElement.find()
+        assert ce.FramePayload.Type == "custom"
+        assert (
+            config_element.FrameRateDistribution.StreamDistribution == "applyRateToAll"
+        )
+
+
 if __name__ == "__main__":
     import pytest
 

@@ -48,6 +48,7 @@ class RequestedLsps(Base):
         "HoldingPriority": "holdingPriority",
         "IncludeAll": "includeAll",
         "IncludeAny": "includeAny",
+        "IncludeAssociation": "includeAssociation",
         "IncludeBandwidth": "includeBandwidth",
         "IncludeEndPoints": "includeEndPoints",
         "IncludeIro": "includeIro",
@@ -68,6 +69,7 @@ class RequestedLsps(Base):
         "MaxNoOfXroSubObjects": "maxNoOfXroSubObjects",
         "MaxNumberOfMetrics": "maxNumberOfMetrics",
         "Name": "name",
+        "NumberOfAssociationObjects": "numberOfAssociationObjects",
         "OverridePlspId": "overridePlspId",
         "OverrideRequestId": "overrideRequestId",
         "OverrideSourceAddress": "overrideSourceAddress",
@@ -118,6 +120,26 @@ class RequestedLsps(Base):
             ):
                 return self._properties.get("PccRequestedMetricSubObjectsList")
         return PccRequestedMetricSubObjectsList(self)
+
+    @property
+    def PcepAssociationObjectsList(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pcepassociationobjectslist_9cf08bd9ed27af6e5f7fe48f9c58d0f9.PcepAssociationObjectsList): An instance of the PcepAssociationObjectsList class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pcepassociationobjectslist_9cf08bd9ed27af6e5f7fe48f9c58d0f9 import (
+            PcepAssociationObjectsList,
+        )
+
+        if len(self._object_properties) > 0:
+            if self._properties.get("PcepAssociationObjectsList", None) is not None:
+                return self._properties.get("PcepAssociationObjectsList")
+        return PcepAssociationObjectsList(self)
 
     @property
     def PcepIroSubObjectsList(self):
@@ -338,6 +360,20 @@ class RequestedLsps(Base):
         from ixnetwork_restpy.multivalue import Multivalue
 
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["IncludeAny"]))
+
+    @property
+    def IncludeAssociation(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Include Association
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["IncludeAssociation"])
+        )
 
     @property
     def IncludeBandwidth(self):
@@ -604,6 +640,21 @@ class RequestedLsps(Base):
     def Name(self, value):
         # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP["Name"], value)
+
+    @property
+    def NumberOfAssociationObjects(self):
+        # type: () -> int
+        """
+        Returns
+        -------
+        - number: Number of Association Objects
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["NumberOfAssociationObjects"])
+
+    @NumberOfAssociationObjects.setter
+    def NumberOfAssociationObjects(self, value):
+        # type: (int) -> None
+        self._set_attribute(self._SDM_ATT_MAP["NumberOfAssociationObjects"], value)
 
     @property
     def OverridePlspId(self):
@@ -901,10 +952,11 @@ class RequestedLsps(Base):
         MaxNoOfXroSubObjects=None,
         MaxNumberOfMetrics=None,
         Name=None,
+        NumberOfAssociationObjects=None,
         OverridePlspId=None,
         OverrideRequestId=None,
     ):
-        # type: (bool, int, int, int, int, str, bool, bool) -> RequestedLsps
+        # type: (bool, int, int, int, int, str, int, bool, bool) -> RequestedLsps
         """Updates requestedLsps resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -918,6 +970,7 @@ class RequestedLsps(Base):
         - MaxNoOfXroSubObjects (number): Max Number of XRO Sub Objects
         - MaxNumberOfMetrics (number): Max Number of Metrics
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - NumberOfAssociationObjects (number): Number of Association Objects
         - OverridePlspId (bool): Override PLSP-ID
         - OverrideRequestId (bool): Override Request ID
 
@@ -938,11 +991,12 @@ class RequestedLsps(Base):
         MaxNoOfXroSubObjects=None,
         MaxNumberOfMetrics=None,
         Name=None,
+        NumberOfAssociationObjects=None,
         OverridePlspId=None,
         OverrideRequestId=None,
         ReDelegationTimerStatus=None,
     ):
-        # type: (int, str, bool, List[str], int, int, int, int, str, bool, bool, List[str]) -> RequestedLsps
+        # type: (int, str, bool, List[str], int, int, int, int, str, int, bool, bool, List[str]) -> RequestedLsps
         """Finds and retrieves requestedLsps resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve requestedLsps resources from the server.
@@ -960,6 +1014,7 @@ class RequestedLsps(Base):
         - MaxNoOfXroSubObjects (number): Max Number of XRO Sub Objects
         - MaxNumberOfMetrics (number): Max Number of Metrics
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - NumberOfAssociationObjects (number): Number of Association Objects
         - OverridePlspId (bool): Override PLSP-ID
         - OverrideRequestId (bool): Override Request ID
         - ReDelegationTimerStatus (list(str[expired | none | notStarted | running | stopped])): Re-Delegation Timer Status
@@ -1054,6 +1109,7 @@ class RequestedLsps(Base):
         HoldingPriority=None,
         IncludeAll=None,
         IncludeAny=None,
+        IncludeAssociation=None,
         IncludeBandwidth=None,
         IncludeEndPoints=None,
         IncludeIro=None,
@@ -1105,6 +1161,7 @@ class RequestedLsps(Base):
         - HoldingPriority (str): optional regex of holdingPriority
         - IncludeAll (str): optional regex of includeAll
         - IncludeAny (str): optional regex of includeAny
+        - IncludeAssociation (str): optional regex of includeAssociation
         - IncludeBandwidth (str): optional regex of includeBandwidth
         - IncludeEndPoints (str): optional regex of includeEndPoints
         - IncludeIro (str): optional regex of includeIro

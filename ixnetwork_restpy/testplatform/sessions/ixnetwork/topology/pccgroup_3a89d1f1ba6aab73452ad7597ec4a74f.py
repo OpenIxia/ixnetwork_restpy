@@ -53,6 +53,7 @@ class PccGroup(Base):
         "MaxInitiatedLspPerInterval": "maxInitiatedLspPerInterval",
         "MaxLspPerPcUpdate": "maxLspPerPcUpdate",
         "MaxLspsPerPcInitiate": "maxLspsPerPcInitiate",
+        "MaxNumberOfAssocTypes": "maxNumberOfAssocTypes",
         "Multiplier": "multiplier",
         "Name": "name",
         "PcReplyLspsPerPcc": "pcReplyLspsPerPcc",
@@ -83,6 +84,26 @@ class PccGroup(Base):
 
     def __init__(self, parent, list_op=False):
         super(PccGroup, self).__init__(parent, list_op)
+
+    @property
+    def AssocTypeList(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.assoctypelist_1842feb618447c4d27d3b4a492f9af9e.AssocTypeList): An instance of the AssocTypeList class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.assoctypelist_1842feb618447c4d27d3b4a492f9af9e import (
+            AssocTypeList,
+        )
+
+        if len(self._object_properties) > 0:
+            if self._properties.get("AssocTypeList", None) is not None:
+                return self._properties.get("AssocTypeList")
+        return AssocTypeList(self)
 
     @property
     def LearnedInfo(self):
@@ -169,13 +190,13 @@ class PccGroup(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pceinitiatelspparameters_c8b10382dd410ad40974ae280a39117b.PceInitiateLSPParameters): An instance of the PceInitiateLSPParameters class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pceinitiatelspparameters_54a195f4ec5b73428b4ada028429f546.PceInitiateLSPParameters): An instance of the PceInitiateLSPParameters class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pceinitiatelspparameters_c8b10382dd410ad40974ae280a39117b import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pceinitiatelspparameters_54a195f4ec5b73428b4ada028429f546 import (
             PceInitiateLSPParameters,
         )
 
@@ -189,13 +210,13 @@ class PccGroup(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pcetriggerparamlist_56e35469c1c2fd61a62bd38b8ef07d70.PceTriggerParamList): An instance of the PceTriggerParamList class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pcetriggerparamlist_390e56e0c3749ff467ab98b9abba9e70.PceTriggerParamList): An instance of the PceTriggerParamList class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pcetriggerparamlist_56e35469c1c2fd61a62bd38b8ef07d70 import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pcetriggerparamlist_390e56e0c3749ff467ab98b9abba9e70 import (
             PceTriggerParamList,
         )
 
@@ -409,6 +430,21 @@ class PccGroup(Base):
         )
 
     @property
+    def MaxNumberOfAssocTypes(self):
+        # type: () -> int
+        """
+        Returns
+        -------
+        - number: Maximum number of Association Type that will be present in the ASSOC-Type-List TLV.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["MaxNumberOfAssocTypes"])
+
+    @MaxNumberOfAssocTypes.setter
+    def MaxNumberOfAssocTypes(self, value):
+        # type: (int) -> None
+        self._set_attribute(self._SDM_ATT_MAP["MaxNumberOfAssocTypes"], value)
+
+    @property
     def Multiplier(self):
         # type: () -> int
         """
@@ -611,13 +647,14 @@ class PccGroup(Base):
     def update(
         self,
         ConnectedVia=None,
+        MaxNumberOfAssocTypes=None,
         Multiplier=None,
         Name=None,
         PcReplyLspsPerPcc=None,
         PceInitiatedLspsPerPcc=None,
         StackedLayers=None,
     ):
-        # type: (List[str], int, str, int, int, List[str]) -> PccGroup
+        # type: (List[str], int, int, str, int, int, List[str]) -> PccGroup
         """Updates pccGroup resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -626,6 +663,7 @@ class PccGroup(Base):
         Args
         ----
         - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology])): List of layers this layer is used to connect with to the wire.
+        - MaxNumberOfAssocTypes (number): Maximum number of Association Type that will be present in the ASSOC-Type-List TLV.
         - Multiplier (number): Number of layer instances per parent instance (multiplier)
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
         - PcReplyLspsPerPcc (number): Controls the maximum number of PCE LSPs that can be send as PATH Response.
@@ -641,18 +679,20 @@ class PccGroup(Base):
     def add(
         self,
         ConnectedVia=None,
+        MaxNumberOfAssocTypes=None,
         Multiplier=None,
         Name=None,
         PcReplyLspsPerPcc=None,
         PceInitiatedLspsPerPcc=None,
         StackedLayers=None,
     ):
-        # type: (List[str], int, str, int, int, List[str]) -> PccGroup
+        # type: (List[str], int, int, str, int, int, List[str]) -> PccGroup
         """Adds a new pccGroup resource on the server and adds it to the container.
 
         Args
         ----
         - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology])): List of layers this layer is used to connect with to the wire.
+        - MaxNumberOfAssocTypes (number): Maximum number of Association Type that will be present in the ASSOC-Type-List TLV.
         - Multiplier (number): Number of layer instances per parent instance (multiplier)
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
         - PcReplyLspsPerPcc (number): Controls the maximum number of PCE LSPs that can be send as PATH Response.
@@ -685,6 +725,7 @@ class PccGroup(Base):
         Count=None,
         DescriptiveName=None,
         Errors=None,
+        MaxNumberOfAssocTypes=None,
         Multiplier=None,
         Name=None,
         PcReplyLspsPerPcc=None,
@@ -706,6 +747,7 @@ class PccGroup(Base):
         - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         - Errors (list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork/],arg2:list[str]))): A list of errors that have occurred
+        - MaxNumberOfAssocTypes (number): Maximum number of Association Type that will be present in the ASSOC-Type-List TLV.
         - Multiplier (number): Number of layer instances per parent instance (multiplier)
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
         - PcReplyLspsPerPcc (number): Controls the maximum number of PCE LSPs that can be send as PATH Response.

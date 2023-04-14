@@ -5485,6 +5485,20 @@ class Stack(Base):
         return Vxlan(self)
 
     @property
+    def Vxlangpe(self):
+        """
+        valid only with Batch Add
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.vxlangpe_template.Vxlangpe): An instance of the Vxlangpe traffic stack
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.vxlangpe_template import (
+            Vxlangpe,
+        )
+
+        return Vxlangpe(self)
+
+    @property
     def Geneve(self):
         """
         valid only with Batch Add
@@ -5513,6 +5527,34 @@ class Stack(Base):
         return Genevewithtelemetry(self)
 
     @property
+    def GeneveWithIntMdv21(self):
+        """
+        valid only with Batch Add
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.geneveWithIntMdv21_template.GeneveWithIntMdv21): An instance of the GeneveWithIntMdv21 traffic stack
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.geneveWithIntMdv21_template import (
+            GeneveWithIntMdv21,
+        )
+
+        return GeneveWithIntMdv21(self)
+
+    @property
+    def GeneveWithIntMxv21(self):
+        """
+        valid only with Batch Add
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.geneveWithIntMxv21_template.GeneveWithIntMxv21): An instance of the GeneveWithIntMxv21 traffic stack
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.geneveWithIntMxv21_template import (
+            GeneveWithIntMxv21,
+        )
+
+        return GeneveWithIntMxv21(self)
+
+    @property
     def Intmetadata(self):
         """
         valid only with Batch Add
@@ -5527,6 +5569,34 @@ class Stack(Base):
         return Intmetadata(self)
 
     @property
+    def IntMdMetadatav21(self):
+        """
+        valid only with Batch Add
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.intMdMetadatav21_template.IntMdMetadatav21): An instance of the IntMdMetadatav21 traffic stack
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.intMdMetadatav21_template import (
+            IntMdMetadatav21,
+        )
+
+        return IntMdMetadatav21(self)
+
+    @property
+    def IntMxMetadatav21(self):
+        """
+        valid only with Batch Add
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.intMxMetadatav21_template.IntMxMetadatav21): An instance of the IntMxMetadatav21 traffic stack
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.intMxMetadatav21_template import (
+            IntMxMetadatav21,
+        )
+
+        return IntMxMetadatav21(self)
+
+    @property
     def Intshimheader(self):
         """
         valid only with Batch Add
@@ -5539,6 +5609,34 @@ class Stack(Base):
         )
 
         return Intshimheader(self)
+
+    @property
+    def IntShimHeaderv21(self):
+        """
+        valid only with Batch Add
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.intShimHeaderv21_template.IntShimHeaderv21): An instance of the IntShimHeaderv21 traffic stack
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.intShimHeaderv21_template import (
+            IntShimHeaderv21,
+        )
+
+        return IntShimHeaderv21(self)
+
+    @property
+    def IntShimHeaderVxlangpe(self):
+        """
+        valid only with Batch Add
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.intShimHeaderVxlangpe_template.IntShimHeaderVxlangpe): An instance of the IntShimHeaderVxlangpe traffic stack
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.intShimHeaderVxlangpe_template import (
+            IntShimHeaderVxlangpe,
+        )
+
+        return IntShimHeaderVxlangpe(self)
 
     @property
     def Probemarker(self):
@@ -5805,6 +5903,34 @@ class Stack(Base):
         )
 
         return IpEspOverMACsec(self)
+
+    @property
+    def NFapiP7P19sHeader(self):
+        """
+        valid only with Batch Add
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.nFapiP7P19sHeader_template.NFapiP7P19sHeader): An instance of the NFapiP7P19sHeader traffic stack
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.nFapiP7P19sHeader_template import (
+            NFapiP7P19sHeader,
+        )
+
+        return NFapiP7P19sHeader(self)
+
+    @property
+    def NFapiPayloadMarker(self):
+        """
+        valid only with Batch Add
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.nFapiPayloadMarker_template.NFapiPayloadMarker): An instance of the NFapiPayloadMarker traffic stack
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.nFapiPayloadMarker_template import (
+            NFapiPayloadMarker,
+        )
+
+        return NFapiPayloadMarker(self)
 
     @property
     def Tcp(self):

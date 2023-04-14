@@ -261,7 +261,8 @@ class Multivalue(Base):
         """
         Returns
         -------
-        - list(str): a list of the str values which is dictated by the pattern, format and count properties"""
+        - list(str): a list of the str values which is dictated by the pattern, format and count properties
+        """
         payload = {"arg1": self._href, "arg2": 0, "arg3": self.Count}
         return self._execute("getValues", payload=payload)
 

@@ -702,7 +702,7 @@ class BgpIpv6MVrf(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): VRF Identified ID
+        - obj(ixnetwork_restpy.multivalue.Multivalue): ID of the identified VRF.
         """
         from ixnetwork_restpy.multivalue import Multivalue
 

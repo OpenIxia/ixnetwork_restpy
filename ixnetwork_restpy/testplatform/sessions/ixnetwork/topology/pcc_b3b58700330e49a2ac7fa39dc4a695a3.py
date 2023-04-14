@@ -54,6 +54,7 @@ class Pcc(Base):
         "MD5Key": "mD5Key",
         "MaxLspPerPcReq": "maxLspPerPcReq",
         "MaxLspsPerPcRpt": "maxLspsPerPcRpt",
+        "MaxNumberOfAssocTypes": "maxNumberOfAssocTypes",
         "MaxNumberOfMSD": "maxNumberOfMSD",
         "MaxReconnectInterval": "maxReconnectInterval",
         "MaxRequestedLspPerInterval": "maxRequestedLspPerInterval",
@@ -97,6 +98,26 @@ class Pcc(Base):
 
     def __init__(self, parent, list_op=False):
         super(Pcc, self).__init__(parent, list_op)
+
+    @property
+    def AssocTypeList(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.assoctypelist_1842feb618447c4d27d3b4a492f9af9e.AssocTypeList): An instance of the AssocTypeList class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.assoctypelist_1842feb618447c4d27d3b4a492f9af9e import (
+            AssocTypeList,
+        )
+
+        if len(self._object_properties) > 0:
+            if self._properties.get("AssocTypeList", None) is not None:
+                return self._properties.get("AssocTypeList")
+        return AssocTypeList(self)
 
     @property
     def ExpectedInitiatedLspList(self):
@@ -203,13 +224,13 @@ class Pcc(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.preestablishedsrlsps_c620eef5df7101b5105821449dec19dc.PreEstablishedSrLsps): An instance of the PreEstablishedSrLsps class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.preestablishedsrlsps_95c5549c90184bfff112fd02cc41c84f.PreEstablishedSrLsps): An instance of the PreEstablishedSrLsps class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.preestablishedsrlsps_c620eef5df7101b5105821449dec19dc import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.preestablishedsrlsps_95c5549c90184bfff112fd02cc41c84f import (
             PreEstablishedSrLsps,
         )
 
@@ -223,13 +244,13 @@ class Pcc(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.requestedlsps_13f940a8c982ec765fee3bc34ba5d305.RequestedLsps): An instance of the RequestedLsps class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.requestedlsps_3803e9646b728f0afe03f56c6e8b3a6b.RequestedLsps): An instance of the RequestedLsps class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.requestedlsps_13f940a8c982ec765fee3bc34ba5d305 import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.requestedlsps_3803e9646b728f0afe03f56c6e8b3a6b import (
             RequestedLsps,
         )
 
@@ -455,6 +476,21 @@ class Pcc(Base):
         return Multivalue(
             self, self._get_attribute(self._SDM_ATT_MAP["MaxLspsPerPcRpt"])
         )
+
+    @property
+    def MaxNumberOfAssocTypes(self):
+        # type: () -> int
+        """
+        Returns
+        -------
+        - number: Number of Supported Association Type that will be present in the ASSOC-Type-List TLV.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["MaxNumberOfAssocTypes"])
+
+    @MaxNumberOfAssocTypes.setter
+    def MaxNumberOfAssocTypes(self, value):
+        # type: (int) -> None
+        self._set_attribute(self._SDM_ATT_MAP["MaxNumberOfAssocTypes"], value)
 
     @property
     def MaxNumberOfMSD(self):
@@ -839,6 +875,7 @@ class Pcc(Base):
         Active_pre_established_lsps=None,
         ConnectedVia=None,
         ExpectedInitiatedLspsForTraffic=None,
+        MaxNumberOfAssocTypes=None,
         MaxNumberOfMSD=None,
         Multiplier=None,
         Name=None,
@@ -847,7 +884,7 @@ class Pcc(Base):
         RequestedLspsPerPcc=None,
         StackedLayers=None,
     ):
-        # type: (int, List[str], int, int, int, str, int, int, int, List[str]) -> Pcc
+        # type: (int, List[str], int, int, int, int, str, int, int, int, List[str]) -> Pcc
         """Updates pcc resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -858,6 +895,7 @@ class Pcc(Base):
         - Active_pre_established_lsps (number):
         - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology])): List of layers this layer is used to connect with to the wire.
         - ExpectedInitiatedLspsForTraffic (number): Based on the value in this control the number of Expected Initiated LSPs for Traffic can be configured. This is used for traffic only.
+        - MaxNumberOfAssocTypes (number): Number of Supported Association Type that will be present in the ASSOC-Type-List TLV.
         - MaxNumberOfMSD (number): Maximum number of (MSD-Type ,MSD-Value) pairs that are present in the SRv6-PCE-CAPABILITY sub-TLV.
         - Multiplier (number): Number of layer instances per parent instance (multiplier)
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
@@ -877,6 +915,7 @@ class Pcc(Base):
         Active_pre_established_lsps=None,
         ConnectedVia=None,
         ExpectedInitiatedLspsForTraffic=None,
+        MaxNumberOfAssocTypes=None,
         MaxNumberOfMSD=None,
         Multiplier=None,
         Name=None,
@@ -885,7 +924,7 @@ class Pcc(Base):
         RequestedLspsPerPcc=None,
         StackedLayers=None,
     ):
-        # type: (int, List[str], int, int, int, str, int, int, int, List[str]) -> Pcc
+        # type: (int, List[str], int, int, int, int, str, int, int, int, List[str]) -> Pcc
         """Adds a new pcc resource on the server and adds it to the container.
 
         Args
@@ -893,6 +932,7 @@ class Pcc(Base):
         - Active_pre_established_lsps (number):
         - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology])): List of layers this layer is used to connect with to the wire.
         - ExpectedInitiatedLspsForTraffic (number): Based on the value in this control the number of Expected Initiated LSPs for Traffic can be configured. This is used for traffic only.
+        - MaxNumberOfAssocTypes (number): Number of Supported Association Type that will be present in the ASSOC-Type-List TLV.
         - MaxNumberOfMSD (number): Maximum number of (MSD-Type ,MSD-Value) pairs that are present in the SRv6-PCE-CAPABILITY sub-TLV.
         - Multiplier (number): Number of layer instances per parent instance (multiplier)
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
@@ -929,6 +969,7 @@ class Pcc(Base):
         DescriptiveName=None,
         Errors=None,
         ExpectedInitiatedLspsForTraffic=None,
+        MaxNumberOfAssocTypes=None,
         MaxNumberOfMSD=None,
         Multiplier=None,
         Name=None,
@@ -954,6 +995,7 @@ class Pcc(Base):
         - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         - Errors (list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork/],arg2:list[str]))): A list of errors that have occurred
         - ExpectedInitiatedLspsForTraffic (number): Based on the value in this control the number of Expected Initiated LSPs for Traffic can be configured. This is used for traffic only.
+        - MaxNumberOfAssocTypes (number): Number of Supported Association Type that will be present in the ASSOC-Type-List TLV.
         - MaxNumberOfMSD (number): Maximum number of (MSD-Type ,MSD-Value) pairs that are present in the SRv6-PCE-CAPABILITY sub-TLV.
         - Multiplier (number): Number of layer instances per parent instance (multiplier)
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario

@@ -44,10 +44,12 @@ class TwampIpv6(Base):
         "DescriptiveName": "descriptiveName",
         "EnableSSID": "enableSSID",
         "Errors": "errors",
+        "FarEndDropCount": "farEndDropCount",
         "HostMode": "hostMode",
         "MeasurementType": "measurementType",
         "Multiplier": "multiplier",
         "Name": "name",
+        "NearEndDropCount": "nearEndDropCount",
         "NoOfDest": "noOfDest",
         "NoOfPackets": "noOfPackets",
         "PacketLength": "packetLength",
@@ -62,9 +64,8 @@ class TwampIpv6(Base):
         "StackedLayers": "stackedLayers",
         "StateCounts": "stateCounts",
         "StateType": "stateType",
-        "StatsInterval": "statsInterval",
-        "StatsUpdateMode": "statsUpdateMode",
         "Status": "status",
+        "StreamMode": "streamMode",
         "Timeout": "timeout",
         "TwampMode": "twampMode",
         "Zflag": "zflag",
@@ -83,6 +84,26 @@ class TwampIpv6(Base):
 
     def __init__(self, parent, list_op=False):
         super(TwampIpv6, self).__init__(parent, list_op)
+
+    @property
+    def LearnedInfo(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.learnedinfo_ff4d5e5643a63bccb40b6cf64fc58100.LearnedInfo): An instance of the LearnedInfo class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.learnedinfo_ff4d5e5643a63bccb40b6cf64fc58100 import (
+            LearnedInfo,
+        )
+
+        if len(self._object_properties) > 0:
+            if self._properties.get("LearnedInfo", None) is not None:
+                return self._properties.get("LearnedInfo")
+        return LearnedInfo(self)
 
     @property
     def TwampIpv6DstList(self):
@@ -185,6 +206,20 @@ class TwampIpv6(Base):
         return self._get_attribute(self._SDM_ATT_MAP["Errors"])
 
     @property
+    def FarEndDropCount(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Specifies the number of packets sent before a single packet is dropped at the far end that is, 1 in 10 or 1 in 100. If the value is 0, packets will not be dropped.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["FarEndDropCount"])
+        )
+
+    @property
     def HostMode(self):
         # type: () -> 'Multivalue'
         """
@@ -236,6 +271,20 @@ class TwampIpv6(Base):
     def Name(self, value):
         # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP["Name"], value)
+
+    @property
+    def NearEndDropCount(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Specifies the number of packets sent before a single packet is dropped at the near end that is, 1 in 10 or 1 in 100. If the value is 0, packets will not be dropped.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["NearEndDropCount"])
+        )
 
     @property
     def NoOfDest(self):
@@ -411,32 +460,6 @@ class TwampIpv6(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["StateType"]))
 
     @property
-    def StatsInterval(self):
-        # type: () -> 'Multivalue'
-        """
-        Returns
-        -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): This specifies the Interval at which Stats has to be updated periodically.
-        """
-        from ixnetwork_restpy.multivalue import Multivalue
-
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["StatsInterval"]))
-
-    @property
-    def StatsUpdateMode(self):
-        # type: () -> 'Multivalue'
-        """
-        Returns
-        -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): Determines the mode using which Stats needs to be updated. Continuous - All Stats will be updated perdiocally as per specified Stats Interval. ManualAction - Only Basic Tx, Rx, Loss, stats are updated every 2 sec, all other stats will be updated whenever Manual Action is triggered or test is completed.
-        """
-        from ixnetwork_restpy.multivalue import Multivalue
-
-        return Multivalue(
-            self, self._get_attribute(self._SDM_ATT_MAP["StatsUpdateMode"])
-        )
-
-    @property
     def Status(self):
         # type: () -> str
         """
@@ -445,6 +468,18 @@ class TwampIpv6(Base):
         - str(configured | error | mixed | notStarted | started | starting | stopping): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
         """
         return self._get_attribute(self._SDM_ATT_MAP["Status"])
+
+    @property
+    def StreamMode(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Specifies the Stream Mode to send the packets in either Fixed or Continuous mode. In Fixed mode, packet count is based on the number of test packets. In Continuous mode, there is no limit on packet count.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["StreamMode"]))
 
     @property
     def Timeout(self):
@@ -627,17 +662,17 @@ class TwampIpv6(Base):
             payload[item[0]] = item[1]
         return self._execute("abort", payload=payload, response_object=None)
 
-    def GetStatistics(self, *args, **kwargs):
+    def ClearLearnedInfo(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
-        """Executes the getStatistics operation on the server.
+        """Executes the clearLearnedInfo operation on the server.
 
-        Sends a Statistics Request message.
+        Clear Learned Info
 
-        getStatistics(Arg2=list, async_operation=bool)list
-        --------------------------------------------------
+        clearLearnedInfo(Arg2=list, async_operation=bool)list
+        -----------------------------------------------------
         - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
-        - Returns list(str): ID to associate each action invocation
+        - Returns list(str): ID to associate each async action invocation
 
         Raises
         ------
@@ -649,7 +684,31 @@ class TwampIpv6(Base):
             payload["Arg%s" % (i + 2)] = args[i]
         for item in kwargs.items():
             payload[item[0]] = item[1]
-        return self._execute("getStatistics", payload=payload, response_object=None)
+        return self._execute("clearLearnedInfo", payload=payload, response_object=None)
+
+    def GetLearnedInfo(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the getLearnedInfo operation on the server.
+
+        Get Learned Info
+
+        getLearnedInfo(Arg2=list, async_operation=bool)list
+        ---------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("getLearnedInfo", payload=payload, response_object=None)
 
     def RestartDown(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -759,9 +818,11 @@ class TwampIpv6(Base):
         Active=None,
         AuthType=None,
         EnableSSID=None,
+        FarEndDropCount=None,
         HostMode=None,
         MeasurementType=None,
         Multiplier=None,
+        NearEndDropCount=None,
         NoOfPackets=None,
         PacketLength=None,
         PacketsPerSecond=None,
@@ -772,8 +833,7 @@ class TwampIpv6(Base):
         Sflag=None,
         SrMode=None,
         StateType=None,
-        StatsInterval=None,
-        StatsUpdateMode=None,
+        StreamMode=None,
         Timeout=None,
         TwampMode=None,
         Zflag=None,
@@ -788,9 +848,11 @@ class TwampIpv6(Base):
         - Active (str): optional regex of active
         - AuthType (str): optional regex of authType
         - EnableSSID (str): optional regex of enableSSID
+        - FarEndDropCount (str): optional regex of farEndDropCount
         - HostMode (str): optional regex of hostMode
         - MeasurementType (str): optional regex of measurementType
         - Multiplier (str): optional regex of multiplier
+        - NearEndDropCount (str): optional regex of nearEndDropCount
         - NoOfPackets (str): optional regex of noOfPackets
         - PacketLength (str): optional regex of packetLength
         - PacketsPerSecond (str): optional regex of packetsPerSecond
@@ -801,8 +863,7 @@ class TwampIpv6(Base):
         - Sflag (str): optional regex of sflag
         - SrMode (str): optional regex of srMode
         - StateType (str): optional regex of stateType
-        - StatsInterval (str): optional regex of statsInterval
-        - StatsUpdateMode (str): optional regex of statsUpdateMode
+        - StreamMode (str): optional regex of streamMode
         - Timeout (str): optional regex of timeout
         - TwampMode (str): optional regex of twampMode
         - Zflag (str): optional regex of zflag

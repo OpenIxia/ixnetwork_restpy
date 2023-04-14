@@ -85,6 +85,7 @@ class IsisL3Router(Base):
         "EnableRFlag": "enableRFlag",
         "EnableSR": "enableSR",
         "EnableTE": "enableTE",
+        "EnableTwampService": "enableTwampService",
         "EnableWMforTE": "enableWMforTE",
         "EnableWideMetric": "enableWideMetric",
         "EnableXFlag": "enableXFlag",
@@ -172,6 +173,8 @@ class IsisL3Router(Base):
         "SRv6NodePrefixLength": "sRv6NodePrefixLength",
         "SessionInfo": "sessionInfo",
         "SessionStatus": "sessionStatus",
+        "SetIpv6TERouterId": "setIpv6TERouterId",
+        "SetTERouterId": "setTERouterId",
         "SrlbDescriptorCount": "srlbDescriptorCount",
         "SrlbFlags": "srlbFlags",
         "SrmsPreference": "srmsPreference",
@@ -1046,6 +1049,20 @@ class IsisL3Router(Base):
         from ixnetwork_restpy.multivalue import Multivalue
 
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EnableTE"]))
+
+    @property
+    def EnableTwampService(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): If Set, Send Prefix to twamp else not.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableTwampService"])
+        )
 
     @property
     def EnableWMforTE(self):
@@ -2191,6 +2208,36 @@ class IsisL3Router(Base):
         return self._get_attribute(self._SDM_ATT_MAP["SessionStatus"])
 
     @property
+    def SetIpv6TERouterId(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: If enabled, the IPv6 TE Router ID IPv6 address in the Simulated Bridge tab is set to the same value as IPv6 Node Prefix. If IPv6 Node Prefix is changed, the IPv6 TE Router ID value also changes automatically. This avoids duplicate configuration in the IPv6 TE router ID field.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["SetIpv6TERouterId"])
+
+    @SetIpv6TERouterId.setter
+    def SetIpv6TERouterId(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["SetIpv6TERouterId"], value)
+
+    @property
+    def SetTERouterId(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: If enabled, the TE Router ID IP address in the Basic tab is set to the same value as Node Prefix. If Node Prefix is changed, the TE Router ID value also changes automatically. This avoids duplicate configuration in the TE router ID field.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["SetTERouterId"])
+
+    @SetTERouterId.setter
+    def SetTERouterId(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["SetTERouterId"], value)
+
+    @property
     def SrlbDescriptorCount(self):
         # type: () -> int
         """
@@ -2302,9 +2349,11 @@ class IsisL3Router(Base):
         NumberOfMappingIPV6Ranges=None,
         SRAlgorithmCount=None,
         SRGBRangeCount=None,
+        SetIpv6TERouterId=None,
+        SetTERouterId=None,
         SrlbDescriptorCount=None,
     ):
-        # type: (bool, bool, int, int, int, str, int, int, int, int, int, int, int) -> IsisL3Router
+        # type: (bool, bool, int, int, int, str, int, int, int, int, int, int, bool, bool, int) -> IsisL3Router
         """Updates isisL3Router resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -2324,6 +2373,8 @@ class IsisL3Router(Base):
         - NumberOfMappingIPV6Ranges (number): Specifies the number of IPv6 mappings or range TLVs that each router in a DG can advertise.
         - SRAlgorithmCount (number): SR Algorithm Count
         - SRGBRangeCount (number): SRGB Range Count
+        - SetIpv6TERouterId (bool): If enabled, the IPv6 TE Router ID IPv6 address in the Simulated Bridge tab is set to the same value as IPv6 Node Prefix. If IPv6 Node Prefix is changed, the IPv6 TE Router ID value also changes automatically. This avoids duplicate configuration in the IPv6 TE router ID field.
+        - SetTERouterId (bool): If enabled, the TE Router ID IP address in the Basic tab is set to the same value as Node Prefix. If Node Prefix is changed, the TE Router ID value also changes automatically. This avoids duplicate configuration in the TE router ID field.
         - SrlbDescriptorCount (number): Count of the SRLB descriptor entries, each being a tuple having format {Start SID/Label, SID Count}
 
         Raises
@@ -2346,9 +2397,11 @@ class IsisL3Router(Base):
         NumberOfMappingIPV6Ranges=None,
         SRAlgorithmCount=None,
         SRGBRangeCount=None,
+        SetIpv6TERouterId=None,
+        SetTERouterId=None,
         SrlbDescriptorCount=None,
     ):
-        # type: (bool, bool, int, int, int, str, int, int, int, int, int, int, int) -> IsisL3Router
+        # type: (bool, bool, int, int, int, str, int, int, int, int, int, int, bool, bool, int) -> IsisL3Router
         """Adds a new isisL3Router resource on the json, only valid with batch add utility
 
         Args
@@ -2365,6 +2418,8 @@ class IsisL3Router(Base):
         - NumberOfMappingIPV6Ranges (number): Specifies the number of IPv6 mappings or range TLVs that each router in a DG can advertise.
         - SRAlgorithmCount (number): SR Algorithm Count
         - SRGBRangeCount (number): SRGB Range Count
+        - SetIpv6TERouterId (bool): If enabled, the IPv6 TE Router ID IPv6 address in the Simulated Bridge tab is set to the same value as IPv6 Node Prefix. If IPv6 Node Prefix is changed, the IPv6 TE Router ID value also changes automatically. This avoids duplicate configuration in the IPv6 TE router ID field.
+        - SetTERouterId (bool): If enabled, the TE Router ID IP address in the Basic tab is set to the same value as Node Prefix. If Node Prefix is changed, the TE Router ID value also changes automatically. This avoids duplicate configuration in the TE router ID field.
         - SrlbDescriptorCount (number): Count of the SRLB descriptor entries, each being a tuple having format {Start SID/Label, SID Count}
 
         Returns
@@ -2397,6 +2452,8 @@ class IsisL3Router(Base):
         SRGBRangeCount=None,
         SessionInfo=None,
         SessionStatus=None,
+        SetIpv6TERouterId=None,
+        SetTERouterId=None,
         SrlbDescriptorCount=None,
         StateCounts=None,
         Status=None,
@@ -2427,6 +2484,8 @@ class IsisL3Router(Base):
         - SRGBRangeCount (number): SRGB Range Count
         - SessionInfo (list(str[noIfaceUp | up])): Logs additional information about the session Information
         - SessionStatus (list(str[down | notStarted | up])): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
+        - SetIpv6TERouterId (bool): If enabled, the IPv6 TE Router ID IPv6 address in the Simulated Bridge tab is set to the same value as IPv6 Node Prefix. If IPv6 Node Prefix is changed, the IPv6 TE Router ID value also changes automatically. This avoids duplicate configuration in the IPv6 TE router ID field.
+        - SetTERouterId (bool): If enabled, the TE Router ID IP address in the Basic tab is set to the same value as Node Prefix. If Node Prefix is changed, the TE Router ID value also changes automatically. This avoids duplicate configuration in the TE router ID field.
         - SrlbDescriptorCount (number): Count of the SRLB descriptor entries, each being a tuple having format {Start SID/Label, SID Count}
         - StateCounts (dict(total:number,notStarted:number,down:number,up:number)): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
         - Status (str(configured | error | mixed | notStarted | started | starting | stopping)): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
@@ -2711,6 +2770,7 @@ class IsisL3Router(Base):
         EnableNFlag=None,
         EnableRFlag=None,
         EnableTE=None,
+        EnableTwampService=None,
         EnableWMforTE=None,
         EnableWideMetric=None,
         EnableXFlag=None,
@@ -2842,6 +2902,7 @@ class IsisL3Router(Base):
         - EnableNFlag (str): optional regex of enableNFlag
         - EnableRFlag (str): optional regex of enableRFlag
         - EnableTE (str): optional regex of enableTE
+        - EnableTwampService (str): optional regex of enableTwampService
         - EnableWMforTE (str): optional regex of enableWMforTE
         - EnableWideMetric (str): optional regex of enableWideMetric
         - EnableXFlag (str): optional regex of enableXFlag

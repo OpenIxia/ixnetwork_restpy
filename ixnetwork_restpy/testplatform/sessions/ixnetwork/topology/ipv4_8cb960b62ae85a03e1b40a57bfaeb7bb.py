@@ -637,13 +637,13 @@ class Ipv4(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pcc_80e0369b498001415dc4db6533e36cc5.Pcc): An instance of the Pcc class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pcc_b3b58700330e49a2ac7fa39dc4a695a3.Pcc): An instance of the Pcc class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pcc_80e0369b498001415dc4db6533e36cc5 import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pcc_b3b58700330e49a2ac7fa39dc4a695a3 import (
             Pcc,
         )
 
@@ -777,13 +777,13 @@ class Ipv4(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.twampipv4_f2b0095d1b19a5361901666837fd27ba.TwampIpv4): An instance of the TwampIpv4 class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.twampipv4_eb2d65f1b7241489a109cf98d171b047.TwampIpv4): An instance of the TwampIpv4 class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.twampipv4_f2b0095d1b19a5361901666837fd27ba import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.twampipv4_eb2d65f1b7241489a109cf98d171b047 import (
             TwampIpv4,
         )
 

@@ -285,13 +285,13 @@ class Macsec(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ipv6autoconfiguration_b065cceda7a3517cca0451a09d81d989.Ipv6Autoconfiguration): An instance of the Ipv6Autoconfiguration class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ipv6autoconfiguration_30e04d0136286f29e3d34b2c9405e01e.Ipv6Autoconfiguration): An instance of the Ipv6Autoconfiguration class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ipv6autoconfiguration_b065cceda7a3517cca0451a09d81d989 import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ipv6autoconfiguration_30e04d0136286f29e3d34b2c9405e01e import (
             Ipv6Autoconfiguration,
         )
 

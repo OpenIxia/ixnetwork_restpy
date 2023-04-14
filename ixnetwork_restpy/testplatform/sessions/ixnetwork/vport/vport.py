@@ -1937,6 +1937,54 @@ class Vport(Base):
             payload[item[0]] = item[1]
         return self._execute("setTapSettings", payload=payload, response_object=None)
 
+    def StartFecErrorInsertion(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the startFecErrorInsertion operation on the server.
+
+        Starts FEC error insertion on the port.
+
+        startFecErrorInsertion(async_operation=bool)
+        --------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "startFecErrorInsertion", payload=payload, response_object=None
+        )
+
+    def StartPcsErrorGeneration(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the startPcsErrorGeneration operation on the server.
+
+        Starts PCS error generation on the port.
+
+        startPcsErrorGeneration(async_operation=bool)
+        ---------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "startPcsErrorGeneration", payload=payload, response_object=None
+        )
+
     def StartStatelessTraffic(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
         """Executes the startStatelessTraffic operation on the server.
@@ -1983,6 +2031,54 @@ class Vport(Base):
             payload[item[0]] = item[1]
         return self._execute(
             "startStatelessTrafficBlocking", payload=payload, response_object=None
+        )
+
+    def StopFecErrorInsertion(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the stopFecErrorInsertion operation on the server.
+
+        Stops FEC error insertion on the port.
+
+        stopFecErrorInsertion(async_operation=bool)
+        -------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "stopFecErrorInsertion", payload=payload, response_object=None
+        )
+
+    def StopPcsErrorGeneration(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the stopPcsErrorGeneration operation on the server.
+
+        Stops PCS error generation on the port.
+
+        stopPcsErrorGeneration(async_operation=bool)
+        --------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "stopPcsErrorGeneration", payload=payload, response_object=None
         )
 
     def StopStatelessTraffic(self, *args, **kwargs):

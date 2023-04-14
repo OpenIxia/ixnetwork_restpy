@@ -20,7 +20,6 @@ def test_can_import_export_json_as_string(ixnetwork):
 
 
 def test_can_import_export_json_as_file(ixnetwork):
-
     ixnetwork.Vport.add().add()
 
     ixnetwork.ResourceManager.ExportConfigFile(

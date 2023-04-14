@@ -63,6 +63,7 @@ class IsisL3PseudoRouter(Base):
         "EnableNFlag": "enableNFlag",
         "EnableRFlag": "enableRFlag",
         "EnableSR": "enableSR",
+        "EnableTwampService": "enableTwampService",
         "EnableWMforTEinNetworkGroup": "enableWMforTEinNetworkGroup",
         "EnableWideMetric": "enableWideMetric",
         "EnableXFlag": "enableXFlag",
@@ -123,6 +124,8 @@ class IsisL3PseudoRouter(Base):
         "SRGBRangeCount": "sRGBRangeCount",
         "SRv6NodePrefix": "sRv6NodePrefix",
         "SRv6NodePrefixLength": "sRv6NodePrefixLength",
+        "SetIpv6TERouterId": "setIpv6TERouterId",
+        "SetTERouterId": "setTERouterId",
         "SrlbDescriptorCount": "srlbDescriptorCount",
         "SrlbFlags": "srlbFlags",
         "Srv6OAMService": "srv6OAMService",
@@ -637,6 +640,20 @@ class IsisL3PseudoRouter(Base):
     def EnableSR(self, value):
         # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP["EnableSR"], value)
+
+    @property
+    def EnableTwampService(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): If Set, Send Prefix to twamp else not.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableTwampService"])
+        )
 
     @property
     def EnableWMforTEinNetworkGroup(self):
@@ -1428,6 +1445,36 @@ class IsisL3PseudoRouter(Base):
         )
 
     @property
+    def SetIpv6TERouterId(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: If enabled, the IPv6 TE Router ID IPv6 address in the Simulated Bridge tab is set to the same value as IPv6 Node Prefix. If IPv6 Node Prefix is changed, the IPv6 TE Router ID value also changes automatically. This avoids duplicate configuration in the IPv6 TE router ID field.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["SetIpv6TERouterId"])
+
+    @SetIpv6TERouterId.setter
+    def SetIpv6TERouterId(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["SetIpv6TERouterId"], value)
+
+    @property
+    def SetTERouterId(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: If enabled, the TE Router ID IP address in the Simulated Bridge tab is set to the same value as Node Prefix. If Node Prefix is changed, the TE Router ID value also changes automatically. This avoids duplicate configuration in the TE router ID field.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["SetTERouterId"])
+
+    @SetTERouterId.setter
+    def SetTERouterId(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["SetTERouterId"], value)
+
+    @property
     def SrlbDescriptorCount(self):
         # type: () -> int
         """
@@ -1501,9 +1548,11 @@ class IsisL3PseudoRouter(Base):
         Name=None,
         SRAlgorithmCount=None,
         SRGBRangeCount=None,
+        SetIpv6TERouterId=None,
+        SetTERouterId=None,
         SrlbDescriptorCount=None,
     ):
-        # type: (bool, int, int, int, str, int, int, int) -> IsisL3PseudoRouter
+        # type: (bool, int, int, int, str, int, int, bool, bool, int) -> IsisL3PseudoRouter
         """Updates isisL3PseudoRouter resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -1518,6 +1567,8 @@ class IsisL3PseudoRouter(Base):
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
         - SRAlgorithmCount (number): SR Algorithm Count
         - SRGBRangeCount (number): SRGB Range Count
+        - SetIpv6TERouterId (bool): If enabled, the IPv6 TE Router ID IPv6 address in the Simulated Bridge tab is set to the same value as IPv6 Node Prefix. If IPv6 Node Prefix is changed, the IPv6 TE Router ID value also changes automatically. This avoids duplicate configuration in the IPv6 TE router ID field.
+        - SetTERouterId (bool): If enabled, the TE Router ID IP address in the Simulated Bridge tab is set to the same value as Node Prefix. If Node Prefix is changed, the TE Router ID value also changes automatically. This avoids duplicate configuration in the TE router ID field.
         - SrlbDescriptorCount (number): Count of the SRLB descriptor entries, each being a tuple having format {Start SID/Label, SID Count}
 
         Raises
@@ -1535,9 +1586,11 @@ class IsisL3PseudoRouter(Base):
         Name=None,
         SRAlgorithmCount=None,
         SRGBRangeCount=None,
+        SetIpv6TERouterId=None,
+        SetTERouterId=None,
         SrlbDescriptorCount=None,
     ):
-        # type: (bool, int, int, int, str, int, int, int) -> IsisL3PseudoRouter
+        # type: (bool, int, int, int, str, int, int, bool, bool, int) -> IsisL3PseudoRouter
         """Adds a new isisL3PseudoRouter resource on the json, only valid with batch add utility
 
         Args
@@ -1549,6 +1602,8 @@ class IsisL3PseudoRouter(Base):
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
         - SRAlgorithmCount (number): SR Algorithm Count
         - SRGBRangeCount (number): SRGB Range Count
+        - SetIpv6TERouterId (bool): If enabled, the IPv6 TE Router ID IPv6 address in the Simulated Bridge tab is set to the same value as IPv6 Node Prefix. If IPv6 Node Prefix is changed, the IPv6 TE Router ID value also changes automatically. This avoids duplicate configuration in the IPv6 TE router ID field.
+        - SetTERouterId (bool): If enabled, the TE Router ID IP address in the Simulated Bridge tab is set to the same value as Node Prefix. If Node Prefix is changed, the TE Router ID value also changes automatically. This avoids duplicate configuration in the TE router ID field.
         - SrlbDescriptorCount (number): Count of the SRLB descriptor entries, each being a tuple having format {Start SID/Label, SID Count}
 
         Returns
@@ -1572,9 +1627,11 @@ class IsisL3PseudoRouter(Base):
         Name=None,
         SRAlgorithmCount=None,
         SRGBRangeCount=None,
+        SetIpv6TERouterId=None,
+        SetTERouterId=None,
         SrlbDescriptorCount=None,
     ):
-        # type: (int, str, bool, int, int, int, str, int, int, int) -> IsisL3PseudoRouter
+        # type: (int, str, bool, int, int, int, str, int, int, bool, bool, int) -> IsisL3PseudoRouter
         """Finds and retrieves isisL3PseudoRouter resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve isisL3PseudoRouter resources from the server.
@@ -1592,6 +1649,8 @@ class IsisL3PseudoRouter(Base):
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
         - SRAlgorithmCount (number): SR Algorithm Count
         - SRGBRangeCount (number): SRGB Range Count
+        - SetIpv6TERouterId (bool): If enabled, the IPv6 TE Router ID IPv6 address in the Simulated Bridge tab is set to the same value as IPv6 Node Prefix. If IPv6 Node Prefix is changed, the IPv6 TE Router ID value also changes automatically. This avoids duplicate configuration in the IPv6 TE router ID field.
+        - SetTERouterId (bool): If enabled, the TE Router ID IP address in the Simulated Bridge tab is set to the same value as Node Prefix. If Node Prefix is changed, the TE Router ID value also changes automatically. This avoids duplicate configuration in the TE router ID field.
         - SrlbDescriptorCount (number): Count of the SRLB descriptor entries, each being a tuple having format {Start SID/Label, SID Count}
 
         Returns
@@ -1739,6 +1798,7 @@ class IsisL3PseudoRouter(Base):
         EnableMTIPv6=None,
         EnableNFlag=None,
         EnableRFlag=None,
+        EnableTwampService=None,
         EnableWMforTEinNetworkGroup=None,
         EnableWideMetric=None,
         EnableXFlag=None,
@@ -1829,6 +1889,7 @@ class IsisL3PseudoRouter(Base):
         - EnableMTIPv6 (str): optional regex of enableMTIPv6
         - EnableNFlag (str): optional regex of enableNFlag
         - EnableRFlag (str): optional regex of enableRFlag
+        - EnableTwampService (str): optional regex of enableTwampService
         - EnableWMforTEinNetworkGroup (str): optional regex of enableWMforTEinNetworkGroup
         - EnableWideMetric (str): optional regex of enableWideMetric
         - EnableXFlag (str): optional regex of enableXFlag

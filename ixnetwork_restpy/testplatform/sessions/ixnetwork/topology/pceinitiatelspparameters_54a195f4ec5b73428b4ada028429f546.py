@@ -65,6 +65,7 @@ class PceInitiateLSPParameters(Base):
         "LocalProtection": "localProtection",
         "MplsLabel": "mplsLabel",
         "Name": "name",
+        "NumberOfAssociationObjects": "numberOfAssociationObjects",
         "NumberOfEroSubObjects": "numberOfEroSubObjects",
         "NumberOfMetricSubObject": "numberOfMetricSubObject",
         "NumberOfXroSubObjects": "numberOfXroSubObjects",
@@ -109,6 +110,26 @@ class PceInitiateLSPParameters(Base):
             if self._properties.get("PceInitiateXROobject", None) is not None:
                 return self._properties.get("PceInitiateXROobject")
         return PceInitiateXROobject(self)
+
+    @property
+    def PcepAssociationObjectsList(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pcepassociationobjectslist_809d161eaa571fb4817c7358cc0e660c.PcepAssociationObjectsList): An instance of the PcepAssociationObjectsList class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pcepassociationobjectslist_809d161eaa571fb4817c7358cc0e660c import (
+            PcepAssociationObjectsList,
+        )
+
+        if len(self._object_properties) > 0:
+            if self._properties.get("PcepAssociationObjectsList", None) is not None:
+                return self._properties.get("PcepAssociationObjectsList")
+        return PcepAssociationObjectsList(self)
 
     @property
     def PcepEroSubObjectsList(self):
@@ -185,7 +206,7 @@ class PceInitiateLSPParameters(Base):
     @property
     def AssociationId(self):
         # type: () -> 'Multivalue'
-        """
+        """DEPRECATED
         Returns
         -------
         - obj(ixnetwork_restpy.multivalue.Multivalue): The Association ID of this LSP.
@@ -358,7 +379,7 @@ class PceInitiateLSPParameters(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): Indicates whether PPAG will be included in a PCInitiate message. All other attributes in sub-tab-PPAG would be editable only if this checkbox is enabled.
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Indicates whether Association will be included in a PCInitiate message. All other attributes in sub-tab-Association would be editable only if this checkbox is enabled.
         """
         from ixnetwork_restpy.multivalue import Multivalue
 
@@ -550,6 +571,21 @@ class PceInitiateLSPParameters(Base):
         self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
+    def NumberOfAssociationObjects(self):
+        # type: () -> int
+        """
+        Returns
+        -------
+        - number: Value that indicates the number of Association Objects to be configured.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["NumberOfAssociationObjects"])
+
+    @NumberOfAssociationObjects.setter
+    def NumberOfAssociationObjects(self, value):
+        # type: (int) -> None
+        self._set_attribute(self._SDM_ATT_MAP["NumberOfAssociationObjects"], value)
+
+    @property
     def NumberOfEroSubObjects(self):
         # type: () -> int
         """
@@ -651,7 +687,7 @@ class PceInitiateLSPParameters(Base):
     @property
     def ProtectionLsp(self):
         # type: () -> 'Multivalue'
-        """
+        """DEPRECATED
         Returns
         -------
         - obj(ixnetwork_restpy.multivalue.Multivalue): Indicates whether Protection LSP Bit is On.
@@ -749,7 +785,7 @@ class PceInitiateLSPParameters(Base):
     @property
     def StandbyMode(self):
         # type: () -> 'Multivalue'
-        """
+        """DEPRECATED
         Returns
         -------
         - obj(ixnetwork_restpy.multivalue.Multivalue): Indicates whether Standby LSP Bit is On.
@@ -799,13 +835,14 @@ class PceInitiateLSPParameters(Base):
     def update(
         self,
         Name=None,
+        NumberOfAssociationObjects=None,
         NumberOfEroSubObjects=None,
         NumberOfMetricSubObject=None,
         NumberOfXroSubObjects=None,
         OverridePlspId=None,
         OverrideSrpIdNumber=None,
     ):
-        # type: (str, int, int, int, bool, bool) -> PceInitiateLSPParameters
+        # type: (str, int, int, int, int, bool, bool) -> PceInitiateLSPParameters
         """Updates pceInitiateLSPParameters resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -814,6 +851,7 @@ class PceInitiateLSPParameters(Base):
         Args
         ----
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - NumberOfAssociationObjects (number): Value that indicates the number of Association Objects to be configured.
         - NumberOfEroSubObjects (number): Value that indicates the number of ERO Sub Objects to be configured.
         - NumberOfMetricSubObject (number): Value that indicates the number of Metric Objects to be configured.
         - NumberOfXroSubObjects (number): Number of XRO Sub Objects
@@ -831,6 +869,7 @@ class PceInitiateLSPParameters(Base):
         Count=None,
         DescriptiveName=None,
         Name=None,
+        NumberOfAssociationObjects=None,
         NumberOfEroSubObjects=None,
         NumberOfMetricSubObject=None,
         NumberOfXroSubObjects=None,
@@ -838,7 +877,7 @@ class PceInitiateLSPParameters(Base):
         OverrideSrpIdNumber=None,
         SessionInfo=None,
     ):
-        # type: (int, str, str, int, int, int, bool, bool, List[str]) -> PceInitiateLSPParameters
+        # type: (int, str, str, int, int, int, int, bool, bool, List[str]) -> PceInitiateLSPParameters
         """Finds and retrieves pceInitiateLSPParameters resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve pceInitiateLSPParameters resources from the server.
@@ -850,6 +889,7 @@ class PceInitiateLSPParameters(Base):
         - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - NumberOfAssociationObjects (number): Value that indicates the number of Association Objects to be configured.
         - NumberOfEroSubObjects (number): Value that indicates the number of ERO Sub Objects to be configured.
         - NumberOfMetricSubObject (number): Value that indicates the number of Metric Objects to be configured.
         - NumberOfXroSubObjects (number): Number of XRO Sub Objects

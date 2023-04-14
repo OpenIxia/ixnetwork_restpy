@@ -58,7 +58,7 @@ class BatchUpdate(Batch):
             update.id = id
             update.base = base
             update.payload = payload
-            update.is_list = "find" in dir(base)
+            update.is_list = "find" in dir(base) and id is not None
             self._updates[url][id] = update
         else:
             self._updates[url][id].payload.update(payload)

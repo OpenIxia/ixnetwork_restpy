@@ -280,7 +280,7 @@ class Srv6Oam(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): Locator Block Length, 48 or 64 bits. Useful while processing Compressed sids in SRH. SID (128 bits) = Locator Block Length + G-SID length + Arguments + G-sid index
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Denotes the locator block length value in bits. It is useful while processing the Compressed SIDs in SRH. For example, SID (128 bits) = Locator Block Length + G-SID length + Arguments + G-sid index.
         """
         from ixnetwork_restpy.multivalue import Multivalue
 

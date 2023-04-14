@@ -260,6 +260,26 @@ class L1Config(Base):
         return Fc(self)._select()
 
     @property
+    def FecErrorInsertion(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.fecerrorinsertion.fecerrorinsertion.FecErrorInsertion): An instance of the FecErrorInsertion class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.fecerrorinsertion.fecerrorinsertion import (
+            FecErrorInsertion,
+        )
+
+        if len(self._object_properties) > 0:
+            if self._properties.get("FecErrorInsertion", None) is not None:
+                return self._properties.get("FecErrorInsertion")
+        return FecErrorInsertion(self)._select()
+
+    @property
     def FortyGigLan(self):
         """
         Returns
@@ -398,6 +418,26 @@ class L1Config(Base):
             if self._properties.get("NovusTenGigLan", None) is not None:
                 return self._properties.get("NovusTenGigLan")
         return NovusTenGigLan(self)._select()
+
+    @property
+    def PcsErrorGeneration(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.pcserrorgeneration.pcserrorgeneration.PcsErrorGeneration): An instance of the PcsErrorGeneration class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.pcserrorgeneration.pcserrorgeneration import (
+            PcsErrorGeneration,
+        )
+
+        if len(self._object_properties) > 0:
+            if self._properties.get("PcsErrorGeneration", None) is not None:
+                return self._properties.get("PcsErrorGeneration")
+        return PcsErrorGeneration(self)._select()
 
     @property
     def Pos(self):

@@ -205,13 +205,13 @@ class DeviceGroup(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisl3router_1aab69b36c29778284d68b01b8febe48.IsisL3Router): An instance of the IsisL3Router class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisl3router_9e43da3dac634f0a3fa5d8ede6d6921c.IsisL3Router): An instance of the IsisL3Router class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisl3router_1aab69b36c29778284d68b01b8febe48 import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisl3router_9e43da3dac634f0a3fa5d8ede6d6921c import (
             IsisL3Router,
         )
 

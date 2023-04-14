@@ -64,6 +64,7 @@ class PceTriggerParamList(Base):
         "LocalProtectionForTriggerParam": "localProtectionForTriggerParam",
         "Mpls_label_20_TriggerParam": "mpls_label_20_TriggerParam",
         "Name": "name",
+        "NumberOfAssociationObjectsTriggerParam": "numberOfAssociationObjectsTriggerParam",
         "NumberOfEroSubObjectsTriggerParam": "numberOfEroSubObjectsTriggerParam",
         "NumberOfMetricSubObjectTriggerParam": "numberOfMetricSubObjectTriggerParam",
         "NumberOfXroSubObjectsTriggerParam": "numberOfXroSubObjectsTriggerParam",
@@ -85,6 +86,29 @@ class PceTriggerParamList(Base):
 
     def __init__(self, parent, list_op=False):
         super(PceTriggerParamList, self).__init__(parent, list_op)
+
+    @property
+    def PcepAssociationObjectsListTriggerParam(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pcepassociationobjectslisttriggerparam_6b13018b4290569a0b0887965ecab0ca.PcepAssociationObjectsListTriggerParam): An instance of the PcepAssociationObjectsListTriggerParam class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pcepassociationobjectslisttriggerparam_6b13018b4290569a0b0887965ecab0ca import (
+            PcepAssociationObjectsListTriggerParam,
+        )
+
+        if len(self._object_properties) > 0:
+            if (
+                self._properties.get("PcepAssociationObjectsListTriggerParam", None)
+                is not None
+            ):
+                return self._properties.get("PcepAssociationObjectsListTriggerParam")
+        return PcepAssociationObjectsListTriggerParam(self)
 
     @property
     def PcepEROObjectsListTriggerParam(self):
@@ -383,7 +407,7 @@ class PceTriggerParamList(Base):
     @property
     def IncludeAssociation(self):
         # type: () -> 'Multivalue'
-        """
+        """DEPRECATED
         Returns
         -------
         - obj(ixnetwork_restpy.multivalue.Multivalue): Indicates whether Association object will be included in a PcUpdate message.
@@ -536,6 +560,25 @@ class PceTriggerParamList(Base):
     def Name(self, value):
         # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP["Name"], value)
+
+    @property
+    def NumberOfAssociationObjectsTriggerParam(self):
+        # type: () -> int
+        """
+        Returns
+        -------
+        - number: Value that indicates the number of Association Objects to be configured.
+        """
+        return self._get_attribute(
+            self._SDM_ATT_MAP["NumberOfAssociationObjectsTriggerParam"]
+        )
+
+    @NumberOfAssociationObjectsTriggerParam.setter
+    def NumberOfAssociationObjectsTriggerParam(self, value):
+        # type: (int) -> None
+        self._set_attribute(
+            self._SDM_ATT_MAP["NumberOfAssociationObjectsTriggerParam"], value
+        )
 
     @property
     def NumberOfEroSubObjectsTriggerParam(self):
@@ -781,11 +824,12 @@ class PceTriggerParamList(Base):
         self,
         DeviceIndex=None,
         Name=None,
+        NumberOfAssociationObjectsTriggerParam=None,
         NumberOfEroSubObjectsTriggerParam=None,
         NumberOfMetricSubObjectTriggerParam=None,
         NumberOfXroSubObjectsTriggerParam=None,
     ):
-        # type: (int, str, int, int, int) -> PceTriggerParamList
+        # type: (int, str, int, int, int, int) -> PceTriggerParamList
         """Updates pceTriggerParamList resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -795,6 +839,7 @@ class PceTriggerParamList(Base):
         ----
         - DeviceIndex (number): Device Index of the parent PCCGroup Device
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - NumberOfAssociationObjectsTriggerParam (number): Value that indicates the number of Association Objects to be configured.
         - NumberOfEroSubObjectsTriggerParam (number): Value that indicates the number of ERO Sub Objects to be configured.
         - NumberOfMetricSubObjectTriggerParam (number): Value that indicates the number of Metric Objects to be configured.
         - NumberOfXroSubObjectsTriggerParam (number): Value that indicates the number of XRO Sub Objects to be configured.
@@ -809,17 +854,19 @@ class PceTriggerParamList(Base):
         self,
         DeviceIndex=None,
         Name=None,
+        NumberOfAssociationObjectsTriggerParam=None,
         NumberOfEroSubObjectsTriggerParam=None,
         NumberOfMetricSubObjectTriggerParam=None,
         NumberOfXroSubObjectsTriggerParam=None,
     ):
-        # type: (int, str, int, int, int) -> PceTriggerParamList
+        # type: (int, str, int, int, int, int) -> PceTriggerParamList
         """Adds a new pceTriggerParamList resource on the server and adds it to the container.
 
         Args
         ----
         - DeviceIndex (number): Device Index of the parent PCCGroup Device
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - NumberOfAssociationObjectsTriggerParam (number): Value that indicates the number of Association Objects to be configured.
         - NumberOfEroSubObjectsTriggerParam (number): Value that indicates the number of ERO Sub Objects to be configured.
         - NumberOfMetricSubObjectTriggerParam (number): Value that indicates the number of Metric Objects to be configured.
         - NumberOfXroSubObjectsTriggerParam (number): Value that indicates the number of XRO Sub Objects to be configured.
@@ -850,11 +897,12 @@ class PceTriggerParamList(Base):
         DescriptiveName=None,
         DeviceIndex=None,
         Name=None,
+        NumberOfAssociationObjectsTriggerParam=None,
         NumberOfEroSubObjectsTriggerParam=None,
         NumberOfMetricSubObjectTriggerParam=None,
         NumberOfXroSubObjectsTriggerParam=None,
     ):
-        # type: (int, str, int, str, int, int, int) -> PceTriggerParamList
+        # type: (int, str, int, str, int, int, int, int) -> PceTriggerParamList
         """Finds and retrieves pceTriggerParamList resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve pceTriggerParamList resources from the server.
@@ -867,6 +915,7 @@ class PceTriggerParamList(Base):
         - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         - DeviceIndex (number): Device Index of the parent PCCGroup Device
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - NumberOfAssociationObjectsTriggerParam (number): Value that indicates the number of Association Objects to be configured.
         - NumberOfEroSubObjectsTriggerParam (number): Value that indicates the number of ERO Sub Objects to be configured.
         - NumberOfMetricSubObjectTriggerParam (number): Value that indicates the number of Metric Objects to be configured.
         - NumberOfXroSubObjectsTriggerParam (number): Value that indicates the number of XRO Sub Objects to be configured.

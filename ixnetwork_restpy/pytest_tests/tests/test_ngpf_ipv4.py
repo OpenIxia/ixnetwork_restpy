@@ -1,5 +1,4 @@
 def test_can_configure_ngpf_ipv4(ixnetwork):
-
     vports = ixnetwork.Vport.add().add()
 
     topology = ixnetwork.Topology.add(Name="Topology 1", Ports=vports)

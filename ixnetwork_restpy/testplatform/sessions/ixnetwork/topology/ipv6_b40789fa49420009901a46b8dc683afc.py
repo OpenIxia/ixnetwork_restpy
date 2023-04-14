@@ -525,13 +525,13 @@ class Ipv6(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.twampipv6_b1455e534d3dddd1d3626dedd3cd5690.TwampIpv6): An instance of the TwampIpv6 class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.twampipv6_72c7939993683cf2a1b8b4518a76974c.TwampIpv6): An instance of the TwampIpv6 class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.twampipv6_b1455e534d3dddd1d3626dedd3cd5690 import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.twampipv6_72c7939993683cf2a1b8b4518a76974c import (
             TwampIpv6,
         )
 

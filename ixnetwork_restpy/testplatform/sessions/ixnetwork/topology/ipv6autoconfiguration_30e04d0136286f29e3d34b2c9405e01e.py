@@ -43,6 +43,7 @@ class Ipv6Autoconfiguration(Base):
         "DescriptiveName": "descriptiveName",
         "Errors": "errors",
         "GatewayIp": "gatewayIp",
+        "LinkLocalIp": "linkLocalIp",
         "Multiplier": "multiplier",
         "Name": "name",
         "Prefix": "prefix",
@@ -353,6 +354,16 @@ class Ipv6Autoconfiguration(Base):
         return self._get_attribute(self._SDM_ATT_MAP["GatewayIp"])
 
     @property
+    def LinkLocalIp(self):
+        # type: () -> List[str]
+        """
+        Returns
+        -------
+        - list(str): Link Local Addresses.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["LinkLocalIp"])
+
+    @property
     def Multiplier(self):
         # type: () -> int
         """
@@ -512,6 +523,7 @@ class Ipv6Autoconfiguration(Base):
         DescriptiveName=None,
         Errors=None,
         GatewayIp=None,
+        LinkLocalIp=None,
         Multiplier=None,
         Name=None,
         Prefix=None,
@@ -536,6 +548,7 @@ class Ipv6Autoconfiguration(Base):
         - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         - Errors (list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork/],arg2:list[str]))): A list of errors that have occurred
         - GatewayIp (list(str)): Discovered gateway IPv6 addresses
+        - LinkLocalIp (list(str)): Link Local Addresses.
         - Multiplier (number): Number of layer instances per parent instance (multiplier)
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
         - Prefix (list(number)): Discovered IPv6 prefix length

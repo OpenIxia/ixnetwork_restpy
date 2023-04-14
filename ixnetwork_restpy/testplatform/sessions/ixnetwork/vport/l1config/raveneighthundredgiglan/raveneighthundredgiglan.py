@@ -91,6 +91,26 @@ class RavenEightHundredGigLan(Base):
         return Fcoe(self)._select()
 
     @property
+    def TxLane(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.raveneighthundredgiglan.txlane.txlane.TxLane): An instance of the TxLane class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.raveneighthundredgiglan.txlane.txlane import (
+            TxLane,
+        )
+
+        if len(self._object_properties) > 0:
+            if self._properties.get("TxLane", None) is not None:
+                return self._properties.get("TxLane")
+        return TxLane(self)._select()
+
+    @property
     def AutoInstrumentation(self):
         # type: () -> str
         """

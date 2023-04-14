@@ -43,11 +43,13 @@ class PreEstablishedSrLsps(Base):
         "Bos": "bos",
         "Count": "count",
         "DescriptiveName": "descriptiveName",
+        "DestEndPointIpv4": "destEndPointIpv4",
         "DestinationIpv4Address": "destinationIpv4Address",
         "ExcludeAny": "excludeAny",
         "HoldingPriority": "holdingPriority",
         "IncludeAll": "includeAll",
         "IncludeAny": "includeAny",
+        "IncludeAssociation": "includeAssociation",
         "IncludeBandwidth": "includeBandwidth",
         "IncludeConfiguredERO": "includeConfiguredERO",
         "IncludeEro": "includeEro",
@@ -64,6 +66,7 @@ class PreEstablishedSrLsps(Base):
         "LspDelegationState": "lspDelegationState",
         "MplsLabel": "mplsLabel",
         "Name": "name",
+        "NumberOfAssociationObjects": "numberOfAssociationObjects",
         "NumberOfEroSubObjects": "numberOfEroSubObjects",
         "NumberOfMetricSubObject": "numberOfMetricSubObject",
         "OverridePlspId": "overridePlspId",
@@ -75,6 +78,7 @@ class PreEstablishedSrLsps(Base):
         "SetupPriority": "setupPriority",
         "SrcEndPointIpv4": "srcEndPointIpv4",
         "SrcEndPointIpv6": "srcEndPointIpv6",
+        "SrcIpv4": "srcIpv4",
         "Srv6SID": "srv6SID",
         "StandbyLspBit": "standbyLspBit",
         "SymbolicPathName": "symbolicPathName",
@@ -87,6 +91,26 @@ class PreEstablishedSrLsps(Base):
 
     def __init__(self, parent, list_op=False):
         super(PreEstablishedSrLsps, self).__init__(parent, list_op)
+
+    @property
+    def PcepAssociationObjectsList(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pcepassociationobjectslist_809d161eaa571fb4817c7358cc0e660c.PcepAssociationObjectsList): An instance of the PcepAssociationObjectsList class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pcepassociationobjectslist_809d161eaa571fb4817c7358cc0e660c import (
+            PcepAssociationObjectsList,
+        )
+
+        if len(self._object_properties) > 0:
+            if self._properties.get("PcepAssociationObjectsList", None) is not None:
+                return self._properties.get("PcepAssociationObjectsList")
+        return PcepAssociationObjectsList(self)
 
     @property
     def PcepEroSubObjectsList(self):
@@ -197,7 +221,7 @@ class PreEstablishedSrLsps(Base):
     @property
     def AssociationId(self):
         # type: () -> 'Multivalue'
-        """
+        """DEPRECATED
         Returns
         -------
         - obj(ixnetwork_restpy.multivalue.Multivalue): The Association ID of this LSP.
@@ -263,6 +287,20 @@ class PreEstablishedSrLsps(Base):
         return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
+    def DestEndPointIpv4(self):
+        # type: () -> 'Multivalue'
+        """DEPRECATED
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Destination end point of the LSP, used to detect end point mismatch error if PCE changes association
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["DestEndPointIpv4"])
+        )
+
+    @property
     def DestinationIpv4Address(self):
         # type: () -> 'Multivalue'
         """
@@ -325,6 +363,20 @@ class PreEstablishedSrLsps(Base):
         from ixnetwork_restpy.multivalue import Multivalue
 
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["IncludeAny"]))
+
+    @property
+    def IncludeAssociation(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Indicates whether Association will be included in a Sync PCReport message. All other attributes in sub-tab-Association would be editable only if this checkbox is enabled.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["IncludeAssociation"])
+        )
 
     @property
     def IncludeBandwidth(self):
@@ -405,7 +457,7 @@ class PreEstablishedSrLsps(Base):
     @property
     def IncludePpag(self):
         # type: () -> 'Multivalue'
-        """
+        """DEPRECATED
         Returns
         -------
         - obj(ixnetwork_restpy.multivalue.Multivalue): Indicates whether Association will be included in a Sync PCReport message. All other attributes in sub-tab-PPAG would be editable only if this checkbox is enabled.
@@ -535,6 +587,21 @@ class PreEstablishedSrLsps(Base):
         self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
+    def NumberOfAssociationObjects(self):
+        # type: () -> int
+        """
+        Returns
+        -------
+        - number: Value that indicates the number of Association Objects to be configured.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["NumberOfAssociationObjects"])
+
+    @NumberOfAssociationObjects.setter
+    def NumberOfAssociationObjects(self, value):
+        # type: (int) -> None
+        self._set_attribute(self._SDM_ATT_MAP["NumberOfAssociationObjects"], value)
+
+    @property
     def NumberOfEroSubObjects(self):
         # type: () -> int
         """
@@ -609,7 +676,7 @@ class PreEstablishedSrLsps(Base):
     @property
     def ProtectionLspBit(self):
         # type: () -> 'Multivalue'
-        """
+        """DEPRECATED
         Returns
         -------
         - obj(ixnetwork_restpy.multivalue.Multivalue): Indicates whether Protection LSP Bit is On.
@@ -685,6 +752,18 @@ class PreEstablishedSrLsps(Base):
         )
 
     @property
+    def SrcIpv4(self):
+        # type: () -> 'Multivalue'
+        """DEPRECATED
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Source end point of the LSP
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SrcIpv4"]))
+
+    @property
     def Srv6SID(self):
         # type: () -> 'Multivalue'
         """
@@ -699,7 +778,7 @@ class PreEstablishedSrLsps(Base):
     @property
     def StandbyLspBit(self):
         # type: () -> 'Multivalue'
-        """
+        """DEPRECATED
         Returns
         -------
         - obj(ixnetwork_restpy.multivalue.Multivalue): Indicates whether Standby LSP Bit is On.
@@ -750,12 +829,13 @@ class PreEstablishedSrLsps(Base):
         self,
         InsertIpv6ExplicitNull=None,
         Name=None,
+        NumberOfAssociationObjects=None,
         NumberOfEroSubObjects=None,
         NumberOfMetricSubObject=None,
         OverridePlspId=None,
         PathSetupType=None,
     ):
-        # type: (bool, str, int, int, bool, str) -> PreEstablishedSrLsps
+        # type: (bool, str, int, int, int, bool, str) -> PreEstablishedSrLsps
         """Updates preEstablishedSrLsps resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -765,6 +845,7 @@ class PreEstablishedSrLsps(Base):
         ----
         - InsertIpv6ExplicitNull (bool): Insert IPv6 Explicit Null MPLS header if the traffic type is of type IPv6
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - NumberOfAssociationObjects (number): Value that indicates the number of Association Objects to be configured.
         - NumberOfEroSubObjects (number): Value that indicates the number of ERO Sub Objects to be configured.
         - NumberOfMetricSubObject (number): Value that indicates the number of Metric Objects to be configured.
         - OverridePlspId (bool): Indicates if PLSP-ID will be set by the state machine or user. If disabled user wont have the control and state machine will set it.
@@ -783,13 +864,14 @@ class PreEstablishedSrLsps(Base):
         InsertIpv6ExplicitNull=None,
         LspDelegationState=None,
         Name=None,
+        NumberOfAssociationObjects=None,
         NumberOfEroSubObjects=None,
         NumberOfMetricSubObject=None,
         OverridePlspId=None,
         PathSetupType=None,
         ReDelegationTimerStatus=None,
     ):
-        # type: (int, str, bool, List[str], str, int, int, bool, str, List[str]) -> PreEstablishedSrLsps
+        # type: (int, str, bool, List[str], str, int, int, int, bool, str, List[str]) -> PreEstablishedSrLsps
         """Finds and retrieves preEstablishedSrLsps resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve preEstablishedSrLsps resources from the server.
@@ -803,6 +885,7 @@ class PreEstablishedSrLsps(Base):
         - InsertIpv6ExplicitNull (bool): Insert IPv6 Explicit Null MPLS header if the traffic type is of type IPv6
         - LspDelegationState (list(str[delegated | delegationConfirmed | delegationRejected | delegationReturned | delegationRevoked | nonDelegated | none])): LSP Delegation State
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - NumberOfAssociationObjects (number): Value that indicates the number of Association Objects to be configured.
         - NumberOfEroSubObjects (number): Value that indicates the number of ERO Sub Objects to be configured.
         - NumberOfMetricSubObject (number): Value that indicates the number of Metric Objects to be configured.
         - OverridePlspId (bool): Indicates if PLSP-ID will be set by the state machine or user. If disabled user wont have the control and state machine will set it.
@@ -894,11 +977,13 @@ class PreEstablishedSrLsps(Base):
         Bandwidth=None,
         BindingType=None,
         Bos=None,
+        DestEndPointIpv4=None,
         DestinationIpv4Address=None,
         ExcludeAny=None,
         HoldingPriority=None,
         IncludeAll=None,
         IncludeAny=None,
+        IncludeAssociation=None,
         IncludeBandwidth=None,
         IncludeConfiguredERO=None,
         IncludeEro=None,
@@ -918,6 +1003,7 @@ class PreEstablishedSrLsps(Base):
         SetupPriority=None,
         SrcEndPointIpv4=None,
         SrcEndPointIpv6=None,
+        SrcIpv4=None,
         Srv6SID=None,
         StandbyLspBit=None,
         SymbolicPathName=None,
@@ -937,11 +1023,13 @@ class PreEstablishedSrLsps(Base):
         - Bandwidth (str): optional regex of bandwidth
         - BindingType (str): optional regex of bindingType
         - Bos (str): optional regex of bos
+        - DestEndPointIpv4 (str): optional regex of destEndPointIpv4
         - DestinationIpv4Address (str): optional regex of destinationIpv4Address
         - ExcludeAny (str): optional regex of excludeAny
         - HoldingPriority (str): optional regex of holdingPriority
         - IncludeAll (str): optional regex of includeAll
         - IncludeAny (str): optional regex of includeAny
+        - IncludeAssociation (str): optional regex of includeAssociation
         - IncludeBandwidth (str): optional regex of includeBandwidth
         - IncludeConfiguredERO (str): optional regex of includeConfiguredERO
         - IncludeEro (str): optional regex of includeEro
@@ -961,6 +1049,7 @@ class PreEstablishedSrLsps(Base):
         - SetupPriority (str): optional regex of setupPriority
         - SrcEndPointIpv4 (str): optional regex of srcEndPointIpv4
         - SrcEndPointIpv6 (str): optional regex of srcEndPointIpv6
+        - SrcIpv4 (str): optional regex of srcIpv4
         - Srv6SID (str): optional regex of srv6SID
         - StandbyLspBit (str): optional regex of standbyLspBit
         - SymbolicPathName (str): optional regex of symbolicPathName
