@@ -224,13 +224,13 @@ class Pcc(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.preestablishedsrlsps_95c5549c90184bfff112fd02cc41c84f.PreEstablishedSrLsps): An instance of the PreEstablishedSrLsps class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.preestablishedsrlsps_967b2455bf37443139cbc5750c81086f.PreEstablishedSrLsps): An instance of the PreEstablishedSrLsps class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.preestablishedsrlsps_95c5549c90184bfff112fd02cc41c84f import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.preestablishedsrlsps_967b2455bf37443139cbc5750c81086f import (
             PreEstablishedSrLsps,
         )
 

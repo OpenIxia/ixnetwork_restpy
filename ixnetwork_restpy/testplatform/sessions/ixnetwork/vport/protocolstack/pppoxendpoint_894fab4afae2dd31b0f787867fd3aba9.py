@@ -191,13 +191,13 @@ class PppoxEndpoint(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.range_9ecefbd1639215458ad6cad8355e64be.Range): An instance of the Range class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.range_ed51d487e5d4c037a59eb05c074e14aa.Range): An instance of the Range class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.range_9ecefbd1639215458ad6cad8355e64be import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.range_ed51d487e5d4c037a59eb05c074e14aa import (
             Range,
         )
 

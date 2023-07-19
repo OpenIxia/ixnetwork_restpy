@@ -50,13 +50,13 @@ class VepaEndpoint(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.range_01a910a4c80c6da7a2f64bf8e2f6d7c0.Range): An instance of the Range class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.range_29b01b5e636d92d63e9f0b43f4682cb2.Range): An instance of the Range class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.range_01a910a4c80c6da7a2f64bf8e2f6d7c0 import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.range_29b01b5e636d92d63e9f0b43f4682cb2 import (
             Range,
         )
 

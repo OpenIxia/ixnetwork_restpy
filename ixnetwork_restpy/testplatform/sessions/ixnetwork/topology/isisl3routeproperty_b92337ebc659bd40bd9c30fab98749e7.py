@@ -96,13 +96,13 @@ class IsisL3RouteProperty(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cmacproperties_2f1fa60d20894ec3fe809175e33e024f.CMacProperties): An instance of the CMacProperties class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cmacproperties_ecb45bfaef4008cb27346c98c45748b2.CMacProperties): An instance of the CMacProperties class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cmacproperties_2f1fa60d20894ec3fe809175e33e024f import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cmacproperties_ecb45bfaef4008cb27346c98c45748b2 import (
             CMacProperties,
         )
 
@@ -156,13 +156,13 @@ class IsisL3RouteProperty(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisl3prefixesmtid_7f655e2e5caa37b3bd2fd2abdfec8d3c.IsisL3PrefixesMtId): An instance of the IsisL3PrefixesMtId class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisl3prefixesmtid_586e046161234c1eaaab8136f246c47b.IsisL3PrefixesMtId): An instance of the IsisL3PrefixesMtId class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisl3prefixesmtid_7f655e2e5caa37b3bd2fd2abdfec8d3c import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisl3prefixesmtid_586e046161234c1eaaab8136f246c47b import (
             IsisL3PrefixesMtId,
         )
 

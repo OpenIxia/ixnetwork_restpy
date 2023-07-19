@@ -92,13 +92,13 @@ class OpenFlow(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.hosttopologylearnedinformation_4110abe6bc708b97f65a28c397fa159a.HostTopologyLearnedInformation): An instance of the HostTopologyLearnedInformation class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.hosttopologylearnedinformation_a15e8f019af7bb51517582abe5420f9e.HostTopologyLearnedInformation): An instance of the HostTopologyLearnedInformation class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.hosttopologylearnedinformation_4110abe6bc708b97f65a28c397fa159a import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.hosttopologylearnedinformation_a15e8f019af7bb51517582abe5420f9e import (
             HostTopologyLearnedInformation,
         )
 

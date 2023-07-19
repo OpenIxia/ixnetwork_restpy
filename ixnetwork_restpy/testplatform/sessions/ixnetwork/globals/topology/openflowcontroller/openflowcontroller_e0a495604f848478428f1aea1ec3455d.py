@@ -50,13 +50,13 @@ class OpenFlowController(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.openflowcontroller.actionstemplate_3506879509654c1d0d77f933edb1922c.ActionsTemplate): An instance of the ActionsTemplate class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.openflowcontroller.actionstemplate_6a59517c84898f2a30a8152cc822c184.ActionsTemplate): An instance of the ActionsTemplate class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.openflowcontroller.actionstemplate_3506879509654c1d0d77f933edb1922c import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.openflowcontroller.actionstemplate_6a59517c84898f2a30a8152cc822c184 import (
             ActionsTemplate,
         )
 
@@ -70,13 +70,13 @@ class OpenFlowController(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.openflowcontroller.flowsettemplate_1b79b45150c48e9f752113654ba90a51.FlowSetTemplate): An instance of the FlowSetTemplate class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.openflowcontroller.flowsettemplate_1e807a572261b40ca9edb7d10d0fbc78.FlowSetTemplate): An instance of the FlowSetTemplate class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.openflowcontroller.flowsettemplate_1b79b45150c48e9f752113654ba90a51 import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.openflowcontroller.flowsettemplate_1e807a572261b40ca9edb7d10d0fbc78 import (
             FlowSetTemplate,
         )
 

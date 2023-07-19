@@ -19,17 +19,19 @@ class Macsec(Base):
         "AesXpn256SaltXpn256": "macsec.secTag.metadata.cipherSuite.aesXpn256.saltXpn256-11",
         "MetadataConfEnabled": "macsec.secTag.metadata.confEnabled-12",
         "MetadataConfOffset": "macsec.secTag.metadata.confOffset-13",
-        "TciVer": "macsec.secTag.tci.ver-14",
-        "TciEs": "macsec.secTag.tci.es-15",
-        "TciSc": "macsec.secTag.tci.sc-16",
-        "TciScb": "macsec.secTag.tci.scb-17",
-        "TciE": "macsec.secTag.tci.e-18",
-        "TciC": "macsec.secTag.tci.c-19",
-        "SecTagAn": "macsec.secTag.an-20",
-        "SecTagSl": "macsec.secTag.sl-21",
-        "SecTagPn": "macsec.secTag.pn-22",
-        "SciSysid": "macsec.secTag.sci.sysid-23",
-        "SciPortid": "macsec.secTag.sci.portid-24",
+        "MetadataSysidMeta": "macsec.secTag.metadata.sysidMeta-14",
+        "MetadataPortidMeta": "macsec.secTag.metadata.portidMeta-15",
+        "TciVer": "macsec.secTag.tci.ver-16",
+        "TciEs": "macsec.secTag.tci.es-17",
+        "TciSc": "macsec.secTag.tci.sc-18",
+        "TciScb": "macsec.secTag.tci.scb-19",
+        "TciE": "macsec.secTag.tci.e-20",
+        "TciC": "macsec.secTag.tci.c-21",
+        "SecTagAn": "macsec.secTag.an-22",
+        "SecTagSl": "macsec.secTag.sl-23",
+        "SecTagPn": "macsec.secTag.pn-24",
+        "SciSysid": "macsec.secTag.sci.sysid-25",
+        "SciPortid": "macsec.secTag.sci.portid-26",
     }
 
     def __init__(self, parent, list_op=False):
@@ -200,6 +202,32 @@ class Macsec(Base):
 
         return Multivalue(
             self, self._get_attribute(self._SDM_ATT_MAP["MetadataConfOffset"])
+        )
+
+    @property
+    def MetadataSysidMeta(self):
+        """
+        Display Name: System Identifier
+        Default Value: 00:11:01:00:00:01
+        Value Format: mAC
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MetadataSysidMeta"])
+        )
+
+    @property
+    def MetadataPortidMeta(self):
+        """
+        Display Name: Port Identifier
+        Default Value: 1
+        Value Format: decimal
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MetadataPortidMeta"])
         )
 
     @property

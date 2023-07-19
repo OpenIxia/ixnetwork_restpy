@@ -50,13 +50,13 @@ class EgtpPcrfS5S8SgwEndpoint(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.range_b6d50385f93178bc54ab80eec4319b05.Range): An instance of the Range class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.range_d98ed43d27728e182795c7cd6b5cdf59.Range): An instance of the Range class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.range_b6d50385f93178bc54ab80eec4319b05 import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.range_d98ed43d27728e182795c7cd6b5cdf59 import (
             Range,
         )
 

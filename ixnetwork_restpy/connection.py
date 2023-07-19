@@ -62,7 +62,7 @@ class Connection(object):
     TRACE_ALL = "all"
     PLATFORMS = {
         "Jetty": "linux",
-        "nginx/1.17.8": "linux",
+        "nginx": "linux",
         "SelfHost": "windows",
         "Kestrel": "windows",
         "Microsoft-HTTPAPI/2.0": "connection_manager",
@@ -78,6 +78,7 @@ class Connection(object):
         verify_cert=False,
         trace="none",
         script_watch=True,
+        url_prefix=None,
     ):
         """Set the connection parameters to a rest server
 
@@ -89,6 +90,7 @@ class Connection(object):
             ignore_env_proxy (bool):
             verify_cert (bool):
             script_watch (bool):
+            url_prefix (str): the prefix that needs to added in the rest url
         """
         self.trace = trace
         if len(logging.getLogger(__name__).handlers) == 0:
@@ -135,6 +137,7 @@ class Connection(object):
         if ignore_env_proxy is True:
             os.environ["no_proxy"] = "*"
         self._hostname = hostname
+        self._url_prefix = url_prefix
         if ":" in self._hostname and "[" not in self._hostname:
             self._hostname = "[%s]" % self._hostname
         self._rest_port = rest_port
@@ -162,11 +165,19 @@ class Connection(object):
         for rest_port in rest_ports:
             for scheme in ["http", "https"]:
                 try:
-                    url = "%s://%s:%s/api/v1/auth/session" % (
-                        scheme,
-                        self._hostname,
-                        rest_port,
-                    )
+                    if self._url_prefix is not None:
+                        url = "%s://%s:%s/%s/api/v1/auth/session" % (
+                            scheme,
+                            self._hostname,
+                            rest_port,
+                            self._url_prefix,
+                        )
+                    else:
+                        url = "%s://%s:%s/api/v1/auth/session" % (
+                            scheme,
+                            self._hostname,
+                            rest_port,
+                        )
                     payload = json.dumps({"username": "", "password": ""})
                     headers = self._headers
                     headers["content-type"] = "application/json"
@@ -328,6 +339,8 @@ class Connection(object):
         if ":" in hostname and "[" not in hostname:
             hostname = "[%s]" % hostname
         connection = "%s://%s:%s" % (self._scheme, hostname, self._rest_port)
+        if self._url_prefix is not None:
+            connection += "/" + self._url_prefix
         if url.startswith(self._scheme) == False:
             url = "%s/%s" % (connection, url.strip("/"))
         path_start = url.find("://") + 3
@@ -553,7 +566,13 @@ class Connection(object):
                 self._async_operation.poll_headers = headers.copy()
                 self._async_operation.async_response = response
                 if self._async_operation.request is None:
-                    return self._poll()
+                    try:
+                        return self._poll()
+                    finally:
+                        self._async_operation.request = None
+                        self._async_operation.async_response = None
+                        self._async_operation.poll_url = None
+                        self._async_operation.poll_headers = None
 
         while response.status_code == 409:
             time.sleep(6)

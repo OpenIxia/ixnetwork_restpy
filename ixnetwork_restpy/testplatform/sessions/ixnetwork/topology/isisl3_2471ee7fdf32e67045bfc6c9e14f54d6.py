@@ -185,13 +185,13 @@ class IsisL3(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isismtidlist_546f33e99cab8ba1beaa9a395387c9df.IsisMTIDList): An instance of the IsisMTIDList class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isismtidlist_8fd17f74f5299000c0f93d3d190aee51.IsisMTIDList): An instance of the IsisMTIDList class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isismtidlist_546f33e99cab8ba1beaa9a395387c9df import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isismtidlist_8fd17f74f5299000c0f93d3d190aee51 import (
             IsisMTIDList,
         )
 

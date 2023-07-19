@@ -110,13 +110,13 @@ class EthernetEndpoint(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.range_092d943b2a13c1e5470555b58a77a0f1.Range): An instance of the Range class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.range_5adad680fef8d3f19c2ad437037acf5b.Range): An instance of the Range class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.range_092d943b2a13c1e5470555b58a77a0f1 import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.range_5adad680fef8d3f19c2ad437037acf5b import (
             Range,
         )
 

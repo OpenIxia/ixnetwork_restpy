@@ -749,7 +749,7 @@ class Multivalue(Base):
         self._set_properties(self._connection._execute(url, payload)[0], clear=True)
         return self
 
-    def Overlay(self, index, value):
+    def Overlay(self, index, value, count=1):
         """Add an overlay at a specific device index in a pattern.
 
         This is meant to overwrite an existing pattern with a few non-contiguous, random values.
@@ -760,20 +760,9 @@ class Multivalue(Base):
         ----
         - index (int): 1 based device index
         - value (str): the overlay value
+        - count (int): the number of indices to update with the overlay value starting from index attribute, default: 1
         """
         if self._parent._mode[0] == "config":
-            # if self.parent._properties.get('OverlayIndex', None) is not None:
-            #     self._overlay_index = self.parent._properties.get('OverlayIndex')
-            # multivalue_dict = dict()
-            # self._overlay_index += 1
-            # pattern = 'overlay[' + str(self._overlay_index) + ']'
-            # multivalue_dict['xpath'] = self._get_multivalue_xpath(self._href, pattern)
-            # multivalue_dict['count'] = '1'
-            # multivalue_dict['index'] = index
-            # multivalue_dict['indexStep'] = '1'
-            # multivalue_dict['value'] = value
-            # self._xpathObj._config.append(multivalue_dict)
-            # self.parent._properties['OverlayIndex'] = self._overlay_index
             attribute_present = False
             for multivaute_attr in self.parent._properties["multiValue"]:
                 if self._href in multivaute_attr:
@@ -793,7 +782,7 @@ class Multivalue(Base):
                 )
         else:
             href = "%s/overlay" % (self._href)
-            payload = {"count": 1, "index": index, "indexStep": 1, "value": value}
+            payload = {"count": count, "index": index, "indexStep": 1, "value": value}
             self._connection._create(href, payload)
 
     def ClearOverlays(self):

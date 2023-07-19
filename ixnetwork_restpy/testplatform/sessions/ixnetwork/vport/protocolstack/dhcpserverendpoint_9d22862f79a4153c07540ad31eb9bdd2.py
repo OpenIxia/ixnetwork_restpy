@@ -70,13 +70,13 @@ class DhcpServerEndpoint(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.range_3fc512600508a1c56061b9a7cd612138.Range): An instance of the Range class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.range_4e8e50d35a33109542ff440c8d2d02ac.Range): An instance of the Range class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.range_3fc512600508a1c56061b9a7cd612138 import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.range_4e8e50d35a33109542ff440c8d2d02ac import (
             Range,
         )
 

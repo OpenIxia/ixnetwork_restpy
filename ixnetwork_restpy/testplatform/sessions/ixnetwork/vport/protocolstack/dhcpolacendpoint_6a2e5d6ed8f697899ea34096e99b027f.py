@@ -50,13 +50,13 @@ class DhcpoLacEndpoint(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.range_6ea3285a57ccc51a93d37bb8121e1ff3.Range): An instance of the Range class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.range_44e80520706c08bd8257ac4642152b35.Range): An instance of the Range class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.range_6ea3285a57ccc51a93d37bb8121e1ff3 import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.range_44e80520706c08bd8257ac4642152b35 import (
             Range,
         )
 

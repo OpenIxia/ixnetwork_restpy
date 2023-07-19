@@ -50,13 +50,13 @@ class OpenFlowChannel(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.openflowchannel.flowaggrmatchtemplate_92a54a687c7573d5dcbe6197e7acd7a5.FlowAggrMatchTemplate): An instance of the FlowAggrMatchTemplate class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.openflowchannel.flowaggrmatchtemplate_1ea7f04b862a6e160d6a43f4baf17ef3.FlowAggrMatchTemplate): An instance of the FlowAggrMatchTemplate class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.openflowchannel.flowaggrmatchtemplate_92a54a687c7573d5dcbe6197e7acd7a5 import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.openflowchannel.flowaggrmatchtemplate_1ea7f04b862a6e160d6a43f4baf17ef3 import (
             FlowAggrMatchTemplate,
         )
 
@@ -70,13 +70,13 @@ class OpenFlowChannel(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.openflowchannel.flowstatmatchtemplate_9d0efda6a234c80e8ec5d25dbc49e75b.FlowStatMatchTemplate): An instance of the FlowStatMatchTemplate class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.openflowchannel.flowstatmatchtemplate_311f1c0fcf68e244bff6b56837d1cc3f.FlowStatMatchTemplate): An instance of the FlowStatMatchTemplate class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.openflowchannel.flowstatmatchtemplate_9d0efda6a234c80e8ec5d25dbc49e75b import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.openflowchannel.flowstatmatchtemplate_311f1c0fcf68e244bff6b56837d1cc3f import (
             FlowStatMatchTemplate,
         )
 
@@ -90,13 +90,13 @@ class OpenFlowChannel(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.openflowchannel.packetoutactiontemplate_655055ae6e6b8535ff5754b84cd6d7dd.PacketOutActionTemplate): An instance of the PacketOutActionTemplate class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.openflowchannel.packetoutactiontemplate_cdfd5cc0a95b553333af05df056c6f5a.PacketOutActionTemplate): An instance of the PacketOutActionTemplate class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.openflowchannel.packetoutactiontemplate_655055ae6e6b8535ff5754b84cd6d7dd import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.openflowchannel.packetoutactiontemplate_cdfd5cc0a95b553333af05df056c6f5a import (
             PacketOutActionTemplate,
         )
 

@@ -154,15 +154,34 @@ class PortMapAssistant(object):
             if ";" in map["location"]:
                 chassis_address = map["location"].split(";")[0]
                 ip_addresses.append(chassis_address)
-        ip_addresses = set(ip_addresses)
+        ip_addresses = list(set(ip_addresses))
         if len(ip_addresses) > 0:
-            self._IxNetwork.info(
-                "Adding test port hosts [%s]..." % ", ".join(ip_addresses)
-            )
+            ip_str = ", ".join(ip_addresses)
+            self._IxNetwork.info("Adding test port hosts [%s]..." % ip_str)
+
+            # check if chassis is already added
+            res = self._select_chassis("")
+            ips_not_ready = []
+            if "chassis" in res:
+                for chassis_info in res["chassis"]:
+                    ip = chassis_info["hostname"]
+                    if ip in ip_addresses:
+                        if chassis_info["state"] != "ready":
+                            ips_not_ready.append(ip)
+                        ip_addresses.remove(ip)
+
+            if len(ip_addresses) == 0:
+                self._IxNetwork.info("[%s] is already added." % ip_str)
+
             url = self._IxNetwork.href + "/availableHardware/chassis"
             for ip_address in ip_addresses:
                 payload = {"hostname": ip_address}
                 self._IxNetwork._connection._create(url, payload)
+
+            ip_addresses = ip_addresses + ips_not_ready
+            if len(ip_addresses) == 0:
+                return
+
             start_time = time.time()
             while True:
                 select = self._select_chassis("^(%s)$" % "|".join(ip_addresses))

@@ -50,13 +50,13 @@ class EgtpSgwEndpoint(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.pcrfsecondaryrange_bbcc6ef67e8b1c4ad0f758de9ed54e58.PcrfSecondaryRange): An instance of the PcrfSecondaryRange class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.pcrfsecondaryrange_e8f79538072041791458aac3b3075b7a.PcrfSecondaryRange): An instance of the PcrfSecondaryRange class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.pcrfsecondaryrange_bbcc6ef67e8b1c4ad0f758de9ed54e58 import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.pcrfsecondaryrange_e8f79538072041791458aac3b3075b7a import (
             PcrfSecondaryRange,
         )
 
@@ -70,13 +70,13 @@ class EgtpSgwEndpoint(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.range_d647122d38f8050f3f2facda96175ffa.Range): An instance of the Range class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.range_bd1825ace0b6ab3cecc730fc747aa4ff.Range): An instance of the Range class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.range_d647122d38f8050f3f2facda96175ffa import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.range_bd1825ace0b6ab3cecc730fc747aa4ff import (
             Range,
         )
 

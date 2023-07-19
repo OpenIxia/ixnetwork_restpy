@@ -508,13 +508,13 @@ class Protocols(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.static_5795de030fada71c167436cb330786b5.Static): An instance of the Static class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.static_e79f48c67dc04c4349a4bfc7549f0778.Static): An instance of the Static class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.static_5795de030fada71c167436cb330786b5 import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.static_e79f48c67dc04c4349a4bfc7549f0778 import (
             Static,
         )
 

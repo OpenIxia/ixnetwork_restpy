@@ -299,13 +299,13 @@ class BgpIpv6Peer(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpethernetsegmentv6_766c04a63efb3fe4eca969aac968fe4e.BgpEthernetSegmentV6): An instance of the BgpEthernetSegmentV6 class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpethernetsegmentv6_58e9b55555c9ee871244737f09405ae0.BgpEthernetSegmentV6): An instance of the BgpEthernetSegmentV6 class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpethernetsegmentv6_766c04a63efb3fe4eca969aac968fe4e import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpethernetsegmentv6_58e9b55555c9ee871244737f09405ae0 import (
             BgpEthernetSegmentV6,
         )
 
@@ -739,13 +739,13 @@ class BgpIpv6Peer(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.tlvprofile_69db000d3ef3b060f5edc387b878736c.TlvProfile): An instance of the TlvProfile class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.tlvprofile_421be1db953efaf826fe146cf9700e26.TlvProfile): An instance of the TlvProfile class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.tlvprofile_69db000d3ef3b060f5edc387b878736c import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.tlvprofile_421be1db953efaf826fe146cf9700e26 import (
             TlvProfile,
         )
 

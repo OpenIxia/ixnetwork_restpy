@@ -192,13 +192,13 @@ class IpEndpoint(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.range_0b8d3bee9ea43ad27a688d5c37dca672.Range): An instance of the Range class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.range_4d5da9ae260e7e6f9afdb936e93ad220.Range): An instance of the Range class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.range_0b8d3bee9ea43ad27a688d5c37dca672 import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.range_4d5da9ae260e7e6f9afdb936e93ad220 import (
             Range,
         )
 

@@ -50,13 +50,13 @@ class FcoeClientEndpoint(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.range_14ccbefe0f412abdbca5a78418fdfd2c.Range): An instance of the Range class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.range_031a023bb071f0ca2e45a5074ee567a9.Range): An instance of the Range class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.range_14ccbefe0f412abdbca5a78418fdfd2c import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.range_031a023bb071f0ca2e45a5074ee567a9 import (
             Range,
         )
 

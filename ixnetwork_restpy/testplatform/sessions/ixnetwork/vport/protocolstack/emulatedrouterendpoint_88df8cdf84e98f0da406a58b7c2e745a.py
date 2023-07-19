@@ -74,13 +74,13 @@ class EmulatedRouterEndpoint(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.range_510810c6c0995cd31bbb44065c36ba0d.Range): An instance of the Range class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.range_a7a46bda5e8d78ca64430290c03c2491.Range): An instance of the Range class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.range_510810c6c0995cd31bbb44065c36ba0d import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.range_a7a46bda5e8d78ca64430290c03c2491 import (
             Range,
         )
 

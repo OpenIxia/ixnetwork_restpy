@@ -131,13 +131,13 @@ class L2tpEndpoint(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.range_3ffe67ceb6821a0f1e1246eb5813ce2e.Range): An instance of the Range class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.range_927d4482b1911432ead9711bbde2ec30.Range): An instance of the Range class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.range_3ffe67ceb6821a0f1e1246eb5813ce2e import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.range_927d4482b1911432ead9711bbde2ec30 import (
             Range,
         )
 

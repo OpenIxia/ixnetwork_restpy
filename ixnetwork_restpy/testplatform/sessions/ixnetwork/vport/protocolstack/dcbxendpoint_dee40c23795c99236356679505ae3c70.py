@@ -50,13 +50,13 @@ class DcbxEndpoint(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.range_a7f3df3a59cb83eafc373f5661bd4ebe.Range): An instance of the Range class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.range_452ecf1d98c87e07f8f03da6a0e36b6f.Range): An instance of the Range class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.range_a7f3df3a59cb83eafc373f5661bd4ebe import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.range_452ecf1d98c87e07f8f03da6a0e36b6f import (
             Range,
         )
 

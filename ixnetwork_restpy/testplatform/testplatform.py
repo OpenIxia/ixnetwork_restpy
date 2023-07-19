@@ -52,6 +52,7 @@ class TestPlatform(Base):
         verify_cert=False,
         trace=TRACE_NONE,
         script_watch=True,
+        url_prefix=None,
     ):
         """Establishes an initial connection to an IxNetwork test tool platform.
         Currently supported platforms are Linux API Server, Windows GUI and ConnectionManager.
@@ -69,6 +70,7 @@ class TestPlatform(Base):
         - verify_cert (bool): enable this flag to verify the certificate
         - trace (str(none|info|warning|request|request_response|all)): set the tracing level of requests and responses.
         - script_watch (bool): disable this to not have REST API requests logged with the server script watch
+        - url_prefix (str): Some appliances (like novus-mini) needs url prefix in their rest url nomenclature
 
         Raises
         ------
@@ -84,6 +86,7 @@ class TestPlatform(Base):
             verify_cert,
             trace,
             script_watch,
+            url_prefix,
         )
         self._uid = ""
         self._set_default_href()
@@ -102,13 +105,14 @@ class TestPlatform(Base):
         }
         self._set_properties(properties, clear=True)
 
-    def Authenticate(self, uid, pwd):
+    def Authenticate(self, uid, pwd, ignore_policy=True):
         """Set the X-Api-Key by authenticating against the connected TestPlatform
 
         Args
         ----
         - uid (str): The userid to be authenticated
         - pwd (str): The password to be authenticated
+        - ignore_policy (bool): The flag to ignore strong password policy, default value is True
 
         Raises
         ------
@@ -116,7 +120,10 @@ class TestPlatform(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         self._set_default_href("/api/v1/auth/session")
-        response = self._execute(None, payload={"username": uid, "password": pwd})
+        response = self._execute(
+            None,
+            payload={"username": uid, "password": pwd, "ignorePolicy": ignore_policy},
+        )
         self.ApiKey = response["apiKey"]
         self._uid = uid
         self._set_default_href()

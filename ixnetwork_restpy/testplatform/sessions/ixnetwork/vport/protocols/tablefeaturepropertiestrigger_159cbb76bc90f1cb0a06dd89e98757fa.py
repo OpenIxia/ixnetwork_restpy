@@ -83,13 +83,13 @@ class TableFeaturePropertiesTrigger(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.applysetfield_6b54e7b16ba9baf0b2a20fe04e8667fc.ApplySetField): An instance of the ApplySetField class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.applysetfield_7affd1e09afce28a240867653ece2b1a.ApplySetField): An instance of the ApplySetField class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.applysetfield_6b54e7b16ba9baf0b2a20fe04e8667fc import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.applysetfield_7affd1e09afce28a240867653ece2b1a import (
             ApplySetField,
         )
 
@@ -223,13 +223,13 @@ class TableFeaturePropertiesTrigger(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.writesetfield_dfdf63f4b03a4c586826f4e2a45d55f1.WriteSetField): An instance of the WriteSetField class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.writesetfield_f6680032f23d081fe60174c0337b285b.WriteSetField): An instance of the WriteSetField class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.writesetfield_dfdf63f4b03a4c586826f4e2a45d55f1 import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.writesetfield_f6680032f23d081fe60174c0337b285b import (
             WriteSetField,
         )
 

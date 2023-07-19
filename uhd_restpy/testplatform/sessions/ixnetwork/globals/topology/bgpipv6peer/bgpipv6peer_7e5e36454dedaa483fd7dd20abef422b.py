@@ -132,13 +132,13 @@ class BgpIpv6Peer(Base):
         """
         Returns
         -------
-        - obj(uhd_restpy.testplatform.sessions.ixnetwork.globals.topology.tlveditor.tlveditor_d66c1061f4b3bb902b0e5e76ee632657.TlvEditor): An instance of the TlvEditor class
+        - obj(uhd_restpy.testplatform.sessions.ixnetwork.globals.topology.tlveditor.tlveditor_9737bec75dbac826009c3374be76c5f7.TlvEditor): An instance of the TlvEditor class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from uhd_restpy.testplatform.sessions.ixnetwork.globals.topology.tlveditor.tlveditor_d66c1061f4b3bb902b0e5e76ee632657 import TlvEditor
+        from uhd_restpy.testplatform.sessions.ixnetwork.globals.topology.tlveditor.tlveditor_9737bec75dbac826009c3374be76c5f7 import TlvEditor
         if len(self._object_properties) > 0:
             if self._properties.get('TlvEditor', None) is not None:
                 return self._properties.get('TlvEditor')

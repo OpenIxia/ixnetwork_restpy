@@ -252,13 +252,13 @@ class IsisL3PseudoInterface(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isispseudomtidlist_800cbf49cc3d73527a4abe5aa7740b22.IsisPseudoMTIDList): An instance of the IsisPseudoMTIDList class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isispseudomtidlist_953f6f5d73f9f8b772ed5ed34413424e.IsisPseudoMTIDList): An instance of the IsisPseudoMTIDList class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isispseudomtidlist_800cbf49cc3d73527a4abe5aa7740b22 import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isispseudomtidlist_953f6f5d73f9f8b772ed5ed34413424e import (
             IsisPseudoMTIDList,
         )
 

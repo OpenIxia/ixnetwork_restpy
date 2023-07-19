@@ -41,6 +41,8 @@ class SessionAssistant(object):
         SessionName=None,
         ApplicationType=APP_TYPE_IXNETWORK,
         ClearConfig=False,
+        UrlPrefix=None,
+        IgnoreStrongPasswordPolicy=True,
     ):
         """Create a session or connect to an existing session.
         Provides access to the TestPlatform, Sessions, Ixnetwork, PortMapAssistant and StatViewAssistant classes.
@@ -68,6 +70,8 @@ class SessionAssistant(object):
         - SessionName (str): The name of the session to connect to.
         - ApplicationType (str(APP_TYPE_IXNETWORK|APP_TYPE_QUICKTEST)): The type of IxNetwork middleware test session to create
         - ClearConfig (bool): Clear the current configuration
+        - UrlPrefix (str): Some appliances (like novus-mini) needs url prefix in their rest url nomenclature
+        - IgnoreStrongPasswordPolicy (bool): By default True, it rejects authentication with server if password is weak.
 
         Raises
         ------
@@ -83,11 +87,12 @@ class SessionAssistant(object):
             ignore_env_proxy=IgnoreEnvProxy,
             verify_cert=VerifyCertificates,
             trace=LogLevel,
+            url_prefix=UrlPrefix,
         )
         if ApiKey is not None:
             testplatform.ApiKey = ApiKey
         elif UserName is not None and Password is not None:
-            testplatform.Authenticate(UserName, Password)
+            testplatform.Authenticate(UserName, Password, IgnoreStrongPasswordPolicy)
         session = None
         if SessionId is not None:
             session = testplatform.Sessions.find(Id=SessionId)

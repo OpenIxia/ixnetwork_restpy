@@ -192,13 +192,13 @@ class Bridge(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.cist_7c0c7d81a93f9c4eb25c40a47dfbc2af.Cist): An instance of the Cist class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.cist_68f0971c9777c68c74462bca49dfbc28.Cist): An instance of the Cist class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.cist_7c0c7d81a93f9c4eb25c40a47dfbc2af import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.cist_68f0971c9777c68c74462bca49dfbc28 import (
             Cist,
         )
 

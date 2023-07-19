@@ -52,6 +52,9 @@ class Capture(Base):
         "ControlPacketCounter": "controlPacketCounter",
         "ControlSliceSize": "controlSliceSize",
         "DataActiveCapture": "dataActiveCapture",
+        "DataCapturePacketWindowEnabled": "dataCapturePacketWindowEnabled",
+        "DataCapturePacketWindowEndIndex": "dataCapturePacketWindowEndIndex",
+        "DataCapturePacketWindowStartIndex": "dataCapturePacketWindowStartIndex",
         "DataCaptureState": "dataCaptureState",
         "DataCapturedPacketCounter": "dataCapturedPacketCounter",
         "DataCaptures": "dataCaptures",
@@ -410,6 +413,55 @@ class Capture(Base):
         self._set_attribute(self._SDM_ATT_MAP["DataActiveCapture"], value)
 
     @property
+    def DataCapturePacketWindowEnabled(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: Indicates if the packet window is enabled for the current capture.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["DataCapturePacketWindowEnabled"])
+
+    @DataCapturePacketWindowEnabled.setter
+    def DataCapturePacketWindowEnabled(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["DataCapturePacketWindowEnabled"], value)
+
+    @property
+    def DataCapturePacketWindowEndIndex(self):
+        # type: () -> int
+        """
+        Returns
+        -------
+        - number: Sets the end index of the packet window.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["DataCapturePacketWindowEndIndex"])
+
+    @DataCapturePacketWindowEndIndex.setter
+    def DataCapturePacketWindowEndIndex(self, value):
+        # type: (int) -> None
+        self._set_attribute(self._SDM_ATT_MAP["DataCapturePacketWindowEndIndex"], value)
+
+    @property
+    def DataCapturePacketWindowStartIndex(self):
+        # type: () -> int
+        """
+        Returns
+        -------
+        - number: Sets the start index of the packet window.
+        """
+        return self._get_attribute(
+            self._SDM_ATT_MAP["DataCapturePacketWindowStartIndex"]
+        )
+
+    @DataCapturePacketWindowStartIndex.setter
+    def DataCapturePacketWindowStartIndex(self, value):
+        # type: (int) -> None
+        self._set_attribute(
+            self._SDM_ATT_MAP["DataCapturePacketWindowStartIndex"], value
+        )
+
+    @property
     def DataCaptureState(self):
         # type: () -> str
         """
@@ -638,6 +690,9 @@ class Capture(Base):
         ControlInterfaceType=None,
         ControlSliceSize=None,
         DataActiveCapture=None,
+        DataCapturePacketWindowEnabled=None,
+        DataCapturePacketWindowEndIndex=None,
+        DataCapturePacketWindowStartIndex=None,
         DataReceiveTimestamp=None,
         DisplayFiltersControlCapture=None,
         DisplayFiltersDataCapture=None,
@@ -646,7 +701,7 @@ class Capture(Base):
         SoftwareEnabled=None,
         TriggerPosition=None,
     ):
-        # type: (str, str, str, str, str, str, int, str, str, str, int, str, str, str, str, bool, int, bool, int) -> Capture
+        # type: (str, str, str, str, str, str, int, str, str, str, int, str, bool, int, int, str, str, str, bool, int, bool, int) -> Capture
         """Updates capture resource on the server.
 
         Args
@@ -663,6 +718,9 @@ class Capture(Base):
         - ControlInterfaceType (str(anyInterface | specificInterface)): Enables control capture on the desired interfaces.
         - ControlSliceSize (number): Sets the size of the control capture slices.
         - DataActiveCapture (str): The name of the active data capture (if any). The active data capture is the last one made on the port by default; but the user can change it using this attribute.
+        - DataCapturePacketWindowEnabled (bool): Indicates if the packet window is enabled for the current capture.
+        - DataCapturePacketWindowEndIndex (number): Sets the end index of the packet window.
+        - DataCapturePacketWindowStartIndex (number): Sets the start index of the packet window.
         - DataReceiveTimestamp (str(chassisUtcTime | hwTimestamp)): Controls whether the data capture packets timestamp are using the chassis UTC time or the HW timestamp.
         - DisplayFiltersControlCapture (str): Displays the packet filter set inside the control capture that is used to filter the already captured packets
         - DisplayFiltersDataCapture (str): Displays the packet filter set inside the data capture that is used to filter the already captured packets
@@ -696,6 +754,9 @@ class Capture(Base):
         ControlPacketCounter=None,
         ControlSliceSize=None,
         DataActiveCapture=None,
+        DataCapturePacketWindowEnabled=None,
+        DataCapturePacketWindowEndIndex=None,
+        DataCapturePacketWindowStartIndex=None,
         DataCaptureState=None,
         DataCapturedPacketCounter=None,
         DataCaptures=None,
@@ -715,7 +776,7 @@ class Capture(Base):
         SoftwareEnabled=None,
         TriggerPosition=None,
     ):
-        # type: (str, str, str, str, str, str, int, str, str, str, int, str, str, str, int, int, str, str, int, str, str, int, str, List[str], List[str], List[str], str, str, bool, bool, bool, bool, int, bool, int) -> Capture
+        # type: (str, str, str, str, str, str, int, str, str, str, int, str, str, str, int, int, str, bool, int, int, str, int, str, str, int, str, List[str], List[str], List[str], str, str, bool, bool, bool, bool, int, bool, int) -> Capture
         """Finds and retrieves capture resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve capture resources from the server.
@@ -741,6 +802,9 @@ class Capture(Base):
         - ControlPacketCounter (number): Shows the number of control capture packets.
         - ControlSliceSize (number): Sets the size of the control capture slices.
         - DataActiveCapture (str): The name of the active data capture (if any). The active data capture is the last one made on the port by default; but the user can change it using this attribute.
+        - DataCapturePacketWindowEnabled (bool): Indicates if the packet window is enabled for the current capture.
+        - DataCapturePacketWindowEndIndex (number): Sets the end index of the packet window.
+        - DataCapturePacketWindowStartIndex (number): Sets the start index of the packet window.
         - DataCaptureState (str(notReady | ready)): Current state of the data capture; ready if all packets have been uploaded on client or notReady if packet uploading is in progress.
         - DataCapturedPacketCounter (number):
         - DataCaptures (str): The list of data captures which are available for the port.

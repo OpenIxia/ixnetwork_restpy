@@ -50,13 +50,13 @@ class EgtpS5S8SgwEndpoint(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.enbs5s8secondaryrange_6979f95efc6dcd8ca32adc922489910e.EnbS5S8SecondaryRange): An instance of the EnbS5S8SecondaryRange class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.enbs5s8secondaryrange_8a9723bda9b47f712adf16ebd9da25d1.EnbS5S8SecondaryRange): An instance of the EnbS5S8SecondaryRange class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.enbs5s8secondaryrange_6979f95efc6dcd8ca32adc922489910e import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.enbs5s8secondaryrange_8a9723bda9b47f712adf16ebd9da25d1 import (
             EnbS5S8SecondaryRange,
         )
 
@@ -70,13 +70,13 @@ class EgtpS5S8SgwEndpoint(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.mmes5s8secondaryrange_073ddb851415ef28f2860ea76af84eed.MmeS5S8SecondaryRange): An instance of the MmeS5S8SecondaryRange class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.mmes5s8secondaryrange_852b3778e51e94b8b3582c4a1117becf.MmeS5S8SecondaryRange): An instance of the MmeS5S8SecondaryRange class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.mmes5s8secondaryrange_073ddb851415ef28f2860ea76af84eed import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.mmes5s8secondaryrange_852b3778e51e94b8b3582c4a1117becf import (
             MmeS5S8SecondaryRange,
         )
 
@@ -90,13 +90,13 @@ class EgtpS5S8SgwEndpoint(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.range_681650f32cd095378011b8a1d7315111.Range): An instance of the Range class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.range_3e88999ba7ecd3f4ed17f238744103e6.Range): An instance of the Range class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.range_681650f32cd095378011b8a1d7315111 import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.range_3e88999ba7ecd3f4ed17f238744103e6 import (
             Range,
         )
 
@@ -110,13 +110,13 @@ class EgtpS5S8SgwEndpoint(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.ues5s8secondaryrange_4978b0a72b2e82b39ac864e27f32a1a5.UeS5S8SecondaryRange): An instance of the UeS5S8SecondaryRange class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.ues5s8secondaryrange_5eacd6d4523a5dcc9278eb67a74a249d.UeS5S8SecondaryRange): An instance of the UeS5S8SecondaryRange class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.ues5s8secondaryrange_4978b0a72b2e82b39ac864e27f32a1a5 import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.ues5s8secondaryrange_5eacd6d4523a5dcc9278eb67a74a249d import (
             UeS5S8SecondaryRange,
         )
 

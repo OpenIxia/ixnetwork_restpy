@@ -115,7 +115,7 @@ class Pcc(Base):
     @property
     def BindingSIDDraftVersion(self):
         # type: () -> 'Multivalue'
-        """
+        """DEPRECATED
         Returns
         -------
         - obj(ixnetwork_restpy.multivalue.Multivalue): Depending on this field backward compatibility will be given. All draft versions before IETF draft will follow existing implementation. New IETF draft will be using new implementation and TLV structure.

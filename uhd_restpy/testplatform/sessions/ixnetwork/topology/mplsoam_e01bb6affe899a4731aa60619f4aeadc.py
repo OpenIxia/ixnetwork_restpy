@@ -106,13 +106,13 @@ class MplsOam(Base):
         """
         Returns
         -------
-        - obj(uhd_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.learnedinfoupdate_b6503122c0a4a58877467964920e27b5.LearnedInfoUpdate): An instance of the LearnedInfoUpdate class
+        - obj(uhd_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.learnedinfoupdate_f0f5d88734eb95208b4f723819a57481.LearnedInfoUpdate): An instance of the LearnedInfoUpdate class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from uhd_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.learnedinfoupdate_b6503122c0a4a58877467964920e27b5 import LearnedInfoUpdate
+        from uhd_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.learnedinfoupdate_f0f5d88734eb95208b4f723819a57481 import LearnedInfoUpdate
         if len(self._object_properties) > 0:
             if self._properties.get('LearnedInfoUpdate', None) is not None:
                 return self._properties.get('LearnedInfoUpdate')

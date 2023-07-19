@@ -82,6 +82,7 @@ class Traffic(Base):
         "PreventDataPlaneToCpu": "preventDataPlaneToCpu",
         "RefreshLearnedInfoBeforeApply": "refreshLearnedInfoBeforeApply",
         "State": "state",
+        "TrafficItemsChanged": "trafficItemsChanged",
         "UseRfc5952": "useRfc5952",
         "UseScheduledStartTransmit": "useScheduledStartTransmit",
         "UseTxRxSync": "useTxRxSync",
@@ -956,6 +957,16 @@ class Traffic(Base):
         return self._get_attribute(self._SDM_ATT_MAP["State"])
 
     @property
+    def TrafficItemsChanged(self):
+        # type: () -> int
+        """
+        Returns
+        -------
+        - number: Keeps track if traffic has changed
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["TrafficItemsChanged"])
+
+    @property
     def UseRfc5952(self):
         # type: () -> bool
         """
@@ -1171,12 +1182,13 @@ class Traffic(Base):
         PreventDataPlaneToCpu=None,
         RefreshLearnedInfoBeforeApply=None,
         State=None,
+        TrafficItemsChanged=None,
         UseRfc5952=None,
         UseScheduledStartTransmit=None,
         UseTxRxSync=None,
         WaitTime=None,
     ):
-        # type: (bool, int, str, int, str, str, int, int, int, bool, bool, bool, str, int, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, str, str, int, bool, bool, bool, int, int, int, int, bool, int, int, int, int, bool, bool, str, bool, bool, bool, int) -> Traffic
+        # type: (bool, int, str, int, str, str, int, int, int, bool, bool, bool, str, int, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, str, str, int, bool, bool, bool, int, int, int, int, bool, int, int, int, int, bool, bool, str, int, bool, bool, bool, int) -> Traffic
         """Finds and retrieves traffic resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve traffic resources from the server.
@@ -1232,6 +1244,7 @@ class Traffic(Base):
         - PreventDataPlaneToCpu (bool): Prevent all data plane packets from being forwarded to Port CPU (disabling this option requires Port CPU reboot)
         - RefreshLearnedInfoBeforeApply (bool): This field refreshes the learned information from the DUT.
         - State (str(error | locked | started | startedWaitingForStats | startedWaitingForStreams | stopped | stoppedWaitingForStats | txStopWatchExpected | unapplied)): Denotes the current state of traffic.
+        - TrafficItemsChanged (number): Keeps track if traffic has changed
         - UseRfc5952 (bool): Use RFC 5952 for formatting IPv6 addresses (:ffff:1.2.3.4)
         - UseScheduledStartTransmit (bool): Use Scheduled Start Transmit
         - UseTxRxSync (bool): If true, enables the transmit/receive port synchronization algorithm.

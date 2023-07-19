@@ -50,13 +50,13 @@ class FcFportFwdEndpoint(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.range_c0d35fd45e0530a2c7877a48114c649b.Range): An instance of the Range class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.range_5251d4fee6fd7b476180b66ee4a3a820.Range): An instance of the Range class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.range_c0d35fd45e0530a2c7877a48114c649b import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.range_5251d4fee6fd7b476180b66ee4a3a820 import (
             Range,
         )
 
@@ -70,13 +70,13 @@ class FcFportFwdEndpoint(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.secondaryrange_7c7b92287c088d58d42f4b62e744e045.SecondaryRange): An instance of the SecondaryRange class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.secondaryrange_7fc8d2489719eb1630e53e48fa7a83b0.SecondaryRange): An instance of the SecondaryRange class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.secondaryrange_7c7b92287c088d58d42f4b62e744e045 import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.secondaryrange_7fc8d2489719eb1630e53e48fa7a83b0 import (
             SecondaryRange,
         )
 

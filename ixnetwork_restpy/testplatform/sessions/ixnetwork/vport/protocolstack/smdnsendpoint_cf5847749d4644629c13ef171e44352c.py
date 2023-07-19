@@ -50,13 +50,13 @@ class SmDnsEndpoint(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.range_784857e7a54775901ce0ca4dcb81ecc6.Range): An instance of the Range class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.range_3ee7bc0118b2324bb2fb187c15600d9c.Range): An instance of the Range class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.range_784857e7a54775901ce0ca4dcb81ecc6 import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocolstack.range_3ee7bc0118b2324bb2fb187c15600d9c import (
             Range,
         )
 

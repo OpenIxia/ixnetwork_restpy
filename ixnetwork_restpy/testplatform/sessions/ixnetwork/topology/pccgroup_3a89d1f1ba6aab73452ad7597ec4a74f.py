@@ -130,13 +130,13 @@ class PccGroup(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.learnedinfoupdate_b6503122c0a4a58877467964920e27b5.LearnedInfoUpdate): An instance of the LearnedInfoUpdate class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.learnedinfoupdate_dd43ce3af7af258dc032dc87aa945c8b.LearnedInfoUpdate): An instance of the LearnedInfoUpdate class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.learnedinfoupdate_b6503122c0a4a58877467964920e27b5 import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.learnedinfoupdate_dd43ce3af7af258dc032dc87aa945c8b import (
             LearnedInfoUpdate,
         )
 
@@ -150,13 +150,13 @@ class PccGroup(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pcreplylspparameters_73031069954bcd625c2f1df5c90abae7.PcReplyLspParameters): An instance of the PcReplyLspParameters class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pcreplylspparameters_20e35ff81e20c98310382047d3d57147.PcReplyLspParameters): An instance of the PcReplyLspParameters class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pcreplylspparameters_73031069954bcd625c2f1df5c90abae7 import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pcreplylspparameters_20e35ff81e20c98310382047d3d57147 import (
             PcReplyLspParameters,
         )
 
@@ -190,13 +190,13 @@ class PccGroup(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pceinitiatelspparameters_54a195f4ec5b73428b4ada028429f546.PceInitiateLSPParameters): An instance of the PceInitiateLSPParameters class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pceinitiatelspparameters_1c9b366144f491bf4e7b932c68a9f208.PceInitiateLSPParameters): An instance of the PceInitiateLSPParameters class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pceinitiatelspparameters_54a195f4ec5b73428b4ada028429f546 import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pceinitiatelspparameters_1c9b366144f491bf4e7b932c68a9f208 import (
             PceInitiateLSPParameters,
         )
 
@@ -210,13 +210,13 @@ class PccGroup(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pcetriggerparamlist_390e56e0c3749ff467ab98b9abba9e70.PceTriggerParamList): An instance of the PceTriggerParamList class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pcetriggerparamlist_f73e78368b17b6d0af989167da955078.PceTriggerParamList): An instance of the PceTriggerParamList class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pcetriggerparamlist_390e56e0c3749ff467ab98b9abba9e70 import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pcetriggerparamlist_f73e78368b17b6d0af989167da955078 import (
             PceTriggerParamList,
         )
 

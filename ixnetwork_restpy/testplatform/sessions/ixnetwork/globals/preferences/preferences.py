@@ -44,15 +44,20 @@ class Preferences(Base):
         "DeleteDumpFilesOlderThan": "deleteDumpFilesOlderThan",
         "DisableMinimizedScenario": "disableMinimizedScenario",
         "DisableProtoSpecificConnectors": "disableProtoSpecificConnectors",
+        "DropPacketsOnHighRx": "dropPacketsOnHighRx",
         "EnableAutoSave": "enableAutoSave",
         "EnableCloudTools": "enableCloudTools",
         "EnableDpdkForNewConfig": "enableDpdkForNewConfig",
+        "EnablePCPUGuardRail": "enablePCPUGuardRail",
         "ForceLegacyPortNameInStats": "forceLegacyPortNameInStats",
         "IncludeTroubleshootingComments": "includeTroubleshootingComments",
         "LatestConfigInDiagEnabled": "latestConfigInDiagEnabled",
+        "PcpuGuardRailCriticalThreshold": "pcpuGuardRailCriticalThreshold",
+        "PcpuGuardRailWarningThreshold": "pcpuGuardRailWarningThreshold",
         "PhyMode": "phyMode",
         "PingChassisOnConnect": "pingChassisOnConnect",
         "ProcessProtocolStateChangeAsync": "processProtocolStateChangeAsync",
+        "RebootPortOnGuardRailCritical": "rebootPortOnGuardRailCritical",
         "RebootPortsOnConnect": "rebootPortsOnConnect",
         "ReceiveMode": "receiveMode",
         "RecentChassisList": "recentChassisList",
@@ -256,6 +261,21 @@ class Preferences(Base):
         self._set_attribute(self._SDM_ATT_MAP["DisableProtoSpecificConnectors"], value)
 
     @property
+    def DropPacketsOnHighRx(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: drop packets on high rx
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["DropPacketsOnHighRx"])
+
+    @DropPacketsOnHighRx.setter
+    def DropPacketsOnHighRx(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["DropPacketsOnHighRx"], value)
+
+    @property
     def EnableAutoSave(self):
         # type: () -> bool
         """
@@ -299,6 +319,21 @@ class Preferences(Base):
     def EnableDpdkForNewConfig(self, value):
         # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP["EnableDpdkForNewConfig"], value)
+
+    @property
+    def EnablePCPUGuardRail(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: enable pcpu guardrail
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["EnablePCPUGuardRail"])
+
+    @EnablePCPUGuardRail.setter
+    def EnablePCPUGuardRail(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["EnablePCPUGuardRail"], value)
 
     @property
     def ForceLegacyPortNameInStats(self):
@@ -346,6 +381,36 @@ class Preferences(Base):
         self._set_attribute(self._SDM_ATT_MAP["LatestConfigInDiagEnabled"], value)
 
     @property
+    def PcpuGuardRailCriticalThreshold(self):
+        # type: () -> int
+        """
+        Returns
+        -------
+        - number: pcpu guardrail critical threshold
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["PcpuGuardRailCriticalThreshold"])
+
+    @PcpuGuardRailCriticalThreshold.setter
+    def PcpuGuardRailCriticalThreshold(self, value):
+        # type: (int) -> None
+        self._set_attribute(self._SDM_ATT_MAP["PcpuGuardRailCriticalThreshold"], value)
+
+    @property
+    def PcpuGuardRailWarningThreshold(self):
+        # type: () -> int
+        """
+        Returns
+        -------
+        - number: pcpu guardrail warning threshold
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["PcpuGuardRailWarningThreshold"])
+
+    @PcpuGuardRailWarningThreshold.setter
+    def PcpuGuardRailWarningThreshold(self, value):
+        # type: (int) -> None
+        self._set_attribute(self._SDM_ATT_MAP["PcpuGuardRailWarningThreshold"], value)
+
+    @property
     def PhyMode(self):
         # type: () -> str
         """
@@ -389,6 +454,21 @@ class Preferences(Base):
     def ProcessProtocolStateChangeAsync(self, value):
         # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP["ProcessProtocolStateChangeAsync"], value)
+
+    @property
+    def RebootPortOnGuardRailCritical(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: reboot port on critical memory threshold
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["RebootPortOnGuardRailCritical"])
+
+    @RebootPortOnGuardRailCritical.setter
+    def RebootPortOnGuardRailCritical(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["RebootPortOnGuardRailCritical"], value)
 
     @property
     def RebootPortsOnConnect(self):
@@ -580,15 +660,20 @@ class Preferences(Base):
         DeleteDumpFilesOlderThan=None,
         DisableMinimizedScenario=None,
         DisableProtoSpecificConnectors=None,
+        DropPacketsOnHighRx=None,
         EnableAutoSave=None,
         EnableCloudTools=None,
         EnableDpdkForNewConfig=None,
+        EnablePCPUGuardRail=None,
         ForceLegacyPortNameInStats=None,
         IncludeTroubleshootingComments=None,
         LatestConfigInDiagEnabled=None,
+        PcpuGuardRailCriticalThreshold=None,
+        PcpuGuardRailWarningThreshold=None,
         PhyMode=None,
         PingChassisOnConnect=None,
         ProcessProtocolStateChangeAsync=None,
+        RebootPortOnGuardRailCritical=None,
         RebootPortsOnConnect=None,
         ReceiveMode=None,
         RecentChassisList=None,
@@ -601,7 +686,7 @@ class Preferences(Base):
         SyslogPort=None,
         TransmitMode=None,
     ):
-        # type: (bool, int, str, str, str, bool, int, bool, bool, bool, bool, bool, bool, bool, bool, str, bool, bool, bool, str, List[str], str, str, bool, bool, bool, str, int, str) -> Preferences
+        # type: (bool, int, str, str, str, bool, int, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, int, int, str, bool, bool, bool, bool, str, List[str], str, str, bool, bool, bool, str, int, str) -> Preferences
         """Updates preferences resource on the server.
 
         Args
@@ -615,15 +700,20 @@ class Preferences(Base):
         - DeleteDumpFilesOlderThan (number): Dump Files older than the days set are deleted automatically. Need to restart IxNetwork for this option to take effect.
         - DisableMinimizedScenario (bool): When true, Device Group will be auto selected in Scenario on a new Topology creation
         - DisableProtoSpecificConnectors (bool): When true, Device Group will be auto selected in Scenario on a new Topology creation
+        - DropPacketsOnHighRx (bool): drop packets on high rx
         - EnableAutoSave (bool): If true,saves the configuration automatically. IxNetwork wont prompt to open the auto backup file when running in TCL Server mode. For performance reasons users additionally have to add a decimal registry key ForceAutoSave in Computer/HKEY_CURRENT_USER/Software/Ixia Communications/IxNetwork/Debug to do the auto save. Doesnt work yet on Linux
         - EnableCloudTools (bool): Controls whether Cloud Tool options will be enabled or not. This is related to learning MAC / IP address for a topology running on VM ports, deployed in AWS
         - EnableDpdkForNewConfig (bool): Sets the default DPDK enable/disable state when a new config is created.
+        - EnablePCPUGuardRail (bool): enable pcpu guardrail
         - ForceLegacyPortNameInStats (bool): When false, IxNetwork statistics show port name in <Chassis/Front Panel Port Number> format. When true, it is in <Chassis/Card/Port> format
         - IncludeTroubleshootingComments (bool): Includes troubleshooting comments in the script
         - LatestConfigInDiagEnabled (bool):
+        - PcpuGuardRailCriticalThreshold (number): pcpu guardrail critical threshold
+        - PcpuGuardRailWarningThreshold (number): pcpu guardrail warning threshold
         - PhyMode (str(copper | fiber)): Set the media in Default Port Settings
         - PingChassisOnConnect (bool): Controls whether to ping the chassis before connecting the ports. Must run IxNetwork in administrator mode
         - ProcessProtocolStateChangeAsync (bool): When true, protocol state change events are handled Asynchronously
+        - RebootPortOnGuardRailCritical (bool): reboot port on critical memory threshold
         - RebootPortsOnConnect (bool): If true the application will reboot any connected virtual ports when the configuration is loaded
         - ReceiveMode (str(capturePackets | measureTrafficFlow)): Set the receive mode in Default Port settings
         - RecentChassisList (list(str)): List of recently used chassis
@@ -653,15 +743,20 @@ class Preferences(Base):
         DeleteDumpFilesOlderThan=None,
         DisableMinimizedScenario=None,
         DisableProtoSpecificConnectors=None,
+        DropPacketsOnHighRx=None,
         EnableAutoSave=None,
         EnableCloudTools=None,
         EnableDpdkForNewConfig=None,
+        EnablePCPUGuardRail=None,
         ForceLegacyPortNameInStats=None,
         IncludeTroubleshootingComments=None,
         LatestConfigInDiagEnabled=None,
+        PcpuGuardRailCriticalThreshold=None,
+        PcpuGuardRailWarningThreshold=None,
         PhyMode=None,
         PingChassisOnConnect=None,
         ProcessProtocolStateChangeAsync=None,
+        RebootPortOnGuardRailCritical=None,
         RebootPortsOnConnect=None,
         ReceiveMode=None,
         RecentChassisList=None,
@@ -675,7 +770,7 @@ class Preferences(Base):
         SyslogPort=None,
         TransmitMode=None,
     ):
-        # type: (bool, int, str, str, str, bool, int, bool, bool, bool, bool, bool, bool, bool, bool, str, bool, bool, bool, str, List[str], List[str], str, str, bool, bool, bool, str, int, str) -> Preferences
+        # type: (bool, int, str, str, str, bool, int, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, int, int, str, bool, bool, bool, bool, str, List[str], List[str], str, str, bool, bool, bool, str, int, str) -> Preferences
         """Finds and retrieves preferences resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve preferences resources from the server.
@@ -693,15 +788,20 @@ class Preferences(Base):
         - DeleteDumpFilesOlderThan (number): Dump Files older than the days set are deleted automatically. Need to restart IxNetwork for this option to take effect.
         - DisableMinimizedScenario (bool): When true, Device Group will be auto selected in Scenario on a new Topology creation
         - DisableProtoSpecificConnectors (bool): When true, Device Group will be auto selected in Scenario on a new Topology creation
+        - DropPacketsOnHighRx (bool): drop packets on high rx
         - EnableAutoSave (bool): If true,saves the configuration automatically. IxNetwork wont prompt to open the auto backup file when running in TCL Server mode. For performance reasons users additionally have to add a decimal registry key ForceAutoSave in Computer/HKEY_CURRENT_USER/Software/Ixia Communications/IxNetwork/Debug to do the auto save. Doesnt work yet on Linux
         - EnableCloudTools (bool): Controls whether Cloud Tool options will be enabled or not. This is related to learning MAC / IP address for a topology running on VM ports, deployed in AWS
         - EnableDpdkForNewConfig (bool): Sets the default DPDK enable/disable state when a new config is created.
+        - EnablePCPUGuardRail (bool): enable pcpu guardrail
         - ForceLegacyPortNameInStats (bool): When false, IxNetwork statistics show port name in <Chassis/Front Panel Port Number> format. When true, it is in <Chassis/Card/Port> format
         - IncludeTroubleshootingComments (bool): Includes troubleshooting comments in the script
         - LatestConfigInDiagEnabled (bool):
+        - PcpuGuardRailCriticalThreshold (number): pcpu guardrail critical threshold
+        - PcpuGuardRailWarningThreshold (number): pcpu guardrail warning threshold
         - PhyMode (str(copper | fiber)): Set the media in Default Port Settings
         - PingChassisOnConnect (bool): Controls whether to ping the chassis before connecting the ports. Must run IxNetwork in administrator mode
         - ProcessProtocolStateChangeAsync (bool): When true, protocol state change events are handled Asynchronously
+        - RebootPortOnGuardRailCritical (bool): reboot port on critical memory threshold
         - RebootPortsOnConnect (bool): If true the application will reboot any connected virtual ports when the configuration is loaded
         - ReceiveMode (str(capturePackets | measureTrafficFlow)): Set the receive mode in Default Port settings
         - RecentChassisList (list(str)): List of recently used chassis

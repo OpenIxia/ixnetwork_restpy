@@ -1,4 +1,15 @@
 # Release Notes
+### July 2023
+* 1.1.10
+  * support ixnetwork version 9.30.2306.60 (9.30 Update-2)
+  * Bug Fixes and features
+    * Support to ignore strong password policy
+      * New attribute in SessionAssistant name `IgnoreStrongPasswordPolicy`, by default `True`
+    * fix missing files of pcep learned info
+    * fix issue related to overlays
+    * fix issue regarding improper cache clearance for poll urls
+    * minor improvements to port map assistant
+    
 ### April 2023
 * 1.1.9
   * support ixnetwork version 9.30.2304.57 (9.30 Update-1)

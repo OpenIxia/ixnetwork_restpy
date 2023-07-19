@@ -276,13 +276,13 @@ class Router(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedinformation_0f99cbd8f68676519789d627dcbdf3bd.LearnedInformation): An instance of the LearnedInformation class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedinformation_bc2e368143330cd32a96af7ea8b5bb3a.LearnedInformation): An instance of the LearnedInformation class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedinformation_0f99cbd8f68676519789d627dcbdf3bd import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.protocols.learnedinformation_bc2e368143330cd32a96af7ea8b5bb3a import (
             LearnedInformation,
         )
 

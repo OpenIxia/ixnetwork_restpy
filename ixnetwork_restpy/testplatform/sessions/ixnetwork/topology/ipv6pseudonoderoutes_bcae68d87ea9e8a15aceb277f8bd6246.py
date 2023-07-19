@@ -82,13 +82,13 @@ class IPv6PseudoNodeRoutes(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisl3pseudoroutemtidipv6_2a10c4ed3c307b62d44ec1ae4467199f.IsisL3PseudoRouteMtIdIPv6): An instance of the IsisL3PseudoRouteMtIdIPv6 class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisl3pseudoroutemtidipv6_b4a9d75a0ea192e5bc7f5118726e154a.IsisL3PseudoRouteMtIdIPv6): An instance of the IsisL3PseudoRouteMtIdIPv6 class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisl3pseudoroutemtidipv6_2a10c4ed3c307b62d44ec1ae4467199f import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisl3pseudoroutemtidipv6_b4a9d75a0ea192e5bc7f5118726e154a import (
             IsisL3PseudoRouteMtIdIPv6,
         )
 

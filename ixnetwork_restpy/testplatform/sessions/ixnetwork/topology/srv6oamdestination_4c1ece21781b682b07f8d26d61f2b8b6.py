@@ -422,7 +422,7 @@ class Srv6OamDestination(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): ICMPv6/UDP payload length, min 0 and max 1500 bytes.
+        - obj(ixnetwork_restpy.multivalue.Multivalue): ICMPv6/UDP payload length, min 0 and max 8900 bytes. Message size must be less than or equal to MTU size including payload.
         """
         from ixnetwork_restpy.multivalue import Multivalue
 

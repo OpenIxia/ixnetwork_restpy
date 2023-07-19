@@ -154,7 +154,7 @@ class Sessions(Base):
         elif self._connection.platform == "linux" and "name" not in self._properties:
             if "sessionName" in self._properties:
                 self._properties["name"] = self._properties["sessionName"]
-            else:
+            elif "configName" in self._properties:
                 self._properties["name"] = self._properties["configName"]
 
     def Start(self):

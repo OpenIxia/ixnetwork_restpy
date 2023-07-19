@@ -73,13 +73,13 @@ class SimRouter(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisl3pseudorouter_5715ca59d18252d03e32609350922ccb.IsisL3PseudoRouter): An instance of the IsisL3PseudoRouter class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisl3pseudorouter_cc48b213b1c82a8d7545254aacd48ebb.IsisL3PseudoRouter): An instance of the IsisL3PseudoRouter class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisl3pseudorouter_5715ca59d18252d03e32609350922ccb import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisl3pseudorouter_cc48b213b1c82a8d7545254aacd48ebb import (
             IsisL3PseudoRouter,
         )
 

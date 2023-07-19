@@ -72,6 +72,22 @@ def test_set_random_multivalue(multivalue):
     assert multivalue.PatternType == "Random"
 
 
+def test_overlay_with_count(multivalue):
+    multivalue.Overlay(1, "2.3.4.5", 10)
+    multivalue.Overlay(20, "11.22.33.44", 5)
+    multivalue.Overlay(26, "100.100.100.100")
+
+    val = multivalue.Values
+
+    for i in range(10):
+        assert val[i] == "2.3.4.5"
+
+    for i in range(19, 24):
+        assert val[i] == "11.22.33.44"
+
+    assert val[25] == "100.100.100.100"
+
+
 def test_multivalue_can_set_random_range(multivalue):
     multivalue.Overlay(3, "1.2.3.4")
     multivalue.Overlay(6, "4.3.2.1")
