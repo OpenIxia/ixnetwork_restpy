@@ -44,9 +44,11 @@ class PccGroup(Base):
         "Count": "count",
         "DeadInterval": "deadInterval",
         "DescriptiveName": "descriptiveName",
+        "EnableSpeakerEntityID": "enableSpeakerEntityID",
         "Errors": "errors",
         "KeepaliveInterval": "keepaliveInterval",
         "LearnedInfoTriggerParamCount": "learnedInfoTriggerParamCount",
+        "LengthOfSpeakerEntityID": "lengthOfSpeakerEntityID",
         "LspInstantiationCapability": "lspInstantiationCapability",
         "LspUpdateCapability": "lspUpdateCapability",
         "MD5Key": "mD5Key",
@@ -63,6 +65,7 @@ class PccGroup(Base):
         "PceTEPathBindingTLVType": "pceTEPathBindingTLVType",
         "RateControl": "rateControl",
         "SessionStatus": "sessionStatus",
+        "SpeakerEntityID": "speakerEntityID",
         "SrPceCapability": "srPceCapability",
         "Srv6PceCapability": "srv6PceCapability",
         "StackedLayers": "stackedLayers",
@@ -170,13 +173,13 @@ class PccGroup(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pcrequestmatchcriteria_365554ce0f609244eb458907a0c918f3.PcRequestMatchCriteria): An instance of the PcRequestMatchCriteria class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pcrequestmatchcriteria_cae99ca09ed6f91e6ae87cc2a32eeb6f.PcRequestMatchCriteria): An instance of the PcRequestMatchCriteria class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pcrequestmatchcriteria_365554ce0f609244eb458907a0c918f3 import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pcrequestmatchcriteria_cae99ca09ed6f91e6ae87cc2a32eeb6f import (
             PcRequestMatchCriteria,
         )
 
@@ -311,6 +314,20 @@ class PccGroup(Base):
         return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
+    def EnableSpeakerEntityID(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): If Enable Speaker Entity Identifier is selected then Open message will carry Speaker Entity Identifier TLV.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableSpeakerEntityID"])
+        )
+
+    @property
     def Errors(self):
         """
         Returns
@@ -345,6 +362,20 @@ class PccGroup(Base):
 
         return Multivalue(
             self, self._get_attribute(self._SDM_ATT_MAP["LearnedInfoTriggerParamCount"])
+        )
+
+    @property
+    def LengthOfSpeakerEntityID(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Length (in Bytes) of Speaker Entity ID configured
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LengthOfSpeakerEntityID"])
         )
 
     @property
@@ -567,6 +598,20 @@ class PccGroup(Base):
         - list(str[down | notStarted | up]): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
         """
         return self._get_attribute(self._SDM_ATT_MAP["SessionStatus"])
+
+    @property
+    def SpeakerEntityID(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Hex Dump to be used as Speaker Entity Identifier which identifies the PCEP speaker to its peers even if the speaker's IP address is changed.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SpeakerEntityID"])
+        )
 
     @property
     def SrPceCapability(self):
@@ -2012,8 +2057,10 @@ class PccGroup(Base):
         Authentication=None,
         BurstInterval=None,
         DeadInterval=None,
+        EnableSpeakerEntityID=None,
         KeepaliveInterval=None,
         LearnedInfoTriggerParamCount=None,
+        LengthOfSpeakerEntityID=None,
         LspInstantiationCapability=None,
         LspUpdateCapability=None,
         MD5Key=None,
@@ -2024,6 +2071,7 @@ class PccGroup(Base):
         PcePpagTLVType=None,
         PceTEPathBindingTLVType=None,
         RateControl=None,
+        SpeakerEntityID=None,
         SrPceCapability=None,
         Srv6PceCapability=None,
         StatefulPceCapability=None,
@@ -2039,8 +2087,10 @@ class PccGroup(Base):
         - Authentication (str): optional regex of authentication
         - BurstInterval (str): optional regex of burstInterval
         - DeadInterval (str): optional regex of deadInterval
+        - EnableSpeakerEntityID (str): optional regex of enableSpeakerEntityID
         - KeepaliveInterval (str): optional regex of keepaliveInterval
         - LearnedInfoTriggerParamCount (str): optional regex of learnedInfoTriggerParamCount
+        - LengthOfSpeakerEntityID (str): optional regex of lengthOfSpeakerEntityID
         - LspInstantiationCapability (str): optional regex of lspInstantiationCapability
         - LspUpdateCapability (str): optional regex of lspUpdateCapability
         - MD5Key (str): optional regex of mD5Key
@@ -2051,6 +2101,7 @@ class PccGroup(Base):
         - PcePpagTLVType (str): optional regex of pcePpagTLVType
         - PceTEPathBindingTLVType (str): optional regex of pceTEPathBindingTLVType
         - RateControl (str): optional regex of rateControl
+        - SpeakerEntityID (str): optional regex of speakerEntityID
         - SrPceCapability (str): optional regex of srPceCapability
         - Srv6PceCapability (str): optional regex of srv6PceCapability
         - StatefulPceCapability (str): optional regex of statefulPceCapability

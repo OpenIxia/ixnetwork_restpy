@@ -885,6 +885,29 @@ class Field(Base):
         """
         return self._read(href)
 
+    def AddChildLevel(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
+        """Executes the addChildLevel operation on the server.
+
+        Add child level to the current field.
+
+        addChildLevel(async_operation=bool)string
+        -----------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns str: The new level that has been added.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("addChildLevel", payload=payload, response_object=None)
+
     def AddLevel(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
         """Executes the addLevel operation on the server.

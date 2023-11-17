@@ -50,6 +50,7 @@ class NetconfServer(Base):
         "CapabilitiesValidate": "capabilitiesValidate",
         "CapabilitiesWritableRunning": "capabilitiesWritableRunning",
         "CapabilitiesXpath": "capabilitiesXpath",
+        "ClientIPCount": "clientIPCount",
         "ClientIpv4Address": "clientIpv4Address",
         "ConnectedVia": "connectedVia",
         "Count": "count",
@@ -103,6 +104,26 @@ class NetconfServer(Base):
 
     def __init__(self, parent, list_op=False):
         super(NetconfServer, self).__init__(parent, list_op)
+
+    @property
+    def Netconfclientip(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.netconfclientip_1ca73df9abc671deff57310d4038d7fc.Netconfclientip): An instance of the Netconfclientip class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.netconfclientip_1ca73df9abc671deff57310d4038d7fc import (
+            Netconfclientip,
+        )
+
+        if len(self._object_properties) > 0:
+            if self._properties.get("Netconfclientip", None) is not None:
+                return self._properties.get("Netconfclientip")
+        return Netconfclientip(self)
 
     @property
     def NotificationSnippetsData(self):
@@ -325,9 +346,24 @@ class NetconfServer(Base):
         )
 
     @property
+    def ClientIPCount(self):
+        # type: () -> int
+        """
+        Returns
+        -------
+        - number: Number of Netconf Client IP Addresses
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["ClientIPCount"])
+
+    @ClientIPCount.setter
+    def ClientIPCount(self, value):
+        # type: (int) -> None
+        self._set_attribute(self._SDM_ATT_MAP["ClientIPCount"], value)
+
+    @property
     def ClientIpv4Address(self):
         # type: () -> 'Multivalue'
-        """
+        """DEPRECATED
         Returns
         -------
         - obj(ixnetwork_restpy.multivalue.Multivalue): Specify the IPv4 address of the Netconf Client which will connect with this Server.
@@ -824,6 +860,7 @@ class NetconfServer(Base):
 
     def update(
         self,
+        ClientIPCount=None,
         ConnectedVia=None,
         Multiplier=None,
         Name=None,
@@ -831,7 +868,7 @@ class NetconfServer(Base):
         NumberOfRpcResponseXmlsPerServer=None,
         StackedLayers=None,
     ):
-        # type: (List[str], int, str, int, int, List[str]) -> NetconfServer
+        # type: (int, List[str], int, str, int, int, List[str]) -> NetconfServer
         """Updates netconfServer resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -839,6 +876,7 @@ class NetconfServer(Base):
 
         Args
         ----
+        - ClientIPCount (number): Number of Netconf Client IP Addresses
         - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology])): List of layers this layer is used to connect with to the wire.
         - Multiplier (number): Number of layer instances per parent instance (multiplier)
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
@@ -854,6 +892,7 @@ class NetconfServer(Base):
 
     def add(
         self,
+        ClientIPCount=None,
         ConnectedVia=None,
         Multiplier=None,
         Name=None,
@@ -861,11 +900,12 @@ class NetconfServer(Base):
         NumberOfRpcResponseXmlsPerServer=None,
         StackedLayers=None,
     ):
-        # type: (List[str], int, str, int, int, List[str]) -> NetconfServer
+        # type: (int, List[str], int, str, int, int, List[str]) -> NetconfServer
         """Adds a new netconfServer resource on the server and adds it to the container.
 
         Args
         ----
+        - ClientIPCount (number): Number of Netconf Client IP Addresses
         - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology])): List of layers this layer is used to connect with to the wire.
         - Multiplier (number): Number of layer instances per parent instance (multiplier)
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
@@ -895,6 +935,7 @@ class NetconfServer(Base):
 
     def find(
         self,
+        ClientIPCount=None,
         ConnectedVia=None,
         Count=None,
         DescriptiveName=None,
@@ -917,6 +958,7 @@ class NetconfServer(Base):
 
         Args
         ----
+        - ClientIPCount (number): Number of Netconf Client IP Addresses
         - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology])): List of layers this layer is used to connect with to the wire.
         - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.

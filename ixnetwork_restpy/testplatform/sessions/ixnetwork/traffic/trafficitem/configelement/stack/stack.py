@@ -4421,6 +4421,62 @@ class Stack(Base):
         return GlobalPause(self)
 
     @property
+    def InfiniBandBaseTransportHeader(self):
+        """
+        valid only with Batch Add
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.infiniBandBaseTransportHeader_template.InfiniBandBaseTransportHeader): An instance of the InfiniBandBaseTransportHeader traffic stack
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.infiniBandBaseTransportHeader_template import (
+            InfiniBandBaseTransportHeader,
+        )
+
+        return InfiniBandBaseTransportHeader(self)
+
+    @property
+    def InfiniBandRdExtendedTransportHeader(self):
+        """
+        valid only with Batch Add
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.infiniBandRdExtendedTransportHeader_template.InfiniBandRdExtendedTransportHeader): An instance of the InfiniBandRdExtendedTransportHeader traffic stack
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.infiniBandRdExtendedTransportHeader_template import (
+            InfiniBandRdExtendedTransportHeader,
+        )
+
+        return InfiniBandRdExtendedTransportHeader(self)
+
+    @property
+    def InfiniBandRdmaExtendedTransportHeader(self):
+        """
+        valid only with Batch Add
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.infiniBandRdmaExtendedTransportHeader_template.InfiniBandRdmaExtendedTransportHeader): An instance of the InfiniBandRdmaExtendedTransportHeader traffic stack
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.infiniBandRdmaExtendedTransportHeader_template import (
+            InfiniBandRdmaExtendedTransportHeader,
+        )
+
+        return InfiniBandRdmaExtendedTransportHeader(self)
+
+    @property
+    def InfiniBandAckExtendedTransportHeader(self):
+        """
+        valid only with Batch Add
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.infiniBandAckExtendedTransportHeader_template.InfiniBandAckExtendedTransportHeader): An instance of the InfiniBandAckExtendedTransportHeader traffic stack
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.infiniBandAckExtendedTransportHeader_template import (
+            InfiniBandAckExtendedTransportHeader,
+        )
+
+        return InfiniBandAckExtendedTransportHeader(self)
+
+    @property
     def Amt(self):
         """
         valid only with Batch Add

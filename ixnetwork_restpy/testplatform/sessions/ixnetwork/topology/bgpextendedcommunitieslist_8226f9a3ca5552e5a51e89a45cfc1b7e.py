@@ -27,14 +27,14 @@ if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
 
-class BgpLsExtendedCommunitiesList(Base):
+class BgpExtendedCommunitiesList(Base):
     """Bgp Non VPN RR External Communities
-    The BgpLsExtendedCommunitiesList class encapsulates a list of bgpLsExtendedCommunitiesList resources that are managed by the system.
-    A list of resources can be retrieved from the server using the BgpLsExtendedCommunitiesList.find() method.
+    The BgpExtendedCommunitiesList class encapsulates a list of bgpExtendedCommunitiesList resources that are managed by the system.
+    A list of resources can be retrieved from the server using the BgpExtendedCommunitiesList.find() method.
     """
 
     __slots__ = ()
-    _SDM_NAME = "bgpLsExtendedCommunitiesList"
+    _SDM_NAME = "bgpExtendedCommunitiesList"
     _SDM_ATT_MAP = {
         "AsNumber2Bytes": "asNumber2Bytes",
         "AsNumber4Bytes": "asNumber4Bytes",
@@ -42,6 +42,7 @@ class BgpLsExtendedCommunitiesList(Base):
         "AssignedNumber4Bytes": "assignedNumber4Bytes",
         "ColorCOBits": "colorCOBits",
         "ColorReservedBits": "colorReservedBits",
+        "ColorValInc": "colorValInc",
         "ColorValue": "colorValue",
         "Count": "count",
         "CustomExtCommType": "customExtCommType",
@@ -57,7 +58,7 @@ class BgpLsExtendedCommunitiesList(Base):
     _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
-        super(BgpLsExtendedCommunitiesList, self).__init__(parent, list_op)
+        super(BgpExtendedCommunitiesList, self).__init__(parent, list_op)
 
     @property
     def AsNumber2Bytes(self):
@@ -140,6 +141,18 @@ class BgpLsExtendedCommunitiesList(Base):
         return Multivalue(
             self, self._get_attribute(self._SDM_ATT_MAP["ColorReservedBits"])
         )
+
+    @property
+    def ColorValInc(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): The number by which the color value will increment for each address in the address pool. Supported for IPv4/IPv6 and L3VPN routes. For non-zero values, BGP update messages will not be packed.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ColorValInc"]))
 
     @property
     def ColorValue(self):
@@ -277,8 +290,8 @@ class BgpLsExtendedCommunitiesList(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Type"]))
 
     def update(self, Name=None):
-        # type: (str) -> BgpLsExtendedCommunitiesList
-        """Updates bgpLsExtendedCommunitiesList resource on the server.
+        # type: (str) -> BgpExtendedCommunitiesList
+        """Updates bgpExtendedCommunitiesList resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
         The Multivalue class has documentation that details the possible values for those named parameters.
@@ -294,8 +307,8 @@ class BgpLsExtendedCommunitiesList(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Name=None):
-        # type: (str) -> BgpLsExtendedCommunitiesList
-        """Adds a new bgpLsExtendedCommunitiesList resource on the json, only valid with batch add utility
+        # type: (str) -> BgpExtendedCommunitiesList
+        """Adds a new bgpExtendedCommunitiesList resource on the json, only valid with batch add utility
 
         Args
         ----
@@ -303,7 +316,7 @@ class BgpLsExtendedCommunitiesList(Base):
 
         Returns
         -------
-        - self: This instance with all currently retrieved bgpLsExtendedCommunitiesList resources using find and the newly added bgpLsExtendedCommunitiesList resources available through an iterator or index
+        - self: This instance with all currently retrieved bgpExtendedCommunitiesList resources using find and the newly added bgpExtendedCommunitiesList resources available through an iterator or index
 
         Raises
         ------
@@ -312,12 +325,12 @@ class BgpLsExtendedCommunitiesList(Base):
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def find(self, Count=None, DescriptiveName=None, Name=None):
-        # type: (int, str, str) -> BgpLsExtendedCommunitiesList
-        """Finds and retrieves bgpLsExtendedCommunitiesList resources from the server.
+        # type: (int, str, str) -> BgpExtendedCommunitiesList
+        """Finds and retrieves bgpExtendedCommunitiesList resources from the server.
 
-        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve bgpLsExtendedCommunitiesList resources from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve bgpExtendedCommunitiesList resources from the server.
         To retrieve an exact match ensure the parameter value starts with ^ and ends with $
-        By default the find method takes no parameters and will retrieve all bgpLsExtendedCommunitiesList resources from the server.
+        By default the find method takes no parameters and will retrieve all bgpExtendedCommunitiesList resources from the server.
 
         Args
         ----
@@ -327,7 +340,7 @@ class BgpLsExtendedCommunitiesList(Base):
 
         Returns
         -------
-        - self: This instance with matching bgpLsExtendedCommunitiesList resources retrieved from the server available through an iterator or index
+        - self: This instance with matching bgpExtendedCommunitiesList resources retrieved from the server available through an iterator or index
 
         Raises
         ------
@@ -336,7 +349,7 @@ class BgpLsExtendedCommunitiesList(Base):
         return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
-        """Retrieves a single instance of bgpLsExtendedCommunitiesList data from the server.
+        """Retrieves a single instance of bgpExtendedCommunitiesList data from the server.
 
         Args
         ----
@@ -344,7 +357,7 @@ class BgpLsExtendedCommunitiesList(Base):
 
         Returns
         -------
-        - self: This instance with the bgpLsExtendedCommunitiesList resources from the server available through an iterator or index
+        - self: This instance with the bgpExtendedCommunitiesList resources from the server available through an iterator or index
 
         Raises
         ------
@@ -362,6 +375,7 @@ class BgpLsExtendedCommunitiesList(Base):
         AssignedNumber4Bytes=None,
         ColorCOBits=None,
         ColorReservedBits=None,
+        ColorValInc=None,
         ColorValue=None,
         CustomExtCommType=None,
         CustomExtCommValue=None,
@@ -371,7 +385,7 @@ class BgpLsExtendedCommunitiesList(Base):
         SubType=None,
         Type=None,
     ):
-        """Base class infrastructure that gets a list of bgpLsExtendedCommunitiesList device ids encapsulated by this object.
+        """Base class infrastructure that gets a list of bgpExtendedCommunitiesList device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 
@@ -384,6 +398,7 @@ class BgpLsExtendedCommunitiesList(Base):
         - AssignedNumber4Bytes (str): optional regex of assignedNumber4Bytes
         - ColorCOBits (str): optional regex of colorCOBits
         - ColorReservedBits (str): optional regex of colorReservedBits
+        - ColorValInc (str): optional regex of colorValInc
         - ColorValue (str): optional regex of colorValue
         - CustomExtCommType (str): optional regex of customExtCommType
         - CustomExtCommValue (str): optional regex of customExtCommValue

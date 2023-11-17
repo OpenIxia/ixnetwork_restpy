@@ -705,13 +705,13 @@ class Topology(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.isisl3router.isisl3router_b221ecb1227b0d9ee3ab2e2861c08d9e.IsisL3Router): An instance of the IsisL3Router class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.isisl3router.isisl3router_9768fe1f600aea196e895480f3c204d6.IsisL3Router): An instance of the IsisL3Router class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.isisl3router.isisl3router_b221ecb1227b0d9ee3ab2e2861c08d9e import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.isisl3router.isisl3router_9768fe1f600aea196e895480f3c204d6 import (
             IsisL3Router,
         )
 

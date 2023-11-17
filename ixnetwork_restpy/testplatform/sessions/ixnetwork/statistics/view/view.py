@@ -46,11 +46,13 @@ class View(Base):
         "EnableCsvLogging": "enableCsvLogging",
         "Enabled": "enabled",
         "EnabledStatsSelectorColumns": "enabledStatsSelectorColumns",
+        "IsTransposable": "isTransposable",
         "OnDemandRefreshView": "onDemandRefreshView",
         "PageTimeout": "pageTimeout",
         "ReadOnly": "readOnly",
         "StatsSelectorManager": "statsSelectorManager",
         "TimeSeries": "timeSeries",
+        "Transpose": "transpose",
         "TreeViewNodeName": "treeViewNodeName",
         "Type": "type",
         "TypeDescription": "typeDescription",
@@ -697,6 +699,16 @@ class View(Base):
         self._set_attribute(self._SDM_ATT_MAP["EnabledStatsSelectorColumns"], value)
 
     @property
+    def IsTransposable(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: Returns true if the view can be transposed [Interchange each row and the corresponding columns]
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["IsTransposable"])
+
+    @property
     def OnDemandRefreshView(self):
         # type: () -> bool
         """
@@ -755,6 +767,21 @@ class View(Base):
     def TimeSeries(self, value):
         # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP["TimeSeries"], value)
+
+    @property
+    def Transpose(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: Used to set the view matrix style. If enabled, interchange each row and the corresponding columns
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["Transpose"])
+
+    @Transpose.setter
+    def Transpose(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["Transpose"], value)
 
     @property
     def TreeViewNodeName(self):
@@ -832,11 +859,12 @@ class View(Base):
         EnabledStatsSelectorColumns=None,
         PageTimeout=None,
         TimeSeries=None,
+        Transpose=None,
         TreeViewNodeName=None,
         Type=None,
         Visible=None,
     ):
-        # type: (bool, bool, str, str, bool, bool, List[str], int, bool, str, str, bool) -> View
+        # type: (bool, bool, str, str, bool, bool, List[str], int, bool, bool, str, str, bool) -> View
         """Updates view resource on the server.
 
         Args
@@ -850,6 +878,7 @@ class View(Base):
         - EnabledStatsSelectorColumns (list(str)): Columns added from Stat Selector Manager
         - PageTimeout (number): The statistics view page is timed out based on the time specified. default = 25,000 ms
         - TimeSeries (bool): If false, then it displays non-timeseries grid views. If true, displays, timeseries line chart view. default = false (non-timeseries)
+        - Transpose (bool): Used to set the view matrix style. If enabled, interchange each row and the corresponding columns
         - TreeViewNodeName (str): Displays the name of the tree view node.
         - Type (str(layer23NextGenProtocol | layer23ProtocolAuthAccess | layer23ProtocolPort | layer23ProtocolRouting | layer23ProtocolStack | layer23TrafficFlow | layer23TrafficFlowDetective | layer23TrafficItem | layer23TrafficPort | layer47AppLibraryTraffic | sVReadOnly)): The type of view the user wants to create from tcl.
         - Visible (bool): If true, displays the custom created views in the SV tree under TCL Views node.
@@ -871,11 +900,12 @@ class View(Base):
         EnabledStatsSelectorColumns=None,
         PageTimeout=None,
         TimeSeries=None,
+        Transpose=None,
         TreeViewNodeName=None,
         Type=None,
         Visible=None,
     ):
-        # type: (bool, bool, str, str, bool, bool, List[str], int, bool, str, str, bool) -> View
+        # type: (bool, bool, str, str, bool, bool, List[str], int, bool, bool, str, str, bool) -> View
         """Adds a new view resource on the server and adds it to the container.
 
         Args
@@ -889,6 +919,7 @@ class View(Base):
         - EnabledStatsSelectorColumns (list(str)): Columns added from Stat Selector Manager
         - PageTimeout (number): The statistics view page is timed out based on the time specified. default = 25,000 ms
         - TimeSeries (bool): If false, then it displays non-timeseries grid views. If true, displays, timeseries line chart view. default = false (non-timeseries)
+        - Transpose (bool): Used to set the view matrix style. If enabled, interchange each row and the corresponding columns
         - TreeViewNodeName (str): Displays the name of the tree view node.
         - Type (str(layer23NextGenProtocol | layer23ProtocolAuthAccess | layer23ProtocolPort | layer23ProtocolRouting | layer23ProtocolStack | layer23TrafficFlow | layer23TrafficFlowDetective | layer23TrafficItem | layer23TrafficPort | layer47AppLibraryTraffic | sVReadOnly)): The type of view the user wants to create from tcl.
         - Visible (bool): If true, displays the custom created views in the SV tree under TCL Views node.
@@ -924,18 +955,20 @@ class View(Base):
         EnableCsvLogging=None,
         Enabled=None,
         EnabledStatsSelectorColumns=None,
+        IsTransposable=None,
         OnDemandRefreshView=None,
         PageTimeout=None,
         ReadOnly=None,
         StatsSelectorManager=None,
         TimeSeries=None,
+        Transpose=None,
         TreeViewNodeName=None,
         Type=None,
         TypeDescription=None,
         ViewCategory=None,
         Visible=None,
     ):
-        # type: (bool, bool, List[str], bool, str, str, bool, bool, List[str], bool, int, bool, bool, bool, str, str, str, str, bool) -> View
+        # type: (bool, bool, List[str], bool, str, str, bool, bool, List[str], bool, bool, int, bool, bool, bool, bool, str, str, str, str, bool) -> View
         """Finds and retrieves view resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve view resources from the server.
@@ -953,11 +986,13 @@ class View(Base):
         - EnableCsvLogging (bool): If the CSV Logging feature is enabled the statistics values from a view will be written in a comma separated value format.
         - Enabled (bool): If true, enables the view that is created from the script.
         - EnabledStatsSelectorColumns (list(str)): Columns added from Stat Selector Manager
+        - IsTransposable (bool): Returns true if the view can be transposed [Interchange each row and the corresponding columns]
         - OnDemandRefreshView (bool): Is a flag which returns whether the view is refreshed on demand.
         - PageTimeout (number): The statistics view page is timed out based on the time specified. default = 25,000 ms
         - ReadOnly (bool): The default views created by the application will have this attribute set to false. Tcl SV created by user has this value set to true. Based on this attribute value, the user is allowed to modify the SV attributes.
         - StatsSelectorManager (bool): Flag that denotes whether Stats Selector Manager is enabled for this view or not
         - TimeSeries (bool): If false, then it displays non-timeseries grid views. If true, displays, timeseries line chart view. default = false (non-timeseries)
+        - Transpose (bool): Used to set the view matrix style. If enabled, interchange each row and the corresponding columns
         - TreeViewNodeName (str): Displays the name of the tree view node.
         - Type (str(layer23NextGenProtocol | layer23ProtocolAuthAccess | layer23ProtocolPort | layer23ProtocolRouting | layer23ProtocolStack | layer23TrafficFlow | layer23TrafficFlowDetective | layer23TrafficItem | layer23TrafficPort | layer47AppLibraryTraffic | sVReadOnly)): The type of view the user wants to create from tcl.
         - TypeDescription (str): If true, desribes the type

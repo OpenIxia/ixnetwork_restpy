@@ -45,10 +45,12 @@ class Pcc(Base):
         "Count": "count",
         "DeadInterval": "deadInterval",
         "DescriptiveName": "descriptiveName",
+        "EnableSpeakerEntityID": "enableSpeakerEntityID",
         "ErrorValue": "errorValue",
         "Errors": "errors",
         "ExpectedInitiatedLspsForTraffic": "expectedInitiatedLspsForTraffic",
         "KeepaliveInterval": "keepaliveInterval",
+        "LengthOfSpeakerEntityID": "lengthOfSpeakerEntityID",
         "LspInstantiationCapability": "lspInstantiationCapability",
         "LspUpdateCapability": "lspUpdateCapability",
         "MD5Key": "mD5Key",
@@ -73,6 +75,7 @@ class Pcc(Base):
         "RequestedLspsPerPcc": "requestedLspsPerPcc",
         "ReturnInstantiationError": "returnInstantiationError",
         "SessionStatus": "sessionStatus",
+        "SpeakerEntityID": "speakerEntityID",
         "SrPceCapability": "srPceCapability",
         "Sr_capability_n_flag": "sr_capability_n_flag",
         "Sr_capability_x_flag": "sr_capability_x_flag",
@@ -360,6 +363,20 @@ class Pcc(Base):
         return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
+    def EnableSpeakerEntityID(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): If Enable Speaker Entity Identifier is selected then Open message will carry Speaker Entity Identifier TLV.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableSpeakerEntityID"])
+        )
+
+    @property
     def ErrorValue(self):
         # type: () -> 'Multivalue'
         """
@@ -407,6 +424,20 @@ class Pcc(Base):
 
         return Multivalue(
             self, self._get_attribute(self._SDM_ATT_MAP["KeepaliveInterval"])
+        )
+
+    @property
+    def LengthOfSpeakerEntityID(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Length (in Bytes) of Speaker Entity ID configured
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LengthOfSpeakerEntityID"])
         )
 
     @property
@@ -741,6 +772,20 @@ class Pcc(Base):
         - list(str[down | notStarted | up]): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
         """
         return self._get_attribute(self._SDM_ATT_MAP["SessionStatus"])
+
+    @property
+    def SpeakerEntityID(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Hex Dump to be used as Speaker Entity Identifier which identifies the PCEP speaker to its peers even if the speaker's IP address is changed.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SpeakerEntityID"])
+        )
 
     @property
     def SrPceCapability(self):
@@ -1650,8 +1695,10 @@ class Pcc(Base):
         Authentication=None,
         BurstInterval=None,
         DeadInterval=None,
+        EnableSpeakerEntityID=None,
         ErrorValue=None,
         KeepaliveInterval=None,
+        LengthOfSpeakerEntityID=None,
         LspInstantiationCapability=None,
         LspUpdateCapability=None,
         MD5Key=None,
@@ -1668,6 +1715,7 @@ class Pcc(Base):
         RateControl=None,
         ReconnectInterval=None,
         ReturnInstantiationError=None,
+        SpeakerEntityID=None,
         SrPceCapability=None,
         Sr_capability_n_flag=None,
         Sr_capability_x_flag=None,
@@ -1687,8 +1735,10 @@ class Pcc(Base):
         - Authentication (str): optional regex of authentication
         - BurstInterval (str): optional regex of burstInterval
         - DeadInterval (str): optional regex of deadInterval
+        - EnableSpeakerEntityID (str): optional regex of enableSpeakerEntityID
         - ErrorValue (str): optional regex of errorValue
         - KeepaliveInterval (str): optional regex of keepaliveInterval
+        - LengthOfSpeakerEntityID (str): optional regex of lengthOfSpeakerEntityID
         - LspInstantiationCapability (str): optional regex of lspInstantiationCapability
         - LspUpdateCapability (str): optional regex of lspUpdateCapability
         - MD5Key (str): optional regex of mD5Key
@@ -1705,6 +1755,7 @@ class Pcc(Base):
         - RateControl (str): optional regex of rateControl
         - ReconnectInterval (str): optional regex of reconnectInterval
         - ReturnInstantiationError (str): optional regex of returnInstantiationError
+        - SpeakerEntityID (str): optional regex of speakerEntityID
         - SrPceCapability (str): optional regex of srPceCapability
         - Sr_capability_n_flag (str): optional regex of sr_capability_n_flag
         - Sr_capability_x_flag (str): optional regex of sr_capability_x_flag

@@ -599,13 +599,13 @@ class BgpIpv6Peer(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgplsextendedcommunitieslist_65060f604681a40b0c7dab490b2d6c5d.BgpLsExtendedCommunitiesList): An instance of the BgpLsExtendedCommunitiesList class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgplsextendedcommunitieslist_122b706e8dda6c5aa9ede89bef707eb5.BgpLsExtendedCommunitiesList): An instance of the BgpLsExtendedCommunitiesList class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgplsextendedcommunitieslist_65060f604681a40b0c7dab490b2d6c5d import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgplsextendedcommunitieslist_122b706e8dda6c5aa9ede89bef707eb5 import (
             BgpLsExtendedCommunitiesList,
         )
 

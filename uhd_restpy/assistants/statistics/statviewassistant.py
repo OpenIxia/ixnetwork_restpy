@@ -2,6 +2,7 @@
 """
 from ixnetwork_restpy.assistants.statistics.row import Row
 from ixnetwork_restpy.errors import *
+from ixnetwork_restpy.assistants.batch.batchupdate import BatchUpdate
 from ixnetwork_restpy.files import Files
 import re
 import os
@@ -42,12 +43,14 @@ class StatViewAssistant(object):
         LocalCsvStorage=None,
         PrintFormat=OBJECT,
         PrintColumns=[],
+        FilterType=None,
     ):
         """
         Args
         ----
         - IxNetwork (obj (ixnetwork_restpy.testplatform.sessions.ixnetwork.Ixnetwork)): An Ixnetwork object
-        - ViewName (str): The name of a statistics view, supports regex
+        - ViewName (str): The name of a statistics view, supports regex.
+            If used for filtering the parameter needs to be a string.
         - Timeout (int): The timeout in seconds to wait for the ViewName to be available and/or ready
         - LocalCsvStorage (str): The local path where downloaded csv statistic files will be stored.
             The path must exist and will not be created.
@@ -56,10 +59,16 @@ class StatViewAssistant(object):
             If PrintFormat is TABLE each row will be output as a single line
         - PrintColumns (list(str)): A list of statistic column names that will be printed out
             If the list is None all columns will be printed out
+        - FilterType (str) The type of filter the needs to be imposed on the view
         """
         self._snapshot = None
         self._IxNetwork = IxNetwork
         self._ViewName = ViewName
+        self._filter_view = None
+        if FilterType is not None:
+            # redirect to custom filter stats creation
+            self._create_view_for_filter(FilterType)
+            return
         self._root_directory = self._IxNetwork._connection._read(
             "%s/files" % self._IxNetwork.href
         )["absolute"]
@@ -187,6 +196,10 @@ class StatViewAssistant(object):
         """Returns a list of all the column headers in the view."""
         return self._View.Page.ColumnCaptions
 
+    @property
+    def FilterView(self):
+        return self._filter_view
+
     def AddRowFilter(self, ColumnName, Comparator, FilterValue):
         """Add a filter that reduces the Row resultset
 
@@ -288,6 +301,7 @@ class StatViewAssistant(object):
         """
         drill_down = self._View.DrillDown.find()
         drill_down.TargetRowIndex = TargetIndex
+        drill_down.refresh()
         return drill_down.AvailableDrillDownOptions
 
     def TargetRowFilters(self, TargetIndex=0):
@@ -301,15 +315,19 @@ class StatViewAssistant(object):
         """
         drill_down = self._View.DrillDown.find()
         drill_down.TargetRowIndex = TargetIndex
+        drill_down.refresh()
         return drill_down.AvailableTargetRowFilters.find()
 
-    def Drilldown(self, TargetRowIndex, DrillDownOption, TargetRowFilter):
+    def Drilldown(
+        self, TargetRowIndex, DrillDownOption, TargetRowFilter, DrillDownView=None
+    ):
         """Drilldown on an existing view to get a new StatViewAssistant
 
         Args:
             TargetRowIndex (int): the 0 based index of the row that you are interested in drilling down into
             DrillDownOption (str): drill down options are dynamic and are based on tracking options selected during traffic item creation
             TargetRowFilter (str): drill down filters are dynamic and are based on tracking options selected during traffic item creation
+            DrillDownView (str): The resultant drill down for which you want the stat view assistant info. Default is None.
 
         Returns:
             obj(ixnetwork_restpy.assistants.statistics.statviewassistant.StatViewAssistant)
@@ -319,7 +337,12 @@ class StatViewAssistant(object):
         drill_down.TargetDrillDownOption = DrillDownOption
         drill_down.TargetRowFilter = TargetRowFilter
         drill_down.DoDrillDown()
-        return StatViewAssistant(self._IxNetwork, "User Defined Statistics")
+        self._View = None
+        self._is_view_ready
+        if self._ViewName == "Traffic Item Statistics":
+            return StatViewAssistant(self._IxNetwork, "User Defined Statistics")
+        elif DrillDownView is not None:
+            return StatViewAssistant(self._IxNetwork, DrillDownView)
 
     def __str__(self):
         """Return a string with all the rows in the current view"""
@@ -348,3 +371,29 @@ class StatViewAssistant(object):
             for row in self.Rows:
                 statistics += row.__str__()
         return statistics.rstrip()
+
+    def _create_view_for_filter(self, filter_type):
+        # create custom view
+        self._filter_view = self._IxNetwork.Statistics.View.add(
+            Caption=self._ViewName, Type=filter_type, Visible=True
+        )
+        self._IxNetwork.debug(
+            "custom view for filter created successfully: " + self._filter_view.href
+        )
+
+    def GetFilteredStats(self):
+        """
+        Get filtered statistics
+        Returns:
+            obj(ixnetwork_restpy.assistants.statistics.statviewassistant.StatViewAssistant)
+        """
+        if self._filter_view is None:
+            raise Exception(
+                "No filter view, This method is only valid if FilterType was provided"
+            )
+        self._IxNetwork.debug("Enabling all the statistics for the filter view")
+        with BatchUpdate(self._IxNetwork):
+            for statistic in self._filter_view.Statistic.find():
+                statistic.Enabled = True
+            self._filter_view.Enabled = True
+        return StatViewAssistant(self._IxNetwork, self._ViewName)

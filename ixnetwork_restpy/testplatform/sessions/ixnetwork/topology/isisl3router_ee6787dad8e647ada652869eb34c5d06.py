@@ -181,6 +181,10 @@ class IsisL3Router(Base):
         "StateCounts": "stateCounts",
         "Status": "status",
         "TERouterId": "tERouterId",
+        "TilfaCardNo": "tilfaCardNo",
+        "TilfaMac": "tilfaMac",
+        "TilfaPortIp": "tilfaPortIp",
+        "TilfaPortNo": "tilfaPortNo",
         "VFlag": "vFlag",
     }
     _SDM_ENUM_MAP = {
@@ -2309,6 +2313,54 @@ class IsisL3Router(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["TERouterId"]))
 
     @property
+    def TilfaCardNo(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Target card number to create backup path
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["TilfaCardNo"]))
+
+    @property
+    def TilfaMac(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Destination mac address to create backup path
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["TilfaMac"]))
+
+    @property
+    def TilfaPortIp(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Target port IP address to create backup path
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["TilfaPortIp"]))
+
+    @property
+    def TilfaPortNo(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Target port number to create backup path
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["TilfaPortNo"]))
+
+    @property
     def VFlag(self):
         # type: () -> 'Multivalue'
         """
@@ -2832,6 +2884,10 @@ class IsisL3Router(Base):
         SrmsPreference=None,
         Srv6OAMService=None,
         TERouterId=None,
+        TilfaCardNo=None,
+        TilfaMac=None,
+        TilfaPortIp=None,
+        TilfaPortNo=None,
         VFlag=None,
     ):
         """Base class infrastructure that gets a list of isisL3Router device ids encapsulated by this object.
@@ -2963,6 +3019,10 @@ class IsisL3Router(Base):
         - SrmsPreference (str): optional regex of srmsPreference
         - Srv6OAMService (str): optional regex of srv6OAMService
         - TERouterId (str): optional regex of tERouterId
+        - TilfaCardNo (str): optional regex of tilfaCardNo
+        - TilfaMac (str): optional regex of tilfaMac
+        - TilfaPortIp (str): optional regex of tilfaPortIp
+        - TilfaPortNo (str): optional regex of tilfaPortNo
         - VFlag (str): optional regex of vFlag
 
         Returns

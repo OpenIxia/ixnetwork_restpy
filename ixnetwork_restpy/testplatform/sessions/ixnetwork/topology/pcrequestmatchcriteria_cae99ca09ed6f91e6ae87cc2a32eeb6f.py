@@ -36,12 +36,14 @@ class PcRequestMatchCriteria(Base):
     _SDM_NAME = "pcRequestMatchCriteria"
     _SDM_ATT_MAP = {
         "Active": "active",
+        "Color": "color",
         "Count": "count",
         "DescriptiveName": "descriptiveName",
         "DestIpv4Address": "destIpv4Address",
         "DestIpv6Address": "destIpv6Address",
         "IpVersion": "ipVersion",
         "IroType": "iroType",
+        "MatchColor": "matchColor",
         "MatchEndPoints": "matchEndPoints",
         "Name": "name",
         "SrcIpv4Address": "srcIpv4Address",
@@ -63,6 +65,18 @@ class PcRequestMatchCriteria(Base):
         from ixnetwork_restpy.multivalue import Multivalue
 
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Active"]))
+
+    @property
+    def Color(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Denotes the SR Policy color value.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Color"]))
 
     @property
     def Count(self):
@@ -137,12 +151,24 @@ class PcRequestMatchCriteria(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["IroType"]))
 
     @property
+    def MatchColor(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Indicates Whether response parameters will be matched based on Color in the PCReq message received from PCC.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["MatchColor"]))
+
+    @property
     def MatchEndPoints(self):
         # type: () -> 'Multivalue'
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): Indicates Whether response parameters will be matched based on endpoints in the PCReq messaged received from PCC.
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Indicates Whether response parameters will be matched based on endpoints in the PCReq message received from PCC.
         """
         from ixnetwork_restpy.multivalue import Multivalue
 
@@ -256,10 +282,12 @@ class PcRequestMatchCriteria(Base):
         self,
         PortNames=None,
         Active=None,
+        Color=None,
         DestIpv4Address=None,
         DestIpv6Address=None,
         IpVersion=None,
         IroType=None,
+        MatchColor=None,
         MatchEndPoints=None,
         SrcIpv4Address=None,
         SrcIpv6Address=None,
@@ -272,10 +300,12 @@ class PcRequestMatchCriteria(Base):
         ----
         - PortNames (str): optional regex of port names
         - Active (str): optional regex of active
+        - Color (str): optional regex of color
         - DestIpv4Address (str): optional regex of destIpv4Address
         - DestIpv6Address (str): optional regex of destIpv6Address
         - IpVersion (str): optional regex of ipVersion
         - IroType (str): optional regex of iroType
+        - MatchColor (str): optional regex of matchColor
         - MatchEndPoints (str): optional regex of matchEndPoints
         - SrcIpv4Address (str): optional regex of srcIpv4Address
         - SrcIpv6Address (str): optional regex of srcIpv6Address

@@ -40,6 +40,7 @@ class IsisL3Router(Base):
         "Count": "count",
         "DescriptiveName": "descriptiveName",
         "DoNotSendIPv6ReachabilityForMtid0": "doNotSendIPv6ReachabilityForMtid0",
+        "EnableFRR": "enableFRR",
         "FaAppSpecfLinkAttrSubTlvType": "faAppSpecfLinkAttrSubTlvType",
         "FaEagSubTlvType": "faEagSubTlvType",
         "FadSubTlvType": "fadSubTlvType",
@@ -164,6 +165,18 @@ class IsisL3Router(Base):
             self,
             self._get_attribute(self._SDM_ATT_MAP["DoNotSendIPv6ReachabilityForMtid0"]),
         )
+
+    @property
+    def EnableFRR(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enable this flag for FRR support on the port.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EnableFRR"]))
 
     @property
     def FaAppSpecfLinkAttrSubTlvType(self):
@@ -662,6 +675,7 @@ class IsisL3Router(Base):
         PortNames=None,
         BIERInfoSubTLVType=None,
         DoNotSendIPv6ReachabilityForMtid0=None,
+        EnableFRR=None,
         FaAppSpecfLinkAttrSubTlvType=None,
         FaEagSubTlvType=None,
         FadSubTlvType=None,
@@ -700,6 +714,7 @@ class IsisL3Router(Base):
         - PortNames (str): optional regex of port names
         - BIERInfoSubTLVType (str): optional regex of bIERInfoSubTLVType
         - DoNotSendIPv6ReachabilityForMtid0 (str): optional regex of doNotSendIPv6ReachabilityForMtid0
+        - EnableFRR (str): optional regex of enableFRR
         - FaAppSpecfLinkAttrSubTlvType (str): optional regex of faAppSpecfLinkAttrSubTlvType
         - FaEagSubTlvType (str): optional regex of faEagSubTlvType
         - FadSubTlvType (str): optional regex of fadSubTlvType

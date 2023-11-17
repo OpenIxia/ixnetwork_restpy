@@ -1,4 +1,12 @@
 # Release Notes
+### November 2023
+* 1.1.11
+  * support ixnetwork version 9.30.2309.46 (9.30 Update-3)
+  * New Feature in Stat View Assistant Utility to `filter` Statistics
+    * please refer to sample script filter_stats_using_stat_view_assistant.py
+  * Bug fixes in Stat View Assistant Utility
+    * fixed fetching of the correct traffic item node after drill down
+    * fixed drill down statics for views apart from Traffic Item Statistics
 ### July 2023
 * 1.1.10
   * support ixnetwork version 9.30.2306.60 (9.30 Update-2)
