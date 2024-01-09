@@ -47,6 +47,7 @@ class Vport(Base):
         "ConnectionState": "connectionState",
         "ConnectionStatus": "connectionStatus",
         "ConnectionStatusDisplayName": "connectionStatusDisplayName",
+        "DelayCompensation": "delayCompensation",
         "DpdkPerformanceAcceleration": "dpdkPerformanceAcceleration",
         "InternalId": "internalId",
         "IsAvailable": "isAvailable",
@@ -120,6 +121,7 @@ class Vport(Base):
         "type": [
             "ethernet",
             "ethernetvm",
+            "novusmini",
             "ethernetFcoe",
             "atm",
             "pos",
@@ -152,6 +154,12 @@ class Vport(Base):
             "ravenEightHundredGigLanFcoe",
             "aresOneEightHundredGigLanQddC",
             "aresOneEightHundredGigLanQddCFcoe",
+            "rangerHundredGigLan",
+            "rangerHundredGigLanFcoe",
+            "aresOneEightHundredGigLanOsfpC",
+            "aresOneEightHundredGigLanOsfpCFcoe",
+            "aresOneM",
+            "aresOneMFcoe",
         ],
     }
 
@@ -442,6 +450,21 @@ class Vport(Base):
         - str:
         """
         return self._get_attribute(self._SDM_ATT_MAP["ConnectionStatusDisplayName"])
+
+    @property
+    def DelayCompensation(self):
+        # type: () -> str
+        """
+        Returns
+        -------
+        - str: Delay compensation value for transceiver and cable length in nano seconds(ns).
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["DelayCompensation"])
+
+    @DelayCompensation.setter
+    def DelayCompensation(self, value):
+        # type: (str) -> None
+        self._set_attribute(self._SDM_ATT_MAP["DelayCompensation"], value)
 
     @property
     def DpdkPerformanceAcceleration(self):
@@ -771,7 +794,7 @@ class Vport(Base):
         """
         Returns
         -------
-        - str(ethernet | ethernetvm | ethernetFcoe | atm | pos | tenGigLan | tenGigLanFcoe | fortyGigLan | fortyGigLanFcoe | tenGigWan | tenGigWanFcoe | hundredGigLan | hundredGigLanFcoe | tenFortyHundredGigLan | tenFortyHundredGigLanFcoe | fc | ethernetImpairment | novusHundredGigLan | novusHundredGigLanFcoe | novusTenGigLan | novusTenGigLanFcoe | krakenFourHundredGigLan | krakenFourHundredGigLanFcoe | aresOneFourHundredGigLan | aresOneFourHundredGigLanFcoe | uhdOneHundredGigLan | novus5GTenTwentyFiveGigLan | novus5GTenTwentyFiveGigLanFcoe | starFourHundredGigLan | starFourHundredGigLanFcoe | ravenEightHundredGigLan | ravenEightHundredGigLanFcoe | aresOneEightHundredGigLanQddC | aresOneEightHundredGigLanQddCFcoe): The type of port selection.
+        - str(ethernet | ethernetvm | novusmini | ethernetFcoe | atm | pos | tenGigLan | tenGigLanFcoe | fortyGigLan | fortyGigLanFcoe | tenGigWan | tenGigWanFcoe | hundredGigLan | hundredGigLanFcoe | tenFortyHundredGigLan | tenFortyHundredGigLanFcoe | fc | ethernetImpairment | novusHundredGigLan | novusHundredGigLanFcoe | novusTenGigLan | novusTenGigLanFcoe | krakenFourHundredGigLan | krakenFourHundredGigLanFcoe | aresOneFourHundredGigLan | aresOneFourHundredGigLanFcoe | uhdOneHundredGigLan | novus5GTenTwentyFiveGigLan | novus5GTenTwentyFiveGigLanFcoe | starFourHundredGigLan | starFourHundredGigLanFcoe | ravenEightHundredGigLan | ravenEightHundredGigLanFcoe | aresOneEightHundredGigLanQddC | aresOneEightHundredGigLanQddCFcoe | rangerHundredGigLan | rangerHundredGigLanFcoe | aresOneEightHundredGigLanOsfpC | aresOneEightHundredGigLanOsfpCFcoe | aresOneM | aresOneMFcoe): The type of port selection.
         """
         return self._get_attribute(self._SDM_ATT_MAP["Type"])
 
@@ -808,6 +831,7 @@ class Vport(Base):
     def update(
         self,
         ConnectedTo=None,
+        DelayCompensation=None,
         IsPullOnly=None,
         Location=None,
         Name=None,
@@ -821,12 +845,13 @@ class Vport(Base):
         Type=None,
         UseGlobalSettings=None,
     ):
-        # type: (str, bool, str, str, str, bool, str, str, bool, str, str, str, bool) -> Vport
+        # type: (str, str, bool, str, str, str, bool, str, str, bool, str, str, str, bool) -> Vport
         """Updates vport resource on the server.
 
         Args
         ----
         - ConnectedTo (str(None | /api/v1/sessions/1/ixnetwork/availableHardware/chassis/card/port)): The physical port to which the unassigned port is assigned.
+        - DelayCompensation (str): Delay compensation value for transceiver and cable length in nano seconds(ns).
         - IsPullOnly (bool): (This action only affects assigned ports.) This action will temporarily set the port as an Unassigned Port. This function is used to pull the configuration set by a Tcl script or an IxExplorer port file into the IxNetwork configuration.
         - Location (str): The current format is {chassisIp}/{frontPanelPort}.{fanoutPort} or {chassisIp};{cardId};{portId} for legacy systems.
         - Name (str): The description of the port: (1) For an assigned port, the format is: (Port type) (card no.): (port no.) - (chassis name or IP). (2) For an (unassigned) port configuration, the format is: (Port type) Port 00x.
@@ -837,7 +862,7 @@ class Vport(Base):
         - TransmitIgnoreLinkStatus (bool): If true, the port ingores the link status when transmitting data.
         - TxGapControlMode (str(fixedMode | averageMode)): This object controls the Gap Control mode of the port.
         - TxMode (str(sequential | interleaved | sequentialCoarse | interleavedCoarse | packetImpairment)): The transmit mode.
-        - Type (str(ethernet | ethernetvm | ethernetFcoe | atm | pos | tenGigLan | tenGigLanFcoe | fortyGigLan | fortyGigLanFcoe | tenGigWan | tenGigWanFcoe | hundredGigLan | hundredGigLanFcoe | tenFortyHundredGigLan | tenFortyHundredGigLanFcoe | fc | ethernetImpairment | novusHundredGigLan | novusHundredGigLanFcoe | novusTenGigLan | novusTenGigLanFcoe | krakenFourHundredGigLan | krakenFourHundredGigLanFcoe | aresOneFourHundredGigLan | aresOneFourHundredGigLanFcoe | uhdOneHundredGigLan | novus5GTenTwentyFiveGigLan | novus5GTenTwentyFiveGigLanFcoe | starFourHundredGigLan | starFourHundredGigLanFcoe | ravenEightHundredGigLan | ravenEightHundredGigLanFcoe | aresOneEightHundredGigLanQddC | aresOneEightHundredGigLanQddCFcoe)): The type of port selection.
+        - Type (str(ethernet | ethernetvm | novusmini | ethernetFcoe | atm | pos | tenGigLan | tenGigLanFcoe | fortyGigLan | fortyGigLanFcoe | tenGigWan | tenGigWanFcoe | hundredGigLan | hundredGigLanFcoe | tenFortyHundredGigLan | tenFortyHundredGigLanFcoe | fc | ethernetImpairment | novusHundredGigLan | novusHundredGigLanFcoe | novusTenGigLan | novusTenGigLanFcoe | krakenFourHundredGigLan | krakenFourHundredGigLanFcoe | aresOneFourHundredGigLan | aresOneFourHundredGigLanFcoe | uhdOneHundredGigLan | novus5GTenTwentyFiveGigLan | novus5GTenTwentyFiveGigLanFcoe | starFourHundredGigLan | starFourHundredGigLanFcoe | ravenEightHundredGigLan | ravenEightHundredGigLanFcoe | aresOneEightHundredGigLanQddC | aresOneEightHundredGigLanQddCFcoe | rangerHundredGigLan | rangerHundredGigLanFcoe | aresOneEightHundredGigLanOsfpC | aresOneEightHundredGigLanOsfpCFcoe | aresOneM | aresOneMFcoe)): The type of port selection.
         - UseGlobalSettings (bool): Enables/Disables use of global settings instead of local settings on port
 
         Raises
@@ -849,6 +874,7 @@ class Vport(Base):
     def add(
         self,
         ConnectedTo=None,
+        DelayCompensation=None,
         IsPullOnly=None,
         Location=None,
         Name=None,
@@ -862,12 +888,13 @@ class Vport(Base):
         Type=None,
         UseGlobalSettings=None,
     ):
-        # type: (str, bool, str, str, str, bool, str, str, bool, str, str, str, bool) -> Vport
+        # type: (str, str, bool, str, str, str, bool, str, str, bool, str, str, str, bool) -> Vport
         """Adds a new vport resource on the server and adds it to the container.
 
         Args
         ----
         - ConnectedTo (str(None | /api/v1/sessions/1/ixnetwork/availableHardware/chassis/card/port)): The physical port to which the unassigned port is assigned.
+        - DelayCompensation (str): Delay compensation value for transceiver and cable length in nano seconds(ns).
         - IsPullOnly (bool): (This action only affects assigned ports.) This action will temporarily set the port as an Unassigned Port. This function is used to pull the configuration set by a Tcl script or an IxExplorer port file into the IxNetwork configuration.
         - Location (str): The current format is {chassisIp}/{frontPanelPort}.{fanoutPort} or {chassisIp};{cardId};{portId} for legacy systems.
         - Name (str): The description of the port: (1) For an assigned port, the format is: (Port type) (card no.): (port no.) - (chassis name or IP). (2) For an (unassigned) port configuration, the format is: (Port type) Port 00x.
@@ -878,7 +905,7 @@ class Vport(Base):
         - TransmitIgnoreLinkStatus (bool): If true, the port ingores the link status when transmitting data.
         - TxGapControlMode (str(fixedMode | averageMode)): This object controls the Gap Control mode of the port.
         - TxMode (str(sequential | interleaved | sequentialCoarse | interleavedCoarse | packetImpairment)): The transmit mode.
-        - Type (str(ethernet | ethernetvm | ethernetFcoe | atm | pos | tenGigLan | tenGigLanFcoe | fortyGigLan | fortyGigLanFcoe | tenGigWan | tenGigWanFcoe | hundredGigLan | hundredGigLanFcoe | tenFortyHundredGigLan | tenFortyHundredGigLanFcoe | fc | ethernetImpairment | novusHundredGigLan | novusHundredGigLanFcoe | novusTenGigLan | novusTenGigLanFcoe | krakenFourHundredGigLan | krakenFourHundredGigLanFcoe | aresOneFourHundredGigLan | aresOneFourHundredGigLanFcoe | uhdOneHundredGigLan | novus5GTenTwentyFiveGigLan | novus5GTenTwentyFiveGigLanFcoe | starFourHundredGigLan | starFourHundredGigLanFcoe | ravenEightHundredGigLan | ravenEightHundredGigLanFcoe | aresOneEightHundredGigLanQddC | aresOneEightHundredGigLanQddCFcoe)): The type of port selection.
+        - Type (str(ethernet | ethernetvm | novusmini | ethernetFcoe | atm | pos | tenGigLan | tenGigLanFcoe | fortyGigLan | fortyGigLanFcoe | tenGigWan | tenGigWanFcoe | hundredGigLan | hundredGigLanFcoe | tenFortyHundredGigLan | tenFortyHundredGigLanFcoe | fc | ethernetImpairment | novusHundredGigLan | novusHundredGigLanFcoe | novusTenGigLan | novusTenGigLanFcoe | krakenFourHundredGigLan | krakenFourHundredGigLanFcoe | aresOneFourHundredGigLan | aresOneFourHundredGigLanFcoe | uhdOneHundredGigLan | novus5GTenTwentyFiveGigLan | novus5GTenTwentyFiveGigLanFcoe | starFourHundredGigLan | starFourHundredGigLanFcoe | ravenEightHundredGigLan | ravenEightHundredGigLanFcoe | aresOneEightHundredGigLanQddC | aresOneEightHundredGigLanQddCFcoe | rangerHundredGigLan | rangerHundredGigLanFcoe | aresOneEightHundredGigLanOsfpC | aresOneEightHundredGigLanOsfpCFcoe | aresOneM | aresOneMFcoe)): The type of port selection.
         - UseGlobalSettings (bool): Enables/Disables use of global settings instead of local settings on port
 
         Returns
@@ -913,6 +940,7 @@ class Vport(Base):
         ConnectionState=None,
         ConnectionStatus=None,
         ConnectionStatusDisplayName=None,
+        DelayCompensation=None,
         DpdkPerformanceAcceleration=None,
         InternalId=None,
         IsAvailable=None,
@@ -944,7 +972,7 @@ class Vport(Base):
         UseGlobalSettings=None,
         ValidTxModes=None,
     ):
-        # type: (int, str, str, str, str, str, str, str, str, str, str, int, bool, bool, bool, bool, bool, bool, str, str, str, str, str, str, bool, str, str, str, str, str, str, bool, str, str, bool, str, str, str, bool, List[str]) -> Vport
+        # type: (int, str, str, str, str, str, str, str, str, str, str, str, int, bool, bool, bool, bool, bool, bool, str, str, str, str, str, str, bool, str, str, str, str, str, str, bool, str, str, bool, str, str, str, bool, List[str]) -> Vport
         """Finds and retrieves vport resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve vport resources from the server.
@@ -963,6 +991,7 @@ class Vport(Base):
         - ConnectionState (str(assignedInUseByOther | assignedUnconnected | connectedLinkDown | connectedLinkUp | connecting | unassigned)): Consolidated state of the vport. This combines the connection state with link state.
         - ConnectionStatus (str): A string describing the status of the hardware connected to this vport
         - ConnectionStatusDisplayName (str):
+        - DelayCompensation (str): Delay compensation value for transceiver and cable length in nano seconds(ns).
         - DpdkPerformanceAcceleration (str):
         - InternalId (number): For internal use.
         - IsAvailable (bool): If true, this virtual port is available for assigning to a physical port.
@@ -990,7 +1019,7 @@ class Vport(Base):
         - TransmitIgnoreLinkStatus (bool): If true, the port ingores the link status when transmitting data.
         - TxGapControlMode (str(fixedMode | averageMode)): This object controls the Gap Control mode of the port.
         - TxMode (str(sequential | interleaved | sequentialCoarse | interleavedCoarse | packetImpairment)): The transmit mode.
-        - Type (str(ethernet | ethernetvm | ethernetFcoe | atm | pos | tenGigLan | tenGigLanFcoe | fortyGigLan | fortyGigLanFcoe | tenGigWan | tenGigWanFcoe | hundredGigLan | hundredGigLanFcoe | tenFortyHundredGigLan | tenFortyHundredGigLanFcoe | fc | ethernetImpairment | novusHundredGigLan | novusHundredGigLanFcoe | novusTenGigLan | novusTenGigLanFcoe | krakenFourHundredGigLan | krakenFourHundredGigLanFcoe | aresOneFourHundredGigLan | aresOneFourHundredGigLanFcoe | uhdOneHundredGigLan | novus5GTenTwentyFiveGigLan | novus5GTenTwentyFiveGigLanFcoe | starFourHundredGigLan | starFourHundredGigLanFcoe | ravenEightHundredGigLan | ravenEightHundredGigLanFcoe | aresOneEightHundredGigLanQddC | aresOneEightHundredGigLanQddCFcoe)): The type of port selection.
+        - Type (str(ethernet | ethernetvm | novusmini | ethernetFcoe | atm | pos | tenGigLan | tenGigLanFcoe | fortyGigLan | fortyGigLanFcoe | tenGigWan | tenGigWanFcoe | hundredGigLan | hundredGigLanFcoe | tenFortyHundredGigLan | tenFortyHundredGigLanFcoe | fc | ethernetImpairment | novusHundredGigLan | novusHundredGigLanFcoe | novusTenGigLan | novusTenGigLanFcoe | krakenFourHundredGigLan | krakenFourHundredGigLanFcoe | aresOneFourHundredGigLan | aresOneFourHundredGigLanFcoe | uhdOneHundredGigLan | novus5GTenTwentyFiveGigLan | novus5GTenTwentyFiveGigLanFcoe | starFourHundredGigLan | starFourHundredGigLanFcoe | ravenEightHundredGigLan | ravenEightHundredGigLanFcoe | aresOneEightHundredGigLanQddC | aresOneEightHundredGigLanQddCFcoe | rangerHundredGigLan | rangerHundredGigLanFcoe | aresOneEightHundredGigLanOsfpC | aresOneEightHundredGigLanOsfpCFcoe | aresOneM | aresOneMFcoe)): The type of port selection.
         - UseGlobalSettings (bool): Enables/Disables use of global settings instead of local settings on port
         - ValidTxModes (list(str[interleaved | interleavedCoarse | packetImpairment | sequential | sequentialCoarse])):
 
@@ -1199,6 +1228,28 @@ class Vport(Base):
         return self._execute(
             "clearPortTransmitDuration", payload=payload, response_object=None
         )
+
+    def ClearRpfLog(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the clearRpfLog operation on the server.
+
+        Clears RPF logs for a list of ports.
+
+        clearRpfLog(async_operation=bool)
+        ---------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("clearRpfLog", payload=payload, response_object=None)
 
     def ConnectPort(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -2201,3 +2252,26 @@ class Vport(Base):
         for item in kwargs.items():
             payload[item[0]] = item[1]
         return self._execute("updateGclEntry", payload=payload, response_object=None)
+
+    def WriteRpfLogToFile(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
+        """Executes the writeRpfLogToFile operation on the server.
+
+        Write RPF log to file for a port
+
+        writeRpfLogToFile(async_operation=bool)string
+        ---------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns str: No return value.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("writeRpfLogToFile", payload=payload, response_object=None)

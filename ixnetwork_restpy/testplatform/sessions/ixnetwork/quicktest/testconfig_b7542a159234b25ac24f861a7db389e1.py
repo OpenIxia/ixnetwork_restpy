@@ -38,6 +38,12 @@ class TestConfig(Base):
         "ApplyMode": "applyMode",
         "AssignGroupType": "assignGroupType",
         "BidirectionalOptionEnabled": "bidirectionalOptionEnabled",
+        "BinaryBackoff": "binaryBackoff",
+        "BinaryFrameLossUnit": "binaryFrameLossUnit",
+        "BinaryLoadUnit": "binaryLoadUnit",
+        "BinaryResolution": "binaryResolution",
+        "BinarySearchType": "binarySearchType",
+        "BinaryTolerance": "binaryTolerance",
         "CalculateJitter": "calculateJitter",
         "CalculateLatency": "calculateLatency",
         "CountRandomFrameSize": "countRandomFrameSize",
@@ -62,6 +68,7 @@ class TestConfig(Base):
         "Igmpv3MessageType": "igmpv3MessageType",
         "Igmpv3SourceAddrList": "igmpv3SourceAddrList",
         "IncrAddresses": "incrAddresses",
+        "InitialBinaryLoadRate": "initialBinaryLoadRate",
         "Ipv4Address": "ipv4Address",
         "Ipv6Address": "ipv6Address",
         "IsIPv6": "isIPv6",
@@ -73,11 +80,14 @@ class TestConfig(Base):
         "LatencyBinsEnabled": "latencyBinsEnabled",
         "LatencyType": "latencyType",
         "LoadInitialRate": "loadInitialRate",
+        "LoadSearchType": "loadSearchType",
         "LoadType": "loadType",
         "LoadUnit": "loadUnit",
         "MapType": "mapType",
+        "MaxBinaryLoadRate": "maxBinaryLoadRate",
         "MaxIncrementFrameSize": "maxIncrementFrameSize",
         "MaxRandomFrameSize": "maxRandomFrameSize",
+        "MinBinaryLoadRate": "minBinaryLoadRate",
         "MinIncrementFrameSize": "minIncrementFrameSize",
         "MinRandomFrameSize": "minRandomFrameSize",
         "MldVersion": "mldVersion",
@@ -98,10 +108,24 @@ class TestConfig(Base):
     }
     _SDM_ENUM_MAP = {
         "assignGroupType": ["accumulated", "distributed"],
+        "binaryFrameLossUnit": ["%", "frames"],
+        "binaryLoadUnit": [
+            "bpsRate",
+            "fpsRate",
+            "gbpsRate",
+            "gBpsRate",
+            "kbpsRate",
+            "kBpsRate",
+            "mbpsRate",
+            "mBpsRate",
+            "percentMaxRate",
+        ],
+        "binarySearchType": ["perTrafficItem"],
         "frameSizeMode": ["custom", "increment", "random"],
         "groupDistributionType": ["acrossHosts", "acrossPorts"],
         "igmpv3MessageType": ["exclude", "include"],
         "latencyType": ["cutThrough", "storeForward"],
+        "loadSearchType": ["binary", "fixed"],
         "loadType": [
             "binary",
             "combo",
@@ -175,6 +199,96 @@ class TestConfig(Base):
     def BidirectionalOptionEnabled(self, value):
         # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP["BidirectionalOptionEnabled"], value)
+
+    @property
+    def BinaryBackoff(self):
+        # type: () -> int
+        """
+        Returns
+        -------
+        - number:
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["BinaryBackoff"])
+
+    @BinaryBackoff.setter
+    def BinaryBackoff(self, value):
+        # type: (int) -> None
+        self._set_attribute(self._SDM_ATT_MAP["BinaryBackoff"], value)
+
+    @property
+    def BinaryFrameLossUnit(self):
+        # type: () -> str
+        """
+        Returns
+        -------
+        - str(% | frames):
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["BinaryFrameLossUnit"])
+
+    @BinaryFrameLossUnit.setter
+    def BinaryFrameLossUnit(self, value):
+        # type: (str) -> None
+        self._set_attribute(self._SDM_ATT_MAP["BinaryFrameLossUnit"], value)
+
+    @property
+    def BinaryLoadUnit(self):
+        # type: () -> str
+        """
+        Returns
+        -------
+        - str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate):
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["BinaryLoadUnit"])
+
+    @BinaryLoadUnit.setter
+    def BinaryLoadUnit(self, value):
+        # type: (str) -> None
+        self._set_attribute(self._SDM_ATT_MAP["BinaryLoadUnit"], value)
+
+    @property
+    def BinaryResolution(self):
+        # type: () -> int
+        """
+        Returns
+        -------
+        - number:
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["BinaryResolution"])
+
+    @BinaryResolution.setter
+    def BinaryResolution(self, value):
+        # type: (int) -> None
+        self._set_attribute(self._SDM_ATT_MAP["BinaryResolution"], value)
+
+    @property
+    def BinarySearchType(self):
+        # type: () -> str
+        """
+        Returns
+        -------
+        - str(perTrafficItem):
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["BinarySearchType"])
+
+    @BinarySearchType.setter
+    def BinarySearchType(self, value):
+        # type: (str) -> None
+        self._set_attribute(self._SDM_ATT_MAP["BinarySearchType"], value)
+
+    @property
+    def BinaryTolerance(self):
+        # type: () -> int
+        """
+        Returns
+        -------
+        - number:
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["BinaryTolerance"])
+
+    @BinaryTolerance.setter
+    def BinaryTolerance(self, value):
+        # type: (int) -> None
+        self._set_attribute(self._SDM_ATT_MAP["BinaryTolerance"], value)
 
     @property
     def CalculateJitter(self):
@@ -537,6 +651,21 @@ class TestConfig(Base):
         self._set_attribute(self._SDM_ATT_MAP["IncrAddresses"], value)
 
     @property
+    def InitialBinaryLoadRate(self):
+        # type: () -> int
+        """
+        Returns
+        -------
+        - number:
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["InitialBinaryLoadRate"])
+
+    @InitialBinaryLoadRate.setter
+    def InitialBinaryLoadRate(self, value):
+        # type: (int) -> None
+        self._set_attribute(self._SDM_ATT_MAP["InitialBinaryLoadRate"], value)
+
+    @property
     def Ipv4Address(self):
         # type: () -> str
         """
@@ -702,6 +831,21 @@ class TestConfig(Base):
         self._set_attribute(self._SDM_ATT_MAP["LoadInitialRate"], value)
 
     @property
+    def LoadSearchType(self):
+        # type: () -> str
+        """
+        Returns
+        -------
+        - str(binary | fixed):
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["LoadSearchType"])
+
+    @LoadSearchType.setter
+    def LoadSearchType(self, value):
+        # type: (str) -> None
+        self._set_attribute(self._SDM_ATT_MAP["LoadSearchType"], value)
+
+    @property
     def LoadType(self):
         # type: () -> str
         """
@@ -747,6 +891,21 @@ class TestConfig(Base):
         self._set_attribute(self._SDM_ATT_MAP["MapType"], value)
 
     @property
+    def MaxBinaryLoadRate(self):
+        # type: () -> int
+        """
+        Returns
+        -------
+        - number:
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["MaxBinaryLoadRate"])
+
+    @MaxBinaryLoadRate.setter
+    def MaxBinaryLoadRate(self, value):
+        # type: (int) -> None
+        self._set_attribute(self._SDM_ATT_MAP["MaxBinaryLoadRate"], value)
+
+    @property
     def MaxIncrementFrameSize(self):
         # type: () -> int
         """
@@ -775,6 +934,21 @@ class TestConfig(Base):
     def MaxRandomFrameSize(self, value):
         # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP["MaxRandomFrameSize"], value)
+
+    @property
+    def MinBinaryLoadRate(self):
+        # type: () -> int
+        """
+        Returns
+        -------
+        - number:
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["MinBinaryLoadRate"])
+
+    @MinBinaryLoadRate.setter
+    def MinBinaryLoadRate(self, value):
+        # type: (int) -> None
+        self._set_attribute(self._SDM_ATT_MAP["MinBinaryLoadRate"], value)
 
     @property
     def MinIncrementFrameSize(self):
@@ -1036,6 +1210,12 @@ class TestConfig(Base):
         ApplyMode=None,
         AssignGroupType=None,
         BidirectionalOptionEnabled=None,
+        BinaryBackoff=None,
+        BinaryFrameLossUnit=None,
+        BinaryLoadUnit=None,
+        BinaryResolution=None,
+        BinarySearchType=None,
+        BinaryTolerance=None,
         CalculateJitter=None,
         CalculateLatency=None,
         CountRandomFrameSize=None,
@@ -1060,6 +1240,7 @@ class TestConfig(Base):
         Igmpv3MessageType=None,
         Igmpv3SourceAddrList=None,
         IncrAddresses=None,
+        InitialBinaryLoadRate=None,
         Ipv4Address=None,
         Ipv6Address=None,
         IsIPv6=None,
@@ -1071,11 +1252,14 @@ class TestConfig(Base):
         LatencyBinsEnabled=None,
         LatencyType=None,
         LoadInitialRate=None,
+        LoadSearchType=None,
         LoadType=None,
         LoadUnit=None,
         MapType=None,
+        MaxBinaryLoadRate=None,
         MaxIncrementFrameSize=None,
         MaxRandomFrameSize=None,
+        MinBinaryLoadRate=None,
         MinIncrementFrameSize=None,
         MinRandomFrameSize=None,
         MldVersion=None,
@@ -1094,7 +1278,7 @@ class TestConfig(Base):
         TestTrafficType=None,
         TxDelay=None,
     ):
-        # type: (str, str, bool, bool, bool, int, int, int, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, str, List[str], int, str, int, int, str, str, str, str, str, str, str, int, int, int, str, bool, str, int, str, str, str, int, int, int, int, int, int, int, int, bool, str, int, List[str], bool, str, bool, int, str, str, int) -> TestConfig
+        # type: (str, str, bool, int, str, str, int, str, int, bool, bool, int, int, int, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, str, List[str], int, str, int, int, str, str, str, int, str, str, str, str, int, int, int, str, bool, str, int, str, str, str, str, int, int, int, int, int, int, int, int, int, int, bool, str, int, List[str], bool, str, bool, int, str, str, int) -> TestConfig
         """Updates testConfig resource on the server.
 
         Args
@@ -1102,6 +1286,12 @@ class TestConfig(Base):
         - ApplyMode (str): NOT DEFINED
         - AssignGroupType (str(accumulated | distributed)): It assigns the group type.
         - BidirectionalOptionEnabled (bool): If true, allows bidirectional traffic.
+        - BinaryBackoff (number):
+        - BinaryFrameLossUnit (str(% | frames)):
+        - BinaryLoadUnit (str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate)):
+        - BinaryResolution (number):
+        - BinarySearchType (str(perTrafficItem)):
+        - BinaryTolerance (number):
         - CalculateJitter (bool): If true, calculates jitter.
         - CalculateLatency (bool): If true, calculates the latency.
         - CountRandomFrameSize (number): If true, frame sizes are counted at random.
@@ -1126,6 +1316,7 @@ class TestConfig(Base):
         - Igmpv3MessageType (str(exclude | include)): It gives details about the igmpv3 message type in the test configuration
         - Igmpv3SourceAddrList (str): It gives details about the igmpv3 source address list in the test configuration
         - IncrAddresses (str): If true, the MAC address is incremented.
+        - InitialBinaryLoadRate (number):
         - Ipv4Address (str): It signifies the IP address for version 4.
         - Ipv6Address (str): It signifies the IP address for version 6.
         - IsIPv6 (str): Indicates if the address is an IPv6 address.
@@ -1137,11 +1328,14 @@ class TestConfig(Base):
         - LatencyBinsEnabled (bool): Enables the latency bins statistics
         - LatencyType (str(cutThrough | storeForward)): The type of latency.
         - LoadInitialRate (number): loadInitialRate.
+        - LoadSearchType (str(binary | fixed)):
         - LoadType (str(binary | combo | custom | fixed | increment | quickSearch | random | step | unchanged)): The type of load used to modify the variable parameter value.
         - LoadUnit (str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate)): The load unit value.
         - MapType (str): The test configuration map type.
+        - MaxBinaryLoadRate (number):
         - MaxIncrementFrameSize (number): The integer that states the maximum amount to which the frame size can be incremented.
         - MaxRandomFrameSize (number): The integer that states the maximum random amount to which the frame size can be incremented.
+        - MinBinaryLoadRate (number):
         - MinIncrementFrameSize (number): The integer that states the minimum amount to which the frame size can be incremented.
         - MinRandomFrameSize (number): The integer that states the minimum random amount to which the frame size can be incremented.
         - MldVersion (number): It signifies the MLD version.
@@ -1171,6 +1365,12 @@ class TestConfig(Base):
         ApplyMode=None,
         AssignGroupType=None,
         BidirectionalOptionEnabled=None,
+        BinaryBackoff=None,
+        BinaryFrameLossUnit=None,
+        BinaryLoadUnit=None,
+        BinaryResolution=None,
+        BinarySearchType=None,
+        BinaryTolerance=None,
         CalculateJitter=None,
         CalculateLatency=None,
         CountRandomFrameSize=None,
@@ -1195,6 +1395,7 @@ class TestConfig(Base):
         Igmpv3MessageType=None,
         Igmpv3SourceAddrList=None,
         IncrAddresses=None,
+        InitialBinaryLoadRate=None,
         Ipv4Address=None,
         Ipv6Address=None,
         IsIPv6=None,
@@ -1206,11 +1407,14 @@ class TestConfig(Base):
         LatencyBinsEnabled=None,
         LatencyType=None,
         LoadInitialRate=None,
+        LoadSearchType=None,
         LoadType=None,
         LoadUnit=None,
         MapType=None,
+        MaxBinaryLoadRate=None,
         MaxIncrementFrameSize=None,
         MaxRandomFrameSize=None,
+        MinBinaryLoadRate=None,
         MinIncrementFrameSize=None,
         MinRandomFrameSize=None,
         MldVersion=None,
@@ -1229,7 +1433,7 @@ class TestConfig(Base):
         TestTrafficType=None,
         TxDelay=None,
     ):
-        # type: (str, str, bool, bool, bool, int, int, int, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, str, List[str], int, str, int, int, str, str, str, str, str, str, str, int, int, int, str, bool, str, int, str, str, str, int, int, int, int, int, int, int, int, bool, str, int, List[str], bool, str, bool, int, str, str, int) -> TestConfig
+        # type: (str, str, bool, int, str, str, int, str, int, bool, bool, int, int, int, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, str, List[str], int, str, int, int, str, str, str, int, str, str, str, str, int, int, int, str, bool, str, int, str, str, str, str, int, int, int, int, int, int, int, int, int, int, bool, str, int, List[str], bool, str, bool, int, str, str, int) -> TestConfig
         """Finds and retrieves testConfig resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve testConfig resources from the server.
@@ -1241,6 +1445,12 @@ class TestConfig(Base):
         - ApplyMode (str): NOT DEFINED
         - AssignGroupType (str(accumulated | distributed)): It assigns the group type.
         - BidirectionalOptionEnabled (bool): If true, allows bidirectional traffic.
+        - BinaryBackoff (number):
+        - BinaryFrameLossUnit (str(% | frames)):
+        - BinaryLoadUnit (str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate)):
+        - BinaryResolution (number):
+        - BinarySearchType (str(perTrafficItem)):
+        - BinaryTolerance (number):
         - CalculateJitter (bool): If true, calculates jitter.
         - CalculateLatency (bool): If true, calculates the latency.
         - CountRandomFrameSize (number): If true, frame sizes are counted at random.
@@ -1265,6 +1475,7 @@ class TestConfig(Base):
         - Igmpv3MessageType (str(exclude | include)): It gives details about the igmpv3 message type in the test configuration
         - Igmpv3SourceAddrList (str): It gives details about the igmpv3 source address list in the test configuration
         - IncrAddresses (str): If true, the MAC address is incremented.
+        - InitialBinaryLoadRate (number):
         - Ipv4Address (str): It signifies the IP address for version 4.
         - Ipv6Address (str): It signifies the IP address for version 6.
         - IsIPv6 (str): Indicates if the address is an IPv6 address.
@@ -1276,11 +1487,14 @@ class TestConfig(Base):
         - LatencyBinsEnabled (bool): Enables the latency bins statistics
         - LatencyType (str(cutThrough | storeForward)): The type of latency.
         - LoadInitialRate (number): loadInitialRate.
+        - LoadSearchType (str(binary | fixed)):
         - LoadType (str(binary | combo | custom | fixed | increment | quickSearch | random | step | unchanged)): The type of load used to modify the variable parameter value.
         - LoadUnit (str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate)): The load unit value.
         - MapType (str): The test configuration map type.
+        - MaxBinaryLoadRate (number):
         - MaxIncrementFrameSize (number): The integer that states the maximum amount to which the frame size can be incremented.
         - MaxRandomFrameSize (number): The integer that states the maximum random amount to which the frame size can be incremented.
+        - MinBinaryLoadRate (number):
         - MinIncrementFrameSize (number): The integer that states the minimum amount to which the frame size can be incremented.
         - MinRandomFrameSize (number): The integer that states the minimum random amount to which the frame size can be incremented.
         - MldVersion (number): It signifies the MLD version.

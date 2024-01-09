@@ -1642,6 +1642,27 @@ class BgpIPRouteProperty(Base):
             payload[item[0]] = item[1]
         return self._execute("abort", payload=payload, response_object=None)
 
+    def AddDeleteTags(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the addDeleteTags operation on the server.
+
+        addDeleteTags(Arg2=bool, async_operation=bool)
+        ----------------------------------------------
+        - Arg2 (bool):
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("addDeleteTags", payload=payload, response_object=None)
+
     def AgeOutRoutes(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
         """Executes the ageOutRoutes operation on the server.
@@ -1801,7 +1822,7 @@ class BgpIPRouteProperty(Base):
         - Arg2 (str(roundRobin | replicate)): Option to specify distribution type, for distributing imported routes across all BGP Peer. Options: Round-Robin, for allocating routes sequentially, and Replicate, for allocating all routes to each Peer.
         - Arg3 (bool): Import only the best routes (provided route file has this information).
         - Arg4 (str(overwriteTestersAddress | preserveFromFile)): Option for setting Next Hop modification type.
-        - Arg5 (str(csv | juniper | cisco)): Import routes file type. Route import may fail in file type is not matching with the file being imported.
+        - Arg5 (str(csv | juniper | cisco | arista)): Import routes file type. Route import may fail in file type is not matching with the file being imported.
         - Arg6 (obj(ixnetwork_restpy.files.Files)): Select source file having route information.
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns list(str): ID to associate each asynchronous action invocation.
@@ -1811,7 +1832,7 @@ class BgpIPRouteProperty(Base):
         - Arg2 (str(roundRobin | replicate)): Option to specify distribution type, for distributing imported routes across all BGP Peer. Options: Round-Robin, for allocating routes sequentially, and Replicate, for allocating all routes to each Peer.
         - Arg3 (bool): Import only the best routes (provided route file has this information).
         - Arg4 (str(overwriteTestersAddress | preserveFromFile)): Option for setting Next Hop modification type.
-        - Arg5 (str(csv | juniper | cisco)): Import routes file type. Route import may fail in file type is not matching with the file being imported.
+        - Arg5 (str(csv | juniper | cisco | arista)): Import routes file type. Route import may fail in file type is not matching with the file being imported.
         - Arg6 (obj(ixnetwork_restpy.files.Files)): Select source file having route information.
         - Arg7 (number): Specify maximum routes(per port) that you want to import. Based on Card Memory, the Max Route Limit Per Port are: - 4GB or more => 2.0 million 2GB => 1.6 million 1GB => 0.8 million Less than 1GB => 0.5 million
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.

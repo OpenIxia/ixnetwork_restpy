@@ -154,13 +154,13 @@ class Ethernet(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcpv6client_355391ba11ab3c1555c827e2e4ac3c4c.Dhcpv6client): An instance of the Dhcpv6client class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcpv6client_64480d87e9c578f0a0b7d3415d792d7e.Dhcpv6client): An instance of the Dhcpv6client class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcpv6client_355391ba11ab3c1555c827e2e4ac3c4c import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcpv6client_64480d87e9c578f0a0b7d3415d792d7e import (
             Dhcpv6client,
         )
 
@@ -174,13 +174,13 @@ class Ethernet(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dotonex_3c5f4866d22ca0e44e5ea4b7ef5bacca.DotOneX): An instance of the DotOneX class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dotonex_f7548c0c1b98bf9d2d34b32ee557fec4.DotOneX): An instance of the DotOneX class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dotonex_3c5f4866d22ca0e44e5ea4b7ef5bacca import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dotonex_f7548c0c1b98bf9d2d34b32ee557fec4 import (
             DotOneX,
         )
 
@@ -570,6 +570,46 @@ class Ethernet(Base):
         return Macsec(self)
 
     @property
+    def Microbfdv4(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.microbfdv4_141c58b1c08e07212b7c46d9ec8495c1.Microbfdv4): An instance of the Microbfdv4 class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.microbfdv4_141c58b1c08e07212b7c46d9ec8495c1 import (
+            Microbfdv4,
+        )
+
+        if len(self._object_properties) > 0:
+            if self._properties.get("Microbfdv4", None) is not None:
+                return self._properties.get("Microbfdv4")
+        return Microbfdv4(self)
+
+    @property
+    def Microbfdv6(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.microbfdv6_6b0c1a370d37aab2ddafd875d7778d93.Microbfdv6): An instance of the Microbfdv6 class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.microbfdv6_6b0c1a370d37aab2ddafd875d7778d93 import (
+            Microbfdv6,
+        )
+
+        if len(self._object_properties) > 0:
+            if self._properties.get("Microbfdv6", None) is not None:
+                return self._properties.get("Microbfdv6")
+        return Microbfdv6(self)
+
+    @property
     def Mka(self):
         """
         Returns
@@ -714,13 +754,13 @@ class Ethernet(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ptp_10b9c21d9c7cf77e86ec2d87b28de348.Ptp): An instance of the Ptp class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ptp_159da219e0807ce6756d8a5214d56f70.Ptp): An instance of the Ptp class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ptp_10b9c21d9c7cf77e86ec2d87b28de348 import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ptp_159da219e0807ce6756d8a5214d56f70 import (
             Ptp,
         )
 
@@ -1222,6 +1262,27 @@ class Ethernet(Base):
         for item in kwargs.items():
             payload[item[0]] = item[1]
         return self._execute("abort", payload=payload, response_object=None)
+
+    def AddDeleteTags(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the addDeleteTags operation on the server.
+
+        addDeleteTags(Arg2=bool, async_operation=bool)
+        ----------------------------------------------
+        - Arg2 (bool):
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("addDeleteTags", payload=payload, response_object=None)
 
     def FetchAndUpdateConfigFromCloud(self, *args, **kwargs):
         # type: (*Any, **Any) -> None

@@ -2,16 +2,18 @@ from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
-class InfiniBandRdExtendedTransportHeader(Base):
+class InfiniBandReliableDatagramExtendedTransportHeader(Base):
     __slots__ = ()
-    _SDM_NAME = "infiniBandRdExtendedTransportHeader"
+    _SDM_NAME = "infiniBandReliableDatagramExtendedTransportHeader"
     _SDM_ATT_MAP = {
-        "InfiniBandRdExtendedTransportHeaderReserve": "infiniBandRdExtendedTransportHeader.infiniBandRdExtendedTransportHeader.reserve-1",
-        "InfiniBandRdExtendedTransportHeaderEeContext": "infiniBandRdExtendedTransportHeader.infiniBandRdExtendedTransportHeader.eeContext-2",
+        "InfiniBandRdExtendedTransportHeaderReserve": "infiniBandReliableDatagramExtendedTransportHeader.infiniBandRdExtendedTransportHeader.reserve-1",
+        "InfiniBandRdExtendedTransportHeaderEeContext": "infiniBandReliableDatagramExtendedTransportHeader.infiniBandRdExtendedTransportHeader.eeContext-2",
     }
 
     def __init__(self, parent, list_op=False):
-        super(InfiniBandRdExtendedTransportHeader, self).__init__(parent, list_op)
+        super(InfiniBandReliableDatagramExtendedTransportHeader, self).__init__(
+            parent, list_op
+        )
 
     @property
     def InfiniBandRdExtendedTransportHeaderReserve(self):

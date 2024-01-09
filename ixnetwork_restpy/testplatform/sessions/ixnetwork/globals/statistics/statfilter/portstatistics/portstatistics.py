@@ -163,6 +163,10 @@ class PortStatistics(Base):
         "EncryptedByteTx": "encryptedByteTx",
         "EncryptedPacketRx": "encryptedPacketRx",
         "EncryptedPacketTx": "encryptedPacketTx",
+        "EofBigErrorFrameCount": "eofBigErrorFrameCount",
+        "EofLateFrameCount": "eofLateFrameCount",
+        "EofLateMaximumByteCount": "eofLateMaximumByteCount",
+        "EofLateMinimumByteCount": "eofLateMinimumByteCount",
         "ErrorFreeSeconds": "errorFreeSeconds",
         "ErroredBlocks": "erroredBlocks",
         "ErroredBlocksRate": "erroredBlocksRate",
@@ -266,6 +270,12 @@ class PortStatistics(Base):
         "FramesTxRate": "framesTxRate",
         "FreeMemory": "freeMemory",
         "FrontendChipTemperatureC": "frontendChipTemperatureC",
+        "HostConfigStatus": "hostConfigStatus",
+        "HostDataPathState": "hostDataPathState",
+        "HostLaneCount": "hostLaneCount",
+        "HostToMediaLane": "hostToMediaLane",
+        "HostTxCDRLOL": "hostTxCDRLOL",
+        "HostTxLOS": "hostTxLOS",
         "IdleCellsRx": "idleCellsRx",
         "IdleCellsRxRate": "idleCellsRxRate",
         "InputSignalStrengthdBm": "inputSignalStrengthdBm",
@@ -280,6 +290,7 @@ class PortStatistics(Base):
         "Ipv4ChecksumErrorsRate": "ipv4ChecksumErrorsRate",
         "Ipv4PacketsReceived": "ipv4PacketsReceived",
         "Ipv4PacketsReceivedRate": "ipv4PacketsReceivedRate",
+        "KernelTimestamp": "kernelTimestamp",
         "L1BitsReceived": "l1BitsReceived",
         "L1BitsReceivedRate": "l1BitsReceivedRate",
         "L1BitsSent": "l1BitsSent",
@@ -313,6 +324,12 @@ class PortStatistics(Base):
         "LocalOrderedSetsSent": "localOrderedSetsSent",
         "LocalOrderedSetsSentRate": "localOrderedSetsSentRate",
         "MaxServiceDisruptionTimems": "maxServiceDisruptionTimems",
+        "MediaLaneCount": "mediaLaneCount",
+        "MediaRxCDRLOL": "mediaRxCDRLOL",
+        "MediaRxLOS": "mediaRxLOS",
+        "MediaRxOpticalPower": "mediaRxOpticalPower",
+        "MediaTxBiasCurrent": "mediaTxBiasCurrent",
+        "MediaTxOpticalPower": "mediaTxOpticalPower",
         "MinServiceDisruptionTimems": "minServiceDisruptionTimems",
         "MisdirectedPacketCount": "misdirectedPacketCount",
         "MisdirectedPacketCountRate": "misdirectedPacketCountRate",
@@ -530,6 +547,11 @@ class PortStatistics(Base):
         "RxInvalidICVPacketforBroadcastRate": "rxInvalidICVPacketforBroadcastRate",
         "RxInvalidICVPacketforMulticastRate": "rxInvalidICVPacketforMulticastRate",
         "RxNonMACsecPacketCountRate": "rxNonMACsecPacketCountRate",
+        "RxOpticalPowerHighAlarm": "rxOpticalPowerHighAlarm",
+        "RxOpticalPowerHighWarn": "rxOpticalPowerHighWarn",
+        "RxOpticalPowerLimitFlag": "rxOpticalPowerLimitFlag",
+        "RxOpticalPowerLowAlarm": "rxOpticalPowerLowAlarm",
+        "RxOpticalPowerLowWarn": "rxOpticalPowerLowWarn",
         "RxOutofWindowPacketorOutofWindowDiscardedPacketforBroadcastRate": "rxOutofWindowPacketorOutofWindowDiscardedPacketforBroadcastRate",
         "RxOutofWindowPacketorOutofWindowDiscardedPacketforMulticastRate": "rxOutofWindowPacketorOutofWindowDiscardedPacketforMulticastRate",
         "RxPausePriorityGroup0Frames": "rxPausePriorityGroup0Frames",
@@ -580,6 +602,10 @@ class PortStatistics(Base):
         "SequenceFrames": "sequenceFrames",
         "SequenceFramesRate": "sequenceFramesRate",
         "SeverelyErroredSeconds": "severelyErroredSeconds",
+        "SofBigErrorFrameCount": "sofBigErrorFrameCount",
+        "SofEarlyFrameCount": "sofEarlyFrameCount",
+        "SofEarlyMaximumByteCount": "sofEarlyMaximumByteCount",
+        "SofEarlyMinimumByteCount": "sofEarlyMinimumByteCount",
         "StatelessBitsReceived": "statelessBitsReceived",
         "StatelessBitsSent": "statelessBitsSent",
         "StatelessBytesReceived": "statelessBytesReceived",
@@ -597,10 +623,20 @@ class PortStatistics(Base):
         "StatelessTxRateMbps": "statelessTxRateMbps",
         "StatelessTxRatebps": "statelessTxRatebps",
         "Status": "status",
+        "SupplyVoltageHighAlarm": "supplyVoltageHighAlarm",
+        "SupplyVoltageHighWarn": "supplyVoltageHighWarn",
+        "SupplyVoltageLimitFlag": "supplyVoltageLimitFlag",
+        "SupplyVoltageLowAlarm": "supplyVoltageLowAlarm",
+        "SupplyVoltageLowWarn": "supplyVoltageLowWarn",
         "TcpChecksumErrors": "tcpChecksumErrors",
         "TcpChecksumErrorsRate": "tcpChecksumErrorsRate",
         "TcpPacketsReceived": "tcpPacketsReceived",
         "TcpPacketsReceivedRate": "tcpPacketsReceivedRate",
+        "TemperatureHighAlarm": "temperatureHighAlarm",
+        "TemperatureHighWarn": "temperatureHighWarn",
+        "TemperatureLimitFlag": "temperatureLimitFlag",
+        "TemperatureLowAlarm": "temperatureLowAlarm",
+        "TemperatureLowWarn": "temperatureLowWarn",
         "TotalMemory": "totalMemory",
         "TransceiverTemperatureC": "transceiverTemperatureC",
         "TransmitArpGratuitous": "transmitArpGratuitous",
@@ -615,10 +651,20 @@ class PortStatistics(Base):
         "TransmitPingReply": "transmitPingReply",
         "TransmitPingRequest": "transmitPingRequest",
         "Tx0FpgaTemperatureC": "tx0FpgaTemperatureC",
+        "TxBiasCurrentHighAlarm": "txBiasCurrentHighAlarm",
+        "TxBiasCurrentHighWarn": "txBiasCurrentHighWarn",
+        "TxBiasCurrentLimitFlag": "txBiasCurrentLimitFlag",
+        "TxBiasCurrentLowAlarm": "txBiasCurrentLowAlarm",
+        "TxBiasCurrentLowWarn": "txBiasCurrentLowWarn",
         "TxEncryptedByteCountRate": "txEncryptedByteCountRate",
         "TxEncryptedPacketCountRate": "txEncryptedPacketCountRate",
         "TxFpgaTemperatureC": "txFpgaTemperatureC",
         "TxNonMACsecPacketCountRate": "txNonMACsecPacketCountRate",
+        "TxOpticalPowerHighAlarm": "txOpticalPowerHighAlarm",
+        "TxOpticalPowerHighWarn": "txOpticalPowerHighWarn",
+        "TxOpticalPowerLimitFlag": "txOpticalPowerLimitFlag",
+        "TxOpticalPowerLowAlarm": "txOpticalPowerLowAlarm",
+        "TxOpticalPowerLowWarn": "txOpticalPowerLowWarn",
         "TxProtectedByteCountRate": "txProtectedByteCountRate",
         "TxProtectedPacketCountRate": "txProtectedPacketCountRate",
         "TxRateKbps": "txRateKbps",
@@ -656,6 +702,9 @@ class PortStatistics(Base):
         "ValidStatelessFramesReceivedRate": "validStatelessFramesReceivedRate",
         "VlanTaggedFrames": "vlanTaggedFrames",
         "VlanTaggedFramesRate": "vlanTaggedFramesRate",
+        "WindowClosedFrameCount": "windowClosedFrameCount",
+        "WindowValidFrameCount": "windowValidFrameCount",
+        "WindowViolationFrameCount": "windowViolationFrameCount",
     }
     _SDM_ENUM_MAP = {}
 
@@ -2595,6 +2644,66 @@ class PortStatistics(Base):
         self._set_attribute(self._SDM_ATT_MAP["EncryptedPacketTx"], value)
 
     @property
+    def EofBigErrorFrameCount(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: EOF Big Error Frame Count
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["EofBigErrorFrameCount"])
+
+    @EofBigErrorFrameCount.setter
+    def EofBigErrorFrameCount(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["EofBigErrorFrameCount"], value)
+
+    @property
+    def EofLateFrameCount(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: EOF Late Frame Count
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["EofLateFrameCount"])
+
+    @EofLateFrameCount.setter
+    def EofLateFrameCount(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["EofLateFrameCount"], value)
+
+    @property
+    def EofLateMaximumByteCount(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: EOF Late Maximum Byte Count
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["EofLateMaximumByteCount"])
+
+    @EofLateMaximumByteCount.setter
+    def EofLateMaximumByteCount(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["EofLateMaximumByteCount"], value)
+
+    @property
+    def EofLateMinimumByteCount(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: EOF Late Minimum Byte Count
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["EofLateMinimumByteCount"])
+
+    @EofLateMinimumByteCount.setter
+    def EofLateMinimumByteCount(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["EofLateMinimumByteCount"], value)
+
+    @property
     def ErrorFreeSeconds(self):
         # type: () -> bool
         """
@@ -4188,6 +4297,96 @@ class PortStatistics(Base):
         self._set_attribute(self._SDM_ATT_MAP["FrontendChipTemperatureC"], value)
 
     @property
+    def HostConfigStatus(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: Host Config Status
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["HostConfigStatus"])
+
+    @HostConfigStatus.setter
+    def HostConfigStatus(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["HostConfigStatus"], value)
+
+    @property
+    def HostDataPathState(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: Host Data Path State
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["HostDataPathState"])
+
+    @HostDataPathState.setter
+    def HostDataPathState(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["HostDataPathState"], value)
+
+    @property
+    def HostLaneCount(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: Host Lane Count
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["HostLaneCount"])
+
+    @HostLaneCount.setter
+    def HostLaneCount(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["HostLaneCount"], value)
+
+    @property
+    def HostToMediaLane(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: Host To Media Lane
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["HostToMediaLane"])
+
+    @HostToMediaLane.setter
+    def HostToMediaLane(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["HostToMediaLane"], value)
+
+    @property
+    def HostTxCDRLOL(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: Host Tx CDR LOL
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["HostTxCDRLOL"])
+
+    @HostTxCDRLOL.setter
+    def HostTxCDRLOL(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["HostTxCDRLOL"], value)
+
+    @property
+    def HostTxLOS(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: Host Tx LOS
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["HostTxLOS"])
+
+    @HostTxLOS.setter
+    def HostTxLOS(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["HostTxLOS"], value)
+
+    @property
     def IdleCellsRx(self):
         # type: () -> bool
         """
@@ -4396,6 +4595,21 @@ class PortStatistics(Base):
     def Ipv4PacketsReceivedRate(self, value):
         # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP["Ipv4PacketsReceivedRate"], value)
+
+    @property
+    def KernelTimestamp(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: Kernel Timestamp
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["KernelTimestamp"])
+
+    @KernelTimestamp.setter
+    def KernelTimestamp(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["KernelTimestamp"], value)
 
     @property
     def L1BitsReceived(self):
@@ -4891,6 +5105,96 @@ class PortStatistics(Base):
     def MaxServiceDisruptionTimems(self, value):
         # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP["MaxServiceDisruptionTimems"], value)
+
+    @property
+    def MediaLaneCount(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: Media Lane Count
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["MediaLaneCount"])
+
+    @MediaLaneCount.setter
+    def MediaLaneCount(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["MediaLaneCount"], value)
+
+    @property
+    def MediaRxCDRLOL(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: Media Rx CDR LOL
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["MediaRxCDRLOL"])
+
+    @MediaRxCDRLOL.setter
+    def MediaRxCDRLOL(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["MediaRxCDRLOL"], value)
+
+    @property
+    def MediaRxLOS(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: Media Rx LOS
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["MediaRxLOS"])
+
+    @MediaRxLOS.setter
+    def MediaRxLOS(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["MediaRxLOS"], value)
+
+    @property
+    def MediaRxOpticalPower(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: Media Rx Optical Power
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["MediaRxOpticalPower"])
+
+    @MediaRxOpticalPower.setter
+    def MediaRxOpticalPower(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["MediaRxOpticalPower"], value)
+
+    @property
+    def MediaTxBiasCurrent(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: Media Tx Bias Current
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["MediaTxBiasCurrent"])
+
+    @MediaTxBiasCurrent.setter
+    def MediaTxBiasCurrent(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["MediaTxBiasCurrent"], value)
+
+    @property
+    def MediaTxOpticalPower(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: Media Tx Optical Power
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["MediaTxOpticalPower"])
+
+    @MediaTxOpticalPower.setter
+    def MediaTxOpticalPower(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["MediaTxOpticalPower"], value)
 
     @property
     def MinServiceDisruptionTimems(self):
@@ -8250,6 +8554,81 @@ class PortStatistics(Base):
         self._set_attribute(self._SDM_ATT_MAP["RxNonMACsecPacketCountRate"], value)
 
     @property
+    def RxOpticalPowerHighAlarm(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: Rx Optical Power High Alarm
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["RxOpticalPowerHighAlarm"])
+
+    @RxOpticalPowerHighAlarm.setter
+    def RxOpticalPowerHighAlarm(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["RxOpticalPowerHighAlarm"], value)
+
+    @property
+    def RxOpticalPowerHighWarn(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: Rx Optical Power High Warn
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["RxOpticalPowerHighWarn"])
+
+    @RxOpticalPowerHighWarn.setter
+    def RxOpticalPowerHighWarn(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["RxOpticalPowerHighWarn"], value)
+
+    @property
+    def RxOpticalPowerLimitFlag(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: Rx Optical Power Limit Flag
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["RxOpticalPowerLimitFlag"])
+
+    @RxOpticalPowerLimitFlag.setter
+    def RxOpticalPowerLimitFlag(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["RxOpticalPowerLimitFlag"], value)
+
+    @property
+    def RxOpticalPowerLowAlarm(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: Rx Optical Power Low Alarm
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["RxOpticalPowerLowAlarm"])
+
+    @RxOpticalPowerLowAlarm.setter
+    def RxOpticalPowerLowAlarm(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["RxOpticalPowerLowAlarm"], value)
+
+    @property
+    def RxOpticalPowerLowWarn(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: Rx Optical Power Low Warn
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["RxOpticalPowerLowWarn"])
+
+    @RxOpticalPowerLowWarn.setter
+    def RxOpticalPowerLowWarn(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["RxOpticalPowerLowWarn"], value)
+
+    @property
     def RxOutofWindowPacketorOutofWindowDiscardedPacketforBroadcastRate(self):
         # type: () -> bool
         """
@@ -9035,6 +9414,66 @@ class PortStatistics(Base):
         self._set_attribute(self._SDM_ATT_MAP["SeverelyErroredSeconds"], value)
 
     @property
+    def SofBigErrorFrameCount(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: SOF Big Error Frame Count
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["SofBigErrorFrameCount"])
+
+    @SofBigErrorFrameCount.setter
+    def SofBigErrorFrameCount(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["SofBigErrorFrameCount"], value)
+
+    @property
+    def SofEarlyFrameCount(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: SOF Early Frame Count
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["SofEarlyFrameCount"])
+
+    @SofEarlyFrameCount.setter
+    def SofEarlyFrameCount(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["SofEarlyFrameCount"], value)
+
+    @property
+    def SofEarlyMaximumByteCount(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: SOF Early Maximum Byte Count
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["SofEarlyMaximumByteCount"])
+
+    @SofEarlyMaximumByteCount.setter
+    def SofEarlyMaximumByteCount(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["SofEarlyMaximumByteCount"], value)
+
+    @property
+    def SofEarlyMinimumByteCount(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: SOF Early Minimum Byte Count
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["SofEarlyMinimumByteCount"])
+
+    @SofEarlyMinimumByteCount.setter
+    def SofEarlyMinimumByteCount(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["SofEarlyMinimumByteCount"], value)
+
+    @property
     def StatelessBitsReceived(self):
         # type: () -> bool
         """
@@ -9290,6 +9729,81 @@ class PortStatistics(Base):
         self._set_attribute(self._SDM_ATT_MAP["Status"], value)
 
     @property
+    def SupplyVoltageHighAlarm(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: Supply Voltage High Alarm
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["SupplyVoltageHighAlarm"])
+
+    @SupplyVoltageHighAlarm.setter
+    def SupplyVoltageHighAlarm(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["SupplyVoltageHighAlarm"], value)
+
+    @property
+    def SupplyVoltageHighWarn(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: Supply Voltage High Warn
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["SupplyVoltageHighWarn"])
+
+    @SupplyVoltageHighWarn.setter
+    def SupplyVoltageHighWarn(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["SupplyVoltageHighWarn"], value)
+
+    @property
+    def SupplyVoltageLimitFlag(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: Supply Voltage Limit Flag
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["SupplyVoltageLimitFlag"])
+
+    @SupplyVoltageLimitFlag.setter
+    def SupplyVoltageLimitFlag(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["SupplyVoltageLimitFlag"], value)
+
+    @property
+    def SupplyVoltageLowAlarm(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: Supply Voltage Low Alarm
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["SupplyVoltageLowAlarm"])
+
+    @SupplyVoltageLowAlarm.setter
+    def SupplyVoltageLowAlarm(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["SupplyVoltageLowAlarm"], value)
+
+    @property
+    def SupplyVoltageLowWarn(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: Supply Voltage Low Warn
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["SupplyVoltageLowWarn"])
+
+    @SupplyVoltageLowWarn.setter
+    def SupplyVoltageLowWarn(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["SupplyVoltageLowWarn"], value)
+
+    @property
     def TcpChecksumErrors(self):
         # type: () -> bool
         """
@@ -9348,6 +9862,81 @@ class PortStatistics(Base):
     def TcpPacketsReceivedRate(self, value):
         # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP["TcpPacketsReceivedRate"], value)
+
+    @property
+    def TemperatureHighAlarm(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: Temperature High Alarm
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["TemperatureHighAlarm"])
+
+    @TemperatureHighAlarm.setter
+    def TemperatureHighAlarm(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["TemperatureHighAlarm"], value)
+
+    @property
+    def TemperatureHighWarn(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: Temperature High Warn
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["TemperatureHighWarn"])
+
+    @TemperatureHighWarn.setter
+    def TemperatureHighWarn(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["TemperatureHighWarn"], value)
+
+    @property
+    def TemperatureLimitFlag(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: Temperature Limit Flag
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["TemperatureLimitFlag"])
+
+    @TemperatureLimitFlag.setter
+    def TemperatureLimitFlag(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["TemperatureLimitFlag"], value)
+
+    @property
+    def TemperatureLowAlarm(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: Temperature Low Alarm
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["TemperatureLowAlarm"])
+
+    @TemperatureLowAlarm.setter
+    def TemperatureLowAlarm(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["TemperatureLowAlarm"], value)
+
+    @property
+    def TemperatureLowWarn(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: Temperature Low Warn
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["TemperatureLowWarn"])
+
+    @TemperatureLowWarn.setter
+    def TemperatureLowWarn(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["TemperatureLowWarn"], value)
 
     @property
     def TotalMemory(self):
@@ -9564,6 +10153,81 @@ class PortStatistics(Base):
         self._set_attribute(self._SDM_ATT_MAP["Tx0FpgaTemperatureC"], value)
 
     @property
+    def TxBiasCurrentHighAlarm(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: Tx Bias Current High Alarm
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["TxBiasCurrentHighAlarm"])
+
+    @TxBiasCurrentHighAlarm.setter
+    def TxBiasCurrentHighAlarm(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["TxBiasCurrentHighAlarm"], value)
+
+    @property
+    def TxBiasCurrentHighWarn(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: Tx Bias Current High Warn
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["TxBiasCurrentHighWarn"])
+
+    @TxBiasCurrentHighWarn.setter
+    def TxBiasCurrentHighWarn(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["TxBiasCurrentHighWarn"], value)
+
+    @property
+    def TxBiasCurrentLimitFlag(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: Tx Bias Current Limit Flag
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["TxBiasCurrentLimitFlag"])
+
+    @TxBiasCurrentLimitFlag.setter
+    def TxBiasCurrentLimitFlag(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["TxBiasCurrentLimitFlag"], value)
+
+    @property
+    def TxBiasCurrentLowAlarm(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: Tx Bias Current Low Alarm
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["TxBiasCurrentLowAlarm"])
+
+    @TxBiasCurrentLowAlarm.setter
+    def TxBiasCurrentLowAlarm(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["TxBiasCurrentLowAlarm"], value)
+
+    @property
+    def TxBiasCurrentLowWarn(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: Tx Bias Current Low Warn
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["TxBiasCurrentLowWarn"])
+
+    @TxBiasCurrentLowWarn.setter
+    def TxBiasCurrentLowWarn(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["TxBiasCurrentLowWarn"], value)
+
+    @property
     def TxEncryptedByteCountRate(self):
         # type: () -> bool
         """
@@ -9622,6 +10286,81 @@ class PortStatistics(Base):
     def TxNonMACsecPacketCountRate(self, value):
         # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP["TxNonMACsecPacketCountRate"], value)
+
+    @property
+    def TxOpticalPowerHighAlarm(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: Tx Optical Power High Alarm
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["TxOpticalPowerHighAlarm"])
+
+    @TxOpticalPowerHighAlarm.setter
+    def TxOpticalPowerHighAlarm(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["TxOpticalPowerHighAlarm"], value)
+
+    @property
+    def TxOpticalPowerHighWarn(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: Tx Optical Power High Warn
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["TxOpticalPowerHighWarn"])
+
+    @TxOpticalPowerHighWarn.setter
+    def TxOpticalPowerHighWarn(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["TxOpticalPowerHighWarn"], value)
+
+    @property
+    def TxOpticalPowerLimitFlag(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: Tx Optical Power Limit Flag
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["TxOpticalPowerLimitFlag"])
+
+    @TxOpticalPowerLimitFlag.setter
+    def TxOpticalPowerLimitFlag(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["TxOpticalPowerLimitFlag"], value)
+
+    @property
+    def TxOpticalPowerLowAlarm(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: Tx Optical Power Low Alarm
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["TxOpticalPowerLowAlarm"])
+
+    @TxOpticalPowerLowAlarm.setter
+    def TxOpticalPowerLowAlarm(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["TxOpticalPowerLowAlarm"], value)
+
+    @property
+    def TxOpticalPowerLowWarn(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: Tx Optical Power Low Warn
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["TxOpticalPowerLowWarn"])
+
+    @TxOpticalPowerLowWarn.setter
+    def TxOpticalPowerLowWarn(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["TxOpticalPowerLowWarn"], value)
 
     @property
     def TxProtectedByteCountRate(self):
@@ -10182,8 +10921,53 @@ class PortStatistics(Base):
         # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP["VlanTaggedFramesRate"], value)
 
+    @property
+    def WindowClosedFrameCount(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: Window Closed Frame Count
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["WindowClosedFrameCount"])
+
+    @WindowClosedFrameCount.setter
+    def WindowClosedFrameCount(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["WindowClosedFrameCount"], value)
+
+    @property
+    def WindowValidFrameCount(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: Window Valid Frame Count
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["WindowValidFrameCount"])
+
+    @WindowValidFrameCount.setter
+    def WindowValidFrameCount(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["WindowValidFrameCount"], value)
+
+    @property
+    def WindowViolationFrameCount(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: Window Violation Frame Count
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["WindowViolationFrameCount"])
+
+    @WindowViolationFrameCount.setter
+    def WindowViolationFrameCount(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["WindowViolationFrameCount"], value)
+
     def update(self, **kwargs):
-        # type: (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool) -> PortStatistics
+        # type: (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool) -> PortStatistics
         """Updates portStatistics resource on the server.
 
         Args
@@ -10316,6 +11100,10 @@ class PortStatistics(Base):
         - EncryptedByteTx (bool): Encrypted Byte Tx
         - EncryptedPacketRx (bool): Encrypted Packet Rx
         - EncryptedPacketTx (bool): Encrypted Packet Tx
+        - EofBigErrorFrameCount (bool): EOF Big Error Frame Count
+        - EofLateFrameCount (bool): EOF Late Frame Count
+        - EofLateMaximumByteCount (bool): EOF Late Maximum Byte Count
+        - EofLateMinimumByteCount (bool): EOF Late Minimum Byte Count
         - ErrorFreeSeconds (bool): Error Free Seconds
         - ErroredBlocks (bool): Errored Blocks
         - ErroredBlocksRate (bool): Errored Blocks Rate
@@ -10419,6 +11207,12 @@ class PortStatistics(Base):
         - FramesTxRate (bool): Frames Tx. Rate
         - FreeMemory (bool): Free Memory
         - FrontendChipTemperatureC (bool): FrontEnd Chip Temperature(C)
+        - HostConfigStatus (bool): Host Config Status
+        - HostDataPathState (bool): Host Data Path State
+        - HostLaneCount (bool): Host Lane Count
+        - HostToMediaLane (bool): Host To Media Lane
+        - HostTxCDRLOL (bool): Host Tx CDR LOL
+        - HostTxLOS (bool): Host Tx LOS
         - IdleCellsRx (bool): Idle Cells Rx.
         - IdleCellsRxRate (bool): Idle Cells Rx. Rate
         - InputSignalStrengthdBm (bool): Input Signal Strength (dBm)
@@ -10433,6 +11227,7 @@ class PortStatistics(Base):
         - Ipv4ChecksumErrorsRate (bool): IPv4 Checksum Errors Rate
         - Ipv4PacketsReceived (bool): IPv4 Packets Received
         - Ipv4PacketsReceivedRate (bool): IPv4 Packets Received Rate
+        - KernelTimestamp (bool): Kernel Timestamp
         - L1BitsReceived (bool): L1 Bits Received
         - L1BitsReceivedRate (bool): L1 Bits Received Rate
         - L1BitsSent (bool): L1 Bits Sent
@@ -10466,6 +11261,12 @@ class PortStatistics(Base):
         - LocalOrderedSetsSent (bool): Local Ordered Sets Sent
         - LocalOrderedSetsSentRate (bool): Local Ordered Sets Sent Rate
         - MaxServiceDisruptionTimems (bool): Max Service Disruption Time (ms)
+        - MediaLaneCount (bool): Media Lane Count
+        - MediaRxCDRLOL (bool): Media Rx CDR LOL
+        - MediaRxLOS (bool): Media Rx LOS
+        - MediaRxOpticalPower (bool): Media Rx Optical Power
+        - MediaTxBiasCurrent (bool): Media Tx Bias Current
+        - MediaTxOpticalPower (bool): Media Tx Optical Power
         - MinServiceDisruptionTimems (bool): Min Service Disruption Time (ms)
         - MisdirectedPacketCount (bool): Misdirected Packet Count
         - MisdirectedPacketCountRate (bool): Misdirected Packet Count Rate
@@ -10683,6 +11484,11 @@ class PortStatistics(Base):
         - RxInvalidICVPacketforBroadcastRate (bool): Rx Invalid ICV Packet for Broadcast Rate
         - RxInvalidICVPacketforMulticastRate (bool): Rx Invalid ICV Packet for Multicast Rate
         - RxNonMACsecPacketCountRate (bool): Rx NonMACsec Packet Count Rate
+        - RxOpticalPowerHighAlarm (bool): Rx Optical Power High Alarm
+        - RxOpticalPowerHighWarn (bool): Rx Optical Power High Warn
+        - RxOpticalPowerLimitFlag (bool): Rx Optical Power Limit Flag
+        - RxOpticalPowerLowAlarm (bool): Rx Optical Power Low Alarm
+        - RxOpticalPowerLowWarn (bool): Rx Optical Power Low Warn
         - RxOutofWindowPacketorOutofWindowDiscardedPacketforBroadcastRate (bool): Rx Out of Window Packet or Out of Window Discarded Packet for Broadcast Rate
         - RxOutofWindowPacketorOutofWindowDiscardedPacketforMulticastRate (bool): Rx Out of Window Packet or Out of Window Discarded Packet for Multicast Rate
         - RxPausePriorityGroup0Frames (bool): Rx Pause Priority Group 0 Frames
@@ -10733,6 +11539,10 @@ class PortStatistics(Base):
         - SequenceFrames (bool): Sequence Frames
         - SequenceFramesRate (bool): Sequence Frames Rate
         - SeverelyErroredSeconds (bool): Severely Errored Seconds
+        - SofBigErrorFrameCount (bool): SOF Big Error Frame Count
+        - SofEarlyFrameCount (bool): SOF Early Frame Count
+        - SofEarlyMaximumByteCount (bool): SOF Early Maximum Byte Count
+        - SofEarlyMinimumByteCount (bool): SOF Early Minimum Byte Count
         - StatelessBitsReceived (bool): Stateless Bits Received
         - StatelessBitsSent (bool): Stateless Bits Sent
         - StatelessBytesReceived (bool): Stateless Bytes Received
@@ -10750,10 +11560,20 @@ class PortStatistics(Base):
         - StatelessTxRateMbps (bool): Stateless Tx. Rate (Mbps)
         - StatelessTxRatebps (bool): Stateless Tx. Rate (bps)
         - Status (bool): Status
+        - SupplyVoltageHighAlarm (bool): Supply Voltage High Alarm
+        - SupplyVoltageHighWarn (bool): Supply Voltage High Warn
+        - SupplyVoltageLimitFlag (bool): Supply Voltage Limit Flag
+        - SupplyVoltageLowAlarm (bool): Supply Voltage Low Alarm
+        - SupplyVoltageLowWarn (bool): Supply Voltage Low Warn
         - TcpChecksumErrors (bool): TCP Checksum Errors
         - TcpChecksumErrorsRate (bool): TCP Checksum Errors Rate
         - TcpPacketsReceived (bool): TCP Packets Received
         - TcpPacketsReceivedRate (bool): TCP Packets Received Rate
+        - TemperatureHighAlarm (bool): Temperature High Alarm
+        - TemperatureHighWarn (bool): Temperature High Warn
+        - TemperatureLimitFlag (bool): Temperature Limit Flag
+        - TemperatureLowAlarm (bool): Temperature Low Alarm
+        - TemperatureLowWarn (bool): Temperature Low Warn
         - TotalMemory (bool): Total Memory
         - TransceiverTemperatureC (bool): Transceiver Temperature (C)
         - TransmitArpGratuitous (bool): Transmit Arp Gratuitous
@@ -10768,10 +11588,20 @@ class PortStatistics(Base):
         - TransmitPingReply (bool): Transmit Ping Reply
         - TransmitPingRequest (bool): Transmit Ping Request
         - Tx0FpgaTemperatureC (bool): Tx0 Fpga Temperature(C)
+        - TxBiasCurrentHighAlarm (bool): Tx Bias Current High Alarm
+        - TxBiasCurrentHighWarn (bool): Tx Bias Current High Warn
+        - TxBiasCurrentLimitFlag (bool): Tx Bias Current Limit Flag
+        - TxBiasCurrentLowAlarm (bool): Tx Bias Current Low Alarm
+        - TxBiasCurrentLowWarn (bool): Tx Bias Current Low Warn
         - TxEncryptedByteCountRate (bool): Tx Encrypted Byte Count Rate
         - TxEncryptedPacketCountRate (bool): Tx Encrypted Packet Count Rate
         - TxFpgaTemperatureC (bool): Tx Fpga Temperature(C)
         - TxNonMACsecPacketCountRate (bool): Tx NonMACsec Packet Count Rate
+        - TxOpticalPowerHighAlarm (bool): Tx Optical Power High Alarm
+        - TxOpticalPowerHighWarn (bool): Tx Optical Power High Warn
+        - TxOpticalPowerLimitFlag (bool): Tx Optical Power Limit Flag
+        - TxOpticalPowerLowAlarm (bool): Tx Optical Power Low Alarm
+        - TxOpticalPowerLowWarn (bool): Tx Optical Power Low Warn
         - TxProtectedByteCountRate (bool): Tx Protected Byte Count Rate
         - TxProtectedPacketCountRate (bool): Tx Protected Packet Count Rate
         - TxRateKbps (bool): Tx. Rate (Kbps)
@@ -10809,6 +11639,9 @@ class PortStatistics(Base):
         - ValidStatelessFramesReceivedRate (bool): Valid Stateless Frames Received Rate
         - VlanTaggedFrames (bool): Vlan Tagged Frames
         - VlanTaggedFramesRate (bool): Vlan Tagged Frames Rate
+        - WindowClosedFrameCount (bool): Window Closed Frame Count
+        - WindowValidFrameCount (bool): Window Valid Frame Count
+        - WindowViolationFrameCount (bool): Window Violation Frame Count
 
         Raises
         ------
@@ -10817,7 +11650,7 @@ class PortStatistics(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def find(self, **kwargs):
-        # type: (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool) -> PortStatistics
+        # type: (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool) -> PortStatistics
         """Finds and retrieves portStatistics resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve portStatistics resources from the server.
@@ -10954,6 +11787,10 @@ class PortStatistics(Base):
         - EncryptedByteTx (bool): Encrypted Byte Tx
         - EncryptedPacketRx (bool): Encrypted Packet Rx
         - EncryptedPacketTx (bool): Encrypted Packet Tx
+        - EofBigErrorFrameCount (bool): EOF Big Error Frame Count
+        - EofLateFrameCount (bool): EOF Late Frame Count
+        - EofLateMaximumByteCount (bool): EOF Late Maximum Byte Count
+        - EofLateMinimumByteCount (bool): EOF Late Minimum Byte Count
         - ErrorFreeSeconds (bool): Error Free Seconds
         - ErroredBlocks (bool): Errored Blocks
         - ErroredBlocksRate (bool): Errored Blocks Rate
@@ -11057,6 +11894,12 @@ class PortStatistics(Base):
         - FramesTxRate (bool): Frames Tx. Rate
         - FreeMemory (bool): Free Memory
         - FrontendChipTemperatureC (bool): FrontEnd Chip Temperature(C)
+        - HostConfigStatus (bool): Host Config Status
+        - HostDataPathState (bool): Host Data Path State
+        - HostLaneCount (bool): Host Lane Count
+        - HostToMediaLane (bool): Host To Media Lane
+        - HostTxCDRLOL (bool): Host Tx CDR LOL
+        - HostTxLOS (bool): Host Tx LOS
         - IdleCellsRx (bool): Idle Cells Rx.
         - IdleCellsRxRate (bool): Idle Cells Rx. Rate
         - InputSignalStrengthdBm (bool): Input Signal Strength (dBm)
@@ -11071,6 +11914,7 @@ class PortStatistics(Base):
         - Ipv4ChecksumErrorsRate (bool): IPv4 Checksum Errors Rate
         - Ipv4PacketsReceived (bool): IPv4 Packets Received
         - Ipv4PacketsReceivedRate (bool): IPv4 Packets Received Rate
+        - KernelTimestamp (bool): Kernel Timestamp
         - L1BitsReceived (bool): L1 Bits Received
         - L1BitsReceivedRate (bool): L1 Bits Received Rate
         - L1BitsSent (bool): L1 Bits Sent
@@ -11104,6 +11948,12 @@ class PortStatistics(Base):
         - LocalOrderedSetsSent (bool): Local Ordered Sets Sent
         - LocalOrderedSetsSentRate (bool): Local Ordered Sets Sent Rate
         - MaxServiceDisruptionTimems (bool): Max Service Disruption Time (ms)
+        - MediaLaneCount (bool): Media Lane Count
+        - MediaRxCDRLOL (bool): Media Rx CDR LOL
+        - MediaRxLOS (bool): Media Rx LOS
+        - MediaRxOpticalPower (bool): Media Rx Optical Power
+        - MediaTxBiasCurrent (bool): Media Tx Bias Current
+        - MediaTxOpticalPower (bool): Media Tx Optical Power
         - MinServiceDisruptionTimems (bool): Min Service Disruption Time (ms)
         - MisdirectedPacketCount (bool): Misdirected Packet Count
         - MisdirectedPacketCountRate (bool): Misdirected Packet Count Rate
@@ -11321,6 +12171,11 @@ class PortStatistics(Base):
         - RxInvalidICVPacketforBroadcastRate (bool): Rx Invalid ICV Packet for Broadcast Rate
         - RxInvalidICVPacketforMulticastRate (bool): Rx Invalid ICV Packet for Multicast Rate
         - RxNonMACsecPacketCountRate (bool): Rx NonMACsec Packet Count Rate
+        - RxOpticalPowerHighAlarm (bool): Rx Optical Power High Alarm
+        - RxOpticalPowerHighWarn (bool): Rx Optical Power High Warn
+        - RxOpticalPowerLimitFlag (bool): Rx Optical Power Limit Flag
+        - RxOpticalPowerLowAlarm (bool): Rx Optical Power Low Alarm
+        - RxOpticalPowerLowWarn (bool): Rx Optical Power Low Warn
         - RxOutofWindowPacketorOutofWindowDiscardedPacketforBroadcastRate (bool): Rx Out of Window Packet or Out of Window Discarded Packet for Broadcast Rate
         - RxOutofWindowPacketorOutofWindowDiscardedPacketforMulticastRate (bool): Rx Out of Window Packet or Out of Window Discarded Packet for Multicast Rate
         - RxPausePriorityGroup0Frames (bool): Rx Pause Priority Group 0 Frames
@@ -11371,6 +12226,10 @@ class PortStatistics(Base):
         - SequenceFrames (bool): Sequence Frames
         - SequenceFramesRate (bool): Sequence Frames Rate
         - SeverelyErroredSeconds (bool): Severely Errored Seconds
+        - SofBigErrorFrameCount (bool): SOF Big Error Frame Count
+        - SofEarlyFrameCount (bool): SOF Early Frame Count
+        - SofEarlyMaximumByteCount (bool): SOF Early Maximum Byte Count
+        - SofEarlyMinimumByteCount (bool): SOF Early Minimum Byte Count
         - StatelessBitsReceived (bool): Stateless Bits Received
         - StatelessBitsSent (bool): Stateless Bits Sent
         - StatelessBytesReceived (bool): Stateless Bytes Received
@@ -11388,10 +12247,20 @@ class PortStatistics(Base):
         - StatelessTxRateMbps (bool): Stateless Tx. Rate (Mbps)
         - StatelessTxRatebps (bool): Stateless Tx. Rate (bps)
         - Status (bool): Status
+        - SupplyVoltageHighAlarm (bool): Supply Voltage High Alarm
+        - SupplyVoltageHighWarn (bool): Supply Voltage High Warn
+        - SupplyVoltageLimitFlag (bool): Supply Voltage Limit Flag
+        - SupplyVoltageLowAlarm (bool): Supply Voltage Low Alarm
+        - SupplyVoltageLowWarn (bool): Supply Voltage Low Warn
         - TcpChecksumErrors (bool): TCP Checksum Errors
         - TcpChecksumErrorsRate (bool): TCP Checksum Errors Rate
         - TcpPacketsReceived (bool): TCP Packets Received
         - TcpPacketsReceivedRate (bool): TCP Packets Received Rate
+        - TemperatureHighAlarm (bool): Temperature High Alarm
+        - TemperatureHighWarn (bool): Temperature High Warn
+        - TemperatureLimitFlag (bool): Temperature Limit Flag
+        - TemperatureLowAlarm (bool): Temperature Low Alarm
+        - TemperatureLowWarn (bool): Temperature Low Warn
         - TotalMemory (bool): Total Memory
         - TransceiverTemperatureC (bool): Transceiver Temperature (C)
         - TransmitArpGratuitous (bool): Transmit Arp Gratuitous
@@ -11406,10 +12275,20 @@ class PortStatistics(Base):
         - TransmitPingReply (bool): Transmit Ping Reply
         - TransmitPingRequest (bool): Transmit Ping Request
         - Tx0FpgaTemperatureC (bool): Tx0 Fpga Temperature(C)
+        - TxBiasCurrentHighAlarm (bool): Tx Bias Current High Alarm
+        - TxBiasCurrentHighWarn (bool): Tx Bias Current High Warn
+        - TxBiasCurrentLimitFlag (bool): Tx Bias Current Limit Flag
+        - TxBiasCurrentLowAlarm (bool): Tx Bias Current Low Alarm
+        - TxBiasCurrentLowWarn (bool): Tx Bias Current Low Warn
         - TxEncryptedByteCountRate (bool): Tx Encrypted Byte Count Rate
         - TxEncryptedPacketCountRate (bool): Tx Encrypted Packet Count Rate
         - TxFpgaTemperatureC (bool): Tx Fpga Temperature(C)
         - TxNonMACsecPacketCountRate (bool): Tx NonMACsec Packet Count Rate
+        - TxOpticalPowerHighAlarm (bool): Tx Optical Power High Alarm
+        - TxOpticalPowerHighWarn (bool): Tx Optical Power High Warn
+        - TxOpticalPowerLimitFlag (bool): Tx Optical Power Limit Flag
+        - TxOpticalPowerLowAlarm (bool): Tx Optical Power Low Alarm
+        - TxOpticalPowerLowWarn (bool): Tx Optical Power Low Warn
         - TxProtectedByteCountRate (bool): Tx Protected Byte Count Rate
         - TxProtectedPacketCountRate (bool): Tx Protected Packet Count Rate
         - TxRateKbps (bool): Tx. Rate (Kbps)
@@ -11447,6 +12326,9 @@ class PortStatistics(Base):
         - ValidStatelessFramesReceivedRate (bool): Valid Stateless Frames Received Rate
         - VlanTaggedFrames (bool): Vlan Tagged Frames
         - VlanTaggedFramesRate (bool): Vlan Tagged Frames Rate
+        - WindowClosedFrameCount (bool): Window Closed Frame Count
+        - WindowValidFrameCount (bool): Window Valid Frame Count
+        - WindowViolationFrameCount (bool): Window Violation Frame Count
 
         Returns
         -------

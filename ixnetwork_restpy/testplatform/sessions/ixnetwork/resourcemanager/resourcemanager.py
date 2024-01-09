@@ -34,18 +34,54 @@ class ResourceManager(Base):
 
     __slots__ = ()
     _SDM_NAME = "resourceManager"
-    _SDM_ATT_MAP = {}
+    _SDM_ATT_MAP = {
+        "GenerateAll": "generateAll",
+    }
     _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(ResourceManager, self).__init__(parent, list_op)
 
-    def find(self):
+    @property
+    def GenerateAll(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: Controls the attributes to be generated during the export API calls (available on this node). If this is true, then 'generated', 'readonly', 'internal' etc attributes are also generated.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["GenerateAll"])
+
+    @GenerateAll.setter
+    def GenerateAll(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["GenerateAll"], value)
+
+    def update(self, GenerateAll=None):
+        # type: (bool) -> ResourceManager
+        """Updates resourceManager resource on the server.
+
+        Args
+        ----
+        - GenerateAll (bool): Controls the attributes to be generated during the export API calls (available on this node). If this is true, then 'generated', 'readonly', 'internal' etc attributes are also generated.
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(self, GenerateAll=None):
+        # type: (bool) -> ResourceManager
         """Finds and retrieves resourceManager resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve resourceManager resources from the server.
         To retrieve an exact match ensure the parameter value starts with ^ and ends with $
         By default the find method takes no parameters and will retrieve all resourceManager resources from the server.
+
+        Args
+        ----
+        - GenerateAll (bool): Controls the attributes to be generated during the export API calls (available on this node). If this is true, then 'generated', 'readonly', 'internal' etc attributes are also generated.
 
         Returns
         -------

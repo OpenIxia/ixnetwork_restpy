@@ -132,7 +132,7 @@ class Locations(Base):
         """
         Returns
         -------
-        - number: Specifies the length of the cable between two adjacent device. Must be set only after the device hostname has been set and committed on the current device.
+        - number: Specifies the length of the cable between two adjacent devices. Must be set only after the device hostname has been set and committed on the current device.
         """
         return self._get_attribute(self._SDM_ATT_MAP["CableLength"])
 
@@ -182,7 +182,7 @@ class Locations(Base):
         """
         Returns
         -------
-        - str: Connection error description
+        - str: Connection error description.
         """
         return self._get_attribute(self._SDM_ATT_MAP["ErrorDescription"])
 
@@ -267,7 +267,7 @@ class Locations(Base):
         """
         Returns
         -------
-        - list(str): Shows the licening errors that occurred due to licensing problems.
+        - list(str): Shows the licensing errors that occurred due to licensing problems.
         """
         return self._get_attribute(self._SDM_ATT_MAP["LicenseErrors"])
 
@@ -352,7 +352,7 @@ class Locations(Base):
         """
         Returns
         -------
-        - str(connectError | down | notConnected | polling | pollingWait | ready): The following states can be read from the port: polling, notConnected, pollingWait, ready, down and connectError.
+        - str(connectError | down | notConnected | polling | pollingWait | ready): The following states can be read from the port: polling, notConnected, pollingWait, ready, down, and connectError.
         """
         return self._get_attribute(self._SDM_ATT_MAP["StateV2"])
 
@@ -370,7 +370,7 @@ class Locations(Base):
 
         Args
         ----
-        - CableLength (number): Specifies the length of the cable between two adjacent device. Must be set only after the device hostname has been set and committed on the current device.
+        - CableLength (number): Specifies the length of the cable between two adjacent devices. Must be set only after the device hostname has been set and committed on the current device.
         - ChainTopology (str(daisy | none | star)): The chain topology type. This must be defined on the primary device. It must be defined only after the device host name has been specified and applied on the current device. For legacy device chains, the daisy chainTopology should be indicated.
         - Hostname (str): The hostname or IP address associated with the device.
         - MasterDevice (str): Specify the hostname of the primary device on a secondary device. Must be left blank on primary. Must be set only after the device hostname has been set and committed on the current device.
@@ -397,7 +397,7 @@ class Locations(Base):
 
         Args
         ----
-        - CableLength (number): Specifies the length of the cable between two adjacent device. Must be set only after the device hostname has been set and committed on the current device.
+        - CableLength (number): Specifies the length of the cable between two adjacent devices. Must be set only after the device hostname has been set and committed on the current device.
         - ChainTopology (str(daisy | none | star)): The chain topology type. This must be defined on the primary device. It must be defined only after the device host name has been specified and applied on the current device. For legacy device chains, the daisy chainTopology should be indicated.
         - Hostname (str): The hostname or IP address associated with the device.
         - MasterDevice (str): Specify the hostname of the primary device on a secondary device. Must be left blank on primary. Must be set only after the device hostname has been set and committed on the current device.
@@ -456,11 +456,11 @@ class Locations(Base):
 
         Args
         ----
-        - CableLength (number): Specifies the length of the cable between two adjacent device. Must be set only after the device hostname has been set and committed on the current device.
+        - CableLength (number): Specifies the length of the cable between two adjacent devices. Must be set only after the device hostname has been set and committed on the current device.
         - ChainTopology (str(daisy | none | star)): The chain topology type. This must be defined on the primary device. It must be defined only after the device host name has been specified and applied on the current device. For legacy device chains, the daisy chainTopology should be indicated.
         - ConnectRetries (number): The number of time the client attempted to re-connect with the device. (read only)
         - DeviceType (str): The type of device.
-        - ErrorDescription (str): Connection error description
+        - ErrorDescription (str): Connection error description.
         - ErrorState (str(ConnectError | DuplicateChassis | IncompatibleIxOS | MultipleNics | NoCardsFound | NoError | NoLicenseFound | NonAppliance | NonLinuxChassis)): Device error state.
         - Hostname (str): The hostname or IP address associated with the device.
         - Ip (str): The IP address associated with the device.
@@ -468,14 +468,14 @@ class Locations(Base):
         - IsPrimary (bool): Specifies whether this device is a primary of a secondary in a chain.
         - IxnBuildNumber (str): IxNetwork build number.
         - IxosBuildNumber (str): The IxOS version running on the device in use.
-        - LicenseErrors (list(str)): Shows the licening errors that occurred due to licensing problems.
+        - LicenseErrors (list(str)): Shows the licensing errors that occurred due to licensing problems.
         - MasterDevice (str): Specify the hostname of the primary device on a secondary device. Must be left blank on primary. Must be set only after the device hostname has been set and committed on the current device.
         - OsType (str(linux | unknown | windows)): Device OS type.
         - PrimaryDevice (str): Specify the hostname of the primary chassis on a secondary chassis. Must be left blank on primary. Must be set only after the chassis hostname has been set and committed on the current chassis.
         - ProtocolBuildNumber (str): The Protocols version of the device in use.
         - SequenceId (number): Indicates the order at which the device in a chain are pulsed by IxOS. Star topology chains are automatically setting this value. Must be set only after the device hostname has been set and committed on the current device.
         - State (str(down | down | polling | polling | polling | ready)): The following states can be read from the port: polling, ready, and down.
-        - StateV2 (str(connectError | down | notConnected | polling | pollingWait | ready)): The following states can be read from the port: polling, notConnected, pollingWait, ready, down and connectError.
+        - StateV2 (str(connectError | down | notConnected | polling | pollingWait | ready)): The following states can be read from the port: polling, notConnected, pollingWait, ready, down, and connectError.
 
         Returns
         -------

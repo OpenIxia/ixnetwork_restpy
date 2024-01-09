@@ -37,6 +37,7 @@ class Statistics(Base):
     _SDM_ATT_MAP = {
         "AdditionalFcoeStat1": "additionalFcoeStat1",
         "AdditionalFcoeStat2": "additionalFcoeStat2",
+        "AutomaticallyRefreshNGPFStatistics": "automaticallyRefreshNGPFStatistics",
         "CsvFilePath": "csvFilePath",
         "CsvLogPollIntervalMultiplier": "csvLogPollIntervalMultiplier",
         "DataStorePollingIntervalMultiplier": "dataStorePollingIntervalMultiplier",
@@ -228,6 +229,25 @@ class Statistics(Base):
         self._set_attribute(self._SDM_ATT_MAP["AdditionalFcoeStat2"], value)
 
     @property
+    def AutomaticallyRefreshNGPFStatistics(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: Auto-refresh enable/disable for NGPF on-demand views.
+        """
+        return self._get_attribute(
+            self._SDM_ATT_MAP["AutomaticallyRefreshNGPFStatistics"]
+        )
+
+    @AutomaticallyRefreshNGPFStatistics.setter
+    def AutomaticallyRefreshNGPFStatistics(self, value):
+        # type: (bool) -> None
+        self._set_attribute(
+            self._SDM_ATT_MAP["AutomaticallyRefreshNGPFStatistics"], value
+        )
+
+    @property
     def CsvFilePath(self):
         # type: () -> str
         """DEPRECATED
@@ -410,6 +430,7 @@ class Statistics(Base):
         self,
         AdditionalFcoeStat1=None,
         AdditionalFcoeStat2=None,
+        AutomaticallyRefreshNGPFStatistics=None,
         CsvFilePath=None,
         CsvLogPollIntervalMultiplier=None,
         DataStorePollingIntervalMultiplier=None,
@@ -422,13 +443,14 @@ class Statistics(Base):
         TimeSynchronization=None,
         TimestampPrecision=None,
     ):
-        # type: (str, str, str, int, int, bool, bool, bool, bool, int, int, str, int) -> Statistics
+        # type: (str, str, bool, str, int, int, bool, bool, bool, bool, int, int, str, int) -> Statistics
         """Updates statistics resource on the server.
 
         Args
         ----
         - AdditionalFcoeStat1 (str(fcoeInvalidDelimiter | fcoeInvalidFrames | fcoeInvalidSize | fcoeNormalSizeBadFcCRC | fcoeNormalSizeGoodFcCRC | fcoeUndersizeBadFcCRC | fcoeUndersizeGoodFcCRC | fcoeValidFrames)): Signifies additional FCOE stat 1
         - AdditionalFcoeStat2 (str(fcoeInvalidDelimiter | fcoeInvalidFrames | fcoeInvalidSize | fcoeNormalSizeBadFcCRC | fcoeNormalSizeGoodFcCRC | fcoeUndersizeBadFcCRC | fcoeUndersizeGoodFcCRC | fcoeValidFrames)): Sets the additional FCoE shared stats.
+        - AutomaticallyRefreshNGPFStatistics (bool): Auto-refresh enable/disable for NGPF on-demand views.
         - CsvFilePath (str): Sets the CSV file path.
         - CsvLogPollIntervalMultiplier (number): Used to specify the time interval between log polling events.
         - DataStorePollingIntervalMultiplier (number): The data store polling interval value is the result of the data store polling interval multiplier value multiplied by the polling interval value set for the test.
@@ -451,6 +473,7 @@ class Statistics(Base):
         self,
         AdditionalFcoeStat1=None,
         AdditionalFcoeStat2=None,
+        AutomaticallyRefreshNGPFStatistics=None,
         CsvFilePath=None,
         CsvLogPollIntervalMultiplier=None,
         DataStorePollingIntervalMultiplier=None,
@@ -464,7 +487,7 @@ class Statistics(Base):
         TimestampPrecision=None,
         UgsTcpPort=None,
     ):
-        # type: (str, str, str, int, int, bool, bool, bool, bool, int, int, str, int, int) -> Statistics
+        # type: (str, str, bool, str, int, int, bool, bool, bool, bool, int, int, str, int, int) -> Statistics
         """Finds and retrieves statistics resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve statistics resources from the server.
@@ -475,6 +498,7 @@ class Statistics(Base):
         ----
         - AdditionalFcoeStat1 (str(fcoeInvalidDelimiter | fcoeInvalidFrames | fcoeInvalidSize | fcoeNormalSizeBadFcCRC | fcoeNormalSizeGoodFcCRC | fcoeUndersizeBadFcCRC | fcoeUndersizeGoodFcCRC | fcoeValidFrames)): Signifies additional FCOE stat 1
         - AdditionalFcoeStat2 (str(fcoeInvalidDelimiter | fcoeInvalidFrames | fcoeInvalidSize | fcoeNormalSizeBadFcCRC | fcoeNormalSizeGoodFcCRC | fcoeUndersizeBadFcCRC | fcoeUndersizeGoodFcCRC | fcoeValidFrames)): Sets the additional FCoE shared stats.
+        - AutomaticallyRefreshNGPFStatistics (bool): Auto-refresh enable/disable for NGPF on-demand views.
         - CsvFilePath (str): Sets the CSV file path.
         - CsvLogPollIntervalMultiplier (number): Used to specify the time interval between log polling events.
         - DataStorePollingIntervalMultiplier (number): The data store polling interval value is the result of the data store polling interval multiplier value multiplied by the polling interval value set for the test.

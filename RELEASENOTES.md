@@ -1,4 +1,8 @@
 # Release Notes
+### January 2024
+* 1.1.12
+  * support ixnetwork version 10.00.2312.4 (10.00 EA)
+  * fixed an issue with find() on a restpy node with href
 ### November 2023
 * 1.1.11
   * support ixnetwork version 9.30.2309.46 (9.30 Update-3)

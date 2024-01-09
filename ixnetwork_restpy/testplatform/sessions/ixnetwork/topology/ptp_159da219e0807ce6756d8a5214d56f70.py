@@ -76,6 +76,7 @@ class Ptp(Base):
         "DelayRespDropRate": "delayRespDropRate",
         "DelayRespReceiptTimeout": "delayRespReceiptTimeout",
         "DelayRespResidenceTime": "delayRespResidenceTime",
+        "DelayResponse1588Timeout": "delayResponse1588Timeout",
         "DelayResponseDelay": "delayResponseDelay",
         "DelayResponseDelayInsertionRate": "delayResponseDelayInsertionRate",
         "DescriptiveName": "descriptiveName",
@@ -84,10 +85,12 @@ class Ptp(Base):
         "DropSignalReqAnnounce": "dropSignalReqAnnounce",
         "DropSignalReqDelayResp": "dropSignalReqDelayResp",
         "DropSignalReqSync": "dropSignalReqSync",
+        "EmulateNwtt": "emulateNwtt",
         "EnableATOITlv": "enableATOITlv",
         "EnableCmlds": "enableCmlds",
         "EnableMultipleSubnet": "enableMultipleSubnet",
         "EnableNegativeTesting": "enableNegativeTesting",
+        "EnableSib9": "enableSib9",
         "Errors": "errors",
         "FileLocation": "fileLocation",
         "FolderPath": "folderPath",
@@ -172,6 +175,10 @@ class Ptp(Base):
         "SendMulticastAnnounce": "sendMulticastAnnounce",
         "SessionInfo": "sessionInfo",
         "SessionStatus": "sessionStatus",
+        "SetUserDefinedUtcOffset": "setUserDefinedUtcOffset",
+        "Sib9DstIp": "sib9DstIp",
+        "Sib9DstPort": "sib9DstPort",
+        "Sib9SrcPort": "sib9SrcPort",
         "SignalInterval": "signalInterval",
         "SignalUnicastHandling": "signalUnicastHandling",
         "SignallingDropRate": "signallingDropRate",
@@ -203,6 +210,7 @@ class Ptp(Base):
         "TimeSource": "timeSource",
         "TimestampOffset": "timestampOffset",
         "TotalTimeInaccuracy": "totalTimeInaccuracy",
+        "TsiOui": "tsiOui",
         "TxCalibration": "txCalibration",
         "TxTwoStepCalibration": "txTwoStepCalibration",
         "UpdateTime": "updateTime",
@@ -826,6 +834,20 @@ class Ptp(Base):
         )
 
     @property
+    def DelayResponse1588Timeout(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): It is the number of (p)delay_Req messages for which a valid response is not received, above which the PTP session will go down. This option is valid for 1588 profile only. The Value should be between 1 and 255.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["DelayResponse1588Timeout"])
+        )
+
+    @property
     def DelayResponseDelay(self):
         # type: () -> 'Multivalue'
         """
@@ -931,6 +953,18 @@ class Ptp(Base):
         )
 
     @property
+    def EmulateNwtt(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enable NWTT Emulation to send TSi in Sync and discard PDelay messages. This will use software timestamp
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EmulateNwtt"]))
+
+    @property
     def EnableATOITlv(self):
         # type: () -> bool
         """
@@ -989,6 +1023,18 @@ class Ptp(Base):
     def EnableNegativeTesting(self, value):
         # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP["EnableNegativeTesting"], value)
+
+    @property
+    def EnableSib9(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Sib9 message transmission.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EnableSib9"]))
 
     @property
     def Errors(self):
@@ -2110,6 +2156,56 @@ class Ptp(Base):
         return self._get_attribute(self._SDM_ATT_MAP["SessionStatus"])
 
     @property
+    def SetUserDefinedUtcOffset(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): If selected, Current UTC Offset is advertised when Announce Current UTC Offset Valid is enabled. If not, the announce message is advertised with metronome provided UTC offset.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SetUserDefinedUtcOffset"])
+        )
+
+    @property
+    def Sib9DstIp(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Destination IP of SIB9 Messages.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Sib9DstIp"]))
+
+    @property
+    def Sib9DstPort(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): UDP Destination Port of SIB9 messages.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Sib9DstPort"]))
+
+    @property
+    def Sib9SrcPort(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): UDP Source Port of SIB9 messages.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Sib9SrcPort"]))
+
+    @property
     def SignalInterval(self):
         # type: () -> 'Multivalue'
         """
@@ -2523,6 +2619,18 @@ class Ptp(Base):
         )
 
     @property
+    def TsiOui(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This field indicates the value of the Organizational Unique Identifier (OUI) assigned to 3GPP by the IEEE, coded in binary over 3 octets.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["TsiOui"]))
+
+    @property
     def TxCalibration(self):
         # type: () -> 'Multivalue'
         """
@@ -2807,6 +2915,27 @@ class Ptp(Base):
             payload[item[0]] = item[1]
         return self._execute("abort", payload=payload, response_object=None)
 
+    def AddDeleteTags(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the addDeleteTags operation on the server.
+
+        addDeleteTags(Arg2=bool, async_operation=bool)
+        ----------------------------------------------
+        - Arg2 (bool):
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("addDeleteTags", payload=payload, response_object=None)
+
     def GPtpSendSignaling(self, *args, **kwargs):
         """Executes the gPtpSendSignaling operation on the server.
 
@@ -3087,6 +3216,7 @@ class Ptp(Base):
         DelayRespDropRate=None,
         DelayRespReceiptTimeout=None,
         DelayRespResidenceTime=None,
+        DelayResponse1588Timeout=None,
         DelayResponseDelay=None,
         DelayResponseDelayInsertionRate=None,
         Domain=None,
@@ -3094,6 +3224,8 @@ class Ptp(Base):
         DropSignalReqAnnounce=None,
         DropSignalReqDelayResp=None,
         DropSignalReqSync=None,
+        EmulateNwtt=None,
+        EnableSib9=None,
         FileLocation=None,
         FolderPath=None,
         FollowUpBadCrcRate=None,
@@ -3168,6 +3300,10 @@ class Ptp(Base):
         ScaledLastGmFreqChange=None,
         SendInterfaceRateTlv=None,
         SendMulticastAnnounce=None,
+        SetUserDefinedUtcOffset=None,
+        Sib9DstIp=None,
+        Sib9DstPort=None,
+        Sib9SrcPort=None,
         SignalInterval=None,
         SignalUnicastHandling=None,
         SignallingDropRate=None,
@@ -3195,6 +3331,7 @@ class Ptp(Base):
         TimeSource=None,
         TimestampOffset=None,
         TotalTimeInaccuracy=None,
+        TsiOui=None,
         TxCalibration=None,
         TxTwoStepCalibration=None,
         UpdateTime=None,
@@ -3241,6 +3378,7 @@ class Ptp(Base):
         - DelayRespDropRate (str): optional regex of delayRespDropRate
         - DelayRespReceiptTimeout (str): optional regex of delayRespReceiptTimeout
         - DelayRespResidenceTime (str): optional regex of delayRespResidenceTime
+        - DelayResponse1588Timeout (str): optional regex of delayResponse1588Timeout
         - DelayResponseDelay (str): optional regex of delayResponseDelay
         - DelayResponseDelayInsertionRate (str): optional regex of delayResponseDelayInsertionRate
         - Domain (str): optional regex of domain
@@ -3248,6 +3386,8 @@ class Ptp(Base):
         - DropSignalReqAnnounce (str): optional regex of dropSignalReqAnnounce
         - DropSignalReqDelayResp (str): optional regex of dropSignalReqDelayResp
         - DropSignalReqSync (str): optional regex of dropSignalReqSync
+        - EmulateNwtt (str): optional regex of emulateNwtt
+        - EnableSib9 (str): optional regex of enableSib9
         - FileLocation (str): optional regex of fileLocation
         - FolderPath (str): optional regex of folderPath
         - FollowUpBadCrcRate (str): optional regex of followUpBadCrcRate
@@ -3322,6 +3462,10 @@ class Ptp(Base):
         - ScaledLastGmFreqChange (str): optional regex of scaledLastGmFreqChange
         - SendInterfaceRateTlv (str): optional regex of sendInterfaceRateTlv
         - SendMulticastAnnounce (str): optional regex of sendMulticastAnnounce
+        - SetUserDefinedUtcOffset (str): optional regex of setUserDefinedUtcOffset
+        - Sib9DstIp (str): optional regex of sib9DstIp
+        - Sib9DstPort (str): optional regex of sib9DstPort
+        - Sib9SrcPort (str): optional regex of sib9SrcPort
         - SignalInterval (str): optional regex of signalInterval
         - SignalUnicastHandling (str): optional regex of signalUnicastHandling
         - SignallingDropRate (str): optional regex of signallingDropRate
@@ -3349,6 +3493,7 @@ class Ptp(Base):
         - TimeSource (str): optional regex of timeSource
         - TimestampOffset (str): optional regex of timestampOffset
         - TotalTimeInaccuracy (str): optional regex of totalTimeInaccuracy
+        - TsiOui (str): optional regex of tsiOui
         - TxCalibration (str): optional regex of txCalibration
         - TxTwoStepCalibration (str): optional regex of txTwoStepCalibration
         - UpdateTime (str): optional regex of updateTime

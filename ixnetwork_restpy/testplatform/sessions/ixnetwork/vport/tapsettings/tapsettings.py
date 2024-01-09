@@ -61,6 +61,46 @@ class TapSettings(Base):
                 return self._properties.get("Parameter")
         return Parameter(self)
 
+    @property
+    def TransceiverDom(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.tapsettings.transceiverdom.transceiverdom.TransceiverDom): An instance of the TransceiverDom class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.tapsettings.transceiverdom.transceiverdom import (
+            TransceiverDom,
+        )
+
+        if len(self._object_properties) > 0:
+            if self._properties.get("TransceiverDom", None) is not None:
+                return self._properties.get("TransceiverDom")
+        return TransceiverDom(self)._select()
+
+    @property
+    def TransceiverOptions(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.tapsettings.transceiveroptions.transceiveroptions.TransceiverOptions): An instance of the TransceiverOptions class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.tapsettings.transceiveroptions.transceiveroptions import (
+            TransceiverOptions,
+        )
+
+        if len(self._object_properties) > 0:
+            if self._properties.get("TransceiverOptions", None) is not None:
+                return self._properties.get("TransceiverOptions")
+        return TransceiverOptions(self)._select()
+
     def add(self):
         """Adds a new tapSettings resource on the json, only valid with batch add utility
 

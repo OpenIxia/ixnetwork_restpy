@@ -155,13 +155,13 @@ class Greoipv6(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcpv6client_355391ba11ab3c1555c827e2e4ac3c4c.Dhcpv6client): An instance of the Dhcpv6client class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcpv6client_64480d87e9c578f0a0b7d3415d792d7e.Dhcpv6client): An instance of the Dhcpv6client class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcpv6client_355391ba11ab3c1555c827e2e4ac3c4c import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcpv6client_64480d87e9c578f0a0b7d3415d792d7e import (
             Dhcpv6client,
         )
 
@@ -980,6 +980,27 @@ class Greoipv6(Base):
         for item in kwargs.items():
             payload[item[0]] = item[1]
         return self._execute("abort", payload=payload, response_object=None)
+
+    def AddDeleteTags(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the addDeleteTags operation on the server.
+
+        addDeleteTags(Arg2=bool, async_operation=bool)
+        ----------------------------------------------
+        - Arg2 (bool):
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("addDeleteTags", payload=payload, response_object=None)
 
     def RestartDown(self, *args, **kwargs):
         # type: (*Any, **Any) -> None

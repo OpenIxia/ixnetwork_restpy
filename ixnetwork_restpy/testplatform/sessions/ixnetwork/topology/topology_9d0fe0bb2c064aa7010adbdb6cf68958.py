@@ -331,6 +331,27 @@ class Topology(Base):
             payload[item[0]] = item[1]
         return self._execute("abort", payload=payload, response_object=None)
 
+    def AddDeleteTags(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the addDeleteTags operation on the server.
+
+        addDeleteTags(Arg2=bool, async_operation=bool)
+        ----------------------------------------------
+        - Arg2 (bool):
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("addDeleteTags", payload=payload, response_object=None)
+
     def AdjustPortCount(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
         """Executes the adjustPortCount operation on the server.
@@ -353,6 +374,37 @@ class Topology(Base):
         for item in kwargs.items():
             payload[item[0]] = item[1]
         return self._execute("adjustPortCount", payload=payload, response_object=None)
+
+    def CopyPaste(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the copyPaste operation on the server.
+
+        Copy this Topology
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        copyPaste(async_operation=bool)list
+        -----------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str[None | /api/v1/sessions/1/ixnetwork/]): The newly copied node.
+
+        copyPaste(Arg2=enum, async_operation=bool)list
+        ----------------------------------------------
+        - Arg2 (str(regular | unique)): Type of Paste, regular or Unique. Unique generates unique Ethernet MAC address and Ipv4 address on Paste.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str[None | /api/v1/sessions/1/ixnetwork/]): The newly copied node.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("copyPaste", payload=payload, response_object=None)
 
     def FetchAndUpdateConfigFromCloud(self, *args, **kwargs):
         # type: (*Any, **Any) -> None

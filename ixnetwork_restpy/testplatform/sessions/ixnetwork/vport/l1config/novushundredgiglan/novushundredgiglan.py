@@ -202,7 +202,7 @@ class NovusHundredGigLan(Base):
     @property
     def EnablePPM(self):
         # type: () -> bool
-        """
+        """DEPRECATED
         Returns
         -------
         - bool: If true, enables the portsppm.
@@ -467,7 +467,7 @@ class NovusHundredGigLan(Base):
     @property
     def Ppm(self):
         # type: () -> int
-        """
+        """DEPRECATED
         Returns
         -------
         - number: Indicates the value that needs to be adjusted for the line transmit frequency.

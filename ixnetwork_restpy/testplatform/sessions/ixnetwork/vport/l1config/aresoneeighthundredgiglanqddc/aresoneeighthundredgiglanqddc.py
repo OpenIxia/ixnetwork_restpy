@@ -44,7 +44,10 @@ class AresOneEightHundredGigLanQddC(Base):
         "EnablePPM": "enablePPM",
         "EnabledFlowControl": "enabledFlowControl",
         "FlowControlDirectedAddress": "flowControlDirectedAddress",
+        "ForceKp4Fec": "forceKp4Fec",
+        "ForceRsFecInt": "forceRsFecInt",
         "GoodBlocksNumber": "goodBlocksNumber",
+        "IeeeL1Defaults": "ieeeL1Defaults",
         "LaserOn": "laserOn",
         "LinkTraining": "linkTraining",
         "LoopContinuously": "loopContinuously",
@@ -52,6 +55,7 @@ class AresOneEightHundredGigLanQddC(Base):
         "Loopback": "loopback",
         "LoopbackMode": "loopbackMode",
         "Ppm": "ppm",
+        "RequestRsFecInt": "requestRsFecInt",
         "SelectedSpeeds": "selectedSpeeds",
         "SendSetsMode": "sendSetsMode",
         "Speed": "speed",
@@ -59,6 +63,7 @@ class AresOneEightHundredGigLanQddC(Base):
         "TxIgnoreRxLinkFaults": "txIgnoreRxLinkFaults",
         "TypeAOrderedSets": "typeAOrderedSets",
         "TypeBOrderedSets": "typeBOrderedSets",
+        "UseANResults": "useANResults",
     }
     _SDM_ENUM_MAP = {
         "autoInstrumentation": ["endOfFrame", "floating"],
@@ -190,7 +195,7 @@ class AresOneEightHundredGigLanQddC(Base):
     @property
     def EnablePPM(self):
         # type: () -> bool
-        """
+        """DEPRECATED
         Returns
         -------
         - bool: If true, enables the portsppm.
@@ -233,6 +238,36 @@ class AresOneEightHundredGigLanQddC(Base):
         self._set_attribute(self._SDM_ATT_MAP["FlowControlDirectedAddress"], value)
 
     @property
+    def ForceKp4Fec(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool:
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["ForceKp4Fec"])
+
+    @ForceKp4Fec.setter
+    def ForceKp4Fec(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["ForceKp4Fec"], value)
+
+    @property
+    def ForceRsFecInt(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool:
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["ForceRsFecInt"])
+
+    @ForceRsFecInt.setter
+    def ForceRsFecInt(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["ForceRsFecInt"], value)
+
+    @property
     def GoodBlocksNumber(self):
         # type: () -> int
         """
@@ -246,6 +281,21 @@ class AresOneEightHundredGigLanQddC(Base):
     def GoodBlocksNumber(self, value):
         # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP["GoodBlocksNumber"], value)
+
+    @property
+    def IeeeL1Defaults(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool:
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["IeeeL1Defaults"])
+
+    @IeeeL1Defaults.setter
+    def IeeeL1Defaults(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["IeeeL1Defaults"], value)
 
     @property
     def LaserOn(self):
@@ -340,7 +390,7 @@ class AresOneEightHundredGigLanQddC(Base):
     @property
     def Ppm(self):
         # type: () -> int
-        """
+        """DEPRECATED
         Returns
         -------
         - number: Indicates the value that needs to be adjusted for the line transmit frequency.
@@ -351,6 +401,21 @@ class AresOneEightHundredGigLanQddC(Base):
     def Ppm(self, value):
         # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP["Ppm"], value)
+
+    @property
+    def RequestRsFecInt(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool:
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["RequestRsFecInt"])
+
+    @RequestRsFecInt.setter
+    def RequestRsFecInt(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["RequestRsFecInt"], value)
 
     @property
     def SelectedSpeeds(self):
@@ -457,6 +522,21 @@ class AresOneEightHundredGigLanQddC(Base):
         # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP["TypeBOrderedSets"], value)
 
+    @property
+    def UseANResults(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool:
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["UseANResults"])
+
+    @UseANResults.setter
+    def UseANResults(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["UseANResults"], value)
+
     def update(
         self,
         AutoInstrumentation=None,
@@ -465,7 +545,10 @@ class AresOneEightHundredGigLanQddC(Base):
         EnablePPM=None,
         EnabledFlowControl=None,
         FlowControlDirectedAddress=None,
+        ForceKp4Fec=None,
+        ForceRsFecInt=None,
         GoodBlocksNumber=None,
+        IeeeL1Defaults=None,
         LaserOn=None,
         LinkTraining=None,
         LoopContinuously=None,
@@ -473,6 +556,7 @@ class AresOneEightHundredGigLanQddC(Base):
         Loopback=None,
         LoopbackMode=None,
         Ppm=None,
+        RequestRsFecInt=None,
         SelectedSpeeds=None,
         SendSetsMode=None,
         Speed=None,
@@ -480,8 +564,9 @@ class AresOneEightHundredGigLanQddC(Base):
         TxIgnoreRxLinkFaults=None,
         TypeAOrderedSets=None,
         TypeBOrderedSets=None,
+        UseANResults=None,
     ):
-        # type: (str, int, bool, bool, bool, str, int, bool, bool, bool, int, bool, str, int, List[str], str, str, bool, bool, str, str) -> AresOneEightHundredGigLanQddC
+        # type: (str, int, bool, bool, bool, str, bool, bool, int, bool, bool, bool, bool, int, bool, str, int, bool, List[str], str, str, bool, bool, str, str, bool) -> AresOneEightHundredGigLanQddC
         """Updates aresOneEightHundredGigLanQddC resource on the server.
 
         Args
@@ -492,7 +577,10 @@ class AresOneEightHundredGigLanQddC(Base):
         - EnablePPM (bool): If true, enables the portsppm.
         - EnabledFlowControl (bool): If true, enables the port's MAC flow control mechanisms to listen for a directed address pause message.
         - FlowControlDirectedAddress (str): The 48-bit MAC address that the port listens on for a directed pause.
+        - ForceKp4Fec (bool):
+        - ForceRsFecInt (bool):
         - GoodBlocksNumber (number):
+        - IeeeL1Defaults (bool):
         - LaserOn (bool):
         - LinkTraining (bool):
         - LoopContinuously (bool):
@@ -500,6 +588,7 @@ class AresOneEightHundredGigLanQddC(Base):
         - Loopback (bool): If enabled, the port is set to internally loopback from transmit to receive.
         - LoopbackMode (str(none | internalLoopback)):
         - Ppm (number): Indicates the value that needs to be adjusted for the line transmit frequency.
+        - RequestRsFecInt (bool):
         - SelectedSpeeds (list(str[speed100g | speed200g | speed400g | speed800g])): Which speeds are selected for the current media and AN settings.
         - SendSetsMode (str(alternate | typeAOnly | typeBOnly)):
         - Speed (str(speed100g | speed200g | speed400g | speed800g)):
@@ -507,6 +596,7 @@ class AresOneEightHundredGigLanQddC(Base):
         - TxIgnoreRxLinkFaults (bool): If enabled, will allow transmission of packets even if the receive link is down.
         - TypeAOrderedSets (str(localFault | remoteFault)):
         - TypeBOrderedSets (str(localFault | remoteFault)):
+        - UseANResults (bool):
 
         Raises
         ------
@@ -525,7 +615,10 @@ class AresOneEightHundredGigLanQddC(Base):
         EnablePPM=None,
         EnabledFlowControl=None,
         FlowControlDirectedAddress=None,
+        ForceKp4Fec=None,
+        ForceRsFecInt=None,
         GoodBlocksNumber=None,
+        IeeeL1Defaults=None,
         LaserOn=None,
         LinkTraining=None,
         LoopContinuously=None,
@@ -533,6 +626,7 @@ class AresOneEightHundredGigLanQddC(Base):
         Loopback=None,
         LoopbackMode=None,
         Ppm=None,
+        RequestRsFecInt=None,
         SelectedSpeeds=None,
         SendSetsMode=None,
         Speed=None,
@@ -540,8 +634,9 @@ class AresOneEightHundredGigLanQddC(Base):
         TxIgnoreRxLinkFaults=None,
         TypeAOrderedSets=None,
         TypeBOrderedSets=None,
+        UseANResults=None,
     ):
-        # type: (str, List[str], int, bool, bool, bool, bool, bool, str, int, bool, bool, bool, int, bool, str, int, List[str], str, str, bool, bool, str, str) -> AresOneEightHundredGigLanQddC
+        # type: (str, List[str], int, bool, bool, bool, bool, bool, str, bool, bool, int, bool, bool, bool, bool, int, bool, str, int, bool, List[str], str, str, bool, bool, str, str, bool) -> AresOneEightHundredGigLanQddC
         """Finds and retrieves aresOneEightHundredGigLanQddC resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve aresOneEightHundredGigLanQddC resources from the server.
@@ -559,7 +654,10 @@ class AresOneEightHundredGigLanQddC(Base):
         - EnablePPM (bool): If true, enables the portsppm.
         - EnabledFlowControl (bool): If true, enables the port's MAC flow control mechanisms to listen for a directed address pause message.
         - FlowControlDirectedAddress (str): The 48-bit MAC address that the port listens on for a directed pause.
+        - ForceKp4Fec (bool):
+        - ForceRsFecInt (bool):
         - GoodBlocksNumber (number):
+        - IeeeL1Defaults (bool):
         - LaserOn (bool):
         - LinkTraining (bool):
         - LoopContinuously (bool):
@@ -567,6 +665,7 @@ class AresOneEightHundredGigLanQddC(Base):
         - Loopback (bool): If enabled, the port is set to internally loopback from transmit to receive.
         - LoopbackMode (str(none | internalLoopback)):
         - Ppm (number): Indicates the value that needs to be adjusted for the line transmit frequency.
+        - RequestRsFecInt (bool):
         - SelectedSpeeds (list(str[speed100g | speed200g | speed400g | speed800g])): Which speeds are selected for the current media and AN settings.
         - SendSetsMode (str(alternate | typeAOnly | typeBOnly)):
         - Speed (str(speed100g | speed200g | speed400g | speed800g)):
@@ -574,6 +673,7 @@ class AresOneEightHundredGigLanQddC(Base):
         - TxIgnoreRxLinkFaults (bool): If enabled, will allow transmission of packets even if the receive link is down.
         - TypeAOrderedSets (str(localFault | remoteFault)):
         - TypeBOrderedSets (str(localFault | remoteFault)):
+        - UseANResults (bool):
 
         Returns
         -------

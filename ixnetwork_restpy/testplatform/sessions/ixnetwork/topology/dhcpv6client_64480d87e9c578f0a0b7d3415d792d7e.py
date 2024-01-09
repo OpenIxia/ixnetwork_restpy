@@ -73,6 +73,7 @@ class Dhcpv6client(Base):
         "StateCounts": "stateCounts",
         "Status": "status",
         "UseCustomLinkLocalAddress": "useCustomLinkLocalAddress",
+        "UseDifferentTransactionId": "useDifferentTransactionId",
         "UseRapidCommit": "useRapidCommit",
     }
     _SDM_ENUM_MAP = {
@@ -589,6 +590,26 @@ class Dhcpv6client(Base):
             if self._properties.get("PimV6Interface", None) is not None:
                 return self._properties.get("PimV6Interface")
         return PimV6Interface(self)
+
+    @property
+    def Ptprobeinstancesrv6(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ptprobeinstancesrv6_79ffe5c7f81290d2749e262cddea5618.Ptprobeinstancesrv6): An instance of the Ptprobeinstancesrv6 class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ptprobeinstancesrv6_79ffe5c7f81290d2749e262cddea5618 import (
+            Ptprobeinstancesrv6,
+        )
+
+        if len(self._object_properties) > 0:
+            if self._properties.get("Ptprobeinstancesrv6", None) is not None:
+                return self._properties.get("Ptprobeinstancesrv6")
+        return Ptprobeinstancesrv6(self)
 
     @property
     def Tag(self):
@@ -1109,6 +1130,20 @@ class Dhcpv6client(Base):
         )
 
     @property
+    def UseDifferentTransactionId(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enabling this field will allow different Transaction Id (randomly generated) to be used in retransmitted packets. (Solicit, Request, Decline, Release)
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["UseDifferentTransactionId"])
+        )
+
+    @property
     def UseRapidCommit(self):
         # type: () -> 'Multivalue'
         """
@@ -1306,6 +1341,27 @@ class Dhcpv6client(Base):
         for item in kwargs.items():
             payload[item[0]] = item[1]
         return self._execute("abort", payload=payload, response_object=None)
+
+    def AddDeleteTags(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the addDeleteTags operation on the server.
+
+        addDeleteTags(Arg2=bool, async_operation=bool)
+        ----------------------------------------------
+        - Arg2 (bool):
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("addDeleteTags", payload=payload, response_object=None)
 
     def Rebind(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1535,6 +1591,7 @@ class Dhcpv6client(Base):
         Dhcp6UsePDGlobalAddress=None,
         RenewTimer=None,
         UseCustomLinkLocalAddress=None,
+        UseDifferentTransactionId=None,
         UseRapidCommit=None,
     ):
         """Base class infrastructure that gets a list of dhcpv6client device ids encapsulated by this object.
@@ -1560,6 +1617,7 @@ class Dhcpv6client(Base):
         - Dhcp6UsePDGlobalAddress (str): optional regex of dhcp6UsePDGlobalAddress
         - RenewTimer (str): optional regex of renewTimer
         - UseCustomLinkLocalAddress (str): optional regex of useCustomLinkLocalAddress
+        - UseDifferentTransactionId (str): optional regex of useDifferentTransactionId
         - UseRapidCommit (str): optional regex of useRapidCommit
 
         Returns

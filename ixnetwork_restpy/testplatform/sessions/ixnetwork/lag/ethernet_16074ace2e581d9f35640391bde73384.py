@@ -150,6 +150,46 @@ class Ethernet(Base):
         return Macsec(self)
 
     @property
+    def Microbfdv4(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.lag.microbfdv4_4aa9ebac618b5beec5e63d28011a2415.Microbfdv4): An instance of the Microbfdv4 class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.lag.microbfdv4_4aa9ebac618b5beec5e63d28011a2415 import (
+            Microbfdv4,
+        )
+
+        if len(self._object_properties) > 0:
+            if self._properties.get("Microbfdv4", None) is not None:
+                return self._properties.get("Microbfdv4")
+        return Microbfdv4(self)
+
+    @property
+    def Microbfdv6(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.lag.microbfdv6_e86be7acb660f720ee657e139f44950f.Microbfdv6): An instance of the Microbfdv6 class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.lag.microbfdv6_e86be7acb660f720ee657e139f44950f import (
+            Microbfdv6,
+        )
+
+        if len(self._object_properties) > 0:
+            if self._properties.get("Microbfdv6", None) is not None:
+                return self._properties.get("Microbfdv6")
+        return Microbfdv6(self)
+
+    @property
     def Mka(self):
         """
         Returns

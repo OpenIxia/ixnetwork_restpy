@@ -326,6 +326,7 @@ class TestConfig(Base):
         "TxDelay": "txDelay",
         "UnchangedInitial": "unchangedInitial",
         "UnchangedValueList": "unchangedValueList",
+        "UseAdjustedLatency": "useAdjustedLatency",
         "UsePercentOffsets": "usePercentOffsets",
         "UseTiLoss": "useTiLoss",
     }
@@ -5057,6 +5058,21 @@ class TestConfig(Base):
         self._set_attribute(self._SDM_ATT_MAP["UnchangedValueList"], value)
 
     @property
+    def UseAdjustedLatency(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool:
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["UseAdjustedLatency"])
+
+    @UseAdjustedLatency.setter
+    def UseAdjustedLatency(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["UseAdjustedLatency"], value)
+
+    @property
     def UsePercentOffsets(self):
         # type: () -> bool
         """
@@ -5382,6 +5398,7 @@ class TestConfig(Base):
         - TxDelay (number): The minimum delay between successive packets.
         - UnchangedInitial (str(False | True)): The first value of an unchanged parameter.
         - UnchangedValueList (str): A list of variable parameter values that are unchanged.
+        - UseAdjustedLatency (bool):
         - UsePercentOffsets (bool): If true, sets the offset value in percentage.
         - UseTiLoss (str): Use loss across Rx Ports
 
@@ -5691,6 +5708,7 @@ class TestConfig(Base):
         - TxDelay (number): The minimum delay between successive packets.
         - UnchangedInitial (str(False | True)): The first value of an unchanged parameter.
         - UnchangedValueList (str): A list of variable parameter values that are unchanged.
+        - UseAdjustedLatency (bool):
         - UsePercentOffsets (bool): If true, sets the offset value in percentage.
         - UseTiLoss (str): Use loss across Rx Ports
 

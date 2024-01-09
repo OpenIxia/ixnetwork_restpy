@@ -38,8 +38,11 @@ class Scriptgen(Base):
         "ConnectHostname": "connectHostname",
         "ConnectPort": "connectPort",
         "ConnectVersion": "connectVersion",
+        "IncludeAPIKey": "includeAPIKey",
         "IncludeConnect": "includeConnect",
+        "IncludeSessionId": "includeSessionId",
         "IncludeTestComposer": "includeTestComposer",
+        "IncludeUsernamePasswd": "includeUsernamePasswd",
         "Language": "language",
         "LinePerAttribute": "linePerAttribute",
         "OverwriteScriptFilename": "overwriteScriptFilename",
@@ -140,6 +143,21 @@ class Scriptgen(Base):
         self._set_attribute(self._SDM_ATT_MAP["ConnectVersion"], value)
 
     @property
+    def IncludeAPIKey(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: API-Key argument will be generated as part of HLT connect call
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["IncludeAPIKey"])
+
+    @IncludeAPIKey.setter
+    def IncludeAPIKey(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["IncludeAPIKey"], value)
+
+    @property
     def IncludeConnect(self):
         # type: () -> bool
         """
@@ -155,6 +173,21 @@ class Scriptgen(Base):
         self._set_attribute(self._SDM_ATT_MAP["IncludeConnect"], value)
 
     @property
+    def IncludeSessionId(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: Session-ID argument will be generated as part of HLT connect call
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["IncludeSessionId"])
+
+    @IncludeSessionId.setter
+    def IncludeSessionId(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["IncludeSessionId"], value)
+
+    @property
     def IncludeTestComposer(self):
         # type: () -> bool
         """
@@ -168,6 +201,21 @@ class Scriptgen(Base):
     def IncludeTestComposer(self, value):
         # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP["IncludeTestComposer"], value)
+
+    @property
+    def IncludeUsernamePasswd(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: Username-password argument will be generated as part of HLT connect call
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["IncludeUsernamePasswd"])
+
+    @IncludeUsernamePasswd.setter
+    def IncludeUsernamePasswd(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["IncludeUsernamePasswd"], value)
 
     @property
     def Language(self):
@@ -249,15 +297,18 @@ class Scriptgen(Base):
         ConnectHostname=None,
         ConnectPort=None,
         ConnectVersion=None,
+        IncludeAPIKey=None,
         IncludeConnect=None,
+        IncludeSessionId=None,
         IncludeTestComposer=None,
+        IncludeUsernamePasswd=None,
         Language=None,
         LinePerAttribute=None,
         OverwriteScriptFilename=None,
         ScriptFilename=None,
         SerializationType=None,
     ):
-        # type: (str, int, str, bool, bool, str, bool, bool, str, str) -> Scriptgen
+        # type: (str, int, str, bool, bool, bool, bool, bool, str, bool, bool, str, str) -> Scriptgen
         """Updates scriptgen resource on the server.
 
         Args
@@ -265,8 +316,11 @@ class Scriptgen(Base):
         - ConnectHostname (str): The hostname to be used in the connect command
         - ConnectPort (number): The port number to be used in the connect command
         - ConnectVersion (str): The version number to be used in the connect command
+        - IncludeAPIKey (bool): API-Key argument will be generated as part of HLT connect call
         - IncludeConnect (bool): Flag to include the connect command
+        - IncludeSessionId (bool): Session-ID argument will be generated as part of HLT connect call
         - IncludeTestComposer (bool): Flag to include test composer code
+        - IncludeUsernamePasswd (bool): Username-password argument will be generated as part of HLT connect call
         - Language (str(perl | python | ruby | tcl)): Select the target scriptgen language
         - LinePerAttribute (bool): If true the scriptgen output will show each attribute on a separate line
         - OverwriteScriptFilename (bool): If true the file indicated by the script filename will be overwritten
@@ -284,15 +338,18 @@ class Scriptgen(Base):
         ConnectHostname=None,
         ConnectPort=None,
         ConnectVersion=None,
+        IncludeAPIKey=None,
         IncludeConnect=None,
+        IncludeSessionId=None,
         IncludeTestComposer=None,
+        IncludeUsernamePasswd=None,
         Language=None,
         LinePerAttribute=None,
         OverwriteScriptFilename=None,
         ScriptFilename=None,
         SerializationType=None,
     ):
-        # type: (str, int, str, bool, bool, str, bool, bool, str, str) -> Scriptgen
+        # type: (str, int, str, bool, bool, bool, bool, bool, str, bool, bool, str, str) -> Scriptgen
         """Finds and retrieves scriptgen resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve scriptgen resources from the server.
@@ -304,8 +361,11 @@ class Scriptgen(Base):
         - ConnectHostname (str): The hostname to be used in the connect command
         - ConnectPort (number): The port number to be used in the connect command
         - ConnectVersion (str): The version number to be used in the connect command
+        - IncludeAPIKey (bool): API-Key argument will be generated as part of HLT connect call
         - IncludeConnect (bool): Flag to include the connect command
+        - IncludeSessionId (bool): Session-ID argument will be generated as part of HLT connect call
         - IncludeTestComposer (bool): Flag to include test composer code
+        - IncludeUsernamePasswd (bool): Username-password argument will be generated as part of HLT connect call
         - Language (str(perl | python | ruby | tcl)): Select the target scriptgen language
         - LinePerAttribute (bool): If true the scriptgen output will show each attribute on a separate line
         - OverwriteScriptFilename (bool): If true the file indicated by the script filename will be overwritten

@@ -36,6 +36,7 @@ class Preferences(Base):
     _SDM_NAME = "preferences"
     _SDM_ATT_MAP = {
         "AllowProtocolSessionStateLog": "allowProtocolSessionStateLog",
+        "AutoCleanLogs": "autoCleanLogs",
         "AutoSaveIntervalMin": "autoSaveIntervalMin",
         "AutoSaveLocation": "autoSaveLocation",
         "ClientTraceLevel": "clientTraceLevel",
@@ -139,6 +140,21 @@ class Preferences(Base):
     def AllowProtocolSessionStateLog(self, value):
         # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP["AllowProtocolSessionStateLog"], value)
+
+    @property
+    def AutoCleanLogs(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: If true, this will fire auto log deletion everyday, bound by other properties such as client/chassis days etc under /globals/diagnostics/cleanup
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["AutoCleanLogs"])
+
+    @AutoCleanLogs.setter
+    def AutoCleanLogs(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["AutoCleanLogs"], value)
 
     @property
     def AutoSaveIntervalMin(self):
@@ -652,6 +668,7 @@ class Preferences(Base):
     def update(
         self,
         AllowProtocolSessionStateLog=None,
+        AutoCleanLogs=None,
         AutoSaveIntervalMin=None,
         AutoSaveLocation=None,
         ClientTraceLevel=None,
@@ -686,12 +703,13 @@ class Preferences(Base):
         SyslogPort=None,
         TransmitMode=None,
     ):
-        # type: (bool, int, str, str, str, bool, int, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, int, int, str, bool, bool, bool, bool, str, List[str], str, str, bool, bool, bool, str, int, str) -> Preferences
+        # type: (bool, bool, int, str, str, str, bool, int, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, int, int, str, bool, bool, bool, bool, str, List[str], str, str, bool, bool, bool, str, int, str) -> Preferences
         """Updates preferences resource on the server.
 
         Args
         ----
         - AllowProtocolSessionStateLog (bool): Enables logging each protocol session state change. This option is very heavy for performance.
+        - AutoCleanLogs (bool): If true, this will fire auto log deletion everyday, bound by other properties such as client/chassis days etc under /globals/diagnostics/cleanup
         - AutoSaveIntervalMin (number): Set the interval time in minutes in which the configuration will be saved automatically
         - AutoSaveLocation (str): Set the location where the configuration will be saved automatically
         - ClientTraceLevel (str(debug | error | fatal | info | warn)): Set the IxNetwork Client side Log/Trace level
@@ -735,6 +753,7 @@ class Preferences(Base):
     def find(
         self,
         AllowProtocolSessionStateLog=None,
+        AutoCleanLogs=None,
         AutoSaveIntervalMin=None,
         AutoSaveLocation=None,
         ClientTraceLevel=None,
@@ -770,7 +789,7 @@ class Preferences(Base):
         SyslogPort=None,
         TransmitMode=None,
     ):
-        # type: (bool, int, str, str, str, bool, int, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, int, int, str, bool, bool, bool, bool, str, List[str], List[str], str, str, bool, bool, bool, str, int, str) -> Preferences
+        # type: (bool, bool, int, str, str, str, bool, int, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, int, int, str, bool, bool, bool, bool, str, List[str], List[str], str, str, bool, bool, bool, str, int, str) -> Preferences
         """Finds and retrieves preferences resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve preferences resources from the server.
@@ -780,6 +799,7 @@ class Preferences(Base):
         Args
         ----
         - AllowProtocolSessionStateLog (bool): Enables logging each protocol session state change. This option is very heavy for performance.
+        - AutoCleanLogs (bool): If true, this will fire auto log deletion everyday, bound by other properties such as client/chassis days etc under /globals/diagnostics/cleanup
         - AutoSaveIntervalMin (number): Set the interval time in minutes in which the configuration will be saved automatically
         - AutoSaveLocation (str): Set the location where the configuration will be saved automatically
         - ClientTraceLevel (str(debug | error | fatal | info | warn)): Set the IxNetwork Client side Log/Trace level

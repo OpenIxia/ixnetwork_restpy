@@ -1381,6 +1381,26 @@ class Topology(Base):
         return Ptp(self)._select()
 
     @property
+    def Ptprobeinstancesrv6(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ptprobeinstancesrv6.ptprobeinstancesrv6_42465f189e48f32cc2859230c2df9e11.Ptprobeinstancesrv6): An instance of the Ptprobeinstancesrv6 class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ptprobeinstancesrv6.ptprobeinstancesrv6_42465f189e48f32cc2859230c2df9e11 import (
+            Ptprobeinstancesrv6,
+        )
+
+        if len(self._object_properties) > 0:
+            if self._properties.get("Ptprobeinstancesrv6", None) is not None:
+                return self._properties.get("Ptprobeinstancesrv6")
+        return Ptprobeinstancesrv6(self)._select()
+
+    @property
     def RsvpteIf(self):
         """
         Returns

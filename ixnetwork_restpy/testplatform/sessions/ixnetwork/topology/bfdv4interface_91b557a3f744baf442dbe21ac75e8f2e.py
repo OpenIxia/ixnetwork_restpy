@@ -645,6 +645,27 @@ class Bfdv4Interface(Base):
             payload[item[0]] = item[1]
         return self._execute("abort", payload=payload, response_object=None)
 
+    def AddDeleteTags(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the addDeleteTags operation on the server.
+
+        addDeleteTags(Arg2=bool, async_operation=bool)
+        ----------------------------------------------
+        - Arg2 (bool):
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("addDeleteTags", payload=payload, response_object=None)
+
     def ClearLearnedInfo(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
         """Executes the clearLearnedInfo operation on the server.
@@ -696,13 +717,13 @@ class Bfdv4Interface(Base):
         disableDemandMode(Arg2=list, Arg3=enum, async_operation=bool)list
         -----------------------------------------------------------------
         - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Arg3 (str(ospf | ospfv3 | bgp | ldp | rsvp | isis | pim | bfd)): Session used by Protocol
+        - Arg3 (str(ospf | ospfv3 | bgp | ldp | rsvp | isis | pim | bfd | lacp)): Session used by Protocol
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns list(str): ID to associate each async action invocation
 
         disableDemandMode(Arg2=enum, async_operation=bool)list
         ------------------------------------------------------
-        - Arg2 (str(ospf | ospfv3 | bgp | ldp | rsvp | isis | pim | bfd)): Session used by Protocol
+        - Arg2 (str(ospf | ospfv3 | bgp | ldp | rsvp | isis | pim | bfd | lacp)): Session used by Protocol
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns list(str): ID to associate each async action invocation
 
@@ -729,13 +750,13 @@ class Bfdv4Interface(Base):
         enableDemandMode(Arg2=list, Arg3=enum, async_operation=bool)list
         ----------------------------------------------------------------
         - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Arg3 (str(ospf | ospfv3 | bgp | ldp | rsvp | isis | pim | bfd)): Session used by Protocol
+        - Arg3 (str(ospf | ospfv3 | bgp | ldp | rsvp | isis | pim | bfd | lacp)): Session used by Protocol
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns list(str): ID to associate each async action invocation
 
         enableDemandMode(Arg2=enum, async_operation=bool)list
         -----------------------------------------------------
-        - Arg2 (str(ospf | ospfv3 | bgp | ldp | rsvp | isis | pim | bfd)): Session used by Protocol
+        - Arg2 (str(ospf | ospfv3 | bgp | ldp | rsvp | isis | pim | bfd | lacp)): Session used by Protocol
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns list(str): ID to associate each async action invocation
 
@@ -802,13 +823,13 @@ class Bfdv4Interface(Base):
         initiatePoll(Arg2=list, Arg3=enum, async_operation=bool)list
         ------------------------------------------------------------
         - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Arg3 (str(ospf | ospfv3 | bgp | ldp | rsvp | isis | pim | bfd)): Session used by Protocol
+        - Arg3 (str(ospf | ospfv3 | bgp | ldp | rsvp | isis | pim | bfd | lacp)): Session used by Protocol
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns list(str): ID to associate each async action invocation
 
         initiatePoll(Arg2=enum, async_operation=bool)list
         -------------------------------------------------
-        - Arg2 (str(ospf | ospfv3 | bgp | ldp | rsvp | isis | pim | bfd)): Session used by Protocol
+        - Arg2 (str(ospf | ospfv3 | bgp | ldp | rsvp | isis | pim | bfd | lacp)): Session used by Protocol
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns list(str): ID to associate each async action invocation
 
@@ -869,13 +890,13 @@ class Bfdv4Interface(Base):
         resumePDU(Arg2=list, Arg3=enum, async_operation=bool)list
         ---------------------------------------------------------
         - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Arg3 (str(ospf | ospfv3 | bgp | ldp | rsvp | isis | pim | bfd)): Session used by Protocol
+        - Arg3 (str(ospf | ospfv3 | bgp | ldp | rsvp | isis | pim | bfd | lacp)): Session used by Protocol
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns list(str): ID to associate each async action invocation
 
         resumePDU(Arg2=enum, async_operation=bool)list
         ----------------------------------------------
-        - Arg2 (str(ospf | ospfv3 | bgp | ldp | rsvp | isis | pim | bfd)): Session used by Protocol
+        - Arg2 (str(ospf | ospfv3 | bgp | ldp | rsvp | isis | pim | bfd | lacp)): Session used by Protocol
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns list(str): ID to associate each async action invocation
 
@@ -902,13 +923,13 @@ class Bfdv4Interface(Base):
         setAdminDown(Arg2=list, Arg3=enum, async_operation=bool)list
         ------------------------------------------------------------
         - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Arg3 (str(ospf | ospfv3 | bgp | ldp | rsvp | isis | pim | bfd)): Session used by Protocol
+        - Arg3 (str(ospf | ospfv3 | bgp | ldp | rsvp | isis | pim | bfd | lacp)): Session used by Protocol
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns list(str): ID to associate each async action invocation
 
         setAdminDown(Arg2=enum, async_operation=bool)list
         -------------------------------------------------
-        - Arg2 (str(ospf | ospfv3 | bgp | ldp | rsvp | isis | pim | bfd)): Session used by Protocol
+        - Arg2 (str(ospf | ospfv3 | bgp | ldp | rsvp | isis | pim | bfd | lacp)): Session used by Protocol
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns list(str): ID to associate each async action invocation
 
@@ -935,13 +956,13 @@ class Bfdv4Interface(Base):
         setAdminUp(Arg2=list, Arg3=enum, async_operation=bool)list
         ----------------------------------------------------------
         - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Arg3 (str(ospf | ospfv3 | bgp | ldp | rsvp | isis | pim | bfd)): Session used by Protocol
+        - Arg3 (str(ospf | ospfv3 | bgp | ldp | rsvp | isis | pim | bfd | lacp)): Session used by Protocol
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns list(str): ID to associate each async action invocation
 
         setAdminUp(Arg2=enum, async_operation=bool)list
         -----------------------------------------------
-        - Arg2 (str(ospf | ospfv3 | bgp | ldp | rsvp | isis | pim | bfd)): Session used by Protocol
+        - Arg2 (str(ospf | ospfv3 | bgp | ldp | rsvp | isis | pim | bfd | lacp)): Session used by Protocol
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns list(str): ID to associate each async action invocation
 
@@ -968,14 +989,14 @@ class Bfdv4Interface(Base):
         setDiagnosticState(Arg2=list, Arg3=enum, Arg4=enum, async_operation=bool)list
         -----------------------------------------------------------------------------
         - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Arg3 (str(ospf | ospfv3 | bgp | ldp | rsvp | isis | pim | bfd)): Session used by Protocol
+        - Arg3 (str(ospf | ospfv3 | bgp | ldp | rsvp | isis | pim | bfd | lacp)): Session used by Protocol
         - Arg4 (str(controlDetectionTimeExpired | echoFunctionFailed | neighbourSignaledSessionDown | forwardingPlaneReset | pathDown | concatenatedPathDown | administrativelyDown | reverseConcatenatedPathDown | reserved)): Diagnostic Code
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns list(str): ID to associate each async action invocation
 
         setDiagnosticState(Arg2=enum, Arg3=enum, async_operation=bool)list
         ------------------------------------------------------------------
-        - Arg2 (str(ospf | ospfv3 | bgp | ldp | rsvp | isis | pim | bfd)): Session used by Protocol
+        - Arg2 (str(ospf | ospfv3 | bgp | ldp | rsvp | isis | pim | bfd | lacp)): Session used by Protocol
         - Arg3 (str(controlDetectionTimeExpired | echoFunctionFailed | neighbourSignaledSessionDown | forwardingPlaneReset | pathDown | concatenatedPathDown | administrativelyDown | reverseConcatenatedPathDown | reserved)): Diagnostic Code
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns list(str): ID to associate each async action invocation
@@ -1073,13 +1094,13 @@ class Bfdv4Interface(Base):
         stopPDU(Arg2=list, Arg3=enum, async_operation=bool)list
         -------------------------------------------------------
         - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - Arg3 (str(ospf | ospfv3 | bgp | ldp | rsvp | isis | pim | bfd)): Session used by Protocol
+        - Arg3 (str(ospf | ospfv3 | bgp | ldp | rsvp | isis | pim | bfd | lacp)): Session used by Protocol
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns list(str): ID to associate each async action invocation
 
         stopPDU(Arg2=enum, async_operation=bool)list
         --------------------------------------------
-        - Arg2 (str(ospf | ospfv3 | bgp | ldp | rsvp | isis | pim | bfd)): Session used by Protocol
+        - Arg2 (str(ospf | ospfv3 | bgp | ldp | rsvp | isis | pim | bfd | lacp)): Session used by Protocol
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns list(str): ID to associate each async action invocation
 

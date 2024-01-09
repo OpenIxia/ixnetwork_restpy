@@ -39,6 +39,15 @@ class ReportGenerator(Base):
         "DutName": "dutName",
         "DutSerialNo": "dutSerialNo",
         "DutSwVersion": "dutSwVersion",
+        "IncludeCustomViews": "includeCustomViews",
+        "IncludePortProtocolSummary": "includePortProtocolSummary",
+        "IncludeProtocolStats": "includeProtocolStats",
+        "IncludeProtocolSummary": "includeProtocolSummary",
+        "IncludeTrafficBestFlows": "includeTrafficBestFlows",
+        "IncludeTrafficFlowStats": "includeTrafficFlowStats",
+        "IncludeTrafficItemStats": "includeTrafficItemStats",
+        "IncludeTrafficL23Summary": "includeTrafficL23Summary",
+        "IncludeTrafficWorstFlows": "includeTrafficWorstFlows",
         "IxNetworkVersion": "ixNetworkVersion",
         "ReportType": "reportType",
         "TestCategory": "testCategory",
@@ -113,6 +122,141 @@ class ReportGenerator(Base):
     def DutSwVersion(self, value):
         # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP["DutSwVersion"], value)
+
+    @property
+    def IncludeCustomViews(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool:
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["IncludeCustomViews"])
+
+    @IncludeCustomViews.setter
+    def IncludeCustomViews(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["IncludeCustomViews"], value)
+
+    @property
+    def IncludePortProtocolSummary(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool:
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["IncludePortProtocolSummary"])
+
+    @IncludePortProtocolSummary.setter
+    def IncludePortProtocolSummary(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["IncludePortProtocolSummary"], value)
+
+    @property
+    def IncludeProtocolStats(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool:
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["IncludeProtocolStats"])
+
+    @IncludeProtocolStats.setter
+    def IncludeProtocolStats(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["IncludeProtocolStats"], value)
+
+    @property
+    def IncludeProtocolSummary(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool:
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["IncludeProtocolSummary"])
+
+    @IncludeProtocolSummary.setter
+    def IncludeProtocolSummary(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["IncludeProtocolSummary"], value)
+
+    @property
+    def IncludeTrafficBestFlows(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool:
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["IncludeTrafficBestFlows"])
+
+    @IncludeTrafficBestFlows.setter
+    def IncludeTrafficBestFlows(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["IncludeTrafficBestFlows"], value)
+
+    @property
+    def IncludeTrafficFlowStats(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool:
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["IncludeTrafficFlowStats"])
+
+    @IncludeTrafficFlowStats.setter
+    def IncludeTrafficFlowStats(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["IncludeTrafficFlowStats"], value)
+
+    @property
+    def IncludeTrafficItemStats(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool:
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["IncludeTrafficItemStats"])
+
+    @IncludeTrafficItemStats.setter
+    def IncludeTrafficItemStats(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["IncludeTrafficItemStats"], value)
+
+    @property
+    def IncludeTrafficL23Summary(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool:
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["IncludeTrafficL23Summary"])
+
+    @IncludeTrafficL23Summary.setter
+    def IncludeTrafficL23Summary(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["IncludeTrafficL23Summary"], value)
+
+    @property
+    def IncludeTrafficWorstFlows(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool:
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["IncludeTrafficWorstFlows"])
+
+    @IncludeTrafficWorstFlows.setter
+    def IncludeTrafficWorstFlows(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["IncludeTrafficWorstFlows"], value)
 
     @property
     def IxNetworkVersion(self):
@@ -220,6 +364,15 @@ class ReportGenerator(Base):
         DutName=None,
         DutSerialNo=None,
         DutSwVersion=None,
+        IncludeCustomViews=None,
+        IncludePortProtocolSummary=None,
+        IncludeProtocolStats=None,
+        IncludeProtocolSummary=None,
+        IncludeTrafficBestFlows=None,
+        IncludeTrafficFlowStats=None,
+        IncludeTrafficItemStats=None,
+        IncludeTrafficL23Summary=None,
+        IncludeTrafficWorstFlows=None,
         ReportType=None,
         TestCategory=None,
         TestHighlights=None,
@@ -227,7 +380,7 @@ class ReportGenerator(Base):
         TestObjectives=None,
         TesterName=None,
     ):
-        # type: (str, str, str, str, str, str, str, str, str, str) -> ReportGenerator
+        # type: (str, str, str, str, bool, bool, bool, bool, bool, bool, bool, bool, bool, str, str, str, str, str, str) -> ReportGenerator
         """Updates reportGenerator resource on the server.
 
         Args
@@ -236,6 +389,15 @@ class ReportGenerator(Base):
         - DutName (str):
         - DutSerialNo (str):
         - DutSwVersion (str):
+        - IncludeCustomViews (bool):
+        - IncludePortProtocolSummary (bool):
+        - IncludeProtocolStats (bool):
+        - IncludeProtocolSummary (bool):
+        - IncludeTrafficBestFlows (bool):
+        - IncludeTrafficFlowStats (bool):
+        - IncludeTrafficItemStats (bool):
+        - IncludeTrafficL23Summary (bool):
+        - IncludeTrafficWorstFlows (bool):
         - ReportType (str(kNGPF | kNone | kTraffic | kTrafficAndNGPF)):
         - TestCategory (str):
         - TestHighlights (str):
@@ -255,6 +417,15 @@ class ReportGenerator(Base):
         DutName=None,
         DutSerialNo=None,
         DutSwVersion=None,
+        IncludeCustomViews=None,
+        IncludePortProtocolSummary=None,
+        IncludeProtocolStats=None,
+        IncludeProtocolSummary=None,
+        IncludeTrafficBestFlows=None,
+        IncludeTrafficFlowStats=None,
+        IncludeTrafficItemStats=None,
+        IncludeTrafficL23Summary=None,
+        IncludeTrafficWorstFlows=None,
         IxNetworkVersion=None,
         ReportType=None,
         TestCategory=None,
@@ -263,7 +434,7 @@ class ReportGenerator(Base):
         TestObjectives=None,
         TesterName=None,
     ):
-        # type: (str, str, str, str, str, str, str, str, str, str, str) -> ReportGenerator
+        # type: (str, str, str, str, bool, bool, bool, bool, bool, bool, bool, bool, bool, str, str, str, str, str, str, str) -> ReportGenerator
         """Finds and retrieves reportGenerator resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve reportGenerator resources from the server.
@@ -276,6 +447,15 @@ class ReportGenerator(Base):
         - DutName (str):
         - DutSerialNo (str):
         - DutSwVersion (str):
+        - IncludeCustomViews (bool):
+        - IncludePortProtocolSummary (bool):
+        - IncludeProtocolStats (bool):
+        - IncludeProtocolSummary (bool):
+        - IncludeTrafficBestFlows (bool):
+        - IncludeTrafficFlowStats (bool):
+        - IncludeTrafficItemStats (bool):
+        - IncludeTrafficL23Summary (bool):
+        - IncludeTrafficWorstFlows (bool):
         - IxNetworkVersion (str):
         - ReportType (str(kNGPF | kNone | kTraffic | kTrafficAndNGPF)):
         - TestCategory (str):

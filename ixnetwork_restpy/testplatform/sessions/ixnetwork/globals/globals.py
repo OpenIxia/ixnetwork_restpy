@@ -45,6 +45,7 @@ class Globals(Base):
         "ProductVersion": "productVersion",
         "ProtocolbuildNumber": "protocolbuildNumber",
         "RpfPort": "rpfPort",
+        "ServerTime": "serverTime",
         "SessionUpTime": "sessionUpTime",
         "Username": "username",
     }
@@ -433,6 +434,16 @@ class Globals(Base):
         return self._get_attribute(self._SDM_ATT_MAP["RpfPort"])
 
     @property
+    def ServerTime(self):
+        # type: () -> str
+        """
+        Returns
+        -------
+        - str: Current Time of the Server
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["ServerTime"])
+
+    @property
     def SessionUpTime(self):
         # type: () -> str
         """
@@ -464,6 +475,7 @@ class Globals(Base):
         ProductVersion=None,
         ProtocolbuildNumber=None,
         RpfPort=None,
+        ServerTime=None,
         SessionUpTime=None,
         Username=None,
     ):
@@ -485,6 +497,7 @@ class Globals(Base):
         - ProductVersion (str):
         - ProtocolbuildNumber (str): The build number of the protocol.
         - RpfPort (number):
+        - ServerTime (str): Current Time of the Server
         - SessionUpTime (str): Amount of time IxNetwork session is up
         - Username (str): The name of the user.
 

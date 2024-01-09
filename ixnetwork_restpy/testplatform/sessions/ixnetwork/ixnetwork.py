@@ -933,6 +933,32 @@ class Ixnetwork(Base):
             "fetchPropertyNameForDisplayName", payload=payload, response_object=None
         )
 
+    def FetchRgUserOwnershipControlMode(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
+        """Executes the fetchRgUserOwnershipControlMode operation on the server.
+
+        Used to get the current port resource group user ownership mode - userPerResourceGroup or userPerFrontPanel. Takes locations as input.
+
+        fetchRgUserOwnershipControlMode(Arg1=string, async_operation=bool)string
+        ------------------------------------------------------------------------
+        - Arg1 (str): Location port.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns str: Current resource group user ownership mode - userPerResourceGroup or userPerFrontPanel
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "fetchRgUserOwnershipControlMode", payload=payload, response_object=None
+        )
+
     def GenerateByteValues(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[int], None]
         """Executes the generateByteValues operation on the server.
@@ -1131,6 +1157,31 @@ class Ixnetwork(Base):
             payload[item[0]] = item[1]
         return self._execute(
             "getAvailableProtocolStats", payload=payload, response_object=None
+        )
+
+    def GetAvailableRpfLogPorts(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
+        """Executes the getAvailableRpfLogPorts operation on the server.
+
+        gets all Available ports available for RPF logs
+
+        getAvailableRpfLogPorts(async_operation=bool)string
+        ---------------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns str:
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getAvailableRpfLogPorts", payload=payload, response_object=None
         )
 
     def GetAvailableSlotLicense(self, *args, **kwargs):
@@ -1550,6 +1601,31 @@ class Ixnetwork(Base):
             "getPastApplicationInstances", payload=payload, response_object=None
         )
 
+    def GetPortRpfTraceProperties(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
+        """Executes the getPortRpfTraceProperties operation on the server.
+
+        gets all Available port and their rpf trace properties
+
+        getPortRpfTraceProperties(async_operation=bool)string
+        -----------------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns str:
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getPortRpfTraceProperties", payload=payload, response_object=None
+        )
+
     def GetPortsForProtocol(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
         """Executes the getPortsForProtocol operation on the server.
@@ -1574,6 +1650,29 @@ class Ixnetwork(Base):
             payload[item[0]] = item[1]
         return self._execute(
             "getPortsForProtocol", payload=payload, response_object=None
+        )
+
+    def GetProtocolAggregatedStatus(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
+        """Executes the getProtocolAggregatedStatus operation on the server.
+
+        getProtocolAggregatedStatus(async_operation=bool)string
+        -------------------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns str:
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getProtocolAggregatedStatus", payload=payload, response_object=None
         )
 
     def GetRbMemoryUsageInfo(self, *args, **kwargs):
@@ -1634,6 +1733,30 @@ class Ixnetwork(Base):
         return self._execute(
             "getRecommendedSettings", payload=payload, response_object=None
         )
+
+    def GetRpfLogForPort(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
+        """Executes the getRpfLogForPort operation on the server.
+
+        gets RPF logs for the mentioned port
+
+        getRpfLogForPort(Arg1=string, async_operation=bool)string
+        ---------------------------------------------------------
+        - Arg1 (str):
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns str:
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("getRpfLogForPort", payload=payload, response_object=None)
 
     def GetSlotLicenseInUse(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[int], None]
@@ -1728,6 +1851,30 @@ class Ixnetwork(Base):
         for item in kwargs.items():
             payload[item[0]] = item[1]
         return self._execute("getTopologyStatus", payload=payload, response_object=None)
+
+    def GetTxDeviationPpm(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[int, None]
+        """Executes the getTxDeviationPpm operation on the server.
+
+        Fetches tx deviation ppm value.
+
+        getTxDeviationPpm(Arg1=string, async_operation=bool)number
+        ----------------------------------------------------------
+        - Arg1 (str): Port location. E.g. : 100.101.101.1/1.1
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns number: Tx deviation ppm value.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("getTxDeviationPpm", payload=payload, response_object=None)
 
     def GetUnionPortsForProtocols(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -2438,6 +2585,31 @@ class Ixnetwork(Base):
             payload[item[0]] = item[1]
         return self._execute("setLoggingLevel", payload=payload, response_object=None)
 
+    def SetPortRpfTraceProperties(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the setPortRpfTraceProperties operation on the server.
+
+        sets all Available port and their rpf trace properties
+
+        setPortRpfTraceProperties(Arg1=string, async_operation=bool)
+        ------------------------------------------------------------
+        - Arg1 (str):
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "setPortRpfTraceProperties", payload=payload, response_object=None
+        )
+
     def SetPortTransmitDuration(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
         """Executes the setPortTransmitDuration operation on the server.
@@ -2509,6 +2681,30 @@ class Ixnetwork(Base):
         for item in kwargs.items():
             payload[item[0]] = item[1]
         return self._execute("setTapSettings", payload=payload, response_object=None)
+
+    def SetTxDeviationPpm(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the setTxDeviationPpm operation on the server.
+
+        Configures tx deviation ppm.
+
+        setTxDeviationPpm(Arg1=string, Arg2=number, async_operation=bool)
+        -----------------------------------------------------------------
+        - Arg1 (str): Port location. E.g. : 100.101.101.1/1.1
+        - Arg2 (number): Ppm value. E.g. : 10
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("setTxDeviationPpm", payload=payload, response_object=None)
 
     def StartAllProtocols(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -2693,6 +2889,33 @@ class Ixnetwork(Base):
             payload[item[0]] = item[1]
         return self._execute(
             "switchModeLocations", payload=payload, response_object=None
+        )
+
+    def SwitchRgUserOwnershipControlMode(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
+        """Executes the switchRgUserOwnershipControlMode operation on the server.
+
+        Switches the port resource group user ownership mode. Takes locations as input. This operation will clear ownership on all ports of the card.
+
+        switchRgUserOwnershipControlMode(Arg1=string, Arg2=string, async_operation=bool)string
+        --------------------------------------------------------------------------------------
+        - Arg1 (str): Location port.
+        - Arg2 (str): Ownership control mode - userPerResourceGroup or userPerFrontPanel.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns str: Warning messages.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "switchRgUserOwnershipControlMode", payload=payload, response_object=None
         )
 
     def SyncStatisticsStartTimeWithClientClock(self, *args, **kwargs):

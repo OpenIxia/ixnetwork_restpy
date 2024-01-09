@@ -444,6 +444,7 @@ class Connection(object):
                 0 : url.find("/", url.find("/sessions/") + len("/sessions/"))
             ]
             url = preamble + "/ixnetwork/globals/appErrors/error"
+            self._print_request("GET", url)
             error_response = self._session.request(
                 "GET",
                 url,
@@ -470,6 +471,7 @@ class Connection(object):
             pass
         # raise the appropriate error
         message = "\n".join(errors)
+        logging.getLogger(__name__).debug(message)
         if response.status_code == 400:
             raise BadRequestError(message, response.status_code)
         elif response.status_code == 401:

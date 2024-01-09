@@ -55,6 +55,7 @@ class DotOneX(Base):
         "HostName": "hostName",
         "HostPwd": "hostPwd",
         "IgnoreAuthEapolVer": "ignoreAuthEapolVer",
+        "InnerTunnel": "innerTunnel",
         "Multiplier": "multiplier",
         "Name": "name",
         "ParentEth": "parentEth",
@@ -154,13 +155,13 @@ class DotOneX(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcpv6client_355391ba11ab3c1555c827e2e4ac3c4c.Dhcpv6client): An instance of the Dhcpv6client class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcpv6client_64480d87e9c578f0a0b7d3415d792d7e.Dhcpv6client): An instance of the Dhcpv6client class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcpv6client_355391ba11ab3c1555c827e2e4ac3c4c import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcpv6client_64480d87e9c578f0a0b7d3415d792d7e import (
             Dhcpv6client,
         )
 
@@ -550,6 +551,46 @@ class DotOneX(Base):
         return Macsec(self)
 
     @property
+    def Microbfdv4(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.microbfdv4_141c58b1c08e07212b7c46d9ec8495c1.Microbfdv4): An instance of the Microbfdv4 class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.microbfdv4_141c58b1c08e07212b7c46d9ec8495c1 import (
+            Microbfdv4,
+        )
+
+        if len(self._object_properties) > 0:
+            if self._properties.get("Microbfdv4", None) is not None:
+                return self._properties.get("Microbfdv4")
+        return Microbfdv4(self)
+
+    @property
+    def Microbfdv6(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.microbfdv6_6b0c1a370d37aab2ddafd875d7778d93.Microbfdv6): An instance of the Microbfdv6 class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.microbfdv6_6b0c1a370d37aab2ddafd875d7778d93 import (
+            Microbfdv6,
+        )
+
+        if len(self._object_properties) > 0:
+            if self._properties.get("Microbfdv6", None) is not None:
+                return self._properties.get("Microbfdv6")
+        return Microbfdv6(self)
+
+    @property
     def Mka(self):
         """
         Returns
@@ -674,13 +715,13 @@ class DotOneX(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ptp_10b9c21d9c7cf77e86ec2d87b28de348.Ptp): An instance of the Ptp class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ptp_159da219e0807ce6756d8a5214d56f70.Ptp): An instance of the Ptp class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ptp_10b9c21d9c7cf77e86ec2d87b28de348 import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ptp_159da219e0807ce6756d8a5214d56f70 import (
             Ptp,
         )
 
@@ -966,6 +1007,18 @@ class DotOneX(Base):
         return Multivalue(
             self, self._get_attribute(self._SDM_ATT_MAP["IgnoreAuthEapolVer"])
         )
+
+    @property
+    def InnerTunnel(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Inner tunnel selection for EAP-TTLS. Supported choices being MSCHAPv2 and PAP.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["InnerTunnel"]))
 
     @property
     def Multiplier(self):
@@ -1355,6 +1408,27 @@ class DotOneX(Base):
             payload[item[0]] = item[1]
         return self._execute("abort", payload=payload, response_object=None)
 
+    def AddDeleteTags(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the addDeleteTags operation on the server.
+
+        addDeleteTags(Arg2=bool, async_operation=bool)
+        ----------------------------------------------
+        - Arg2 (bool):
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("addDeleteTags", payload=payload, response_object=None)
+
     def RestartDown(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
         """Executes the restartDown operation on the server.
@@ -1466,8 +1540,8 @@ class DotOneX(Base):
         uploadFile(Arg2=list, Arg3=number, Arg4=href, async_operation=bool)list
         -----------------------------------------------------------------------
         - Arg2 (list(number)): List of indices into the device group.
-        - Arg3 (number): Select files(s) to upload.
-        - Arg4 (obj(ixnetwork_restpy.files.Files)):
+        - Arg3 (number):
+        - Arg4 (obj(ixnetwork_restpy.files.Files)): Select files(s) to upload.
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns list(str): ID to associate each async action invocation
 
@@ -1500,6 +1574,7 @@ class DotOneX(Base):
         HostName=None,
         HostPwd=None,
         IgnoreAuthEapolVer=None,
+        InnerTunnel=None,
         PeerCert=None,
         PrivateKey=None,
         Protocol=None,
@@ -1532,6 +1607,7 @@ class DotOneX(Base):
         - HostName (str): optional regex of hostName
         - HostPwd (str): optional regex of hostPwd
         - IgnoreAuthEapolVer (str): optional regex of ignoreAuthEapolVer
+        - InnerTunnel (str): optional regex of innerTunnel
         - PeerCert (str): optional regex of peerCert
         - PrivateKey (str): optional regex of privateKey
         - Protocol (str): optional regex of protocol
