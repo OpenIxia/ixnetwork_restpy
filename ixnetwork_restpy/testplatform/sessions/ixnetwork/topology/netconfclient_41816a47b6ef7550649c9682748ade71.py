@@ -55,6 +55,7 @@ class NetconfClient(Base):
         "DecryptedCapture": "decryptedCapture",
         "DescriptiveName": "descriptiveName",
         "DoNotValidateServerResponse": "doNotValidateServerResponse",
+        "DownloadFilePath": "downloadFilePath",
         "EnablePassphrase": "enablePassphrase",
         "Errors": "errors",
         "FetchSchemaInfo": "fetchSchemaInfo",
@@ -79,6 +80,7 @@ class NetconfClient(Base):
         "StackedLayers": "stackedLayers",
         "StateCounts": "stateCounts",
         "Status": "status",
+        "UploadFilePath": "uploadFilePath",
         "UserName": "userName",
     }
     _SDM_ENUM_MAP = {
@@ -379,6 +381,16 @@ class NetconfClient(Base):
         return Multivalue(
             self, self._get_attribute(self._SDM_ATT_MAP["DoNotValidateServerResponse"])
         )
+
+    @property
+    def DownloadFilePath(self):
+        # type: () -> str
+        """
+        Returns
+        -------
+        - str: Download Path
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["DownloadFilePath"])
 
     @property
     def EnablePassphrase(self):
@@ -697,6 +709,16 @@ class NetconfClient(Base):
         return self._get_attribute(self._SDM_ATT_MAP["Status"])
 
     @property
+    def UploadFilePath(self):
+        # type: () -> str
+        """
+        Returns
+        -------
+        - str: Upload
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["UploadFilePath"])
+
+    @property
     def UserName(self):
         # type: () -> 'Multivalue'
         """
@@ -788,6 +810,7 @@ class NetconfClient(Base):
         ConnectedVia=None,
         Count=None,
         DescriptiveName=None,
+        DownloadFilePath=None,
         Errors=None,
         LogCleanUpOption=None,
         LogFileAge=None,
@@ -799,6 +822,7 @@ class NetconfClient(Base):
         StackedLayers=None,
         StateCounts=None,
         Status=None,
+        UploadFilePath=None,
     ):
         """Finds and retrieves netconfClient resources from the server.
 
@@ -811,6 +835,7 @@ class NetconfClient(Base):
         - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology])): List of layers this layer is used to connect with to the wire.
         - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
+        - DownloadFilePath (str): Download Path
         - Errors (list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork/],arg2:list[str]))): A list of errors that have occurred
         - LogCleanUpOption (str(notClean | clean)): Debug Log Clean Up
         - LogFileAge (number): This field determines how old logs to be deleted.
@@ -822,6 +847,7 @@ class NetconfClient(Base):
         - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology])): List of secondary (many to one) child layer protocols
         - StateCounts (dict(total:number,notStarted:number,down:number,up:number)): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
         - Status (str(configured | error | mixed | notStarted | started | starting | stopping)): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
+        - UploadFilePath (str): Upload
 
         Returns
         -------

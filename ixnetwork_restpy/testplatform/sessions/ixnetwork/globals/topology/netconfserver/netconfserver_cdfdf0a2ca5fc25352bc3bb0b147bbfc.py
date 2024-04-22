@@ -27,38 +27,65 @@ if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
 
-class BgpCommunitiesList(Base):
-    """Bgp Non VPN RR Communities
-    The BgpCommunitiesList class encapsulates a list of bgpCommunitiesList resources that are managed by the system.
-    A list of resources can be retrieved from the server using the BgpCommunitiesList.find() method.
+class NetconfServer(Base):
+    """Per Port Netconf Server configuration
+    The NetconfServer class encapsulates a required netconfServer resource which will be retrieved from the server every time the property is accessed.
     """
 
     __slots__ = ()
-    _SDM_NAME = "bgpCommunitiesList"
+    _SDM_NAME = "netconfServer"
     _SDM_ATT_MAP = {
-        "AsNumber": "asNumber",
         "Count": "count",
         "DescriptiveName": "descriptiveName",
-        "LastTwoOctets": "lastTwoOctets",
         "Name": "name",
-        "Type": "type",
+        "RowNames": "rowNames",
+        "YangArchive": "yangArchive",
+        "YangSourceDirectory": "yangSourceDirectory",
     }
     _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
-        super(BgpCommunitiesList, self).__init__(parent, list_op)
+        super(NetconfServer, self).__init__(parent, list_op)
 
     @property
-    def AsNumber(self):
-        # type: () -> 'Multivalue'
+    def StartRate(self):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): AS #
-        """
-        from ixnetwork_restpy.multivalue import Multivalue
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ethernet.startrate.startrate_2bc83a4fb9730935e8259bdb40af2dc0.StartRate): An instance of the StartRate class
 
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["AsNumber"]))
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ethernet.startrate.startrate_2bc83a4fb9730935e8259bdb40af2dc0 import (
+            StartRate,
+        )
+
+        if len(self._object_properties) > 0:
+            if self._properties.get("StartRate", None) is not None:
+                return self._properties.get("StartRate")
+        return StartRate(self)._select()
+
+    @property
+    def StopRate(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ethernet.stoprate.stoprate_4ea9a1b38960d2b21012777131469a04.StopRate): An instance of the StopRate class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ethernet.stoprate.stoprate_4ea9a1b38960d2b21012777131469a04 import (
+            StopRate,
+        )
+
+        if len(self._object_properties) > 0:
+            if self._properties.get("StopRate", None) is not None:
+                return self._properties.get("StopRate")
+        return StopRate(self)._select()
 
     @property
     def Count(self):
@@ -81,18 +108,6 @@ class BgpCommunitiesList(Base):
         return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
-    def LastTwoOctets(self):
-        # type: () -> 'Multivalue'
-        """
-        Returns
-        -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): Last Two Octets
-        """
-        from ixnetwork_restpy.multivalue import Multivalue
-
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["LastTwoOctets"]))
-
-    @property
     def Name(self):
         # type: () -> str
         """
@@ -108,20 +123,44 @@ class BgpCommunitiesList(Base):
         self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
-    def Type(self):
+    def RowNames(self):
+        # type: () -> List[str]
+        """
+        Returns
+        -------
+        - list(str): Name of rows
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["RowNames"])
+
+    @property
+    def YangArchive(self):
         # type: () -> 'Multivalue'
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): Type
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Archived file where YANG modules are present.
         """
         from ixnetwork_restpy.multivalue import Multivalue
 
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Type"]))
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["YangArchive"]))
+
+    @property
+    def YangSourceDirectory(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Location of Directory where YANG modules are present.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["YangSourceDirectory"])
+        )
 
     def update(self, Name=None):
-        # type: (str) -> BgpCommunitiesList
-        """Updates bgpCommunitiesList resource on the server.
+        # type: (str) -> NetconfServer
+        """Updates netconfServer resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
         The Multivalue class has documentation that details the possible values for those named parameters.
@@ -136,41 +175,24 @@ class BgpCommunitiesList(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, Name=None):
-        # type: (str) -> BgpCommunitiesList
-        """Adds a new bgpCommunitiesList resource on the json, only valid with batch add utility
+    def find(self, Count=None, DescriptiveName=None, Name=None, RowNames=None):
+        # type: (int, str, str, List[str]) -> NetconfServer
+        """Finds and retrieves netconfServer resources from the server.
 
-        Args
-        ----
-        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-
-        Returns
-        -------
-        - self: This instance with all currently retrieved bgpCommunitiesList resources using find and the newly added bgpCommunitiesList resources available through an iterator or index
-
-        Raises
-        ------
-        - Exception: if this function is not being used with config assistance
-        """
-        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
-
-    def find(self, Count=None, DescriptiveName=None, Name=None):
-        # type: (int, str, str) -> BgpCommunitiesList
-        """Finds and retrieves bgpCommunitiesList resources from the server.
-
-        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve bgpCommunitiesList resources from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve netconfServer resources from the server.
         To retrieve an exact match ensure the parameter value starts with ^ and ends with $
-        By default the find method takes no parameters and will retrieve all bgpCommunitiesList resources from the server.
+        By default the find method takes no parameters and will retrieve all netconfServer resources from the server.
 
         Args
         ----
         - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - RowNames (list(str)): Name of rows
 
         Returns
         -------
-        - self: This instance with matching bgpCommunitiesList resources retrieved from the server available through an iterator or index
+        - self: This instance with matching netconfServer resources retrieved from the server available through an iterator or index
 
         Raises
         ------
@@ -179,7 +201,7 @@ class BgpCommunitiesList(Base):
         return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
-        """Retrieves a single instance of bgpCommunitiesList data from the server.
+        """Retrieves a single instance of netconfServer data from the server.
 
         Args
         ----
@@ -187,7 +209,7 @@ class BgpCommunitiesList(Base):
 
         Returns
         -------
-        - self: This instance with the bgpCommunitiesList resources from the server available through an iterator or index
+        - self: This instance with the netconfServer resources from the server available through an iterator or index
 
         Raises
         ------
@@ -196,40 +218,18 @@ class BgpCommunitiesList(Base):
         """
         return self._read(href)
 
-    def AddDeleteTags(self, *args, **kwargs):
-        # type: (*Any, **Any) -> None
-        """Executes the addDeleteTags operation on the server.
-
-        addDeleteTags(Arg2=bool, async_operation=bool)
-        ----------------------------------------------
-        - Arg2 (bool):
-        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = {"Arg1": self.href}
-        for i in range(len(args)):
-            payload["Arg%s" % (i + 2)] = args[i]
-        for item in kwargs.items():
-            payload[item[0]] = item[1]
-        return self._execute("addDeleteTags", payload=payload, response_object=None)
-
     def get_device_ids(
-        self, PortNames=None, AsNumber=None, LastTwoOctets=None, Type=None
+        self, PortNames=None, YangArchive=None, YangSourceDirectory=None
     ):
-        """Base class infrastructure that gets a list of bgpCommunitiesList device ids encapsulated by this object.
+        """Base class infrastructure that gets a list of netconfServer device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 
         Args
         ----
         - PortNames (str): optional regex of port names
-        - AsNumber (str): optional regex of asNumber
-        - LastTwoOctets (str): optional regex of lastTwoOctets
-        - Type (str): optional regex of type
+        - YangArchive (str): optional regex of yangArchive
+        - YangSourceDirectory (str): optional regex of yangSourceDirectory
 
         Returns
         -------

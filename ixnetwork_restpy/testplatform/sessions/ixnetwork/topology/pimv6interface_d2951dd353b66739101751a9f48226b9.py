@@ -27,15 +27,15 @@ if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
 
-class PimV4Interface(Base):
-    """PIMv4 Interface level Configuration
-    The PimV4Interface class encapsulates a list of pimV4Interface resources that are managed by the user.
-    A list of resources can be retrieved from the server using the PimV4Interface.find() method.
-    The list can be managed by using the PimV4Interface.add() and PimV4Interface.remove() methods.
+class PimV6Interface(Base):
+    """PIMv6 Interface level Configuration
+    The PimV6Interface class encapsulates a list of pimV6Interface resources that are managed by the user.
+    A list of resources can be retrieved from the server using the PimV6Interface.find() method.
+    The list can be managed by using the PimV6Interface.add() and PimV6Interface.remove() methods.
     """
 
     __slots__ = ()
-    _SDM_NAME = "pimV4Interface"
+    _SDM_NAME = "pimV6Interface"
     _SDM_ATT_MAP = {
         "Active": "active",
         "AutoPickNeighbor": "autoPickNeighbor",
@@ -47,6 +47,9 @@ class PimV4Interface(Base):
         "Count": "count",
         "CrpRanges": "crpRanges",
         "DescriptiveName": "descriptiveName",
+        "DfElectionBackoffPeriod": "dfElectionBackoffPeriod",
+        "DfElectionOfferPeriod": "dfElectionOfferPeriod",
+        "DfElectionRobustness": "dfElectionRobustness",
         "DisableTriggered": "disableTriggered",
         "DiscardLearnedRpInfo": "discardLearnedRpInfo",
         "EnableBfdRegistration": "enableBfdRegistration",
@@ -62,6 +65,7 @@ class PimV4Interface(Base):
         "LocalRouterId": "localRouterId",
         "Multiplier": "multiplier",
         "Name": "name",
+        "NeighborV6Address": "neighborV6Address",
         "OverrideInterval": "overrideInterval",
         "PruneDelay": "pruneDelay",
         "SendBidirectional": "sendBidirectional",
@@ -74,7 +78,6 @@ class PimV4Interface(Base):
         "Status": "status",
         "SupportUnicastBsm": "supportUnicastBsm",
         "TriggeredHelloDelay": "triggeredHelloDelay",
-        "V4Neighbor": "v4Neighbor",
     }
     _SDM_ENUM_MAP = {
         "status": [
@@ -89,7 +92,7 @@ class PimV4Interface(Base):
     }
 
     def __init__(self, parent, list_op=False):
-        super(PimV4Interface, self).__init__(parent, list_op)
+        super(PimV6Interface, self).__init__(parent, list_op)
 
     @property
     def LearnedInfo(self):
@@ -112,64 +115,84 @@ class PimV4Interface(Base):
         return LearnedInfo(self)
 
     @property
-    def PimV4CandidateRPsList(self):
+    def PimV6BIDIRRPMetricList(self):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pimv4candidaterpslist_8f7559105ce2b97021af17fcfae64d10.PimV4CandidateRPsList): An instance of the PimV4CandidateRPsList class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pimv6bidirrpmetriclist_59a6cb26d48051aa410b9da38e0ae74c.PimV6BIDIRRPMetricList): An instance of the PimV6BIDIRRPMetricList class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pimv4candidaterpslist_8f7559105ce2b97021af17fcfae64d10 import (
-            PimV4CandidateRPsList,
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pimv6bidirrpmetriclist_59a6cb26d48051aa410b9da38e0ae74c import (
+            PimV6BIDIRRPMetricList,
         )
 
         if len(self._object_properties) > 0:
-            if self._properties.get("PimV4CandidateRPsList", None) is not None:
-                return self._properties.get("PimV4CandidateRPsList")
-        return PimV4CandidateRPsList(self)._select()
+            if self._properties.get("PimV6BIDIRRPMetricList", None) is not None:
+                return self._properties.get("PimV6BIDIRRPMetricList")
+        return PimV6BIDIRRPMetricList(self)._select()
 
     @property
-    def PimV4JoinPruneList(self):
+    def PimV6CandidateRPsList(self):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pimv4joinprunelist_6cf76e8d5773a1dc5c5562875733510d.PimV4JoinPruneList): An instance of the PimV4JoinPruneList class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pimv6candidaterpslist_844aa043d76dc15890b467e44e8f739e.PimV6CandidateRPsList): An instance of the PimV6CandidateRPsList class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pimv4joinprunelist_6cf76e8d5773a1dc5c5562875733510d import (
-            PimV4JoinPruneList,
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pimv6candidaterpslist_844aa043d76dc15890b467e44e8f739e import (
+            PimV6CandidateRPsList,
         )
 
         if len(self._object_properties) > 0:
-            if self._properties.get("PimV4JoinPruneList", None) is not None:
-                return self._properties.get("PimV4JoinPruneList")
-        return PimV4JoinPruneList(self)._select()
+            if self._properties.get("PimV6CandidateRPsList", None) is not None:
+                return self._properties.get("PimV6CandidateRPsList")
+        return PimV6CandidateRPsList(self)._select()
 
     @property
-    def PimV4SourcesList(self):
+    def PimV6JoinPruneList(self):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pimv4sourceslist_75a6674b863a284f98faeffbb0b40d9f.PimV4SourcesList): An instance of the PimV4SourcesList class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pimv6joinprunelist_45b4e701e80080858668a0625c9a948b.PimV6JoinPruneList): An instance of the PimV6JoinPruneList class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pimv4sourceslist_75a6674b863a284f98faeffbb0b40d9f import (
-            PimV4SourcesList,
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pimv6joinprunelist_45b4e701e80080858668a0625c9a948b import (
+            PimV6JoinPruneList,
         )
 
         if len(self._object_properties) > 0:
-            if self._properties.get("PimV4SourcesList", None) is not None:
-                return self._properties.get("PimV4SourcesList")
-        return PimV4SourcesList(self)._select()
+            if self._properties.get("PimV6JoinPruneList", None) is not None:
+                return self._properties.get("PimV6JoinPruneList")
+        return PimV6JoinPruneList(self)._select()
+
+    @property
+    def PimV6SourcesList(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pimv6sourceslist_7c181c77974667394bfee5e6920a7772.PimV6SourcesList): An instance of the PimV6SourcesList class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pimv6sourceslist_7c181c77974667394bfee5e6920a7772 import (
+            PimV6SourcesList,
+        )
+
+        if len(self._object_properties) > 0:
+            if self._properties.get("PimV6SourcesList", None) is not None:
+                return self._properties.get("PimV6SourcesList")
+        return PimV6SourcesList(self)._select()
 
     @property
     def Tag(self):
@@ -322,6 +345,48 @@ class PimV4Interface(Base):
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
         return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
+
+    @property
+    def DfElectionBackoffPeriod(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Backoff Period for DF Election. It is the interval that the current acting DF waits between receiving a better Offer and sending the Pass message to transfer DF responsibility.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["DfElectionBackoffPeriod"])
+        )
+
+    @property
+    def DfElectionOfferPeriod(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Offer Period for DF Election. It is the waiting interval between repeated Offer and Winner messages.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["DfElectionOfferPeriod"])
+        )
+
+    @property
+    def DfElectionRobustness(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): DF Election Robustness. This is the minimum number of election messages that must be lost in order for election to fail.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["DfElectionRobustness"])
+        )
 
     @property
     def DisableTriggered(self):
@@ -518,6 +583,20 @@ class PimV4Interface(Base):
         self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
+    def NeighborV6Address(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): (Auto Pick Neighbor must be disabled/not selected to make this field active) The user can manually type in the link-local address to be used for the Upstream Neighbor address field in the Join/Prune message.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["NeighborV6Address"])
+        )
+
+    @property
     def OverrideInterval(self):
         # type: () -> 'Multivalue'
         """
@@ -549,7 +628,7 @@ class PimV4Interface(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): If selected, sets the bi-directional PIM-SM flag bit (= 1), per IETF DRAFT draft-ietf-pim-bidir-04. (Note: Designated Forwarder election is not currently supported.)
+        - obj(ixnetwork_restpy.multivalue.Multivalue): If selected, sets the bi-directional PIM-SM flag bit (= 1) in Hello Message.
         """
         from ixnetwork_restpy.multivalue import Multivalue
 
@@ -672,18 +751,6 @@ class PimV4Interface(Base):
             self, self._get_attribute(self._SDM_ATT_MAP["TriggeredHelloDelay"])
         )
 
-    @property
-    def V4Neighbor(self):
-        # type: () -> 'Multivalue'
-        """
-        Returns
-        -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): (Auto Pick Neighbor must be disabled/not selected to make this field active) The user can manually type in the link-local address to be used for the Upstream Neighbor address field in the Join/Prune message.
-        """
-        from ixnetwork_restpy.multivalue import Multivalue
-
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["V4Neighbor"]))
-
     def update(
         self,
         ConnectedVia=None,
@@ -694,8 +761,8 @@ class PimV4Interface(Base):
         Sources=None,
         StackedLayers=None,
     ):
-        # type: (List[str], int, int, int, str, int, List[str]) -> PimV4Interface
-        """Updates pimV4Interface resource on the server.
+        # type: (List[str], int, int, int, str, int, List[str]) -> PimV6Interface
+        """Updates pimV6Interface resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
         The Multivalue class has documentation that details the possible values for those named parameters.
@@ -726,8 +793,8 @@ class PimV4Interface(Base):
         Sources=None,
         StackedLayers=None,
     ):
-        # type: (List[str], int, int, int, str, int, List[str]) -> PimV4Interface
-        """Adds a new pimV4Interface resource on the server and adds it to the container.
+        # type: (List[str], int, int, int, str, int, List[str]) -> PimV6Interface
+        """Adds a new pimV6Interface resource on the server and adds it to the container.
 
         Args
         ----
@@ -741,7 +808,7 @@ class PimV4Interface(Base):
 
         Returns
         -------
-        - self: This instance with all currently retrieved pimV4Interface resources using find and the newly added pimV4Interface resources available through an iterator or index
+        - self: This instance with all currently retrieved pimV6Interface resources using find and the newly added pimV6Interface resources available through an iterator or index
 
         Raises
         ------
@@ -750,7 +817,7 @@ class PimV4Interface(Base):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def remove(self):
-        """Deletes all the contained pimV4Interface resources in this instance from the server.
+        """Deletes all the contained pimV6Interface resources in this instance from the server.
 
         Raises
         ------
@@ -776,11 +843,11 @@ class PimV4Interface(Base):
         StateCounts=None,
         Status=None,
     ):
-        """Finds and retrieves pimV4Interface resources from the server.
+        """Finds and retrieves pimV6Interface resources from the server.
 
-        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve pimV4Interface resources from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve pimV6Interface resources from the server.
         To retrieve an exact match ensure the parameter value starts with ^ and ends with $
-        By default the find method takes no parameters and will retrieve all pimV4Interface resources from the server.
+        By default the find method takes no parameters and will retrieve all pimV6Interface resources from the server.
 
         Args
         ----
@@ -801,7 +868,7 @@ class PimV4Interface(Base):
 
         Returns
         -------
-        - self: This instance with matching pimV4Interface resources retrieved from the server available through an iterator or index
+        - self: This instance with matching pimV6Interface resources retrieved from the server available through an iterator or index
 
         Raises
         ------
@@ -810,7 +877,7 @@ class PimV4Interface(Base):
         return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
-        """Retrieves a single instance of pimV4Interface data from the server.
+        """Retrieves a single instance of pimV6Interface data from the server.
 
         Args
         ----
@@ -818,7 +885,7 @@ class PimV4Interface(Base):
 
         Returns
         -------
-        - self: This instance with the pimV4Interface resources from the server available through an iterator or index
+        - self: This instance with the pimV6Interface resources from the server available through an iterator or index
 
         Raises
         ------
@@ -1349,6 +1416,9 @@ class PimV4Interface(Base):
         BootstrapInterval=None,
         BootstrapPriority=None,
         BootstrapTimeout=None,
+        DfElectionBackoffPeriod=None,
+        DfElectionOfferPeriod=None,
+        DfElectionRobustness=None,
         DisableTriggered=None,
         DiscardLearnedRpInfo=None,
         EnableBfdRegistration=None,
@@ -1359,6 +1429,7 @@ class PimV4Interface(Base):
         HelloInterval=None,
         LanPruneTbit=None,
         LearnSelectedRpSet=None,
+        NeighborV6Address=None,
         OverrideInterval=None,
         PruneDelay=None,
         SendBidirectional=None,
@@ -1366,9 +1437,8 @@ class PimV4Interface(Base):
         SendGenerationMode=None,
         SupportUnicastBsm=None,
         TriggeredHelloDelay=None,
-        V4Neighbor=None,
     ):
-        """Base class infrastructure that gets a list of pimV4Interface device ids encapsulated by this object.
+        """Base class infrastructure that gets a list of pimV6Interface device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 
@@ -1381,6 +1451,9 @@ class PimV4Interface(Base):
         - BootstrapInterval (str): optional regex of bootstrapInterval
         - BootstrapPriority (str): optional regex of bootstrapPriority
         - BootstrapTimeout (str): optional regex of bootstrapTimeout
+        - DfElectionBackoffPeriod (str): optional regex of dfElectionBackoffPeriod
+        - DfElectionOfferPeriod (str): optional regex of dfElectionOfferPeriod
+        - DfElectionRobustness (str): optional regex of dfElectionRobustness
         - DisableTriggered (str): optional regex of disableTriggered
         - DiscardLearnedRpInfo (str): optional regex of discardLearnedRpInfo
         - EnableBfdRegistration (str): optional regex of enableBfdRegistration
@@ -1391,6 +1464,7 @@ class PimV4Interface(Base):
         - HelloInterval (str): optional regex of helloInterval
         - LanPruneTbit (str): optional regex of lanPruneTbit
         - LearnSelectedRpSet (str): optional regex of learnSelectedRpSet
+        - NeighborV6Address (str): optional regex of neighborV6Address
         - OverrideInterval (str): optional regex of overrideInterval
         - PruneDelay (str): optional regex of pruneDelay
         - SendBidirectional (str): optional regex of sendBidirectional
@@ -1398,7 +1472,6 @@ class PimV4Interface(Base):
         - SendGenerationMode (str): optional regex of sendGenerationMode
         - SupportUnicastBsm (str): optional regex of supportUnicastBsm
         - TriggeredHelloDelay (str): optional regex of triggeredHelloDelay
-        - V4Neighbor (str): optional regex of v4Neighbor
 
         Returns
         -------

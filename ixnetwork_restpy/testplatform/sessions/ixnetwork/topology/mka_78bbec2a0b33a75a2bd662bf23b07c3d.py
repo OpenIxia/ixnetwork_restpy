@@ -47,10 +47,13 @@ class Mka(Base):
         "DelayProtect": "delayProtect",
         "DelayProtectSimulation": "delayProtectSimulation",
         "DescriptiveName": "descriptiveName",
+        "DistributedCipherSuite": "distributedCipherSuite",
+        "DistributedConfidentialityOffset": "distributedConfidentialityOffset",
         "ElectedKeyServer": "electedKeyServer",
         "Errors": "errors",
         "KeyDerivationFunction": "keyDerivationFunction",
         "KeyServerPriority": "keyServerPriority",
+        "KeyServerSCI": "keyServerSCI",
         "KeyType": "keyType",
         "LlpnStep": "llpnStep",
         "MacsecCapability": "macsecCapability",
@@ -63,6 +66,7 @@ class Mka(Base):
         "Multiplier": "multiplier",
         "Name": "name",
         "OlpnStep": "olpnStep",
+        "PeerPN": "peerPN",
         "PeriodicRekeyAttempts": "periodicRekeyAttempts",
         "PeriodicRekeyInterval": "periodicRekeyInterval",
         "RandomizeMemberIdentifier": "randomizeMemberIdentifier",
@@ -106,13 +110,13 @@ class Mka(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.lag.cakcache_dfe6ea26428ccbc879e70415c02b2ccd.CakCache): An instance of the CakCache class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cakcache_82f6cb884290798c18c712f1e527033c.CakCache): An instance of the CakCache class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.lag.cakcache_dfe6ea26428ccbc879e70415c02b2ccd import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cakcache_82f6cb884290798c18c712f1e527033c import (
             CakCache,
         )
 
@@ -126,13 +130,13 @@ class Mka(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.lag.learnedinfo_e3842fc998f50863a80ad08bc75a2de8.LearnedInfo): An instance of the LearnedInfo class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.learnedinfo_ff4d5e5643a63bccb40b6cf64fc58100.LearnedInfo): An instance of the LearnedInfo class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.lag.learnedinfo_e3842fc998f50863a80ad08bc75a2de8 import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.learnedinfo_ff4d5e5643a63bccb40b6cf64fc58100 import (
             LearnedInfo,
         )
 
@@ -146,13 +150,13 @@ class Mka(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.lag.txchannels_b00cc0f5ee44e7e1276269692ddc248a.TxChannels): An instance of the TxChannels class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.txchannels_a961f7f036af2edebf4e1957fed8ab53.TxChannels): An instance of the TxChannels class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.lag.txchannels_b00cc0f5ee44e7e1276269692ddc248a import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.txchannels_a961f7f036af2edebf4e1957fed8ab53 import (
             TxChannels,
         )
 
@@ -230,7 +234,7 @@ class Mka(Base):
         """DEPRECATED
         Returns
         -------
-        - list(str[None | /api/v1/sessions/1/ixnetwork/lag]): List of layers this layer is used to connect with to the wire.
+        - list(str[None | /api/v1/sessions/1/ixnetwork/topology]): List of layers this layer is used to connect with to the wire.
         """
         return self._get_attribute(self._SDM_ATT_MAP["ConnectedVia"])
 
@@ -282,6 +286,28 @@ class Mka(Base):
         return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
+    def DistributedCipherSuite(self):
+        # type: () -> List[str]
+        """
+        Returns
+        -------
+        - list(str[aes128 | aes256 | aesXpn128 | aesXpn256 | none]): Displays the cipher suite of the SAK distributed by the Key Server.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["DistributedCipherSuite"])
+
+    @property
+    def DistributedConfidentialityOffset(self):
+        # type: () -> List[str]
+        """
+        Returns
+        -------
+        - list(str[confidentialityOffset30Octets | confidentialityOffset50Octets | noConfidentiality | noConfidentialityOffset | none]): Displays the Confidentiality Offset for the received SAK.
+        """
+        return self._get_attribute(
+            self._SDM_ATT_MAP["DistributedConfidentialityOffset"]
+        )
+
+    @property
     def ElectedKeyServer(self):
         # type: () -> List[str]
         """
@@ -327,6 +353,18 @@ class Mka(Base):
         return Multivalue(
             self, self._get_attribute(self._SDM_ATT_MAP["KeyServerPriority"])
         )
+
+    @property
+    def KeyServerSCI(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - list(obj(ixnetwork_restpy.multivalue.Multivalue)): Key Server SCI.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["KeyServerSCI"]))
 
     @property
     def KeyType(self):
@@ -487,6 +525,16 @@ class Mka(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["OlpnStep"]))
 
     @property
+    def PeerPN(self):
+        # type: () -> List[int]
+        """
+        Returns
+        -------
+        - list(number): Displays the PN advertised by the peer's PN.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["PeerPN"])
+
+    @property
     def PeriodicRekeyAttempts(self):
         # type: () -> int
         """
@@ -629,7 +677,7 @@ class Mka(Base):
         """
         Returns
         -------
-        - list(str[None | /api/v1/sessions/1/ixnetwork/lag]): List of secondary (many to one) child layer protocols
+        - list(str[None | /api/v1/sessions/1/ixnetwork/topology]): List of secondary (many to one) child layer protocols
         """
         return self._get_attribute(self._SDM_ATT_MAP["StackedLayers"])
 
@@ -757,7 +805,7 @@ class Mka(Base):
         Args
         ----
         - CakCount (number): PSK Chain Size (Min 1, Max 10).
-        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/lag])): List of layers this layer is used to connect with to the wire.
+        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology])): List of layers this layer is used to connect with to the wire.
         - KeyType (str(psk)): Indicates the source of CAK.
         - MkaLifeTime (number): Indicates MKA Life Time of a Peer.
         - Multiplier (number): Number of layer instances per parent instance (multiplier)
@@ -767,7 +815,7 @@ class Mka(Base):
         - RandomizeMemberIdentifier (bool): If this box is checked, then Ixia MKA devices will generate random member identifiers. Otherwise member identifiers of the form MAC Address-Counter will be generated to aid in debugging.
         - RekeyBehaviour (str(dontRekey | rekeyContinuous | rekeyFixedCount)): Determines the Rekey behavior.
         - RekeyMode (str(timerBased | pNBased)): Rekey criteria.
-        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/lag])): List of secondary (many to one) child layer protocols
+        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology])): List of secondary (many to one) child layer protocols
 
         Raises
         ------
@@ -796,7 +844,7 @@ class Mka(Base):
         Args
         ----
         - CakCount (number): PSK Chain Size (Min 1, Max 10).
-        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/lag])): List of layers this layer is used to connect with to the wire.
+        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology])): List of layers this layer is used to connect with to the wire.
         - KeyType (str(psk)): Indicates the source of CAK.
         - MkaLifeTime (number): Indicates MKA Life Time of a Peer.
         - Multiplier (number): Number of layer instances per parent instance (multiplier)
@@ -806,7 +854,7 @@ class Mka(Base):
         - RandomizeMemberIdentifier (bool): If this box is checked, then Ixia MKA devices will generate random member identifiers. Otherwise member identifiers of the form MAC Address-Counter will be generated to aid in debugging.
         - RekeyBehaviour (str(dontRekey | rekeyContinuous | rekeyFixedCount)): Determines the Rekey behavior.
         - RekeyMode (str(timerBased | pNBased)): Rekey criteria.
-        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/lag])): List of secondary (many to one) child layer protocols
+        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology])): List of secondary (many to one) child layer protocols
 
         Returns
         -------
@@ -836,6 +884,8 @@ class Mka(Base):
         Count=None,
         DelayProtectSimulation=None,
         DescriptiveName=None,
+        DistributedCipherSuite=None,
+        DistributedConfidentialityOffset=None,
         ElectedKeyServer=None,
         Errors=None,
         KeyType=None,
@@ -843,6 +893,7 @@ class Mka(Base):
         MkaLifeTime=None,
         Multiplier=None,
         Name=None,
+        PeerPN=None,
         PeriodicRekeyAttempts=None,
         PeriodicRekeyInterval=None,
         RandomizeMemberIdentifier=None,
@@ -865,10 +916,12 @@ class Mka(Base):
         ----
         - AssociationNumber (list(str)): Displays the Association Number for the received SAK.
         - CakCount (number): PSK Chain Size (Min 1, Max 10).
-        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/lag])): List of layers this layer is used to connect with to the wire.
+        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology])): List of layers this layer is used to connect with to the wire.
         - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         - DelayProtectSimulation (list(str)): Displays the actual PN, simulated PN and the MKPDU message number.
         - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
+        - DistributedCipherSuite (list(str[aes128 | aes256 | aesXpn128 | aesXpn256 | none])): Displays the cipher suite of the SAK distributed by the Key Server.
+        - DistributedConfidentialityOffset (list(str[confidentialityOffset30Octets | confidentialityOffset50Octets | noConfidentiality | noConfidentialityOffset | none])): Displays the Confidentiality Offset for the received SAK.
         - ElectedKeyServer (list(str)): Denotes whether this device has been elected as a Key Server or not.
         - Errors (list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork/],arg2:list[str]))): A list of errors that have occurred
         - KeyType (str(psk)): Indicates the source of CAK.
@@ -876,6 +929,7 @@ class Mka(Base):
         - MkaLifeTime (number): Indicates MKA Life Time of a Peer.
         - Multiplier (number): Number of layer instances per parent instance (multiplier)
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - PeerPN (list(number)): Displays the PN advertised by the peer's PN.
         - PeriodicRekeyAttempts (number): Number of times Rekey should be triggered.
         - PeriodicRekeyInterval (number): Time interval between two Rekey triggers.
         - RandomizeMemberIdentifier (bool): If this box is checked, then Ixia MKA devices will generate random member identifiers. Otherwise member identifiers of the form MAC Address-Counter will be generated to aid in debugging.
@@ -883,7 +937,7 @@ class Mka(Base):
         - RekeyMode (str(timerBased | pNBased)): Rekey criteria.
         - Sak (list(str)): Displays the SAK received from the Key Server.
         - SessionStatus (list(str[down | notStarted | up])): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
-        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/lag])): List of secondary (many to one) child layer protocols
+        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology])): List of secondary (many to one) child layer protocols
         - StateCounts (dict(total:number,notStarted:number,down:number,up:number)): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
         - Status (str(configured | error | mixed | notStarted | started | starting | stopping)): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
         - TxChannelCount (number): Determines the number of Tx Channels configured for each device.
@@ -949,6 +1003,27 @@ class Mka(Base):
         for item in kwargs.items():
             payload[item[0]] = item[1]
         return self._execute("abort", payload=payload, response_object=None)
+
+    def AddDeleteTags(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the addDeleteTags operation on the server.
+
+        addDeleteTags(Arg2=bool, async_operation=bool)
+        ----------------------------------------------
+        - Arg2 (bool):
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("addDeleteTags", payload=payload, response_object=None)
 
     def ClearAllLearnedInfo(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -1443,6 +1518,7 @@ class Mka(Base):
         DelayProtect=None,
         KeyDerivationFunction=None,
         KeyServerPriority=None,
+        KeyServerSCI=None,
         LlpnStep=None,
         MacsecCapability=None,
         MacsecDesired=None,
@@ -1472,6 +1548,7 @@ class Mka(Base):
         - DelayProtect (str): optional regex of delayProtect
         - KeyDerivationFunction (str): optional regex of keyDerivationFunction
         - KeyServerPriority (str): optional regex of keyServerPriority
+        - KeyServerSCI (str): optional regex of keyServerSCI
         - LlpnStep (str): optional regex of llpnStep
         - MacsecCapability (str): optional regex of macsecCapability
         - MacsecDesired (str): optional regex of macsecDesired

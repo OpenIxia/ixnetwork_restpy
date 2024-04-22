@@ -572,17 +572,57 @@ class Dhcpv6client(Base):
         return Ospfv3(self)
 
     @property
-    def PimV6Interface(self):
+    def Pcc(self):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pimv6interface_74a3aa08a315ca50732e853e3e8cdc43.PimV6Interface): An instance of the PimV6Interface class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pcc_f8f4f7c4bc41b0a9d3332c9aa5dc3ef6.Pcc): An instance of the Pcc class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pimv6interface_74a3aa08a315ca50732e853e3e8cdc43 import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pcc_f8f4f7c4bc41b0a9d3332c9aa5dc3ef6 import (
+            Pcc,
+        )
+
+        if len(self._object_properties) > 0:
+            if self._properties.get("Pcc", None) is not None:
+                return self._properties.get("Pcc")
+        return Pcc(self)
+
+    @property
+    def Pce(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pce_bd5f6a11078a4f0deb5d56bef8e9674f.Pce): An instance of the Pce class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pce_bd5f6a11078a4f0deb5d56bef8e9674f import (
+            Pce,
+        )
+
+        if len(self._object_properties) > 0:
+            if self._properties.get("Pce", None) is not None:
+                return self._properties.get("Pce")
+        return Pce(self)
+
+    @property
+    def PimV6Interface(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pimv6interface_d2951dd353b66739101751a9f48226b9.PimV6Interface): An instance of the PimV6Interface class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pimv6interface_d2951dd353b66739101751a9f48226b9 import (
             PimV6Interface,
         )
 

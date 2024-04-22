@@ -27,26 +27,28 @@ if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
 
-class PcepBackupPCEs(Base):
-    """This tab configures the Backup PCEs connected to the PCC.
-    The PcepBackupPCEs class encapsulates a required pcepBackupPCEs resource which will be retrieved from the server every time the property is accessed.
+class IsisDcePseudoIfaceAttPoint2Config(Base):
+    """Fabric-Path Pseudo Interaface Attribute Configuration
+    The IsisDcePseudoIfaceAttPoint2Config class encapsulates a list of isisDcePseudoIfaceAttPoint2Config resources that are managed by the system.
+    A list of resources can be retrieved from the server using the IsisDcePseudoIfaceAttPoint2Config.find() method.
     """
 
     __slots__ = ()
-    _SDM_NAME = "pcepBackupPCEs"
+    _SDM_NAME = "isisDcePseudoIfaceAttPoint2Config"
     _SDM_ATT_MAP = {
         "Active": "active",
-        "BackupPceRole": "backupPceRole",
-        "BackupPceSessionState": "backupPceSessionState",
         "Count": "count",
         "DescriptiveName": "descriptiveName",
+        "LinkMetric": "linkMetric",
+        "LocalFromNetworkTopology": "localFromNetworkTopology",
+        "LocalFromNode": "localFromNode",
+        "LocalToNode": "localToNode",
         "Name": "name",
-        "PceIpv4Address": "pceIpv4Address",
     }
     _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
-        super(PcepBackupPCEs, self).__init__(parent, list_op)
+        super(IsisDcePseudoIfaceAttPoint2Config, self).__init__(parent, list_op)
 
     @property
     def Active(self):
@@ -54,31 +56,11 @@ class PcepBackupPCEs(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration.
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Flag.
         """
         from ixnetwork_restpy.multivalue import Multivalue
 
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Active"]))
-
-    @property
-    def BackupPceRole(self):
-        # type: () -> List[str]
-        """
-        Returns
-        -------
-        - list(str[backup | primary]): Logs additional information about the Backup PCE Role
-        """
-        return self._get_attribute(self._SDM_ATT_MAP["BackupPceRole"])
-
-    @property
-    def BackupPceSessionState(self):
-        # type: () -> List[str]
-        """
-        Returns
-        -------
-        - list(str[down | notStarted | topped | up]): Logs additional information about the Session state
-        """
-        return self._get_attribute(self._SDM_ATT_MAP["BackupPceSessionState"])
 
     @property
     def Count(self):
@@ -101,6 +83,48 @@ class PcepBackupPCEs(Base):
         return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
+    def LinkMetric(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Link Metric
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["LinkMetric"]))
+
+    @property
+    def LocalFromNetworkTopology(self):
+        # type: () -> List[str]
+        """
+        Returns
+        -------
+        - list(str): From Network Topology
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["LocalFromNetworkTopology"])
+
+    @property
+    def LocalFromNode(self):
+        # type: () -> List[str]
+        """
+        Returns
+        -------
+        - list(str): From Node
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["LocalFromNode"])
+
+    @property
+    def LocalToNode(self):
+        # type: () -> List[str]
+        """
+        Returns
+        -------
+        - list(str): To Node
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["LocalToNode"])
+
+    @property
     def Name(self):
         # type: () -> str
         """
@@ -115,23 +139,9 @@ class PcepBackupPCEs(Base):
         # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
-    @property
-    def PceIpv4Address(self):
-        # type: () -> 'Multivalue'
-        """
-        Returns
-        -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): IPv4 address of the backup PCE. This column is greyed out in case of PCCv6.
-        """
-        from ixnetwork_restpy.multivalue import Multivalue
-
-        return Multivalue(
-            self, self._get_attribute(self._SDM_ATT_MAP["PceIpv4Address"])
-        )
-
     def update(self, Name=None):
-        # type: (str) -> PcepBackupPCEs
-        """Updates pcepBackupPCEs resource on the server.
+        # type: (str) -> IsisDcePseudoIfaceAttPoint2Config
+        """Updates isisDcePseudoIfaceAttPoint2Config resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
         The Multivalue class has documentation that details the possible values for those named parameters.
@@ -146,32 +156,52 @@ class PcepBackupPCEs(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(
-        self,
-        BackupPceRole=None,
-        BackupPceSessionState=None,
-        Count=None,
-        DescriptiveName=None,
-        Name=None,
-    ):
-        # type: (List[str], List[str], int, str, str) -> PcepBackupPCEs
-        """Finds and retrieves pcepBackupPCEs resources from the server.
-
-        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve pcepBackupPCEs resources from the server.
-        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
-        By default the find method takes no parameters and will retrieve all pcepBackupPCEs resources from the server.
+    def add(self, Name=None):
+        # type: (str) -> IsisDcePseudoIfaceAttPoint2Config
+        """Adds a new isisDcePseudoIfaceAttPoint2Config resource on the json, only valid with batch add utility
 
         Args
         ----
-        - BackupPceRole (list(str[backup | primary])): Logs additional information about the Backup PCE Role
-        - BackupPceSessionState (list(str[down | notStarted | topped | up])): Logs additional information about the Session state
-        - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-        - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
 
         Returns
         -------
-        - self: This instance with matching pcepBackupPCEs resources retrieved from the server available through an iterator or index
+        - self: This instance with all currently retrieved isisDcePseudoIfaceAttPoint2Config resources using find and the newly added isisDcePseudoIfaceAttPoint2Config resources available through an iterator or index
+
+        Raises
+        ------
+        - Exception: if this function is not being used with config assistance
+        """
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(
+        self,
+        Count=None,
+        DescriptiveName=None,
+        LocalFromNetworkTopology=None,
+        LocalFromNode=None,
+        LocalToNode=None,
+        Name=None,
+    ):
+        # type: (int, str, List[str], List[str], List[str], str) -> IsisDcePseudoIfaceAttPoint2Config
+        """Finds and retrieves isisDcePseudoIfaceAttPoint2Config resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve isisDcePseudoIfaceAttPoint2Config resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all isisDcePseudoIfaceAttPoint2Config resources from the server.
+
+        Args
+        ----
+        - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
+        - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
+        - LocalFromNetworkTopology (list(str)): From Network Topology
+        - LocalFromNode (list(str)): From Node
+        - LocalToNode (list(str)): To Node
+        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+
+        Returns
+        -------
+        - self: This instance with matching isisDcePseudoIfaceAttPoint2Config resources retrieved from the server available through an iterator or index
 
         Raises
         ------
@@ -180,7 +210,7 @@ class PcepBackupPCEs(Base):
         return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
-        """Retrieves a single instance of pcepBackupPCEs data from the server.
+        """Retrieves a single instance of isisDcePseudoIfaceAttPoint2Config data from the server.
 
         Args
         ----
@@ -188,7 +218,7 @@ class PcepBackupPCEs(Base):
 
         Returns
         -------
-        - self: This instance with the pcepBackupPCEs resources from the server available through an iterator or index
+        - self: This instance with the isisDcePseudoIfaceAttPoint2Config resources from the server available through an iterator or index
 
         Raises
         ------
@@ -196,6 +226,28 @@ class PcepBackupPCEs(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
+
+    def Abort(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the abort operation on the server.
+
+        Abort CPF control plane (equals to demote to kUnconfigured state).
+
+        abort(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("abort", payload=payload, response_object=None)
 
     def AddDeleteTags(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -218,25 +270,25 @@ class PcepBackupPCEs(Base):
             payload[item[0]] = item[1]
         return self._execute("addDeleteTags", payload=payload, response_object=None)
 
-    def BackupPceStart(self, *args, **kwargs):
+    def Disconnect(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
-        """Executes the backupPceStart operation on the server.
+        """Executes the disconnect operation on the server.
 
-        Start Backup-PCEs
+        Disconnect Simulated Interface
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        backupPceStart(async_operation=bool)
-        ------------------------------------
+        disconnect(async_operation=bool)
+        --------------------------------
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
-        backupPceStart(SessionIndices=list, async_operation=bool)
-        ---------------------------------------------------------
+        disconnect(SessionIndices=list, async_operation=bool)
+        -----------------------------------------------------
         - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
-        backupPceStart(SessionIndices=string, async_operation=bool)
-        -----------------------------------------------------------
+        disconnect(SessionIndices=string, async_operation=bool)
+        -------------------------------------------------------
         - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
@@ -250,27 +302,27 @@ class PcepBackupPCEs(Base):
             payload["Arg%s" % (i + 2)] = args[i]
         for item in kwargs.items():
             payload[item[0]] = item[1]
-        return self._execute("backupPceStart", payload=payload, response_object=None)
+        return self._execute("disconnect", payload=payload, response_object=None)
 
-    def BackupPceStop(self, *args, **kwargs):
+    def Reconnect(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
-        """Executes the backupPceStop operation on the server.
+        """Executes the reconnect operation on the server.
 
-        Stop Backup-PCEs
+        Reconnect Simulated Interface
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        backupPceStop(async_operation=bool)
-        -----------------------------------
+        reconnect(async_operation=bool)
+        -------------------------------
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
-        backupPceStop(SessionIndices=list, async_operation=bool)
-        --------------------------------------------------------
+        reconnect(SessionIndices=list, async_operation=bool)
+        ----------------------------------------------------
         - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
-        backupPceStop(SessionIndices=string, async_operation=bool)
-        ----------------------------------------------------------
+        reconnect(SessionIndices=string, async_operation=bool)
+        ------------------------------------------------------
         - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
@@ -284,26 +336,24 @@ class PcepBackupPCEs(Base):
             payload["Arg%s" % (i + 2)] = args[i]
         for item in kwargs.items():
             payload[item[0]] = item[1]
-        return self._execute("backupPceStop", payload=payload, response_object=None)
+        return self._execute("reconnect", payload=payload, response_object=None)
 
     def Start(self, *args, **kwargs):
-        # type: (*Any, **Any) -> Union[List[str], None]
+        # type: (*Any, **Any) -> None
         """Executes the start operation on the server.
 
-        Start
+        Start CPF control plane (equals to promote to negotiated state).
 
-        start(Arg2=list, async_operation=bool)list
-        ------------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        start(async_operation=bool)
+        ---------------------------
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
-        - Returns list(str): ID to associate each async action invocation
 
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = {"Arg1": self.href}
+        payload = {"Arg1": self}
         for i in range(len(args)):
             payload["Arg%s" % (i + 2)] = args[i]
         for item in kwargs.items():
@@ -311,31 +361,29 @@ class PcepBackupPCEs(Base):
         return self._execute("start", payload=payload, response_object=None)
 
     def Stop(self, *args, **kwargs):
-        # type: (*Any, **Any) -> Union[List[str], None]
+        # type: (*Any, **Any) -> None
         """Executes the stop operation on the server.
 
-        Stop
+        Stop CPF control plane (equals to demote to PreValidated-DoDDone state).
 
-        stop(Arg2=list, async_operation=bool)list
-        -----------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        stop(async_operation=bool)
+        --------------------------
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
-        - Returns list(str): ID to associate each async action invocation
 
         Raises
         ------
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = {"Arg1": self.href}
+        payload = {"Arg1": self}
         for i in range(len(args)):
             payload["Arg%s" % (i + 2)] = args[i]
         for item in kwargs.items():
             payload[item[0]] = item[1]
         return self._execute("stop", payload=payload, response_object=None)
 
-    def get_device_ids(self, PortNames=None, Active=None, PceIpv4Address=None):
-        """Base class infrastructure that gets a list of pcepBackupPCEs device ids encapsulated by this object.
+    def get_device_ids(self, PortNames=None, Active=None, LinkMetric=None):
+        """Base class infrastructure that gets a list of isisDcePseudoIfaceAttPoint2Config device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 
@@ -343,7 +391,7 @@ class PcepBackupPCEs(Base):
         ----
         - PortNames (str): optional regex of port names
         - Active (str): optional regex of active
-        - PceIpv4Address (str): optional regex of pceIpv4Address
+        - LinkMetric (str): optional regex of linkMetric
 
         Returns
         -------

@@ -257,5 +257,61 @@ def test_batch_add_with_traffic_having_href_objects(ixnetwork):
     assert end_point.ScalableDestinations[0]["arg1"] == ipv4_1.href
 
 
+def test_batch_add_traffic_for_non_active_fields(ixnetwork):
+    with BatchAdd(ixnetwork):
+        vport = ixnetwork.Vport.add().add()
+        vport[0].Name = "myVport_1"
+        vport[0].RxMode = "captureAndMeasure"
+        vport[1].Name = "myVport_2"
+        traffic = ixnetwork.Traffic.TrafficItem
+        tr1 = traffic.add(
+            Name="RAW TCP",
+            BiDirectional=False,
+            TrafficType="raw",
+            TrafficItemType="l2L3",
+        )
+        tr1.EndpointSet.add(
+            Sources=vport[0].Protocols.add(), Destinations=vport[1].Protocols.add()
+        )
+        stack = tr1.ConfigElement.add().Stack.add()
+        eth_st = stack.Ethernet.add()
+        eth_st.SourceAddress.Single("00:11:00:00:22:00")
+        eth_st.DestinationAddress.Single("00:33:00:11:22:00")
+        ipv4_st = stack.Ipv4.add()
+        ipv4_st.SrcIp.Single("1.1.1.1")
+        ipv4_st.PriorityRaw.Single("0xb5")
+
+    stack.find()
+    assert len(stack) == 3
+
+    # check eth values
+    eth_fields = stack[0].Field.find()
+    for field in eth_fields:
+        if field.DisplayName == "Destination MAC Address":
+            assert field.Auto is False
+            assert field.ValueType == "singleValue"
+            assert field.SingleValue == "00:33:00:11:22:00"
+        elif field.DisplayName == "Source MAC Address":
+            assert field.Auto is False
+            assert field.ValueType == "singleValue"
+            assert field.SingleValue == "00:11:00:00:22:00"
+
+    # check ip values
+    ip_fields = stack[1].Field.find()
+    for field in eth_fields:
+        if field.DisplayName == "Raw priority":
+            assert field.Auto is False
+            assert field.OptionalEnabled is True
+            assert field.ActiveChoiceField is True
+            assert field.ValueType == "singleValue"
+            assert field.SingleValue == "b5"
+        elif field.DisplayName == "Source Address":
+            assert field.Auto is False
+            assert field.OptionalEnabled is True
+            assert field.ActiveChoiceField is True
+            assert field.ValueType == "singleValue"
+            assert field.SingleValue == "1.1.1.1"
+
+
 if __name__ == "__main__":
     pytest.main(["-v", "-s", "--server", "localhost:11009:windows", __file__])

@@ -27,25 +27,28 @@ if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
 
-class IsisTrillPseudoIfaceAttPoint2Config(Base):
+class IsisTrillPseudoIfaceAttPoint1Config(Base):
     """TRILL Pseudo Interface Attribute Configuration
-    The IsisTrillPseudoIfaceAttPoint2Config class encapsulates a list of isisTrillPseudoIfaceAttPoint2Config resources that are managed by the system.
-    A list of resources can be retrieved from the server using the IsisTrillPseudoIfaceAttPoint2Config.find() method.
+    The IsisTrillPseudoIfaceAttPoint1Config class encapsulates a list of isisTrillPseudoIfaceAttPoint1Config resources that are managed by the system.
+    A list of resources can be retrieved from the server using the IsisTrillPseudoIfaceAttPoint1Config.find() method.
     """
 
     __slots__ = ()
-    _SDM_NAME = "isisTrillPseudoIfaceAttPoint2Config"
+    _SDM_NAME = "isisTrillPseudoIfaceAttPoint1Config"
     _SDM_ATT_MAP = {
         "Active": "active",
         "Count": "count",
         "DescriptiveName": "descriptiveName",
         "LinkMetric": "linkMetric",
+        "LocalFromNode": "localFromNode",
+        "LocalToNetworkTopology": "localToNetworkTopology",
+        "LocalToNode": "localToNode",
         "Name": "name",
     }
     _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
-        super(IsisTrillPseudoIfaceAttPoint2Config, self).__init__(parent, list_op)
+        super(IsisTrillPseudoIfaceAttPoint1Config, self).__init__(parent, list_op)
 
     @property
     def Active(self):
@@ -92,6 +95,36 @@ class IsisTrillPseudoIfaceAttPoint2Config(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["LinkMetric"]))
 
     @property
+    def LocalFromNode(self):
+        # type: () -> List[str]
+        """
+        Returns
+        -------
+        - list(str): From Node
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["LocalFromNode"])
+
+    @property
+    def LocalToNetworkTopology(self):
+        # type: () -> List[str]
+        """
+        Returns
+        -------
+        - list(str): To Network Topology
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["LocalToNetworkTopology"])
+
+    @property
+    def LocalToNode(self):
+        # type: () -> List[str]
+        """
+        Returns
+        -------
+        - list(str): To Node
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["LocalToNode"])
+
+    @property
     def Name(self):
         # type: () -> str
         """
@@ -107,8 +140,8 @@ class IsisTrillPseudoIfaceAttPoint2Config(Base):
         self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     def update(self, Name=None):
-        # type: (str) -> IsisTrillPseudoIfaceAttPoint2Config
-        """Updates isisTrillPseudoIfaceAttPoint2Config resource on the server.
+        # type: (str) -> IsisTrillPseudoIfaceAttPoint1Config
+        """Updates isisTrillPseudoIfaceAttPoint1Config resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
         The Multivalue class has documentation that details the possible values for those named parameters.
@@ -124,8 +157,8 @@ class IsisTrillPseudoIfaceAttPoint2Config(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Name=None):
-        # type: (str) -> IsisTrillPseudoIfaceAttPoint2Config
-        """Adds a new isisTrillPseudoIfaceAttPoint2Config resource on the json, only valid with batch add utility
+        # type: (str) -> IsisTrillPseudoIfaceAttPoint1Config
+        """Adds a new isisTrillPseudoIfaceAttPoint1Config resource on the json, only valid with batch add utility
 
         Args
         ----
@@ -133,7 +166,7 @@ class IsisTrillPseudoIfaceAttPoint2Config(Base):
 
         Returns
         -------
-        - self: This instance with all currently retrieved isisTrillPseudoIfaceAttPoint2Config resources using find and the newly added isisTrillPseudoIfaceAttPoint2Config resources available through an iterator or index
+        - self: This instance with all currently retrieved isisTrillPseudoIfaceAttPoint1Config resources using find and the newly added isisTrillPseudoIfaceAttPoint1Config resources available through an iterator or index
 
         Raises
         ------
@@ -141,23 +174,34 @@ class IsisTrillPseudoIfaceAttPoint2Config(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, Count=None, DescriptiveName=None, Name=None):
-        # type: (int, str, str) -> IsisTrillPseudoIfaceAttPoint2Config
-        """Finds and retrieves isisTrillPseudoIfaceAttPoint2Config resources from the server.
+    def find(
+        self,
+        Count=None,
+        DescriptiveName=None,
+        LocalFromNode=None,
+        LocalToNetworkTopology=None,
+        LocalToNode=None,
+        Name=None,
+    ):
+        # type: (int, str, List[str], List[str], List[str], str) -> IsisTrillPseudoIfaceAttPoint1Config
+        """Finds and retrieves isisTrillPseudoIfaceAttPoint1Config resources from the server.
 
-        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve isisTrillPseudoIfaceAttPoint2Config resources from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve isisTrillPseudoIfaceAttPoint1Config resources from the server.
         To retrieve an exact match ensure the parameter value starts with ^ and ends with $
-        By default the find method takes no parameters and will retrieve all isisTrillPseudoIfaceAttPoint2Config resources from the server.
+        By default the find method takes no parameters and will retrieve all isisTrillPseudoIfaceAttPoint1Config resources from the server.
 
         Args
         ----
         - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
+        - LocalFromNode (list(str)): From Node
+        - LocalToNetworkTopology (list(str)): To Network Topology
+        - LocalToNode (list(str)): To Node
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
 
         Returns
         -------
-        - self: This instance with matching isisTrillPseudoIfaceAttPoint2Config resources retrieved from the server available through an iterator or index
+        - self: This instance with matching isisTrillPseudoIfaceAttPoint1Config resources retrieved from the server available through an iterator or index
 
         Raises
         ------
@@ -166,7 +210,7 @@ class IsisTrillPseudoIfaceAttPoint2Config(Base):
         return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
-        """Retrieves a single instance of isisTrillPseudoIfaceAttPoint2Config data from the server.
+        """Retrieves a single instance of isisTrillPseudoIfaceAttPoint1Config data from the server.
 
         Args
         ----
@@ -174,7 +218,7 @@ class IsisTrillPseudoIfaceAttPoint2Config(Base):
 
         Returns
         -------
-        - self: This instance with the isisTrillPseudoIfaceAttPoint2Config resources from the server available through an iterator or index
+        - self: This instance with the isisTrillPseudoIfaceAttPoint1Config resources from the server available through an iterator or index
 
         Raises
         ------
@@ -339,7 +383,7 @@ class IsisTrillPseudoIfaceAttPoint2Config(Base):
         return self._execute("stop", payload=payload, response_object=None)
 
     def get_device_ids(self, PortNames=None, Active=None, LinkMetric=None):
-        """Base class infrastructure that gets a list of isisTrillPseudoIfaceAttPoint2Config device ids encapsulated by this object.
+        """Base class infrastructure that gets a list of isisTrillPseudoIfaceAttPoint1Config device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 

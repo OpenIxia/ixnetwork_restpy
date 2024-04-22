@@ -36,12 +36,23 @@ class StackLink(Base):
     __slots__ = ()
     _SDM_NAME = "stackLink"
     _SDM_ATT_MAP = {
+        "Field": "field",
         "LinkedTo": "linkedTo",
     }
     _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(StackLink, self).__init__(parent, list_op)
+
+    @property
+    def Field(self):
+        # type: () -> str
+        """
+        Returns
+        -------
+        - str(None | /api/v1/sessions/1/ixnetwork/traffic/trafficItem/configElement/stack/field): Indicates which stack field this is.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["Field"])
 
     @property
     def LinkedTo(self):
@@ -90,8 +101,8 @@ class StackLink(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, LinkedTo=None):
-        # type: (str) -> StackLink
+    def find(self, Field=None, LinkedTo=None):
+        # type: (str, str) -> StackLink
         """Finds and retrieves stackLink resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve stackLink resources from the server.
@@ -100,6 +111,7 @@ class StackLink(Base):
 
         Args
         ----
+        - Field (str(None | /api/v1/sessions/1/ixnetwork/traffic/trafficItem/configElement/stack/field)): Indicates which stack field this is.
         - LinkedTo (str(None | /api/v1/sessions/1/ixnetwork/traffic/trafficItem/configElement/stackLink)): Indicates which stack item this is linked to.
 
         Returns

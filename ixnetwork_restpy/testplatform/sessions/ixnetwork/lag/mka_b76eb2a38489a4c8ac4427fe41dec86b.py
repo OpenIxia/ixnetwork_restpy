@@ -27,56 +27,70 @@ if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
 
-class PimV6Interface(Base):
-    """PIMv6 Interface level Configuration
-    The PimV6Interface class encapsulates a list of pimV6Interface resources that are managed by the user.
-    A list of resources can be retrieved from the server using the PimV6Interface.find() method.
-    The list can be managed by using the PimV6Interface.add() and PimV6Interface.remove() methods.
+class Mka(Base):
+    """Mka
+    The Mka class encapsulates a list of mka resources that are managed by the user.
+    A list of resources can be retrieved from the server using the Mka.find() method.
+    The list can be managed by using the Mka.add() and Mka.remove() methods.
     """
 
     __slots__ = ()
-    _SDM_NAME = "pimV6Interface"
+    _SDM_NAME = "mka"
     _SDM_ATT_MAP = {
-        "Active": "active",
-        "AutoPickNeighbor": "autoPickNeighbor",
-        "BootstrapHashMaskLength": "bootstrapHashMaskLength",
-        "BootstrapInterval": "bootstrapInterval",
-        "BootstrapPriority": "bootstrapPriority",
-        "BootstrapTimeout": "bootstrapTimeout",
+        "ActiveDevice": "activeDevice",
+        "AssociationNumber": "associationNumber",
+        "CakCount": "cakCount",
+        "CipherSuite": "cipherSuite",
+        "ConfidentialityOffset": "confidentialityOffset",
         "ConnectedVia": "connectedVia",
         "Count": "count",
-        "CrpRanges": "crpRanges",
+        "DelayProtect": "delayProtect",
+        "DelayProtectSimulation": "delayProtectSimulation",
         "DescriptiveName": "descriptiveName",
-        "DisableTriggered": "disableTriggered",
-        "DiscardLearnedRpInfo": "discardLearnedRpInfo",
-        "EnableBfdRegistration": "enableBfdRegistration",
-        "EnableBootstrap": "enableBootstrap",
-        "EnablePrune": "enablePrune",
+        "DistributedCipherSuite": "distributedCipherSuite",
+        "DistributedConfidentialityOffset": "distributedConfidentialityOffset",
+        "ElectedKeyServer": "electedKeyServer",
         "Errors": "errors",
-        "ForceSemantic": "forceSemantic",
-        "HelloHoldTime": "helloHoldTime",
-        "HelloInterval": "helloInterval",
-        "JoinPrunes": "joinPrunes",
-        "LanPruneTbit": "lanPruneTbit",
-        "LearnSelectedRpSet": "learnSelectedRpSet",
-        "LocalRouterId": "localRouterId",
+        "KeyDerivationFunction": "keyDerivationFunction",
+        "KeyServerPriority": "keyServerPriority",
+        "KeyServerSCI": "keyServerSCI",
+        "KeyType": "keyType",
+        "LlpnStep": "llpnStep",
+        "MacsecCapability": "macsecCapability",
+        "MacsecDesired": "macsecDesired",
+        "MemberIdentifier": "memberIdentifier",
+        "MirroredMacAddr": "mirroredMacAddr",
+        "MkaHelloTime": "mkaHelloTime",
+        "MkaLifeTime": "mkaLifeTime",
+        "MkaVersion": "mkaVersion",
         "Multiplier": "multiplier",
         "Name": "name",
-        "NeighborV6Address": "neighborV6Address",
-        "OverrideInterval": "overrideInterval",
-        "PruneDelay": "pruneDelay",
-        "SendBidirectional": "sendBidirectional",
-        "SendGenerationIdOption": "sendGenerationIdOption",
-        "SendGenerationMode": "sendGenerationMode",
+        "OlpnStep": "olpnStep",
+        "PeerPN": "peerPN",
+        "PeriodicRekeyAttempts": "periodicRekeyAttempts",
+        "PeriodicRekeyInterval": "periodicRekeyInterval",
+        "RandomizeMemberIdentifier": "randomizeMemberIdentifier",
+        "RekeyBehaviour": "rekeyBehaviour",
+        "RekeyMode": "rekeyMode",
+        "RekeyThresholdPN": "rekeyThresholdPN",
+        "RekeyThresholdXPN": "rekeyThresholdXPN",
+        "Sak": "sak",
+        "SendICVIndicator": "sendICVIndicator",
         "SessionStatus": "sessionStatus",
-        "Sources": "sources",
         "StackedLayers": "stackedLayers",
+        "StartingDistributedAN": "startingDistributedAN",
+        "StartingKeyNumber": "startingKeyNumber",
+        "StartingLLPN": "startingLLPN",
+        "StartingOLPN": "startingOLPN",
         "StateCounts": "stateCounts",
         "Status": "status",
-        "SupportUnicastBsm": "supportUnicastBsm",
-        "TriggeredHelloDelay": "triggeredHelloDelay",
+        "SupportedCipherSuites": "supportedCipherSuites",
+        "TxChannelCount": "txChannelCount",
     }
     _SDM_ENUM_MAP = {
+        "keyType": ["psk"],
+        "rekeyBehaviour": ["dontRekey", "rekeyContinuous", "rekeyFixedCount"],
+        "rekeyMode": ["timerBased", "pNBased"],
         "status": [
             "configured",
             "error",
@@ -89,20 +103,40 @@ class PimV6Interface(Base):
     }
 
     def __init__(self, parent, list_op=False):
-        super(PimV6Interface, self).__init__(parent, list_op)
+        super(Mka, self).__init__(parent, list_op)
+
+    @property
+    def CakCache(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.lag.cakcache_dfe6ea26428ccbc879e70415c02b2ccd.CakCache): An instance of the CakCache class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.lag.cakcache_dfe6ea26428ccbc879e70415c02b2ccd import (
+            CakCache,
+        )
+
+        if len(self._object_properties) > 0:
+            if self._properties.get("CakCache", None) is not None:
+                return self._properties.get("CakCache")
+        return CakCache(self)._select()
 
     @property
     def LearnedInfo(self):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.learnedinfo_ff4d5e5643a63bccb40b6cf64fc58100.LearnedInfo): An instance of the LearnedInfo class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.lag.learnedinfo_e3842fc998f50863a80ad08bc75a2de8.LearnedInfo): An instance of the LearnedInfo class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.learnedinfo.learnedinfo_ff4d5e5643a63bccb40b6cf64fc58100 import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.lag.learnedinfo_e3842fc998f50863a80ad08bc75a2de8 import (
             LearnedInfo,
         )
 
@@ -112,165 +146,86 @@ class PimV6Interface(Base):
         return LearnedInfo(self)
 
     @property
-    def PimV6CandidateRPsList(self):
+    def TxChannels(self):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pimv6candidaterpslist_844aa043d76dc15890b467e44e8f739e.PimV6CandidateRPsList): An instance of the PimV6CandidateRPsList class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.lag.txchannels_b00cc0f5ee44e7e1276269692ddc248a.TxChannels): An instance of the TxChannels class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pimv6candidaterpslist_844aa043d76dc15890b467e44e8f739e import (
-            PimV6CandidateRPsList,
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.lag.txchannels_b00cc0f5ee44e7e1276269692ddc248a import (
+            TxChannels,
         )
 
         if len(self._object_properties) > 0:
-            if self._properties.get("PimV6CandidateRPsList", None) is not None:
-                return self._properties.get("PimV6CandidateRPsList")
-        return PimV6CandidateRPsList(self)._select()
+            if self._properties.get("TxChannels", None) is not None:
+                return self._properties.get("TxChannels")
+        return TxChannels(self)._select()
 
     @property
-    def PimV6JoinPruneList(self):
-        """
-        Returns
-        -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pimv6joinprunelist_45b4e701e80080858668a0625c9a948b.PimV6JoinPruneList): An instance of the PimV6JoinPruneList class
-
-        Raises
-        ------
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pimv6joinprunelist_45b4e701e80080858668a0625c9a948b import (
-            PimV6JoinPruneList,
-        )
-
-        if len(self._object_properties) > 0:
-            if self._properties.get("PimV6JoinPruneList", None) is not None:
-                return self._properties.get("PimV6JoinPruneList")
-        return PimV6JoinPruneList(self)._select()
-
-    @property
-    def PimV6SourcesList(self):
-        """
-        Returns
-        -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pimv6sourceslist_7c181c77974667394bfee5e6920a7772.PimV6SourcesList): An instance of the PimV6SourcesList class
-
-        Raises
-        ------
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pimv6sourceslist_7c181c77974667394bfee5e6920a7772 import (
-            PimV6SourcesList,
-        )
-
-        if len(self._object_properties) > 0:
-            if self._properties.get("PimV6SourcesList", None) is not None:
-                return self._properties.get("PimV6SourcesList")
-        return PimV6SourcesList(self)._select()
-
-    @property
-    def Tag(self):
-        """
-        Returns
-        -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag_e30f24de79247381d4dfd423b2f6986d.Tag): An instance of the Tag class
-
-        Raises
-        ------
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tag_e30f24de79247381d4dfd423b2f6986d import (
-            Tag,
-        )
-
-        if len(self._object_properties) > 0:
-            if self._properties.get("Tag", None) is not None:
-                return self._properties.get("Tag")
-        return Tag(self)
-
-    @property
-    def Active(self):
+    def ActiveDevice(self):
         # type: () -> 'Multivalue'
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Determines whether an MKA device is active or not. If disabled, MKA will not be started on the device.
         """
         from ixnetwork_restpy.multivalue import Multivalue
 
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Active"]))
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ActiveDevice"]))
 
     @property
-    def AutoPickNeighbor(self):
+    def AssociationNumber(self):
+        # type: () -> List[str]
+        """
+        Returns
+        -------
+        - list(str): Displays the Association Number for the received SAK.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["AssociationNumber"])
+
+    @property
+    def CakCount(self):
+        # type: () -> int
+        """
+        Returns
+        -------
+        - number: PSK Chain Size (Min 1, Max 10).
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["CakCount"])
+
+    @CakCount.setter
+    def CakCount(self, value):
+        # type: (int) -> None
+        self._set_attribute(self._SDM_ATT_MAP["CakCount"], value)
+
+    @property
+    def CipherSuite(self):
         # type: () -> 'Multivalue'
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): If selected, the time-saving Auto Pick feature is enabled-and the Upstream Neighbor field is not available for use. The Upstream Neighbor address used in the Join/Prune message is determined automatically from received Hello messages. The first time a Hello message is received-containing a Source (link-local) address that does not belong to this interface, that source address will be used as the Upstream Neighbor address. If not selected, the user can type in the link-local address in the Upstream Neighbor IP field (see Neighbor field below)-to be used for the upstream neighbor address field in the Join/Prune message.
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Determines the type of cipher suite.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["CipherSuite"]))
+
+    @property
+    def ConfidentialityOffset(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Determines the confidentiality offset.
         """
         from ixnetwork_restpy.multivalue import Multivalue
 
         return Multivalue(
-            self, self._get_attribute(self._SDM_ATT_MAP["AutoPickNeighbor"])
-        )
-
-    @property
-    def BootstrapHashMaskLength(self):
-        # type: () -> 'Multivalue'
-        """
-        Returns
-        -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): Hash Mask Length of the Bootstrap Router (BSR) that is set with the same name in all Bootstrap Messages sent by this BSR.
-        """
-        from ixnetwork_restpy.multivalue import Multivalue
-
-        return Multivalue(
-            self, self._get_attribute(self._SDM_ATT_MAP["BootstrapHashMaskLength"])
-        )
-
-    @property
-    def BootstrapInterval(self):
-        # type: () -> 'Multivalue'
-        """
-        Returns
-        -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): The time interval (in seconds) between two consecutive bootstrap messages sent by the BSR.
-        """
-        from ixnetwork_restpy.multivalue import Multivalue
-
-        return Multivalue(
-            self, self._get_attribute(self._SDM_ATT_MAP["BootstrapInterval"])
-        )
-
-    @property
-    def BootstrapPriority(self):
-        # type: () -> 'Multivalue'
-        """
-        Returns
-        -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): Priority of the Bootstrap Router (BSR) that is set with the same name in all Bootstrap Messages sent by this BSR.
-        """
-        from ixnetwork_restpy.multivalue import Multivalue
-
-        return Multivalue(
-            self, self._get_attribute(self._SDM_ATT_MAP["BootstrapPriority"])
-        )
-
-    @property
-    def BootstrapTimeout(self):
-        # type: () -> 'Multivalue'
-        """
-        Returns
-        -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): Amount of time (in seconds) of not receiving any Bootstrap Messages, after which, the BSR if candidate at that point of time will decide that the currently elected BSR has gone down and will restart BSR election procedure.
-        """
-        from ixnetwork_restpy.multivalue import Multivalue
-
-        return Multivalue(
-            self, self._get_attribute(self._SDM_ATT_MAP["BootstrapTimeout"])
+            self, self._get_attribute(self._SDM_ATT_MAP["ConfidentialityOffset"])
         )
 
     @property
@@ -279,7 +234,7 @@ class PimV6Interface(Base):
         """DEPRECATED
         Returns
         -------
-        - list(str[None | /api/v1/sessions/1/ixnetwork/topology]): List of layers this layer is used to connect with to the wire.
+        - list(str[None | /api/v1/sessions/1/ixnetwork/lag]): List of layers this layer is used to connect with to the wire.
         """
         return self._get_attribute(self._SDM_ATT_MAP["ConnectedVia"])
 
@@ -299,19 +254,26 @@ class PimV6Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
-    def CrpRanges(self):
-        # type: () -> int
+    def DelayProtect(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
-        - number: Number of C-RP Ranges
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Delay Protect behavior of the device.
         """
-        return self._get_attribute(self._SDM_ATT_MAP["CrpRanges"])
+        from ixnetwork_restpy.multivalue import Multivalue
 
-    @CrpRanges.setter
-    def CrpRanges(self, value):
-        # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP["CrpRanges"], value)
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["DelayProtect"]))
+
+    @property
+    def DelayProtectSimulation(self):
+        # type: () -> List[str]
+        """
+        Returns
+        -------
+        - list(str): Displays the actual PN, simulated PN and the MKPDU message number.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["DelayProtectSimulation"])
 
     @property
     def DescriptiveName(self):
@@ -324,72 +286,36 @@ class PimV6Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
-    def DisableTriggered(self):
-        # type: () -> 'Multivalue'
+    def DistributedCipherSuite(self):
+        # type: () -> List[str]
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): If enabled, the triggered hello delay function is disabled.
+        - list(str[aes128 | aes256 | aesXpn128 | aesXpn256 | none]): Displays the cipher suite of the SAK distributed by the Key Server.
         """
-        from ixnetwork_restpy.multivalue import Multivalue
+        return self._get_attribute(self._SDM_ATT_MAP["DistributedCipherSuite"])
 
-        return Multivalue(
-            self, self._get_attribute(self._SDM_ATT_MAP["DisableTriggered"])
+    @property
+    def DistributedConfidentialityOffset(self):
+        # type: () -> List[str]
+        """
+        Returns
+        -------
+        - list(str[confidentialityOffset30Octets | confidentialityOffset50Octets | noConfidentiality | noConfidentialityOffset | none]): Displays the Confidentiality Offset for the received SAK.
+        """
+        return self._get_attribute(
+            self._SDM_ATT_MAP["DistributedConfidentialityOffset"]
         )
 
     @property
-    def DiscardLearnedRpInfo(self):
-        # type: () -> 'Multivalue'
+    def ElectedKeyServer(self):
+        # type: () -> List[str]
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): If selected, disregards group mappings learnt from Bootstrap Message (in case not acting as elected BSR) or from Candidate RP Advertisement (in case of elected BSR).
+        - list(str): Denotes whether this device has been elected as a Key Server or not.
         """
-        from ixnetwork_restpy.multivalue import Multivalue
-
-        return Multivalue(
-            self, self._get_attribute(self._SDM_ATT_MAP["DiscardLearnedRpInfo"])
-        )
-
-    @property
-    def EnableBfdRegistration(self):
-        # type: () -> 'Multivalue'
-        """
-        Returns
-        -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): Enable BFD Registration
-        """
-        from ixnetwork_restpy.multivalue import Multivalue
-
-        return Multivalue(
-            self, self._get_attribute(self._SDM_ATT_MAP["EnableBfdRegistration"])
-        )
-
-    @property
-    def EnableBootstrap(self):
-        # type: () -> 'Multivalue'
-        """
-        Returns
-        -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): If selected, enables the PIM-SM interface to participate in Bootstrap Router election procedure.
-        """
-        from ixnetwork_restpy.multivalue import Multivalue
-
-        return Multivalue(
-            self, self._get_attribute(self._SDM_ATT_MAP["EnableBootstrap"])
-        )
-
-    @property
-    def EnablePrune(self):
-        # type: () -> 'Multivalue'
-        """
-        Returns
-        -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): If selected, the LAN Prune (propagation) Delay is enabled for this PIM-SM interface. (This Indicates that this option is present in the Hello message.)
-        """
-        from ixnetwork_restpy.multivalue import Multivalue
-
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EnablePrune"]))
+        return self._get_attribute(self._SDM_ATT_MAP["ElectedKeyServer"])
 
     @property
     def Errors(self):
@@ -401,91 +327,160 @@ class PimV6Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP["Errors"])
 
     @property
-    def ForceSemantic(self):
+    def KeyDerivationFunction(self):
         # type: () -> 'Multivalue'
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): If enabled, this forces the BSR to send only one group specific RP list per bootstrap message, even if there is space in the packet to push in more RP list information pertaining to a different group.
-        """
-        from ixnetwork_restpy.multivalue import Multivalue
-
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ForceSemantic"]))
-
-    @property
-    def HelloHoldTime(self):
-        # type: () -> 'Multivalue'
-        """
-        Returns
-        -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): The timeout period in seconds specified in Hello messages. It is the length of time the receiver of this message must keep the neighbor reachable. The default is 3.5 times the Hello Interval (105 seconds).
-        """
-        from ixnetwork_restpy.multivalue import Multivalue
-
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HelloHoldTime"]))
-
-    @property
-    def HelloInterval(self):
-        # type: () -> 'Multivalue'
-        """
-        Returns
-        -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): The PIM-SM Hello Interval is the length of time in seconds between the transmissions of Hello messages. The default is 30 seconds.
-        """
-        from ixnetwork_restpy.multivalue import Multivalue
-
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["HelloInterval"]))
-
-    @property
-    def JoinPrunes(self):
-        # type: () -> int
-        """
-        Returns
-        -------
-        - number: Number of Join/Prunes
-        """
-        return self._get_attribute(self._SDM_ATT_MAP["JoinPrunes"])
-
-    @JoinPrunes.setter
-    def JoinPrunes(self, value):
-        # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP["JoinPrunes"], value)
-
-    @property
-    def LanPruneTbit(self):
-        # type: () -> 'Multivalue'
-        """
-        Returns
-        -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): If selected, the T flag bit in the LAN Prune Delay option of the Hello message is set (= 1). Setting this bit specifies that the sending PIM-SM router has the ability to disable Join message suppression
-        """
-        from ixnetwork_restpy.multivalue import Multivalue
-
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["LanPruneTbit"]))
-
-    @property
-    def LearnSelectedRpSet(self):
-        # type: () -> 'Multivalue'
-        """
-        Returns
-        -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): If selected, displays the best RP per group (member of selected RP set).
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Determines the KDF used to generate keys used by MKA.
         """
         from ixnetwork_restpy.multivalue import Multivalue
 
         return Multivalue(
-            self, self._get_attribute(self._SDM_ATT_MAP["LearnSelectedRpSet"])
+            self, self._get_attribute(self._SDM_ATT_MAP["KeyDerivationFunction"])
         )
 
     @property
-    def LocalRouterId(self):
+    def KeyServerPriority(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Determines the Key Server Priority.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["KeyServerPriority"])
+        )
+
+    @property
+    def KeyServerSCI(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - list(obj(ixnetwork_restpy.multivalue.Multivalue)): Key Server SCI.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["KeyServerSCI"]))
+
+    @property
+    def KeyType(self):
+        # type: () -> str
+        """
+        Returns
+        -------
+        - str(psk): Indicates the source of CAK.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["KeyType"])
+
+    @KeyType.setter
+    def KeyType(self, value):
+        # type: (str) -> None
+        self._set_attribute(self._SDM_ATT_MAP["KeyType"], value)
+
+    @property
+    def LlpnStep(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Determines the LLPN Step.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["LlpnStep"]))
+
+    @property
+    def MacsecCapability(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Indicates MACsec capabilities.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MacsecCapability"])
+        )
+
+    @property
+    def MacsecDesired(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Determines whether MACsec is desired or not. It is advertised in periodic hellos.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["MacsecDesired"]))
+
+    @property
+    def MemberIdentifier(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - list(obj(ixnetwork_restpy.multivalue.Multivalue)): Displays the Member Identifier calculated by the state machine.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MemberIdentifier"])
+        )
+
+    @property
+    def MirroredMacAddr(self):
         # type: () -> List[str]
         """
         Returns
         -------
-        - list(str): The PIM-SM Router ID value, in IPv4 format.
+        - list(str): MAC address of the Ethernet devices configured in the Ethernet stack.
         """
-        return self._get_attribute(self._SDM_ATT_MAP["LocalRouterId"])
+        return self._get_attribute(self._SDM_ATT_MAP["MirroredMacAddr"])
+
+    @property
+    def MkaHelloTime(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Indicates MKA Hello Time.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["MkaHelloTime"]))
+
+    @property
+    def MkaLifeTime(self):
+        # type: () -> int
+        """
+        Returns
+        -------
+        - number: Indicates MKA Life Time of a Peer.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["MkaLifeTime"])
+
+    @MkaLifeTime.setter
+    def MkaLifeTime(self, value):
+        # type: (int) -> None
+        self._set_attribute(self._SDM_ATT_MAP["MkaLifeTime"], value)
+
+    @property
+    def MkaVersion(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Indicates the version of MKA.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["MkaVersion"]))
 
     @property
     def Multiplier(self):
@@ -518,85 +513,152 @@ class PimV6Interface(Base):
         self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
-    def NeighborV6Address(self):
+    def OlpnStep(self):
         # type: () -> 'Multivalue'
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): (Auto Pick Neighbor must be disabled/not selected to make this field active) The user can manually type in the link-local address to be used for the Upstream Neighbor address field in the Join/Prune message.
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Determines the OLPN Step.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["OlpnStep"]))
+
+    @property
+    def PeerPN(self):
+        # type: () -> List[int]
+        """
+        Returns
+        -------
+        - list(number): Displays the PN advertised by the peer's PN.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["PeerPN"])
+
+    @property
+    def PeriodicRekeyAttempts(self):
+        # type: () -> int
+        """
+        Returns
+        -------
+        - number: Number of times Rekey should be triggered.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["PeriodicRekeyAttempts"])
+
+    @PeriodicRekeyAttempts.setter
+    def PeriodicRekeyAttempts(self, value):
+        # type: (int) -> None
+        self._set_attribute(self._SDM_ATT_MAP["PeriodicRekeyAttempts"], value)
+
+    @property
+    def PeriodicRekeyInterval(self):
+        # type: () -> int
+        """
+        Returns
+        -------
+        - number: Time interval between two Rekey triggers.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["PeriodicRekeyInterval"])
+
+    @PeriodicRekeyInterval.setter
+    def PeriodicRekeyInterval(self, value):
+        # type: (int) -> None
+        self._set_attribute(self._SDM_ATT_MAP["PeriodicRekeyInterval"], value)
+
+    @property
+    def RandomizeMemberIdentifier(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: If this box is checked, then Ixia MKA devices will generate random member identifiers. Otherwise member identifiers of the form MAC Address-Counter will be generated to aid in debugging.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["RandomizeMemberIdentifier"])
+
+    @RandomizeMemberIdentifier.setter
+    def RandomizeMemberIdentifier(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["RandomizeMemberIdentifier"], value)
+
+    @property
+    def RekeyBehaviour(self):
+        # type: () -> str
+        """
+        Returns
+        -------
+        - str(dontRekey | rekeyContinuous | rekeyFixedCount): Determines the Rekey behavior.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["RekeyBehaviour"])
+
+    @RekeyBehaviour.setter
+    def RekeyBehaviour(self, value):
+        # type: (str) -> None
+        self._set_attribute(self._SDM_ATT_MAP["RekeyBehaviour"], value)
+
+    @property
+    def RekeyMode(self):
+        # type: () -> str
+        """
+        Returns
+        -------
+        - str(timerBased | pNBased): Rekey criteria.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["RekeyMode"])
+
+    @RekeyMode.setter
+    def RekeyMode(self, value):
+        # type: (str) -> None
+        self._set_attribute(self._SDM_ATT_MAP["RekeyMode"], value)
+
+    @property
+    def RekeyThresholdPN(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Determines the PN rekey threshold.
         """
         from ixnetwork_restpy.multivalue import Multivalue
 
         return Multivalue(
-            self, self._get_attribute(self._SDM_ATT_MAP["NeighborV6Address"])
+            self, self._get_attribute(self._SDM_ATT_MAP["RekeyThresholdPN"])
         )
 
     @property
-    def OverrideInterval(self):
+    def RekeyThresholdXPN(self):
         # type: () -> 'Multivalue'
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): (in ms) The delay interval for randomizing the transmission time for override messages-when scheduling a delayed Join message. The default value is 2,500 milliseconds (ms). The valid range is 100 to 7FFF msec. (This is part of the LAN Prune Delay option included in Hello messages).
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Determines the XPN rekey threshold.
         """
         from ixnetwork_restpy.multivalue import Multivalue
 
         return Multivalue(
-            self, self._get_attribute(self._SDM_ATT_MAP["OverrideInterval"])
+            self, self._get_attribute(self._SDM_ATT_MAP["RekeyThresholdXPN"])
         )
 
     @property
-    def PruneDelay(self):
-        # type: () -> 'Multivalue'
+    def Sak(self):
+        # type: () -> List[str]
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): (in ms) The value of the LAN Prune (propagation) Delay for this PIM-SM interface. The expected delay for messages propagated on the link. It indicates to an upstream router how long to wait for a Join override message before it prunes an interface. The default value is 500 msec. The valid range is 100 to 0x7FFF msec. (LAN Prune Delay is an Option included in Hello messages.)
+        - list(str): Displays the SAK received from the Key Server.
         """
-        from ixnetwork_restpy.multivalue import Multivalue
-
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["PruneDelay"]))
+        return self._get_attribute(self._SDM_ATT_MAP["Sak"])
 
     @property
-    def SendBidirectional(self):
+    def SendICVIndicator(self):
         # type: () -> 'Multivalue'
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): If selected, sets the bi-directional PIM-SM flag bit (= 1), per IETF DRAFT draft-ietf-pim-bidir-04. (Note: Designated Forwarder election is not currently supported.)
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Send ICV Indicator in MKPDU.
         """
         from ixnetwork_restpy.multivalue import Multivalue
 
         return Multivalue(
-            self, self._get_attribute(self._SDM_ATT_MAP["SendBidirectional"])
-        )
-
-    @property
-    def SendGenerationIdOption(self):
-        # type: () -> 'Multivalue'
-        """
-        Returns
-        -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): If selected, enables the Send Generation ID Option, and the Generation ID Mode field will become available to make a mode selection.
-        """
-        from ixnetwork_restpy.multivalue import Multivalue
-
-        return Multivalue(
-            self, self._get_attribute(self._SDM_ATT_MAP["SendGenerationIdOption"])
-        )
-
-    @property
-    def SendGenerationMode(self):
-        # type: () -> 'Multivalue'
-        """
-        Returns
-        -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): The mode for creating the 32-bit value for the Generation Identifier (GenID) option in the Hello message. A new GenID is created each time an interface (or router) starts or restarts PIM-SM forwarding. A change in this value indicates to the neighbor(s) that a change of state may have occurred, and that the old PIM-SM states information received from those interfaces should be discarded. Choose one of: Incremental-the GenID increases by 1 for each successive Hello Message sent from this emulated PIM-SM router. Random-each Hello message sent from this emulated PIM-SM router will have a randomly-generated GenID. Constant (the default)-the GenID remains the same in all of the Hello Messages sent from this emulated. PIM-SM router.
-        """
-        from ixnetwork_restpy.multivalue import Multivalue
-
-        return Multivalue(
-            self, self._get_attribute(self._SDM_ATT_MAP["SendGenerationMode"])
+            self, self._get_attribute(self._SDM_ATT_MAP["SendICVIndicator"])
         )
 
     @property
@@ -610,27 +672,12 @@ class PimV6Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP["SessionStatus"])
 
     @property
-    def Sources(self):
-        # type: () -> int
-        """
-        Returns
-        -------
-        - number: Number of Sources
-        """
-        return self._get_attribute(self._SDM_ATT_MAP["Sources"])
-
-    @Sources.setter
-    def Sources(self, value):
-        # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP["Sources"], value)
-
-    @property
     def StackedLayers(self):
         # type: () -> List[str]
         """
         Returns
         -------
-        - list(str[None | /api/v1/sessions/1/ixnetwork/topology]): List of secondary (many to one) child layer protocols
+        - list(str[None | /api/v1/sessions/1/ixnetwork/lag]): List of secondary (many to one) child layer protocols
         """
         return self._get_attribute(self._SDM_ATT_MAP["StackedLayers"])
 
@@ -638,6 +685,58 @@ class PimV6Interface(Base):
     def StackedLayers(self, value):
         # type: (List[str]) -> None
         self._set_attribute(self._SDM_ATT_MAP["StackedLayers"], value)
+
+    @property
+    def StartingDistributedAN(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Determines starting distributed AN.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["StartingDistributedAN"])
+        )
+
+    @property
+    def StartingKeyNumber(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Determines the starting key number.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["StartingKeyNumber"])
+        )
+
+    @property
+    def StartingLLPN(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Indicates the starting LLPN.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["StartingLLPN"]))
+
+    @property
+    def StartingOLPN(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Indicates the starting OLPN.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["StartingOLPN"]))
 
     @property
     def StateCounts(self):
@@ -659,58 +758,64 @@ class PimV6Interface(Base):
         return self._get_attribute(self._SDM_ATT_MAP["Status"])
 
     @property
-    def SupportUnicastBsm(self):
+    def SupportedCipherSuites(self):
         # type: () -> 'Multivalue'
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): If enabled, this supports the sending and processing of Unicast bootstrap messages.
+        - obj(ixnetwork_restpy.multivalue.Multivalue): The list of cipher suites supported by the device. All options are selected by default.
         """
         from ixnetwork_restpy.multivalue import Multivalue
 
         return Multivalue(
-            self, self._get_attribute(self._SDM_ATT_MAP["SupportUnicastBsm"])
+            self, self._get_attribute(self._SDM_ATT_MAP["SupportedCipherSuites"])
         )
 
     @property
-    def TriggeredHelloDelay(self):
-        # type: () -> 'Multivalue'
+    def TxChannelCount(self):
+        # type: () -> int
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): The time (in seconds) after which the router senses a delay in sending or receiving PIM-SM hello message.
+        - number: Determines the number of Tx Channels configured for each device.
         """
-        from ixnetwork_restpy.multivalue import Multivalue
-
-        return Multivalue(
-            self, self._get_attribute(self._SDM_ATT_MAP["TriggeredHelloDelay"])
-        )
+        return self._get_attribute(self._SDM_ATT_MAP["TxChannelCount"])
 
     def update(
         self,
+        CakCount=None,
         ConnectedVia=None,
-        CrpRanges=None,
-        JoinPrunes=None,
+        KeyType=None,
+        MkaLifeTime=None,
         Multiplier=None,
         Name=None,
-        Sources=None,
+        PeriodicRekeyAttempts=None,
+        PeriodicRekeyInterval=None,
+        RandomizeMemberIdentifier=None,
+        RekeyBehaviour=None,
+        RekeyMode=None,
         StackedLayers=None,
     ):
-        # type: (List[str], int, int, int, str, int, List[str]) -> PimV6Interface
-        """Updates pimV6Interface resource on the server.
+        # type: (int, List[str], str, int, int, str, int, int, bool, str, str, List[str]) -> Mka
+        """Updates mka resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
         The Multivalue class has documentation that details the possible values for those named parameters.
 
         Args
         ----
-        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology])): List of layers this layer is used to connect with to the wire.
-        - CrpRanges (number): Number of C-RP Ranges
-        - JoinPrunes (number): Number of Join/Prunes
+        - CakCount (number): PSK Chain Size (Min 1, Max 10).
+        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/lag])): List of layers this layer is used to connect with to the wire.
+        - KeyType (str(psk)): Indicates the source of CAK.
+        - MkaLifeTime (number): Indicates MKA Life Time of a Peer.
         - Multiplier (number): Number of layer instances per parent instance (multiplier)
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-        - Sources (number): Number of Sources
-        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology])): List of secondary (many to one) child layer protocols
+        - PeriodicRekeyAttempts (number): Number of times Rekey should be triggered.
+        - PeriodicRekeyInterval (number): Time interval between two Rekey triggers.
+        - RandomizeMemberIdentifier (bool): If this box is checked, then Ixia MKA devices will generate random member identifiers. Otherwise member identifiers of the form MAC Address-Counter will be generated to aid in debugging.
+        - RekeyBehaviour (str(dontRekey | rekeyContinuous | rekeyFixedCount)): Determines the Rekey behavior.
+        - RekeyMode (str(timerBased | pNBased)): Rekey criteria.
+        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/lag])): List of secondary (many to one) child layer protocols
 
         Raises
         ------
@@ -720,30 +825,40 @@ class PimV6Interface(Base):
 
     def add(
         self,
+        CakCount=None,
         ConnectedVia=None,
-        CrpRanges=None,
-        JoinPrunes=None,
+        KeyType=None,
+        MkaLifeTime=None,
         Multiplier=None,
         Name=None,
-        Sources=None,
+        PeriodicRekeyAttempts=None,
+        PeriodicRekeyInterval=None,
+        RandomizeMemberIdentifier=None,
+        RekeyBehaviour=None,
+        RekeyMode=None,
         StackedLayers=None,
     ):
-        # type: (List[str], int, int, int, str, int, List[str]) -> PimV6Interface
-        """Adds a new pimV6Interface resource on the server and adds it to the container.
+        # type: (int, List[str], str, int, int, str, int, int, bool, str, str, List[str]) -> Mka
+        """Adds a new mka resource on the server and adds it to the container.
 
         Args
         ----
-        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology])): List of layers this layer is used to connect with to the wire.
-        - CrpRanges (number): Number of C-RP Ranges
-        - JoinPrunes (number): Number of Join/Prunes
+        - CakCount (number): PSK Chain Size (Min 1, Max 10).
+        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/lag])): List of layers this layer is used to connect with to the wire.
+        - KeyType (str(psk)): Indicates the source of CAK.
+        - MkaLifeTime (number): Indicates MKA Life Time of a Peer.
         - Multiplier (number): Number of layer instances per parent instance (multiplier)
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-        - Sources (number): Number of Sources
-        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology])): List of secondary (many to one) child layer protocols
+        - PeriodicRekeyAttempts (number): Number of times Rekey should be triggered.
+        - PeriodicRekeyInterval (number): Time interval between two Rekey triggers.
+        - RandomizeMemberIdentifier (bool): If this box is checked, then Ixia MKA devices will generate random member identifiers. Otherwise member identifiers of the form MAC Address-Counter will be generated to aid in debugging.
+        - RekeyBehaviour (str(dontRekey | rekeyContinuous | rekeyFixedCount)): Determines the Rekey behavior.
+        - RekeyMode (str(timerBased | pNBased)): Rekey criteria.
+        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/lag])): List of secondary (many to one) child layer protocols
 
         Returns
         -------
-        - self: This instance with all currently retrieved pimV6Interface resources using find and the newly added pimV6Interface resources available through an iterator or index
+        - self: This instance with all currently retrieved mka resources using find and the newly added mka resources available through an iterator or index
 
         Raises
         ------
@@ -752,7 +867,7 @@ class PimV6Interface(Base):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def remove(self):
-        """Deletes all the contained pimV6Interface resources in this instance from the server.
+        """Deletes all the contained mka resources in this instance from the server.
 
         Raises
         ------
@@ -763,47 +878,73 @@ class PimV6Interface(Base):
 
     def find(
         self,
+        AssociationNumber=None,
+        CakCount=None,
         ConnectedVia=None,
         Count=None,
-        CrpRanges=None,
+        DelayProtectSimulation=None,
         DescriptiveName=None,
+        DistributedCipherSuite=None,
+        DistributedConfidentialityOffset=None,
+        ElectedKeyServer=None,
         Errors=None,
-        JoinPrunes=None,
-        LocalRouterId=None,
+        KeyType=None,
+        MirroredMacAddr=None,
+        MkaLifeTime=None,
         Multiplier=None,
         Name=None,
+        PeerPN=None,
+        PeriodicRekeyAttempts=None,
+        PeriodicRekeyInterval=None,
+        RandomizeMemberIdentifier=None,
+        RekeyBehaviour=None,
+        RekeyMode=None,
+        Sak=None,
         SessionStatus=None,
-        Sources=None,
         StackedLayers=None,
         StateCounts=None,
         Status=None,
+        TxChannelCount=None,
     ):
-        """Finds and retrieves pimV6Interface resources from the server.
+        """Finds and retrieves mka resources from the server.
 
-        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve pimV6Interface resources from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve mka resources from the server.
         To retrieve an exact match ensure the parameter value starts with ^ and ends with $
-        By default the find method takes no parameters and will retrieve all pimV6Interface resources from the server.
+        By default the find method takes no parameters and will retrieve all mka resources from the server.
 
         Args
         ----
-        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology])): List of layers this layer is used to connect with to the wire.
+        - AssociationNumber (list(str)): Displays the Association Number for the received SAK.
+        - CakCount (number): PSK Chain Size (Min 1, Max 10).
+        - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/lag])): List of layers this layer is used to connect with to the wire.
         - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-        - CrpRanges (number): Number of C-RP Ranges
+        - DelayProtectSimulation (list(str)): Displays the actual PN, simulated PN and the MKPDU message number.
         - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
+        - DistributedCipherSuite (list(str[aes128 | aes256 | aesXpn128 | aesXpn256 | none])): Displays the cipher suite of the SAK distributed by the Key Server.
+        - DistributedConfidentialityOffset (list(str[confidentialityOffset30Octets | confidentialityOffset50Octets | noConfidentiality | noConfidentialityOffset | none])): Displays the Confidentiality Offset for the received SAK.
+        - ElectedKeyServer (list(str)): Denotes whether this device has been elected as a Key Server or not.
         - Errors (list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork/],arg2:list[str]))): A list of errors that have occurred
-        - JoinPrunes (number): Number of Join/Prunes
-        - LocalRouterId (list(str)): The PIM-SM Router ID value, in IPv4 format.
+        - KeyType (str(psk)): Indicates the source of CAK.
+        - MirroredMacAddr (list(str)): MAC address of the Ethernet devices configured in the Ethernet stack.
+        - MkaLifeTime (number): Indicates MKA Life Time of a Peer.
         - Multiplier (number): Number of layer instances per parent instance (multiplier)
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - PeerPN (list(number)): Displays the PN advertised by the peer's PN.
+        - PeriodicRekeyAttempts (number): Number of times Rekey should be triggered.
+        - PeriodicRekeyInterval (number): Time interval between two Rekey triggers.
+        - RandomizeMemberIdentifier (bool): If this box is checked, then Ixia MKA devices will generate random member identifiers. Otherwise member identifiers of the form MAC Address-Counter will be generated to aid in debugging.
+        - RekeyBehaviour (str(dontRekey | rekeyContinuous | rekeyFixedCount)): Determines the Rekey behavior.
+        - RekeyMode (str(timerBased | pNBased)): Rekey criteria.
+        - Sak (list(str)): Displays the SAK received from the Key Server.
         - SessionStatus (list(str[down | notStarted | up])): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
-        - Sources (number): Number of Sources
-        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology])): List of secondary (many to one) child layer protocols
+        - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/lag])): List of secondary (many to one) child layer protocols
         - StateCounts (dict(total:number,notStarted:number,down:number,up:number)): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
         - Status (str(configured | error | mixed | notStarted | started | starting | stopping)): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
+        - TxChannelCount (number): Determines the number of Tx Channels configured for each device.
 
         Returns
         -------
-        - self: This instance with matching pimV6Interface resources retrieved from the server available through an iterator or index
+        - self: This instance with matching mka resources retrieved from the server available through an iterator or index
 
         Raises
         ------
@@ -812,7 +953,7 @@ class PimV6Interface(Base):
         return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
-        """Retrieves a single instance of pimV6Interface data from the server.
+        """Retrieves a single instance of mka data from the server.
 
         Args
         ----
@@ -820,7 +961,7 @@ class PimV6Interface(Base):
 
         Returns
         -------
-        - self: This instance with the pimV6Interface resources from the server available through an iterator or index
+        - self: This instance with the mka resources from the server available through an iterator or index
 
         Raises
         ------
@@ -863,51 +1004,30 @@ class PimV6Interface(Base):
             payload[item[0]] = item[1]
         return self._execute("abort", payload=payload, response_object=None)
 
-    def AddDeleteTags(self, *args, **kwargs):
-        # type: (*Any, **Any) -> None
-        """Executes the addDeleteTags operation on the server.
-
-        addDeleteTags(Arg2=bool, async_operation=bool)
-        ----------------------------------------------
-        - Arg2 (bool):
-        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = {"Arg1": self.href}
-        for i in range(len(args)):
-            payload["Arg%s" % (i + 2)] = args[i]
-        for item in kwargs.items():
-            payload[item[0]] = item[1]
-        return self._execute("addDeleteTags", payload=payload, response_object=None)
-
-    def ClearLearnedInfo(self, *args, **kwargs):
+    def ClearAllLearnedInfo(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
-        """Executes the clearLearnedInfo operation on the server.
+        """Executes the clearAllLearnedInfo operation on the server.
 
-        Clear Learned Info
+        Clear All Learned Info.
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        clearLearnedInfo(async_operation=bool)
-        --------------------------------------
+        clearAllLearnedInfo(async_operation=bool)
+        -----------------------------------------
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
-        clearLearnedInfo(SessionIndices=list, async_operation=bool)
-        -----------------------------------------------------------
+        clearAllLearnedInfo(SessionIndices=list, async_operation=bool)
+        --------------------------------------------------------------
         - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
-        clearLearnedInfo(SessionIndices=string, async_operation=bool)
-        -------------------------------------------------------------
+        clearAllLearnedInfo(SessionIndices=string, async_operation=bool)
+        ----------------------------------------------------------------
         - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
-        clearLearnedInfo(Arg2=list, async_operation=bool)list
-        -----------------------------------------------------
+        clearAllLearnedInfo(Arg2=list, async_operation=bool)list
+        --------------------------------------------------------
         - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns list(str): ID to associate each async action invocation
@@ -922,13 +1042,15 @@ class PimV6Interface(Base):
             payload["Arg%s" % (i + 2)] = args[i]
         for item in kwargs.items():
             payload[item[0]] = item[1]
-        return self._execute("clearLearnedInfo", payload=payload, response_object=None)
+        return self._execute(
+            "clearAllLearnedInfo", payload=payload, response_object=None
+        )
 
     def GetLearnedInfo(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
         """Executes the getLearnedInfo operation on the server.
 
-        Get Learned Info
+        Get Learned Info.
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
@@ -964,49 +1086,15 @@ class PimV6Interface(Base):
             payload[item[0]] = item[1]
         return self._execute("getLearnedInfo", payload=payload, response_object=None)
 
-    def IncrementGenID(self, *args, **kwargs):
-        # type: (*Any, **Any) -> None
-        """Executes the incrementGenID operation on the server.
-
-        Increment GenID
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        incrementGenID(async_operation=bool)
-        ------------------------------------
-        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
-
-        incrementGenID(SessionIndices=list, async_operation=bool)
-        ---------------------------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
-
-        incrementGenID(SessionIndices=string, async_operation=bool)
-        -----------------------------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = {"Arg1": self}
-        for i in range(len(args)):
-            payload["Arg%s" % (i + 2)] = args[i]
-        for item in kwargs.items():
-            payload[item[0]] = item[1]
-        return self._execute("incrementGenID", payload=payload, response_object=None)
-
-    def IncrementGenId(self, *args, **kwargs):
+    def PauseMKPDUTransmission(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
-        """Executes the incrementGenId operation on the server.
+        """Executes the pauseMKPDUTransmission operation on the server.
 
-        Stops the protocol state machine for the given protocol session instances.
+        Pause MKPDU Transmission.
 
-        incrementGenId(Arg2=list, async_operation=bool)list
-        ---------------------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        pauseMKPDUTransmission(Arg2=list, async_operation=bool)list
+        -----------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the device group.
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns list(str): ID to associate each async action invocation
 
@@ -1020,7 +1108,71 @@ class PimV6Interface(Base):
             payload["Arg%s" % (i + 2)] = args[i]
         for item in kwargs.items():
             payload[item[0]] = item[1]
-        return self._execute("incrementGenId", payload=payload, response_object=None)
+        return self._execute(
+            "pauseMKPDUTransmission", payload=payload, response_object=None
+        )
+
+    def PausePeriodicRekey(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the PausePeriodicRekey operation on the server.
+
+        Pause the periodic rekey timer if it is running.
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        PausePeriodicRekey(async_operation=bool)
+        ----------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        PausePeriodicRekey(SessionIndices=list, async_operation=bool)
+        -------------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        PausePeriodicRekey(SessionIndices=string, async_operation=bool)
+        ---------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "PausePeriodicRekey", payload=payload, response_object=None
+        )
+
+    def PausePeriodicRekey(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the pausePeriodicRekey operation on the server.
+
+        Pause the periodic rekey timer if it is running.
+
+        pausePeriodicRekey(Arg2=list, async_operation=bool)list
+        -------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the device group.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "pausePeriodicRekey", payload=payload, response_object=None
+        )
 
     def RestartDown(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1056,71 +1208,161 @@ class PimV6Interface(Base):
             payload[item[0]] = item[1]
         return self._execute("restartDown", payload=payload, response_object=None)
 
-    def ResumeBSM(self, *args, **kwargs):
-        # type: (*Any, **Any) -> Union[List[str], None]
-        """Executes the resumeBSM operation on the server.
+    def RestartPeriodicRekey(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the RestartPeriodicRekey operation on the server.
 
-        Resume Bootstrap
+        Restart the periodic rekey timer if it was stopped.
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        resumeBSM(async_operation=bool)
-        -------------------------------
+        RestartPeriodicRekey(async_operation=bool)
+        ------------------------------------------
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
-        resumeBSM(SessionIndices=list, async_operation=bool)
-        ----------------------------------------------------
+        RestartPeriodicRekey(SessionIndices=list, async_operation=bool)
+        ---------------------------------------------------------------
         - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
-        resumeBSM(SessionIndices=string, async_operation=bool)
+        RestartPeriodicRekey(SessionIndices=string, async_operation=bool)
+        -----------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "RestartPeriodicRekey", payload=payload, response_object=None
+        )
+
+    def RestartPeriodicRekey(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the restartPeriodicRekey operation on the server.
+
+        Restart the periodic rekey timer if it was stopped.
+
+        restartPeriodicRekey(Arg2=list, async_operation=bool)list
+        ---------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the device group.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "restartPeriodicRekey", payload=payload, response_object=None
+        )
+
+    def ResumeMKPDUTransmission(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the resumeMKPDUTransmission operation on the server.
+
+        Resume MKPDU Transmission.
+
+        resumeMKPDUTransmission(Arg2=list, async_operation=bool)list
+        ------------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the device group.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "resumeMKPDUTransmission", payload=payload, response_object=None
+        )
+
+    def SimulateDelayedMACsecPacketsStart(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the simulateDelayedMACsecPacketsStart operation on the server.
+
+        Start delay protect simulation.
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        simulateDelayedMACsecPacketsStart(async_operation=bool)
+        -------------------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        simulateDelayedMACsecPacketsStart(SessionIndices=list, async_operation=bool)
+        ----------------------------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        simulateDelayedMACsecPacketsStart(SessionIndices=string, async_operation=bool)
+        ------------------------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        simulateDelayedMACsecPacketsStart(Arg2=list, async_operation=bool)list
+        ----------------------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the device group.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "simulateDelayedMACsecPacketsStart", payload=payload, response_object=None
+        )
+
+    def SimulateDelayedMACsecPacketsStop(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the simulateDelayedMACsecPacketsStop operation on the server.
+
+        Stop delay protect simulation.
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        simulateDelayedMACsecPacketsStop(async_operation=bool)
         ------------------------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
-        resumeBSM(Arg2=list, async_operation=bool)list
-        ----------------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = {"Arg1": self}
-        for i in range(len(args)):
-            payload["Arg%s" % (i + 2)] = args[i]
-        for item in kwargs.items():
-            payload[item[0]] = item[1]
-        return self._execute("resumeBSM", payload=payload, response_object=None)
-
-    def ResumeHello(self, *args, **kwargs):
-        # type: (*Any, **Any) -> Union[List[str], None]
-        """Executes the resumeHello operation on the server.
-
-        Resume Hello
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        resumeHello(async_operation=bool)
-        ---------------------------------
-        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
-
-        resumeHello(SessionIndices=list, async_operation=bool)
-        ------------------------------------------------------
+        simulateDelayedMACsecPacketsStop(SessionIndices=list, async_operation=bool)
+        ---------------------------------------------------------------------------
         - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
-        resumeHello(SessionIndices=string, async_operation=bool)
-        --------------------------------------------------------
+        simulateDelayedMACsecPacketsStop(SessionIndices=string, async_operation=bool)
+        -----------------------------------------------------------------------------
         - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
-        resumeHello(Arg2=list, async_operation=bool)list
-        ------------------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        simulateDelayedMACsecPacketsStop(Arg2=list, async_operation=bool)list
+        ---------------------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the device group.
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns list(str): ID to associate each async action invocation
 
@@ -1134,47 +1376,9 @@ class PimV6Interface(Base):
             payload["Arg%s" % (i + 2)] = args[i]
         for item in kwargs.items():
             payload[item[0]] = item[1]
-        return self._execute("resumeHello", payload=payload, response_object=None)
-
-    def SendBSM(self, *args, **kwargs):
-        # type: (*Any, **Any) -> Union[List[str], None]
-        """Executes the sendBSM operation on the server.
-
-        Stop Bootstrap
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        sendBSM(async_operation=bool)
-        -----------------------------
-        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
-
-        sendBSM(SessionIndices=list, async_operation=bool)
-        --------------------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
-
-        sendBSM(SessionIndices=string, async_operation=bool)
-        ----------------------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
-
-        sendBSM(Arg2=list, async_operation=bool)list
-        --------------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = {"Arg1": self}
-        for i in range(len(args)):
-            payload["Arg%s" % (i + 2)] = args[i]
-        for item in kwargs.items():
-            payload[item[0]] = item[1]
-        return self._execute("sendBSM", payload=payload, response_object=None)
+        return self._execute(
+            "simulateDelayedMACsecPacketsStop", payload=payload, response_object=None
+        )
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -1244,31 +1448,31 @@ class PimV6Interface(Base):
             payload[item[0]] = item[1]
         return self._execute("stop", payload=payload, response_object=None)
 
-    def StopBSM(self, *args, **kwargs):
+    def TriggerRekey(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
-        """Executes the stopBSM operation on the server.
+        """Executes the triggerRekey operation on the server.
 
-        Stop Bootstrap
+        Trigger a Rekey Event from Keysight emulated KeyServer.
 
         The IxNetwork model allows for multiple method Signatures with the same name while python does not.
 
-        stopBSM(async_operation=bool)
-        -----------------------------
+        triggerRekey(async_operation=bool)
+        ----------------------------------
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
-        stopBSM(SessionIndices=list, async_operation=bool)
-        --------------------------------------------------
+        triggerRekey(SessionIndices=list, async_operation=bool)
+        -------------------------------------------------------
         - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
-        stopBSM(SessionIndices=string, async_operation=bool)
-        ----------------------------------------------------
+        triggerRekey(SessionIndices=string, async_operation=bool)
+        ---------------------------------------------------------
         - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
-        stopBSM(Arg2=list, async_operation=bool)list
-        --------------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        triggerRekey(Arg2=list, async_operation=bool)list
+        -------------------------------------------------
+        - Arg2 (list(number)): List of indices into the device group.
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns list(str): ID to associate each async action invocation
 
@@ -1282,125 +1486,63 @@ class PimV6Interface(Base):
             payload["Arg%s" % (i + 2)] = args[i]
         for item in kwargs.items():
             payload[item[0]] = item[1]
-        return self._execute("stopBSM", payload=payload, response_object=None)
-
-    def StopHello(self, *args, **kwargs):
-        # type: (*Any, **Any) -> None
-        """Executes the stopHello operation on the server.
-
-        Stop Hello
-
-        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
-
-        stopHello(async_operation=bool)
-        -------------------------------
-        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
-
-        stopHello(SessionIndices=list, async_operation=bool)
-        ----------------------------------------------------
-        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
-        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
-
-        stopHello(SessionIndices=string, async_operation=bool)
-        ------------------------------------------------------
-        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
-        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = {"Arg1": self}
-        for i in range(len(args)):
-            payload["Arg%s" % (i + 2)] = args[i]
-        for item in kwargs.items():
-            payload[item[0]] = item[1]
-        return self._execute("stopHello", payload=payload, response_object=None)
-
-    def Stophello(self, *args, **kwargs):
-        # type: (*Any, **Any) -> Union[List[str], None]
-        """Executes the stophello operation on the server.
-
-        Stops the protocol state machine for the given protocol session instances.
-
-        stophello(Arg2=list, async_operation=bool)list
-        ----------------------------------------------
-        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
-        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
-        - Returns list(str): ID to associate each async action invocation
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = {"Arg1": self.href}
-        for i in range(len(args)):
-            payload["Arg%s" % (i + 2)] = args[i]
-        for item in kwargs.items():
-            payload[item[0]] = item[1]
-        return self._execute("stophello", payload=payload, response_object=None)
+        return self._execute("triggerRekey", payload=payload, response_object=None)
 
     def get_device_ids(
         self,
         PortNames=None,
-        Active=None,
-        AutoPickNeighbor=None,
-        BootstrapHashMaskLength=None,
-        BootstrapInterval=None,
-        BootstrapPriority=None,
-        BootstrapTimeout=None,
-        DisableTriggered=None,
-        DiscardLearnedRpInfo=None,
-        EnableBfdRegistration=None,
-        EnableBootstrap=None,
-        EnablePrune=None,
-        ForceSemantic=None,
-        HelloHoldTime=None,
-        HelloInterval=None,
-        LanPruneTbit=None,
-        LearnSelectedRpSet=None,
-        NeighborV6Address=None,
-        OverrideInterval=None,
-        PruneDelay=None,
-        SendBidirectional=None,
-        SendGenerationIdOption=None,
-        SendGenerationMode=None,
-        SupportUnicastBsm=None,
-        TriggeredHelloDelay=None,
+        ActiveDevice=None,
+        CipherSuite=None,
+        ConfidentialityOffset=None,
+        DelayProtect=None,
+        KeyDerivationFunction=None,
+        KeyServerPriority=None,
+        KeyServerSCI=None,
+        LlpnStep=None,
+        MacsecCapability=None,
+        MacsecDesired=None,
+        MemberIdentifier=None,
+        MkaHelloTime=None,
+        MkaVersion=None,
+        OlpnStep=None,
+        RekeyThresholdPN=None,
+        RekeyThresholdXPN=None,
+        SendICVIndicator=None,
+        StartingDistributedAN=None,
+        StartingKeyNumber=None,
+        StartingLLPN=None,
+        StartingOLPN=None,
+        SupportedCipherSuites=None,
     ):
-        """Base class infrastructure that gets a list of pimV6Interface device ids encapsulated by this object.
+        """Base class infrastructure that gets a list of mka device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 
         Args
         ----
         - PortNames (str): optional regex of port names
-        - Active (str): optional regex of active
-        - AutoPickNeighbor (str): optional regex of autoPickNeighbor
-        - BootstrapHashMaskLength (str): optional regex of bootstrapHashMaskLength
-        - BootstrapInterval (str): optional regex of bootstrapInterval
-        - BootstrapPriority (str): optional regex of bootstrapPriority
-        - BootstrapTimeout (str): optional regex of bootstrapTimeout
-        - DisableTriggered (str): optional regex of disableTriggered
-        - DiscardLearnedRpInfo (str): optional regex of discardLearnedRpInfo
-        - EnableBfdRegistration (str): optional regex of enableBfdRegistration
-        - EnableBootstrap (str): optional regex of enableBootstrap
-        - EnablePrune (str): optional regex of enablePrune
-        - ForceSemantic (str): optional regex of forceSemantic
-        - HelloHoldTime (str): optional regex of helloHoldTime
-        - HelloInterval (str): optional regex of helloInterval
-        - LanPruneTbit (str): optional regex of lanPruneTbit
-        - LearnSelectedRpSet (str): optional regex of learnSelectedRpSet
-        - NeighborV6Address (str): optional regex of neighborV6Address
-        - OverrideInterval (str): optional regex of overrideInterval
-        - PruneDelay (str): optional regex of pruneDelay
-        - SendBidirectional (str): optional regex of sendBidirectional
-        - SendGenerationIdOption (str): optional regex of sendGenerationIdOption
-        - SendGenerationMode (str): optional regex of sendGenerationMode
-        - SupportUnicastBsm (str): optional regex of supportUnicastBsm
-        - TriggeredHelloDelay (str): optional regex of triggeredHelloDelay
+        - ActiveDevice (str): optional regex of activeDevice
+        - CipherSuite (str): optional regex of cipherSuite
+        - ConfidentialityOffset (str): optional regex of confidentialityOffset
+        - DelayProtect (str): optional regex of delayProtect
+        - KeyDerivationFunction (str): optional regex of keyDerivationFunction
+        - KeyServerPriority (str): optional regex of keyServerPriority
+        - KeyServerSCI (str): optional regex of keyServerSCI
+        - LlpnStep (str): optional regex of llpnStep
+        - MacsecCapability (str): optional regex of macsecCapability
+        - MacsecDesired (str): optional regex of macsecDesired
+        - MemberIdentifier (str): optional regex of memberIdentifier
+        - MkaHelloTime (str): optional regex of mkaHelloTime
+        - MkaVersion (str): optional regex of mkaVersion
+        - OlpnStep (str): optional regex of olpnStep
+        - RekeyThresholdPN (str): optional regex of rekeyThresholdPN
+        - RekeyThresholdXPN (str): optional regex of rekeyThresholdXPN
+        - SendICVIndicator (str): optional regex of sendICVIndicator
+        - StartingDistributedAN (str): optional regex of startingDistributedAN
+        - StartingKeyNumber (str): optional regex of startingKeyNumber
+        - StartingLLPN (str): optional regex of startingLLPN
+        - StartingOLPN (str): optional regex of startingOLPN
+        - SupportedCipherSuites (str): optional regex of supportedCipherSuites
 
         Returns
         -------

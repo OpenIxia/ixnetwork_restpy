@@ -614,13 +614,13 @@ class Ethernet(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.mka_263a86da717fe553c3af300d3bfb0cab.Mka): An instance of the Mka class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.mka_78bbec2a0b33a75a2bd662bf23b07c3d.Mka): An instance of the Mka class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.mka_263a86da717fe553c3af300d3bfb0cab import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.mka_78bbec2a0b33a75a2bd662bf23b07c3d import (
             Mka,
         )
 
@@ -754,13 +754,13 @@ class Ethernet(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ptp_159da219e0807ce6756d8a5214d56f70.Ptp): An instance of the Ptp class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ptp_41f127b75896ebfffe1628d41332bf0b.Ptp): An instance of the Ptp class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ptp_159da219e0807ce6756d8a5214d56f70 import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ptp_41f127b75896ebfffe1628d41332bf0b import (
             Ptp,
         )
 

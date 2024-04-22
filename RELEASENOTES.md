@@ -1,4 +1,8 @@
 # Release Notes
+### April 2024
+* 1.2.0
+  * support for ixnetwork version 10.00.2403.64 (10.00 Update-1)
+  * fixed issue for batch add traffic creation.
 ### January 2024
 * 1.1.12
   * support ixnetwork version 10.00.2312.4 (10.00 EA)

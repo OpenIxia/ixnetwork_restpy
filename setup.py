@@ -22,14 +22,18 @@
 import os
 import sys
 import time
-import argparse
 from setuptools import setup
 
 
 base_dir = os.path.abspath(os.path.dirname(__file__))
 with open(os.path.join(base_dir, 'README.md')) as fid:
     long_description = fid.read()
-if '--internal' in sys.argv:
+
+if '-sdk_version' in sys.argv:
+    version_number = sys.argv[-1]
+    sys.argv.pop()
+    sys.argv.remove('-sdk_version')
+elif '--internal' in sys.argv:
     version_number = time.strftime('%Y%m%d.%H.%M', time.gmtime())
     sys.argv.remove('--internal')
 else:

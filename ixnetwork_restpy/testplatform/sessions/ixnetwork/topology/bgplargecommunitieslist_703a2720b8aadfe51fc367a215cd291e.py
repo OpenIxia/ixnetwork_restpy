@@ -27,24 +27,25 @@ if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
 
-class BgpNonVPNRRLargeCommunitiesList(Base):
+class BgpLargeCommunitiesList(Base):
     """Bgp Non VPN RR Large Communities
-    The BgpNonVPNRRLargeCommunitiesList class encapsulates a list of bgpNonVPNRRLargeCommunitiesList resources that are managed by the system.
-    A list of resources can be retrieved from the server using the BgpNonVPNRRLargeCommunitiesList.find() method.
+    The BgpLargeCommunitiesList class encapsulates a list of bgpLargeCommunitiesList resources that are managed by the system.
+    A list of resources can be retrieved from the server using the BgpLargeCommunitiesList.find() method.
     """
 
     __slots__ = ()
-    _SDM_NAME = "bgpNonVPNRRLargeCommunitiesList"
+    _SDM_NAME = "bgpLargeCommunitiesList"
     _SDM_ATT_MAP = {
         "Count": "count",
         "DescriptiveName": "descriptiveName",
+        "EnableLargeCommunity": "enableLargeCommunity",
         "LargeCommunity": "largeCommunity",
         "Name": "name",
     }
     _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
-        super(BgpNonVPNRRLargeCommunitiesList, self).__init__(parent, list_op)
+        super(BgpLargeCommunitiesList, self).__init__(parent, list_op)
 
     @property
     def Count(self):
@@ -65,6 +66,20 @@ class BgpNonVPNRRLargeCommunitiesList(Base):
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
         return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
+
+    @property
+    def EnableLargeCommunity(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Large Community
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableLargeCommunity"])
+        )
 
     @property
     def LargeCommunity(self):
@@ -96,8 +111,8 @@ class BgpNonVPNRRLargeCommunitiesList(Base):
         self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     def update(self, Name=None):
-        # type: (str) -> BgpNonVPNRRLargeCommunitiesList
-        """Updates bgpNonVPNRRLargeCommunitiesList resource on the server.
+        # type: (str) -> BgpLargeCommunitiesList
+        """Updates bgpLargeCommunitiesList resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
         The Multivalue class has documentation that details the possible values for those named parameters.
@@ -113,8 +128,8 @@ class BgpNonVPNRRLargeCommunitiesList(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def add(self, Name=None):
-        # type: (str) -> BgpNonVPNRRLargeCommunitiesList
-        """Adds a new bgpNonVPNRRLargeCommunitiesList resource on the json, only valid with batch add utility
+        # type: (str) -> BgpLargeCommunitiesList
+        """Adds a new bgpLargeCommunitiesList resource on the json, only valid with batch add utility
 
         Args
         ----
@@ -122,7 +137,7 @@ class BgpNonVPNRRLargeCommunitiesList(Base):
 
         Returns
         -------
-        - self: This instance with all currently retrieved bgpNonVPNRRLargeCommunitiesList resources using find and the newly added bgpNonVPNRRLargeCommunitiesList resources available through an iterator or index
+        - self: This instance with all currently retrieved bgpLargeCommunitiesList resources using find and the newly added bgpLargeCommunitiesList resources available through an iterator or index
 
         Raises
         ------
@@ -131,12 +146,12 @@ class BgpNonVPNRRLargeCommunitiesList(Base):
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def find(self, Count=None, DescriptiveName=None, Name=None):
-        # type: (int, str, str) -> BgpNonVPNRRLargeCommunitiesList
-        """Finds and retrieves bgpNonVPNRRLargeCommunitiesList resources from the server.
+        # type: (int, str, str) -> BgpLargeCommunitiesList
+        """Finds and retrieves bgpLargeCommunitiesList resources from the server.
 
-        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve bgpNonVPNRRLargeCommunitiesList resources from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve bgpLargeCommunitiesList resources from the server.
         To retrieve an exact match ensure the parameter value starts with ^ and ends with $
-        By default the find method takes no parameters and will retrieve all bgpNonVPNRRLargeCommunitiesList resources from the server.
+        By default the find method takes no parameters and will retrieve all bgpLargeCommunitiesList resources from the server.
 
         Args
         ----
@@ -146,7 +161,7 @@ class BgpNonVPNRRLargeCommunitiesList(Base):
 
         Returns
         -------
-        - self: This instance with matching bgpNonVPNRRLargeCommunitiesList resources retrieved from the server available through an iterator or index
+        - self: This instance with matching bgpLargeCommunitiesList resources retrieved from the server available through an iterator or index
 
         Raises
         ------
@@ -155,7 +170,7 @@ class BgpNonVPNRRLargeCommunitiesList(Base):
         return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
-        """Retrieves a single instance of bgpNonVPNRRLargeCommunitiesList data from the server.
+        """Retrieves a single instance of bgpLargeCommunitiesList data from the server.
 
         Args
         ----
@@ -163,7 +178,7 @@ class BgpNonVPNRRLargeCommunitiesList(Base):
 
         Returns
         -------
-        - self: This instance with the bgpNonVPNRRLargeCommunitiesList resources from the server available through an iterator or index
+        - self: This instance with the bgpLargeCommunitiesList resources from the server available through an iterator or index
 
         Raises
         ------
@@ -193,14 +208,17 @@ class BgpNonVPNRRLargeCommunitiesList(Base):
             payload[item[0]] = item[1]
         return self._execute("addDeleteTags", payload=payload, response_object=None)
 
-    def get_device_ids(self, PortNames=None, LargeCommunity=None):
-        """Base class infrastructure that gets a list of bgpNonVPNRRLargeCommunitiesList device ids encapsulated by this object.
+    def get_device_ids(
+        self, PortNames=None, EnableLargeCommunity=None, LargeCommunity=None
+    ):
+        """Base class infrastructure that gets a list of bgpLargeCommunitiesList device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 
         Args
         ----
         - PortNames (str): optional regex of port names
+        - EnableLargeCommunity (str): optional regex of enableLargeCommunity
         - LargeCommunity (str): optional regex of largeCommunity
 
         Returns

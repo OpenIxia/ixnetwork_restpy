@@ -43,7 +43,7 @@ class ImportBgpRoutesParams(Base):
         "RouteLimit": "routeLimit",
     }
     _SDM_ENUM_MAP = {
-        "fileType": ["csv", "juniper", "cisco", "arista"],
+        "fileType": ["csv", "juniper", "cisco", "arista", "nokia"],
         "nextHop": ["overwriteTestersAddress", "preserveFromFile"],
         "routeDistributionType": ["roundRobin", "replicate"],
     }
@@ -85,7 +85,7 @@ class ImportBgpRoutesParams(Base):
         """
         Returns
         -------
-        - str(csv | juniper | cisco | arista): Import routes file type. Route import may fail in file type is not matching with the file being imported.
+        - str(csv | juniper | cisco | arista | nokia): Import routes file type. Route import may fail in file type is not matching with the file being imported.
         """
         return self._get_attribute(self._SDM_ATT_MAP["FileType"])
 
@@ -154,7 +154,7 @@ class ImportBgpRoutesParams(Base):
         ----
         - BestRoutes (bool): Import only the best routes (provided route file has this information).
         - DataFile (obj(ixnetwork_restpy.files.Files)): Select source file having route information.
-        - FileType (str(csv | juniper | cisco | arista)): Import routes file type. Route import may fail in file type is not matching with the file being imported.
+        - FileType (str(csv | juniper | cisco | arista | nokia)): Import routes file type. Route import may fail in file type is not matching with the file being imported.
         - NextHop (str(overwriteTestersAddress | preserveFromFile)): Option for setting Next Hop modification type.
         - RouteDistributionType (str(roundRobin | replicate)): Option to specify distribution type, for distributing imported routes across all BGP Peer. Options: Round-Robin, for allocating routes sequentially, and Replicate, for allocating all routes to each Peer.
         - RouteLimit (number): Specify maximum routes(per port) that you want to import. Based on Card Memory, the Max Route Limit Per Port are: - 4GB or more => 2.0 million 2GB => 1.6 million 1GB => 0.8 million Less than 1GB => 0.5 million
@@ -184,7 +184,7 @@ class ImportBgpRoutesParams(Base):
         ----
         - BestRoutes (bool): Import only the best routes (provided route file has this information).
         - DataFile (obj(ixnetwork_restpy.files.Files)): Select source file having route information.
-        - FileType (str(csv | juniper | cisco | arista)): Import routes file type. Route import may fail in file type is not matching with the file being imported.
+        - FileType (str(csv | juniper | cisco | arista | nokia)): Import routes file type. Route import may fail in file type is not matching with the file being imported.
         - NextHop (str(overwriteTestersAddress | preserveFromFile)): Option for setting Next Hop modification type.
         - RouteDistributionType (str(roundRobin | replicate)): Option to specify distribution type, for distributing imported routes across all BGP Peer. Options: Round-Robin, for allocating routes sequentially, and Replicate, for allocating all routes to each Peer.
         - RouteLimit (number): Specify maximum routes(per port) that you want to import. Based on Card Memory, the Max Route Limit Per Port are: - 4GB or more => 2.0 million 2GB => 1.6 million 1GB => 0.8 million Less than 1GB => 0.5 million

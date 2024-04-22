@@ -609,7 +609,7 @@ class Vport(Base):
         """
         Returns
         -------
-        - str: The current format is {chassisIp}/{frontPanelPort}.{fanoutPort} or {chassisIp};{cardId};{portId} for legacy systems.
+        - str: The current format is {chassisIp}/{frontPanelPort}.{fanoutPort} or {chassisIp};{cardId};{portId} for legacy systems. This would attempt and wait for chassis/port connection.
         """
         return self._get_attribute(self._SDM_ATT_MAP["Location"])
 
@@ -853,7 +853,7 @@ class Vport(Base):
         - ConnectedTo (str(None | /api/v1/sessions/1/ixnetwork/availableHardware/chassis/card/port)): The physical port to which the unassigned port is assigned.
         - DelayCompensation (str): Delay compensation value for transceiver and cable length in nano seconds(ns).
         - IsPullOnly (bool): (This action only affects assigned ports.) This action will temporarily set the port as an Unassigned Port. This function is used to pull the configuration set by a Tcl script or an IxExplorer port file into the IxNetwork configuration.
-        - Location (str): The current format is {chassisIp}/{frontPanelPort}.{fanoutPort} or {chassisIp};{cardId};{portId} for legacy systems.
+        - Location (str): The current format is {chassisIp}/{frontPanelPort}.{fanoutPort} or {chassisIp};{cardId};{portId} for legacy systems. This would attempt and wait for chassis/port connection.
         - Name (str): The description of the port: (1) For an assigned port, the format is: (Port type) (card no.): (port no.) - (chassis name or IP). (2) For an (unassigned) port configuration, the format is: (Port type) Port 00x.
         - RxMode (str(capture | measure | captureAndMeasure | packetImpairment)): The receive mode of the virtual port.
         - TraceEnabled (bool): Enables/Disables rpf port trace for this port
@@ -896,7 +896,7 @@ class Vport(Base):
         - ConnectedTo (str(None | /api/v1/sessions/1/ixnetwork/availableHardware/chassis/card/port)): The physical port to which the unassigned port is assigned.
         - DelayCompensation (str): Delay compensation value for transceiver and cable length in nano seconds(ns).
         - IsPullOnly (bool): (This action only affects assigned ports.) This action will temporarily set the port as an Unassigned Port. This function is used to pull the configuration set by a Tcl script or an IxExplorer port file into the IxNetwork configuration.
-        - Location (str): The current format is {chassisIp}/{frontPanelPort}.{fanoutPort} or {chassisIp};{cardId};{portId} for legacy systems.
+        - Location (str): The current format is {chassisIp}/{frontPanelPort}.{fanoutPort} or {chassisIp};{cardId};{portId} for legacy systems. This would attempt and wait for chassis/port connection.
         - Name (str): The description of the port: (1) For an assigned port, the format is: (Port type) (card no.): (port no.) - (chassis name or IP). (2) For an (unassigned) port configuration, the format is: (Port type) Port 00x.
         - RxMode (str(capture | measure | captureAndMeasure | packetImpairment)): The receive mode of the virtual port.
         - TraceEnabled (bool): Enables/Disables rpf port trace for this port
@@ -1005,7 +1005,7 @@ class Vport(Base):
         - IxosChassisVersion (str): (Read Only) If true, the installer installs the same resources as installed by IxOS on a chassis.
         - LastLinkStateChangeEventTimestamp (str): A string describing the last link status change client timestamp for the port.
         - Licenses (str): Number of licenses.
-        - Location (str): The current format is {chassisIp}/{frontPanelPort}.{fanoutPort} or {chassisIp};{cardId};{portId} for legacy systems.
+        - Location (str): The current format is {chassisIp}/{frontPanelPort}.{fanoutPort} or {chassisIp};{cardId};{portId} for legacy systems. This would attempt and wait for chassis/port connection.
         - MacsecEnabled (bool):
         - MaxStreamsSupported (str):
         - Name (str): The description of the port: (1) For an assigned port, the format is: (Port type) (card no.): (port no.) - (chassis name or IP). (2) For an (unassigned) port configuration, the format is: (Port type) Port 00x.

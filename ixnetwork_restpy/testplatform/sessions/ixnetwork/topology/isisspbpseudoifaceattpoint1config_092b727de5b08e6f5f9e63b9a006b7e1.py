@@ -40,6 +40,9 @@ class IsisSpbPseudoIfaceAttPoint1Config(Base):
         "Count": "count",
         "DescriptiveName": "descriptiveName",
         "LinkMetric": "linkMetric",
+        "LocalFromNode": "localFromNode",
+        "LocalToNetworkTopology": "localToNetworkTopology",
+        "LocalToNode": "localToNode",
         "Name": "name",
     }
     _SDM_ENUM_MAP = {}
@@ -92,6 +95,36 @@ class IsisSpbPseudoIfaceAttPoint1Config(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["LinkMetric"]))
 
     @property
+    def LocalFromNode(self):
+        # type: () -> List[str]
+        """
+        Returns
+        -------
+        - list(str): From Node
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["LocalFromNode"])
+
+    @property
+    def LocalToNetworkTopology(self):
+        # type: () -> List[str]
+        """
+        Returns
+        -------
+        - list(str): To Network Topology
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["LocalToNetworkTopology"])
+
+    @property
+    def LocalToNode(self):
+        # type: () -> List[str]
+        """
+        Returns
+        -------
+        - list(str): To Node
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["LocalToNode"])
+
+    @property
     def Name(self):
         # type: () -> str
         """
@@ -141,8 +174,16 @@ class IsisSpbPseudoIfaceAttPoint1Config(Base):
         """
         return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, Count=None, DescriptiveName=None, Name=None):
-        # type: (int, str, str) -> IsisSpbPseudoIfaceAttPoint1Config
+    def find(
+        self,
+        Count=None,
+        DescriptiveName=None,
+        LocalFromNode=None,
+        LocalToNetworkTopology=None,
+        LocalToNode=None,
+        Name=None,
+    ):
+        # type: (int, str, List[str], List[str], List[str], str) -> IsisSpbPseudoIfaceAttPoint1Config
         """Finds and retrieves isisSpbPseudoIfaceAttPoint1Config resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve isisSpbPseudoIfaceAttPoint1Config resources from the server.
@@ -153,6 +194,9 @@ class IsisSpbPseudoIfaceAttPoint1Config(Base):
         ----
         - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
+        - LocalFromNode (list(str)): From Node
+        - LocalToNetworkTopology (list(str)): To Network Topology
+        - LocalToNode (list(str)): To Node
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
 
         Returns

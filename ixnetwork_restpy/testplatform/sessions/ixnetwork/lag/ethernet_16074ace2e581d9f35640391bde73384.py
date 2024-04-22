@@ -194,13 +194,13 @@ class Ethernet(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.lag.mka_469fe6a9928108e87cb97539528a12d0.Mka): An instance of the Mka class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.lag.mka_b76eb2a38489a4c8ac4427fe41dec86b.Mka): An instance of the Mka class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.lag.mka_469fe6a9928108e87cb97539528a12d0 import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.lag.mka_b76eb2a38489a4c8ac4427fe41dec86b import (
             Mka,
         )
 

@@ -55,6 +55,7 @@ class Ptp(Base):
         "ClockAccuracy": "clockAccuracy",
         "ClockClass": "clockClass",
         "ClockIdentity": "clockIdentity",
+        "CmldsPort": "cmldsPort",
         "CommunicationMode": "communicationMode",
         "ConfiguredInterfaceSpeed": "configuredInterfaceSpeed",
         "ConnectedVia": "connectedVia",
@@ -540,6 +541,21 @@ class Ptp(Base):
         from ixnetwork_restpy.multivalue import Multivalue
 
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ClockIdentity"]))
+
+    @property
+    def CmldsPort(self):
+        # type: () -> int
+        """
+        Returns
+        -------
+        - number: Source Port Identity used in PDelay Messages in cmlds mode.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["CmldsPort"])
+
+    @CmldsPort.setter
+    def CmldsPort(self, value):
+        # type: (int) -> None
+        self._set_attribute(self._SDM_ATT_MAP["CmldsPort"], value)
 
     @property
     def CommunicationMode(self):
@@ -2686,6 +2702,7 @@ class Ptp(Base):
         self,
         AtoiTlvCount=None,
         AvnuMode=None,
+        CmldsPort=None,
         ConfiguredInterfaceSpeed=None,
         ConnectedVia=None,
         EnableATOITlv=None,
@@ -2701,7 +2718,7 @@ class Ptp(Base):
         SlaveIPRangeCount=None,
         StackedLayers=None,
     ):
-        # type: (int, str, int, List[str], bool, bool, bool, bool, int, str, int, int, str, int, int, List[str]) -> Ptp
+        # type: (int, str, int, int, List[str], bool, bool, bool, bool, int, str, int, int, str, int, int, List[str]) -> Ptp
         """Updates ptp resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -2711,6 +2728,7 @@ class Ptp(Base):
         ----
         - AtoiTlvCount (number): ATOI TLV Count
         - AvnuMode (str(aVNU_NA | aVNU_GPTP)): AVNU Mode
+        - CmldsPort (number): Source Port Identity used in PDelay Messages in cmlds mode.
         - ConfiguredInterfaceSpeed (number): Configured Interface Speed
         - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology])): List of layers this layer is used to connect with to the wire.
         - EnableATOITlv (bool): Enable ATOI TLV
@@ -2736,6 +2754,7 @@ class Ptp(Base):
         self,
         AtoiTlvCount=None,
         AvnuMode=None,
+        CmldsPort=None,
         ConfiguredInterfaceSpeed=None,
         ConnectedVia=None,
         EnableATOITlv=None,
@@ -2751,13 +2770,14 @@ class Ptp(Base):
         SlaveIPRangeCount=None,
         StackedLayers=None,
     ):
-        # type: (int, str, int, List[str], bool, bool, bool, bool, int, str, int, int, str, int, int, List[str]) -> Ptp
+        # type: (int, str, int, int, List[str], bool, bool, bool, bool, int, str, int, int, str, int, int, List[str]) -> Ptp
         """Adds a new ptp resource on the server and adds it to the container.
 
         Args
         ----
         - AtoiTlvCount (number): ATOI TLV Count
         - AvnuMode (str(aVNU_NA | aVNU_GPTP)): AVNU Mode
+        - CmldsPort (number): Source Port Identity used in PDelay Messages in cmlds mode.
         - ConfiguredInterfaceSpeed (number): Configured Interface Speed
         - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology])): List of layers this layer is used to connect with to the wire.
         - EnableATOITlv (bool): Enable ATOI TLV
@@ -2797,6 +2817,7 @@ class Ptp(Base):
         self,
         AtoiTlvCount=None,
         AvnuMode=None,
+        CmldsPort=None,
         ConfiguredInterfaceSpeed=None,
         ConnectedVia=None,
         Count=None,
@@ -2830,6 +2851,7 @@ class Ptp(Base):
         ----
         - AtoiTlvCount (number): ATOI TLV Count
         - AvnuMode (str(aVNU_NA | aVNU_GPTP)): AVNU Mode
+        - CmldsPort (number): Source Port Identity used in PDelay Messages in cmlds mode.
         - ConfiguredInterfaceSpeed (number): Configured Interface Speed
         - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology])): List of layers this layer is used to connect with to the wire.
         - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.

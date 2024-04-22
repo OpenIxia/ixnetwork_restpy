@@ -56,6 +56,7 @@ class NetconfServer(Base):
         "Count": "count",
         "DecryptedCapture": "decryptedCapture",
         "DescriptiveName": "descriptiveName",
+        "DownloadFilePath": "downloadFilePath",
         "EnableDatastore": "enableDatastore",
         "ErrorInfo": "errorInfo",
         "ErrorPercentage": "errorPercentage",
@@ -88,6 +89,7 @@ class NetconfServer(Base):
         "StateCounts": "stateCounts",
         "Status": "status",
         "SupportedYANGModules": "supportedYANGModules",
+        "UploadFilePath": "uploadFilePath",
         "UserName": "userName",
     }
     _SDM_ENUM_MAP = {
@@ -422,6 +424,16 @@ class NetconfServer(Base):
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
         return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
+
+    @property
+    def DownloadFilePath(self):
+        # type: () -> str
+        """
+        Returns
+        -------
+        - str: Download Path
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["DownloadFilePath"])
 
     @property
     def EnableDatastore(self):
@@ -847,6 +859,16 @@ class NetconfServer(Base):
         )
 
     @property
+    def UploadFilePath(self):
+        # type: () -> str
+        """
+        Returns
+        -------
+        - str: Upload
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["UploadFilePath"])
+
+    @property
     def UserName(self):
         # type: () -> 'Multivalue'
         """
@@ -939,6 +961,7 @@ class NetconfServer(Base):
         ConnectedVia=None,
         Count=None,
         DescriptiveName=None,
+        DownloadFilePath=None,
         Errors=None,
         Multiplier=None,
         Name=None,
@@ -949,6 +972,7 @@ class NetconfServer(Base):
         StackedLayers=None,
         StateCounts=None,
         Status=None,
+        UploadFilePath=None,
     ):
         """Finds and retrieves netconfServer resources from the server.
 
@@ -962,6 +986,7 @@ class NetconfServer(Base):
         - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology])): List of layers this layer is used to connect with to the wire.
         - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
+        - DownloadFilePath (str): Download Path
         - Errors (list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork/],arg2:list[str]))): A list of errors that have occurred
         - Multiplier (number): Number of layer instances per parent instance (multiplier)
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
@@ -972,6 +997,7 @@ class NetconfServer(Base):
         - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology])): List of secondary (many to one) child layer protocols
         - StateCounts (dict(total:number,notStarted:number,down:number,up:number)): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
         - Status (str(configured | error | mixed | notStarted | started | starting | stopping)): Running status of associated network element. Once in Started state, protocol sessions will begin to negotiate.
+        - UploadFilePath (str): Upload
 
         Returns
         -------

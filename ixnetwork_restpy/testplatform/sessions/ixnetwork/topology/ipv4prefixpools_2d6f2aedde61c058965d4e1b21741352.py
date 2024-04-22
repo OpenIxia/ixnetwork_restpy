@@ -58,13 +58,13 @@ class Ipv4PrefixPools(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpiprouteproperty_ffd9071ae88c6283e9f54ec948882405.BgpIPRouteProperty): An instance of the BgpIPRouteProperty class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpiprouteproperty_6a518e353e584b0ceed8bde786766d2b.BgpIPRouteProperty): An instance of the BgpIPRouteProperty class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpiprouteproperty_ffd9071ae88c6283e9f54ec948882405 import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpiprouteproperty_6a518e353e584b0ceed8bde786766d2b import (
             BgpIPRouteProperty,
         )
 
@@ -178,13 +178,13 @@ class Ipv4PrefixPools(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpv6iprouteproperty_e31f5dc41e1565260f4ddeb2f61efe60.BgpV6IPRouteProperty): An instance of the BgpV6IPRouteProperty class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpv6iprouteproperty_ceedb8c79a2ee02343249677436902a2.BgpV6IPRouteProperty): An instance of the BgpV6IPRouteProperty class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpv6iprouteproperty_e31f5dc41e1565260f4ddeb2f61efe60 import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpv6iprouteproperty_ceedb8c79a2ee02343249677436902a2 import (
             BgpV6IPRouteProperty,
         )
 

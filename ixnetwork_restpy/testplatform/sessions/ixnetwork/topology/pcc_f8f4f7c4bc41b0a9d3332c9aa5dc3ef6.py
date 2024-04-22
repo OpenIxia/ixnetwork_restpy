@@ -69,6 +69,7 @@ class Pcc(Base):
         "PccPpagTLVType": "pccPpagTLVType",
         "PccTEPathBindingTLVType": "pccTEPathBindingTLVType",
         "PceIpv4Address": "pceIpv4Address",
+        "PceIpv6Address": "pceIpv6Address",
         "PreEstablishedSrLspsPerPcc": "preEstablishedSrLspsPerPcc",
         "RateControl": "rateControl",
         "ReconnectInterval": "reconnectInterval",
@@ -207,13 +208,13 @@ class Pcc(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pcepbackuppces_f780e95e8b1b209ab7ad3ca8a9f3a4c6.PcepBackupPCEs): An instance of the PcepBackupPCEs class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pcepbackuppces_888c67cea2ddbb6ae8e6dc6df8627f48.PcepBackupPCEs): An instance of the PcepBackupPCEs class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pcepbackuppces_f780e95e8b1b209ab7ad3ca8a9f3a4c6 import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pcepbackuppces_888c67cea2ddbb6ae8e6dc6df8627f48 import (
             PcepBackupPCEs,
         )
 
@@ -227,13 +228,13 @@ class Pcc(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.preestablishedsrlsps_967b2455bf37443139cbc5750c81086f.PreEstablishedSrLsps): An instance of the PreEstablishedSrLsps class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.preestablishedsrlsps_aa0a4a028cb492d766976f4e8d3eff64.PreEstablishedSrLsps): An instance of the PreEstablishedSrLsps class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.preestablishedsrlsps_967b2455bf37443139cbc5750c81086f import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.preestablishedsrlsps_aa0a4a028cb492d766976f4e8d3eff64 import (
             PreEstablishedSrLsps,
         )
 
@@ -685,12 +686,26 @@ class Pcc(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): IPv4 address of the PCE. This column is greyed out in case of PCCv6.
+        - obj(ixnetwork_restpy.multivalue.Multivalue): IPv4 address of the PCE. This column is greyed out in case of PCC over IPv6.
         """
         from ixnetwork_restpy.multivalue import Multivalue
 
         return Multivalue(
             self, self._get_attribute(self._SDM_ATT_MAP["PceIpv4Address"])
+        )
+
+    @property
+    def PceIpv6Address(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): IPv6 address of the PCE. This column is greyed out in case of PCC over IPv4.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["PceIpv6Address"])
         )
 
     @property
@@ -1733,6 +1748,7 @@ class Pcc(Base):
         PccPpagTLVType=None,
         PccTEPathBindingTLVType=None,
         PceIpv4Address=None,
+        PceIpv6Address=None,
         RateControl=None,
         ReconnectInterval=None,
         ReturnInstantiationError=None,
@@ -1773,6 +1789,7 @@ class Pcc(Base):
         - PccPpagTLVType (str): optional regex of pccPpagTLVType
         - PccTEPathBindingTLVType (str): optional regex of pccTEPathBindingTLVType
         - PceIpv4Address (str): optional regex of pceIpv4Address
+        - PceIpv6Address (str): optional regex of pceIpv6Address
         - RateControl (str): optional regex of rateControl
         - ReconnectInterval (str): optional regex of reconnectInterval
         - ReturnInstantiationError (str): optional regex of returnInstantiationError

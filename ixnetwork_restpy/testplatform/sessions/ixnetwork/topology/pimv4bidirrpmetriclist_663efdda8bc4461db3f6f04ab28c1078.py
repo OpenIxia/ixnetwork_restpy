@@ -27,64 +27,39 @@ if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
 
-class NetconfServer(Base):
-    """Per Port Netconf Server configuration
-    The NetconfServer class encapsulates a required netconfServer resource which will be retrieved from the server every time the property is accessed.
+class PimV4BIDIRRPMetricList(Base):
+    """Pim BIDIR-RP Specific Data
+    The PimV4BIDIRRPMetricList class encapsulates a required pimV4BIDIRRPMetricList resource which will be retrieved from the server every time the property is accessed.
     """
 
     __slots__ = ()
-    _SDM_NAME = "netconfServer"
+    _SDM_NAME = "pimV4BIDIRRPMetricList"
     _SDM_ATT_MAP = {
+        "Active": "active",
         "Count": "count",
         "DescriptiveName": "descriptiveName",
+        "LinkMetric": "linkMetric",
+        "LinkPreference": "linkPreference",
+        "LocalRouterId": "localRouterId",
         "Name": "name",
-        "RowNames": "rowNames",
-        "YangSourceDirectory": "yangSourceDirectory",
+        "RpAddress": "rpAddress",
     }
     _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
-        super(NetconfServer, self).__init__(parent, list_op)
+        super(PimV4BIDIRRPMetricList, self).__init__(parent, list_op)
 
     @property
-    def StartRate(self):
+    def Active(self):
+        # type: () -> 'Multivalue'
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ethernet.startrate.startrate_2bc83a4fb9730935e8259bdb40af2dc0.StartRate): An instance of the StartRate class
-
-        Raises
-        ------
-        - ServerError: The server has encountered an uncategorized error condition
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration.
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ethernet.startrate.startrate_2bc83a4fb9730935e8259bdb40af2dc0 import (
-            StartRate,
-        )
+        from ixnetwork_restpy.multivalue import Multivalue
 
-        if len(self._object_properties) > 0:
-            if self._properties.get("StartRate", None) is not None:
-                return self._properties.get("StartRate")
-        return StartRate(self)._select()
-
-    @property
-    def StopRate(self):
-        """
-        Returns
-        -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ethernet.stoprate.stoprate_4ea9a1b38960d2b21012777131469a04.StopRate): An instance of the StopRate class
-
-        Raises
-        ------
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ethernet.stoprate.stoprate_4ea9a1b38960d2b21012777131469a04 import (
-            StopRate,
-        )
-
-        if len(self._object_properties) > 0:
-            if self._properties.get("StopRate", None) is not None:
-                return self._properties.get("StopRate")
-        return StopRate(self)._select()
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Active"]))
 
     @property
     def Count(self):
@@ -107,6 +82,42 @@ class NetconfServer(Base):
         return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
+    def LinkMetric(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Metric of the Link to RPA. If this is the only link to RPA, value is set to MAX.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["LinkMetric"]))
+
+    @property
+    def LinkPreference(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Prefercence of the Link to RPA. If this is the only link to RPA, value is set to MAX.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LinkPreference"])
+        )
+
+    @property
+    def LocalRouterId(self):
+        # type: () -> List[str]
+        """
+        Returns
+        -------
+        - list(str): Router ID
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["LocalRouterId"])
+
+    @property
     def Name(self):
         # type: () -> str
         """
@@ -122,32 +133,20 @@ class NetconfServer(Base):
         self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
-    def RowNames(self):
-        # type: () -> List[str]
-        """
-        Returns
-        -------
-        - list(str): Name of rows
-        """
-        return self._get_attribute(self._SDM_ATT_MAP["RowNames"])
-
-    @property
-    def YangSourceDirectory(self):
+    def RpAddress(self):
         # type: () -> 'Multivalue'
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): Location of Directory where YANG modules are present.
+        - obj(ixnetwork_restpy.multivalue.Multivalue): RP Address that is capable of BIDIR PIM. This will be auto populated from Group and Source ranges.
         """
         from ixnetwork_restpy.multivalue import Multivalue
 
-        return Multivalue(
-            self, self._get_attribute(self._SDM_ATT_MAP["YangSourceDirectory"])
-        )
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["RpAddress"]))
 
     def update(self, Name=None):
-        # type: (str) -> NetconfServer
-        """Updates netconfServer resource on the server.
+        # type: (str) -> PimV4BIDIRRPMetricList
+        """Updates pimV4BIDIRRPMetricList resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
         The Multivalue class has documentation that details the possible values for those named parameters.
@@ -162,24 +161,24 @@ class NetconfServer(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, Count=None, DescriptiveName=None, Name=None, RowNames=None):
-        # type: (int, str, str, List[str]) -> NetconfServer
-        """Finds and retrieves netconfServer resources from the server.
+    def find(self, Count=None, DescriptiveName=None, LocalRouterId=None, Name=None):
+        # type: (int, str, List[str], str) -> PimV4BIDIRRPMetricList
+        """Finds and retrieves pimV4BIDIRRPMetricList resources from the server.
 
-        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve netconfServer resources from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve pimV4BIDIRRPMetricList resources from the server.
         To retrieve an exact match ensure the parameter value starts with ^ and ends with $
-        By default the find method takes no parameters and will retrieve all netconfServer resources from the server.
+        By default the find method takes no parameters and will retrieve all pimV4BIDIRRPMetricList resources from the server.
 
         Args
         ----
         - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
+        - LocalRouterId (list(str)): Router ID
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-        - RowNames (list(str)): Name of rows
 
         Returns
         -------
-        - self: This instance with matching netconfServer resources retrieved from the server available through an iterator or index
+        - self: This instance with matching pimV4BIDIRRPMetricList resources retrieved from the server available through an iterator or index
 
         Raises
         ------
@@ -188,7 +187,7 @@ class NetconfServer(Base):
         return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
-        """Retrieves a single instance of netconfServer data from the server.
+        """Retrieves a single instance of pimV4BIDIRRPMetricList data from the server.
 
         Args
         ----
@@ -196,7 +195,7 @@ class NetconfServer(Base):
 
         Returns
         -------
-        - self: This instance with the netconfServer resources from the server available through an iterator or index
+        - self: This instance with the pimV4BIDIRRPMetricList resources from the server available through an iterator or index
 
         Raises
         ------
@@ -205,15 +204,46 @@ class NetconfServer(Base):
         """
         return self._read(href)
 
-    def get_device_ids(self, PortNames=None, YangSourceDirectory=None):
-        """Base class infrastructure that gets a list of netconfServer device ids encapsulated by this object.
+    def AddDeleteTags(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the addDeleteTags operation on the server.
+
+        addDeleteTags(Arg2=bool, async_operation=bool)
+        ----------------------------------------------
+        - Arg2 (bool):
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("addDeleteTags", payload=payload, response_object=None)
+
+    def get_device_ids(
+        self,
+        PortNames=None,
+        Active=None,
+        LinkMetric=None,
+        LinkPreference=None,
+        RpAddress=None,
+    ):
+        """Base class infrastructure that gets a list of pimV4BIDIRRPMetricList device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 
         Args
         ----
         - PortNames (str): optional regex of port names
-        - YangSourceDirectory (str): optional regex of yangSourceDirectory
+        - Active (str): optional regex of active
+        - LinkMetric (str): optional regex of linkMetric
+        - LinkPreference (str): optional regex of linkPreference
+        - RpAddress (str): optional regex of rpAddress
 
         Returns
         -------

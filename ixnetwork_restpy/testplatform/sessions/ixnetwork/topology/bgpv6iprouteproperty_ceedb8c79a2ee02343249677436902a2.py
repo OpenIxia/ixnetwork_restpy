@@ -60,7 +60,13 @@ class BgpV6IPRouteProperty(Base):
         "Count": "count",
         "Delay": "delay",
         "DescriptiveName": "descriptiveName",
+        "DestinationPrefix": "destinationPrefix",
+        "DestinationPrefixIpv6": "destinationPrefixIpv6",
         "Downtime": "downtime",
+        "DstAddrCnt": "dstAddrCnt",
+        "DstHostCountPerPrefix": "dstHostCountPerPrefix",
+        "DstPrefixLen": "dstPrefixLen",
+        "DstPrefixLenIpv6": "dstPrefixLenIpv6",
         "EnSrv6SIDAdvertiseOpInfo": "enSrv6SIDAdvertiseOpInfo",
         "EnableAddPath": "enableAddPath",
         "EnableAggregatorId": "enableAggregatorId",
@@ -97,6 +103,7 @@ class BgpV6IPRouteProperty(Base):
         "LocalPreference": "localPreference",
         "MaxASNumPerSegment": "maxASNumPerSegment",
         "MaxNoOfASPathSegmentsPerRouteRange": "maxNoOfASPathSegmentsPerRouteRange",
+        "Meshing": "meshing",
         "MinASNumPerSegment": "minASNumPerSegment",
         "MinNoOfASPathSegmentsPerRouteRange": "minNoOfASPathSegmentsPerRouteRange",
         "MultiExitDiscriminator": "multiExitDiscriminator",
@@ -122,6 +129,7 @@ class BgpV6IPRouteProperty(Base):
         "SendMulticastWithProperSAFI": "sendMulticastWithProperSAFI",
         "SkipMulticast": "skipMulticast",
         "SpecialLabel": "specialLabel",
+        "SrcHostCountPerPrefix": "srcHostCountPerPrefix",
         "Srv6EndPointBehavior": "srv6EndPointBehavior",
         "Srv6SIDOptionalInformation": "srv6SIDOptionalInformation",
         "Srv6SidFlags": "srv6SidFlags",
@@ -246,13 +254,13 @@ class BgpV6IPRouteProperty(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpcommunitieslist_2963fcaf235bccb665be655ea86cee0f.BgpCommunitiesList): An instance of the BgpCommunitiesList class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpcommunitieslist_e5bf1a4a4a05d2687d59e9c2a92fa768.BgpCommunitiesList): An instance of the BgpCommunitiesList class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpcommunitieslist_2963fcaf235bccb665be655ea86cee0f import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpcommunitieslist_e5bf1a4a4a05d2687d59e9c2a92fa768 import (
             BgpCommunitiesList,
         )
 
@@ -286,13 +294,13 @@ class BgpV6IPRouteProperty(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpnonvpnrrlargecommunitieslist_11861be5207f57b1a32d83eeb1d62224.BgpNonVPNRRLargeCommunitiesList): An instance of the BgpNonVPNRRLargeCommunitiesList class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpnonvpnrrlargecommunitieslist_3a13ce9d31e836f39515e2b22100bcd2.BgpNonVPNRRLargeCommunitiesList): An instance of the BgpNonVPNRRLargeCommunitiesList class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpnonvpnrrlargecommunitieslist_11861be5207f57b1a32d83eeb1d62224 import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpnonvpnrrlargecommunitieslist_3a13ce9d31e836f39515e2b22100bcd2 import (
             BgpNonVPNRRLargeCommunitiesList,
         )
 
@@ -723,6 +731,34 @@ class BgpV6IPRouteProperty(Base):
         return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
+    def DestinationPrefix(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): The IPv4 destination prefix.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["DestinationPrefix"])
+        )
+
+    @property
+    def DestinationPrefixIpv6(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): The IPv6 destination prefix.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["DestinationPrefixIpv6"])
+        )
+
+    @property
     def Downtime(self):
         # type: () -> 'Multivalue'
         """
@@ -733,6 +769,58 @@ class BgpV6IPRouteProperty(Base):
         from ixnetwork_restpy.multivalue import Multivalue
 
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Downtime"]))
+
+    @property
+    def DstAddrCnt(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): The number of destination prefixes.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["DstAddrCnt"]))
+
+    @property
+    def DstHostCountPerPrefix(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): The number of hosts present in each of the destination prefix.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["DstHostCountPerPrefix"])
+        )
+
+    @property
+    def DstPrefixLen(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): The IPv4 destination prefix length.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["DstPrefixLen"]))
+
+    @property
+    def DstPrefixLenIpv6(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): The IPv6 destination prefix length.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["DstPrefixLenIpv6"])
+        )
 
     @property
     def EnSrv6SIDAdvertiseOpInfo(self):
@@ -1212,6 +1300,18 @@ class BgpV6IPRouteProperty(Base):
         )
 
     @property
+    def Meshing(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): The type of meshing between the source and the destination prefix.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Meshing"]))
+
+    @property
     def MinASNumPerSegment(self):
         # type: () -> 'Multivalue'
         """
@@ -1550,6 +1650,20 @@ class BgpV6IPRouteProperty(Base):
         from ixnetwork_restpy.multivalue import Multivalue
 
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["SpecialLabel"]))
+
+    @property
+    def SrcHostCountPerPrefix(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): The number of hosts present in each of the source prefix.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SrcHostCountPerPrefix"])
+        )
 
     @property
     def Srv6EndPointBehavior(self):
@@ -2268,7 +2382,13 @@ class BgpV6IPRouteProperty(Base):
         AsSegDist=None,
         AsSetMode=None,
         Delay=None,
+        DestinationPrefix=None,
+        DestinationPrefixIpv6=None,
         Downtime=None,
+        DstAddrCnt=None,
+        DstHostCountPerPrefix=None,
+        DstPrefixLen=None,
+        DstPrefixLenIpv6=None,
         EnSrv6SIDAdvertiseOpInfo=None,
         EnableAddPath=None,
         EnableAggregatorId=None,
@@ -2305,6 +2425,7 @@ class BgpV6IPRouteProperty(Base):
         LocalPreference=None,
         MaxASNumPerSegment=None,
         MaxNoOfASPathSegmentsPerRouteRange=None,
+        Meshing=None,
         MinASNumPerSegment=None,
         MinNoOfASPathSegmentsPerRouteRange=None,
         MultiExitDiscriminator=None,
@@ -2321,6 +2442,7 @@ class BgpV6IPRouteProperty(Base):
         SendMulticastWithProperSAFI=None,
         SkipMulticast=None,
         SpecialLabel=None,
+        SrcHostCountPerPrefix=None,
         Srv6EndPointBehavior=None,
         Srv6SIDOptionalInformation=None,
         Srv6SidFlags=None,
@@ -2358,7 +2480,13 @@ class BgpV6IPRouteProperty(Base):
         - AsSegDist (str): optional regex of asSegDist
         - AsSetMode (str): optional regex of asSetMode
         - Delay (str): optional regex of delay
+        - DestinationPrefix (str): optional regex of destinationPrefix
+        - DestinationPrefixIpv6 (str): optional regex of destinationPrefixIpv6
         - Downtime (str): optional regex of downtime
+        - DstAddrCnt (str): optional regex of dstAddrCnt
+        - DstHostCountPerPrefix (str): optional regex of dstHostCountPerPrefix
+        - DstPrefixLen (str): optional regex of dstPrefixLen
+        - DstPrefixLenIpv6 (str): optional regex of dstPrefixLenIpv6
         - EnSrv6SIDAdvertiseOpInfo (str): optional regex of enSrv6SIDAdvertiseOpInfo
         - EnableAddPath (str): optional regex of enableAddPath
         - EnableAggregatorId (str): optional regex of enableAggregatorId
@@ -2395,6 +2523,7 @@ class BgpV6IPRouteProperty(Base):
         - LocalPreference (str): optional regex of localPreference
         - MaxASNumPerSegment (str): optional regex of maxASNumPerSegment
         - MaxNoOfASPathSegmentsPerRouteRange (str): optional regex of maxNoOfASPathSegmentsPerRouteRange
+        - Meshing (str): optional regex of meshing
         - MinASNumPerSegment (str): optional regex of minASNumPerSegment
         - MinNoOfASPathSegmentsPerRouteRange (str): optional regex of minNoOfASPathSegmentsPerRouteRange
         - MultiExitDiscriminator (str): optional regex of multiExitDiscriminator
@@ -2411,6 +2540,7 @@ class BgpV6IPRouteProperty(Base):
         - SendMulticastWithProperSAFI (str): optional regex of sendMulticastWithProperSAFI
         - SkipMulticast (str): optional regex of skipMulticast
         - SpecialLabel (str): optional regex of specialLabel
+        - SrcHostCountPerPrefix (str): optional regex of srcHostCountPerPrefix
         - Srv6EndPointBehavior (str): optional regex of srv6EndPointBehavior
         - Srv6SIDOptionalInformation (str): optional regex of srv6SIDOptionalInformation
         - Srv6SidFlags (str): optional regex of srv6SidFlags

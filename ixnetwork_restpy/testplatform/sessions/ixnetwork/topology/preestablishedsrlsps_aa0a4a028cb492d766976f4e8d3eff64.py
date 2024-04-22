@@ -45,6 +45,7 @@ class PreEstablishedSrLsps(Base):
         "DescriptiveName": "descriptiveName",
         "DestEndPointIpv4": "destEndPointIpv4",
         "DestinationIpv4Address": "destinationIpv4Address",
+        "DestinationIpv6Address": "destinationIpv6Address",
         "ExcludeAny": "excludeAny",
         "HoldingPriority": "holdingPriority",
         "IncludeAll": "includeAll",
@@ -333,6 +334,20 @@ class PreEstablishedSrLsps(Base):
 
         return Multivalue(
             self, self._get_attribute(self._SDM_ATT_MAP["DestinationIpv4Address"])
+        )
+
+    @property
+    def DestinationIpv6Address(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Destination IPv6 Address
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["DestinationIpv6Address"])
         )
 
     @property
@@ -1040,6 +1055,7 @@ class PreEstablishedSrLsps(Base):
         Bos=None,
         DestEndPointIpv4=None,
         DestinationIpv4Address=None,
+        DestinationIpv6Address=None,
         ExcludeAny=None,
         HoldingPriority=None,
         IncludeAll=None,
@@ -1086,6 +1102,7 @@ class PreEstablishedSrLsps(Base):
         - Bos (str): optional regex of bos
         - DestEndPointIpv4 (str): optional regex of destEndPointIpv4
         - DestinationIpv4Address (str): optional regex of destinationIpv4Address
+        - DestinationIpv6Address (str): optional regex of destinationIpv6Address
         - ExcludeAny (str): optional regex of excludeAny
         - HoldingPriority (str): optional regex of holdingPriority
         - IncludeAll (str): optional regex of includeAll

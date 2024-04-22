@@ -52,6 +52,7 @@ class BgpIpv6Peer(Base):
         "EnBGPFastFailoverOnLinkDown": "enBGPFastFailoverOnLinkDown",
         "EnLenthForPolicyNLRI": "enLenthForPolicyNLRI",
         "EnableAdVplsPrefixLength": "enableAdVplsPrefixLength",
+        "EnableTraceroute": "enableTraceroute",
         "GSRv6SIDEncodingSubTlvType": "gSRv6SIDEncodingSubTlvType",
         "HighScaleRouteMode": "highScaleRouteMode",
         "IBgpTester4BytesAsNumber": "iBgpTester4BytesAsNumber",
@@ -67,6 +68,7 @@ class BgpIpv6Peer(Base):
         "Ipv6NodeAddrType": "ipv6NodeAddrType",
         "Ipv6SIDType": "ipv6SIDType",
         "LenthForPolicyNLRI": "lenthForPolicyNLRI",
+        "MaxTtl": "maxTtl",
         "MldpP2mpFecType": "mldpP2mpFecType",
         "MplsSIDType": "mplsSIDType",
         "Name": "name",
@@ -82,7 +84,9 @@ class BgpIpv6Peer(Base):
         "PolicySegmentSubTLVTypeK": "policySegmentSubTLVTypeK",
         "PreferenceType": "preferenceType",
         "PrefixSIDAttrType": "prefixSIDAttrType",
+        "ProbeInterval": "probeInterval",
         "ProtoclIdType": "protoclIdType",
+        "QueryCount": "queryCount",
         "RemoteEndpointType": "remoteEndpointType",
         "RequestVpnLabelExchangeOverLsp": "requestVpnLabelExchangeOverLsp",
         "ReverseBindingType": "reverseBindingType",
@@ -102,6 +106,7 @@ class BgpIpv6Peer(Base):
         "UseUnicastDestMacForBierTraffic": "useUnicastDestMacForBierTraffic",
         "VPNSIDType": "vPNSIDType",
         "VrfRouteImportExtendedCommunitySubType": "vrfRouteImportExtendedCommunitySubType",
+        "WaitTime": "waitTime",
         "WeightType": "weightType",
     }
     _SDM_ENUM_MAP = {
@@ -393,6 +398,20 @@ class BgpIpv6Peer(Base):
         )
 
     @property
+    def EnableTraceroute(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This will enable the traceroute functionality on all the BGP peers configured in this port.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableTraceroute"])
+        )
+
+    @property
     def GSRv6SIDEncodingSubTlvType(self):
         # type: () -> 'Multivalue'
         """DEPRECATED
@@ -599,6 +618,18 @@ class BgpIpv6Peer(Base):
         return Multivalue(
             self, self._get_attribute(self._SDM_ATT_MAP["LenthForPolicyNLRI"])
         )
+
+    @property
+    def MaxTtl(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): The TTL value used in the probes will start from 1 and incremented up to this value.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["MaxTtl"]))
 
     @property
     def MldpP2mpFecType(self):
@@ -810,6 +841,18 @@ class BgpIpv6Peer(Base):
         )
 
     @property
+    def ProbeInterval(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Time interval in milliseconds between each probe per hop.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ProbeInterval"]))
+
+    @property
     def ProtoclIdType(self):
         # type: () -> 'Multivalue'
         """
@@ -820,6 +863,18 @@ class BgpIpv6Peer(Base):
         from ixnetwork_restpy.multivalue import Multivalue
 
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ProtoclIdType"]))
+
+    @property
+    def QueryCount(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Maximum number of paths that can be discovered.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["QueryCount"]))
 
     @property
     def RemoteEndpointType(self):
@@ -1084,6 +1139,18 @@ class BgpIpv6Peer(Base):
         )
 
     @property
+    def WaitTime(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Time in milliseconds to wait for a response.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["WaitTime"]))
+
+    @property
     def WeightType(self):
         # type: () -> 'Multivalue'
         """
@@ -1182,6 +1249,7 @@ class BgpIpv6Peer(Base):
         EnBGPFastFailoverOnLinkDown=None,
         EnLenthForPolicyNLRI=None,
         EnableAdVplsPrefixLength=None,
+        EnableTraceroute=None,
         GSRv6SIDEncodingSubTlvType=None,
         HighScaleRouteMode=None,
         IBgpTester4BytesAsNumber=None,
@@ -1197,6 +1265,7 @@ class BgpIpv6Peer(Base):
         Ipv6NodeAddrType=None,
         Ipv6SIDType=None,
         LenthForPolicyNLRI=None,
+        MaxTtl=None,
         MldpP2mpFecType=None,
         MplsSIDType=None,
         PeerAdjSidType=None,
@@ -1211,7 +1280,9 @@ class BgpIpv6Peer(Base):
         PolicySegmentSubTLVTypeK=None,
         PreferenceType=None,
         PrefixSIDAttrType=None,
+        ProbeInterval=None,
         ProtoclIdType=None,
+        QueryCount=None,
         RemoteEndpointType=None,
         RequestVpnLabelExchangeOverLsp=None,
         ReverseBindingType=None,
@@ -1229,6 +1300,7 @@ class BgpIpv6Peer(Base):
         UseUnicastDestMacForBierTraffic=None,
         VPNSIDType=None,
         VrfRouteImportExtendedCommunitySubType=None,
+        WaitTime=None,
         WeightType=None,
     ):
         """Base class infrastructure that gets a list of bgpIpv6Peer device ids encapsulated by this object.
@@ -1253,6 +1325,7 @@ class BgpIpv6Peer(Base):
         - EnBGPFastFailoverOnLinkDown (str): optional regex of enBGPFastFailoverOnLinkDown
         - EnLenthForPolicyNLRI (str): optional regex of enLenthForPolicyNLRI
         - EnableAdVplsPrefixLength (str): optional regex of enableAdVplsPrefixLength
+        - EnableTraceroute (str): optional regex of enableTraceroute
         - GSRv6SIDEncodingSubTlvType (str): optional regex of gSRv6SIDEncodingSubTlvType
         - HighScaleRouteMode (str): optional regex of highScaleRouteMode
         - IBgpTester4BytesAsNumber (str): optional regex of iBgpTester4BytesAsNumber
@@ -1268,6 +1341,7 @@ class BgpIpv6Peer(Base):
         - Ipv6NodeAddrType (str): optional regex of ipv6NodeAddrType
         - Ipv6SIDType (str): optional regex of ipv6SIDType
         - LenthForPolicyNLRI (str): optional regex of lenthForPolicyNLRI
+        - MaxTtl (str): optional regex of maxTtl
         - MldpP2mpFecType (str): optional regex of mldpP2mpFecType
         - MplsSIDType (str): optional regex of mplsSIDType
         - PeerAdjSidType (str): optional regex of peerAdjSidType
@@ -1282,7 +1356,9 @@ class BgpIpv6Peer(Base):
         - PolicySegmentSubTLVTypeK (str): optional regex of policySegmentSubTLVTypeK
         - PreferenceType (str): optional regex of preferenceType
         - PrefixSIDAttrType (str): optional regex of prefixSIDAttrType
+        - ProbeInterval (str): optional regex of probeInterval
         - ProtoclIdType (str): optional regex of protoclIdType
+        - QueryCount (str): optional regex of queryCount
         - RemoteEndpointType (str): optional regex of remoteEndpointType
         - RequestVpnLabelExchangeOverLsp (str): optional regex of requestVpnLabelExchangeOverLsp
         - ReverseBindingType (str): optional regex of reverseBindingType
@@ -1300,6 +1376,7 @@ class BgpIpv6Peer(Base):
         - UseUnicastDestMacForBierTraffic (str): optional regex of useUnicastDestMacForBierTraffic
         - VPNSIDType (str): optional regex of vPNSIDType
         - VrfRouteImportExtendedCommunitySubType (str): optional regex of vrfRouteImportExtendedCommunitySubType
+        - WaitTime (str): optional regex of waitTime
         - WeightType (str): optional regex of weightType
 
         Returns

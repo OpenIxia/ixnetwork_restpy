@@ -60,6 +60,7 @@ class PccGroup(Base):
         "Name": "name",
         "PcReplyLspsPerPcc": "pcReplyLspsPerPcc",
         "PccIpv4Address": "pccIpv4Address",
+        "PccIpv6Address": "pccIpv6Address",
         "PceInitiatedLspsPerPcc": "pceInitiatedLspsPerPcc",
         "PcePpagTLVType": "pcePpagTLVType",
         "PceTEPathBindingTLVType": "pceTEPathBindingTLVType",
@@ -526,12 +527,26 @@ class PccGroup(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): IPv4 address of the PCC. This column is greyed out in case of PCEv6.
+        - obj(ixnetwork_restpy.multivalue.Multivalue): IPv4 address of the PCC. This column is greyed out in case of PCE over IPv6.
         """
         from ixnetwork_restpy.multivalue import Multivalue
 
         return Multivalue(
             self, self._get_attribute(self._SDM_ATT_MAP["PccIpv4Address"])
+        )
+
+    @property
+    def PccIpv6Address(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): IPv6 address of the PCC. This column is greyed out in case of PCE over IPv4.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["PccIpv6Address"])
         )
 
     @property
@@ -2089,6 +2104,7 @@ class PccGroup(Base):
         MaxLspPerPcUpdate=None,
         MaxLspsPerPcInitiate=None,
         PccIpv4Address=None,
+        PccIpv6Address=None,
         PcePpagTLVType=None,
         PceTEPathBindingTLVType=None,
         RateControl=None,
@@ -2119,6 +2135,7 @@ class PccGroup(Base):
         - MaxLspPerPcUpdate (str): optional regex of maxLspPerPcUpdate
         - MaxLspsPerPcInitiate (str): optional regex of maxLspsPerPcInitiate
         - PccIpv4Address (str): optional regex of pccIpv4Address
+        - PccIpv6Address (str): optional regex of pccIpv6Address
         - PcePpagTLVType (str): optional regex of pcePpagTLVType
         - PceTEPathBindingTLVType (str): optional regex of pceTEPathBindingTLVType
         - RateControl (str): optional regex of rateControl

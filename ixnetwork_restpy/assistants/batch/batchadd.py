@@ -240,6 +240,7 @@ class BatchAdd(object):
                     xpath_dict["xpath"] = multivalue_xpath
                     xpath_dict["auto"] = False
                     xpath_dict["optionalEnabled"] = True
+                    xpath_dict["activeFieldChoice"] = True
                 else:
                     multivalue_name = pattern[0]
 

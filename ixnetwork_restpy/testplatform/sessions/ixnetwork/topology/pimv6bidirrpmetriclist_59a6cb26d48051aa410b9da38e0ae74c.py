@@ -27,24 +27,39 @@ if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
 
-class BgpLargeCommunitiesList(Base):
-    """Bgp Non VPN RR Large Communities
-    The BgpLargeCommunitiesList class encapsulates a list of bgpLargeCommunitiesList resources that are managed by the system.
-    A list of resources can be retrieved from the server using the BgpLargeCommunitiesList.find() method.
+class PimV6BIDIRRPMetricList(Base):
+    """Pim BIDIR-RP Specific Data
+    The PimV6BIDIRRPMetricList class encapsulates a required pimV6BIDIRRPMetricList resource which will be retrieved from the server every time the property is accessed.
     """
 
     __slots__ = ()
-    _SDM_NAME = "bgpLargeCommunitiesList"
+    _SDM_NAME = "pimV6BIDIRRPMetricList"
     _SDM_ATT_MAP = {
+        "Active": "active",
         "Count": "count",
         "DescriptiveName": "descriptiveName",
-        "LargeCommunity": "largeCommunity",
+        "LinkMetric": "linkMetric",
+        "LinkPreference": "linkPreference",
+        "LocalRouterId": "localRouterId",
         "Name": "name",
+        "RpAddress": "rpAddress",
     }
     _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
-        super(BgpLargeCommunitiesList, self).__init__(parent, list_op)
+        super(PimV6BIDIRRPMetricList, self).__init__(parent, list_op)
+
+    @property
+    def Active(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Active"]))
 
     @property
     def Count(self):
@@ -67,18 +82,40 @@ class BgpLargeCommunitiesList(Base):
         return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
-    def LargeCommunity(self):
+    def LinkMetric(self):
         # type: () -> 'Multivalue'
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): Large Community in cannonical format as defined in RFC8092 which is: GlobalAdmin:LocalDataPart1:LocalDataPart2 where each value must have range 1-4294967295. e.g. 65535:100:10 or 4294967295:1:65535
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Metric of the Link to RPA. If this is the only link to RPA, value is set to MAX.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["LinkMetric"]))
+
+    @property
+    def LinkPreference(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Prefercence of the Link to RPA. If this is the only link to RPA, value is set to MAX.
         """
         from ixnetwork_restpy.multivalue import Multivalue
 
         return Multivalue(
-            self, self._get_attribute(self._SDM_ATT_MAP["LargeCommunity"])
+            self, self._get_attribute(self._SDM_ATT_MAP["LinkPreference"])
         )
+
+    @property
+    def LocalRouterId(self):
+        # type: () -> List[str]
+        """
+        Returns
+        -------
+        - list(str): Router ID
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["LocalRouterId"])
 
     @property
     def Name(self):
@@ -95,9 +132,21 @@ class BgpLargeCommunitiesList(Base):
         # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
+    @property
+    def RpAddress(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): RP Address that is capable of BIDIR PIM. This will be auto populated from Group and Source ranges.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["RpAddress"]))
+
     def update(self, Name=None):
-        # type: (str) -> BgpLargeCommunitiesList
-        """Updates bgpLargeCommunitiesList resource on the server.
+        # type: (str) -> PimV6BIDIRRPMetricList
+        """Updates pimV6BIDIRRPMetricList resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
         The Multivalue class has documentation that details the possible values for those named parameters.
@@ -112,41 +161,24 @@ class BgpLargeCommunitiesList(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def add(self, Name=None):
-        # type: (str) -> BgpLargeCommunitiesList
-        """Adds a new bgpLargeCommunitiesList resource on the json, only valid with batch add utility
+    def find(self, Count=None, DescriptiveName=None, LocalRouterId=None, Name=None):
+        # type: (int, str, List[str], str) -> PimV6BIDIRRPMetricList
+        """Finds and retrieves pimV6BIDIRRPMetricList resources from the server.
 
-        Args
-        ----
-        - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-
-        Returns
-        -------
-        - self: This instance with all currently retrieved bgpLargeCommunitiesList resources using find and the newly added bgpLargeCommunitiesList resources available through an iterator or index
-
-        Raises
-        ------
-        - Exception: if this function is not being used with config assistance
-        """
-        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
-
-    def find(self, Count=None, DescriptiveName=None, Name=None):
-        # type: (int, str, str) -> BgpLargeCommunitiesList
-        """Finds and retrieves bgpLargeCommunitiesList resources from the server.
-
-        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve bgpLargeCommunitiesList resources from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve pimV6BIDIRRPMetricList resources from the server.
         To retrieve an exact match ensure the parameter value starts with ^ and ends with $
-        By default the find method takes no parameters and will retrieve all bgpLargeCommunitiesList resources from the server.
+        By default the find method takes no parameters and will retrieve all pimV6BIDIRRPMetricList resources from the server.
 
         Args
         ----
         - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
+        - LocalRouterId (list(str)): Router ID
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
 
         Returns
         -------
-        - self: This instance with matching bgpLargeCommunitiesList resources retrieved from the server available through an iterator or index
+        - self: This instance with matching pimV6BIDIRRPMetricList resources retrieved from the server available through an iterator or index
 
         Raises
         ------
@@ -155,7 +187,7 @@ class BgpLargeCommunitiesList(Base):
         return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
-        """Retrieves a single instance of bgpLargeCommunitiesList data from the server.
+        """Retrieves a single instance of pimV6BIDIRRPMetricList data from the server.
 
         Args
         ----
@@ -163,7 +195,7 @@ class BgpLargeCommunitiesList(Base):
 
         Returns
         -------
-        - self: This instance with the bgpLargeCommunitiesList resources from the server available through an iterator or index
+        - self: This instance with the pimV6BIDIRRPMetricList resources from the server available through an iterator or index
 
         Raises
         ------
@@ -193,15 +225,25 @@ class BgpLargeCommunitiesList(Base):
             payload[item[0]] = item[1]
         return self._execute("addDeleteTags", payload=payload, response_object=None)
 
-    def get_device_ids(self, PortNames=None, LargeCommunity=None):
-        """Base class infrastructure that gets a list of bgpLargeCommunitiesList device ids encapsulated by this object.
+    def get_device_ids(
+        self,
+        PortNames=None,
+        Active=None,
+        LinkMetric=None,
+        LinkPreference=None,
+        RpAddress=None,
+    ):
+        """Base class infrastructure that gets a list of pimV6BIDIRRPMetricList device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 
         Args
         ----
         - PortNames (str): optional regex of port names
-        - LargeCommunity (str): optional regex of largeCommunity
+        - Active (str): optional regex of active
+        - LinkMetric (str): optional regex of linkMetric
+        - LinkPreference (str): optional regex of linkPreference
+        - RpAddress (str): optional regex of rpAddress
 
         Returns
         -------

@@ -82,13 +82,13 @@ class Pce(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pccgroup_aeb7ce3c3de9283edc987dc379d35208.PccGroup): An instance of the PccGroup class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pccgroup_19bb7cf1b825e051ff20175f3c66045b.PccGroup): An instance of the PccGroup class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pccgroup_aeb7ce3c3de9283edc987dc379d35208 import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pccgroup_19bb7cf1b825e051ff20175f3c66045b import (
             PccGroup,
         )
 
