@@ -74,8 +74,7 @@ class L1Config(Base):
             "ravenEightHundredGigLanFcoe",
             "aresOneEightHundredGigLanQddC",
             "aresOneEightHundredGigLanQddCFcoe",
-            "rangerHundredGigLan",
-            "rangerHundredGigLanFcoe",
+            "sertHundredGigLan",
             "aresOneEightHundredGigLanOsfpC",
             "aresOneEightHundredGigLanOsfpCFcoe",
             "aresOneM",
@@ -547,26 +546,6 @@ class L1Config(Base):
         return Qbv(self)._select()
 
     @property
-    def RangerHundredGigLan(self):
-        """
-        Returns
-        -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.rangerhundredgiglan.rangerhundredgiglan.RangerHundredGigLan): An instance of the RangerHundredGigLan class
-
-        Raises
-        ------
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.rangerhundredgiglan.rangerhundredgiglan import (
-            RangerHundredGigLan,
-        )
-
-        if len(self._object_properties) > 0:
-            if self._properties.get("RangerHundredGigLan", None) is not None:
-                return self._properties.get("RangerHundredGigLan")
-        return RangerHundredGigLan(self)._select()
-
-    @property
     def RavenEightHundredGigLan(self):
         """
         Returns
@@ -605,6 +584,26 @@ class L1Config(Base):
             if self._properties.get("RxFilters", None) is not None:
                 return self._properties.get("RxFilters")
         return RxFilters(self)._select()
+
+    @property
+    def SertHundredGigLan(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.serthundredgiglan.serthundredgiglan.SertHundredGigLan): An instance of the SertHundredGigLan class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.serthundredgiglan.serthundredgiglan import (
+            SertHundredGigLan,
+        )
+
+        if len(self._object_properties) > 0:
+            if self._properties.get("SertHundredGigLan", None) is not None:
+                return self._properties.get("SertHundredGigLan")
+        return SertHundredGigLan(self)._select()
 
     @property
     def StarFourHundredGigLan(self):
@@ -712,7 +711,7 @@ class L1Config(Base):
         """
         Returns
         -------
-        - str(ethernet | ethernetvm | novusmini | ethernetFcoe | atm | pos | tenGigLan | tenGigLanFcoe | fortyGigLan | fortyGigLanFcoe | tenGigWan | tenGigWanFcoe | hundredGigLan | hundredGigLanFcoe | tenFortyHundredGigLan | tenFortyHundredGigLanFcoe | fc | ethernetImpairment | novusHundredGigLan | novusHundredGigLanFcoe | novusTenGigLan | novusTenGigLanFcoe | krakenFourHundredGigLan | krakenFourHundredGigLanFcoe | aresOneFourHundredGigLan | aresOneFourHundredGigLanFcoe | uhdOneHundredGigLan | novus5GTenTwentyFiveGigLan | novus5GTenTwentyFiveGigLanFcoe | starFourHundredGigLan | starFourHundredGigLanFcoe | ravenEightHundredGigLan | ravenEightHundredGigLanFcoe | aresOneEightHundredGigLanQddC | aresOneEightHundredGigLanQddCFcoe | rangerHundredGigLan | rangerHundredGigLanFcoe | aresOneEightHundredGigLanOsfpC | aresOneEightHundredGigLanOsfpCFcoe | aresOneM | aresOneMFcoe): Indicates the types of ports for configuration to choose from.
+        - str(ethernet | ethernetvm | novusmini | ethernetFcoe | atm | pos | tenGigLan | tenGigLanFcoe | fortyGigLan | fortyGigLanFcoe | tenGigWan | tenGigWanFcoe | hundredGigLan | hundredGigLanFcoe | tenFortyHundredGigLan | tenFortyHundredGigLanFcoe | fc | ethernetImpairment | novusHundredGigLan | novusHundredGigLanFcoe | novusTenGigLan | novusTenGigLanFcoe | krakenFourHundredGigLan | krakenFourHundredGigLanFcoe | aresOneFourHundredGigLan | aresOneFourHundredGigLanFcoe | uhdOneHundredGigLan | novus5GTenTwentyFiveGigLan | novus5GTenTwentyFiveGigLanFcoe | starFourHundredGigLan | starFourHundredGigLanFcoe | ravenEightHundredGigLan | ravenEightHundredGigLanFcoe | aresOneEightHundredGigLanQddC | aresOneEightHundredGigLanQddCFcoe | sertHundredGigLan | aresOneEightHundredGigLanOsfpC | aresOneEightHundredGigLanOsfpCFcoe | aresOneM | aresOneMFcoe): Indicates the types of ports for configuration to choose from.
         """
         return self._get_attribute(self._SDM_ATT_MAP["CurrentType"])
 
@@ -727,7 +726,7 @@ class L1Config(Base):
 
         Args
         ----
-        - CurrentType (str(ethernet | ethernetvm | novusmini | ethernetFcoe | atm | pos | tenGigLan | tenGigLanFcoe | fortyGigLan | fortyGigLanFcoe | tenGigWan | tenGigWanFcoe | hundredGigLan | hundredGigLanFcoe | tenFortyHundredGigLan | tenFortyHundredGigLanFcoe | fc | ethernetImpairment | novusHundredGigLan | novusHundredGigLanFcoe | novusTenGigLan | novusTenGigLanFcoe | krakenFourHundredGigLan | krakenFourHundredGigLanFcoe | aresOneFourHundredGigLan | aresOneFourHundredGigLanFcoe | uhdOneHundredGigLan | novus5GTenTwentyFiveGigLan | novus5GTenTwentyFiveGigLanFcoe | starFourHundredGigLan | starFourHundredGigLanFcoe | ravenEightHundredGigLan | ravenEightHundredGigLanFcoe | aresOneEightHundredGigLanQddC | aresOneEightHundredGigLanQddCFcoe | rangerHundredGigLan | rangerHundredGigLanFcoe | aresOneEightHundredGigLanOsfpC | aresOneEightHundredGigLanOsfpCFcoe | aresOneM | aresOneMFcoe)): Indicates the types of ports for configuration to choose from.
+        - CurrentType (str(ethernet | ethernetvm | novusmini | ethernetFcoe | atm | pos | tenGigLan | tenGigLanFcoe | fortyGigLan | fortyGigLanFcoe | tenGigWan | tenGigWanFcoe | hundredGigLan | hundredGigLanFcoe | tenFortyHundredGigLan | tenFortyHundredGigLanFcoe | fc | ethernetImpairment | novusHundredGigLan | novusHundredGigLanFcoe | novusTenGigLan | novusTenGigLanFcoe | krakenFourHundredGigLan | krakenFourHundredGigLanFcoe | aresOneFourHundredGigLan | aresOneFourHundredGigLanFcoe | uhdOneHundredGigLan | novus5GTenTwentyFiveGigLan | novus5GTenTwentyFiveGigLanFcoe | starFourHundredGigLan | starFourHundredGigLanFcoe | ravenEightHundredGigLan | ravenEightHundredGigLanFcoe | aresOneEightHundredGigLanQddC | aresOneEightHundredGigLanQddCFcoe | sertHundredGigLan | aresOneEightHundredGigLanOsfpC | aresOneEightHundredGigLanOsfpCFcoe | aresOneM | aresOneMFcoe)): Indicates the types of ports for configuration to choose from.
 
         Raises
         ------
@@ -745,7 +744,7 @@ class L1Config(Base):
 
         Args
         ----
-        - CurrentType (str(ethernet | ethernetvm | novusmini | ethernetFcoe | atm | pos | tenGigLan | tenGigLanFcoe | fortyGigLan | fortyGigLanFcoe | tenGigWan | tenGigWanFcoe | hundredGigLan | hundredGigLanFcoe | tenFortyHundredGigLan | tenFortyHundredGigLanFcoe | fc | ethernetImpairment | novusHundredGigLan | novusHundredGigLanFcoe | novusTenGigLan | novusTenGigLanFcoe | krakenFourHundredGigLan | krakenFourHundredGigLanFcoe | aresOneFourHundredGigLan | aresOneFourHundredGigLanFcoe | uhdOneHundredGigLan | novus5GTenTwentyFiveGigLan | novus5GTenTwentyFiveGigLanFcoe | starFourHundredGigLan | starFourHundredGigLanFcoe | ravenEightHundredGigLan | ravenEightHundredGigLanFcoe | aresOneEightHundredGigLanQddC | aresOneEightHundredGigLanQddCFcoe | rangerHundredGigLan | rangerHundredGigLanFcoe | aresOneEightHundredGigLanOsfpC | aresOneEightHundredGigLanOsfpCFcoe | aresOneM | aresOneMFcoe)): Indicates the types of ports for configuration to choose from.
+        - CurrentType (str(ethernet | ethernetvm | novusmini | ethernetFcoe | atm | pos | tenGigLan | tenGigLanFcoe | fortyGigLan | fortyGigLanFcoe | tenGigWan | tenGigWanFcoe | hundredGigLan | hundredGigLanFcoe | tenFortyHundredGigLan | tenFortyHundredGigLanFcoe | fc | ethernetImpairment | novusHundredGigLan | novusHundredGigLanFcoe | novusTenGigLan | novusTenGigLanFcoe | krakenFourHundredGigLan | krakenFourHundredGigLanFcoe | aresOneFourHundredGigLan | aresOneFourHundredGigLanFcoe | uhdOneHundredGigLan | novus5GTenTwentyFiveGigLan | novus5GTenTwentyFiveGigLanFcoe | starFourHundredGigLan | starFourHundredGigLanFcoe | ravenEightHundredGigLan | ravenEightHundredGigLanFcoe | aresOneEightHundredGigLanQddC | aresOneEightHundredGigLanQddCFcoe | sertHundredGigLan | aresOneEightHundredGigLanOsfpC | aresOneEightHundredGigLanOsfpCFcoe | aresOneM | aresOneMFcoe)): Indicates the types of ports for configuration to choose from.
 
         Returns
         -------

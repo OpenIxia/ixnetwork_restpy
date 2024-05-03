@@ -2,9 +2,9 @@ from ixnetwork_restpy.base import Base
 from ixnetwork_restpy.files import Files
 
 
-class IpEspOverMACsec(Base):
+class IpEspOverMacsec(Base):
     __slots__ = ()
-    _SDM_NAME = "ipEspOverMACsec"
+    _SDM_NAME = "ipEspOverMacsec"
     _SDM_ATT_MAP = {
         "HeaderSpi": "ipEspOverMACsec.header.spi-1",
         "HeaderSn": "ipEspOverMACsec.header.sn-2",
@@ -19,7 +19,7 @@ class IpEspOverMACsec(Base):
     }
 
     def __init__(self, parent, list_op=False):
-        super(IpEspOverMACsec, self).__init__(parent, list_op)
+        super(IpEspOverMacsec, self).__init__(parent, list_op)
 
     @property
     def HeaderSpi(self):

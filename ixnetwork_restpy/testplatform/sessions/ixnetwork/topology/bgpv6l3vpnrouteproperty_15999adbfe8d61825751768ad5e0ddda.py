@@ -2171,6 +2171,46 @@ class BgpV6L3VpnRouteProperty(Base):
             payload[item[0]] = item[1]
         return self._execute("stop", payload=payload, response_object=None)
 
+    def Traceroute(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the traceroute operation on the server.
+
+        Trigger traceroute from the selected prefix.
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        traceroute(async_operation=bool)
+        --------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        traceroute(SessionIndices=list, async_operation=bool)
+        -----------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        traceroute(SessionIndices=string, async_operation=bool)
+        -------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        traceroute(Arg2=list, async_operation=bool)list
+        -----------------------------------------------
+        - Arg2 (list(number)): List of indices into the group.An empty list indicates all instances in the group.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("traceroute", payload=payload, response_object=None)
+
     def UseAsIpv4UmhRoutes(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
         """Executes the useAsIpv4UmhRoutes operation on the server.

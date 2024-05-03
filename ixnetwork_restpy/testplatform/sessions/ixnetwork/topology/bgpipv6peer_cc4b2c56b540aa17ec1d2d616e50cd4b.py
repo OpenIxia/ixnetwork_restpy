@@ -3958,6 +3958,48 @@ class BgpIpv6Peer(Base):
             "getbgpSrTeLearnedInfoLearnedInfo", payload=payload, response_object=None
         )
 
+    def GetbgpTracerouteLearnedInfo(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the getbgpTracerouteLearnedInfo operation on the server.
+
+        Get Traceroute Learned Info
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        getbgpTracerouteLearnedInfo(async_operation=bool)
+        -------------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getbgpTracerouteLearnedInfo(SessionIndices=list, async_operation=bool)
+        ----------------------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getbgpTracerouteLearnedInfo(SessionIndices=string, async_operation=bool)
+        ------------------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getbgpTracerouteLearnedInfo(Arg2=list, async_operation=bool)list
+        ----------------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getbgpTracerouteLearnedInfo", payload=payload, response_object=None
+        )
+
     def GetEVPNLearnedInfo(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
         """Executes the getEVPNLearnedInfo operation on the server.

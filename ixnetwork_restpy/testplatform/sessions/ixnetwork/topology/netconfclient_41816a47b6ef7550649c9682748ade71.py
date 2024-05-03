@@ -994,6 +994,30 @@ class NetconfClient(Base):
             "clearAllLearnedSchemaInfoInClient", payload=payload, response_object=None
         )
 
+    def DownloadFile(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the downloadFile operation on the server.
+
+        This will download the required files.
+
+        downloadFile(Arg2=list, async_operation=bool)list
+        -------------------------------------------------
+        - Arg2 (list(number)): List of indices into the device group.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("downloadFile", payload=payload, response_object=None)
+
     def ExecuteCommandGet(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
         """Executes the executeCommandGet operation on the server.
@@ -1203,6 +1227,31 @@ class NetconfClient(Base):
         for item in kwargs.items():
             payload[item[0]] = item[1]
         return self._execute("stop", payload=payload, response_object=None)
+
+    def UploadFile(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the uploadFile operation on the server.
+
+        Required files should be uploaded.
+
+        uploadFile(Arg2=list, Arg3=href, async_operation=bool)list
+        ----------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the device group.
+        - Arg3 (obj(ixnetwork_restpy.files.Files)): Select files(s) to upload.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("uploadFile", payload=payload, response_object=None)
 
     def get_device_ids(
         self,

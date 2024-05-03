@@ -403,7 +403,7 @@ class BgpIpv6Peer(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): This will enable the traceroute functionality on all the BGP peers configured in this port.
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enable this flag for using Traceroute feature.
         """
         from ixnetwork_restpy.multivalue import Multivalue
 
@@ -625,7 +625,7 @@ class BgpIpv6Peer(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): The TTL value used in the probes will start from 1 and incremented up to this value.
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Max TTL
         """
         from ixnetwork_restpy.multivalue import Multivalue
 
@@ -846,7 +846,7 @@ class BgpIpv6Peer(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): Time interval in milliseconds between each probe per hop.
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Probe Interval
         """
         from ixnetwork_restpy.multivalue import Multivalue
 
@@ -870,7 +870,7 @@ class BgpIpv6Peer(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): Maximum number of paths that can be discovered.
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Query Count
         """
         from ixnetwork_restpy.multivalue import Multivalue
 
@@ -1144,7 +1144,7 @@ class BgpIpv6Peer(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): Time in milliseconds to wait for a response.
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Wait Time(msec)
         """
         from ixnetwork_restpy.multivalue import Multivalue
 

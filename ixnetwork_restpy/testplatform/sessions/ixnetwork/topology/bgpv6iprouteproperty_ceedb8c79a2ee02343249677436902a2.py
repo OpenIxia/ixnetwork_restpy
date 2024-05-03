@@ -736,7 +736,7 @@ class BgpV6IPRouteProperty(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): The IPv4 destination prefix.
+        - obj(ixnetwork_restpy.multivalue.Multivalue): IPv4 Destination Prefix.
         """
         from ixnetwork_restpy.multivalue import Multivalue
 
@@ -750,7 +750,7 @@ class BgpV6IPRouteProperty(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): The IPv6 destination prefix.
+        - obj(ixnetwork_restpy.multivalue.Multivalue): IPv6 Destination Prefix
         """
         from ixnetwork_restpy.multivalue import Multivalue
 
@@ -776,7 +776,7 @@ class BgpV6IPRouteProperty(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): The number of destination prefixes.
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Destination Prefix Count
         """
         from ixnetwork_restpy.multivalue import Multivalue
 
@@ -788,7 +788,7 @@ class BgpV6IPRouteProperty(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): The number of hosts present in each of the destination prefix.
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Destination Hosts Count
         """
         from ixnetwork_restpy.multivalue import Multivalue
 
@@ -802,7 +802,7 @@ class BgpV6IPRouteProperty(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): The IPv4 destination prefix length.
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Destination Prefix Length
         """
         from ixnetwork_restpy.multivalue import Multivalue
 
@@ -814,7 +814,7 @@ class BgpV6IPRouteProperty(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): The IPv6 destination prefix length.
+        - obj(ixnetwork_restpy.multivalue.Multivalue): IPv6 Destination Prefix Length
         """
         from ixnetwork_restpy.multivalue import Multivalue
 
@@ -1305,7 +1305,7 @@ class BgpV6IPRouteProperty(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): The type of meshing between the source and the destination prefix.
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Meshing
         """
         from ixnetwork_restpy.multivalue import Multivalue
 
@@ -1657,7 +1657,7 @@ class BgpV6IPRouteProperty(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): The number of hosts present in each of the source prefix.
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Hosts Count
         """
         from ixnetwork_restpy.multivalue import Multivalue
 
@@ -2209,7 +2209,7 @@ class BgpV6IPRouteProperty(Base):
         - Arg2 (str(roundRobin | replicate)): Option to specify distribution type, for distributing imported routes across all BGP Peer. Options: Round-Robin, for allocating routes sequentially, and Replicate, for allocating all routes to each Peer.
         - Arg3 (bool): Import only the best routes (provided route file has this information).
         - Arg4 (str(overwriteTestersAddress | preserveFromFile)): Option for setting Next Hop modification type.
-        - Arg5 (str(csv | juniper | cisco | arista)): Import routes file type. Route import may fail in file type is not matching with the file being imported.
+        - Arg5 (str(csv | juniper | cisco | arista | nokia)): Import routes file type. Route import may fail in file type is not matching with the file being imported.
         - Arg6 (obj(ixnetwork_restpy.files.Files)): Select source file having route information.
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns list(str): ID to associate each asynchronous action invocation.
@@ -2219,7 +2219,7 @@ class BgpV6IPRouteProperty(Base):
         - Arg2 (str(roundRobin | replicate)): Option to specify distribution type, for distributing imported routes across all BGP Peer. Options: Round-Robin, for allocating routes sequentially, and Replicate, for allocating all routes to each Peer.
         - Arg3 (bool): Import only the best routes (provided route file has this information).
         - Arg4 (str(overwriteTestersAddress | preserveFromFile)): Option for setting Next Hop modification type.
-        - Arg5 (str(csv | juniper | cisco | arista)): Import routes file type. Route import may fail in file type is not matching with the file being imported.
+        - Arg5 (str(csv | juniper | cisco | arista | nokia)): Import routes file type. Route import may fail in file type is not matching with the file being imported.
         - Arg6 (obj(ixnetwork_restpy.files.Files)): Select source file having route information.
         - Arg7 (number): Specify maximum routes(per port) that you want to import. Based on Card Memory, the Max Route Limit Per Port are: - 4GB or more => 2.0 million 2GB => 1.6 million 1GB => 0.8 million Less than 1GB => 0.5 million
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
@@ -2362,6 +2362,46 @@ class BgpV6IPRouteProperty(Base):
         for item in kwargs.items():
             payload[item[0]] = item[1]
         return self._execute("stop", payload=payload, response_object=None)
+
+    def Traceroute(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the traceroute operation on the server.
+
+        Trigger traceroute from the selected prefix.
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        traceroute(async_operation=bool)
+        --------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        traceroute(SessionIndices=list, async_operation=bool)
+        -----------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        traceroute(SessionIndices=string, async_operation=bool)
+        -------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        traceroute(Arg2=list, async_operation=bool)list
+        -----------------------------------------------
+        - Arg2 (list(number)): List of indices into the group.An empty list indicates all instances in the group.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("traceroute", payload=payload, response_object=None)
 
     def get_device_ids(
         self,

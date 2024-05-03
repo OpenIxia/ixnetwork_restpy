@@ -43,6 +43,7 @@ class TransmissionControl(Base):
         "InterBurstGap": "interBurstGap",
         "InterBurstGapUnits": "interBurstGapUnits",
         "InterStreamGap": "interStreamGap",
+        "InterStreamGapUnits": "interStreamGapUnits",
         "IterationCount": "iterationCount",
         "MinGapBytes": "minGapBytes",
         "RepeatBurst": "repeatBurst",
@@ -52,6 +53,13 @@ class TransmissionControl(Base):
     }
     _SDM_ENUM_MAP = {
         "interBurstGapUnits": [
+            "bytes",
+            "microseconds",
+            "milliseconds",
+            "nanoseconds",
+            "seconds",
+        ],
+        "interStreamGapUnits": [
             "bytes",
             "microseconds",
             "milliseconds",
@@ -200,6 +208,21 @@ class TransmissionControl(Base):
         self._set_attribute(self._SDM_ATT_MAP["InterStreamGap"], value)
 
     @property
+    def InterStreamGapUnits(self):
+        # type: () -> str
+        """
+        Returns
+        -------
+        - str(bytes | microseconds | milliseconds | nanoseconds | seconds): Specifies unit of Inter Stream Gap either in bytes or nanoseconds.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["InterStreamGapUnits"])
+
+    @InterStreamGapUnits.setter
+    def InterStreamGapUnits(self, value):
+        # type: (str) -> None
+        self._set_attribute(self._SDM_ATT_MAP["InterStreamGapUnits"], value)
+
+    @property
     def IterationCount(self):
         # type: () -> int
         """
@@ -299,6 +322,7 @@ class TransmissionControl(Base):
         InterBurstGap=None,
         InterBurstGapUnits=None,
         InterStreamGap=None,
+        InterStreamGapUnits=None,
         IterationCount=None,
         MinGapBytes=None,
         RepeatBurst=None,
@@ -306,7 +330,7 @@ class TransmissionControl(Base):
         StartDelayUnits=None,
         Type=None,
     ):
-        # type: (int, int, bool, bool, int, int, str, int, int, int, int, int, str, str) -> TransmissionControl
+        # type: (int, int, bool, bool, int, int, str, int, str, int, int, int, int, str, str) -> TransmissionControl
         """Updates transmissionControl resource on the server.
 
         Args
@@ -319,6 +343,7 @@ class TransmissionControl(Base):
         - InterBurstGap (number): Specifies the gap between any two consecutive burst.
         - InterBurstGapUnits (str(bytes | microseconds | milliseconds | nanoseconds | seconds)): Specifies unit of Inter Burst Gap either in bytes or nanoseconds.
         - InterStreamGap (number): Specifies the gap between any two consecutive Flow Groups when Transmission Mode is Sequential.
+        - InterStreamGapUnits (str(bytes | microseconds | milliseconds | nanoseconds | seconds)): Specifies unit of Inter Stream Gap either in bytes or nanoseconds.
         - IterationCount (number): Specifies the number of iterations the Flow Group can have when Transmission Mode is Interleaved.
         - MinGapBytes (number): Specifies the minimum gap between any 2 packets or frames in term of bytes.
         - RepeatBurst (number): Specifies number of times a burst can be repeated when Transmission Mode is Sequential.
@@ -342,6 +367,7 @@ class TransmissionControl(Base):
         InterBurstGap=None,
         InterBurstGapUnits=None,
         InterStreamGap=None,
+        InterStreamGapUnits=None,
         IterationCount=None,
         MinGapBytes=None,
         RepeatBurst=None,
@@ -349,7 +375,7 @@ class TransmissionControl(Base):
         StartDelayUnits=None,
         Type=None,
     ):
-        # type: (int, int, bool, bool, int, int, str, int, int, int, int, int, str, str) -> TransmissionControl
+        # type: (int, int, bool, bool, int, int, str, int, str, int, int, int, int, str, str) -> TransmissionControl
         """Finds and retrieves transmissionControl resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve transmissionControl resources from the server.
@@ -366,6 +392,7 @@ class TransmissionControl(Base):
         - InterBurstGap (number): Specifies the gap between any two consecutive burst.
         - InterBurstGapUnits (str(bytes | microseconds | milliseconds | nanoseconds | seconds)): Specifies unit of Inter Burst Gap either in bytes or nanoseconds.
         - InterStreamGap (number): Specifies the gap between any two consecutive Flow Groups when Transmission Mode is Sequential.
+        - InterStreamGapUnits (str(bytes | microseconds | milliseconds | nanoseconds | seconds)): Specifies unit of Inter Stream Gap either in bytes or nanoseconds.
         - IterationCount (number): Specifies the number of iterations the Flow Group can have when Transmission Mode is Interleaved.
         - MinGapBytes (number): Specifies the minimum gap between any 2 packets or frames in term of bytes.
         - RepeatBurst (number): Specifies number of times a burst can be repeated when Transmission Mode is Sequential.

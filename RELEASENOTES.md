@@ -1,4 +1,7 @@
 # Release Notes
+### May  2024
+* 1.3.0
+  * support for ixnetwork version 10.20.2403.2
 ### April 2024
 * 1.2.0
   * support for ixnetwork version 10.00.2403.64 (10.00 Update-1)
