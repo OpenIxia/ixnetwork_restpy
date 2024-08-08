@@ -105,13 +105,13 @@ class Topology(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.bgpipv4peer.bgpipv4peer_55dbd04b8eece05365779cb1ad7445b1.BgpIpv4Peer): An instance of the BgpIpv4Peer class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.bgpipv4peer.bgpipv4peer_df91734757c6c41add55223a2e168060.BgpIpv4Peer): An instance of the BgpIpv4Peer class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.bgpipv4peer.bgpipv4peer_55dbd04b8eece05365779cb1ad7445b1 import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.bgpipv4peer.bgpipv4peer_df91734757c6c41add55223a2e168060 import (
             BgpIpv4Peer,
         )
 
@@ -125,13 +125,13 @@ class Topology(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.bgpipv6peer.bgpipv6peer_e8e18076800a69bc4dec7b793af29c5c.BgpIpv6Peer): An instance of the BgpIpv6Peer class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.bgpipv6peer.bgpipv6peer_72282fe6d1d67beba231ba2980997352.BgpIpv6Peer): An instance of the BgpIpv6Peer class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.bgpipv6peer.bgpipv6peer_e8e18076800a69bc4dec7b793af29c5c import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.bgpipv6peer.bgpipv6peer_72282fe6d1d67beba231ba2980997352 import (
             BgpIpv6Peer,
         )
 
@@ -345,13 +345,13 @@ class Topology(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.dotonex.dotonex_10d3ebb1f176536ccbf2a6c27585cb8b.DotOneX): An instance of the DotOneX class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.dotonex.dotonex_0022a5422a7b5d939bb7a351340e1963.DotOneX): An instance of the DotOneX class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.dotonex.dotonex_10d3ebb1f176536ccbf2a6c27585cb8b import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.dotonex.dotonex_0022a5422a7b5d939bb7a351340e1963 import (
             DotOneX,
         )
 
@@ -1399,46 +1399,6 @@ class Topology(Base):
             if self._properties.get("Ptprobeinstancesrv6", None) is not None:
                 return self._properties.get("Ptprobeinstancesrv6")
         return Ptprobeinstancesrv6(self)._select()
-
-    @property
-    def Roce6v2(self):
-        """
-        Returns
-        -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.roce6v2.roce6v2_1f0d964e44e29ac4b8d42031768a3a1f.Roce6v2): An instance of the Roce6v2 class
-
-        Raises
-        ------
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.roce6v2.roce6v2_1f0d964e44e29ac4b8d42031768a3a1f import (
-            Roce6v2,
-        )
-
-        if len(self._object_properties) > 0:
-            if self._properties.get("Roce6v2", None) is not None:
-                return self._properties.get("Roce6v2")
-        return Roce6v2(self)._select()
-
-    @property
-    def Rocev2(self):
-        """
-        Returns
-        -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.rocev2.rocev2_77b55a28da7555226186aa9a6784efa2.Rocev2): An instance of the Rocev2 class
-
-        Raises
-        ------
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.rocev2.rocev2_77b55a28da7555226186aa9a6784efa2 import (
-            Rocev2,
-        )
-
-        if len(self._object_properties) > 0:
-            if self._properties.get("Rocev2", None) is not None:
-                return self._properties.get("Rocev2")
-        return Rocev2(self)._select()
 
     @property
     def RsvpteIf(self):

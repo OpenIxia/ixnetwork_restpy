@@ -9,6 +9,7 @@ The AssignPorts method on the test platform does the following:
 	- waits until port statistic view for all test ports are ready
 	- returns a list of abstract test ports that have not been connected to test ports
 """
+
 from ixnetwork_restpy import SessionAssistant
 
 

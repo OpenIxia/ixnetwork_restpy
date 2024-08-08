@@ -3,6 +3,7 @@
 NOTE: due to current limitations either a Lagportlacp or Lagportstaticlag must be added
 
 """
+
 from ixnetwork_restpy import SessionAssistant
 
 

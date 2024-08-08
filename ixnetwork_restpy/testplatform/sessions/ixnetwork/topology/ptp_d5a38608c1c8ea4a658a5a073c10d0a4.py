@@ -82,16 +82,15 @@ class Ptp(Base):
         "DelayResponseDelayInsertionRate": "delayResponseDelayInsertionRate",
         "DescriptiveName": "descriptiveName",
         "Domain": "domain",
+        "DownloadFilePath": "downloadFilePath",
         "DropMalformed": "dropMalformed",
         "DropSignalReqAnnounce": "dropSignalReqAnnounce",
         "DropSignalReqDelayResp": "dropSignalReqDelayResp",
         "DropSignalReqSync": "dropSignalReqSync",
-        "EmulateNwtt": "emulateNwtt",
         "EnableATOITlv": "enableATOITlv",
         "EnableCmlds": "enableCmlds",
         "EnableMultipleSubnet": "enableMultipleSubnet",
         "EnableNegativeTesting": "enableNegativeTesting",
-        "EnableSib9": "enableSib9",
         "Errors": "errors",
         "FileLocation": "fileLocation",
         "FolderPath": "folderPath",
@@ -177,9 +176,6 @@ class Ptp(Base):
         "SessionInfo": "sessionInfo",
         "SessionStatus": "sessionStatus",
         "SetUserDefinedUtcOffset": "setUserDefinedUtcOffset",
-        "Sib9DstIp": "sib9DstIp",
-        "Sib9DstPort": "sib9DstPort",
-        "Sib9SrcPort": "sib9SrcPort",
         "SignalInterval": "signalInterval",
         "SignalUnicastHandling": "signalUnicastHandling",
         "SignallingDropRate": "signallingDropRate",
@@ -211,7 +207,6 @@ class Ptp(Base):
         "TimeSource": "timeSource",
         "TimestampOffset": "timestampOffset",
         "TotalTimeInaccuracy": "totalTimeInaccuracy",
-        "TsiOui": "tsiOui",
         "TxCalibration": "txCalibration",
         "TxTwoStepCalibration": "txTwoStepCalibration",
         "UpdateTime": "updateTime",
@@ -915,6 +910,16 @@ class Ptp(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Domain"]))
 
     @property
+    def DownloadFilePath(self):
+        # type: () -> str
+        """
+        Returns
+        -------
+        - str: Download Path
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["DownloadFilePath"])
+
+    @property
     def DropMalformed(self):
         # type: () -> 'Multivalue'
         """
@@ -967,18 +972,6 @@ class Ptp(Base):
         return Multivalue(
             self, self._get_attribute(self._SDM_ATT_MAP["DropSignalReqSync"])
         )
-
-    @property
-    def EmulateNwtt(self):
-        # type: () -> 'Multivalue'
-        """
-        Returns
-        -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): Enable NWTT Emulation to send TSi in Sync and discard PDelay messages. This will use software timestamp
-        """
-        from ixnetwork_restpy.multivalue import Multivalue
-
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EmulateNwtt"]))
 
     @property
     def EnableATOITlv(self):
@@ -1039,18 +1032,6 @@ class Ptp(Base):
     def EnableNegativeTesting(self, value):
         # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP["EnableNegativeTesting"], value)
-
-    @property
-    def EnableSib9(self):
-        # type: () -> 'Multivalue'
-        """
-        Returns
-        -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Sib9 message transmission.
-        """
-        from ixnetwork_restpy.multivalue import Multivalue
-
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EnableSib9"]))
 
     @property
     def Errors(self):
@@ -2186,42 +2167,6 @@ class Ptp(Base):
         )
 
     @property
-    def Sib9DstIp(self):
-        # type: () -> 'Multivalue'
-        """
-        Returns
-        -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): Destination IP of SIB9 Messages.
-        """
-        from ixnetwork_restpy.multivalue import Multivalue
-
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Sib9DstIp"]))
-
-    @property
-    def Sib9DstPort(self):
-        # type: () -> 'Multivalue'
-        """
-        Returns
-        -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): UDP Destination Port of SIB9 messages.
-        """
-        from ixnetwork_restpy.multivalue import Multivalue
-
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Sib9DstPort"]))
-
-    @property
-    def Sib9SrcPort(self):
-        # type: () -> 'Multivalue'
-        """
-        Returns
-        -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): UDP Source Port of SIB9 messages.
-        """
-        from ixnetwork_restpy.multivalue import Multivalue
-
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Sib9SrcPort"]))
-
-    @property
     def SignalInterval(self):
         # type: () -> 'Multivalue'
         """
@@ -2635,18 +2580,6 @@ class Ptp(Base):
         )
 
     @property
-    def TsiOui(self):
-        # type: () -> 'Multivalue'
-        """
-        Returns
-        -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): This field indicates the value of the Organizational Unique Identifier (OUI) assigned to 3GPP by the IEEE, coded in binary over 3 octets.
-        """
-        from ixnetwork_restpy.multivalue import Multivalue
-
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["TsiOui"]))
-
-    @property
     def TxCalibration(self):
         # type: () -> 'Multivalue'
         """
@@ -2822,6 +2755,7 @@ class Ptp(Base):
         ConnectedVia=None,
         Count=None,
         DescriptiveName=None,
+        DownloadFilePath=None,
         EnableATOITlv=None,
         EnableCmlds=None,
         EnableMultipleSubnet=None,
@@ -2856,6 +2790,7 @@ class Ptp(Base):
         - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology])): List of layers this layer is used to connect with to the wire.
         - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
+        - DownloadFilePath (str): Download Path
         - EnableATOITlv (bool): Enable ATOI TLV
         - EnableCmlds (bool): Enable Cmlds
         - EnableMultipleSubnet (bool): If this field is enabled user can configure slaves of multiple subnet.
@@ -3246,8 +3181,6 @@ class Ptp(Base):
         DropSignalReqAnnounce=None,
         DropSignalReqDelayResp=None,
         DropSignalReqSync=None,
-        EmulateNwtt=None,
-        EnableSib9=None,
         FileLocation=None,
         FolderPath=None,
         FollowUpBadCrcRate=None,
@@ -3323,9 +3256,6 @@ class Ptp(Base):
         SendInterfaceRateTlv=None,
         SendMulticastAnnounce=None,
         SetUserDefinedUtcOffset=None,
-        Sib9DstIp=None,
-        Sib9DstPort=None,
-        Sib9SrcPort=None,
         SignalInterval=None,
         SignalUnicastHandling=None,
         SignallingDropRate=None,
@@ -3353,7 +3283,6 @@ class Ptp(Base):
         TimeSource=None,
         TimestampOffset=None,
         TotalTimeInaccuracy=None,
-        TsiOui=None,
         TxCalibration=None,
         TxTwoStepCalibration=None,
         UpdateTime=None,
@@ -3408,8 +3337,6 @@ class Ptp(Base):
         - DropSignalReqAnnounce (str): optional regex of dropSignalReqAnnounce
         - DropSignalReqDelayResp (str): optional regex of dropSignalReqDelayResp
         - DropSignalReqSync (str): optional regex of dropSignalReqSync
-        - EmulateNwtt (str): optional regex of emulateNwtt
-        - EnableSib9 (str): optional regex of enableSib9
         - FileLocation (str): optional regex of fileLocation
         - FolderPath (str): optional regex of folderPath
         - FollowUpBadCrcRate (str): optional regex of followUpBadCrcRate
@@ -3485,9 +3412,6 @@ class Ptp(Base):
         - SendInterfaceRateTlv (str): optional regex of sendInterfaceRateTlv
         - SendMulticastAnnounce (str): optional regex of sendMulticastAnnounce
         - SetUserDefinedUtcOffset (str): optional regex of setUserDefinedUtcOffset
-        - Sib9DstIp (str): optional regex of sib9DstIp
-        - Sib9DstPort (str): optional regex of sib9DstPort
-        - Sib9SrcPort (str): optional regex of sib9SrcPort
         - SignalInterval (str): optional regex of signalInterval
         - SignalUnicastHandling (str): optional regex of signalUnicastHandling
         - SignallingDropRate (str): optional regex of signallingDropRate
@@ -3515,7 +3439,6 @@ class Ptp(Base):
         - TimeSource (str): optional regex of timeSource
         - TimestampOffset (str): optional regex of timestampOffset
         - TotalTimeInaccuracy (str): optional regex of totalTimeInaccuracy
-        - TsiOui (str): optional regex of tsiOui
         - TxCalibration (str): optional regex of txCalibration
         - TxTwoStepCalibration (str): optional regex of txTwoStepCalibration
         - UpdateTime (str): optional regex of updateTime

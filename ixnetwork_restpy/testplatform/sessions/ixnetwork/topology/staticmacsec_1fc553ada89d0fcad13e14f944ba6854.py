@@ -57,12 +57,18 @@ class StaticMacsec(Base):
         "EndStation": "endStation",
         "Errors": "errors",
         "ExcludedProtocols": "excludedProtocols",
+        "FirstPn": "firstPn",
         "FixedPn": "fixedPn",
         "IncludeSci": "includeSci",
+        "IncrementingPn": "incrementingPn",
+        "LastPn": "lastPn",
         "Multiplier": "multiplier",
+        "MvFirstXpn": "mvFirstXpn",
         "MvFixedXpn": "mvFixedXpn",
+        "MvLastXpn": "mvLastXpn",
         "Name": "name",
         "OverrideTciSetting": "overrideTciSetting",
+        "PacketCountPn": "packetCountPn",
         "PeriodicRekeyAttempts": "periodicRekeyAttempts",
         "PeriodicRekeyInterval": "periodicRekeyInterval",
         "PortId": "portId",
@@ -483,6 +489,21 @@ class StaticMacsec(Base):
         )
 
     @property
+    def FirstPn(self):
+        # type: () -> int
+        """
+        Returns
+        -------
+        - number: First Packet Number of defined PN range with which MACsec packets will be sent out by single device of the Device Group.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["FirstPn"])
+
+    @FirstPn.setter
+    def FirstPn(self, value):
+        # type: (int) -> None
+        self._set_attribute(self._SDM_ATT_MAP["FirstPn"], value)
+
+    @property
     def FixedPn(self):
         # type: () -> int
         """
@@ -510,6 +531,31 @@ class StaticMacsec(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["IncludeSci"]))
 
     @property
+    def IncrementingPn(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: Determines whether MACsec packets will be sent out by single device with an incrementing PN or XPN. If Incrementing PN-XPN, is disabled then all MACsec packets will be sent out with the configured Fixed PN or lower half of configured Fixed XPN.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["IncrementingPn"])
+
+    @IncrementingPn.setter
+    def IncrementingPn(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["IncrementingPn"], value)
+
+    @property
+    def LastPn(self):
+        # type: () -> int
+        """
+        Returns
+        -------
+        - number: Last Packet Number of defined PN range with which MACsec packets will be sent out by single device of the Device Group.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["LastPn"])
+
+    @property
     def Multiplier(self):
         # type: () -> int
         """
@@ -525,6 +571,18 @@ class StaticMacsec(Base):
         self._set_attribute(self._SDM_ATT_MAP["Multiplier"], value)
 
     @property
+    def MvFirstXpn(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): First 8 bytes PN of the PN range with which first MACsec packet of single device of the device group will be sent out.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["MvFirstXpn"]))
+
+    @property
     def MvFixedXpn(self):
         # type: () -> 'Multivalue'
         """
@@ -535,6 +593,18 @@ class StaticMacsec(Base):
         from ixnetwork_restpy.multivalue import Multivalue
 
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["MvFixedXpn"]))
+
+    @property
+    def MvLastXpn(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Last 8 bytes PN of the PN range with which last MACsec packet of single device of the device group will be sent out.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["MvLastXpn"]))
 
     @property
     def Name(self):
@@ -564,6 +634,21 @@ class StaticMacsec(Base):
         return Multivalue(
             self, self._get_attribute(self._SDM_ATT_MAP["OverrideTciSetting"])
         )
+
+    @property
+    def PacketCountPn(self):
+        # type: () -> int
+        """
+        Returns
+        -------
+        - number: Number of Packets of defined PN range which MACsec packets will be sent out by single device of the Device Group.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["PacketCountPn"])
+
+    @PacketCountPn.setter
+    def PacketCountPn(self, value):
+        # type: (int) -> None
+        self._set_attribute(self._SDM_ATT_MAP["PacketCountPn"], value)
 
     @property
     def PeriodicRekeyAttempts(self):
@@ -853,9 +938,12 @@ class StaticMacsec(Base):
         EncryptedTrafficType=None,
         EncryptedVlanCount=None,
         EncryptionEngine=None,
+        FirstPn=None,
         FixedPn=None,
+        IncrementingPn=None,
         Multiplier=None,
         Name=None,
+        PacketCountPn=None,
         PeriodicRekeyAttempts=None,
         PeriodicRekeyInterval=None,
         RekeyBehaviour=None,
@@ -865,7 +953,7 @@ class StaticMacsec(Base):
         StackedLayers=None,
         TxSakPoolSize=None,
     ):
-        # type: (List[str], bool, str, int, str, int, int, str, int, int, str, int, bool, List[str], List[str], int) -> StaticMacsec
+        # type: (List[str], bool, str, int, str, int, int, bool, int, str, int, int, int, str, int, bool, List[str], List[str], int) -> StaticMacsec
         """Updates staticMacsec resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -878,9 +966,12 @@ class StaticMacsec(Base):
         - EncryptedTrafficType (str(statefulL47 | statelessL23)): Determines the set of MACsec functionalities supported by a Device Group. Stateless L2-3 enables encryption of stateless L2-3 traffic at line rate, Stateful L4-7 enables encryption and live decryption of stateful L4-7 traffic at lower throughput. Separate Device Groups need to be configured to get both the options on the same port.
         - EncryptedVlanCount (number): Denotes the number of VLANs to be sent as encrypted VLANs. Maximum 6 VLANs can be configured as encrypted VLANs.
         - EncryptionEngine (str(softwareBased | hardwareBased)): Obsolete field. Replaced by Encrypted Traffic Type. Value is always same as Encrypted Traffic Type.
+        - FirstPn (number): First Packet Number of defined PN range with which MACsec packets will be sent out by single device of the Device Group.
         - FixedPn (number): Packet Number with which all MACsec packets will be sent out by all the devices of the Device Group.
+        - IncrementingPn (bool): Determines whether MACsec packets will be sent out by single device with an incrementing PN or XPN. If Incrementing PN-XPN, is disabled then all MACsec packets will be sent out with the configured Fixed PN or lower half of configured Fixed XPN.
         - Multiplier (number): Number of layer instances per parent instance (multiplier)
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - PacketCountPn (number): Number of Packets of defined PN range which MACsec packets will be sent out by single device of the Device Group.
         - PeriodicRekeyAttempts (number): Determines the number of times Rekey will happen after MACsec is started.
         - PeriodicRekeyInterval (number): Determines the time interval between two subsequent Rekey events. The timer starts with the first MACsec packet transmission from a device.
         - RekeyBehaviour (str(dontRekey | rekeyContinuous | rekeyFixedCount)): Determines the Rekey behavior.
@@ -903,9 +994,12 @@ class StaticMacsec(Base):
         EncryptedTrafficType=None,
         EncryptedVlanCount=None,
         EncryptionEngine=None,
+        FirstPn=None,
         FixedPn=None,
+        IncrementingPn=None,
         Multiplier=None,
         Name=None,
+        PacketCountPn=None,
         PeriodicRekeyAttempts=None,
         PeriodicRekeyInterval=None,
         RekeyBehaviour=None,
@@ -915,7 +1009,7 @@ class StaticMacsec(Base):
         StackedLayers=None,
         TxSakPoolSize=None,
     ):
-        # type: (List[str], bool, str, int, str, int, int, str, int, int, str, int, bool, List[str], List[str], int) -> StaticMacsec
+        # type: (List[str], bool, str, int, str, int, int, bool, int, str, int, int, int, str, int, bool, List[str], List[str], int) -> StaticMacsec
         """Adds a new staticMacsec resource on the server and adds it to the container.
 
         Args
@@ -925,9 +1019,12 @@ class StaticMacsec(Base):
         - EncryptedTrafficType (str(statefulL47 | statelessL23)): Determines the set of MACsec functionalities supported by a Device Group. Stateless L2-3 enables encryption of stateless L2-3 traffic at line rate, Stateful L4-7 enables encryption and live decryption of stateful L4-7 traffic at lower throughput. Separate Device Groups need to be configured to get both the options on the same port.
         - EncryptedVlanCount (number): Denotes the number of VLANs to be sent as encrypted VLANs. Maximum 6 VLANs can be configured as encrypted VLANs.
         - EncryptionEngine (str(softwareBased | hardwareBased)): Obsolete field. Replaced by Encrypted Traffic Type. Value is always same as Encrypted Traffic Type.
+        - FirstPn (number): First Packet Number of defined PN range with which MACsec packets will be sent out by single device of the Device Group.
         - FixedPn (number): Packet Number with which all MACsec packets will be sent out by all the devices of the Device Group.
+        - IncrementingPn (bool): Determines whether MACsec packets will be sent out by single device with an incrementing PN or XPN. If Incrementing PN-XPN, is disabled then all MACsec packets will be sent out with the configured Fixed PN or lower half of configured Fixed XPN.
         - Multiplier (number): Number of layer instances per parent instance (multiplier)
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - PacketCountPn (number): Number of Packets of defined PN range which MACsec packets will be sent out by single device of the Device Group.
         - PeriodicRekeyAttempts (number): Determines the number of times Rekey will happen after MACsec is started.
         - PeriodicRekeyInterval (number): Determines the time interval between two subsequent Rekey events. The timer starts with the first MACsec packet transmission from a device.
         - RekeyBehaviour (str(dontRekey | rekeyContinuous | rekeyFixedCount)): Determines the Rekey behavior.
@@ -967,9 +1064,13 @@ class StaticMacsec(Base):
         EncryptedVlanCount=None,
         EncryptionEngine=None,
         Errors=None,
+        FirstPn=None,
         FixedPn=None,
+        IncrementingPn=None,
+        LastPn=None,
         Multiplier=None,
         Name=None,
+        PacketCountPn=None,
         PeriodicRekeyAttempts=None,
         PeriodicRekeyInterval=None,
         RekeyBehaviour=None,
@@ -998,9 +1099,13 @@ class StaticMacsec(Base):
         - EncryptedVlanCount (number): Denotes the number of VLANs to be sent as encrypted VLANs. Maximum 6 VLANs can be configured as encrypted VLANs.
         - EncryptionEngine (str(softwareBased | hardwareBased)): Obsolete field. Replaced by Encrypted Traffic Type. Value is always same as Encrypted Traffic Type.
         - Errors (list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork/],arg2:list[str]))): A list of errors that have occurred
+        - FirstPn (number): First Packet Number of defined PN range with which MACsec packets will be sent out by single device of the Device Group.
         - FixedPn (number): Packet Number with which all MACsec packets will be sent out by all the devices of the Device Group.
+        - IncrementingPn (bool): Determines whether MACsec packets will be sent out by single device with an incrementing PN or XPN. If Incrementing PN-XPN, is disabled then all MACsec packets will be sent out with the configured Fixed PN or lower half of configured Fixed XPN.
+        - LastPn (number): Last Packet Number of defined PN range with which MACsec packets will be sent out by single device of the Device Group.
         - Multiplier (number): Number of layer instances per parent instance (multiplier)
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
+        - PacketCountPn (number): Number of Packets of defined PN range which MACsec packets will be sent out by single device of the Device Group.
         - PeriodicRekeyAttempts (number): Determines the number of times Rekey will happen after MACsec is started.
         - PeriodicRekeyInterval (number): Determines the time interval between two subsequent Rekey events. The timer starts with the first MACsec packet transmission from a device.
         - RekeyBehaviour (str(dontRekey | rekeyContinuous | rekeyFixedCount)): Determines the Rekey behavior.
@@ -1214,7 +1319,9 @@ class StaticMacsec(Base):
         EndStation=None,
         ExcludedProtocols=None,
         IncludeSci=None,
+        MvFirstXpn=None,
         MvFixedXpn=None,
+        MvLastXpn=None,
         OverrideTciSetting=None,
         PortId=None,
         SourceIp=None,
@@ -1248,7 +1355,9 @@ class StaticMacsec(Base):
         - EndStation (str): optional regex of endStation
         - ExcludedProtocols (str): optional regex of excludedProtocols
         - IncludeSci (str): optional regex of includeSci
+        - MvFirstXpn (str): optional regex of mvFirstXpn
         - MvFixedXpn (str): optional regex of mvFixedXpn
+        - MvLastXpn (str): optional regex of mvLastXpn
         - OverrideTciSetting (str): optional regex of overrideTciSetting
         - PortId (str): optional regex of portId
         - SourceIp (str): optional regex of sourceIp

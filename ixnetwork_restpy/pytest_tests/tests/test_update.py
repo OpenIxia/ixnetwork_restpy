@@ -1,6 +1,7 @@
 """Test the .update() functionality to ensure all
 encapsulated resources are updated in a single call
 """
+
 import pytest
 
 

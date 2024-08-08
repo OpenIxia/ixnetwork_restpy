@@ -8,6 +8,7 @@ The script demonstrates the following:
     - print statistics
     - stop traffic
 """
+
 from ixnetwork_restpy import SessionAssistant
 
 

@@ -66,7 +66,6 @@ class Preferences(Base):
         "ResourceManagerLocation": "resourceManagerLocation",
         "ScriptgenTextEditorPath": "scriptgenTextEditorPath",
         "SelectDGOnCreation": "selectDGOnCreation",
-        "SequenceCheckingWhenNoTxRxSync": "sequenceCheckingWhenNoTxRxSync",
         "ShortenScenarioObjectNameInMiddle": "shortenScenarioObjectNameInMiddle",
         "StreamLogsToSyslogServer": "streamLogsToSyslogServer",
         "SyslogHost": "syslogHost",
@@ -588,21 +587,6 @@ class Preferences(Base):
         self._set_attribute(self._SDM_ATT_MAP["SelectDGOnCreation"], value)
 
     @property
-    def SequenceCheckingWhenNoTxRxSync(self):
-        # type: () -> bool
-        """
-        Returns
-        -------
-        - bool: When true, advanced sequence checking is preferred if Tx-Rx Sync is unavailable on any port.
-        """
-        return self._get_attribute(self._SDM_ATT_MAP["SequenceCheckingWhenNoTxRxSync"])
-
-    @SequenceCheckingWhenNoTxRxSync.setter
-    def SequenceCheckingWhenNoTxRxSync(self, value):
-        # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP["SequenceCheckingWhenNoTxRxSync"], value)
-
-    @property
     def ShortenScenarioObjectNameInMiddle(self):
         # type: () -> bool
         """
@@ -713,14 +697,13 @@ class Preferences(Base):
         ResourceManagerLocation=None,
         ScriptgenTextEditorPath=None,
         SelectDGOnCreation=None,
-        SequenceCheckingWhenNoTxRxSync=None,
         ShortenScenarioObjectNameInMiddle=None,
         StreamLogsToSyslogServer=None,
         SyslogHost=None,
         SyslogPort=None,
         TransmitMode=None,
     ):
-        # type: (bool, bool, int, str, str, str, bool, int, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, int, int, str, bool, bool, bool, bool, str, List[str], str, str, bool, bool, bool, bool, str, int, str) -> Preferences
+        # type: (bool, bool, int, str, str, str, bool, int, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, int, int, str, bool, bool, bool, bool, str, List[str], str, str, bool, bool, bool, str, int, str) -> Preferences
         """Updates preferences resource on the server.
 
         Args
@@ -755,7 +738,6 @@ class Preferences(Base):
         - ResourceManagerLocation (str): Set the Resource Manager resources location
         - ScriptgenTextEditorPath (str): Set the text editor path for Scriptgen
         - SelectDGOnCreation (bool): When true, Device Group will be auto selected in Scenario on a new Topology creation
-        - SequenceCheckingWhenNoTxRxSync (bool): When true, advanced sequence checking is preferred if Tx-Rx Sync is unavailable on any port.
         - ShortenScenarioObjectNameInMiddle (bool): Shorten Topology/DG/NG names in the middle. If this is true, Topology/Device Group/Network Group names are shortened in the middle (with .), otherwise at the end
         - StreamLogsToSyslogServer (bool): Enables streaming Logs To Syslog Server
         - SyslogHost (str): syslog host
@@ -801,14 +783,13 @@ class Preferences(Base):
         ResourceManagerLocation=None,
         ScriptgenTextEditorPath=None,
         SelectDGOnCreation=None,
-        SequenceCheckingWhenNoTxRxSync=None,
         ShortenScenarioObjectNameInMiddle=None,
         StreamLogsToSyslogServer=None,
         SyslogHost=None,
         SyslogPort=None,
         TransmitMode=None,
     ):
-        # type: (bool, bool, int, str, str, str, bool, int, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, int, int, str, bool, bool, bool, bool, str, List[str], List[str], str, str, bool, bool, bool, bool, str, int, str) -> Preferences
+        # type: (bool, bool, int, str, str, str, bool, int, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, int, int, str, bool, bool, bool, bool, str, List[str], List[str], str, str, bool, bool, bool, str, int, str) -> Preferences
         """Finds and retrieves preferences resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve preferences resources from the server.
@@ -848,7 +829,6 @@ class Preferences(Base):
         - ResourceManagerLocation (str): Set the Resource Manager resources location
         - ScriptgenTextEditorPath (str): Set the text editor path for Scriptgen
         - SelectDGOnCreation (bool): When true, Device Group will be auto selected in Scenario on a new Topology creation
-        - SequenceCheckingWhenNoTxRxSync (bool): When true, advanced sequence checking is preferred if Tx-Rx Sync is unavailable on any port.
         - ShortenScenarioObjectNameInMiddle (bool): Shorten Topology/DG/NG names in the middle. If this is true, Topology/Device Group/Network Group names are shortened in the middle (with .), otherwise at the end
         - StreamLogsToSyslogServer (bool): Enables streaming Logs To Syslog Server
         - SyslogHost (str): syslog host

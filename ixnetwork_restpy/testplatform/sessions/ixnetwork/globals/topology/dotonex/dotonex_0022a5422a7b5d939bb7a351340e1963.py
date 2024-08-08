@@ -45,6 +45,7 @@ class DotOneX(Base):
         "Department": "department",
         "DescriptiveName": "descriptiveName",
         "DisableLogoff": "disableLogoff",
+        "DupResponse": "dupResponse",
         "DutTestMode": "dutTestMode",
         "FragmentSize": "fragmentSize",
         "GetCACertOnly": "getCACertOnly",
@@ -189,6 +190,18 @@ class DotOneX(Base):
         from ixnetwork_restpy.multivalue import Multivalue
 
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["DisableLogoff"]))
+
+    @property
+    def DupResponse(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Respond to Duplicates when enabled.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["DupResponse"]))
 
     @property
     def DutTestMode(self):
@@ -498,6 +511,7 @@ class DotOneX(Base):
         Country=None,
         Department=None,
         DisableLogoff=None,
+        DupResponse=None,
         DutTestMode=None,
         FragmentSize=None,
         GetCACertOnly=None,
@@ -531,6 +545,7 @@ class DotOneX(Base):
         - Country (str): optional regex of country
         - Department (str): optional regex of department
         - DisableLogoff (str): optional regex of disableLogoff
+        - DupResponse (str): optional regex of dupResponse
         - DutTestMode (str): optional regex of dutTestMode
         - FragmentSize (str): optional regex of fragmentSize
         - GetCACertOnly (str): optional regex of getCACertOnly

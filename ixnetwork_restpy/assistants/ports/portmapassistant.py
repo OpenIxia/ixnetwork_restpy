@@ -1,5 +1,6 @@
 """ Assistant class to simplify the task of virtual ports to test ports connections
 """
+
 import time
 import json
 from ixnetwork_restpy.select import Select
@@ -86,9 +87,11 @@ class PortMapAssistant(object):
         if Name is None or len(vport) == 0:
             vport = self._IxNetwork.Vport.add(Name=Name)
         self._map[vport.Name] = {
-            "location": Location
-            if Location is not None
-            else "%s;%s;%s" % (IpAddress, CardId, PortId),
+            "location": (
+                Location
+                if Location is not None
+                else "%s;%s;%s" % (IpAddress, CardId, PortId)
+            ),
             "vport": vport,
         }
         return vport

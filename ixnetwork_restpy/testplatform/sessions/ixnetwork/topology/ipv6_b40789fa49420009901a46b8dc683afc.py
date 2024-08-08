@@ -505,13 +505,13 @@ class Ipv6(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ptp_41f127b75896ebfffe1628d41332bf0b.Ptp): An instance of the Ptp class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ptp_d5a38608c1c8ea4a658a5a073c10d0a4.Ptp): An instance of the Ptp class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ptp_41f127b75896ebfffe1628d41332bf0b import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ptp_d5a38608c1c8ea4a658a5a073c10d0a4 import (
             Ptp,
         )
 
@@ -539,26 +539,6 @@ class Ipv6(Base):
             if self._properties.get("Ptprobeinstancesrv6", None) is not None:
                 return self._properties.get("Ptprobeinstancesrv6")
         return Ptprobeinstancesrv6(self)
-
-    @property
-    def Roce6v2(self):
-        """
-        Returns
-        -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.roce6v2_83b8c158db88fd2dab26f3dc3d5e8aec.Roce6v2): An instance of the Roce6v2 class
-
-        Raises
-        ------
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.roce6v2_83b8c158db88fd2dab26f3dc3d5e8aec import (
-            Roce6v2,
-        )
-
-        if len(self._object_properties) > 0:
-            if self._properties.get("Roce6v2", None) is not None:
-                return self._properties.get("Roce6v2")
-        return Roce6v2(self)
 
     @property
     def Srv6Oam(self):

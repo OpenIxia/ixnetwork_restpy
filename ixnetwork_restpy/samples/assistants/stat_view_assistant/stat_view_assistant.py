@@ -3,6 +3,7 @@
 This sample requires an already loaded configuration with at least 2 connected vports.
 
 """
+
 from ixnetwork_restpy import SessionAssistant, StatViewAssistant
 
 

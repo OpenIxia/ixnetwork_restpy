@@ -27,13 +27,13 @@ if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
 
-class BgpIpv4Peer(Base):
+class BgpIpv6Peer(Base):
     """BGP Port level Configuration
-    The BgpIpv4Peer class encapsulates a required bgpIpv4Peer resource which will be retrieved from the server every time the property is accessed.
+    The BgpIpv6Peer class encapsulates a required bgpIpv6Peer resource which will be retrieved from the server every time the property is accessed.
     """
 
     __slots__ = ()
-    _SDM_NAME = "bgpIpv4Peer"
+    _SDM_NAME = "bgpIpv6Peer"
     _SDM_ATT_MAP = {
         "BIERTunnelType": "BIERTunnelType",
         "LLGRCapabilityCode": "LLGRCapabilityCode",
@@ -53,6 +53,7 @@ class BgpIpv4Peer(Base):
         "EnLenthForPolicyNLRI": "enLenthForPolicyNLRI",
         "EnableAdVplsPrefixLength": "enableAdVplsPrefixLength",
         "EnableTraceroute": "enableTraceroute",
+        "ExecutionMode": "executionMode",
         "GSRv6SIDEncodingSubTlvType": "gSRv6SIDEncodingSubTlvType",
         "HighScaleRouteMode": "highScaleRouteMode",
         "IBgpTester4BytesAsNumber": "iBgpTester4BytesAsNumber",
@@ -114,7 +115,7 @@ class BgpIpv4Peer(Base):
     }
 
     def __init__(self, parent, list_op=False):
-        super(BgpIpv4Peer, self).__init__(parent, list_op)
+        super(BgpIpv6Peer, self).__init__(parent, list_op)
 
     @property
     def StartRate(self):
@@ -403,13 +404,25 @@ class BgpIpv4Peer(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): Enable this flag for using Traceroute feature.
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This will enable the traceroute functionality on all the BGP peers configured in this port.
         """
         from ixnetwork_restpy.multivalue import Multivalue
 
         return Multivalue(
             self, self._get_attribute(self._SDM_ATT_MAP["EnableTraceroute"])
         )
+
+    @property
+    def ExecutionMode(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Traceroute execution mode.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ExecutionMode"]))
 
     @property
     def GSRv6SIDEncodingSubTlvType(self):
@@ -625,7 +638,7 @@ class BgpIpv4Peer(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): Max TTL
+        - obj(ixnetwork_restpy.multivalue.Multivalue): The TTL value used in the probes will start from 1 and incremented up to this value.
         """
         from ixnetwork_restpy.multivalue import Multivalue
 
@@ -846,7 +859,7 @@ class BgpIpv4Peer(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): Probe Interval
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Time interval in milliseconds between each probe per hop.
         """
         from ixnetwork_restpy.multivalue import Multivalue
 
@@ -870,7 +883,7 @@ class BgpIpv4Peer(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): Query Count
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Maximum number of paths that can be discovered.
         """
         from ixnetwork_restpy.multivalue import Multivalue
 
@@ -1144,7 +1157,7 @@ class BgpIpv4Peer(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): Wait Time(msec)
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Time in milliseconds to wait for a response.
         """
         from ixnetwork_restpy.multivalue import Multivalue
 
@@ -1163,8 +1176,8 @@ class BgpIpv4Peer(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["WeightType"]))
 
     def update(self, Name=None, Srv6DraftNum=None):
-        # type: (str, str) -> BgpIpv4Peer
-        """Updates bgpIpv4Peer resource on the server.
+        # type: (str, str) -> BgpIpv6Peer
+        """Updates bgpIpv6Peer resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
         The Multivalue class has documentation that details the possible values for those named parameters.
@@ -1188,12 +1201,12 @@ class BgpIpv4Peer(Base):
         RowNames=None,
         Srv6DraftNum=None,
     ):
-        # type: (int, str, str, List[str], str) -> BgpIpv4Peer
-        """Finds and retrieves bgpIpv4Peer resources from the server.
+        # type: (int, str, str, List[str], str) -> BgpIpv6Peer
+        """Finds and retrieves bgpIpv6Peer resources from the server.
 
-        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve bgpIpv4Peer resources from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve bgpIpv6Peer resources from the server.
         To retrieve an exact match ensure the parameter value starts with ^ and ends with $
-        By default the find method takes no parameters and will retrieve all bgpIpv4Peer resources from the server.
+        By default the find method takes no parameters and will retrieve all bgpIpv6Peer resources from the server.
 
         Args
         ----
@@ -1205,7 +1218,7 @@ class BgpIpv4Peer(Base):
 
         Returns
         -------
-        - self: This instance with matching bgpIpv4Peer resources retrieved from the server available through an iterator or index
+        - self: This instance with matching bgpIpv6Peer resources retrieved from the server available through an iterator or index
 
         Raises
         ------
@@ -1214,7 +1227,7 @@ class BgpIpv4Peer(Base):
         return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
-        """Retrieves a single instance of bgpIpv4Peer data from the server.
+        """Retrieves a single instance of bgpIpv6Peer data from the server.
 
         Args
         ----
@@ -1222,7 +1235,7 @@ class BgpIpv4Peer(Base):
 
         Returns
         -------
-        - self: This instance with the bgpIpv4Peer resources from the server available through an iterator or index
+        - self: This instance with the bgpIpv6Peer resources from the server available through an iterator or index
 
         Raises
         ------
@@ -1250,6 +1263,7 @@ class BgpIpv4Peer(Base):
         EnLenthForPolicyNLRI=None,
         EnableAdVplsPrefixLength=None,
         EnableTraceroute=None,
+        ExecutionMode=None,
         GSRv6SIDEncodingSubTlvType=None,
         HighScaleRouteMode=None,
         IBgpTester4BytesAsNumber=None,
@@ -1303,7 +1317,7 @@ class BgpIpv4Peer(Base):
         WaitTime=None,
         WeightType=None,
     ):
-        """Base class infrastructure that gets a list of bgpIpv4Peer device ids encapsulated by this object.
+        """Base class infrastructure that gets a list of bgpIpv6Peer device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 
@@ -1326,6 +1340,7 @@ class BgpIpv4Peer(Base):
         - EnLenthForPolicyNLRI (str): optional regex of enLenthForPolicyNLRI
         - EnableAdVplsPrefixLength (str): optional regex of enableAdVplsPrefixLength
         - EnableTraceroute (str): optional regex of enableTraceroute
+        - ExecutionMode (str): optional regex of executionMode
         - GSRv6SIDEncodingSubTlvType (str): optional regex of gSRv6SIDEncodingSubTlvType
         - HighScaleRouteMode (str): optional regex of highScaleRouteMode
         - IBgpTester4BytesAsNumber (str): optional regex of iBgpTester4BytesAsNumber

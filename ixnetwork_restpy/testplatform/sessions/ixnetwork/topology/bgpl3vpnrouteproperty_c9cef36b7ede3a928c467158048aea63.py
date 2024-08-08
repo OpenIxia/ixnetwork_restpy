@@ -94,6 +94,9 @@ class BgpL3VpnRouteProperty(Base):
         "MinASNumPerSegment": "minASNumPerSegment",
         "MinNoOfASPathSegmentsPerRouteRange": "minNoOfASPathSegmentsPerRouteRange",
         "MultiExitDiscriminator": "multiExitDiscriminator",
+        "MvNextHopCount": "mvNextHopCount",
+        "MvNextHopStepIpv4": "mvNextHopStepIpv4",
+        "MvNextHopStepIpv6": "mvNextHopStepIpv6",
         "Name": "name",
         "NextHopIPType": "nextHopIPType",
         "NextHopIncrementMode": "nextHopIncrementMode",
@@ -101,6 +104,7 @@ class BgpL3VpnRouteProperty(Base):
         "NoOfASPathSegmentsPerRouteRange": "noOfASPathSegmentsPerRouteRange",
         "NoOfClusters": "noOfClusters",
         "NoOfCommunities": "noOfCommunities",
+        "NoOfCustomAttributes": "noOfCustomAttributes",
         "NoOfExternalCommunities": "noOfExternalCommunities",
         "NoOfLargeCommunities": "noOfLargeCommunities",
         "Origin": "origin",
@@ -198,6 +202,26 @@ class BgpL3VpnRouteProperty(Base):
             if self._properties.get("BgpExtendedCommunitiesList", None) is not None:
                 return self._properties.get("BgpExtendedCommunitiesList")
         return BgpExtendedCommunitiesList(self)
+
+    @property
+    def BgpNonVPNRRCustomAttributes(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpnonvpnrrcustomattributes_b505237c5248151d375f1e5fb368b839.BgpNonVPNRRCustomAttributes): An instance of the BgpNonVPNRRCustomAttributes class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpnonvpnrrcustomattributes_b505237c5248151d375f1e5fb368b839 import (
+            BgpNonVPNRRCustomAttributes,
+        )
+
+        if len(self._object_properties) > 0:
+            if self._properties.get("BgpNonVPNRRCustomAttributes", None) is not None:
+                return self._properties.get("BgpNonVPNRRCustomAttributes")
+        return BgpNonVPNRRCustomAttributes(self)._select()
 
     @property
     def BgpNonVPNRRLargeCommunitiesList(self):
@@ -1035,6 +1059,48 @@ class BgpL3VpnRouteProperty(Base):
         )
 
     @property
+    def MvNextHopCount(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Denotes number of Next Hops after which Next Hop address will repeat.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MvNextHopCount"])
+        )
+
+    @property
+    def MvNextHopStepIpv4(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Denotes increment step for IPv4 Next Hop IP.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MvNextHopStepIpv4"])
+        )
+
+    @property
+    def MvNextHopStepIpv6(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Denotes increment step for IPv6 Next Hop IP.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MvNextHopStepIpv6"])
+        )
+
+    @property
     def Name(self):
         # type: () -> str
         """
@@ -1131,6 +1197,21 @@ class BgpL3VpnRouteProperty(Base):
     def NoOfCommunities(self, value):
         # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP["NoOfCommunities"], value)
+
+    @property
+    def NoOfCustomAttributes(self):
+        # type: () -> int
+        """
+        Returns
+        -------
+        - number: Number of BGP Custom Attributes
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["NoOfCustomAttributes"])
+
+    @NoOfCustomAttributes.setter
+    def NoOfCustomAttributes(self, value):
+        # type: (int) -> None
+        self._set_attribute(self._SDM_ATT_MAP["NoOfCustomAttributes"], value)
 
     @property
     def NoOfExternalCommunities(self):
@@ -1297,11 +1378,12 @@ class BgpL3VpnRouteProperty(Base):
         NoOfASPathSegmentsPerRouteRange=None,
         NoOfClusters=None,
         NoOfCommunities=None,
+        NoOfCustomAttributes=None,
         NoOfExternalCommunities=None,
         NoOfLargeCommunities=None,
         UseAsIpv4UmhRoutes=None,
     ):
-        # type: (bool, bool, str, int, int, int, int, int, bool) -> BgpL3VpnRouteProperty
+        # type: (bool, bool, str, int, int, int, int, int, int, bool) -> BgpL3VpnRouteProperty
         """Updates bgpL3VpnRouteProperty resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -1315,6 +1397,7 @@ class BgpL3VpnRouteProperty(Base):
         - NoOfASPathSegmentsPerRouteRange (number): Number Of non-random or manually configured AS Path Segments Per Route Range
         - NoOfClusters (number): Number of Clusters
         - NoOfCommunities (number): Number of Communities
+        - NoOfCustomAttributes (number): Number of BGP Custom Attributes
         - NoOfExternalCommunities (number): Number of Extended Communities
         - NoOfLargeCommunities (number): Number of Large Communities (Should be in the range 1-32)
         - UseAsIpv4UmhRoutes (bool): Use As IPv4 UMH Routes
@@ -1333,11 +1416,12 @@ class BgpL3VpnRouteProperty(Base):
         NoOfASPathSegmentsPerRouteRange=None,
         NoOfClusters=None,
         NoOfCommunities=None,
+        NoOfCustomAttributes=None,
         NoOfExternalCommunities=None,
         NoOfLargeCommunities=None,
         UseAsIpv4UmhRoutes=None,
     ):
-        # type: (bool, bool, str, int, int, int, int, int, bool) -> BgpL3VpnRouteProperty
+        # type: (bool, bool, str, int, int, int, int, int, int, bool) -> BgpL3VpnRouteProperty
         """Adds a new bgpL3VpnRouteProperty resource on the server and adds it to the container.
 
         Args
@@ -1348,6 +1432,7 @@ class BgpL3VpnRouteProperty(Base):
         - NoOfASPathSegmentsPerRouteRange (number): Number Of non-random or manually configured AS Path Segments Per Route Range
         - NoOfClusters (number): Number of Clusters
         - NoOfCommunities (number): Number of Communities
+        - NoOfCustomAttributes (number): Number of BGP Custom Attributes
         - NoOfExternalCommunities (number): Number of Extended Communities
         - NoOfLargeCommunities (number): Number of Large Communities (Should be in the range 1-32)
         - UseAsIpv4UmhRoutes (bool): Use As IPv4 UMH Routes
@@ -1383,11 +1468,12 @@ class BgpL3VpnRouteProperty(Base):
         NoOfASPathSegmentsPerRouteRange=None,
         NoOfClusters=None,
         NoOfCommunities=None,
+        NoOfCustomAttributes=None,
         NoOfExternalCommunities=None,
         NoOfLargeCommunities=None,
         UseAsIpv4UmhRoutes=None,
     ):
-        # type: (List[str], int, str, bool, bool, str, int, int, int, int, int, bool) -> BgpL3VpnRouteProperty
+        # type: (List[str], int, str, bool, bool, str, int, int, int, int, int, int, bool) -> BgpL3VpnRouteProperty
         """Finds and retrieves bgpL3VpnRouteProperty resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve bgpL3VpnRouteProperty resources from the server.
@@ -1405,6 +1491,7 @@ class BgpL3VpnRouteProperty(Base):
         - NoOfASPathSegmentsPerRouteRange (number): Number Of non-random or manually configured AS Path Segments Per Route Range
         - NoOfClusters (number): Number of Clusters
         - NoOfCommunities (number): Number of Communities
+        - NoOfCustomAttributes (number): Number of BGP Custom Attributes
         - NoOfExternalCommunities (number): Number of Extended Communities
         - NoOfLargeCommunities (number): Number of Large Communities (Should be in the range 1-32)
         - UseAsIpv4UmhRoutes (bool): Use As IPv4 UMH Routes
@@ -1869,6 +1956,9 @@ class BgpL3VpnRouteProperty(Base):
         MinASNumPerSegment=None,
         MinNoOfASPathSegmentsPerRouteRange=None,
         MultiExitDiscriminator=None,
+        MvNextHopCount=None,
+        MvNextHopStepIpv4=None,
+        MvNextHopStepIpv6=None,
         NextHopIPType=None,
         NextHopIncrementMode=None,
         NextHopType=None,
@@ -1941,6 +2031,9 @@ class BgpL3VpnRouteProperty(Base):
         - MinASNumPerSegment (str): optional regex of minASNumPerSegment
         - MinNoOfASPathSegmentsPerRouteRange (str): optional regex of minNoOfASPathSegmentsPerRouteRange
         - MultiExitDiscriminator (str): optional regex of multiExitDiscriminator
+        - MvNextHopCount (str): optional regex of mvNextHopCount
+        - MvNextHopStepIpv4 (str): optional regex of mvNextHopStepIpv4
+        - MvNextHopStepIpv6 (str): optional regex of mvNextHopStepIpv6
         - NextHopIPType (str): optional regex of nextHopIPType
         - NextHopIncrementMode (str): optional regex of nextHopIncrementMode
         - NextHopType (str): optional regex of nextHopType

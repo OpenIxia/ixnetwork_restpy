@@ -1,5 +1,6 @@
 """ Demonstrates standalone IxNetwork Windows GUI session management
 """
+
 from ixnetwork_restpy import SessionAssistant
 
 

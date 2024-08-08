@@ -1,5 +1,6 @@
 """ Assistant class to simplify access to statistics views
 """
+
 import json
 import websocket
 import threading

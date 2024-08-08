@@ -14,6 +14,7 @@ For more information on containers read the following:
   https://docs.python.org/2.7/library/stdtypes.html#typeiter
 
 """
+
 from ixnetwork_restpy import SessionAssistant
 
 

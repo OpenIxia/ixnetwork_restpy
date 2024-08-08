@@ -6,6 +6,7 @@ To output to a log file, use the log_file_name param
 The trace level can be specified in the SessionAssistant constructor and subsequently modified using the TestPlatform.Trace property.
 The default log level is SessionAssistant.LOGLEVEL_NONE which has a logging level of CRITICAL
 """
+
 from ixnetwork_restpy import SessionAssistant, TestPlatform
 
 

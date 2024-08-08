@@ -27,13 +27,13 @@ if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
 
-class SertHundredGigLan(Base):
+class RangerHundredGigLan(Base):
     """
-    The SertHundredGigLan class encapsulates a required sertHundredGigLan resource which will be retrieved from the server every time the property is accessed.
+    The RangerHundredGigLan class encapsulates a required rangerHundredGigLan resource which will be retrieved from the server every time the property is accessed.
     """
 
     __slots__ = ()
-    _SDM_NAME = "sertHundredGigLan"
+    _SDM_NAME = "rangerHundredGigLan"
     _SDM_ATT_MAP = {
         "AutoInstrumentation": "autoInstrumentation",
         "AvailableSpeeds": "availableSpeeds",
@@ -82,7 +82,27 @@ class SertHundredGigLan(Base):
     }
 
     def __init__(self, parent, list_op=False):
-        super(SertHundredGigLan, self).__init__(parent, list_op)
+        super(RangerHundredGigLan, self).__init__(parent, list_op)
+
+    @property
+    def Fcoe(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.rangerhundredgiglan.fcoe.fcoe.Fcoe): An instance of the Fcoe class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.rangerhundredgiglan.fcoe.fcoe import (
+            Fcoe,
+        )
+
+        if len(self._object_properties) > 0:
+            if self._properties.get("Fcoe", None) is not None:
+                return self._properties.get("Fcoe")
+        return Fcoe(self)._select()
 
     @property
     def AutoInstrumentation(self):
@@ -639,8 +659,8 @@ class SertHundredGigLan(Base):
         TypeBOrderedSets=None,
         UseANResults=None,
     ):
-        # type: (str, int, bool, bool, bool, bool, bool, bool, bool, bool, bool, str, bool, int, bool, bool, bool, int, bool, str, int, bool, bool, bool, List[str], str, str, bool, bool, str, str, bool) -> SertHundredGigLan
-        """Updates sertHundredGigLan resource on the server.
+        # type: (str, int, bool, bool, bool, bool, bool, bool, bool, bool, bool, str, bool, int, bool, bool, bool, int, bool, str, int, bool, bool, bool, List[str], str, str, bool, bool, str, str, bool) -> RangerHundredGigLan
+        """Updates rangerHundredGigLan resource on the server.
 
         Args
         ----
@@ -722,12 +742,12 @@ class SertHundredGigLan(Base):
         TypeBOrderedSets=None,
         UseANResults=None,
     ):
-        # type: (str, List[str], int, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, str, bool, int, bool, bool, bool, bool, int, bool, str, int, bool, bool, bool, List[str], str, str, bool, bool, str, str, bool) -> SertHundredGigLan
-        """Finds and retrieves sertHundredGigLan resources from the server.
+        # type: (str, List[str], int, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, str, bool, int, bool, bool, bool, bool, int, bool, str, int, bool, bool, bool, List[str], str, str, bool, bool, str, str, bool) -> RangerHundredGigLan
+        """Finds and retrieves rangerHundredGigLan resources from the server.
 
-        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve sertHundredGigLan resources from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve rangerHundredGigLan resources from the server.
         To retrieve an exact match ensure the parameter value starts with ^ and ends with $
-        By default the find method takes no parameters and will retrieve all sertHundredGigLan resources from the server.
+        By default the find method takes no parameters and will retrieve all rangerHundredGigLan resources from the server.
 
         Args
         ----
@@ -770,7 +790,7 @@ class SertHundredGigLan(Base):
 
         Returns
         -------
-        - self: This instance with matching sertHundredGigLan resources retrieved from the server available through an iterator or index
+        - self: This instance with matching rangerHundredGigLan resources retrieved from the server available through an iterator or index
 
         Raises
         ------
@@ -779,7 +799,7 @@ class SertHundredGigLan(Base):
         return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
-        """Retrieves a single instance of sertHundredGigLan data from the server.
+        """Retrieves a single instance of rangerHundredGigLan data from the server.
 
         Args
         ----
@@ -787,7 +807,7 @@ class SertHundredGigLan(Base):
 
         Returns
         -------
-        - self: This instance with the sertHundredGigLan resources from the server available through an iterator or index
+        - self: This instance with the rangerHundredGigLan resources from the server available through an iterator or index
 
         Raises
         ------

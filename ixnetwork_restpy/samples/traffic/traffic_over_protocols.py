@@ -1,6 +1,7 @@
 """Demonstrates creating a traffic item that uses ipv4 endpoints.
 
 """
+
 from ixnetwork_restpy import SessionAssistant
 
 

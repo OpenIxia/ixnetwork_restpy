@@ -697,13 +697,13 @@ class Ipv4(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ptp_41f127b75896ebfffe1628d41332bf0b.Ptp): An instance of the Ptp class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ptp_d5a38608c1c8ea4a658a5a073c10d0a4.Ptp): An instance of the Ptp class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ptp_41f127b75896ebfffe1628d41332bf0b import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ptp_d5a38608c1c8ea4a658a5a073c10d0a4 import (
             Ptp,
         )
 
@@ -711,26 +711,6 @@ class Ipv4(Base):
             if self._properties.get("Ptp", None) is not None:
                 return self._properties.get("Ptp")
         return Ptp(self)
-
-    @property
-    def Rocev2(self):
-        """
-        Returns
-        -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.rocev2_e6429a28cce71031afb98adb612f709d.Rocev2): An instance of the Rocev2 class
-
-        Raises
-        ------
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.rocev2_e6429a28cce71031afb98adb612f709d import (
-            Rocev2,
-        )
-
-        if len(self._object_properties) > 0:
-            if self._properties.get("Rocev2", None) is not None:
-                return self._properties.get("Rocev2")
-        return Rocev2(self)
 
     @property
     def RsvpteIf(self):

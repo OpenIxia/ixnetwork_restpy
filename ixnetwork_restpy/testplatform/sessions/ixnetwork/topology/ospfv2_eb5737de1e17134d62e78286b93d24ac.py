@@ -201,13 +201,13 @@ class Ospfv2(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospftrafficengineeringprofilelist_401775f4ebafd104abb270e025fbc95e.OspfTrafficEngineeringProfileList): An instance of the OspfTrafficEngineeringProfileList class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospftrafficengineeringprofilelist_82b8711289d118f725461612d6978c01.OspfTrafficEngineeringProfileList): An instance of the OspfTrafficEngineeringProfileList class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospftrafficengineeringprofilelist_401775f4ebafd104abb270e025fbc95e import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospftrafficengineeringprofilelist_82b8711289d118f725461612d6978c01 import (
             OspfTrafficEngineeringProfileList,
         )
 

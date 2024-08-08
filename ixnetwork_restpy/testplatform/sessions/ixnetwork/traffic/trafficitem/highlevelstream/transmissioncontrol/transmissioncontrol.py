@@ -35,6 +35,8 @@ class TransmissionControl(Base):
     __slots__ = ()
     _SDM_NAME = "transmissionControl"
     _SDM_ATT_MAP = {
+        "BurstDuration": "burstDuration",
+        "BurstModeUnits": "burstModeUnits",
         "BurstPacketCount": "burstPacketCount",
         "Duration": "duration",
         "EnableInterBurstGap": "enableInterBurstGap",
@@ -43,7 +45,6 @@ class TransmissionControl(Base):
         "InterBurstGap": "interBurstGap",
         "InterBurstGapUnits": "interBurstGapUnits",
         "InterStreamGap": "interStreamGap",
-        "InterStreamGapUnits": "interStreamGapUnits",
         "IterationCount": "iterationCount",
         "MinGapBytes": "minGapBytes",
         "RepeatBurst": "repeatBurst",
@@ -52,14 +53,15 @@ class TransmissionControl(Base):
         "Type": "type",
     }
     _SDM_ENUM_MAP = {
-        "interBurstGapUnits": [
+        "burstModeUnits": [
             "bytes",
             "microseconds",
             "milliseconds",
             "nanoseconds",
+            "packetCount",
             "seconds",
         ],
-        "interStreamGapUnits": [
+        "interBurstGapUnits": [
             "bytes",
             "microseconds",
             "milliseconds",
@@ -86,6 +88,36 @@ class TransmissionControl(Base):
 
     def __init__(self, parent, list_op=False):
         super(TransmissionControl, self).__init__(parent, list_op)
+
+    @property
+    def BurstDuration(self):
+        # type: () -> int
+        """
+        Returns
+        -------
+        - number: Indicates the duration of the burst. Use this attribute when configuring burst as a duration instead of packet count.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["BurstDuration"])
+
+    @BurstDuration.setter
+    def BurstDuration(self, value):
+        # type: (int) -> None
+        self._set_attribute(self._SDM_ATT_MAP["BurstDuration"], value)
+
+    @property
+    def BurstModeUnits(self):
+        # type: () -> str
+        """
+        Returns
+        -------
+        - str(bytes | microseconds | milliseconds | nanoseconds | packetCount | seconds): Specifies unit of Burst, whether it is packet count or a duration.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["BurstModeUnits"])
+
+    @BurstModeUnits.setter
+    def BurstModeUnits(self, value):
+        # type: (str) -> None
+        self._set_attribute(self._SDM_ATT_MAP["BurstModeUnits"], value)
 
     @property
     def BurstPacketCount(self):
@@ -208,21 +240,6 @@ class TransmissionControl(Base):
         self._set_attribute(self._SDM_ATT_MAP["InterStreamGap"], value)
 
     @property
-    def InterStreamGapUnits(self):
-        # type: () -> str
-        """
-        Returns
-        -------
-        - str(bytes | microseconds | milliseconds | nanoseconds | seconds): Specifies unit of Inter Stream Gap either in bytes or nanoseconds.
-        """
-        return self._get_attribute(self._SDM_ATT_MAP["InterStreamGapUnits"])
-
-    @InterStreamGapUnits.setter
-    def InterStreamGapUnits(self, value):
-        # type: (str) -> None
-        self._set_attribute(self._SDM_ATT_MAP["InterStreamGapUnits"], value)
-
-    @property
     def IterationCount(self):
         # type: () -> int
         """
@@ -314,6 +331,8 @@ class TransmissionControl(Base):
 
     def update(
         self,
+        BurstDuration=None,
+        BurstModeUnits=None,
         BurstPacketCount=None,
         Duration=None,
         EnableInterBurstGap=None,
@@ -322,7 +341,6 @@ class TransmissionControl(Base):
         InterBurstGap=None,
         InterBurstGapUnits=None,
         InterStreamGap=None,
-        InterStreamGapUnits=None,
         IterationCount=None,
         MinGapBytes=None,
         RepeatBurst=None,
@@ -330,11 +348,13 @@ class TransmissionControl(Base):
         StartDelayUnits=None,
         Type=None,
     ):
-        # type: (int, int, bool, bool, int, int, str, int, str, int, int, int, int, str, str) -> TransmissionControl
+        # type: (int, str, int, int, bool, bool, int, int, str, int, int, int, int, int, str, str) -> TransmissionControl
         """Updates transmissionControl resource on the server.
 
         Args
         ----
+        - BurstDuration (number): Indicates the duration of the burst. Use this attribute when configuring burst as a duration instead of packet count.
+        - BurstModeUnits (str(bytes | microseconds | milliseconds | nanoseconds | packetCount | seconds)): Specifies unit of Burst, whether it is packet count or a duration.
         - BurstPacketCount (number): Specifies the number of packets per burst.
         - Duration (number): Indicates the time duration.
         - EnableInterBurstGap (bool): Enables the inter-burst gap of a frame.
@@ -343,7 +363,6 @@ class TransmissionControl(Base):
         - InterBurstGap (number): Specifies the gap between any two consecutive burst.
         - InterBurstGapUnits (str(bytes | microseconds | milliseconds | nanoseconds | seconds)): Specifies unit of Inter Burst Gap either in bytes or nanoseconds.
         - InterStreamGap (number): Specifies the gap between any two consecutive Flow Groups when Transmission Mode is Sequential.
-        - InterStreamGapUnits (str(bytes | microseconds | milliseconds | nanoseconds | seconds)): Specifies unit of Inter Stream Gap either in bytes or nanoseconds.
         - IterationCount (number): Specifies the number of iterations the Flow Group can have when Transmission Mode is Interleaved.
         - MinGapBytes (number): Specifies the minimum gap between any 2 packets or frames in term of bytes.
         - RepeatBurst (number): Specifies number of times a burst can be repeated when Transmission Mode is Sequential.
@@ -359,6 +378,8 @@ class TransmissionControl(Base):
 
     def find(
         self,
+        BurstDuration=None,
+        BurstModeUnits=None,
         BurstPacketCount=None,
         Duration=None,
         EnableInterBurstGap=None,
@@ -367,7 +388,6 @@ class TransmissionControl(Base):
         InterBurstGap=None,
         InterBurstGapUnits=None,
         InterStreamGap=None,
-        InterStreamGapUnits=None,
         IterationCount=None,
         MinGapBytes=None,
         RepeatBurst=None,
@@ -375,7 +395,7 @@ class TransmissionControl(Base):
         StartDelayUnits=None,
         Type=None,
     ):
-        # type: (int, int, bool, bool, int, int, str, int, str, int, int, int, int, str, str) -> TransmissionControl
+        # type: (int, str, int, int, bool, bool, int, int, str, int, int, int, int, int, str, str) -> TransmissionControl
         """Finds and retrieves transmissionControl resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve transmissionControl resources from the server.
@@ -384,6 +404,8 @@ class TransmissionControl(Base):
 
         Args
         ----
+        - BurstDuration (number): Indicates the duration of the burst. Use this attribute when configuring burst as a duration instead of packet count.
+        - BurstModeUnits (str(bytes | microseconds | milliseconds | nanoseconds | packetCount | seconds)): Specifies unit of Burst, whether it is packet count or a duration.
         - BurstPacketCount (number): Specifies the number of packets per burst.
         - Duration (number): Indicates the time duration.
         - EnableInterBurstGap (bool): Enables the inter-burst gap of a frame.
@@ -392,7 +414,6 @@ class TransmissionControl(Base):
         - InterBurstGap (number): Specifies the gap between any two consecutive burst.
         - InterBurstGapUnits (str(bytes | microseconds | milliseconds | nanoseconds | seconds)): Specifies unit of Inter Burst Gap either in bytes or nanoseconds.
         - InterStreamGap (number): Specifies the gap between any two consecutive Flow Groups when Transmission Mode is Sequential.
-        - InterStreamGapUnits (str(bytes | microseconds | milliseconds | nanoseconds | seconds)): Specifies unit of Inter Stream Gap either in bytes or nanoseconds.
         - IterationCount (number): Specifies the number of iterations the Flow Group can have when Transmission Mode is Interleaved.
         - MinGapBytes (number): Specifies the minimum gap between any 2 packets or frames in term of bytes.
         - RepeatBurst (number): Specifies number of times a burst can be repeated when Transmission Mode is Sequential.

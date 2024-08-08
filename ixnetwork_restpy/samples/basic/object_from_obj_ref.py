@@ -3,6 +3,7 @@
 The TestPlatform.Sessions class has a helper method that assists in returning an object given a valid href
 
 """
+
 from ixnetwork_restpy import SessionAssistant
 
 

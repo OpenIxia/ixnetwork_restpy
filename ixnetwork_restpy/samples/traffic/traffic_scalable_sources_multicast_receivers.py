@@ -1,6 +1,7 @@
 """Demonstrates creating a traffic item that uses scalable sources and igmp multicast receivers.
 
 """
+
 from ixnetwork_restpy import SessionAssistant
 
 

@@ -1,6 +1,7 @@
 """Demonstrates collecting diagnostic logs 
 
 """
+
 from ixnetwork_restpy import SessionAssistant, Files
 
 

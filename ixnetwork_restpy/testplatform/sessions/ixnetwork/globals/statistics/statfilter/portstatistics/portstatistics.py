@@ -423,7 +423,7 @@ class PortStatistics(Base):
         "PrbsFramesReceivedRate": "prbsFramesReceivedRate",
         "PrbsFramesWithHeaderError": "prbsFramesWithHeaderError",
         "PrbsFramesWithHeaderErrorRate": "prbsFramesWithHeaderErrorRate",
-        "PreFECBitErrorRate": "preFECBitErrorRate",
+        "PreFECBitErrorRatio": "preFECBitErrorRatio",
         "ProtectedByteRx": "protectedByteRx",
         "ProtectedByteTx": "protectedByteTx",
         "ProtectedPacketRx": "protectedPacketRx",
@@ -575,6 +575,13 @@ class PortStatistics(Base):
         "RxRateKbps": "rxRateKbps",
         "RxRateMbps": "rxRateMbps",
         "RxRatebps": "rxRatebps",
+        "RxRoCEACKFrameCount": "rxRoCEACKFrameCount",
+        "RxRoCECNPFrameCount": "rxRoCECNPFrameCount",
+        "RxRoCEECNFrameCount": "rxRoCEECNFrameCount",
+        "RxRoCENAKFrameCount": "rxRoCENAKFrameCount",
+        "RxRoCEOpcodeErrorCount": "rxRoCEOpcodeErrorCount",
+        "RxRoCEPrePFCCNPFrameCount": "rxRoCEPrePFCCNPFrameCount",
+        "RxRoCEiCRCErrorCount": "rxRoCEiCRCErrorCount",
         "RxSharedStat1": "rxSharedStat1",
         "RxSharedStat1Rate": "rxSharedStat1Rate",
         "RxSharedStat2": "rxSharedStat2",
@@ -589,6 +596,9 @@ class PortStatistics(Base):
         "ScheduledFramesTx": "scheduledFramesTx",
         "ScheduledFramesTxRate": "scheduledFramesTxRate",
         "ScheduledTransmitDuration": "scheduledTransmitDuration",
+        "ScheduledTxRoCEACKFrameCount": "scheduledTxRoCEACKFrameCount",
+        "ScheduledTxRoCECNPFrameCount": "scheduledTxRoCECNPFrameCount",
+        "ScheduledTxRoCENAKFrameCount": "scheduledTxRoCENAKFrameCount",
         "SchedulerChipTemperatureC": "schedulerChipTemperatureC",
         "SectionBIPB1": "sectionBIPB1",
         "SectionBIPB1Rate": "sectionBIPB1Rate",
@@ -6592,19 +6602,19 @@ class PortStatistics(Base):
         self._set_attribute(self._SDM_ATT_MAP["PrbsFramesWithHeaderErrorRate"], value)
 
     @property
-    def PreFECBitErrorRate(self):
+    def PreFECBitErrorRatio(self):
         # type: () -> bool
         """
         Returns
         -------
-        - bool: pre FEC Bit Error Rate
+        - bool: pre FEC Bit Error Ratio
         """
-        return self._get_attribute(self._SDM_ATT_MAP["PreFECBitErrorRate"])
+        return self._get_attribute(self._SDM_ATT_MAP["PreFECBitErrorRatio"])
 
-    @PreFECBitErrorRate.setter
-    def PreFECBitErrorRate(self, value):
+    @PreFECBitErrorRatio.setter
+    def PreFECBitErrorRatio(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP["PreFECBitErrorRate"], value)
+        self._set_attribute(self._SDM_ATT_MAP["PreFECBitErrorRatio"], value)
 
     @property
     def ProtectedByteRx(self):
@@ -8992,6 +9002,111 @@ class PortStatistics(Base):
         self._set_attribute(self._SDM_ATT_MAP["RxRatebps"], value)
 
     @property
+    def RxRoCEACKFrameCount(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: Rx RoCE ACK Frame Count
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["RxRoCEACKFrameCount"])
+
+    @RxRoCEACKFrameCount.setter
+    def RxRoCEACKFrameCount(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["RxRoCEACKFrameCount"], value)
+
+    @property
+    def RxRoCECNPFrameCount(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: Rx RoCE CNP Frame Count
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["RxRoCECNPFrameCount"])
+
+    @RxRoCECNPFrameCount.setter
+    def RxRoCECNPFrameCount(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["RxRoCECNPFrameCount"], value)
+
+    @property
+    def RxRoCEECNFrameCount(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: Rx RoCE ECN Frame Count
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["RxRoCEECNFrameCount"])
+
+    @RxRoCEECNFrameCount.setter
+    def RxRoCEECNFrameCount(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["RxRoCEECNFrameCount"], value)
+
+    @property
+    def RxRoCENAKFrameCount(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: Rx RoCE NAK Frame Count
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["RxRoCENAKFrameCount"])
+
+    @RxRoCENAKFrameCount.setter
+    def RxRoCENAKFrameCount(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["RxRoCENAKFrameCount"], value)
+
+    @property
+    def RxRoCEOpcodeErrorCount(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: Rx RoCE Opcode Error Count
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["RxRoCEOpcodeErrorCount"])
+
+    @RxRoCEOpcodeErrorCount.setter
+    def RxRoCEOpcodeErrorCount(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["RxRoCEOpcodeErrorCount"], value)
+
+    @property
+    def RxRoCEPrePFCCNPFrameCount(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: Rx RoCE Pre-PFC CNP Frame Count
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["RxRoCEPrePFCCNPFrameCount"])
+
+    @RxRoCEPrePFCCNPFrameCount.setter
+    def RxRoCEPrePFCCNPFrameCount(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["RxRoCEPrePFCCNPFrameCount"], value)
+
+    @property
+    def RxRoCEiCRCErrorCount(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: Rx RoCE iCRC Error Count
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["RxRoCEiCRCErrorCount"])
+
+    @RxRoCEiCRCErrorCount.setter
+    def RxRoCEiCRCErrorCount(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["RxRoCEiCRCErrorCount"], value)
+
+    @property
     def RxSharedStat1(self):
         # type: () -> bool
         """
@@ -9213,6 +9328,51 @@ class PortStatistics(Base):
     def ScheduledTransmitDuration(self, value):
         # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP["ScheduledTransmitDuration"], value)
+
+    @property
+    def ScheduledTxRoCEACKFrameCount(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: Scheduled Tx RoCE ACK Frame Count
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["ScheduledTxRoCEACKFrameCount"])
+
+    @ScheduledTxRoCEACKFrameCount.setter
+    def ScheduledTxRoCEACKFrameCount(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["ScheduledTxRoCEACKFrameCount"], value)
+
+    @property
+    def ScheduledTxRoCECNPFrameCount(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: Scheduled Tx RoCE CNP Frame Count
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["ScheduledTxRoCECNPFrameCount"])
+
+    @ScheduledTxRoCECNPFrameCount.setter
+    def ScheduledTxRoCECNPFrameCount(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["ScheduledTxRoCECNPFrameCount"], value)
+
+    @property
+    def ScheduledTxRoCENAKFrameCount(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: Scheduled Tx RoCE NAK Frame Count
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["ScheduledTxRoCENAKFrameCount"])
+
+    @ScheduledTxRoCENAKFrameCount.setter
+    def ScheduledTxRoCENAKFrameCount(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["ScheduledTxRoCENAKFrameCount"], value)
 
     @property
     def SchedulerChipTemperatureC(self):
@@ -10967,7 +11127,7 @@ class PortStatistics(Base):
         self._set_attribute(self._SDM_ATT_MAP["WindowViolationFrameCount"], value)
 
     def update(self, **kwargs):
-        # type: (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool) -> PortStatistics
+        # type: (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool) -> PortStatistics
         """Updates portStatistics resource on the server.
 
         Args
@@ -11360,7 +11520,7 @@ class PortStatistics(Base):
         - PrbsFramesReceivedRate (bool): Prbs Frames Received Rate
         - PrbsFramesWithHeaderError (bool): Prbs Frames With Header Error
         - PrbsFramesWithHeaderErrorRate (bool): Prbs Frames With Header Error Rate
-        - PreFECBitErrorRate (bool): pre FEC Bit Error Rate
+        - PreFECBitErrorRatio (bool): pre FEC Bit Error Ratio
         - ProtectedByteRx (bool): Protected Byte Rx
         - ProtectedByteTx (bool): Protected Byte Tx
         - ProtectedPacketRx (bool): Protected Packet Rx
@@ -11512,6 +11672,13 @@ class PortStatistics(Base):
         - RxRateKbps (bool): Rx. Rate (Kbps)
         - RxRateMbps (bool): Rx. Rate (Mbps)
         - RxRatebps (bool): Rx. Rate (bps)
+        - RxRoCEACKFrameCount (bool): Rx RoCE ACK Frame Count
+        - RxRoCECNPFrameCount (bool): Rx RoCE CNP Frame Count
+        - RxRoCEECNFrameCount (bool): Rx RoCE ECN Frame Count
+        - RxRoCENAKFrameCount (bool): Rx RoCE NAK Frame Count
+        - RxRoCEOpcodeErrorCount (bool): Rx RoCE Opcode Error Count
+        - RxRoCEPrePFCCNPFrameCount (bool): Rx RoCE Pre-PFC CNP Frame Count
+        - RxRoCEiCRCErrorCount (bool): Rx RoCE iCRC Error Count
         - RxSharedStat1 (bool): Rx Shared Stat 1
         - RxSharedStat1Rate (bool): Rx Shared Stat 1 Rate
         - RxSharedStat2 (bool): Rx Shared Stat 2
@@ -11526,6 +11693,9 @@ class PortStatistics(Base):
         - ScheduledFramesTx (bool): Scheduled Frames Tx.
         - ScheduledFramesTxRate (bool): Scheduled Frames Tx. Rate
         - ScheduledTransmitDuration (bool): Scheduled Transmit Duration
+        - ScheduledTxRoCEACKFrameCount (bool): Scheduled Tx RoCE ACK Frame Count
+        - ScheduledTxRoCECNPFrameCount (bool): Scheduled Tx RoCE CNP Frame Count
+        - ScheduledTxRoCENAKFrameCount (bool): Scheduled Tx RoCE NAK Frame Count
         - SchedulerChipTemperatureC (bool): Scheduler Chip Temperature(C)
         - SectionBIPB1 (bool): Section BIP (B1)
         - SectionBIPB1Rate (bool): Section BIP (B1) Rate
@@ -11650,7 +11820,7 @@ class PortStatistics(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def find(self, **kwargs):
-        # type: (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool) -> PortStatistics
+        # type: (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool) -> PortStatistics
         """Finds and retrieves portStatistics resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve portStatistics resources from the server.
@@ -12047,7 +12217,7 @@ class PortStatistics(Base):
         - PrbsFramesReceivedRate (bool): Prbs Frames Received Rate
         - PrbsFramesWithHeaderError (bool): Prbs Frames With Header Error
         - PrbsFramesWithHeaderErrorRate (bool): Prbs Frames With Header Error Rate
-        - PreFECBitErrorRate (bool): pre FEC Bit Error Rate
+        - PreFECBitErrorRatio (bool): pre FEC Bit Error Ratio
         - ProtectedByteRx (bool): Protected Byte Rx
         - ProtectedByteTx (bool): Protected Byte Tx
         - ProtectedPacketRx (bool): Protected Packet Rx
@@ -12199,6 +12369,13 @@ class PortStatistics(Base):
         - RxRateKbps (bool): Rx. Rate (Kbps)
         - RxRateMbps (bool): Rx. Rate (Mbps)
         - RxRatebps (bool): Rx. Rate (bps)
+        - RxRoCEACKFrameCount (bool): Rx RoCE ACK Frame Count
+        - RxRoCECNPFrameCount (bool): Rx RoCE CNP Frame Count
+        - RxRoCEECNFrameCount (bool): Rx RoCE ECN Frame Count
+        - RxRoCENAKFrameCount (bool): Rx RoCE NAK Frame Count
+        - RxRoCEOpcodeErrorCount (bool): Rx RoCE Opcode Error Count
+        - RxRoCEPrePFCCNPFrameCount (bool): Rx RoCE Pre-PFC CNP Frame Count
+        - RxRoCEiCRCErrorCount (bool): Rx RoCE iCRC Error Count
         - RxSharedStat1 (bool): Rx Shared Stat 1
         - RxSharedStat1Rate (bool): Rx Shared Stat 1 Rate
         - RxSharedStat2 (bool): Rx Shared Stat 2
@@ -12213,6 +12390,9 @@ class PortStatistics(Base):
         - ScheduledFramesTx (bool): Scheduled Frames Tx.
         - ScheduledFramesTxRate (bool): Scheduled Frames Tx. Rate
         - ScheduledTransmitDuration (bool): Scheduled Transmit Duration
+        - ScheduledTxRoCEACKFrameCount (bool): Scheduled Tx RoCE ACK Frame Count
+        - ScheduledTxRoCECNPFrameCount (bool): Scheduled Tx RoCE CNP Frame Count
+        - ScheduledTxRoCENAKFrameCount (bool): Scheduled Tx RoCE NAK Frame Count
         - SchedulerChipTemperatureC (bool): Scheduler Chip Temperature(C)
         - SectionBIPB1 (bool): Section BIP (B1)
         - SectionBIPB1Rate (bool): Section BIP (B1) Rate

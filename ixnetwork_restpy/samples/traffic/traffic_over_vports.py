@@ -1,6 +1,7 @@
 """Demonstrates creating a raw traffic item over vport endpoints.
 
 """
+
 from ixnetwork_restpy import SessionAssistant
 
 

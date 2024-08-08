@@ -122,6 +122,7 @@ class Vport(Base):
             "ethernet",
             "ethernetvm",
             "novusmini",
+            "novusminipro",
             "ethernetFcoe",
             "atm",
             "pos",
@@ -154,7 +155,8 @@ class Vport(Base):
             "ravenEightHundredGigLanFcoe",
             "aresOneEightHundredGigLanQddC",
             "aresOneEightHundredGigLanQddCFcoe",
-            "sertHundredGigLan",
+            "rangerHundredGigLan",
+            "rangerHundredGigLanFcoe",
             "aresOneEightHundredGigLanOsfpC",
             "aresOneEightHundredGigLanOsfpCFcoe",
             "aresOneM",
@@ -793,7 +795,7 @@ class Vport(Base):
         """
         Returns
         -------
-        - str(ethernet | ethernetvm | novusmini | ethernetFcoe | atm | pos | tenGigLan | tenGigLanFcoe | fortyGigLan | fortyGigLanFcoe | tenGigWan | tenGigWanFcoe | hundredGigLan | hundredGigLanFcoe | tenFortyHundredGigLan | tenFortyHundredGigLanFcoe | fc | ethernetImpairment | novusHundredGigLan | novusHundredGigLanFcoe | novusTenGigLan | novusTenGigLanFcoe | krakenFourHundredGigLan | krakenFourHundredGigLanFcoe | aresOneFourHundredGigLan | aresOneFourHundredGigLanFcoe | uhdOneHundredGigLan | novus5GTenTwentyFiveGigLan | novus5GTenTwentyFiveGigLanFcoe | starFourHundredGigLan | starFourHundredGigLanFcoe | ravenEightHundredGigLan | ravenEightHundredGigLanFcoe | aresOneEightHundredGigLanQddC | aresOneEightHundredGigLanQddCFcoe | sertHundredGigLan | aresOneEightHundredGigLanOsfpC | aresOneEightHundredGigLanOsfpCFcoe | aresOneM | aresOneMFcoe): The type of port selection.
+        - str(ethernet | ethernetvm | novusmini | novusminipro | ethernetFcoe | atm | pos | tenGigLan | tenGigLanFcoe | fortyGigLan | fortyGigLanFcoe | tenGigWan | tenGigWanFcoe | hundredGigLan | hundredGigLanFcoe | tenFortyHundredGigLan | tenFortyHundredGigLanFcoe | fc | ethernetImpairment | novusHundredGigLan | novusHundredGigLanFcoe | novusTenGigLan | novusTenGigLanFcoe | krakenFourHundredGigLan | krakenFourHundredGigLanFcoe | aresOneFourHundredGigLan | aresOneFourHundredGigLanFcoe | uhdOneHundredGigLan | novus5GTenTwentyFiveGigLan | novus5GTenTwentyFiveGigLanFcoe | starFourHundredGigLan | starFourHundredGigLanFcoe | ravenEightHundredGigLan | ravenEightHundredGigLanFcoe | aresOneEightHundredGigLanQddC | aresOneEightHundredGigLanQddCFcoe | rangerHundredGigLan | rangerHundredGigLanFcoe | aresOneEightHundredGigLanOsfpC | aresOneEightHundredGigLanOsfpCFcoe | aresOneM | aresOneMFcoe): The type of port selection.
         """
         return self._get_attribute(self._SDM_ATT_MAP["Type"])
 
@@ -861,7 +863,7 @@ class Vport(Base):
         - TransmitIgnoreLinkStatus (bool): If true, the port ingores the link status when transmitting data.
         - TxGapControlMode (str(fixedMode | averageMode)): This object controls the Gap Control mode of the port.
         - TxMode (str(sequential | interleaved | sequentialCoarse | interleavedCoarse | packetImpairment)): The transmit mode.
-        - Type (str(ethernet | ethernetvm | novusmini | ethernetFcoe | atm | pos | tenGigLan | tenGigLanFcoe | fortyGigLan | fortyGigLanFcoe | tenGigWan | tenGigWanFcoe | hundredGigLan | hundredGigLanFcoe | tenFortyHundredGigLan | tenFortyHundredGigLanFcoe | fc | ethernetImpairment | novusHundredGigLan | novusHundredGigLanFcoe | novusTenGigLan | novusTenGigLanFcoe | krakenFourHundredGigLan | krakenFourHundredGigLanFcoe | aresOneFourHundredGigLan | aresOneFourHundredGigLanFcoe | uhdOneHundredGigLan | novus5GTenTwentyFiveGigLan | novus5GTenTwentyFiveGigLanFcoe | starFourHundredGigLan | starFourHundredGigLanFcoe | ravenEightHundredGigLan | ravenEightHundredGigLanFcoe | aresOneEightHundredGigLanQddC | aresOneEightHundredGigLanQddCFcoe | sertHundredGigLan | aresOneEightHundredGigLanOsfpC | aresOneEightHundredGigLanOsfpCFcoe | aresOneM | aresOneMFcoe)): The type of port selection.
+        - Type (str(ethernet | ethernetvm | novusmini | novusminipro | ethernetFcoe | atm | pos | tenGigLan | tenGigLanFcoe | fortyGigLan | fortyGigLanFcoe | tenGigWan | tenGigWanFcoe | hundredGigLan | hundredGigLanFcoe | tenFortyHundredGigLan | tenFortyHundredGigLanFcoe | fc | ethernetImpairment | novusHundredGigLan | novusHundredGigLanFcoe | novusTenGigLan | novusTenGigLanFcoe | krakenFourHundredGigLan | krakenFourHundredGigLanFcoe | aresOneFourHundredGigLan | aresOneFourHundredGigLanFcoe | uhdOneHundredGigLan | novus5GTenTwentyFiveGigLan | novus5GTenTwentyFiveGigLanFcoe | starFourHundredGigLan | starFourHundredGigLanFcoe | ravenEightHundredGigLan | ravenEightHundredGigLanFcoe | aresOneEightHundredGigLanQddC | aresOneEightHundredGigLanQddCFcoe | rangerHundredGigLan | rangerHundredGigLanFcoe | aresOneEightHundredGigLanOsfpC | aresOneEightHundredGigLanOsfpCFcoe | aresOneM | aresOneMFcoe)): The type of port selection.
         - UseGlobalSettings (bool): Enables/Disables use of global settings instead of local settings on port
 
         Raises
@@ -904,7 +906,7 @@ class Vport(Base):
         - TransmitIgnoreLinkStatus (bool): If true, the port ingores the link status when transmitting data.
         - TxGapControlMode (str(fixedMode | averageMode)): This object controls the Gap Control mode of the port.
         - TxMode (str(sequential | interleaved | sequentialCoarse | interleavedCoarse | packetImpairment)): The transmit mode.
-        - Type (str(ethernet | ethernetvm | novusmini | ethernetFcoe | atm | pos | tenGigLan | tenGigLanFcoe | fortyGigLan | fortyGigLanFcoe | tenGigWan | tenGigWanFcoe | hundredGigLan | hundredGigLanFcoe | tenFortyHundredGigLan | tenFortyHundredGigLanFcoe | fc | ethernetImpairment | novusHundredGigLan | novusHundredGigLanFcoe | novusTenGigLan | novusTenGigLanFcoe | krakenFourHundredGigLan | krakenFourHundredGigLanFcoe | aresOneFourHundredGigLan | aresOneFourHundredGigLanFcoe | uhdOneHundredGigLan | novus5GTenTwentyFiveGigLan | novus5GTenTwentyFiveGigLanFcoe | starFourHundredGigLan | starFourHundredGigLanFcoe | ravenEightHundredGigLan | ravenEightHundredGigLanFcoe | aresOneEightHundredGigLanQddC | aresOneEightHundredGigLanQddCFcoe | sertHundredGigLan | aresOneEightHundredGigLanOsfpC | aresOneEightHundredGigLanOsfpCFcoe | aresOneM | aresOneMFcoe)): The type of port selection.
+        - Type (str(ethernet | ethernetvm | novusmini | novusminipro | ethernetFcoe | atm | pos | tenGigLan | tenGigLanFcoe | fortyGigLan | fortyGigLanFcoe | tenGigWan | tenGigWanFcoe | hundredGigLan | hundredGigLanFcoe | tenFortyHundredGigLan | tenFortyHundredGigLanFcoe | fc | ethernetImpairment | novusHundredGigLan | novusHundredGigLanFcoe | novusTenGigLan | novusTenGigLanFcoe | krakenFourHundredGigLan | krakenFourHundredGigLanFcoe | aresOneFourHundredGigLan | aresOneFourHundredGigLanFcoe | uhdOneHundredGigLan | novus5GTenTwentyFiveGigLan | novus5GTenTwentyFiveGigLanFcoe | starFourHundredGigLan | starFourHundredGigLanFcoe | ravenEightHundredGigLan | ravenEightHundredGigLanFcoe | aresOneEightHundredGigLanQddC | aresOneEightHundredGigLanQddCFcoe | rangerHundredGigLan | rangerHundredGigLanFcoe | aresOneEightHundredGigLanOsfpC | aresOneEightHundredGigLanOsfpCFcoe | aresOneM | aresOneMFcoe)): The type of port selection.
         - UseGlobalSettings (bool): Enables/Disables use of global settings instead of local settings on port
 
         Returns
@@ -1018,7 +1020,7 @@ class Vport(Base):
         - TransmitIgnoreLinkStatus (bool): If true, the port ingores the link status when transmitting data.
         - TxGapControlMode (str(fixedMode | averageMode)): This object controls the Gap Control mode of the port.
         - TxMode (str(sequential | interleaved | sequentialCoarse | interleavedCoarse | packetImpairment)): The transmit mode.
-        - Type (str(ethernet | ethernetvm | novusmini | ethernetFcoe | atm | pos | tenGigLan | tenGigLanFcoe | fortyGigLan | fortyGigLanFcoe | tenGigWan | tenGigWanFcoe | hundredGigLan | hundredGigLanFcoe | tenFortyHundredGigLan | tenFortyHundredGigLanFcoe | fc | ethernetImpairment | novusHundredGigLan | novusHundredGigLanFcoe | novusTenGigLan | novusTenGigLanFcoe | krakenFourHundredGigLan | krakenFourHundredGigLanFcoe | aresOneFourHundredGigLan | aresOneFourHundredGigLanFcoe | uhdOneHundredGigLan | novus5GTenTwentyFiveGigLan | novus5GTenTwentyFiveGigLanFcoe | starFourHundredGigLan | starFourHundredGigLanFcoe | ravenEightHundredGigLan | ravenEightHundredGigLanFcoe | aresOneEightHundredGigLanQddC | aresOneEightHundredGigLanQddCFcoe | sertHundredGigLan | aresOneEightHundredGigLanOsfpC | aresOneEightHundredGigLanOsfpCFcoe | aresOneM | aresOneMFcoe)): The type of port selection.
+        - Type (str(ethernet | ethernetvm | novusmini | novusminipro | ethernetFcoe | atm | pos | tenGigLan | tenGigLanFcoe | fortyGigLan | fortyGigLanFcoe | tenGigWan | tenGigWanFcoe | hundredGigLan | hundredGigLanFcoe | tenFortyHundredGigLan | tenFortyHundredGigLanFcoe | fc | ethernetImpairment | novusHundredGigLan | novusHundredGigLanFcoe | novusTenGigLan | novusTenGigLanFcoe | krakenFourHundredGigLan | krakenFourHundredGigLanFcoe | aresOneFourHundredGigLan | aresOneFourHundredGigLanFcoe | uhdOneHundredGigLan | novus5GTenTwentyFiveGigLan | novus5GTenTwentyFiveGigLanFcoe | starFourHundredGigLan | starFourHundredGigLanFcoe | ravenEightHundredGigLan | ravenEightHundredGigLanFcoe | aresOneEightHundredGigLanQddC | aresOneEightHundredGigLanQddCFcoe | rangerHundredGigLan | rangerHundredGigLanFcoe | aresOneEightHundredGigLanOsfpC | aresOneEightHundredGigLanOsfpCFcoe | aresOneM | aresOneMFcoe)): The type of port selection.
         - UseGlobalSettings (bool): Enables/Disables use of global settings instead of local settings on port
         - ValidTxModes (list(str[interleaved | interleavedCoarse | packetImpairment | sequential | sequentialCoarse])):
 

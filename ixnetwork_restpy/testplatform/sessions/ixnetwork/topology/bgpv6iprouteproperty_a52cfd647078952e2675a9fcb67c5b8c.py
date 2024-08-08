@@ -107,6 +107,9 @@ class BgpV6IPRouteProperty(Base):
         "MinASNumPerSegment": "minASNumPerSegment",
         "MinNoOfASPathSegmentsPerRouteRange": "minNoOfASPathSegmentsPerRouteRange",
         "MultiExitDiscriminator": "multiExitDiscriminator",
+        "MvNextHopCount": "mvNextHopCount",
+        "MvNextHopStepIpv4": "mvNextHopStepIpv4",
+        "MvNextHopStepIpv6": "mvNextHopStepIpv6",
         "Name": "name",
         "NextHopIPType": "nextHopIPType",
         "NextHopIncrementMode": "nextHopIncrementMode",
@@ -114,6 +117,7 @@ class BgpV6IPRouteProperty(Base):
         "NoOfASPathSegmentsPerRouteRange": "noOfASPathSegmentsPerRouteRange",
         "NoOfClusters": "noOfClusters",
         "NoOfCommunities": "noOfCommunities",
+        "NoOfCustomAttributes": "noOfCustomAttributes",
         "NoOfExternalCommunities": "noOfExternalCommunities",
         "NoOfLabels": "noOfLabels",
         "NoOfLargeCommunities": "noOfLargeCommunities",
@@ -140,6 +144,7 @@ class BgpV6IPRouteProperty(Base):
         "Srv6SidReserved1": "srv6SidReserved1",
         "Srv6SidReserved2": "srv6SidReserved2",
         "Srv6SidStep": "srv6SidStep",
+        "TracerouteIdentifier": "tracerouteIdentifier",
         "Uptime": "uptime",
         "UseTraditionalNlri": "useTraditionalNlri",
         "Weight": "weight",
@@ -288,6 +293,26 @@ class BgpV6IPRouteProperty(Base):
             if self._properties.get("BgpExtendedCommunitiesList", None) is not None:
                 return self._properties.get("BgpExtendedCommunitiesList")
         return BgpExtendedCommunitiesList(self)
+
+    @property
+    def BgpNonVPNRRCustomAttributes(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpnonvpnrrcustomattributes_b505237c5248151d375f1e5fb368b839.BgpNonVPNRRCustomAttributes): An instance of the BgpNonVPNRRCustomAttributes class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpnonvpnrrcustomattributes_b505237c5248151d375f1e5fb368b839 import (
+            BgpNonVPNRRCustomAttributes,
+        )
+
+        if len(self._object_properties) > 0:
+            if self._properties.get("BgpNonVPNRRCustomAttributes", None) is not None:
+                return self._properties.get("BgpNonVPNRRCustomAttributes")
+        return BgpNonVPNRRCustomAttributes(self)._select()
 
     @property
     def BgpNonVPNRRLargeCommunitiesList(self):
@@ -736,7 +761,7 @@ class BgpV6IPRouteProperty(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): IPv4 Destination Prefix.
+        - obj(ixnetwork_restpy.multivalue.Multivalue): The IPv4 destination prefix.
         """
         from ixnetwork_restpy.multivalue import Multivalue
 
@@ -750,7 +775,7 @@ class BgpV6IPRouteProperty(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): IPv6 Destination Prefix
+        - obj(ixnetwork_restpy.multivalue.Multivalue): The IPv6 destination prefix.
         """
         from ixnetwork_restpy.multivalue import Multivalue
 
@@ -776,7 +801,7 @@ class BgpV6IPRouteProperty(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): Destination Prefix Count
+        - obj(ixnetwork_restpy.multivalue.Multivalue): The number of destination prefixes.
         """
         from ixnetwork_restpy.multivalue import Multivalue
 
@@ -788,7 +813,7 @@ class BgpV6IPRouteProperty(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): Destination Hosts Count
+        - obj(ixnetwork_restpy.multivalue.Multivalue): The number of hosts present in each of the destination prefix.
         """
         from ixnetwork_restpy.multivalue import Multivalue
 
@@ -802,7 +827,7 @@ class BgpV6IPRouteProperty(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): Destination Prefix Length
+        - obj(ixnetwork_restpy.multivalue.Multivalue): The IPv4 destination prefix length.
         """
         from ixnetwork_restpy.multivalue import Multivalue
 
@@ -814,7 +839,7 @@ class BgpV6IPRouteProperty(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): IPv6 Destination Prefix Length
+        - obj(ixnetwork_restpy.multivalue.Multivalue): The IPv6 destination prefix length.
         """
         from ixnetwork_restpy.multivalue import Multivalue
 
@@ -1305,7 +1330,7 @@ class BgpV6IPRouteProperty(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): Meshing
+        - obj(ixnetwork_restpy.multivalue.Multivalue): The type of meshing between the source and the destination prefix.
         """
         from ixnetwork_restpy.multivalue import Multivalue
 
@@ -1354,6 +1379,48 @@ class BgpV6IPRouteProperty(Base):
 
         return Multivalue(
             self, self._get_attribute(self._SDM_ATT_MAP["MultiExitDiscriminator"])
+        )
+
+    @property
+    def MvNextHopCount(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Denotes number of Next Hops after which Next Hop address will repeat.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MvNextHopCount"])
+        )
+
+    @property
+    def MvNextHopStepIpv4(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Denotes increment step for IPv4 Next Hop IP.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MvNextHopStepIpv4"])
+        )
+
+    @property
+    def MvNextHopStepIpv6(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Denotes increment step for IPv6 Next Hop IP.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MvNextHopStepIpv6"])
         )
 
     @property
@@ -1453,6 +1520,21 @@ class BgpV6IPRouteProperty(Base):
     def NoOfCommunities(self, value):
         # type: (int) -> None
         self._set_attribute(self._SDM_ATT_MAP["NoOfCommunities"], value)
+
+    @property
+    def NoOfCustomAttributes(self):
+        # type: () -> int
+        """
+        Returns
+        -------
+        - number: Number of BGP Custom Attributes
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["NoOfCustomAttributes"])
+
+    @NoOfCustomAttributes.setter
+    def NoOfCustomAttributes(self, value):
+        # type: (int) -> None
+        self._set_attribute(self._SDM_ATT_MAP["NoOfCustomAttributes"], value)
 
     @property
     def NoOfExternalCommunities(self):
@@ -1657,7 +1739,7 @@ class BgpV6IPRouteProperty(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): Hosts Count
+        - obj(ixnetwork_restpy.multivalue.Multivalue): The number of hosts present in each of the source prefix.
         """
         from ixnetwork_restpy.multivalue import Multivalue
 
@@ -1798,6 +1880,20 @@ class BgpV6IPRouteProperty(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Srv6SidStep"]))
 
     @property
+    def TracerouteIdentifier(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Identifer for the route range on which traceroute was initiated. Supports upto 127 bytes.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["TracerouteIdentifier"])
+        )
+
+    @property
     def Uptime(self):
         # type: () -> 'Multivalue'
         """
@@ -1845,13 +1941,14 @@ class BgpV6IPRouteProperty(Base):
         NoOfASPathSegmentsPerRouteRange=None,
         NoOfClusters=None,
         NoOfCommunities=None,
+        NoOfCustomAttributes=None,
         NoOfExternalCommunities=None,
         NoOfLabels=None,
         NoOfLargeCommunities=None,
         NoOfSegmentIds=None,
         NoOfTlvs=None,
     ):
-        # type: (bool, bool, bool, bool, str, int, int, int, int, int, int, int, int) -> BgpV6IPRouteProperty
+        # type: (bool, bool, bool, bool, str, int, int, int, int, int, int, int, int, int) -> BgpV6IPRouteProperty
         """Updates bgpV6IPRouteProperty resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -1867,6 +1964,7 @@ class BgpV6IPRouteProperty(Base):
         - NoOfASPathSegmentsPerRouteRange (number): Number Of non-random or manually configured AS Path Segments Per Route Range
         - NoOfClusters (number): Number of Clusters
         - NoOfCommunities (number): Number of Communities
+        - NoOfCustomAttributes (number): Number of BGP Custom Attributes
         - NoOfExternalCommunities (number): Number of Extended Communities
         - NoOfLabels (number): Number of Labels
         - NoOfLargeCommunities (number): Number of Large Communities (Should be in the range 1-32)
@@ -1889,13 +1987,14 @@ class BgpV6IPRouteProperty(Base):
         NoOfASPathSegmentsPerRouteRange=None,
         NoOfClusters=None,
         NoOfCommunities=None,
+        NoOfCustomAttributes=None,
         NoOfExternalCommunities=None,
         NoOfLabels=None,
         NoOfLargeCommunities=None,
         NoOfSegmentIds=None,
         NoOfTlvs=None,
     ):
-        # type: (bool, bool, bool, bool, str, int, int, int, int, int, int, int, int) -> BgpV6IPRouteProperty
+        # type: (bool, bool, bool, bool, str, int, int, int, int, int, int, int, int, int) -> BgpV6IPRouteProperty
         """Adds a new bgpV6IPRouteProperty resource on the server and adds it to the container.
 
         Args
@@ -1908,6 +2007,7 @@ class BgpV6IPRouteProperty(Base):
         - NoOfASPathSegmentsPerRouteRange (number): Number Of non-random or manually configured AS Path Segments Per Route Range
         - NoOfClusters (number): Number of Clusters
         - NoOfCommunities (number): Number of Communities
+        - NoOfCustomAttributes (number): Number of BGP Custom Attributes
         - NoOfExternalCommunities (number): Number of Extended Communities
         - NoOfLabels (number): Number of Labels
         - NoOfLargeCommunities (number): Number of Large Communities (Should be in the range 1-32)
@@ -1947,13 +2047,14 @@ class BgpV6IPRouteProperty(Base):
         NoOfASPathSegmentsPerRouteRange=None,
         NoOfClusters=None,
         NoOfCommunities=None,
+        NoOfCustomAttributes=None,
         NoOfExternalCommunities=None,
         NoOfLabels=None,
         NoOfLargeCommunities=None,
         NoOfSegmentIds=None,
         NoOfTlvs=None,
     ):
-        # type: (bool, bool, bool, bool, List[str], int, str, str, int, int, int, int, int, int, int, int) -> BgpV6IPRouteProperty
+        # type: (bool, bool, bool, bool, List[str], int, str, str, int, int, int, int, int, int, int, int, int) -> BgpV6IPRouteProperty
         """Finds and retrieves bgpV6IPRouteProperty resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve bgpV6IPRouteProperty resources from the server.
@@ -1973,6 +2074,7 @@ class BgpV6IPRouteProperty(Base):
         - NoOfASPathSegmentsPerRouteRange (number): Number Of non-random or manually configured AS Path Segments Per Route Range
         - NoOfClusters (number): Number of Clusters
         - NoOfCommunities (number): Number of Communities
+        - NoOfCustomAttributes (number): Number of BGP Custom Attributes
         - NoOfExternalCommunities (number): Number of Extended Communities
         - NoOfLabels (number): Number of Labels
         - NoOfLargeCommunities (number): Number of Large Communities (Should be in the range 1-32)
@@ -2469,6 +2571,9 @@ class BgpV6IPRouteProperty(Base):
         MinASNumPerSegment=None,
         MinNoOfASPathSegmentsPerRouteRange=None,
         MultiExitDiscriminator=None,
+        MvNextHopCount=None,
+        MvNextHopStepIpv4=None,
+        MvNextHopStepIpv6=None,
         NextHopIPType=None,
         NextHopIncrementMode=None,
         NextHopType=None,
@@ -2493,6 +2598,7 @@ class BgpV6IPRouteProperty(Base):
         Srv6SidReserved1=None,
         Srv6SidReserved2=None,
         Srv6SidStep=None,
+        TracerouteIdentifier=None,
         Uptime=None,
         UseTraditionalNlri=None,
         Weight=None,
@@ -2567,6 +2673,9 @@ class BgpV6IPRouteProperty(Base):
         - MinASNumPerSegment (str): optional regex of minASNumPerSegment
         - MinNoOfASPathSegmentsPerRouteRange (str): optional regex of minNoOfASPathSegmentsPerRouteRange
         - MultiExitDiscriminator (str): optional regex of multiExitDiscriminator
+        - MvNextHopCount (str): optional regex of mvNextHopCount
+        - MvNextHopStepIpv4 (str): optional regex of mvNextHopStepIpv4
+        - MvNextHopStepIpv6 (str): optional regex of mvNextHopStepIpv6
         - NextHopIPType (str): optional regex of nextHopIPType
         - NextHopIncrementMode (str): optional regex of nextHopIncrementMode
         - NextHopType (str): optional regex of nextHopType
@@ -2591,6 +2700,7 @@ class BgpV6IPRouteProperty(Base):
         - Srv6SidReserved1 (str): optional regex of srv6SidReserved1
         - Srv6SidReserved2 (str): optional regex of srv6SidReserved2
         - Srv6SidStep (str): optional regex of srv6SidStep
+        - TracerouteIdentifier (str): optional regex of tracerouteIdentifier
         - Uptime (str): optional regex of uptime
         - UseTraditionalNlri (str): optional regex of useTraditionalNlri
         - Weight (str): optional regex of weight

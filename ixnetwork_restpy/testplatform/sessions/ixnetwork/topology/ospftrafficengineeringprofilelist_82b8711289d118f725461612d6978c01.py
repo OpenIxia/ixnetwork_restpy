@@ -37,7 +37,14 @@ class OspfTrafficEngineeringProfileList(Base):
     _SDM_ATT_MAP = {
         "Active": "active",
         "AdministratorGroup": "administratorGroup",
+        "AdvMinMaxUniDiLinkDelay": "advMinMaxUniDiLinkDelay",
+        "AdvUniDirAvailableBw": "advUniDirAvailableBw",
+        "AdvUniDirDelayVariation": "advUniDirDelayVariation",
+        "AdvUniDirLinkLoss": "advUniDirLinkLoss",
+        "AdvUniDirResidualBw": "advUniDirResidualBw",
+        "AdvUniDirUtilizedBw": "advUniDirUtilizedBw",
         "AdvertiseExtAdminGroup": "advertiseExtAdminGroup",
+        "AdvertiseUniDiLinkDelay": "advertiseUniDiLinkDelay",
         "BandwidthPriority0": "bandwidthPriority0",
         "BandwidthPriority1": "bandwidthPriority1",
         "BandwidthPriority2": "bandwidthPriority2",
@@ -53,7 +60,18 @@ class OspfTrafficEngineeringProfileList(Base):
         "MaxBandwidth": "maxBandwidth",
         "MaxReservableBandwidth": "maxReservableBandwidth",
         "MetricLevel": "metricLevel",
+        "MinMaxUniDirLinkDelayABit": "minMaxUniDirLinkDelayABit",
         "Name": "name",
+        "UniDirAvailableBw": "uniDirAvailableBw",
+        "UniDirLinkDelay": "uniDirLinkDelay",
+        "UniDirLinkDelayABit": "uniDirLinkDelayABit",
+        "UniDirLinkDelayVariation": "uniDirLinkDelayVariation",
+        "UniDirLinkLoss": "uniDirLinkLoss",
+        "UniDirLinkLossABit": "uniDirLinkLossABit",
+        "UniDirLinkMaxDelay": "uniDirLinkMaxDelay",
+        "UniDirLinkMinDelay": "uniDirLinkMinDelay",
+        "UniDirResidualBw": "uniDirResidualBw",
+        "UniDirUtilizedBw": "uniDirUtilizedBw",
     }
     _SDM_ENUM_MAP = {}
 
@@ -87,6 +105,90 @@ class OspfTrafficEngineeringProfileList(Base):
         )
 
     @property
+    def AdvMinMaxUniDiLinkDelay(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Advertise Min/Max Uni-Directional Link Delay Sub-TLV
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AdvMinMaxUniDiLinkDelay"])
+        )
+
+    @property
+    def AdvUniDirAvailableBw(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Advertise Uni-Directional Available Bandwidth Sub-TLV
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AdvUniDirAvailableBw"])
+        )
+
+    @property
+    def AdvUniDirDelayVariation(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Advertise Uni-Directional Delay Variation Sub-TLV
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AdvUniDirDelayVariation"])
+        )
+
+    @property
+    def AdvUniDirLinkLoss(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Advertise Uni-Directional Link Loss Sub-TLV
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AdvUniDirLinkLoss"])
+        )
+
+    @property
+    def AdvUniDirResidualBw(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Advertise Uni-Directional Residual Bandwidth Sub-TLV
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AdvUniDirResidualBw"])
+        )
+
+    @property
+    def AdvUniDirUtilizedBw(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Advertise Uni-Directional Utilized Bandwidth Sub-TLV
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AdvUniDirUtilizedBw"])
+        )
+
+    @property
     def AdvertiseExtAdminGroup(self):
         # type: () -> 'Multivalue'
         """
@@ -98,6 +200,20 @@ class OspfTrafficEngineeringProfileList(Base):
 
         return Multivalue(
             self, self._get_attribute(self._SDM_ATT_MAP["AdvertiseExtAdminGroup"])
+        )
+
+    @property
+    def AdvertiseUniDiLinkDelay(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Advertise Uni-Directional Link Delay Sub-TLV
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AdvertiseUniDiLinkDelay"])
         )
 
     @property
@@ -297,6 +413,20 @@ class OspfTrafficEngineeringProfileList(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["MetricLevel"]))
 
     @property
+    def MinMaxUniDirLinkDelayABit(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Anomalous Bit. Set whenthe measured value exceeds configured maximum threshold.Cleared otherwise.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["MinMaxUniDirLinkDelayABit"])
+        )
+
+    @property
     def Name(self):
         # type: () -> str
         """
@@ -310,6 +440,146 @@ class OspfTrafficEngineeringProfileList(Base):
     def Name(self, value):
         # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP["Name"], value)
+
+    @property
+    def UniDirAvailableBw(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): The Available Bandwidth on a link, forwardingadjacency, or bundled link with unitsof Bytes Per Second encoded in IEEE floating point format.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["UniDirAvailableBw"])
+        )
+
+    @property
+    def UniDirLinkDelay(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Average Link Delay in microseconds (us)
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["UniDirLinkDelay"])
+        )
+
+    @property
+    def UniDirLinkDelayABit(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Anomalous Bit. Set whenthe measured value exceeds configured maximum threshold.Cleared otherwise.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["UniDirLinkDelayABit"])
+        )
+
+    @property
+    def UniDirLinkDelayVariation(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): The Average Link Delay variation over aconfigurable interval in microseconds.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["UniDirLinkDelayVariation"])
+        )
+
+    @property
+    def UniDirLinkLoss(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Link Packet loss as a percentage of thetotal traffic sent over a configurable interval.The basic unit is 0.000003%, where (2^24 - 2) is 50.331642%.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["UniDirLinkLoss"])
+        )
+
+    @property
+    def UniDirLinkLossABit(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Anomalous Bit. Set whenthe measured value exceeds configured maximum threshold.Cleared otherwise.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["UniDirLinkLossABit"])
+        )
+
+    @property
+    def UniDirLinkMaxDelay(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Maximum Measured Link Delay value inmicroseconds over a configurable interval.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["UniDirLinkMaxDelay"])
+        )
+
+    @property
+    def UniDirLinkMinDelay(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Minimum measured link delay value inmicroseconds over a configurable interval.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["UniDirLinkMinDelay"])
+        )
+
+    @property
+    def UniDirResidualBw(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): The Residual Bandwidth on a link, forwardingadjacency, or bundled link with units of Bytes Per Secondencoded in IEEE floating point format.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["UniDirResidualBw"])
+        )
+
+    @property
+    def UniDirUtilizedBw(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): The Bandwidth Utilization on a link, forwardingadjacency, or bundled link with unitsof Bytes Per Second encoded in IEEE floating-point format.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["UniDirUtilizedBw"])
+        )
 
     def update(self, Name=None):
         # type: (str) -> OspfTrafficEngineeringProfileList
@@ -396,7 +666,14 @@ class OspfTrafficEngineeringProfileList(Base):
         PortNames=None,
         Active=None,
         AdministratorGroup=None,
+        AdvMinMaxUniDiLinkDelay=None,
+        AdvUniDirAvailableBw=None,
+        AdvUniDirDelayVariation=None,
+        AdvUniDirLinkLoss=None,
+        AdvUniDirResidualBw=None,
+        AdvUniDirUtilizedBw=None,
         AdvertiseExtAdminGroup=None,
+        AdvertiseUniDiLinkDelay=None,
         BandwidthPriority0=None,
         BandwidthPriority1=None,
         BandwidthPriority2=None,
@@ -410,6 +687,17 @@ class OspfTrafficEngineeringProfileList(Base):
         MaxBandwidth=None,
         MaxReservableBandwidth=None,
         MetricLevel=None,
+        MinMaxUniDirLinkDelayABit=None,
+        UniDirAvailableBw=None,
+        UniDirLinkDelay=None,
+        UniDirLinkDelayABit=None,
+        UniDirLinkDelayVariation=None,
+        UniDirLinkLoss=None,
+        UniDirLinkLossABit=None,
+        UniDirLinkMaxDelay=None,
+        UniDirLinkMinDelay=None,
+        UniDirResidualBw=None,
+        UniDirUtilizedBw=None,
     ):
         """Base class infrastructure that gets a list of ospfTrafficEngineeringProfileList device ids encapsulated by this object.
 
@@ -420,7 +708,14 @@ class OspfTrafficEngineeringProfileList(Base):
         - PortNames (str): optional regex of port names
         - Active (str): optional regex of active
         - AdministratorGroup (str): optional regex of administratorGroup
+        - AdvMinMaxUniDiLinkDelay (str): optional regex of advMinMaxUniDiLinkDelay
+        - AdvUniDirAvailableBw (str): optional regex of advUniDirAvailableBw
+        - AdvUniDirDelayVariation (str): optional regex of advUniDirDelayVariation
+        - AdvUniDirLinkLoss (str): optional regex of advUniDirLinkLoss
+        - AdvUniDirResidualBw (str): optional regex of advUniDirResidualBw
+        - AdvUniDirUtilizedBw (str): optional regex of advUniDirUtilizedBw
         - AdvertiseExtAdminGroup (str): optional regex of advertiseExtAdminGroup
+        - AdvertiseUniDiLinkDelay (str): optional regex of advertiseUniDiLinkDelay
         - BandwidthPriority0 (str): optional regex of bandwidthPriority0
         - BandwidthPriority1 (str): optional regex of bandwidthPriority1
         - BandwidthPriority2 (str): optional regex of bandwidthPriority2
@@ -434,6 +729,17 @@ class OspfTrafficEngineeringProfileList(Base):
         - MaxBandwidth (str): optional regex of maxBandwidth
         - MaxReservableBandwidth (str): optional regex of maxReservableBandwidth
         - MetricLevel (str): optional regex of metricLevel
+        - MinMaxUniDirLinkDelayABit (str): optional regex of minMaxUniDirLinkDelayABit
+        - UniDirAvailableBw (str): optional regex of uniDirAvailableBw
+        - UniDirLinkDelay (str): optional regex of uniDirLinkDelay
+        - UniDirLinkDelayABit (str): optional regex of uniDirLinkDelayABit
+        - UniDirLinkDelayVariation (str): optional regex of uniDirLinkDelayVariation
+        - UniDirLinkLoss (str): optional regex of uniDirLinkLoss
+        - UniDirLinkLossABit (str): optional regex of uniDirLinkLossABit
+        - UniDirLinkMaxDelay (str): optional regex of uniDirLinkMaxDelay
+        - UniDirLinkMinDelay (str): optional regex of uniDirLinkMinDelay
+        - UniDirResidualBw (str): optional regex of uniDirResidualBw
+        - UniDirUtilizedBw (str): optional regex of uniDirUtilizedBw
 
         Returns
         -------

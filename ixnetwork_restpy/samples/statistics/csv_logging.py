@@ -7,6 +7,7 @@ The sample operates under the following assumptions:
     - there is a Port Statistics view
 
 """
+
 session_assistant = SessionAssistant(
     IpAddress="127.0.0.1",
     UserName="admin",

@@ -8,6 +8,7 @@
     Get a PortMapAssistant instance
     Get a StatViewAssistant instance
 """
+
 from ixnetwork_restpy.connection import Connection
 from ixnetwork_restpy.errors import *
 from ixnetwork_restpy.testplatform.testplatform import TestPlatform

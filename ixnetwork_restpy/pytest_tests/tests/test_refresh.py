@@ -1,6 +1,7 @@
 """Test the .refresh() functionality to ensure all
 encapsulated resources are refreshed in a single call
 """
+
 import pytest
 
 

@@ -6,6 +6,7 @@ The sample operates under the following assumptions:
     - there is a Flow Statistics view
 
 """
+
 from ixnetwork_restpy import SessionAssistant
 import os
 

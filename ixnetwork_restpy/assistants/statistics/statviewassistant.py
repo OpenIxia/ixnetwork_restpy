@@ -1,5 +1,6 @@
 """ Assistant class to simplify access to statistics views
 """
+
 from ixnetwork_restpy.assistants.statistics.row import Row
 from ixnetwork_restpy.errors import *
 from ixnetwork_restpy.assistants.batch.batchupdate import BatchUpdate

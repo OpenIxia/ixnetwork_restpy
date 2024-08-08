@@ -97,13 +97,13 @@ class OspfPseudoInterface(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfpseudotrafficengineeringprofilelist_7498333e0485bcf98fa50adfd0dc76c8.OspfPseudoTrafficEngineeringProfileList): An instance of the OspfPseudoTrafficEngineeringProfileList class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfpseudotrafficengineeringprofilelist_06278d34a5e26dd304ee8c97bdf5f67b.OspfPseudoTrafficEngineeringProfileList): An instance of the OspfPseudoTrafficEngineeringProfileList class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfpseudotrafficengineeringprofilelist_7498333e0485bcf98fa50adfd0dc76c8 import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfpseudotrafficengineeringprofilelist_06278d34a5e26dd304ee8c97bdf5f67b import (
             OspfPseudoTrafficEngineeringProfileList,
         )
 

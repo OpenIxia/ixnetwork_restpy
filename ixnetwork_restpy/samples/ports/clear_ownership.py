@@ -2,6 +2,7 @@
 by using the Vport.ConnectedTo reference and obtaining the Port object which has the ClearOwnership method
 
 """
+
 from ixnetwork_restpy import SessionAssistant
 
 
