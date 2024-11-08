@@ -396,6 +396,62 @@ class PortStatistics(Base):
         "PcsSyncErrors": "pcsSyncErrors",
         "PcsSyncErrorsRate": "pcsSyncErrorsRate",
         "PercentCPULoad": "percentCPULoad",
+        "PfcPriority0BufferMaxDepth": "pfcPriority0BufferMaxDepth",
+        "PfcPriority0PacketDrop": "pfcPriority0PacketDrop",
+        "PfcPriority0PacketDropRate": "pfcPriority0PacketDropRate",
+        "PfcPriority0PauseRatioPercent": "pfcPriority0PauseRatioPercent",
+        "PfcPriority0PauseStart": "pfcPriority0PauseStart",
+        "PfcPriority0PauseStartResent": "pfcPriority0PauseStartResent",
+        "PfcPriority0PauseStop": "pfcPriority0PauseStop",
+        "PfcPriority1BufferMaxDepth": "pfcPriority1BufferMaxDepth",
+        "PfcPriority1PacketDrop": "pfcPriority1PacketDrop",
+        "PfcPriority1PacketDropRate": "pfcPriority1PacketDropRate",
+        "PfcPriority1PauseRatioPercent": "pfcPriority1PauseRatioPercent",
+        "PfcPriority1PauseStart": "pfcPriority1PauseStart",
+        "PfcPriority1PauseStartResent": "pfcPriority1PauseStartResent",
+        "PfcPriority1PauseStop": "pfcPriority1PauseStop",
+        "PfcPriority2BufferMaxDepth": "pfcPriority2BufferMaxDepth",
+        "PfcPriority2PacketDrop": "pfcPriority2PacketDrop",
+        "PfcPriority2PacketDropRate": "pfcPriority2PacketDropRate",
+        "PfcPriority2PauseRatioPercent": "pfcPriority2PauseRatioPercent",
+        "PfcPriority2PauseStart": "pfcPriority2PauseStart",
+        "PfcPriority2PauseStartResent": "pfcPriority2PauseStartResent",
+        "PfcPriority2PauseStop": "pfcPriority2PauseStop",
+        "PfcPriority3BufferMaxDepth": "pfcPriority3BufferMaxDepth",
+        "PfcPriority3PacketDrop": "pfcPriority3PacketDrop",
+        "PfcPriority3PacketDropRate": "pfcPriority3PacketDropRate",
+        "PfcPriority3PauseRatioPercent": "pfcPriority3PauseRatioPercent",
+        "PfcPriority3PauseStart": "pfcPriority3PauseStart",
+        "PfcPriority3PauseStartResent": "pfcPriority3PauseStartResent",
+        "PfcPriority3PauseStop": "pfcPriority3PauseStop",
+        "PfcPriority4BufferMaxDepth": "pfcPriority4BufferMaxDepth",
+        "PfcPriority4PacketDrop": "pfcPriority4PacketDrop",
+        "PfcPriority4PacketDropRate": "pfcPriority4PacketDropRate",
+        "PfcPriority4PauseRatioPercent": "pfcPriority4PauseRatioPercent",
+        "PfcPriority4PauseStart": "pfcPriority4PauseStart",
+        "PfcPriority4PauseStartResent": "pfcPriority4PauseStartResent",
+        "PfcPriority4PauseStop": "pfcPriority4PauseStop",
+        "PfcPriority5BufferMaxDepth": "pfcPriority5BufferMaxDepth",
+        "PfcPriority5PacketDrop": "pfcPriority5PacketDrop",
+        "PfcPriority5PacketDropRate": "pfcPriority5PacketDropRate",
+        "PfcPriority5PauseRatioPercent": "pfcPriority5PauseRatioPercent",
+        "PfcPriority5PauseStart": "pfcPriority5PauseStart",
+        "PfcPriority5PauseStartResent": "pfcPriority5PauseStartResent",
+        "PfcPriority5PauseStop": "pfcPriority5PauseStop",
+        "PfcPriority6BufferMaxDepth": "pfcPriority6BufferMaxDepth",
+        "PfcPriority6PacketDrop": "pfcPriority6PacketDrop",
+        "PfcPriority6PacketDropRate": "pfcPriority6PacketDropRate",
+        "PfcPriority6PauseRatioPercent": "pfcPriority6PauseRatioPercent",
+        "PfcPriority6PauseStart": "pfcPriority6PauseStart",
+        "PfcPriority6PauseStartResent": "pfcPriority6PauseStartResent",
+        "PfcPriority6PauseStop": "pfcPriority6PauseStop",
+        "PfcPriority7BufferMaxDepth": "pfcPriority7BufferMaxDepth",
+        "PfcPriority7PacketDrop": "pfcPriority7PacketDrop",
+        "PfcPriority7PacketDropRate": "pfcPriority7PacketDropRate",
+        "PfcPriority7PauseRatioPercent": "pfcPriority7PauseRatioPercent",
+        "PfcPriority7PauseStart": "pfcPriority7PauseStart",
+        "PfcPriority7PauseStartResent": "pfcPriority7PauseStartResent",
+        "PfcPriority7PauseStop": "pfcPriority7PauseStop",
         "PgidOverflow": "pgidOverflow",
         "PgidOverflowRate": "pgidOverflowRate",
         "PhyChipTemperatureC": "phyChipTemperatureC",
@@ -453,6 +509,8 @@ class PortStatistics(Base):
         "RemoteOrderedSetsReceivedRate": "remoteOrderedSetsReceivedRate",
         "RemoteOrderedSetsSent": "remoteOrderedSetsSent",
         "RemoteOrderedSetsSentRate": "remoteOrderedSetsSentRate",
+        "Rocev2BadiCRCCount": "rocev2BadiCRCCount",
+        "Rocev2OpCodeErrorCount": "rocev2OpCodeErrorCount",
         "RsFECCorrectedCodewordCount": "rsFECCorrectedCodewordCount",
         "RsFECCorrectedCodewordCountRate": "rsFECCorrectedCodewordCountRate",
         "RsFECUncorrectedCodewordCount": "rsFECUncorrectedCodewordCount",
@@ -576,12 +634,17 @@ class PortStatistics(Base):
         "RxRateMbps": "rxRateMbps",
         "RxRatebps": "rxRatebps",
         "RxRoCEACKFrameCount": "rxRoCEACKFrameCount",
+        "RxRoCEACKFrameCountRate": "rxRoCEACKFrameCountRate",
         "RxRoCECNPFrameCount": "rxRoCECNPFrameCount",
+        "RxRoCECNPFrameCountRate": "rxRoCECNPFrameCountRate",
         "RxRoCEECNFrameCount": "rxRoCEECNFrameCount",
+        "RxRoCEECNFrameCountRate": "rxRoCEECNFrameCountRate",
         "RxRoCENAKFrameCount": "rxRoCENAKFrameCount",
-        "RxRoCEOpcodeErrorCount": "rxRoCEOpcodeErrorCount",
+        "RxRoCENAKFrameCountRate": "rxRoCENAKFrameCountRate",
+        "RxRoCEOpcodeErrorCountRate": "rxRoCEOpcodeErrorCountRate",
         "RxRoCEPrePFCCNPFrameCount": "rxRoCEPrePFCCNPFrameCount",
-        "RxRoCEiCRCErrorCount": "rxRoCEiCRCErrorCount",
+        "RxRoCEPrePFCCNPFrameCountRate": "rxRoCEPrePFCCNPFrameCountRate",
+        "RxRoCEiCRCErrorCountRate": "rxRoCEiCRCErrorCountRate",
         "RxSharedStat1": "rxSharedStat1",
         "RxSharedStat1Rate": "rxSharedStat1Rate",
         "RxSharedStat2": "rxSharedStat2",
@@ -597,8 +660,11 @@ class PortStatistics(Base):
         "ScheduledFramesTxRate": "scheduledFramesTxRate",
         "ScheduledTransmitDuration": "scheduledTransmitDuration",
         "ScheduledTxRoCEACKFrameCount": "scheduledTxRoCEACKFrameCount",
+        "ScheduledTxRoCEACKFrameCountRate": "scheduledTxRoCEACKFrameCountRate",
         "ScheduledTxRoCECNPFrameCount": "scheduledTxRoCECNPFrameCount",
+        "ScheduledTxRoCECNPFrameCountRate": "scheduledTxRoCECNPFrameCountRate",
         "ScheduledTxRoCENAKFrameCount": "scheduledTxRoCENAKFrameCount",
+        "ScheduledTxRoCENAKFrameCountRate": "scheduledTxRoCENAKFrameCountRate",
         "SchedulerChipTemperatureC": "schedulerChipTemperatureC",
         "SectionBIPB1": "sectionBIPB1",
         "SectionBIPB1Rate": "sectionBIPB1Rate",
@@ -6197,6 +6263,846 @@ class PortStatistics(Base):
         self._set_attribute(self._SDM_ATT_MAP["PercentCPULoad"], value)
 
     @property
+    def PfcPriority0BufferMaxDepth(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: PFC Priority 0 Buffer Max Depth
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["PfcPriority0BufferMaxDepth"])
+
+    @PfcPriority0BufferMaxDepth.setter
+    def PfcPriority0BufferMaxDepth(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["PfcPriority0BufferMaxDepth"], value)
+
+    @property
+    def PfcPriority0PacketDrop(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: PFC Priority 0 Packet Drop
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["PfcPriority0PacketDrop"])
+
+    @PfcPriority0PacketDrop.setter
+    def PfcPriority0PacketDrop(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["PfcPriority0PacketDrop"], value)
+
+    @property
+    def PfcPriority0PacketDropRate(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: PFC Priority 0 Packet Drop Rate
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["PfcPriority0PacketDropRate"])
+
+    @PfcPriority0PacketDropRate.setter
+    def PfcPriority0PacketDropRate(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["PfcPriority0PacketDropRate"], value)
+
+    @property
+    def PfcPriority0PauseRatioPercent(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: PFC Priority 0 Pause Ratio(%)
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["PfcPriority0PauseRatioPercent"])
+
+    @PfcPriority0PauseRatioPercent.setter
+    def PfcPriority0PauseRatioPercent(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["PfcPriority0PauseRatioPercent"], value)
+
+    @property
+    def PfcPriority0PauseStart(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: PFC Priority 0 Pause Start
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["PfcPriority0PauseStart"])
+
+    @PfcPriority0PauseStart.setter
+    def PfcPriority0PauseStart(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["PfcPriority0PauseStart"], value)
+
+    @property
+    def PfcPriority0PauseStartResent(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: PFC Priority 0 Pause Start Resent
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["PfcPriority0PauseStartResent"])
+
+    @PfcPriority0PauseStartResent.setter
+    def PfcPriority0PauseStartResent(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["PfcPriority0PauseStartResent"], value)
+
+    @property
+    def PfcPriority0PauseStop(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: PFC Priority 0 Pause Stop
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["PfcPriority0PauseStop"])
+
+    @PfcPriority0PauseStop.setter
+    def PfcPriority0PauseStop(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["PfcPriority0PauseStop"], value)
+
+    @property
+    def PfcPriority1BufferMaxDepth(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: PFC Priority 1 Buffer Max Depth
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["PfcPriority1BufferMaxDepth"])
+
+    @PfcPriority1BufferMaxDepth.setter
+    def PfcPriority1BufferMaxDepth(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["PfcPriority1BufferMaxDepth"], value)
+
+    @property
+    def PfcPriority1PacketDrop(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: PFC Priority 1 Packet Drop
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["PfcPriority1PacketDrop"])
+
+    @PfcPriority1PacketDrop.setter
+    def PfcPriority1PacketDrop(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["PfcPriority1PacketDrop"], value)
+
+    @property
+    def PfcPriority1PacketDropRate(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: PFC Priority 1 Packet Drop Rate
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["PfcPriority1PacketDropRate"])
+
+    @PfcPriority1PacketDropRate.setter
+    def PfcPriority1PacketDropRate(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["PfcPriority1PacketDropRate"], value)
+
+    @property
+    def PfcPriority1PauseRatioPercent(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: PFC Priority 1 Pause Ratio(%)
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["PfcPriority1PauseRatioPercent"])
+
+    @PfcPriority1PauseRatioPercent.setter
+    def PfcPriority1PauseRatioPercent(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["PfcPriority1PauseRatioPercent"], value)
+
+    @property
+    def PfcPriority1PauseStart(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: PFC Priority 1 Pause Start
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["PfcPriority1PauseStart"])
+
+    @PfcPriority1PauseStart.setter
+    def PfcPriority1PauseStart(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["PfcPriority1PauseStart"], value)
+
+    @property
+    def PfcPriority1PauseStartResent(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: PFC Priority 1 Pause Start Resent
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["PfcPriority1PauseStartResent"])
+
+    @PfcPriority1PauseStartResent.setter
+    def PfcPriority1PauseStartResent(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["PfcPriority1PauseStartResent"], value)
+
+    @property
+    def PfcPriority1PauseStop(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: PFC Priority 1 Pause Stop
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["PfcPriority1PauseStop"])
+
+    @PfcPriority1PauseStop.setter
+    def PfcPriority1PauseStop(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["PfcPriority1PauseStop"], value)
+
+    @property
+    def PfcPriority2BufferMaxDepth(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: PFC Priority 2 Buffer Max Depth
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["PfcPriority2BufferMaxDepth"])
+
+    @PfcPriority2BufferMaxDepth.setter
+    def PfcPriority2BufferMaxDepth(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["PfcPriority2BufferMaxDepth"], value)
+
+    @property
+    def PfcPriority2PacketDrop(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: PFC Priority 2 Packet Drop
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["PfcPriority2PacketDrop"])
+
+    @PfcPriority2PacketDrop.setter
+    def PfcPriority2PacketDrop(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["PfcPriority2PacketDrop"], value)
+
+    @property
+    def PfcPriority2PacketDropRate(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: PFC Priority 2 Packet Drop Rate
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["PfcPriority2PacketDropRate"])
+
+    @PfcPriority2PacketDropRate.setter
+    def PfcPriority2PacketDropRate(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["PfcPriority2PacketDropRate"], value)
+
+    @property
+    def PfcPriority2PauseRatioPercent(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: PFC Priority 2 Pause Ratio(%)
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["PfcPriority2PauseRatioPercent"])
+
+    @PfcPriority2PauseRatioPercent.setter
+    def PfcPriority2PauseRatioPercent(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["PfcPriority2PauseRatioPercent"], value)
+
+    @property
+    def PfcPriority2PauseStart(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: PFC Priority 2 Pause Start
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["PfcPriority2PauseStart"])
+
+    @PfcPriority2PauseStart.setter
+    def PfcPriority2PauseStart(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["PfcPriority2PauseStart"], value)
+
+    @property
+    def PfcPriority2PauseStartResent(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: PFC Priority 2 Pause Start Resent
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["PfcPriority2PauseStartResent"])
+
+    @PfcPriority2PauseStartResent.setter
+    def PfcPriority2PauseStartResent(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["PfcPriority2PauseStartResent"], value)
+
+    @property
+    def PfcPriority2PauseStop(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: PFC Priority 2 Pause Stop
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["PfcPriority2PauseStop"])
+
+    @PfcPriority2PauseStop.setter
+    def PfcPriority2PauseStop(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["PfcPriority2PauseStop"], value)
+
+    @property
+    def PfcPriority3BufferMaxDepth(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: PFC Priority 3 Buffer Max Depth
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["PfcPriority3BufferMaxDepth"])
+
+    @PfcPriority3BufferMaxDepth.setter
+    def PfcPriority3BufferMaxDepth(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["PfcPriority3BufferMaxDepth"], value)
+
+    @property
+    def PfcPriority3PacketDrop(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: PFC Priority 3 Packet Drop
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["PfcPriority3PacketDrop"])
+
+    @PfcPriority3PacketDrop.setter
+    def PfcPriority3PacketDrop(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["PfcPriority3PacketDrop"], value)
+
+    @property
+    def PfcPriority3PacketDropRate(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: PFC Priority 3 Packet Drop Rate
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["PfcPriority3PacketDropRate"])
+
+    @PfcPriority3PacketDropRate.setter
+    def PfcPriority3PacketDropRate(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["PfcPriority3PacketDropRate"], value)
+
+    @property
+    def PfcPriority3PauseRatioPercent(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: PFC Priority 3 Pause Ratio(%)
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["PfcPriority3PauseRatioPercent"])
+
+    @PfcPriority3PauseRatioPercent.setter
+    def PfcPriority3PauseRatioPercent(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["PfcPriority3PauseRatioPercent"], value)
+
+    @property
+    def PfcPriority3PauseStart(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: PFC Priority 3 Pause Start
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["PfcPriority3PauseStart"])
+
+    @PfcPriority3PauseStart.setter
+    def PfcPriority3PauseStart(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["PfcPriority3PauseStart"], value)
+
+    @property
+    def PfcPriority3PauseStartResent(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: PFC Priority 3 Pause Start Resent
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["PfcPriority3PauseStartResent"])
+
+    @PfcPriority3PauseStartResent.setter
+    def PfcPriority3PauseStartResent(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["PfcPriority3PauseStartResent"], value)
+
+    @property
+    def PfcPriority3PauseStop(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: PFC Priority 3 Pause Stop
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["PfcPriority3PauseStop"])
+
+    @PfcPriority3PauseStop.setter
+    def PfcPriority3PauseStop(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["PfcPriority3PauseStop"], value)
+
+    @property
+    def PfcPriority4BufferMaxDepth(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: PFC Priority 4 Buffer Max Depth
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["PfcPriority4BufferMaxDepth"])
+
+    @PfcPriority4BufferMaxDepth.setter
+    def PfcPriority4BufferMaxDepth(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["PfcPriority4BufferMaxDepth"], value)
+
+    @property
+    def PfcPriority4PacketDrop(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: PFC Priority 4 Packet Drop
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["PfcPriority4PacketDrop"])
+
+    @PfcPriority4PacketDrop.setter
+    def PfcPriority4PacketDrop(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["PfcPriority4PacketDrop"], value)
+
+    @property
+    def PfcPriority4PacketDropRate(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: PFC Priority 4 Packet Drop Rate
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["PfcPriority4PacketDropRate"])
+
+    @PfcPriority4PacketDropRate.setter
+    def PfcPriority4PacketDropRate(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["PfcPriority4PacketDropRate"], value)
+
+    @property
+    def PfcPriority4PauseRatioPercent(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: PFC Priority 4 Pause Ratio(%)
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["PfcPriority4PauseRatioPercent"])
+
+    @PfcPriority4PauseRatioPercent.setter
+    def PfcPriority4PauseRatioPercent(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["PfcPriority4PauseRatioPercent"], value)
+
+    @property
+    def PfcPriority4PauseStart(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: PFC Priority 4 Pause Start
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["PfcPriority4PauseStart"])
+
+    @PfcPriority4PauseStart.setter
+    def PfcPriority4PauseStart(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["PfcPriority4PauseStart"], value)
+
+    @property
+    def PfcPriority4PauseStartResent(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: PFC Priority 4 Pause Start Resent
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["PfcPriority4PauseStartResent"])
+
+    @PfcPriority4PauseStartResent.setter
+    def PfcPriority4PauseStartResent(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["PfcPriority4PauseStartResent"], value)
+
+    @property
+    def PfcPriority4PauseStop(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: PFC Priority 4 Pause Stop
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["PfcPriority4PauseStop"])
+
+    @PfcPriority4PauseStop.setter
+    def PfcPriority4PauseStop(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["PfcPriority4PauseStop"], value)
+
+    @property
+    def PfcPriority5BufferMaxDepth(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: PFC Priority 5 Buffer Max Depth
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["PfcPriority5BufferMaxDepth"])
+
+    @PfcPriority5BufferMaxDepth.setter
+    def PfcPriority5BufferMaxDepth(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["PfcPriority5BufferMaxDepth"], value)
+
+    @property
+    def PfcPriority5PacketDrop(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: PFC Priority 5 Packet Drop
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["PfcPriority5PacketDrop"])
+
+    @PfcPriority5PacketDrop.setter
+    def PfcPriority5PacketDrop(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["PfcPriority5PacketDrop"], value)
+
+    @property
+    def PfcPriority5PacketDropRate(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: PFC Priority 5 Packet Drop Rate
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["PfcPriority5PacketDropRate"])
+
+    @PfcPriority5PacketDropRate.setter
+    def PfcPriority5PacketDropRate(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["PfcPriority5PacketDropRate"], value)
+
+    @property
+    def PfcPriority5PauseRatioPercent(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: PFC Priority 5 Pause Ratio(%)
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["PfcPriority5PauseRatioPercent"])
+
+    @PfcPriority5PauseRatioPercent.setter
+    def PfcPriority5PauseRatioPercent(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["PfcPriority5PauseRatioPercent"], value)
+
+    @property
+    def PfcPriority5PauseStart(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: PFC Priority 5 Pause Start
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["PfcPriority5PauseStart"])
+
+    @PfcPriority5PauseStart.setter
+    def PfcPriority5PauseStart(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["PfcPriority5PauseStart"], value)
+
+    @property
+    def PfcPriority5PauseStartResent(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: PFC Priority 5 Pause Start Resent
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["PfcPriority5PauseStartResent"])
+
+    @PfcPriority5PauseStartResent.setter
+    def PfcPriority5PauseStartResent(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["PfcPriority5PauseStartResent"], value)
+
+    @property
+    def PfcPriority5PauseStop(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: PFC Priority 5 Pause Stop
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["PfcPriority5PauseStop"])
+
+    @PfcPriority5PauseStop.setter
+    def PfcPriority5PauseStop(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["PfcPriority5PauseStop"], value)
+
+    @property
+    def PfcPriority6BufferMaxDepth(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: PFC Priority 6 Buffer Max Depth
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["PfcPriority6BufferMaxDepth"])
+
+    @PfcPriority6BufferMaxDepth.setter
+    def PfcPriority6BufferMaxDepth(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["PfcPriority6BufferMaxDepth"], value)
+
+    @property
+    def PfcPriority6PacketDrop(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: PFC Priority 6 Packet Drop
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["PfcPriority6PacketDrop"])
+
+    @PfcPriority6PacketDrop.setter
+    def PfcPriority6PacketDrop(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["PfcPriority6PacketDrop"], value)
+
+    @property
+    def PfcPriority6PacketDropRate(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: PFC Priority 6 Packet Drop Rate
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["PfcPriority6PacketDropRate"])
+
+    @PfcPriority6PacketDropRate.setter
+    def PfcPriority6PacketDropRate(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["PfcPriority6PacketDropRate"], value)
+
+    @property
+    def PfcPriority6PauseRatioPercent(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: PFC Priority 6 Pause Ratio(%)
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["PfcPriority6PauseRatioPercent"])
+
+    @PfcPriority6PauseRatioPercent.setter
+    def PfcPriority6PauseRatioPercent(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["PfcPriority6PauseRatioPercent"], value)
+
+    @property
+    def PfcPriority6PauseStart(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: PFC Priority 6 Pause Start
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["PfcPriority6PauseStart"])
+
+    @PfcPriority6PauseStart.setter
+    def PfcPriority6PauseStart(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["PfcPriority6PauseStart"], value)
+
+    @property
+    def PfcPriority6PauseStartResent(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: PFC Priority 6 Pause Start Resent
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["PfcPriority6PauseStartResent"])
+
+    @PfcPriority6PauseStartResent.setter
+    def PfcPriority6PauseStartResent(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["PfcPriority6PauseStartResent"], value)
+
+    @property
+    def PfcPriority6PauseStop(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: PFC Priority 6 Pause Stop
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["PfcPriority6PauseStop"])
+
+    @PfcPriority6PauseStop.setter
+    def PfcPriority6PauseStop(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["PfcPriority6PauseStop"], value)
+
+    @property
+    def PfcPriority7BufferMaxDepth(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: PFC Priority 7 Buffer Max Depth
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["PfcPriority7BufferMaxDepth"])
+
+    @PfcPriority7BufferMaxDepth.setter
+    def PfcPriority7BufferMaxDepth(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["PfcPriority7BufferMaxDepth"], value)
+
+    @property
+    def PfcPriority7PacketDrop(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: PFC Priority 7 Packet Drop
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["PfcPriority7PacketDrop"])
+
+    @PfcPriority7PacketDrop.setter
+    def PfcPriority7PacketDrop(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["PfcPriority7PacketDrop"], value)
+
+    @property
+    def PfcPriority7PacketDropRate(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: PFC Priority 7 Packet Drop Rate
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["PfcPriority7PacketDropRate"])
+
+    @PfcPriority7PacketDropRate.setter
+    def PfcPriority7PacketDropRate(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["PfcPriority7PacketDropRate"], value)
+
+    @property
+    def PfcPriority7PauseRatioPercent(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: PFC Priority 7 Pause Ratio(%)
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["PfcPriority7PauseRatioPercent"])
+
+    @PfcPriority7PauseRatioPercent.setter
+    def PfcPriority7PauseRatioPercent(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["PfcPriority7PauseRatioPercent"], value)
+
+    @property
+    def PfcPriority7PauseStart(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: PFC Priority 7 Pause Start
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["PfcPriority7PauseStart"])
+
+    @PfcPriority7PauseStart.setter
+    def PfcPriority7PauseStart(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["PfcPriority7PauseStart"], value)
+
+    @property
+    def PfcPriority7PauseStartResent(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: PFC Priority 7 Pause Start Resent
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["PfcPriority7PauseStartResent"])
+
+    @PfcPriority7PauseStartResent.setter
+    def PfcPriority7PauseStartResent(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["PfcPriority7PauseStartResent"], value)
+
+    @property
+    def PfcPriority7PauseStop(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: PFC Priority 7 Pause Stop
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["PfcPriority7PauseStop"])
+
+    @PfcPriority7PauseStop.setter
+    def PfcPriority7PauseStop(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["PfcPriority7PauseStop"], value)
+
+    @property
     def PgidOverflow(self):
         # type: () -> bool
         """
@@ -7050,6 +7956,36 @@ class PortStatistics(Base):
     def RemoteOrderedSetsSentRate(self, value):
         # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP["RemoteOrderedSetsSentRate"], value)
+
+    @property
+    def Rocev2BadiCRCCount(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: RoCEv2 Bad iCRC Count
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["Rocev2BadiCRCCount"])
+
+    @Rocev2BadiCRCCount.setter
+    def Rocev2BadiCRCCount(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["Rocev2BadiCRCCount"], value)
+
+    @property
+    def Rocev2OpCodeErrorCount(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: RoCEv2 OpCode Error Count
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["Rocev2OpCodeErrorCount"])
+
+    @Rocev2OpCodeErrorCount.setter
+    def Rocev2OpCodeErrorCount(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["Rocev2OpCodeErrorCount"], value)
 
     @property
     def RsFECCorrectedCodewordCount(self):
@@ -9017,6 +9953,21 @@ class PortStatistics(Base):
         self._set_attribute(self._SDM_ATT_MAP["RxRoCEACKFrameCount"], value)
 
     @property
+    def RxRoCEACKFrameCountRate(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: Rx RoCE ACK Frame Count Rate
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["RxRoCEACKFrameCountRate"])
+
+    @RxRoCEACKFrameCountRate.setter
+    def RxRoCEACKFrameCountRate(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["RxRoCEACKFrameCountRate"], value)
+
+    @property
     def RxRoCECNPFrameCount(self):
         # type: () -> bool
         """
@@ -9030,6 +9981,21 @@ class PortStatistics(Base):
     def RxRoCECNPFrameCount(self, value):
         # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP["RxRoCECNPFrameCount"], value)
+
+    @property
+    def RxRoCECNPFrameCountRate(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: Rx RoCE CNP Frame Count Rate
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["RxRoCECNPFrameCountRate"])
+
+    @RxRoCECNPFrameCountRate.setter
+    def RxRoCECNPFrameCountRate(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["RxRoCECNPFrameCountRate"], value)
 
     @property
     def RxRoCEECNFrameCount(self):
@@ -9047,6 +10013,21 @@ class PortStatistics(Base):
         self._set_attribute(self._SDM_ATT_MAP["RxRoCEECNFrameCount"], value)
 
     @property
+    def RxRoCEECNFrameCountRate(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: Rx RoCE ECN Frame Count Rate
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["RxRoCEECNFrameCountRate"])
+
+    @RxRoCEECNFrameCountRate.setter
+    def RxRoCEECNFrameCountRate(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["RxRoCEECNFrameCountRate"], value)
+
+    @property
     def RxRoCENAKFrameCount(self):
         # type: () -> bool
         """
@@ -9062,19 +10043,34 @@ class PortStatistics(Base):
         self._set_attribute(self._SDM_ATT_MAP["RxRoCENAKFrameCount"], value)
 
     @property
-    def RxRoCEOpcodeErrorCount(self):
+    def RxRoCENAKFrameCountRate(self):
         # type: () -> bool
         """
         Returns
         -------
-        - bool: Rx RoCE Opcode Error Count
+        - bool: Rx RoCE NAK Frame Count Rate
         """
-        return self._get_attribute(self._SDM_ATT_MAP["RxRoCEOpcodeErrorCount"])
+        return self._get_attribute(self._SDM_ATT_MAP["RxRoCENAKFrameCountRate"])
 
-    @RxRoCEOpcodeErrorCount.setter
-    def RxRoCEOpcodeErrorCount(self, value):
+    @RxRoCENAKFrameCountRate.setter
+    def RxRoCENAKFrameCountRate(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP["RxRoCEOpcodeErrorCount"], value)
+        self._set_attribute(self._SDM_ATT_MAP["RxRoCENAKFrameCountRate"], value)
+
+    @property
+    def RxRoCEOpcodeErrorCountRate(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: Rx RoCE Opcode Error Count Rate
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["RxRoCEOpcodeErrorCountRate"])
+
+    @RxRoCEOpcodeErrorCountRate.setter
+    def RxRoCEOpcodeErrorCountRate(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["RxRoCEOpcodeErrorCountRate"], value)
 
     @property
     def RxRoCEPrePFCCNPFrameCount(self):
@@ -9092,19 +10088,34 @@ class PortStatistics(Base):
         self._set_attribute(self._SDM_ATT_MAP["RxRoCEPrePFCCNPFrameCount"], value)
 
     @property
-    def RxRoCEiCRCErrorCount(self):
+    def RxRoCEPrePFCCNPFrameCountRate(self):
         # type: () -> bool
         """
         Returns
         -------
-        - bool: Rx RoCE iCRC Error Count
+        - bool: Rx RoCE Pre-PFC CNP Frame Count Rate
         """
-        return self._get_attribute(self._SDM_ATT_MAP["RxRoCEiCRCErrorCount"])
+        return self._get_attribute(self._SDM_ATT_MAP["RxRoCEPrePFCCNPFrameCountRate"])
 
-    @RxRoCEiCRCErrorCount.setter
-    def RxRoCEiCRCErrorCount(self, value):
+    @RxRoCEPrePFCCNPFrameCountRate.setter
+    def RxRoCEPrePFCCNPFrameCountRate(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP["RxRoCEiCRCErrorCount"], value)
+        self._set_attribute(self._SDM_ATT_MAP["RxRoCEPrePFCCNPFrameCountRate"], value)
+
+    @property
+    def RxRoCEiCRCErrorCountRate(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: Rx RoCE iCRC Error Count Rate
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["RxRoCEiCRCErrorCountRate"])
+
+    @RxRoCEiCRCErrorCountRate.setter
+    def RxRoCEiCRCErrorCountRate(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["RxRoCEiCRCErrorCountRate"], value)
 
     @property
     def RxSharedStat1(self):
@@ -9345,6 +10356,25 @@ class PortStatistics(Base):
         self._set_attribute(self._SDM_ATT_MAP["ScheduledTxRoCEACKFrameCount"], value)
 
     @property
+    def ScheduledTxRoCEACKFrameCountRate(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: Scheduled Tx RoCE ACK Frame Count Rate
+        """
+        return self._get_attribute(
+            self._SDM_ATT_MAP["ScheduledTxRoCEACKFrameCountRate"]
+        )
+
+    @ScheduledTxRoCEACKFrameCountRate.setter
+    def ScheduledTxRoCEACKFrameCountRate(self, value):
+        # type: (bool) -> None
+        self._set_attribute(
+            self._SDM_ATT_MAP["ScheduledTxRoCEACKFrameCountRate"], value
+        )
+
+    @property
     def ScheduledTxRoCECNPFrameCount(self):
         # type: () -> bool
         """
@@ -9360,6 +10390,25 @@ class PortStatistics(Base):
         self._set_attribute(self._SDM_ATT_MAP["ScheduledTxRoCECNPFrameCount"], value)
 
     @property
+    def ScheduledTxRoCECNPFrameCountRate(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: Scheduled Tx RoCE CNP Frame Count Rate
+        """
+        return self._get_attribute(
+            self._SDM_ATT_MAP["ScheduledTxRoCECNPFrameCountRate"]
+        )
+
+    @ScheduledTxRoCECNPFrameCountRate.setter
+    def ScheduledTxRoCECNPFrameCountRate(self, value):
+        # type: (bool) -> None
+        self._set_attribute(
+            self._SDM_ATT_MAP["ScheduledTxRoCECNPFrameCountRate"], value
+        )
+
+    @property
     def ScheduledTxRoCENAKFrameCount(self):
         # type: () -> bool
         """
@@ -9373,6 +10422,25 @@ class PortStatistics(Base):
     def ScheduledTxRoCENAKFrameCount(self, value):
         # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP["ScheduledTxRoCENAKFrameCount"], value)
+
+    @property
+    def ScheduledTxRoCENAKFrameCountRate(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: Scheduled Tx RoCE NAK Frame Count Rate
+        """
+        return self._get_attribute(
+            self._SDM_ATT_MAP["ScheduledTxRoCENAKFrameCountRate"]
+        )
+
+    @ScheduledTxRoCENAKFrameCountRate.setter
+    def ScheduledTxRoCENAKFrameCountRate(self, value):
+        # type: (bool) -> None
+        self._set_attribute(
+            self._SDM_ATT_MAP["ScheduledTxRoCENAKFrameCountRate"], value
+        )
 
     @property
     def SchedulerChipTemperatureC(self):
@@ -11127,7 +12195,7 @@ class PortStatistics(Base):
         self._set_attribute(self._SDM_ATT_MAP["WindowViolationFrameCount"], value)
 
     def update(self, **kwargs):
-        # type: (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool) -> PortStatistics
+        # type: (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool) -> PortStatistics
         """Updates portStatistics resource on the server.
 
         Args
@@ -11493,6 +12561,62 @@ class PortStatistics(Base):
         - PcsSyncErrors (bool): PCS Sync Errors
         - PcsSyncErrorsRate (bool): PCS Sync Errors Rate
         - PercentCPULoad (bool): %CPU Load
+        - PfcPriority0BufferMaxDepth (bool): PFC Priority 0 Buffer Max Depth
+        - PfcPriority0PacketDrop (bool): PFC Priority 0 Packet Drop
+        - PfcPriority0PacketDropRate (bool): PFC Priority 0 Packet Drop Rate
+        - PfcPriority0PauseRatioPercent (bool): PFC Priority 0 Pause Ratio(%)
+        - PfcPriority0PauseStart (bool): PFC Priority 0 Pause Start
+        - PfcPriority0PauseStartResent (bool): PFC Priority 0 Pause Start Resent
+        - PfcPriority0PauseStop (bool): PFC Priority 0 Pause Stop
+        - PfcPriority1BufferMaxDepth (bool): PFC Priority 1 Buffer Max Depth
+        - PfcPriority1PacketDrop (bool): PFC Priority 1 Packet Drop
+        - PfcPriority1PacketDropRate (bool): PFC Priority 1 Packet Drop Rate
+        - PfcPriority1PauseRatioPercent (bool): PFC Priority 1 Pause Ratio(%)
+        - PfcPriority1PauseStart (bool): PFC Priority 1 Pause Start
+        - PfcPriority1PauseStartResent (bool): PFC Priority 1 Pause Start Resent
+        - PfcPriority1PauseStop (bool): PFC Priority 1 Pause Stop
+        - PfcPriority2BufferMaxDepth (bool): PFC Priority 2 Buffer Max Depth
+        - PfcPriority2PacketDrop (bool): PFC Priority 2 Packet Drop
+        - PfcPriority2PacketDropRate (bool): PFC Priority 2 Packet Drop Rate
+        - PfcPriority2PauseRatioPercent (bool): PFC Priority 2 Pause Ratio(%)
+        - PfcPriority2PauseStart (bool): PFC Priority 2 Pause Start
+        - PfcPriority2PauseStartResent (bool): PFC Priority 2 Pause Start Resent
+        - PfcPriority2PauseStop (bool): PFC Priority 2 Pause Stop
+        - PfcPriority3BufferMaxDepth (bool): PFC Priority 3 Buffer Max Depth
+        - PfcPriority3PacketDrop (bool): PFC Priority 3 Packet Drop
+        - PfcPriority3PacketDropRate (bool): PFC Priority 3 Packet Drop Rate
+        - PfcPriority3PauseRatioPercent (bool): PFC Priority 3 Pause Ratio(%)
+        - PfcPriority3PauseStart (bool): PFC Priority 3 Pause Start
+        - PfcPriority3PauseStartResent (bool): PFC Priority 3 Pause Start Resent
+        - PfcPriority3PauseStop (bool): PFC Priority 3 Pause Stop
+        - PfcPriority4BufferMaxDepth (bool): PFC Priority 4 Buffer Max Depth
+        - PfcPriority4PacketDrop (bool): PFC Priority 4 Packet Drop
+        - PfcPriority4PacketDropRate (bool): PFC Priority 4 Packet Drop Rate
+        - PfcPriority4PauseRatioPercent (bool): PFC Priority 4 Pause Ratio(%)
+        - PfcPriority4PauseStart (bool): PFC Priority 4 Pause Start
+        - PfcPriority4PauseStartResent (bool): PFC Priority 4 Pause Start Resent
+        - PfcPriority4PauseStop (bool): PFC Priority 4 Pause Stop
+        - PfcPriority5BufferMaxDepth (bool): PFC Priority 5 Buffer Max Depth
+        - PfcPriority5PacketDrop (bool): PFC Priority 5 Packet Drop
+        - PfcPriority5PacketDropRate (bool): PFC Priority 5 Packet Drop Rate
+        - PfcPriority5PauseRatioPercent (bool): PFC Priority 5 Pause Ratio(%)
+        - PfcPriority5PauseStart (bool): PFC Priority 5 Pause Start
+        - PfcPriority5PauseStartResent (bool): PFC Priority 5 Pause Start Resent
+        - PfcPriority5PauseStop (bool): PFC Priority 5 Pause Stop
+        - PfcPriority6BufferMaxDepth (bool): PFC Priority 6 Buffer Max Depth
+        - PfcPriority6PacketDrop (bool): PFC Priority 6 Packet Drop
+        - PfcPriority6PacketDropRate (bool): PFC Priority 6 Packet Drop Rate
+        - PfcPriority6PauseRatioPercent (bool): PFC Priority 6 Pause Ratio(%)
+        - PfcPriority6PauseStart (bool): PFC Priority 6 Pause Start
+        - PfcPriority6PauseStartResent (bool): PFC Priority 6 Pause Start Resent
+        - PfcPriority6PauseStop (bool): PFC Priority 6 Pause Stop
+        - PfcPriority7BufferMaxDepth (bool): PFC Priority 7 Buffer Max Depth
+        - PfcPriority7PacketDrop (bool): PFC Priority 7 Packet Drop
+        - PfcPriority7PacketDropRate (bool): PFC Priority 7 Packet Drop Rate
+        - PfcPriority7PauseRatioPercent (bool): PFC Priority 7 Pause Ratio(%)
+        - PfcPriority7PauseStart (bool): PFC Priority 7 Pause Start
+        - PfcPriority7PauseStartResent (bool): PFC Priority 7 Pause Start Resent
+        - PfcPriority7PauseStop (bool): PFC Priority 7 Pause Stop
         - PgidOverflow (bool): PGID Overflow
         - PgidOverflowRate (bool): PGID Overflow Rate
         - PhyChipTemperatureC (bool): PHY Chip Temperature (C)
@@ -11550,6 +12674,8 @@ class PortStatistics(Base):
         - RemoteOrderedSetsReceivedRate (bool): Remote Ordered Sets Received Rate
         - RemoteOrderedSetsSent (bool): Remote Ordered Sets Sent
         - RemoteOrderedSetsSentRate (bool): Remote Ordered Sets Sent Rate
+        - Rocev2BadiCRCCount (bool): RoCEv2 Bad iCRC Count
+        - Rocev2OpCodeErrorCount (bool): RoCEv2 OpCode Error Count
         - RsFECCorrectedCodewordCount (bool): RS-FEC Corrected Codeword Count
         - RsFECCorrectedCodewordCountRate (bool): RS-FEC Corrected Codeword Count Rate
         - RsFECUncorrectedCodewordCount (bool): RS-FEC Uncorrected Codeword Count
@@ -11673,12 +12799,17 @@ class PortStatistics(Base):
         - RxRateMbps (bool): Rx. Rate (Mbps)
         - RxRatebps (bool): Rx. Rate (bps)
         - RxRoCEACKFrameCount (bool): Rx RoCE ACK Frame Count
+        - RxRoCEACKFrameCountRate (bool): Rx RoCE ACK Frame Count Rate
         - RxRoCECNPFrameCount (bool): Rx RoCE CNP Frame Count
+        - RxRoCECNPFrameCountRate (bool): Rx RoCE CNP Frame Count Rate
         - RxRoCEECNFrameCount (bool): Rx RoCE ECN Frame Count
+        - RxRoCEECNFrameCountRate (bool): Rx RoCE ECN Frame Count Rate
         - RxRoCENAKFrameCount (bool): Rx RoCE NAK Frame Count
-        - RxRoCEOpcodeErrorCount (bool): Rx RoCE Opcode Error Count
+        - RxRoCENAKFrameCountRate (bool): Rx RoCE NAK Frame Count Rate
+        - RxRoCEOpcodeErrorCountRate (bool): Rx RoCE Opcode Error Count Rate
         - RxRoCEPrePFCCNPFrameCount (bool): Rx RoCE Pre-PFC CNP Frame Count
-        - RxRoCEiCRCErrorCount (bool): Rx RoCE iCRC Error Count
+        - RxRoCEPrePFCCNPFrameCountRate (bool): Rx RoCE Pre-PFC CNP Frame Count Rate
+        - RxRoCEiCRCErrorCountRate (bool): Rx RoCE iCRC Error Count Rate
         - RxSharedStat1 (bool): Rx Shared Stat 1
         - RxSharedStat1Rate (bool): Rx Shared Stat 1 Rate
         - RxSharedStat2 (bool): Rx Shared Stat 2
@@ -11694,8 +12825,11 @@ class PortStatistics(Base):
         - ScheduledFramesTxRate (bool): Scheduled Frames Tx. Rate
         - ScheduledTransmitDuration (bool): Scheduled Transmit Duration
         - ScheduledTxRoCEACKFrameCount (bool): Scheduled Tx RoCE ACK Frame Count
+        - ScheduledTxRoCEACKFrameCountRate (bool): Scheduled Tx RoCE ACK Frame Count Rate
         - ScheduledTxRoCECNPFrameCount (bool): Scheduled Tx RoCE CNP Frame Count
+        - ScheduledTxRoCECNPFrameCountRate (bool): Scheduled Tx RoCE CNP Frame Count Rate
         - ScheduledTxRoCENAKFrameCount (bool): Scheduled Tx RoCE NAK Frame Count
+        - ScheduledTxRoCENAKFrameCountRate (bool): Scheduled Tx RoCE NAK Frame Count Rate
         - SchedulerChipTemperatureC (bool): Scheduler Chip Temperature(C)
         - SectionBIPB1 (bool): Section BIP (B1)
         - SectionBIPB1Rate (bool): Section BIP (B1) Rate
@@ -11820,7 +12954,7 @@ class PortStatistics(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def find(self, **kwargs):
-        # type: (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool) -> PortStatistics
+        # type: (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool) -> PortStatistics
         """Finds and retrieves portStatistics resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve portStatistics resources from the server.
@@ -12190,6 +13324,62 @@ class PortStatistics(Base):
         - PcsSyncErrors (bool): PCS Sync Errors
         - PcsSyncErrorsRate (bool): PCS Sync Errors Rate
         - PercentCPULoad (bool): %CPU Load
+        - PfcPriority0BufferMaxDepth (bool): PFC Priority 0 Buffer Max Depth
+        - PfcPriority0PacketDrop (bool): PFC Priority 0 Packet Drop
+        - PfcPriority0PacketDropRate (bool): PFC Priority 0 Packet Drop Rate
+        - PfcPriority0PauseRatioPercent (bool): PFC Priority 0 Pause Ratio(%)
+        - PfcPriority0PauseStart (bool): PFC Priority 0 Pause Start
+        - PfcPriority0PauseStartResent (bool): PFC Priority 0 Pause Start Resent
+        - PfcPriority0PauseStop (bool): PFC Priority 0 Pause Stop
+        - PfcPriority1BufferMaxDepth (bool): PFC Priority 1 Buffer Max Depth
+        - PfcPriority1PacketDrop (bool): PFC Priority 1 Packet Drop
+        - PfcPriority1PacketDropRate (bool): PFC Priority 1 Packet Drop Rate
+        - PfcPriority1PauseRatioPercent (bool): PFC Priority 1 Pause Ratio(%)
+        - PfcPriority1PauseStart (bool): PFC Priority 1 Pause Start
+        - PfcPriority1PauseStartResent (bool): PFC Priority 1 Pause Start Resent
+        - PfcPriority1PauseStop (bool): PFC Priority 1 Pause Stop
+        - PfcPriority2BufferMaxDepth (bool): PFC Priority 2 Buffer Max Depth
+        - PfcPriority2PacketDrop (bool): PFC Priority 2 Packet Drop
+        - PfcPriority2PacketDropRate (bool): PFC Priority 2 Packet Drop Rate
+        - PfcPriority2PauseRatioPercent (bool): PFC Priority 2 Pause Ratio(%)
+        - PfcPriority2PauseStart (bool): PFC Priority 2 Pause Start
+        - PfcPriority2PauseStartResent (bool): PFC Priority 2 Pause Start Resent
+        - PfcPriority2PauseStop (bool): PFC Priority 2 Pause Stop
+        - PfcPriority3BufferMaxDepth (bool): PFC Priority 3 Buffer Max Depth
+        - PfcPriority3PacketDrop (bool): PFC Priority 3 Packet Drop
+        - PfcPriority3PacketDropRate (bool): PFC Priority 3 Packet Drop Rate
+        - PfcPriority3PauseRatioPercent (bool): PFC Priority 3 Pause Ratio(%)
+        - PfcPriority3PauseStart (bool): PFC Priority 3 Pause Start
+        - PfcPriority3PauseStartResent (bool): PFC Priority 3 Pause Start Resent
+        - PfcPriority3PauseStop (bool): PFC Priority 3 Pause Stop
+        - PfcPriority4BufferMaxDepth (bool): PFC Priority 4 Buffer Max Depth
+        - PfcPriority4PacketDrop (bool): PFC Priority 4 Packet Drop
+        - PfcPriority4PacketDropRate (bool): PFC Priority 4 Packet Drop Rate
+        - PfcPriority4PauseRatioPercent (bool): PFC Priority 4 Pause Ratio(%)
+        - PfcPriority4PauseStart (bool): PFC Priority 4 Pause Start
+        - PfcPriority4PauseStartResent (bool): PFC Priority 4 Pause Start Resent
+        - PfcPriority4PauseStop (bool): PFC Priority 4 Pause Stop
+        - PfcPriority5BufferMaxDepth (bool): PFC Priority 5 Buffer Max Depth
+        - PfcPriority5PacketDrop (bool): PFC Priority 5 Packet Drop
+        - PfcPriority5PacketDropRate (bool): PFC Priority 5 Packet Drop Rate
+        - PfcPriority5PauseRatioPercent (bool): PFC Priority 5 Pause Ratio(%)
+        - PfcPriority5PauseStart (bool): PFC Priority 5 Pause Start
+        - PfcPriority5PauseStartResent (bool): PFC Priority 5 Pause Start Resent
+        - PfcPriority5PauseStop (bool): PFC Priority 5 Pause Stop
+        - PfcPriority6BufferMaxDepth (bool): PFC Priority 6 Buffer Max Depth
+        - PfcPriority6PacketDrop (bool): PFC Priority 6 Packet Drop
+        - PfcPriority6PacketDropRate (bool): PFC Priority 6 Packet Drop Rate
+        - PfcPriority6PauseRatioPercent (bool): PFC Priority 6 Pause Ratio(%)
+        - PfcPriority6PauseStart (bool): PFC Priority 6 Pause Start
+        - PfcPriority6PauseStartResent (bool): PFC Priority 6 Pause Start Resent
+        - PfcPriority6PauseStop (bool): PFC Priority 6 Pause Stop
+        - PfcPriority7BufferMaxDepth (bool): PFC Priority 7 Buffer Max Depth
+        - PfcPriority7PacketDrop (bool): PFC Priority 7 Packet Drop
+        - PfcPriority7PacketDropRate (bool): PFC Priority 7 Packet Drop Rate
+        - PfcPriority7PauseRatioPercent (bool): PFC Priority 7 Pause Ratio(%)
+        - PfcPriority7PauseStart (bool): PFC Priority 7 Pause Start
+        - PfcPriority7PauseStartResent (bool): PFC Priority 7 Pause Start Resent
+        - PfcPriority7PauseStop (bool): PFC Priority 7 Pause Stop
         - PgidOverflow (bool): PGID Overflow
         - PgidOverflowRate (bool): PGID Overflow Rate
         - PhyChipTemperatureC (bool): PHY Chip Temperature (C)
@@ -12247,6 +13437,8 @@ class PortStatistics(Base):
         - RemoteOrderedSetsReceivedRate (bool): Remote Ordered Sets Received Rate
         - RemoteOrderedSetsSent (bool): Remote Ordered Sets Sent
         - RemoteOrderedSetsSentRate (bool): Remote Ordered Sets Sent Rate
+        - Rocev2BadiCRCCount (bool): RoCEv2 Bad iCRC Count
+        - Rocev2OpCodeErrorCount (bool): RoCEv2 OpCode Error Count
         - RsFECCorrectedCodewordCount (bool): RS-FEC Corrected Codeword Count
         - RsFECCorrectedCodewordCountRate (bool): RS-FEC Corrected Codeword Count Rate
         - RsFECUncorrectedCodewordCount (bool): RS-FEC Uncorrected Codeword Count
@@ -12370,12 +13562,17 @@ class PortStatistics(Base):
         - RxRateMbps (bool): Rx. Rate (Mbps)
         - RxRatebps (bool): Rx. Rate (bps)
         - RxRoCEACKFrameCount (bool): Rx RoCE ACK Frame Count
+        - RxRoCEACKFrameCountRate (bool): Rx RoCE ACK Frame Count Rate
         - RxRoCECNPFrameCount (bool): Rx RoCE CNP Frame Count
+        - RxRoCECNPFrameCountRate (bool): Rx RoCE CNP Frame Count Rate
         - RxRoCEECNFrameCount (bool): Rx RoCE ECN Frame Count
+        - RxRoCEECNFrameCountRate (bool): Rx RoCE ECN Frame Count Rate
         - RxRoCENAKFrameCount (bool): Rx RoCE NAK Frame Count
-        - RxRoCEOpcodeErrorCount (bool): Rx RoCE Opcode Error Count
+        - RxRoCENAKFrameCountRate (bool): Rx RoCE NAK Frame Count Rate
+        - RxRoCEOpcodeErrorCountRate (bool): Rx RoCE Opcode Error Count Rate
         - RxRoCEPrePFCCNPFrameCount (bool): Rx RoCE Pre-PFC CNP Frame Count
-        - RxRoCEiCRCErrorCount (bool): Rx RoCE iCRC Error Count
+        - RxRoCEPrePFCCNPFrameCountRate (bool): Rx RoCE Pre-PFC CNP Frame Count Rate
+        - RxRoCEiCRCErrorCountRate (bool): Rx RoCE iCRC Error Count Rate
         - RxSharedStat1 (bool): Rx Shared Stat 1
         - RxSharedStat1Rate (bool): Rx Shared Stat 1 Rate
         - RxSharedStat2 (bool): Rx Shared Stat 2
@@ -12391,8 +13588,11 @@ class PortStatistics(Base):
         - ScheduledFramesTxRate (bool): Scheduled Frames Tx. Rate
         - ScheduledTransmitDuration (bool): Scheduled Transmit Duration
         - ScheduledTxRoCEACKFrameCount (bool): Scheduled Tx RoCE ACK Frame Count
+        - ScheduledTxRoCEACKFrameCountRate (bool): Scheduled Tx RoCE ACK Frame Count Rate
         - ScheduledTxRoCECNPFrameCount (bool): Scheduled Tx RoCE CNP Frame Count
+        - ScheduledTxRoCECNPFrameCountRate (bool): Scheduled Tx RoCE CNP Frame Count Rate
         - ScheduledTxRoCENAKFrameCount (bool): Scheduled Tx RoCE NAK Frame Count
+        - ScheduledTxRoCENAKFrameCountRate (bool): Scheduled Tx RoCE NAK Frame Count Rate
         - SchedulerChipTemperatureC (bool): Scheduler Chip Temperature(C)
         - SectionBIPB1 (bool): Section BIP (B1)
         - SectionBIPB1Rate (bool): Section BIP (B1) Rate

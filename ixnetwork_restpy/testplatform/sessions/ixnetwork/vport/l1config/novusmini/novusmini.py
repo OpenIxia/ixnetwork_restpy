@@ -27,13 +27,13 @@ if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
 
-class Novusmini(Base):
+class NovusMini(Base):
     """
-    The Novusmini class encapsulates a required novusmini resource which will be retrieved from the server every time the property is accessed.
+    The NovusMini class encapsulates a required novusMini resource which will be retrieved from the server every time the property is accessed.
     """
 
     __slots__ = ()
-    _SDM_NAME = "novusmini"
+    _SDM_NAME = "novusMini"
     _SDM_ATT_MAP = {
         "AutoInstrumentation": "autoInstrumentation",
         "AvailableSpeeds": "availableSpeeds",
@@ -46,11 +46,11 @@ class Novusmini(Base):
     }
     _SDM_ENUM_MAP = {
         "autoInstrumentation": ["endOfFrame", "floating"],
-        "speed": ["speed1000", "speed100fd", "speed10fd", "speed2.5g"],
+        "speed": ["speed1000", "speed100fd"],
     }
 
     def __init__(self, parent, list_op=False):
-        super(Novusmini, self).__init__(parent, list_op)
+        super(NovusMini, self).__init__(parent, list_op)
 
     @property
     def AutoInstrumentation(self):
@@ -73,7 +73,7 @@ class Novusmini(Base):
         """
         Returns
         -------
-        - list(str[speed10fd | speed100fd | speed1000 | speed2.5g]): Which speeds are available for the current media and AN settings.
+        - list(str[speed100fd | speed1000]): Which speeds are available for the current media and AN settings.
         """
         return self._get_attribute(self._SDM_ATT_MAP["AvailableSpeeds"])
 
@@ -128,7 +128,7 @@ class Novusmini(Base):
         """
         Returns
         -------
-        - list(str[speed10fd | speed100fd | speed1000 | speed2.5g]): Which speeds are selected for the current media and AN settings.
+        - list(str[speed100fd | speed1000]): Which speeds are selected for the current media and AN settings.
         """
         return self._get_attribute(self._SDM_ATT_MAP["SelectedSpeeds"])
 
@@ -143,7 +143,7 @@ class Novusmini(Base):
         """
         Returns
         -------
-        - str(speed1000 | speed100fd | speed10fd | speed2.5g): Select one of the enums to set the speed of the port.
+        - str(speed1000 | speed100fd): Select one of the enums to set the speed of the port.
         """
         return self._get_attribute(self._SDM_ATT_MAP["Speed"])
 
@@ -155,15 +155,15 @@ class Novusmini(Base):
     def update(
         self, AutoInstrumentation=None, Mtu=None, SelectedSpeeds=None, Speed=None
     ):
-        # type: (str, int, List[str], str) -> Novusmini
-        """Updates novusmini resource on the server.
+        # type: (str, int, List[str], str) -> NovusMini
+        """Updates novusMini resource on the server.
 
         Args
         ----
         - AutoInstrumentation (str(endOfFrame | floating)): The auto instrumentation mode.
         - Mtu (number):
-        - SelectedSpeeds (list(str[speed10fd | speed100fd | speed1000 | speed2.5g])): Which speeds are selected for the current media and AN settings.
-        - Speed (str(speed1000 | speed100fd | speed10fd | speed2.5g)): Select one of the enums to set the speed of the port.
+        - SelectedSpeeds (list(str[speed100fd | speed1000])): Which speeds are selected for the current media and AN settings.
+        - Speed (str(speed1000 | speed100fd)): Select one of the enums to set the speed of the port.
 
         Raises
         ------
@@ -182,27 +182,27 @@ class Novusmini(Base):
         SelectedSpeeds=None,
         Speed=None,
     ):
-        # type: (str, List[str], bool, bool, bool, int, List[str], str) -> Novusmini
-        """Finds and retrieves novusmini resources from the server.
+        # type: (str, List[str], bool, bool, bool, int, List[str], str) -> NovusMini
+        """Finds and retrieves novusMini resources from the server.
 
-        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve novusmini resources from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve novusMini resources from the server.
         To retrieve an exact match ensure the parameter value starts with ^ and ends with $
-        By default the find method takes no parameters and will retrieve all novusmini resources from the server.
+        By default the find method takes no parameters and will retrieve all novusMini resources from the server.
 
         Args
         ----
         - AutoInstrumentation (str(endOfFrame | floating)): The auto instrumentation mode.
-        - AvailableSpeeds (list(str[speed10fd | speed100fd | speed1000 | speed2.5g])): Which speeds are available for the current media and AN settings.
+        - AvailableSpeeds (list(str[speed100fd | speed1000])): Which speeds are available for the current media and AN settings.
         - CanModifySpeed (bool): Returns true/false depending upon if the port can change speed for the current media and AN settings.
         - CanSetMultipleSpeeds (bool): Can this port selectmultiple speeds for the current media and AN settings.
         - Loopback (bool): If enabled, the port is set to internally loopback from transmit to receive.
         - Mtu (number):
-        - SelectedSpeeds (list(str[speed10fd | speed100fd | speed1000 | speed2.5g])): Which speeds are selected for the current media and AN settings.
-        - Speed (str(speed1000 | speed100fd | speed10fd | speed2.5g)): Select one of the enums to set the speed of the port.
+        - SelectedSpeeds (list(str[speed100fd | speed1000])): Which speeds are selected for the current media and AN settings.
+        - Speed (str(speed1000 | speed100fd)): Select one of the enums to set the speed of the port.
 
         Returns
         -------
-        - self: This instance with matching novusmini resources retrieved from the server available through an iterator or index
+        - self: This instance with matching novusMini resources retrieved from the server available through an iterator or index
 
         Raises
         ------
@@ -211,7 +211,7 @@ class Novusmini(Base):
         return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
-        """Retrieves a single instance of novusmini data from the server.
+        """Retrieves a single instance of novusMini data from the server.
 
         Args
         ----
@@ -219,7 +219,7 @@ class Novusmini(Base):
 
         Returns
         -------
-        - self: This instance with the novusmini resources from the server available through an iterator or index
+        - self: This instance with the novusMini resources from the server available through an iterator or index
 
         Raises
         ------

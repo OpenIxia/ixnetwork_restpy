@@ -18,6 +18,7 @@ session_assistant = SessionAssistant(
 )
 ixnetwork = session_assistant.Ixnetwork
 session = session_assistant.Session
+file_name = "StatisticsSnapshot"
 
 ixnetwork.info(
     """
@@ -31,11 +32,11 @@ ixnetwork.info(
 statistics = ixnetwork.Statistics
 csvsnapshot = statistics.CsvSnapshot
 csvsnapshot.update(
-    CsvName="StatisticsSnapshot",
+    CsvName=file_name,
     CsvLocation=statistics.CsvFilePath,
     SnapshotViewCsvGenerationMode="overwriteCSVFile",
     SnapshotViewContents="allPages",
-    Views=statistics.View.find(Caption="Port Statistics"),
+    Views=statistics.View.find(Caption="^Port Statistics$"),
 )
 
 ixnetwork.info(csvsnapshot)
@@ -54,7 +55,8 @@ ixnetwork.info(
     The snapshot API will always add a .csv extension
 """
 )
-file_name = csvsnapshot.CsvName + ".csv"
+file_name = file_name + ".csv"
+
 remote_filename = os.path.normpath(os.path.join(csvsnapshot.CsvLocation, file_name))
 local_filename = os.path.normpath(os.path.join("c:/temp", file_name))
 session.DownloadFile(remote_filename, local_filename)

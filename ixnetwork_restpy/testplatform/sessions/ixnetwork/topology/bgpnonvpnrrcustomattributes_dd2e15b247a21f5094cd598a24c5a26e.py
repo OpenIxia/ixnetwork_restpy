@@ -40,6 +40,7 @@ class BgpNonVPNRRCustomAttributes(Base):
         "AttributeValueLength": "attributeValueLength",
         "Count": "count",
         "DescriptiveName": "descriptiveName",
+        "EnableCustomAttr": "enableCustomAttr",
         "EnableExtendedLength": "enableExtendedLength",
         "EnableOverrideExistingAttribute": "enableOverrideExistingAttribute",
         "Name": "name",
@@ -115,6 +116,20 @@ class BgpNonVPNRRCustomAttributes(Base):
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
         return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
+
+    @property
+    def EnableCustomAttr(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Custom Attribute
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableCustomAttr"])
+        )
 
     @property
     def EnableExtendedLength(self):
@@ -340,6 +355,7 @@ class BgpNonVPNRRCustomAttributes(Base):
         Active=None,
         AttributeValue=None,
         AttributeValueLength=None,
+        EnableCustomAttr=None,
         EnableExtendedLength=None,
         EnableOverrideExistingAttribute=None,
         OptionalFlagType=None,
@@ -360,6 +376,7 @@ class BgpNonVPNRRCustomAttributes(Base):
         - Active (str): optional regex of active
         - AttributeValue (str): optional regex of attributeValue
         - AttributeValueLength (str): optional regex of attributeValueLength
+        - EnableCustomAttr (str): optional regex of enableCustomAttr
         - EnableExtendedLength (str): optional regex of enableExtendedLength
         - EnableOverrideExistingAttribute (str): optional regex of enableOverrideExistingAttribute
         - OptionalFlagType (str): optional regex of optionalFlagType

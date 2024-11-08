@@ -5961,18 +5961,18 @@ class Stack(Base):
         return IpAuthenticationHeader(self)
 
     @property
-    def IpEspOverMacsec(self):
+    def IpEspOverMACsec(self):
         """
         valid only with Batch Add
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.ipEspOverMacsec_template.IpEspOverMacsec): An instance of the IpEspOverMacsec traffic stack
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.ipEspOverMACsec_template.IpEspOverMACsec): An instance of the IpEspOverMACsec traffic stack
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.ipEspOverMacsec_template import (
-            IpEspOverMacsec,
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.ipEspOverMACsec_template import (
+            IpEspOverMACsec,
         )
 
-        return IpEspOverMacsec(self)
+        return IpEspOverMACsec(self)
 
     @property
     def NFapiP7P19sHeader(self):

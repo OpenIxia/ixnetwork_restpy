@@ -1401,6 +1401,46 @@ class Topology(Base):
         return Ptprobeinstancesrv6(self)._select()
 
     @property
+    def Roce6v2(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.roce6v2.roce6v2_c10c727ab6238f40d0d75af5804e65fd.Roce6v2): An instance of the Roce6v2 class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.roce6v2.roce6v2_c10c727ab6238f40d0d75af5804e65fd import (
+            Roce6v2,
+        )
+
+        if len(self._object_properties) > 0:
+            if self._properties.get("Roce6v2", None) is not None:
+                return self._properties.get("Roce6v2")
+        return Roce6v2(self)._select()
+
+    @property
+    def Rocev2(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.rocev2.rocev2_16221c79cb9987f68933e5578c282eb6.Rocev2): An instance of the Rocev2 class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.rocev2.rocev2_16221c79cb9987f68933e5578c282eb6 import (
+            Rocev2,
+        )
+
+        if len(self._object_properties) > 0:
+            if self._properties.get("Rocev2", None) is not None:
+                return self._properties.get("Rocev2")
+        return Rocev2(self)._select()
+
+    @property
     def RsvpteIf(self):
         """
         Returns
@@ -1903,3 +1943,49 @@ class Topology(Base):
         return self._execute(
             "fetchScenarioObjectsShortenedNames", payload=payload, response_object=None
         )
+
+    def SendArpGlobal(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
+        """Executes the sendArpGlobal operation on the server.
+
+        Send ARP for a Topology or all Topologies
+
+        sendArpGlobal(async_operation=bool)string
+        -----------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns str:
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("sendArpGlobal", payload=payload, response_object=None)
+
+    def SendNsGlobal(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
+        """Executes the sendNsGlobal operation on the server.
+
+        Send NS for a Topology or all Topologies
+
+        sendNsGlobal(async_operation=bool)string
+        ----------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns str:
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("sendNsGlobal", payload=payload, response_object=None)

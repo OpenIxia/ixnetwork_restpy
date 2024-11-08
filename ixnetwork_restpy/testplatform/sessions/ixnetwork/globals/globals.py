@@ -40,7 +40,6 @@ class Globals(Base):
         "CommandArgs": "commandArgs",
         "ConfigFileName": "configFileName",
         "ConfigSummary": "configSummary",
-        "IsQuickTestMode": "isQuickTestMode",
         "IxosBuildNumber": "ixosBuildNumber",
         "PersistencePath": "persistencePath",
         "ProductVersion": "productVersion",
@@ -385,16 +384,6 @@ class Globals(Base):
         return self._get_attribute(self._SDM_ATT_MAP["ConfigSummary"])
 
     @property
-    def IsQuickTestMode(self):
-        # type: () -> bool
-        """
-        Returns
-        -------
-        - bool:
-        """
-        return self._get_attribute(self._SDM_ATT_MAP["IsQuickTestMode"])
-
-    @property
     def IxosBuildNumber(self):
         # type: () -> str
         """
@@ -481,7 +470,6 @@ class Globals(Base):
         CommandArgs=None,
         ConfigFileName=None,
         ConfigSummary=None,
-        IsQuickTestMode=None,
         IxosBuildNumber=None,
         PersistencePath=None,
         ProductVersion=None,
@@ -504,7 +492,6 @@ class Globals(Base):
         - CommandArgs (str):
         - ConfigFileName (str): The name of the configuration file.
         - ConfigSummary (list(dict(arg1:str,arg2:str,arg3:list[dict(arg1:str,arg2:str)]))): A high level summary description of the currently loaded configuration
-        - IsQuickTestMode (bool):
         - IxosBuildNumber (str): The IxOS software build number.
         - PersistencePath (str): This attribute returns a directory of the IxNetwork API server machine, where users can drop their files from the client scripts using IxNetwork APIs. To Put files in this directory, users do not require to run IxNetwork API server in administrative mode
         - ProductVersion (str):

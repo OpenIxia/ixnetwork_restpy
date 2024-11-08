@@ -121,6 +121,26 @@ class StarFourHundredGigLan(Base):
         return Fcoe(self)._select()
 
     @property
+    def PfcPauseGeneration(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.starfourhundredgiglan.pfcpausegeneration.pfcpausegeneration.PfcPauseGeneration): An instance of the PfcPauseGeneration class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.starfourhundredgiglan.pfcpausegeneration.pfcpausegeneration import (
+            PfcPauseGeneration,
+        )
+
+        if len(self._object_properties) > 0:
+            if self._properties.get("PfcPauseGeneration", None) is not None:
+                return self._properties.get("PfcPauseGeneration")
+        return PfcPauseGeneration(self)._select()
+
+    @property
     def TxLane(self):
         """
         Returns

@@ -541,6 +541,26 @@ class Ipv6(Base):
         return Ptprobeinstancesrv6(self)
 
     @property
+    def Roce6v2(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.roce6v2_5e47366a39ccec9814c18bcb15c6f586.Roce6v2): An instance of the Roce6v2 class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.roce6v2_5e47366a39ccec9814c18bcb15c6f586 import (
+            Roce6v2,
+        )
+
+        if len(self._object_properties) > 0:
+            if self._properties.get("Roce6v2", None) is not None:
+                return self._properties.get("Roce6v2")
+        return Roce6v2(self)
+
+    @property
     def Srv6Oam(self):
         """
         Returns

@@ -453,6 +453,52 @@ class Topology(Base):
             payload[item[0]] = item[1]
         return self._execute("restartDown", payload=payload, response_object=None)
 
+    def SendArpGlobal(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
+        """Executes the sendArpGlobal operation on the server.
+
+        Send ARP for a Topology or all Topologies
+
+        sendArpGlobal(async_operation=bool)string
+        -----------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns str:
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("sendArpGlobal", payload=payload, response_object=None)
+
+    def SendNsGlobal(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
+        """Executes the sendNsGlobal operation on the server.
+
+        Send NS for a Topology or all Topologies
+
+        sendNsGlobal(async_operation=bool)string
+        ----------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns str:
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("sendNsGlobal", payload=payload, response_object=None)
+
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
         """Executes the start operation on the server.

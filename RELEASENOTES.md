@@ -1,4 +1,9 @@
 # Release Notes
+### November 2024
+* 1.5.0
+  * support for ixnetwork version 10.25.2406.6 (10.25 EA)
+  * corrected sample csv_snapshot.py for getting statistics
+  * added new sample: basic->nest_multivalue.py for configuring Nest Multivalue.
 ### August 2024
 * 1.4.0
   * support for ixnetwork version 10.00.2407.87 (10.00 Update-2)

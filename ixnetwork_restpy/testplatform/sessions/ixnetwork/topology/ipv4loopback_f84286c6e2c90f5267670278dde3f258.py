@@ -426,6 +426,26 @@ class Ipv4Loopback(Base):
         return PimV4Interface(self)
 
     @property
+    def Rocev2(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.rocev2_af1dda5b53faa6454fd00116264e644c.Rocev2): An instance of the Rocev2 class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.rocev2_af1dda5b53faa6454fd00116264e644c import (
+            Rocev2,
+        )
+
+        if len(self._object_properties) > 0:
+            if self._properties.get("Rocev2", None) is not None:
+                return self._properties.get("Rocev2")
+        return Rocev2(self)
+
+    @property
     def RsvpteLsps(self):
         """
         Returns

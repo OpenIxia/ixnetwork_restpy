@@ -70,8 +70,10 @@ class NovusTenGigLan(Base):
         "speed": [
             "speed1000",
             "speed100fd",
+            "speed100hd",
             "speed10fd",
             "speed10g",
+            "speed10hd",
             "speed2.5g",
             "speed5g",
         ],
@@ -171,7 +173,7 @@ class NovusTenGigLan(Base):
         """
         Returns
         -------
-        - list(str[speed10fd | speed100fd | speed1000 | speed2.5g | speed5g | speed10g]): Which speeds are available for the current media and AN settings.
+        - list(str[speed10fd | speed10hd | speed100fd | speed100hd | speed1000 | speed2.5g | speed5g | speed10g]): Which speeds are available for the current media and AN settings.
         """
         return self._get_attribute(self._SDM_ATT_MAP["AvailableSpeeds"])
 
@@ -400,7 +402,7 @@ class NovusTenGigLan(Base):
         """
         Returns
         -------
-        - list(str[speed10fd | speed100fd | speed1000 | speed2.5g | speed5g | speed10g]): Which speeds are selected for the current media and AN settings.
+        - list(str[speed10fd | speed10hd | speed100fd | speed100hd | speed1000 | speed2.5g | speed5g | speed10g]): Which speeds are selected for the current media and AN settings.
         """
         return self._get_attribute(self._SDM_ATT_MAP["SelectedSpeeds"])
 
@@ -415,7 +417,7 @@ class NovusTenGigLan(Base):
         """
         Returns
         -------
-        - str(speed1000 | speed100fd | speed10fd | speed10g | speed2.5g | speed5g): NOT DEFINED
+        - str(speed1000 | speed100fd | speed100hd | speed10fd | speed10g | speed10hd | speed2.5g | speed5g): NOT DEFINED
         """
         return self._get_attribute(self._SDM_ATT_MAP["Speed"])
 
@@ -430,7 +432,7 @@ class NovusTenGigLan(Base):
         """
         Returns
         -------
-        - list(str[speed1000 | speed100fd | speed10fd | speed10g | speed2.5g | speed5g]):
+        - list(str[speed1000 | speed100fd | speed100hd | speed10fd | speed10g | speed10hd | speed2.5g | speed5g]):
         """
         return self._get_attribute(self._SDM_ATT_MAP["SpeedAuto"])
 
@@ -514,9 +516,9 @@ class NovusTenGigLan(Base):
         - Ppm (number): Indicates the value that needs to be adjusted for the line transmit frequency.
         - PrimarySecondaryMode (str(primary | secondary)):
         - RxExtraIntrinsicLatency (number): Rx Extra Intrinsic Latency value in nano seconds.
-        - SelectedSpeeds (list(str[speed10fd | speed100fd | speed1000 | speed2.5g | speed5g | speed10g])): Which speeds are selected for the current media and AN settings.
-        - Speed (str(speed1000 | speed100fd | speed10fd | speed10g | speed2.5g | speed5g)): NOT DEFINED
-        - SpeedAuto (list(str[speed1000 | speed100fd | speed10fd | speed10g | speed2.5g | speed5g])):
+        - SelectedSpeeds (list(str[speed10fd | speed10hd | speed100fd | speed100hd | speed1000 | speed2.5g | speed5g | speed10g])): Which speeds are selected for the current media and AN settings.
+        - Speed (str(speed1000 | speed100fd | speed100hd | speed10fd | speed10g | speed10hd | speed2.5g | speed5g)): NOT DEFINED
+        - SpeedAuto (list(str[speed1000 | speed100fd | speed100hd | speed10fd | speed10g | speed10hd | speed2.5g | speed5g])):
         - TxExtraIntrinsicLatency (number): Tx Extra Intrinsic Latency value in nano seconds.
         - TxIgnoreRxLinkFaults (bool): If enabled, will allow transmission of packets even if the receive link is down.
 
@@ -565,7 +567,7 @@ class NovusTenGigLan(Base):
         - AutoInstrumentation (str(endOfFrame | floating)): The auto instrumentation mode.
         - AutoNegotiate (bool): If enabled, allows autonegotiation between ports for speed.
         - AutoNegotiatePauseAdvertisement (str(none | both | asymmetric | fullDuplex)): Auto Negotiate Pause Advertisement.
-        - AvailableSpeeds (list(str[speed10fd | speed100fd | speed1000 | speed2.5g | speed5g | speed10g])): Which speeds are available for the current media and AN settings.
+        - AvailableSpeeds (list(str[speed10fd | speed10hd | speed100fd | speed100hd | speed1000 | speed2.5g | speed5g | speed10g])): Which speeds are available for the current media and AN settings.
         - CanModifySpeed (bool): Returns true/false depending upon if the port can change speed for the current media and AN settings.
         - CanSetMultipleSpeeds (bool): Can this port selectmultiple speeds for the current media and AN settings.
         - EnableIntrinsicLatencyAdjustment (bool): If true, enables intrinsic latency adjustmnet on the port.
@@ -581,9 +583,9 @@ class NovusTenGigLan(Base):
         - Ppm (number): Indicates the value that needs to be adjusted for the line transmit frequency.
         - PrimarySecondaryMode (str(primary | secondary)):
         - RxExtraIntrinsicLatency (number): Rx Extra Intrinsic Latency value in nano seconds.
-        - SelectedSpeeds (list(str[speed10fd | speed100fd | speed1000 | speed2.5g | speed5g | speed10g])): Which speeds are selected for the current media and AN settings.
-        - Speed (str(speed1000 | speed100fd | speed10fd | speed10g | speed2.5g | speed5g)): NOT DEFINED
-        - SpeedAuto (list(str[speed1000 | speed100fd | speed10fd | speed10g | speed2.5g | speed5g])):
+        - SelectedSpeeds (list(str[speed10fd | speed10hd | speed100fd | speed100hd | speed1000 | speed2.5g | speed5g | speed10g])): Which speeds are selected for the current media and AN settings.
+        - Speed (str(speed1000 | speed100fd | speed100hd | speed10fd | speed10g | speed10hd | speed2.5g | speed5g)): NOT DEFINED
+        - SpeedAuto (list(str[speed1000 | speed100fd | speed100hd | speed10fd | speed10g | speed10hd | speed2.5g | speed5g])):
         - TxExtraIntrinsicLatency (number): Tx Extra Intrinsic Latency value in nano seconds.
         - TxIgnoreRxLinkFaults (bool): If enabled, will allow transmission of packets even if the receive link is down.
 

@@ -280,13 +280,13 @@ class BgpIPRouteProperty(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpnonvpnrrcustomattributes_b505237c5248151d375f1e5fb368b839.BgpNonVPNRRCustomAttributes): An instance of the BgpNonVPNRRCustomAttributes class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpnonvpnrrcustomattributes_dd2e15b247a21f5094cd598a24c5a26e.BgpNonVPNRRCustomAttributes): An instance of the BgpNonVPNRRCustomAttributes class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpnonvpnrrcustomattributes_b505237c5248151d375f1e5fb368b839 import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpnonvpnrrcustomattributes_dd2e15b247a21f5094cd598a24c5a26e import (
             BgpNonVPNRRCustomAttributes,
         )
 

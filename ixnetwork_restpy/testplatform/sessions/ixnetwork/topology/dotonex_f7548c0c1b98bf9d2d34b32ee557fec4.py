@@ -1540,8 +1540,8 @@ class DotOneX(Base):
         uploadFile(Arg2=list, Arg3=number, Arg4=href, async_operation=bool)list
         -----------------------------------------------------------------------
         - Arg2 (list(number)): List of indices into the device group.
-        - Arg3 (number): Select files(s) to upload.
-        - Arg4 (obj(ixnetwork_restpy.files.Files)):
+        - Arg3 (number):
+        - Arg4 (obj(ixnetwork_restpy.files.Files)): Select files(s) to upload.
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns list(str): ID to associate each async action invocation
 
