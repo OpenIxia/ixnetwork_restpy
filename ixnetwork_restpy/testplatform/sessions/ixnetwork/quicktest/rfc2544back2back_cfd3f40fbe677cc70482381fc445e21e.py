@@ -114,13 +114,13 @@ class Rfc2544back2back(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.testconfig_9258ab9b78da793408641adef54f6257.TestConfig): An instance of the TestConfig class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.testconfig_2a6639f0d8c367b2be198c742e55fd9c.TestConfig): An instance of the TestConfig class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.testconfig_9258ab9b78da793408641adef54f6257 import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.testconfig_2a6639f0d8c367b2be198c742e55fd9c import (
             TestConfig,
         )
 

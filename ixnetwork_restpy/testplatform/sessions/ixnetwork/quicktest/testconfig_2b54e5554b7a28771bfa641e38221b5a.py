@@ -136,6 +136,7 @@ class TestConfig(Base):
         "SupportedTrafficTypes": "supportedTrafficTypes",
         "Tolerance": "tolerance",
         "ToleranceTxRealRate": "toleranceTxRealRate",
+        "TrafficProportions": "trafficProportions",
         "TrafficType": "trafficType",
         "TxDelay": "txDelay",
         "UnchangedValueList": "unchangedValueList",
@@ -1750,6 +1751,21 @@ class TestConfig(Base):
         self._set_attribute(self._SDM_ATT_MAP["ToleranceTxRealRate"], value)
 
     @property
+    def TrafficProportions(self):
+        # type: () -> str
+        """DEPRECATED
+        Returns
+        -------
+        - str:
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["TrafficProportions"])
+
+    @TrafficProportions.setter
+    def TrafficProportions(self, value):
+        # type: (str) -> None
+        self._set_attribute(self._SDM_ATT_MAP["TrafficProportions"], value)
+
+    @property
     def TrafficType(self):
         # type: () -> str
         """
@@ -1912,6 +1928,7 @@ class TestConfig(Base):
         SupportedTrafficTypes=None,
         Tolerance=None,
         ToleranceTxRealRate=None,
+        TrafficProportions=None,
         TrafficType=None,
         TxDelay=None,
         UnchangedValueList=None,
@@ -2022,6 +2039,7 @@ class TestConfig(Base):
         - SupportedTrafficTypes (str): The traffic types supported.
         - Tolerance (number): The value set for the tolerance level.
         - ToleranceTxRealRate (number):
+        - TrafficProportions (str):
         - TrafficType (str(burstyLoading | constantLoading)): The test based on the traffic type.
         - TxDelay (number): Specifies the amount of delay after every transmit.
         - UnchangedValueList (str): The number of unchanged sessions.
@@ -2136,6 +2154,7 @@ class TestConfig(Base):
         SupportedTrafficTypes=None,
         Tolerance=None,
         ToleranceTxRealRate=None,
+        TrafficProportions=None,
         TrafficType=None,
         TxDelay=None,
         UnchangedValueList=None,
@@ -2250,6 +2269,7 @@ class TestConfig(Base):
         - SupportedTrafficTypes (str): The traffic types supported.
         - Tolerance (number): The value set for the tolerance level.
         - ToleranceTxRealRate (number):
+        - TrafficProportions (str):
         - TrafficType (str(burstyLoading | constantLoading)): The test based on the traffic type.
         - TxDelay (number): Specifies the amount of delay after every transmit.
         - UnchangedValueList (str): The number of unchanged sessions.

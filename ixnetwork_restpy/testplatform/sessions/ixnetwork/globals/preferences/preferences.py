@@ -50,6 +50,7 @@ class Preferences(Base):
         "EnableCloudTools": "enableCloudTools",
         "EnableDpdkForNewConfig": "enableDpdkForNewConfig",
         "EnablePCPUGuardRail": "enablePCPUGuardRail",
+        "EnableScriptWatch": "enableScriptWatch",
         "ForceLegacyPortNameInStats": "forceLegacyPortNameInStats",
         "IncludeTroubleshootingComments": "includeTroubleshootingComments",
         "LatestConfigInDiagEnabled": "latestConfigInDiagEnabled",
@@ -58,6 +59,7 @@ class Preferences(Base):
         "PhyMode": "phyMode",
         "PingChassisOnConnect": "pingChassisOnConnect",
         "ProcessProtocolStateChangeAsync": "processProtocolStateChangeAsync",
+        "ProtocolGridSortingOrder": "protocolGridSortingOrder",
         "RebootPortOnGuardRailCritical": "rebootPortOnGuardRailCritical",
         "RebootPortsOnConnect": "rebootPortsOnConnect",
         "ReceiveMode": "receiveMode",
@@ -71,7 +73,9 @@ class Preferences(Base):
         "StreamLogsToSyslogServer": "streamLogsToSyslogServer",
         "SyslogHost": "syslogHost",
         "SyslogPort": "syslogPort",
+        "TopologyTreeSortingMode": "topologyTreeSortingMode",
         "TransmitMode": "transmitMode",
+        "UseNewApiBrowser": "useNewApiBrowser",
     }
     _SDM_ENUM_MAP = {
         "clientTraceLevel": ["debug", "error", "fatal", "info", "warn"],
@@ -80,7 +84,9 @@ class Preferences(Base):
             "useLastSavedConfiguration",
         ],
         "phyMode": ["copper", "fiber"],
+        "protocolGridSortingOrder": ["CreationTime", "TopologyName"],
         "receiveMode": ["capturePackets", "measureTrafficFlow"],
+        "topologyTreeSortingMode": ["Number", "String"],
         "transmitMode": ["interleavedStreams", "sequentialStreams"],
     }
 
@@ -353,6 +359,21 @@ class Preferences(Base):
         self._set_attribute(self._SDM_ATT_MAP["EnablePCPUGuardRail"], value)
 
     @property
+    def EnableScriptWatch(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: Controls script watch.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["EnableScriptWatch"])
+
+    @EnableScriptWatch.setter
+    def EnableScriptWatch(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["EnableScriptWatch"], value)
+
+    @property
     def ForceLegacyPortNameInStats(self):
         # type: () -> bool
         """
@@ -471,6 +492,21 @@ class Preferences(Base):
     def ProcessProtocolStateChangeAsync(self, value):
         # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP["ProcessProtocolStateChangeAsync"], value)
+
+    @property
+    def ProtocolGridSortingOrder(self):
+        # type: () -> str
+        """
+        Returns
+        -------
+        - str(CreationTime | TopologyName): Set the sorting mode of Protocol Grid Topology
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["ProtocolGridSortingOrder"])
+
+    @ProtocolGridSortingOrder.setter
+    def ProtocolGridSortingOrder(self, value):
+        # type: (str) -> None
+        self._set_attribute(self._SDM_ATT_MAP["ProtocolGridSortingOrder"], value)
 
     @property
     def RebootPortOnGuardRailCritical(self):
@@ -667,6 +703,21 @@ class Preferences(Base):
         self._set_attribute(self._SDM_ATT_MAP["SyslogPort"], value)
 
     @property
+    def TopologyTreeSortingMode(self):
+        # type: () -> str
+        """
+        Returns
+        -------
+        - str(Number | String): Set the sorting mode of Scenario Tree
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["TopologyTreeSortingMode"])
+
+    @TopologyTreeSortingMode.setter
+    def TopologyTreeSortingMode(self, value):
+        # type: (str) -> None
+        self._set_attribute(self._SDM_ATT_MAP["TopologyTreeSortingMode"], value)
+
+    @property
     def TransmitMode(self):
         # type: () -> str
         """
@@ -680,6 +731,21 @@ class Preferences(Base):
     def TransmitMode(self, value):
         # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP["TransmitMode"], value)
+
+    @property
+    def UseNewApiBrowser(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: If true, new API browser will be used, otherwise the old one.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["UseNewApiBrowser"])
+
+    @UseNewApiBrowser.setter
+    def UseNewApiBrowser(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["UseNewApiBrowser"], value)
 
     def update(
         self,
@@ -698,6 +764,7 @@ class Preferences(Base):
         EnableCloudTools=None,
         EnableDpdkForNewConfig=None,
         EnablePCPUGuardRail=None,
+        EnableScriptWatch=None,
         ForceLegacyPortNameInStats=None,
         IncludeTroubleshootingComments=None,
         LatestConfigInDiagEnabled=None,
@@ -706,6 +773,7 @@ class Preferences(Base):
         PhyMode=None,
         PingChassisOnConnect=None,
         ProcessProtocolStateChangeAsync=None,
+        ProtocolGridSortingOrder=None,
         RebootPortOnGuardRailCritical=None,
         RebootPortsOnConnect=None,
         ReceiveMode=None,
@@ -718,9 +786,11 @@ class Preferences(Base):
         StreamLogsToSyslogServer=None,
         SyslogHost=None,
         SyslogPort=None,
+        TopologyTreeSortingMode=None,
         TransmitMode=None,
+        UseNewApiBrowser=None,
     ):
-        # type: (bool, bool, int, str, str, str, bool, int, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, int, int, str, bool, bool, bool, bool, str, List[str], str, str, bool, bool, bool, bool, str, int, str) -> Preferences
+        # type: (bool, bool, int, str, str, str, bool, int, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, int, int, str, bool, bool, str, bool, bool, str, List[str], str, str, bool, bool, bool, bool, str, int, str, str, bool) -> Preferences
         """Updates preferences resource on the server.
 
         Args
@@ -740,6 +810,7 @@ class Preferences(Base):
         - EnableCloudTools (bool): Controls whether Cloud Tool options will be enabled or not. This is related to learning MAC / IP address for a topology running on VM ports, deployed in AWS
         - EnableDpdkForNewConfig (bool): Sets the default DPDK enable/disable state when a new config is created.
         - EnablePCPUGuardRail (bool): enable pcpu guardrail
+        - EnableScriptWatch (bool): Controls script watch.
         - ForceLegacyPortNameInStats (bool): When false, IxNetwork statistics show port name in <Chassis/Front Panel Port Number> format. When true, it is in <Chassis/Card/Port> format
         - IncludeTroubleshootingComments (bool): Includes troubleshooting comments in the script
         - LatestConfigInDiagEnabled (bool):
@@ -748,6 +819,7 @@ class Preferences(Base):
         - PhyMode (str(copper | fiber)): Set the media in Default Port Settings
         - PingChassisOnConnect (bool): Controls whether to ping the chassis before connecting the ports. Must run IxNetwork in administrator mode
         - ProcessProtocolStateChangeAsync (bool): When true, protocol state change events are handled Asynchronously
+        - ProtocolGridSortingOrder (str(CreationTime | TopologyName)): Set the sorting mode of Protocol Grid Topology
         - RebootPortOnGuardRailCritical (bool): reboot port on critical memory threshold
         - RebootPortsOnConnect (bool): If true the application will reboot any connected virtual ports when the configuration is loaded
         - ReceiveMode (str(capturePackets | measureTrafficFlow)): Set the receive mode in Default Port settings
@@ -760,7 +832,9 @@ class Preferences(Base):
         - StreamLogsToSyslogServer (bool): Enables streaming Logs To Syslog Server
         - SyslogHost (str): syslog host
         - SyslogPort (number): syslog Port
+        - TopologyTreeSortingMode (str(Number | String)): Set the sorting mode of Scenario Tree
         - TransmitMode (str(interleavedStreams | sequentialStreams)): Set the transmit mode in Default Port settings
+        - UseNewApiBrowser (bool): If true, new API browser will be used, otherwise the old one.
 
         Raises
         ------
@@ -785,6 +859,7 @@ class Preferences(Base):
         EnableCloudTools=None,
         EnableDpdkForNewConfig=None,
         EnablePCPUGuardRail=None,
+        EnableScriptWatch=None,
         ForceLegacyPortNameInStats=None,
         IncludeTroubleshootingComments=None,
         LatestConfigInDiagEnabled=None,
@@ -793,6 +868,7 @@ class Preferences(Base):
         PhyMode=None,
         PingChassisOnConnect=None,
         ProcessProtocolStateChangeAsync=None,
+        ProtocolGridSortingOrder=None,
         RebootPortOnGuardRailCritical=None,
         RebootPortsOnConnect=None,
         ReceiveMode=None,
@@ -806,9 +882,11 @@ class Preferences(Base):
         StreamLogsToSyslogServer=None,
         SyslogHost=None,
         SyslogPort=None,
+        TopologyTreeSortingMode=None,
         TransmitMode=None,
+        UseNewApiBrowser=None,
     ):
-        # type: (bool, bool, int, str, str, str, bool, int, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, int, int, str, bool, bool, bool, bool, str, List[str], List[str], str, str, bool, bool, bool, bool, str, int, str) -> Preferences
+        # type: (bool, bool, int, str, str, str, bool, int, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, int, int, str, bool, bool, str, bool, bool, str, List[str], List[str], str, str, bool, bool, bool, bool, str, int, str, str, bool) -> Preferences
         """Finds and retrieves preferences resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve preferences resources from the server.
@@ -832,6 +910,7 @@ class Preferences(Base):
         - EnableCloudTools (bool): Controls whether Cloud Tool options will be enabled or not. This is related to learning MAC / IP address for a topology running on VM ports, deployed in AWS
         - EnableDpdkForNewConfig (bool): Sets the default DPDK enable/disable state when a new config is created.
         - EnablePCPUGuardRail (bool): enable pcpu guardrail
+        - EnableScriptWatch (bool): Controls script watch.
         - ForceLegacyPortNameInStats (bool): When false, IxNetwork statistics show port name in <Chassis/Front Panel Port Number> format. When true, it is in <Chassis/Card/Port> format
         - IncludeTroubleshootingComments (bool): Includes troubleshooting comments in the script
         - LatestConfigInDiagEnabled (bool):
@@ -840,6 +919,7 @@ class Preferences(Base):
         - PhyMode (str(copper | fiber)): Set the media in Default Port Settings
         - PingChassisOnConnect (bool): Controls whether to ping the chassis before connecting the ports. Must run IxNetwork in administrator mode
         - ProcessProtocolStateChangeAsync (bool): When true, protocol state change events are handled Asynchronously
+        - ProtocolGridSortingOrder (str(CreationTime | TopologyName)): Set the sorting mode of Protocol Grid Topology
         - RebootPortOnGuardRailCritical (bool): reboot port on critical memory threshold
         - RebootPortsOnConnect (bool): If true the application will reboot any connected virtual ports when the configuration is loaded
         - ReceiveMode (str(capturePackets | measureTrafficFlow)): Set the receive mode in Default Port settings
@@ -853,7 +933,9 @@ class Preferences(Base):
         - StreamLogsToSyslogServer (bool): Enables streaming Logs To Syslog Server
         - SyslogHost (str): syslog host
         - SyslogPort (number): syslog Port
+        - TopologyTreeSortingMode (str(Number | String)): Set the sorting mode of Scenario Tree
         - TransmitMode (str(interleavedStreams | sequentialStreams)): Set the transmit mode in Default Port settings
+        - UseNewApiBrowser (bool): If true, new API browser will be used, otherwise the old one.
 
         Returns
         -------

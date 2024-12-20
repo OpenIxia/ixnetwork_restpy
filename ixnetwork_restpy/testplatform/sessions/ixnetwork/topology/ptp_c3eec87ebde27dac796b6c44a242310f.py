@@ -87,6 +87,7 @@ class Ptp(Base):
         "DropSignalReqAnnounce": "dropSignalReqAnnounce",
         "DropSignalReqDelayResp": "dropSignalReqDelayResp",
         "DropSignalReqSync": "dropSignalReqSync",
+        "Emulate5g": "emulate5g",
         "EnableATOITlv": "enableATOITlv",
         "EnableCmlds": "enableCmlds",
         "EnableMultipleSubnet": "enableMultipleSubnet",
@@ -207,6 +208,9 @@ class Ptp(Base):
         "TimeSource": "timeSource",
         "TimestampOffset": "timestampOffset",
         "TotalTimeInaccuracy": "totalTimeInaccuracy",
+        "TsiOffset": "tsiOffset",
+        "TsiOffsetPattern": "tsiOffsetPattern",
+        "TsiOui": "tsiOui",
         "TxCalibration": "txCalibration",
         "TxTwoStepCalibration": "txTwoStepCalibration",
         "UpdateTime": "updateTime",
@@ -972,6 +976,18 @@ class Ptp(Base):
         return Multivalue(
             self, self._get_attribute(self._SDM_ATT_MAP["DropSignalReqSync"])
         )
+
+    @property
+    def Emulate5g(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enable 5G Emulation to send TSi in Sync and discard PDelay messages.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Emulate5g"]))
 
     @property
     def EnableATOITlv(self):
@@ -2580,6 +2596,44 @@ class Ptp(Base):
         )
 
     @property
+    def TsiOffset(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): The initial offset added to TSi from PTP timestamp measured in nanoseconds.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["TsiOffset"]))
+
+    @property
+    def TsiOffsetPattern(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): TSi offset from PTP timestamp change type. If set increment, then the value from TSi Timestamp Offset will be added to PTP timestamp to get TSi.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["TsiOffsetPattern"])
+        )
+
+    @property
+    def TsiOui(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This field indicates the value of the Organizational Unique Identifier (OUI) assigned to 3GPP by the IEEE, coded in binary over 3 octets.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["TsiOui"]))
+
+    @property
     def TxCalibration(self):
         # type: () -> 'Multivalue'
         """
@@ -3205,6 +3259,7 @@ class Ptp(Base):
         DropSignalReqAnnounce=None,
         DropSignalReqDelayResp=None,
         DropSignalReqSync=None,
+        Emulate5g=None,
         FileLocation=None,
         FolderPath=None,
         FollowUpBadCrcRate=None,
@@ -3307,6 +3362,9 @@ class Ptp(Base):
         TimeSource=None,
         TimestampOffset=None,
         TotalTimeInaccuracy=None,
+        TsiOffset=None,
+        TsiOffsetPattern=None,
+        TsiOui=None,
         TxCalibration=None,
         TxTwoStepCalibration=None,
         UpdateTime=None,
@@ -3361,6 +3419,7 @@ class Ptp(Base):
         - DropSignalReqAnnounce (str): optional regex of dropSignalReqAnnounce
         - DropSignalReqDelayResp (str): optional regex of dropSignalReqDelayResp
         - DropSignalReqSync (str): optional regex of dropSignalReqSync
+        - Emulate5g (str): optional regex of emulate5g
         - FileLocation (str): optional regex of fileLocation
         - FolderPath (str): optional regex of folderPath
         - FollowUpBadCrcRate (str): optional regex of followUpBadCrcRate
@@ -3463,6 +3522,9 @@ class Ptp(Base):
         - TimeSource (str): optional regex of timeSource
         - TimestampOffset (str): optional regex of timestampOffset
         - TotalTimeInaccuracy (str): optional regex of totalTimeInaccuracy
+        - TsiOffset (str): optional regex of tsiOffset
+        - TsiOffsetPattern (str): optional regex of tsiOffsetPattern
+        - TsiOui (str): optional regex of tsiOui
         - TxCalibration (str): optional regex of txCalibration
         - TxTwoStepCalibration (str): optional regex of txTwoStepCalibration
         - UpdateTime (str): optional regex of updateTime

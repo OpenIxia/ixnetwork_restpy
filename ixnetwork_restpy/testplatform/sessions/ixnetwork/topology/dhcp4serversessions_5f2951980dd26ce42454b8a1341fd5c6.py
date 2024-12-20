@@ -48,6 +48,7 @@ class Dhcp4ServerSessions(Base):
         "IpPrefix": "ipPrefix",
         "Name": "name",
         "PoolSize": "poolSize",
+        "RemoteId": "remoteId",
         "SessionInfo": "sessionInfo",
         "VpnId": "vpnId",
         "VpnName": "vpnName",
@@ -219,6 +220,18 @@ class Dhcp4ServerSessions(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["PoolSize"]))
 
     @property
+    def RemoteId(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): The Remote ID is used to identify the client or relay agent within the DHCP Option 82. Based on this Remote ID, the DHCP server will assign IP addresses by matching the ID with predefined pools. This ensures that only clients or relay agents with a matching Remote ID within DHCP option 82, receive IP addresses from the associated address pool of Server.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["RemoteId"]))
+
+    @property
     def SessionInfo(self):
         # type: () -> List[str]
         """
@@ -346,6 +359,7 @@ class Dhcp4ServerSessions(Base):
         IpGateway=None,
         IpPrefix=None,
         PoolSize=None,
+        RemoteId=None,
         VpnId=None,
         VpnName=None,
     ):
@@ -366,6 +380,7 @@ class Dhcp4ServerSessions(Base):
         - IpGateway (str): optional regex of ipGateway
         - IpPrefix (str): optional regex of ipPrefix
         - PoolSize (str): optional regex of poolSize
+        - RemoteId (str): optional regex of remoteId
         - VpnId (str): optional regex of vpnId
         - VpnName (str): optional regex of vpnName
 

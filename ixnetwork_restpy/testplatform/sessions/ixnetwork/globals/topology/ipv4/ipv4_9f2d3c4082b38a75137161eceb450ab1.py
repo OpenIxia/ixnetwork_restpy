@@ -44,6 +44,7 @@ class Ipv4(Base):
         "RarpTransmitCount": "rarpTransmitCount",
         "RarpTransmitInterval": "rarpTransmitInterval",
         "ReSendArpOnLinkUp": "reSendArpOnLinkUp",
+        "ReSendGratArpOnLinkUp": "reSendGratArpOnLinkUp",
         "RowNames": "rowNames",
         "SuppressArpForDuplicateGateway": "suppressArpForDuplicateGateway",
     }
@@ -232,6 +233,20 @@ class Ipv4(Base):
         )
 
     @property
+    def ReSendGratArpOnLinkUp(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Resends GratARP after link up.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ReSendGratArpOnLinkUp"])
+        )
+
+    @property
     def RowNames(self):
         # type: () -> List[str]
         """
@@ -325,6 +340,7 @@ class Ipv4(Base):
         RarpTransmitCount=None,
         RarpTransmitInterval=None,
         ReSendArpOnLinkUp=None,
+        ReSendGratArpOnLinkUp=None,
         SuppressArpForDuplicateGateway=None,
     ):
         """Base class infrastructure that gets a list of ipv4 device ids encapsulated by this object.
@@ -340,6 +356,7 @@ class Ipv4(Base):
         - RarpTransmitCount (str): optional regex of rarpTransmitCount
         - RarpTransmitInterval (str): optional regex of rarpTransmitInterval
         - ReSendArpOnLinkUp (str): optional regex of reSendArpOnLinkUp
+        - ReSendGratArpOnLinkUp (str): optional regex of reSendGratArpOnLinkUp
         - SuppressArpForDuplicateGateway (str): optional regex of suppressArpForDuplicateGateway
 
         Returns

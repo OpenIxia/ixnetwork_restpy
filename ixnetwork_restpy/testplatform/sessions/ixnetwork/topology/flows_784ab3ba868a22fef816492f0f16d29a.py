@@ -52,6 +52,12 @@ class Flows(Base):
         "EcnValRemote": "ecnValRemote",
         "ExecuteCommands": "executeCommands",
         "ExecuteCommandsRemote": "executeCommandsRemote",
+        "FlowLoaded": "flowLoaded",
+        "FlowType": "flowType",
+        "ImmidtData": "immidtData",
+        "ImmidtDataRemote": "immidtDataRemote",
+        "InitialPSN": "initialPSN",
+        "InitialPSNRemote": "initialPSNRemote",
         "LocalIP": "localIP",
         "LocalIPRemote": "localIPRemote",
         "LocalPeer": "localPeer",
@@ -67,13 +73,18 @@ class Flows(Base):
         "RemoteEndPoint": "remoteEndPoint",
         "RemoteIP": "remoteIP",
         "RemoteIPRemote": "remoteIPRemote",
+        "RemoteKey": "remoteKey",
         "RemotePeer": "remotePeer",
         "RemotePeerList": "remotePeerList",
         "RemotePeerRemote": "remotePeerRemote",
+        "RemoteQP": "remoteQP",
+        "RemoteVA": "remoteVA",
         "UdpSourcePort": "udpSourcePort",
         "UdpSourcePortRemote": "udpSourcePortRemote",
     }
-    _SDM_ENUM_MAP = {}
+    _SDM_ENUM_MAP = {
+        "flowType": ["twoArm", "oneArm"],
+    }
 
     def __init__(self, parent, list_op=False):
         super(Flows, self).__init__(parent, list_op)
@@ -271,6 +282,85 @@ class Flows(Base):
         )
 
     @property
+    def FlowLoaded(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): To detect end of flow load through scriptgen.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["FlowLoaded"]))
+
+    @property
+    def FlowType(self):
+        # type: () -> str
+        """
+        Returns
+        -------
+        - str(twoArm | oneArm): Flow Type
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["FlowType"])
+
+    @FlowType.setter
+    def FlowType(self, value):
+        # type: (str) -> None
+        self._set_attribute(self._SDM_ATT_MAP["FlowType"], value)
+
+    @property
+    def ImmidtData(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Immediate Data field required for SEND/WRITE with Immediate verb
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["ImmidtData"]))
+
+    @property
+    def ImmidtDataRemote(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Immediate Data field required for SEND/WRITE with Immediate verb
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["ImmidtDataRemote"])
+        )
+
+    @property
+    def InitialPSN(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Initial PSN.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["InitialPSN"]))
+
+    @property
+    def InitialPSNRemote(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Initial PSN.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["InitialPSNRemote"])
+        )
+
+    @property
     def LocalIP(self):
         # type: () -> List[str]
         """
@@ -450,6 +540,18 @@ class Flows(Base):
         return self._get_attribute(self._SDM_ATT_MAP["RemoteIPRemote"])
 
     @property
+    def RemoteKey(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Remote Key.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["RemoteKey"]))
+
+    @property
     def RemotePeer(self):
         # type: () -> str
         """
@@ -478,6 +580,30 @@ class Flows(Base):
         - str: Remote Peer Name.
         """
         return self._get_attribute(self._SDM_ATT_MAP["RemotePeerRemote"])
+
+    @property
+    def RemoteQP(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Remote QP Number.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["RemoteQP"]))
+
+    @property
+    def RemoteVA(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Remote Virtual Address.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["RemoteVA"]))
 
     @property
     def UdpSourcePort(self):
@@ -509,11 +635,12 @@ class Flows(Base):
         self,
         AllPeersAdded=None,
         CustomizeQP=None,
+        FlowType=None,
         Name=None,
         PeerNameList=None,
         RemoteEndPoint=None,
     ):
-        # type: (bool, bool, str, List[str], str) -> Flows
+        # type: (bool, bool, str, str, List[str], str) -> Flows
         """Updates flows resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -523,6 +650,7 @@ class Flows(Base):
         ----
         - AllPeersAdded (bool): ResourceManager usage only - clear before adding to peerNameList, set to true once peerNameList is populated
         - CustomizeQP (bool): Allow users to configure custom QP for this flow.
+        - FlowType (str(twoArm | oneArm)): Flow Type
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
         - PeerNameList (list(str)):
         - RemoteEndPoint (str): Name of Remote RoCE protocol stack
@@ -537,17 +665,19 @@ class Flows(Base):
         self,
         AllPeersAdded=None,
         CustomizeQP=None,
+        FlowType=None,
         Name=None,
         PeerNameList=None,
         RemoteEndPoint=None,
     ):
-        # type: (bool, bool, str, List[str], str) -> Flows
+        # type: (bool, bool, str, str, List[str], str) -> Flows
         """Adds a new flows resource on the server and adds it to the container.
 
         Args
         ----
         - AllPeersAdded (bool): ResourceManager usage only - clear before adding to peerNameList, set to true once peerNameList is populated
         - CustomizeQP (bool): Allow users to configure custom QP for this flow.
+        - FlowType (str(twoArm | oneArm)): Flow Type
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
         - PeerNameList (list(str)):
         - RemoteEndPoint (str): Name of Remote RoCE protocol stack
@@ -578,6 +708,7 @@ class Flows(Base):
         Count=None,
         CustomizeQP=None,
         DescriptiveName=None,
+        FlowType=None,
         LocalIP=None,
         LocalIPRemote=None,
         LocalPeer=None,
@@ -593,7 +724,7 @@ class Flows(Base):
         RemotePeerList=None,
         RemotePeerRemote=None,
     ):
-        # type: (bool, int, bool, str, List[str], List[str], str, str, List[str], str, List[str], List[str], str, List[str], List[str], str, List[str], str) -> Flows
+        # type: (bool, int, bool, str, str, List[str], List[str], str, str, List[str], str, List[str], List[str], str, List[str], List[str], str, List[str], str) -> Flows
         """Finds and retrieves flows resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve flows resources from the server.
@@ -606,6 +737,7 @@ class Flows(Base):
         - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
         - CustomizeQP (bool): Allow users to configure custom QP for this flow.
         - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
+        - FlowType (str(twoArm | oneArm)): Flow Type
         - LocalIP (list(str)): Local IP.
         - LocalIPRemote (list(str)): Local IP.
         - LocalPeer (str): Local Peer Name.
@@ -684,10 +816,18 @@ class Flows(Base):
         EcnValRemote=None,
         ExecuteCommands=None,
         ExecuteCommandsRemote=None,
+        FlowLoaded=None,
+        ImmidtData=None,
+        ImmidtDataRemote=None,
+        InitialPSN=None,
+        InitialPSNRemote=None,
         MessageSize=None,
         MessageSizeRemote=None,
         MessageSizeUnit=None,
         MessageSizeUnitRemote=None,
+        RemoteKey=None,
+        RemoteQP=None,
+        RemoteVA=None,
         UdpSourcePort=None,
         UdpSourcePortRemote=None,
     ):
@@ -709,10 +849,18 @@ class Flows(Base):
         - EcnValRemote (str): optional regex of ecnValRemote
         - ExecuteCommands (str): optional regex of executeCommands
         - ExecuteCommandsRemote (str): optional regex of executeCommandsRemote
+        - FlowLoaded (str): optional regex of flowLoaded
+        - ImmidtData (str): optional regex of immidtData
+        - ImmidtDataRemote (str): optional regex of immidtDataRemote
+        - InitialPSN (str): optional regex of initialPSN
+        - InitialPSNRemote (str): optional regex of initialPSNRemote
         - MessageSize (str): optional regex of messageSize
         - MessageSizeRemote (str): optional regex of messageSizeRemote
         - MessageSizeUnit (str): optional regex of messageSizeUnit
         - MessageSizeUnitRemote (str): optional regex of messageSizeUnitRemote
+        - RemoteKey (str): optional regex of remoteKey
+        - RemoteQP (str): optional regex of remoteQP
+        - RemoteVA (str): optional regex of remoteVA
         - UdpSourcePort (str): optional regex of udpSourcePort
         - UdpSourcePortRemote (str): optional regex of udpSourcePortRemote
 

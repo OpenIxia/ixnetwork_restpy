@@ -114,13 +114,13 @@ class Rfc2544frameLoss(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.testconfig_78347fb65f11863985b6ff94967b79ea.TestConfig): An instance of the TestConfig class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.testconfig_2b54e5554b7a28771bfa641e38221b5a.TestConfig): An instance of the TestConfig class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.testconfig_78347fb65f11863985b6ff94967b79ea import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.testconfig_2b54e5554b7a28771bfa641e38221b5a import (
             TestConfig,
         )
 

@@ -50,6 +50,7 @@ class RoceV2Stream(Base):
         "SourceIp": "sourceIp",
         "SourceIpv4": "sourceIpv4",
         "SourceMac": "sourceMac",
+        "SourceQP": "sourceQP",
         "TxPort": "txPort",
         "Type": "type",
         "UdpSource": "udpSource",
@@ -217,6 +218,16 @@ class RoceV2Stream(Base):
         return self._get_attribute(self._SDM_ATT_MAP["SourceMac"])
 
     @property
+    def SourceQP(self):
+        # type: () -> int
+        """
+        Returns
+        -------
+        - number: Source QP
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["SourceQP"])
+
+    @property
     def TxPort(self):
         # type: () -> str
         """
@@ -305,11 +316,12 @@ class RoceV2Stream(Base):
         SourceIp=None,
         SourceIpv4=None,
         SourceMac=None,
+        SourceQP=None,
         TxPort=None,
         Type=None,
         UdpSource=None,
     ):
-        # type: (int, str, str, str, int, bool, str, int, str, str, str, str, str, str, str, str, int) -> RoceV2Stream
+        # type: (int, str, str, str, int, bool, str, int, str, str, str, str, str, str, int, str, str, int) -> RoceV2Stream
         """Finds and retrieves roceV2Stream resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve roceV2Stream resources from the server.
@@ -332,6 +344,7 @@ class RoceV2Stream(Base):
         - SourceIp (str): Source IP
         - SourceIpv4 (str): Source IPv4
         - SourceMac (str): Source MAC
+        - SourceQP (number): Source QP
         - TxPort (str): The Transmitting Port Name
         - Type (str(continuous | fixed)): The Transmission Control types.
         - UdpSource (number): UDP Source Port

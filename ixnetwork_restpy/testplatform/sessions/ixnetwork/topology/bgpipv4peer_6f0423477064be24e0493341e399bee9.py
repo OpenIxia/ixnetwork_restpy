@@ -42,6 +42,7 @@ class BgpIpv4Peer(Base):
         "AdvertiseEndOfRib": "advertiseEndOfRib",
         "AdvertiseEvpnRoutesForOtherVtep": "advertiseEvpnRoutesForOtherVtep",
         "AdvertiseTunnelEncapsulationExtendedCommunity": "advertiseTunnelEncapsulationExtendedCommunity",
+        "AllowIxiaSignatureSuffix": "allowIxiaSignatureSuffix",
         "AlwaysIncludeTunnelEncExtCommunity": "alwaysIncludeTunnelEncExtCommunity",
         "AsSetMode": "asSetMode",
         "Authentication": "authentication",
@@ -138,6 +139,7 @@ class BgpIpv4Peer(Base):
         "Ipv6UnicastAddPathMode": "ipv6UnicastAddPathMode",
         "IrbInterfaceLabel": "irbInterfaceLabel",
         "IrbIpv4Address": "irbIpv4Address",
+        "IxiaSignatureSuffix": "ixiaSignatureSuffix",
         "KeepaliveTimer": "keepaliveTimer",
         "L3VPNEncapsulationType": "l3VPNEncapsulationType",
         "LocalAs2Bytes": "localAs2Bytes",
@@ -772,6 +774,20 @@ class BgpIpv4Peer(Base):
             self._get_attribute(
                 self._SDM_ATT_MAP["AdvertiseTunnelEncapsulationExtendedCommunity"]
             ),
+        )
+
+    @property
+    def AllowIxiaSignatureSuffix(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This is ixia signature suffix, routes with this suffix will be learned. Supported Formats: a. value b. value1-value2 >value (!, >, <, >=, <= supported) join using | or & Eg. 100, 100-200, <100, 100&200, 100|200-300&!250|>=500 etc c. Keep empty if routes with all ixia signature need to be discarded.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AllowIxiaSignatureSuffix"])
         )
 
     @property
@@ -2101,6 +2117,20 @@ class BgpIpv4Peer(Base):
 
         return Multivalue(
             self, self._get_attribute(self._SDM_ATT_MAP["IrbIpv4Address"])
+        )
+
+    @property
+    def IxiaSignatureSuffix(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This is ixia signature suffix to be added with routes. Supported Values: 0 to 65535. Keep empty if suffix is not required.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["IxiaSignatureSuffix"])
         )
 
     @property
@@ -4259,6 +4289,7 @@ class BgpIpv4Peer(Base):
         Active=None,
         AdvertiseEndOfRib=None,
         AdvertiseTunnelEncapsulationExtendedCommunity=None,
+        AllowIxiaSignatureSuffix=None,
         AlwaysIncludeTunnelEncExtCommunity=None,
         AsSetMode=None,
         Authentication=None,
@@ -4338,6 +4369,7 @@ class BgpIpv4Peer(Base):
         Ipv6UnicastAddPathMode=None,
         IrbInterfaceLabel=None,
         IrbIpv4Address=None,
+        IxiaSignatureSuffix=None,
         KeepaliveTimer=None,
         L3VPNEncapsulationType=None,
         LocalAs2Bytes=None,
@@ -4372,6 +4404,7 @@ class BgpIpv4Peer(Base):
         - Active (str): optional regex of active
         - AdvertiseEndOfRib (str): optional regex of advertiseEndOfRib
         - AdvertiseTunnelEncapsulationExtendedCommunity (str): optional regex of advertiseTunnelEncapsulationExtendedCommunity
+        - AllowIxiaSignatureSuffix (str): optional regex of allowIxiaSignatureSuffix
         - AlwaysIncludeTunnelEncExtCommunity (str): optional regex of alwaysIncludeTunnelEncExtCommunity
         - AsSetMode (str): optional regex of asSetMode
         - Authentication (str): optional regex of authentication
@@ -4451,6 +4484,7 @@ class BgpIpv4Peer(Base):
         - Ipv6UnicastAddPathMode (str): optional regex of ipv6UnicastAddPathMode
         - IrbInterfaceLabel (str): optional regex of irbInterfaceLabel
         - IrbIpv4Address (str): optional regex of irbIpv4Address
+        - IxiaSignatureSuffix (str): optional regex of ixiaSignatureSuffix
         - KeepaliveTimer (str): optional regex of keepaliveTimer
         - L3VPNEncapsulationType (str): optional regex of l3VPNEncapsulationType
         - LocalAs2Bytes (str): optional regex of localAs2Bytes

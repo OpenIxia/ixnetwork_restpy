@@ -28,7 +28,7 @@ if sys.version_info >= (3, 5):
 
 
 class Profile(Base):
-    """List of impairment profiles.  For each incoming packet, apply the highest-priority profile which matches.
+    """DEPRECATED List of impairment profiles.  For each incoming packet, apply the highest-priority profile which matches.
     The Profile class encapsulates a list of profile resources that are managed by the user.
     A list of resources can be retrieved from the server using the Profile.find() method.
     The list can be managed by using the Profile.add() and Profile.remove() methods.

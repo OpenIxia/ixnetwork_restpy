@@ -27,13 +27,13 @@ if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
 
-class Novusmini(Base):
+class Novusminipro(Base):
     """
-    The Novusmini class encapsulates a required novusmini resource which will be retrieved from the server every time the property is accessed.
+    The Novusminipro class encapsulates a required novusminipro resource which will be retrieved from the server every time the property is accessed.
     """
 
     __slots__ = ()
-    _SDM_NAME = "novusmini"
+    _SDM_NAME = "novusminipro"
     _SDM_ATT_MAP = {
         "AutoInstrumentation": "autoInstrumentation",
         "AvailableSpeeds": "availableSpeeds",
@@ -50,7 +50,7 @@ class Novusmini(Base):
     }
 
     def __init__(self, parent, list_op=False):
-        super(Novusmini, self).__init__(parent, list_op)
+        super(Novusminipro, self).__init__(parent, list_op)
 
     @property
     def AutoInstrumentation(self):
@@ -155,8 +155,8 @@ class Novusmini(Base):
     def update(
         self, AutoInstrumentation=None, Mtu=None, SelectedSpeeds=None, Speed=None
     ):
-        # type: (str, int, List[str], str) -> Novusmini
-        """Updates novusmini resource on the server.
+        # type: (str, int, List[str], str) -> Novusminipro
+        """Updates novusminipro resource on the server.
 
         Args
         ----
@@ -182,12 +182,12 @@ class Novusmini(Base):
         SelectedSpeeds=None,
         Speed=None,
     ):
-        # type: (str, List[str], bool, bool, bool, int, List[str], str) -> Novusmini
-        """Finds and retrieves novusmini resources from the server.
+        # type: (str, List[str], bool, bool, bool, int, List[str], str) -> Novusminipro
+        """Finds and retrieves novusminipro resources from the server.
 
-        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve novusmini resources from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve novusminipro resources from the server.
         To retrieve an exact match ensure the parameter value starts with ^ and ends with $
-        By default the find method takes no parameters and will retrieve all novusmini resources from the server.
+        By default the find method takes no parameters and will retrieve all novusminipro resources from the server.
 
         Args
         ----
@@ -202,7 +202,7 @@ class Novusmini(Base):
 
         Returns
         -------
-        - self: This instance with matching novusmini resources retrieved from the server available through an iterator or index
+        - self: This instance with matching novusminipro resources retrieved from the server available through an iterator or index
 
         Raises
         ------
@@ -211,7 +211,7 @@ class Novusmini(Base):
         return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
-        """Retrieves a single instance of novusmini data from the server.
+        """Retrieves a single instance of novusminipro data from the server.
 
         Args
         ----
@@ -219,7 +219,7 @@ class Novusmini(Base):
 
         Returns
         -------
-        - self: This instance with the novusmini resources from the server available through an iterator or index
+        - self: This instance with the novusminipro resources from the server available through an iterator or index
 
         Raises
         ------

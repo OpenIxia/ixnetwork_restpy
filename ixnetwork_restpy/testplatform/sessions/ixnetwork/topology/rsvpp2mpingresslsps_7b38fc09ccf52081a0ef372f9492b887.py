@@ -146,13 +146,13 @@ class RsvpP2mpIngressLsps(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.rsvpp2mpingresssublsps_c610bddfdb08c054e463708b863af4f0.RsvpP2mpIngressSubLsps): An instance of the RsvpP2mpIngressSubLsps class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.rsvpp2mpingresssublsps_b049074fbf1fec8a514df948c827b440.RsvpP2mpIngressSubLsps): An instance of the RsvpP2mpIngressSubLsps class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.rsvpp2mpingresssublsps_c610bddfdb08c054e463708b863af4f0 import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.rsvpp2mpingresssublsps_b049074fbf1fec8a514df948c827b440 import (
             RsvpP2mpIngressSubLsps,
         )
 

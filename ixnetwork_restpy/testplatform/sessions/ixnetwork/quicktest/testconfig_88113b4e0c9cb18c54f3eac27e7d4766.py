@@ -322,6 +322,7 @@ class TestConfig(Base):
         "SupportedTrafficTypes": "supportedTrafficTypes",
         "Tolerance": "tolerance",
         "ToleranceTxRealRate": "toleranceTxRealRate",
+        "TrafficProportions": "trafficProportions",
         "TrafficType": "trafficType",
         "TxDelay": "txDelay",
         "UnchangedInitial": "unchangedInitial",
@@ -4998,6 +4999,21 @@ class TestConfig(Base):
         self._set_attribute(self._SDM_ATT_MAP["ToleranceTxRealRate"], value)
 
     @property
+    def TrafficProportions(self):
+        # type: () -> str
+        """DEPRECATED
+        Returns
+        -------
+        - str:
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["TrafficProportions"])
+
+    @TrafficProportions.setter
+    def TrafficProportions(self, value):
+        # type: (str) -> None
+        self._set_attribute(self._SDM_ATT_MAP["TrafficProportions"], value)
+
+    @property
     def TrafficType(self):
         # type: () -> str
         """
@@ -5394,6 +5410,7 @@ class TestConfig(Base):
         - SupportedTrafficTypes (str): The supported traffic types.
         - Tolerance (number): The tolerance value.
         - ToleranceTxRealRate (number):
+        - TrafficProportions (str):
         - TrafficType (str(burstyLoading | constantLoading)): It signifies the traffic type for the protocol. Possible values include:
         - TxDelay (number): The minimum delay between successive packets.
         - UnchangedInitial (str(False | True)): The first value of an unchanged parameter.
@@ -5704,6 +5721,7 @@ class TestConfig(Base):
         - SupportedTrafficTypes (str): The supported traffic types.
         - Tolerance (number): The tolerance value.
         - ToleranceTxRealRate (number):
+        - TrafficProportions (str):
         - TrafficType (str(burstyLoading | constantLoading)): It signifies the traffic type for the protocol. Possible values include:
         - TxDelay (number): The minimum delay between successive packets.
         - UnchangedInitial (str(False | True)): The first value of an unchanged parameter.

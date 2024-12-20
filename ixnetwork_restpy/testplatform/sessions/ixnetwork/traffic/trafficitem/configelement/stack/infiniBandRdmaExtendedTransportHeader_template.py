@@ -18,7 +18,7 @@ class InfiniBandRdmaExtendedTransportHeader(Base):
     def RdmaExtensionHeaderVirtualAddr(self):
         """
         Display Name: Virtual Address (VA)
-        Default Value: 0xFFFFFFFF
+        Default Value: 0xFFFFFFFFFFFFFFFF
         Value Format: decimal
         """
         from ixnetwork_restpy.multivalue import Multivalue
@@ -32,7 +32,7 @@ class InfiniBandRdmaExtendedTransportHeader(Base):
     def RdmaExtensionHeaderRemoteKey(self):
         """
         Display Name: Remote Key
-        Default Value: 0xFFFF
+        Default Value: 0xFFFFFFFF
         Value Format: hex
         """
         from ixnetwork_restpy.multivalue import Multivalue

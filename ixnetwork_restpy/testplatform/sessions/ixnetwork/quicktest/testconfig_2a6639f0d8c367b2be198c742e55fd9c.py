@@ -145,6 +145,7 @@ class TestConfig(Base):
         "StepIncrementLoadRate": "stepIncrementLoadRate",
         "SupportedTrafficTypes": "supportedTrafficTypes",
         "Tolerance": "tolerance",
+        "TrafficProportions": "trafficProportions",
         "TrafficType": "trafficType",
         "TxDelay": "txDelay",
     }
@@ -1888,6 +1889,21 @@ class TestConfig(Base):
         self._set_attribute(self._SDM_ATT_MAP["Tolerance"], value)
 
     @property
+    def TrafficProportions(self):
+        # type: () -> str
+        """DEPRECATED
+        Returns
+        -------
+        - str:
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["TrafficProportions"])
+
+    @TrafficProportions.setter
+    def TrafficProportions(self, value):
+        # type: (str) -> None
+        self._set_attribute(self._SDM_ATT_MAP["TrafficProportions"], value)
+
+    @property
     def TrafficType(self):
         # type: () -> str
         """
@@ -2029,6 +2045,7 @@ class TestConfig(Base):
         StepIncrementLoadRate=None,
         SupportedTrafficTypes=None,
         Tolerance=None,
+        TrafficProportions=None,
         TrafficType=None,
         TxDelay=None,
     ):
@@ -2146,6 +2163,7 @@ class TestConfig(Base):
         - StepIncrementLoadRate (number): NOT DEFINED
         - SupportedTrafficTypes (str): NOT DEFINED
         - Tolerance (number): NOT DEFINED
+        - TrafficProportions (str):
         - TrafficType (str(burstyLoading | constantLoading)): NOT DEFINED
         - TxDelay (number): NOT DEFINED
 
@@ -2267,6 +2285,7 @@ class TestConfig(Base):
         StepIncrementLoadRate=None,
         SupportedTrafficTypes=None,
         Tolerance=None,
+        TrafficProportions=None,
         TrafficType=None,
         TxDelay=None,
     ):
@@ -2388,6 +2407,7 @@ class TestConfig(Base):
         - StepIncrementLoadRate (number): NOT DEFINED
         - SupportedTrafficTypes (str): NOT DEFINED
         - Tolerance (number): NOT DEFINED
+        - TrafficProportions (str):
         - TrafficType (str(burstyLoading | constantLoading)): NOT DEFINED
         - TxDelay (number): NOT DEFINED
 

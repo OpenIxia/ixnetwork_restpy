@@ -43,10 +43,12 @@ class Roce6v2(Base):
         "DescriptiveName": "descriptiveName",
         "Errors": "errors",
         "IbMTU": "ibMTU",
+        "IsScriptGen": "isScriptGen",
         "MaxPayloadMTU": "maxPayloadMTU",
         "Multiplier": "multiplier",
         "MvPeerSetGroup": "mvPeerSetGroup",
         "Name": "name",
+        "NumberOfExternalEndpoint": "numberOfExternalEndpoint",
         "QPAllocated": "qPAllocated",
         "QpCount": "qpCount",
         "SessionStatus": "sessionStatus",
@@ -94,13 +96,13 @@ class Roce6v2(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.flows_7fb026734c19a847eb936b14b32f62c1.Flows): An instance of the Flows class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.flows_784ab3ba868a22fef816492f0f16d29a.Flows): An instance of the Flows class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.flows_7fb026734c19a847eb936b14b32f62c1 import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.flows_784ab3ba868a22fef816492f0f16d29a import (
             Flows,
         )
 
@@ -114,13 +116,13 @@ class Roce6v2(Base):
         """DEPRECATED
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.oldflows_aec7be01f8f8b8533b634e42fb549c6e.Oldflows): An instance of the Oldflows class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.oldflows_2aeff07643ef1d64a6c4d8ad887dd330.Oldflows): An instance of the Oldflows class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.oldflows_aec7be01f8f8b8533b634e42fb549c6e import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.oldflows_2aeff07643ef1d64a6c4d8ad887dd330 import (
             Oldflows,
         )
 
@@ -128,6 +130,26 @@ class Roce6v2(Base):
             if self._properties.get("Oldflows", None) is not None:
                 return self._properties.get("Oldflows")
         return Oldflows(self)
+
+    @property
+    def V6ExtEndPoints(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.v6extendpoints_977b203ee56bba97c61cdcae612957e9.V6ExtEndPoints): An instance of the V6ExtEndPoints class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.v6extendpoints_977b203ee56bba97c61cdcae612957e9 import (
+            V6ExtEndPoints,
+        )
+
+        if len(self._object_properties) > 0:
+            if self._properties.get("V6ExtEndPoints", None) is not None:
+                return self._properties.get("V6ExtEndPoints")
+        return V6ExtEndPoints(self)._select()
 
     @property
     def ConnectedVia(self):
@@ -201,6 +223,21 @@ class Roce6v2(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["IbMTU"]))
 
     @property
+    def IsScriptGen(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: To detect if config is generated using scriptgent.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["IsScriptGen"])
+
+    @IsScriptGen.setter
+    def IsScriptGen(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["IsScriptGen"], value)
+
+    @property
     def MaxPayloadMTU(self):
         # type: () -> 'Multivalue'
         """DEPRECATED
@@ -233,7 +270,7 @@ class Roce6v2(Base):
         """DEPRECATED
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): Destination Peers
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Destination Keysight Peers
         """
         from ixnetwork_restpy.multivalue import Multivalue
 
@@ -257,12 +294,27 @@ class Roce6v2(Base):
         self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
+    def NumberOfExternalEndpoint(self):
+        # type: () -> int
+        """
+        Returns
+        -------
+        - number: Number of Non Keysight NICs
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["NumberOfExternalEndpoint"])
+
+    @NumberOfExternalEndpoint.setter
+    def NumberOfExternalEndpoint(self, value):
+        # type: (int) -> None
+        self._set_attribute(self._SDM_ATT_MAP["NumberOfExternalEndpoint"], value)
+
+    @property
     def QPAllocated(self):
         # type: () -> List[str]
         """
         Returns
         -------
-        - list(str): Per Device QP Share.
+        - list(str): Per Device QP Share when Keysight Endpoints are selected.
         """
         return self._get_attribute(self._SDM_ATT_MAP["QPAllocated"])
 
@@ -272,7 +324,7 @@ class Roce6v2(Base):
         """
         Returns
         -------
-        - number: Number of QPs configured for this Device Group
+        - number: Number of QPs configured for this Device Group when communicating with Keysight Endpoints
         """
         return self._get_attribute(self._SDM_ATT_MAP["QpCount"])
 
@@ -329,12 +381,14 @@ class Roce6v2(Base):
         self,
         ConnectedVia=None,
         CreateFlowsWithoutPeers=None,
+        IsScriptGen=None,
         Multiplier=None,
         Name=None,
+        NumberOfExternalEndpoint=None,
         QpCount=None,
         StackedLayers=None,
     ):
-        # type: (List[str], bool, int, str, int, List[str]) -> Roce6v2
+        # type: (List[str], bool, bool, int, str, int, int, List[str]) -> Roce6v2
         """Updates roce6v2 resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -344,9 +398,11 @@ class Roce6v2(Base):
         ----
         - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology])): List of layers this layer is used to connect with to the wire.
         - CreateFlowsWithoutPeers (bool): Allows creation of flows without any peers.
+        - IsScriptGen (bool): To detect if config is generated using scriptgent.
         - Multiplier (number): Number of layer instances per parent instance (multiplier)
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-        - QpCount (number): Number of QPs configured for this Device Group
+        - NumberOfExternalEndpoint (number): Number of Non Keysight NICs
+        - QpCount (number): Number of QPs configured for this Device Group when communicating with Keysight Endpoints
         - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology])): List of secondary (many to one) child layer protocols
 
         Raises
@@ -359,21 +415,25 @@ class Roce6v2(Base):
         self,
         ConnectedVia=None,
         CreateFlowsWithoutPeers=None,
+        IsScriptGen=None,
         Multiplier=None,
         Name=None,
+        NumberOfExternalEndpoint=None,
         QpCount=None,
         StackedLayers=None,
     ):
-        # type: (List[str], bool, int, str, int, List[str]) -> Roce6v2
+        # type: (List[str], bool, bool, int, str, int, int, List[str]) -> Roce6v2
         """Adds a new roce6v2 resource on the server and adds it to the container.
 
         Args
         ----
         - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology])): List of layers this layer is used to connect with to the wire.
         - CreateFlowsWithoutPeers (bool): Allows creation of flows without any peers.
+        - IsScriptGen (bool): To detect if config is generated using scriptgent.
         - Multiplier (number): Number of layer instances per parent instance (multiplier)
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-        - QpCount (number): Number of QPs configured for this Device Group
+        - NumberOfExternalEndpoint (number): Number of Non Keysight NICs
+        - QpCount (number): Number of QPs configured for this Device Group when communicating with Keysight Endpoints
         - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology])): List of secondary (many to one) child layer protocols
 
         Returns
@@ -403,8 +463,10 @@ class Roce6v2(Base):
         CreateFlowsWithoutPeers=None,
         DescriptiveName=None,
         Errors=None,
+        IsScriptGen=None,
         Multiplier=None,
         Name=None,
+        NumberOfExternalEndpoint=None,
         QPAllocated=None,
         QpCount=None,
         SessionStatus=None,
@@ -425,10 +487,12 @@ class Roce6v2(Base):
         - CreateFlowsWithoutPeers (bool): Allows creation of flows without any peers.
         - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         - Errors (list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork/],arg2:list[str]))): A list of errors that have occurred
+        - IsScriptGen (bool): To detect if config is generated using scriptgent.
         - Multiplier (number): Number of layer instances per parent instance (multiplier)
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-        - QPAllocated (list(str)): Per Device QP Share.
-        - QpCount (number): Number of QPs configured for this Device Group
+        - NumberOfExternalEndpoint (number): Number of Non Keysight NICs
+        - QPAllocated (list(str)): Per Device QP Share when Keysight Endpoints are selected.
+        - QpCount (number): Number of QPs configured for this Device Group when communicating with Keysight Endpoints
         - SessionStatus (list(str[down | notStarted | up])): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
         - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology])): List of secondary (many to one) child layer protocols
         - StateCounts (dict(total:number,notStarted:number,down:number,up:number)): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up

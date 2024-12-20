@@ -35,12 +35,28 @@ class Analyzer(Base):
     __slots__ = ()
     _SDM_NAME = "analyzer"
     _SDM_ATT_MAP = {
+        "EnablePacketLatency": "enablePacketLatency",
         "ReleaseHwCaptureOwnership": "releaseHwCaptureOwnership",
     }
     _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
         super(Analyzer, self).__init__(parent, list_op)
+
+    @property
+    def EnablePacketLatency(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: Compute per packet latency for Traffic packets
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["EnablePacketLatency"])
+
+    @EnablePacketLatency.setter
+    def EnablePacketLatency(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["EnablePacketLatency"], value)
 
     @property
     def ReleaseHwCaptureOwnership(self):
@@ -57,12 +73,13 @@ class Analyzer(Base):
         # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP["ReleaseHwCaptureOwnership"], value)
 
-    def update(self, ReleaseHwCaptureOwnership=None):
-        # type: (bool) -> Analyzer
+    def update(self, EnablePacketLatency=None, ReleaseHwCaptureOwnership=None):
+        # type: (bool, bool) -> Analyzer
         """Updates analyzer resource on the server.
 
         Args
         ----
+        - EnablePacketLatency (bool): Compute per packet latency for Traffic packets
         - ReleaseHwCaptureOwnership (bool): Release HW Capture ownership when capture stops
 
         Raises
@@ -71,8 +88,8 @@ class Analyzer(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, ReleaseHwCaptureOwnership=None):
-        # type: (bool) -> Analyzer
+    def find(self, EnablePacketLatency=None, ReleaseHwCaptureOwnership=None):
+        # type: (bool, bool) -> Analyzer
         """Finds and retrieves analyzer resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve analyzer resources from the server.
@@ -81,6 +98,7 @@ class Analyzer(Base):
 
         Args
         ----
+        - EnablePacketLatency (bool): Compute per packet latency for Traffic packets
         - ReleaseHwCaptureOwnership (bool): Release HW Capture ownership when capture stops
 
         Returns

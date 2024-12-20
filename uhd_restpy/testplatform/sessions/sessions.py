@@ -354,12 +354,13 @@ class Sessions(Base):
             self.warn(e)
             return None
 
-    def GetFileList(self, remote_directory=None):
+    def GetFileList(self, remote_directory=None, filter=None):
         """Get a list of files from the IxNetwork session instance
 
         Args
         ----
         - remote_directory (str): A remote directory path
+        - filter (str): A filter string to get a particular set of files
 
         Returns
         -------
@@ -368,6 +369,8 @@ class Sessions(Base):
         href = "%s/ixnetwork/files" % self.href
         if remote_directory is not None:
             href = "%s?absolute=%s" % (href, remote_directory)
+        elif filter is not None:
+            href = "%s?filter=%s" % (href, filter)
         return self._connection._read(href)
 
     def DownloadFile(self, remote_filename, local_filename=None):

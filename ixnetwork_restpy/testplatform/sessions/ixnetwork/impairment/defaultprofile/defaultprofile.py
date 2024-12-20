@@ -28,7 +28,7 @@ if sys.version_info >= (3, 5):
 
 
 class DefaultProfile(Base):
-    """The default behavior for packets which are not handled by any other profile.
+    """DEPRECATED The default behavior for packets which are not handled by any other profile.
     The DefaultProfile class encapsulates a required defaultProfile resource which will be retrieved from the server every time the property is accessed.
     """
 

@@ -163,6 +163,7 @@ class PortStatistics(Base):
         "EncryptedByteTx": "encryptedByteTx",
         "EncryptedPacketRx": "encryptedPacketRx",
         "EncryptedPacketTx": "encryptedPacketTx",
+        "EndofStreamDelimiterError": "endofStreamDelimiterError",
         "EofBigErrorFrameCount": "eofBigErrorFrameCount",
         "EofLateFrameCount": "eofLateFrameCount",
         "EofLateMaximumByteCount": "eofLateMaximumByteCount",
@@ -246,6 +247,7 @@ class PortStatistics(Base):
         "FecUncorrectableSubrowCount": "fecUncorrectableSubrowCount",
         "FecUncorrectableSubrowCountRate": "fecUncorrectableSubrowCountRate",
         "FirecodeFECSync": "firecodeFECSync",
+        "FivebDecodeError": "fivebDecodeError",
         "FlogiSent": "flogiSent",
         "FlogiSuccessful": "flogiSuccessful",
         "FlogoSent": "flogoSent",
@@ -455,6 +457,15 @@ class PortStatistics(Base):
         "PgidOverflow": "pgidOverflow",
         "PgidOverflowRate": "pgidOverflowRate",
         "PhyChipTemperatureC": "phyChipTemperatureC",
+        "PlcaBeaconCount": "plcaBeaconCount",
+        "PlcaBeaconCountRate": "plcaBeaconCountRate",
+        "PlcaBeaconReceivedBeforeTransmitOpportunity": "plcaBeaconReceivedBeforeTransmitOpportunity",
+        "PlcaCorruptedTransmitCount": "plcaCorruptedTransmitCount",
+        "PlcaCorruptedTransmitCountRate": "plcaCorruptedTransmitCountRate",
+        "PlcaEmptyCycleStatus": "plcaEmptyCycleStatus",
+        "PlcaTransmitOpportunityCount": "plcaTransmitOpportunityCount",
+        "PlcaTransmitOpportunityCountRate": "plcaTransmitOpportunityCountRate",
+        "Plcasymboldetected": "plcasymboldetected",
         "PlmInternalTemperature1C": "plmInternalTemperature1C",
         "PlmInternalTemperature2C": "plmInternalTemperature2C",
         "PlmInternalTemperature3C": "plmInternalTemperature3C",
@@ -498,6 +509,7 @@ class PortStatistics(Base):
         "RamDiskUtilization": "ramDiskUtilization",
         "ReceiveArpReply": "receiveArpReply",
         "ReceiveArpRequest": "receiveArpRequest",
+        "ReceiveInTransmitOpportunity": "receiveInTransmitOpportunity",
         "ReceiveNeighborAdvertisements": "receiveNeighborAdvertisements",
         "ReceiveNeighborSolicitation": "receiveNeighborSolicitation",
         "ReceivePingReply": "receivePingReply",
@@ -755,6 +767,7 @@ class PortStatistics(Base):
         "UncorrectedHCSErrorCountRate": "uncorrectedHCSErrorCountRate",
         "Undersize": "undersize",
         "UndersizeRate": "undersizeRate",
+        "UnexpectedPLCABeaconReceived": "unexpectedPLCABeaconReceived",
         "UnknownSCISAAccepted": "unknownSCISAAccepted",
         "UnknownSCISADiscarded": "unknownSCISADiscarded",
         "UnvalidatedPacketRx": "unvalidatedPacketRx",
@@ -2720,6 +2733,21 @@ class PortStatistics(Base):
         self._set_attribute(self._SDM_ATT_MAP["EncryptedPacketTx"], value)
 
     @property
+    def EndofStreamDelimiterError(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: End-of-Stream Delimiter Error
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["EndofStreamDelimiterError"])
+
+    @EndofStreamDelimiterError.setter
+    def EndofStreamDelimiterError(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["EndofStreamDelimiterError"], value)
+
+    @property
     def EofBigErrorFrameCount(self):
         # type: () -> bool
         """
@@ -3999,6 +4027,21 @@ class PortStatistics(Base):
     def FirecodeFECSync(self, value):
         # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP["FirecodeFECSync"], value)
+
+    @property
+    def FivebDecodeError(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: 5B Decode Error
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["FivebDecodeError"])
+
+    @FivebDecodeError.setter
+    def FivebDecodeError(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["FivebDecodeError"], value)
 
     @property
     def FlogiSent(self):
@@ -7148,6 +7191,149 @@ class PortStatistics(Base):
         self._set_attribute(self._SDM_ATT_MAP["PhyChipTemperatureC"], value)
 
     @property
+    def PlcaBeaconCount(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: PLCA Beacon Count
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["PlcaBeaconCount"])
+
+    @PlcaBeaconCount.setter
+    def PlcaBeaconCount(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["PlcaBeaconCount"], value)
+
+    @property
+    def PlcaBeaconCountRate(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: PLCA Beacon Count Rate
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["PlcaBeaconCountRate"])
+
+    @PlcaBeaconCountRate.setter
+    def PlcaBeaconCountRate(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["PlcaBeaconCountRate"], value)
+
+    @property
+    def PlcaBeaconReceivedBeforeTransmitOpportunity(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: PLCA Beacon Received Before Transmit Opportunity
+        """
+        return self._get_attribute(
+            self._SDM_ATT_MAP["PlcaBeaconReceivedBeforeTransmitOpportunity"]
+        )
+
+    @PlcaBeaconReceivedBeforeTransmitOpportunity.setter
+    def PlcaBeaconReceivedBeforeTransmitOpportunity(self, value):
+        # type: (bool) -> None
+        self._set_attribute(
+            self._SDM_ATT_MAP["PlcaBeaconReceivedBeforeTransmitOpportunity"], value
+        )
+
+    @property
+    def PlcaCorruptedTransmitCount(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: PLCA Corrupted Transmit Count
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["PlcaCorruptedTransmitCount"])
+
+    @PlcaCorruptedTransmitCount.setter
+    def PlcaCorruptedTransmitCount(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["PlcaCorruptedTransmitCount"], value)
+
+    @property
+    def PlcaCorruptedTransmitCountRate(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: PLCA Corrupted Transmit Count Rate
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["PlcaCorruptedTransmitCountRate"])
+
+    @PlcaCorruptedTransmitCountRate.setter
+    def PlcaCorruptedTransmitCountRate(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["PlcaCorruptedTransmitCountRate"], value)
+
+    @property
+    def PlcaEmptyCycleStatus(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: PLCA Empty Cycle Status
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["PlcaEmptyCycleStatus"])
+
+    @PlcaEmptyCycleStatus.setter
+    def PlcaEmptyCycleStatus(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["PlcaEmptyCycleStatus"], value)
+
+    @property
+    def PlcaTransmitOpportunityCount(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: PLCA Transmit Opportunity Count
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["PlcaTransmitOpportunityCount"])
+
+    @PlcaTransmitOpportunityCount.setter
+    def PlcaTransmitOpportunityCount(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["PlcaTransmitOpportunityCount"], value)
+
+    @property
+    def PlcaTransmitOpportunityCountRate(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: PLCA Transmit Opportunity Count Rate
+        """
+        return self._get_attribute(
+            self._SDM_ATT_MAP["PlcaTransmitOpportunityCountRate"]
+        )
+
+    @PlcaTransmitOpportunityCountRate.setter
+    def PlcaTransmitOpportunityCountRate(self, value):
+        # type: (bool) -> None
+        self._set_attribute(
+            self._SDM_ATT_MAP["PlcaTransmitOpportunityCountRate"], value
+        )
+
+    @property
+    def Plcasymboldetected(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: PLCA symbol detected
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["Plcasymboldetected"])
+
+    @Plcasymboldetected.setter
+    def Plcasymboldetected(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["Plcasymboldetected"], value)
+
+    @property
     def PlmInternalTemperature1C(self):
         # type: () -> bool
         """
@@ -7791,6 +7977,21 @@ class PortStatistics(Base):
     def ReceiveArpRequest(self, value):
         # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP["ReceiveArpRequest"], value)
+
+    @property
+    def ReceiveInTransmitOpportunity(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: Receive In Transmit Opportunity
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["ReceiveInTransmitOpportunity"])
+
+    @ReceiveInTransmitOpportunity.setter
+    def ReceiveInTransmitOpportunity(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["ReceiveInTransmitOpportunity"], value)
 
     @property
     def ReceiveNeighborAdvertisements(self):
@@ -11801,6 +12002,21 @@ class PortStatistics(Base):
         self._set_attribute(self._SDM_ATT_MAP["UndersizeRate"], value)
 
     @property
+    def UnexpectedPLCABeaconReceived(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: Unexpected PLCA Beacon Received
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["UnexpectedPLCABeaconReceived"])
+
+    @UnexpectedPLCABeaconReceived.setter
+    def UnexpectedPLCABeaconReceived(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["UnexpectedPLCABeaconReceived"], value)
+
+    @property
     def UnknownSCISAAccepted(self):
         # type: () -> bool
         """
@@ -12195,7 +12411,7 @@ class PortStatistics(Base):
         self._set_attribute(self._SDM_ATT_MAP["WindowViolationFrameCount"], value)
 
     def update(self, **kwargs):
-        # type: (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool) -> PortStatistics
+        # type: (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool) -> PortStatistics
         """Updates portStatistics resource on the server.
 
         Args
@@ -12328,6 +12544,7 @@ class PortStatistics(Base):
         - EncryptedByteTx (bool): Encrypted Byte Tx
         - EncryptedPacketRx (bool): Encrypted Packet Rx
         - EncryptedPacketTx (bool): Encrypted Packet Tx
+        - EndofStreamDelimiterError (bool): End-of-Stream Delimiter Error
         - EofBigErrorFrameCount (bool): EOF Big Error Frame Count
         - EofLateFrameCount (bool): EOF Late Frame Count
         - EofLateMaximumByteCount (bool): EOF Late Maximum Byte Count
@@ -12411,6 +12628,7 @@ class PortStatistics(Base):
         - FecUncorrectableSubrowCount (bool): FEC Uncorrectable Subrow Count
         - FecUncorrectableSubrowCountRate (bool): FEC Uncorrectable Subrow Count Rate
         - FirecodeFECSync (bool): Fire code FEC Sync
+        - FivebDecodeError (bool): 5B Decode Error
         - FlogiSent (bool): Flogi Sent
         - FlogiSuccessful (bool): Flogi Successful
         - FlogoSent (bool): Flogo Sent
@@ -12620,6 +12838,15 @@ class PortStatistics(Base):
         - PgidOverflow (bool): PGID Overflow
         - PgidOverflowRate (bool): PGID Overflow Rate
         - PhyChipTemperatureC (bool): PHY Chip Temperature (C)
+        - PlcaBeaconCount (bool): PLCA Beacon Count
+        - PlcaBeaconCountRate (bool): PLCA Beacon Count Rate
+        - PlcaBeaconReceivedBeforeTransmitOpportunity (bool): PLCA Beacon Received Before Transmit Opportunity
+        - PlcaCorruptedTransmitCount (bool): PLCA Corrupted Transmit Count
+        - PlcaCorruptedTransmitCountRate (bool): PLCA Corrupted Transmit Count Rate
+        - PlcaEmptyCycleStatus (bool): PLCA Empty Cycle Status
+        - PlcaTransmitOpportunityCount (bool): PLCA Transmit Opportunity Count
+        - PlcaTransmitOpportunityCountRate (bool): PLCA Transmit Opportunity Count Rate
+        - Plcasymboldetected (bool): PLCA symbol detected
         - PlmInternalTemperature1C (bool): Plm Internal Temperature 1(C)
         - PlmInternalTemperature2C (bool): Plm Internal Temperature 2(C)
         - PlmInternalTemperature3C (bool): Plm Internal Temperature 3(C)
@@ -12663,6 +12890,7 @@ class PortStatistics(Base):
         - RamDiskUtilization (bool): RAM Disk Utilization
         - ReceiveArpReply (bool): Receive Arp Reply
         - ReceiveArpRequest (bool): Receive Arp Request
+        - ReceiveInTransmitOpportunity (bool): Receive In Transmit Opportunity
         - ReceiveNeighborAdvertisements (bool): Receive Neighbor Advertisements
         - ReceiveNeighborSolicitation (bool): Receive Neighbor Solicitation
         - ReceivePingReply (bool): Receive Ping Reply
@@ -12920,6 +13148,7 @@ class PortStatistics(Base):
         - UncorrectedHCSErrorCountRate (bool): Uncorrected HCS Error Count Rate
         - Undersize (bool): Undersize
         - UndersizeRate (bool): Undersize Rate
+        - UnexpectedPLCABeaconReceived (bool): Unexpected PLCA Beacon Received
         - UnknownSCISAAccepted (bool): Unknown SCI/SA Accepted
         - UnknownSCISADiscarded (bool): Unknown SCI/SA Discarded
         - UnvalidatedPacketRx (bool): Unvalidated Packet Rx
@@ -12954,7 +13183,7 @@ class PortStatistics(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def find(self, **kwargs):
-        # type: (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool) -> PortStatistics
+        # type: (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool) -> PortStatistics
         """Finds and retrieves portStatistics resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve portStatistics resources from the server.
@@ -13091,6 +13320,7 @@ class PortStatistics(Base):
         - EncryptedByteTx (bool): Encrypted Byte Tx
         - EncryptedPacketRx (bool): Encrypted Packet Rx
         - EncryptedPacketTx (bool): Encrypted Packet Tx
+        - EndofStreamDelimiterError (bool): End-of-Stream Delimiter Error
         - EofBigErrorFrameCount (bool): EOF Big Error Frame Count
         - EofLateFrameCount (bool): EOF Late Frame Count
         - EofLateMaximumByteCount (bool): EOF Late Maximum Byte Count
@@ -13174,6 +13404,7 @@ class PortStatistics(Base):
         - FecUncorrectableSubrowCount (bool): FEC Uncorrectable Subrow Count
         - FecUncorrectableSubrowCountRate (bool): FEC Uncorrectable Subrow Count Rate
         - FirecodeFECSync (bool): Fire code FEC Sync
+        - FivebDecodeError (bool): 5B Decode Error
         - FlogiSent (bool): Flogi Sent
         - FlogiSuccessful (bool): Flogi Successful
         - FlogoSent (bool): Flogo Sent
@@ -13383,6 +13614,15 @@ class PortStatistics(Base):
         - PgidOverflow (bool): PGID Overflow
         - PgidOverflowRate (bool): PGID Overflow Rate
         - PhyChipTemperatureC (bool): PHY Chip Temperature (C)
+        - PlcaBeaconCount (bool): PLCA Beacon Count
+        - PlcaBeaconCountRate (bool): PLCA Beacon Count Rate
+        - PlcaBeaconReceivedBeforeTransmitOpportunity (bool): PLCA Beacon Received Before Transmit Opportunity
+        - PlcaCorruptedTransmitCount (bool): PLCA Corrupted Transmit Count
+        - PlcaCorruptedTransmitCountRate (bool): PLCA Corrupted Transmit Count Rate
+        - PlcaEmptyCycleStatus (bool): PLCA Empty Cycle Status
+        - PlcaTransmitOpportunityCount (bool): PLCA Transmit Opportunity Count
+        - PlcaTransmitOpportunityCountRate (bool): PLCA Transmit Opportunity Count Rate
+        - Plcasymboldetected (bool): PLCA symbol detected
         - PlmInternalTemperature1C (bool): Plm Internal Temperature 1(C)
         - PlmInternalTemperature2C (bool): Plm Internal Temperature 2(C)
         - PlmInternalTemperature3C (bool): Plm Internal Temperature 3(C)
@@ -13426,6 +13666,7 @@ class PortStatistics(Base):
         - RamDiskUtilization (bool): RAM Disk Utilization
         - ReceiveArpReply (bool): Receive Arp Reply
         - ReceiveArpRequest (bool): Receive Arp Request
+        - ReceiveInTransmitOpportunity (bool): Receive In Transmit Opportunity
         - ReceiveNeighborAdvertisements (bool): Receive Neighbor Advertisements
         - ReceiveNeighborSolicitation (bool): Receive Neighbor Solicitation
         - ReceivePingReply (bool): Receive Ping Reply
@@ -13683,6 +13924,7 @@ class PortStatistics(Base):
         - UncorrectedHCSErrorCountRate (bool): Uncorrected HCS Error Count Rate
         - Undersize (bool): Undersize
         - UndersizeRate (bool): Undersize Rate
+        - UnexpectedPLCABeaconReceived (bool): Unexpected PLCA Beacon Received
         - UnknownSCISAAccepted (bool): Unknown SCI/SA Accepted
         - UnknownSCISADiscarded (bool): Unknown SCI/SA Discarded
         - UnvalidatedPacketRx (bool): Unvalidated Packet Rx

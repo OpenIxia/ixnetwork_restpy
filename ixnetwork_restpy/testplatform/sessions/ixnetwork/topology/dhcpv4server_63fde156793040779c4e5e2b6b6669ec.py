@@ -27,32 +27,34 @@ if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
 
-class Rocev2(Base):
-    """RoCEv2 (Device) level Configuration
-    The Rocev2 class encapsulates a list of rocev2 resources that are managed by the user.
-    A list of resources can be retrieved from the server using the Rocev2.find() method.
-    The list can be managed by using the Rocev2.add() and Rocev2.remove() methods.
+class Dhcpv4server(Base):
+    """DHCPv4 Server protocol.
+    The Dhcpv4server class encapsulates a list of dhcpv4server resources that are managed by the user.
+    A list of resources can be retrieved from the server using the Dhcpv4server.find() method.
+    The list can be managed by using the Dhcpv4server.add() and Dhcpv4server.remove() methods.
     """
 
     __slots__ = ()
-    _SDM_NAME = "rocev2"
+    _SDM_NAME = "dhcpv4server"
     _SDM_ATT_MAP = {
+        "AssignIpFromAddressPool": "assignIpFromAddressPool",
         "ConnectedVia": "connectedVia",
         "Count": "count",
-        "CreateFlowsWithoutPeers": "createFlowsWithoutPeers",
         "DescriptiveName": "descriptiveName",
+        "EnableIgnoreOpt": "enableIgnoreOpt",
         "Errors": "errors",
-        "IbMTU": "ibMTU",
-        "MaxPayloadMTU": "maxPayloadMTU",
+        "Identifier": "identifier",
+        "IgnoreOpt": "ignoreOpt",
         "Multiplier": "multiplier",
-        "MvPeerSetGroup": "mvPeerSetGroup",
         "Name": "name",
-        "QPAllocated": "qPAllocated",
-        "QpCount": "qpCount",
+        "PoolCount": "poolCount",
         "SessionStatus": "sessionStatus",
         "StackedLayers": "stackedLayers",
         "StateCounts": "stateCounts",
         "Status": "status",
+        "Subnet": "subnet",
+        "SubnetAddrAssign": "subnetAddrAssign",
+        "UseRapidCommit": "useRapidCommit",
     }
     _SDM_ENUM_MAP = {
         "status": [
@@ -67,67 +69,61 @@ class Rocev2(Base):
     }
 
     def __init__(self, parent, list_op=False):
-        super(Rocev2, self).__init__(parent, list_op)
+        super(Dhcpv4server, self).__init__(parent, list_op)
 
     @property
-    def EndOfLoad(self):
+    def Dhcp4ServerSessions(self):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.endofload_b6e74aef3bc2fccf17638eff0566c52a.EndOfLoad): An instance of the EndOfLoad class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcp4serversessions_5f2951980dd26ce42454b8a1341fd5c6.Dhcp4ServerSessions): An instance of the Dhcp4ServerSessions class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.endofload_b6e74aef3bc2fccf17638eff0566c52a import (
-            EndOfLoad,
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcp4serversessions_5f2951980dd26ce42454b8a1341fd5c6 import (
+            Dhcp4ServerSessions,
         )
 
         if len(self._object_properties) > 0:
-            if self._properties.get("EndOfLoad", None) is not None:
-                return self._properties.get("EndOfLoad")
-        return EndOfLoad(self)
+            if self._properties.get("Dhcp4ServerSessions", None) is not None:
+                return self._properties.get("Dhcp4ServerSessions")
+        return Dhcp4ServerSessions(self)._select()
 
     @property
-    def Flows(self):
+    def TlvProfile(self):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.flows_7fb026734c19a847eb936b14b32f62c1.Flows): An instance of the Flows class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.tlvprofile_421be1db953efaf826fe146cf9700e26.TlvProfile): An instance of the TlvProfile class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.flows_7fb026734c19a847eb936b14b32f62c1 import (
-            Flows,
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.tlvprofile.tlvprofile_421be1db953efaf826fe146cf9700e26 import (
+            TlvProfile,
         )
 
         if len(self._object_properties) > 0:
-            if self._properties.get("Flows", None) is not None:
-                return self._properties.get("Flows")
-        return Flows(self)
+            if self._properties.get("TlvProfile", None) is not None:
+                return self._properties.get("TlvProfile")
+        return TlvProfile(self)
 
     @property
-    def Oldflows(self):
-        """DEPRECATED
+    def AssignIpFromAddressPool(self):
+        # type: () -> 'Multivalue'
+        """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.oldflows_aec7be01f8f8b8533b634e42fb549c6e.Oldflows): An instance of the Oldflows class
-
-        Raises
-        ------
-        - ServerError: The server has encountered an uncategorized error condition
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This enables forceful use of a pool address for address assignment even if the relay subnet does not match the configured pool address. This option is applicable when a relay agent is present.
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.oldflows_aec7be01f8f8b8533b634e42fb549c6e import (
-            Oldflows,
-        )
+        from ixnetwork_restpy.multivalue import Multivalue
 
-        if len(self._object_properties) > 0:
-            if self._properties.get("Oldflows", None) is not None:
-                return self._properties.get("Oldflows")
-        return Oldflows(self)
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["AssignIpFromAddressPool"])
+        )
 
     @property
     def ConnectedVia(self):
@@ -155,21 +151,6 @@ class Rocev2(Base):
         return self._get_attribute(self._SDM_ATT_MAP["Count"])
 
     @property
-    def CreateFlowsWithoutPeers(self):
-        # type: () -> bool
-        """
-        Returns
-        -------
-        - bool: Allows creation of flows without any peers.
-        """
-        return self._get_attribute(self._SDM_ATT_MAP["CreateFlowsWithoutPeers"])
-
-    @CreateFlowsWithoutPeers.setter
-    def CreateFlowsWithoutPeers(self, value):
-        # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP["CreateFlowsWithoutPeers"], value)
-
-    @property
     def DescriptiveName(self):
         # type: () -> str
         """
@@ -178,6 +159,20 @@ class Rocev2(Base):
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
         return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
+
+    @property
+    def EnableIgnoreOpt(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enables DHCP Server to ignore options provided in the Ignore Options field
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableIgnoreOpt"])
+        )
 
     @property
     def Errors(self):
@@ -189,28 +184,28 @@ class Rocev2(Base):
         return self._get_attribute(self._SDM_ATT_MAP["Errors"])
 
     @property
-    def IbMTU(self):
+    def Identifier(self):
         # type: () -> 'Multivalue'
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): IB MTU
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Select one or more identifiers to use for IP address assignment policy based on selected Identifier.
         """
         from ixnetwork_restpy.multivalue import Multivalue
 
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["IbMTU"]))
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Identifier"]))
 
     @property
-    def MaxPayloadMTU(self):
+    def IgnoreOpt(self):
         # type: () -> 'Multivalue'
-        """DEPRECATED
+        """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): Max Payload MTU
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Choose which Option needs to get ignored by the server (can be given multiple by comma separated)
         """
         from ixnetwork_restpy.multivalue import Multivalue
 
-        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["MaxPayloadMTU"]))
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["IgnoreOpt"]))
 
     @property
     def Multiplier(self):
@@ -228,20 +223,6 @@ class Rocev2(Base):
         self._set_attribute(self._SDM_ATT_MAP["Multiplier"], value)
 
     @property
-    def MvPeerSetGroup(self):
-        # type: () -> 'Multivalue'
-        """DEPRECATED
-        Returns
-        -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): Destination Peers
-        """
-        from ixnetwork_restpy.multivalue import Multivalue
-
-        return Multivalue(
-            self, self._get_attribute(self._SDM_ATT_MAP["MvPeerSetGroup"])
-        )
-
-    @property
     def Name(self):
         # type: () -> str
         """
@@ -257,29 +238,19 @@ class Rocev2(Base):
         self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
-    def QPAllocated(self):
-        # type: () -> List[str]
-        """
-        Returns
-        -------
-        - list(str): Per Device QP Share.
-        """
-        return self._get_attribute(self._SDM_ATT_MAP["QPAllocated"])
-
-    @property
-    def QpCount(self):
+    def PoolCount(self):
         # type: () -> int
         """
         Returns
         -------
-        - number: Number of QPs configured for this Device Group
+        - number: number of DHCP pools a single server has
         """
-        return self._get_attribute(self._SDM_ATT_MAP["QpCount"])
+        return self._get_attribute(self._SDM_ATT_MAP["PoolCount"])
 
-    @QpCount.setter
-    def QpCount(self, value):
+    @PoolCount.setter
+    def PoolCount(self, value):
         # type: (int) -> None
-        self._set_attribute(self._SDM_ATT_MAP["QpCount"], value)
+        self._set_attribute(self._SDM_ATT_MAP["PoolCount"], value)
 
     @property
     def SessionStatus(self):
@@ -325,17 +296,56 @@ class Rocev2(Base):
         """
         return self._get_attribute(self._SDM_ATT_MAP["Status"])
 
+    @property
+    def Subnet(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Choose which subnet to be used for address assignment.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Subnet"]))
+
+    @property
+    def SubnetAddrAssign(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enables DHCP Server to assign addresses based on subnet. The leased address is created dynamically by overwriting the subnet portion defined in the Address Pool with the subnet option present in the requests from the clients behind relays.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["SubnetAddrAssign"])
+        )
+
+    @property
+    def UseRapidCommit(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enables DHCP Server to negotiate leases with rapid commit for DHCP Clients that request it.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["UseRapidCommit"])
+        )
+
     def update(
         self,
         ConnectedVia=None,
-        CreateFlowsWithoutPeers=None,
         Multiplier=None,
         Name=None,
-        QpCount=None,
+        PoolCount=None,
         StackedLayers=None,
     ):
-        # type: (List[str], bool, int, str, int, List[str]) -> Rocev2
-        """Updates rocev2 resource on the server.
+        # type: (List[str], int, str, int, List[str]) -> Dhcpv4server
+        """Updates dhcpv4server resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
         The Multivalue class has documentation that details the possible values for those named parameters.
@@ -343,10 +353,9 @@ class Rocev2(Base):
         Args
         ----
         - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology])): List of layers this layer is used to connect with to the wire.
-        - CreateFlowsWithoutPeers (bool): Allows creation of flows without any peers.
         - Multiplier (number): Number of layer instances per parent instance (multiplier)
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-        - QpCount (number): Number of QPs configured for this Device Group
+        - PoolCount (number): number of DHCP pools a single server has
         - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology])): List of secondary (many to one) child layer protocols
 
         Raises
@@ -358,27 +367,25 @@ class Rocev2(Base):
     def add(
         self,
         ConnectedVia=None,
-        CreateFlowsWithoutPeers=None,
         Multiplier=None,
         Name=None,
-        QpCount=None,
+        PoolCount=None,
         StackedLayers=None,
     ):
-        # type: (List[str], bool, int, str, int, List[str]) -> Rocev2
-        """Adds a new rocev2 resource on the server and adds it to the container.
+        # type: (List[str], int, str, int, List[str]) -> Dhcpv4server
+        """Adds a new dhcpv4server resource on the server and adds it to the container.
 
         Args
         ----
         - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology])): List of layers this layer is used to connect with to the wire.
-        - CreateFlowsWithoutPeers (bool): Allows creation of flows without any peers.
         - Multiplier (number): Number of layer instances per parent instance (multiplier)
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-        - QpCount (number): Number of QPs configured for this Device Group
+        - PoolCount (number): number of DHCP pools a single server has
         - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology])): List of secondary (many to one) child layer protocols
 
         Returns
         -------
-        - self: This instance with all currently retrieved rocev2 resources using find and the newly added rocev2 resources available through an iterator or index
+        - self: This instance with all currently retrieved dhcpv4server resources using find and the newly added dhcpv4server resources available through an iterator or index
 
         Raises
         ------
@@ -387,7 +394,7 @@ class Rocev2(Base):
         return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def remove(self):
-        """Deletes all the contained rocev2 resources in this instance from the server.
+        """Deletes all the contained dhcpv4server resources in this instance from the server.
 
         Raises
         ------
@@ -400,35 +407,31 @@ class Rocev2(Base):
         self,
         ConnectedVia=None,
         Count=None,
-        CreateFlowsWithoutPeers=None,
         DescriptiveName=None,
         Errors=None,
         Multiplier=None,
         Name=None,
-        QPAllocated=None,
-        QpCount=None,
+        PoolCount=None,
         SessionStatus=None,
         StackedLayers=None,
         StateCounts=None,
         Status=None,
     ):
-        """Finds and retrieves rocev2 resources from the server.
+        """Finds and retrieves dhcpv4server resources from the server.
 
-        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve rocev2 resources from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve dhcpv4server resources from the server.
         To retrieve an exact match ensure the parameter value starts with ^ and ends with $
-        By default the find method takes no parameters and will retrieve all rocev2 resources from the server.
+        By default the find method takes no parameters and will retrieve all dhcpv4server resources from the server.
 
         Args
         ----
         - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology])): List of layers this layer is used to connect with to the wire.
         - Count (number): Number of elements inside associated multiplier-scaled container object, e.g. number of devices inside a Device Group.
-        - CreateFlowsWithoutPeers (bool): Allows creation of flows without any peers.
         - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         - Errors (list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork/],arg2:list[str]))): A list of errors that have occurred
         - Multiplier (number): Number of layer instances per parent instance (multiplier)
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
-        - QPAllocated (list(str)): Per Device QP Share.
-        - QpCount (number): Number of QPs configured for this Device Group
+        - PoolCount (number): number of DHCP pools a single server has
         - SessionStatus (list(str[down | notStarted | up])): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
         - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology])): List of secondary (many to one) child layer protocols
         - StateCounts (dict(total:number,notStarted:number,down:number,up:number)): A list of values that indicates the total number of sessions, the number of sessions not started, the number of sessions down and the number of sessions that are up
@@ -436,7 +439,7 @@ class Rocev2(Base):
 
         Returns
         -------
-        - self: This instance with matching rocev2 resources retrieved from the server available through an iterator or index
+        - self: This instance with matching dhcpv4server resources retrieved from the server available through an iterator or index
 
         Raises
         ------
@@ -445,7 +448,7 @@ class Rocev2(Base):
         return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
-        """Retrieves a single instance of rocev2 data from the server.
+        """Retrieves a single instance of dhcpv4server data from the server.
 
         Args
         ----
@@ -453,7 +456,7 @@ class Rocev2(Base):
 
         Returns
         -------
-        - self: This instance with the rocev2 resources from the server available through an iterator or index
+        - self: This instance with the dhcpv4server resources from the server available through an iterator or index
 
         Raises
         ------
@@ -517,16 +520,29 @@ class Rocev2(Base):
             payload[item[0]] = item[1]
         return self._execute("addDeleteTags", payload=payload, response_object=None)
 
-    def AddDestinationPeers(self, *args, **kwargs):
-        # type: (*Any, **Any) -> None
-        """Executes the addDestinationPeers operation on the server.
+    def ForceRenew(self, *args, **kwargs):
+        """Executes the forceRenew operation on the server.
 
-        Adds destination peers.
+        Send Force Renew for selected DHCPv4 Server items.
 
-        addDestinationPeers(Arg2=list, async_operation=bool)
-        ----------------------------------------------------
-        - Arg2 (list(str[None | /api/v1/sessions/1/ixnetwork/])): list of peers
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        forceRenew(async_operation=bool)list
+        ------------------------------------
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(dict(port:str[None | /api/v1/sessions/1/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
+
+        forceRenew(SessionIndices=list, async_operation=bool)list
+        ---------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(dict(port:str[None | /api/v1/sessions/1/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
+
+        forceRenew(SessionIndices=string, async_operation=bool)list
+        -----------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(dict(port:str[None | /api/v1/sessions/1/ixnetwork/vport],isSuccess:bool,data:str)): The return value is an array of structures where each structure consists of a /vport object reference, the success of the operation and the returned data of the operation for that /vport. This exec is not asynchronous.
 
         Raises
         ------
@@ -538,82 +554,7 @@ class Rocev2(Base):
             payload["Arg%s" % (i + 2)] = args[i]
         for item in kwargs.items():
             payload[item[0]] = item[1]
-        return self._execute(
-            "addDestinationPeers", payload=payload, response_object=None
-        )
-
-    def AddFlowsForAllDestinations(self, *args, **kwargs):
-        # type: (*Any, **Any) -> None
-        """Executes the addFlowsForAllDestinations operation on the server.
-
-        Add Flows For All Destinations.
-
-        addFlowsForAllDestinations(async_operation=bool)
-        ------------------------------------------------
-        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = {"Arg1": self.href}
-        for i in range(len(args)):
-            payload["Arg%s" % (i + 2)] = args[i]
-        for item in kwargs.items():
-            payload[item[0]] = item[1]
-        return self._execute(
-            "addFlowsForAllDestinations", payload=payload, response_object=None
-        )
-
-    def RemoveDestinationPeers(self, *args, **kwargs):
-        # type: (*Any, **Any) -> None
-        """Executes the removeDestinationPeers operation on the server.
-
-        Removes destination peers.
-
-        removeDestinationPeers(Arg2=list, async_operation=bool)
-        -------------------------------------------------------
-        - Arg2 (list(str[None | /api/v1/sessions/1/ixnetwork/])): list of peers
-        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = {"Arg1": self.href}
-        for i in range(len(args)):
-            payload["Arg%s" % (i + 2)] = args[i]
-        for item in kwargs.items():
-            payload[item[0]] = item[1]
-        return self._execute(
-            "removeDestinationPeers", payload=payload, response_object=None
-        )
-
-    def RemoveFlowsForAllDestinations(self, *args, **kwargs):
-        # type: (*Any, **Any) -> None
-        """Executes the removeFlowsForAllDestinations operation on the server.
-
-        Remove Flows For All Destinations.
-
-        removeFlowsForAllDestinations(async_operation=bool)
-        ---------------------------------------------------
-        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = {"Arg1": self.href}
-        for i in range(len(args)):
-            payload["Arg%s" % (i + 2)] = args[i]
-        for item in kwargs.items():
-            payload[item[0]] = item[1]
-        return self._execute(
-            "removeFlowsForAllDestinations", payload=payload, response_object=None
-        )
+        return self._execute("forceRenew", payload=payload, response_object=None)
 
     def RestartDown(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -718,18 +659,30 @@ class Rocev2(Base):
         return self._execute("stop", payload=payload, response_object=None)
 
     def get_device_ids(
-        self, PortNames=None, IbMTU=None, MaxPayloadMTU=None, MvPeerSetGroup=None
+        self,
+        PortNames=None,
+        AssignIpFromAddressPool=None,
+        EnableIgnoreOpt=None,
+        Identifier=None,
+        IgnoreOpt=None,
+        Subnet=None,
+        SubnetAddrAssign=None,
+        UseRapidCommit=None,
     ):
-        """Base class infrastructure that gets a list of rocev2 device ids encapsulated by this object.
+        """Base class infrastructure that gets a list of dhcpv4server device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 
         Args
         ----
         - PortNames (str): optional regex of port names
-        - IbMTU (str): optional regex of ibMTU
-        - MaxPayloadMTU (str): optional regex of maxPayloadMTU
-        - MvPeerSetGroup (str): optional regex of mvPeerSetGroup
+        - AssignIpFromAddressPool (str): optional regex of assignIpFromAddressPool
+        - EnableIgnoreOpt (str): optional regex of enableIgnoreOpt
+        - Identifier (str): optional regex of identifier
+        - IgnoreOpt (str): optional regex of ignoreOpt
+        - Subnet (str): optional regex of subnet
+        - SubnetAddrAssign (str): optional regex of subnetAddrAssign
+        - UseRapidCommit (str): optional regex of useRapidCommit
 
         Returns
         -------

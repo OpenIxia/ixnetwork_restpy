@@ -114,13 +114,13 @@ class Rfc2544throughput(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.testconfig_441ecf1e60d026ff62a8d3adf1da1c81.TestConfig): An instance of the TestConfig class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.testconfig_88113b4e0c9cb18c54f3eac27e7d4766.TestConfig): An instance of the TestConfig class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.testconfig_441ecf1e60d026ff62a8d3adf1da1c81 import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.quicktest.testconfig_88113b4e0c9cb18c54f3eac27e7d4766 import (
             TestConfig,
         )
 

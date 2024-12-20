@@ -85,7 +85,7 @@ class RsvpP2mpIngressSubLsps(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Activate/Deactivate Configuration.
         """
         from ixnetwork_restpy.multivalue import Multivalue
 
@@ -389,6 +389,40 @@ class RsvpP2mpIngressSubLsps(Base):
             payload[item[0]] = item[1]
         return self._execute("addDeleteTags", payload=payload, response_object=None)
 
+    def ExcludeEROorSERO(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the excludeEROorSERO operation on the server.
+
+        Exclude ERO/SERO for selected Sub Lsps
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        excludeEROorSERO(async_operation=bool)
+        --------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        excludeEROorSERO(SessionIndices=list, async_operation=bool)
+        -----------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        excludeEROorSERO(SessionIndices=string, async_operation=bool)
+        -------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("excludeEROorSERO", payload=payload, response_object=None)
+
     def ExcludeEroOrSero(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
         """Executes the excludeEroOrSero operation on the server.
@@ -417,7 +451,23 @@ class RsvpP2mpIngressSubLsps(Base):
         # type: (*Any, **Any) -> Union[List[str], None]
         """Executes the graftSubLsp operation on the server.
 
-        Activate/Enable Tunnel selected SubLsp Ranges
+        Activate/Enable Tunnel selected Tail Ranges
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        graftSubLsp(async_operation=bool)
+        ---------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        graftSubLsp(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        graftSubLsp(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         graftSubLsp(Arg2=list, async_operation=bool)list
         ------------------------------------------------
@@ -430,12 +480,46 @@ class RsvpP2mpIngressSubLsps(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = {"Arg1": self.href}
+        payload = {"Arg1": self}
         for i in range(len(args)):
             payload["Arg%s" % (i + 2)] = args[i]
         for item in kwargs.items():
             payload[item[0]] = item[1]
         return self._execute("graftSubLsp", payload=payload, response_object=None)
+
+    def IncludeEROorSERO(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the includeEROorSERO operation on the server.
+
+        Include ERO/SERO for selected Sub Lsps
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        includeEROorSERO(async_operation=bool)
+        --------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        includeEROorSERO(SessionIndices=list, async_operation=bool)
+        -----------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        includeEROorSERO(SessionIndices=string, async_operation=bool)
+        -------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("includeEROorSERO", payload=payload, response_object=None)
 
     def IncludeEroOrSero(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -465,7 +549,23 @@ class RsvpP2mpIngressSubLsps(Base):
         # type: (*Any, **Any) -> Union[List[str], None]
         """Executes the pruneSubLsp operation on the server.
 
-        Deactivate/Disable selected Tunnel SubLsp Ranges
+        Deactivate/Disable selected Tunnel Tail Ranges
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        pruneSubLsp(async_operation=bool)
+        ---------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        pruneSubLsp(SessionIndices=list, async_operation=bool)
+        ------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        pruneSubLsp(SessionIndices=string, async_operation=bool)
+        --------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         pruneSubLsp(Arg2=list, async_operation=bool)list
         ------------------------------------------------
@@ -478,7 +578,7 @@ class RsvpP2mpIngressSubLsps(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = {"Arg1": self.href}
+        payload = {"Arg1": self}
         for i in range(len(args)):
             payload["Arg%s" % (i + 2)] = args[i]
         for item in kwargs.items():

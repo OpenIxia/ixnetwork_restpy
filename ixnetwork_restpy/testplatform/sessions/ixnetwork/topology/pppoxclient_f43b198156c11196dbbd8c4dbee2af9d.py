@@ -228,13 +228,13 @@ class Pppoxclient(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv4peer_2e2c3c2ad1ad138953e43543afb88841.BgpIpv4Peer): An instance of the BgpIpv4Peer class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv4peer_6f0423477064be24e0493341e399bee9.BgpIpv4Peer): An instance of the BgpIpv4Peer class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv4peer_2e2c3c2ad1ad138953e43543afb88841 import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv4peer_6f0423477064be24e0493341e399bee9 import (
             BgpIpv4Peer,
         )
 
@@ -248,13 +248,13 @@ class Pppoxclient(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv6peer_cc4b2c56b540aa17ec1d2d616e50cd4b.BgpIpv6Peer): An instance of the BgpIpv6Peer class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv6peer_8b9aa9838ebd53702954aa471913ed1e.BgpIpv6Peer): An instance of the BgpIpv6Peer class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv6peer_cc4b2c56b540aa17ec1d2d616e50cd4b import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv6peer_8b9aa9838ebd53702954aa471913ed1e import (
             BgpIpv6Peer,
         )
 
@@ -648,13 +648,13 @@ class Pppoxclient(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.rocev2_af1dda5b53faa6454fd00116264e644c.Rocev2): An instance of the Rocev2 class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.rocev2_31d57573c11ba80c7909f6e453915e71.Rocev2): An instance of the Rocev2 class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.rocev2_af1dda5b53faa6454fd00116264e644c import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.rocev2_31d57573c11ba80c7909f6e453915e71 import (
             Rocev2,
         )
 

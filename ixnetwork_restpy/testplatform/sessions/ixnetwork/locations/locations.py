@@ -52,6 +52,12 @@ class Locations(Base):
         "LicenseErrors": "licenseErrors",
         "MasterDevice": "masterDevice",
         "OsType": "osType",
+        "PeerDeviceBridgeEnabled": "peerDeviceBridgeEnabled",
+        "PeerDeviceDescription": "peerDeviceDescription",
+        "PeerDeviceHostname": "peerDeviceHostname",
+        "PeerDeviceMac": "peerDeviceMac",
+        "PeerDeviceMgmtIp": "peerDeviceMgmtIp",
+        "PeerDeviceRouterEnabled": "peerDeviceRouterEnabled",
         "PrimaryDevice": "primaryDevice",
         "ProtocolBuildNumber": "protocolBuildNumber",
         "SequenceId": "sequenceId",
@@ -297,6 +303,66 @@ class Locations(Base):
         return self._get_attribute(self._SDM_ATT_MAP["OsType"])
 
     @property
+    def PeerDeviceBridgeEnabled(self):
+        # type: () -> str
+        """
+        Returns
+        -------
+        - str: Bridge enabled status of discovered peer device.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["PeerDeviceBridgeEnabled"])
+
+    @property
+    def PeerDeviceDescription(self):
+        # type: () -> str
+        """
+        Returns
+        -------
+        - str: Description of discovered peer device.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["PeerDeviceDescription"])
+
+    @property
+    def PeerDeviceHostname(self):
+        # type: () -> str
+        """
+        Returns
+        -------
+        - str: Hostname of discovered peer device.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["PeerDeviceHostname"])
+
+    @property
+    def PeerDeviceMac(self):
+        # type: () -> str
+        """
+        Returns
+        -------
+        - str: MAC address of discovered peer device.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["PeerDeviceMac"])
+
+    @property
+    def PeerDeviceMgmtIp(self):
+        # type: () -> str
+        """
+        Returns
+        -------
+        - str: Management IP address of discovered peer device.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["PeerDeviceMgmtIp"])
+
+    @property
+    def PeerDeviceRouterEnabled(self):
+        # type: () -> str
+        """
+        Returns
+        -------
+        - str: Router enabled status of discovered peer device.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["PeerDeviceRouterEnabled"])
+
+    @property
     def PrimaryDevice(self):
         # type: () -> str
         """
@@ -441,13 +507,19 @@ class Locations(Base):
         LicenseErrors=None,
         MasterDevice=None,
         OsType=None,
+        PeerDeviceBridgeEnabled=None,
+        PeerDeviceDescription=None,
+        PeerDeviceHostname=None,
+        PeerDeviceMac=None,
+        PeerDeviceMgmtIp=None,
+        PeerDeviceRouterEnabled=None,
         PrimaryDevice=None,
         ProtocolBuildNumber=None,
         SequenceId=None,
         State=None,
         StateV2=None,
     ):
-        # type: (int, str, int, str, str, str, str, str, bool, bool, str, str, List[str], str, str, str, str, int, str, str) -> Locations
+        # type: (int, str, int, str, str, str, str, str, bool, bool, str, str, List[str], str, str, str, str, str, str, str, str, str, str, int, str, str) -> Locations
         """Finds and retrieves locations resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve locations resources from the server.
@@ -471,6 +543,12 @@ class Locations(Base):
         - LicenseErrors (list(str)): Shows the licensing errors that occurred due to licensing problems.
         - MasterDevice (str): Specify the hostname of the primary device on a secondary device. Must be left blank on primary. Must be set only after the device hostname has been set and committed on the current device.
         - OsType (str(linux | unknown | windows)): Device OS type.
+        - PeerDeviceBridgeEnabled (str): Bridge enabled status of discovered peer device.
+        - PeerDeviceDescription (str): Description of discovered peer device.
+        - PeerDeviceHostname (str): Hostname of discovered peer device.
+        - PeerDeviceMac (str): MAC address of discovered peer device.
+        - PeerDeviceMgmtIp (str): Management IP address of discovered peer device.
+        - PeerDeviceRouterEnabled (str): Router enabled status of discovered peer device.
         - PrimaryDevice (str): Specify the hostname of the primary chassis on a secondary chassis. Must be left blank on primary. Must be set only after the chassis hostname has been set and committed on the current chassis.
         - ProtocolBuildNumber (str): The Protocols version of the device in use.
         - SequenceId (number): Indicates the order at which the device in a chain are pulsed by IxOS. Star topology chains are automatically setting this value. Must be set only after the device hostname has been set and committed on the current device.

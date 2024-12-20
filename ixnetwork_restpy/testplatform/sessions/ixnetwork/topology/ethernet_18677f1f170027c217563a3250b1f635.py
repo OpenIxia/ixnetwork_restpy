@@ -754,13 +754,13 @@ class Ethernet(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ptp_d5a38608c1c8ea4a658a5a073c10d0a4.Ptp): An instance of the Ptp class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ptp_c3eec87ebde27dac796b6c44a242310f.Ptp): An instance of the Ptp class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ptp_d5a38608c1c8ea4a658a5a073c10d0a4 import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ptp_c3eec87ebde27dac796b6c44a242310f import (
             Ptp,
         )
 

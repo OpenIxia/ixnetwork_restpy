@@ -1,4 +1,10 @@
 # Release Notes
+### December 2024
+* 1.6.0
+  * support for ixnetwork version 10.80.2412.6 (10.80 EA)
+  * new samples added
+    * files -> get_file_info.py
+    * ports -> l1config -> tap_settings.py, port_lldp_info.py
 ### November 2024
 * 1.5.0
   * support for ixnetwork version 10.25.2406.6 (10.25 EA)

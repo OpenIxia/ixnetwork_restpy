@@ -105,13 +105,13 @@ class Ipv6(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv6peer_cc4b2c56b540aa17ec1d2d616e50cd4b.BgpIpv6Peer): An instance of the BgpIpv6Peer class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv6peer_8b9aa9838ebd53702954aa471913ed1e.BgpIpv6Peer): An instance of the BgpIpv6Peer class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv6peer_cc4b2c56b540aa17ec1d2d616e50cd4b import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv6peer_8b9aa9838ebd53702954aa471913ed1e import (
             BgpIpv6Peer,
         )
 
@@ -505,13 +505,13 @@ class Ipv6(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ptp_d5a38608c1c8ea4a658a5a073c10d0a4.Ptp): An instance of the Ptp class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ptp_c3eec87ebde27dac796b6c44a242310f.Ptp): An instance of the Ptp class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ptp_d5a38608c1c8ea4a658a5a073c10d0a4 import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ptp_c3eec87ebde27dac796b6c44a242310f import (
             Ptp,
         )
 
@@ -545,13 +545,13 @@ class Ipv6(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.roce6v2_5e47366a39ccec9814c18bcb15c6f586.Roce6v2): An instance of the Roce6v2 class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.roce6v2_c5bf003ba7756e74c6e5da9fd6ee6a9b.Roce6v2): An instance of the Roce6v2 class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.roce6v2_5e47366a39ccec9814c18bcb15c6f586 import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.roce6v2_c5bf003ba7756e74c6e5da9fd6ee6a9b import (
             Roce6v2,
         )
 
@@ -1225,7 +1225,23 @@ class Ipv6(Base):
         # type: (*Any, **Any) -> Union[List[str], None]
         """Executes the clearLearnedInfo operation on the server.
 
-        Clears the already fetched learned or Neighbor Information.
+        Clear Learned Info
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        clearLearnedInfo(async_operation=bool)
+        --------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        clearLearnedInfo(SessionIndices=list, async_operation=bool)
+        -----------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        clearLearnedInfo(SessionIndices=string, async_operation=bool)
+        -------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         clearLearnedInfo(Arg2=list, async_operation=bool)list
         -----------------------------------------------------
@@ -1238,7 +1254,7 @@ class Ipv6(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = {"Arg1": self.href}
+        payload = {"Arg1": self}
         for i in range(len(args)):
             payload["Arg%s" % (i + 2)] = args[i]
         for item in kwargs.items():
@@ -1249,7 +1265,23 @@ class Ipv6(Base):
         # type: (*Any, **Any) -> Union[List[str], None]
         """Executes the getNeighborInfo operation on the server.
 
-        Fetches the IPv6 Neighbor information of the specified indices.
+        Get Neighbor Info
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        getNeighborInfo(async_operation=bool)
+        -------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getNeighborInfo(SessionIndices=list, async_operation=bool)
+        ----------------------------------------------------------
+        - SessionIndices (list(number)): This parameter requires an array of session numbers 1 2 3
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        getNeighborInfo(SessionIndices=string, async_operation=bool)
+        ------------------------------------------------------------
+        - SessionIndices (str): This parameter requires a string of session numbers 1-4;6;7-12
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         getNeighborInfo(Arg2=list, async_operation=bool)list
         ----------------------------------------------------
@@ -1262,7 +1294,7 @@ class Ipv6(Base):
         - NotFoundError: The requested resource does not exist on the server
         - ServerError: The server has encountered an uncategorized error condition
         """
-        payload = {"Arg1": self.href}
+        payload = {"Arg1": self}
         for i in range(len(args)):
             payload["Arg%s" % (i + 2)] = args[i]
         for item in kwargs.items():

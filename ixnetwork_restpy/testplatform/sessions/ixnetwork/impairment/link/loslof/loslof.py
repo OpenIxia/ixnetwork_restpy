@@ -28,7 +28,7 @@ if sys.version_info >= (3, 5):
 
 
 class LosLof(Base):
-    """Emulates loss of signal or loss of framing on the link.
+    """DEPRECATED Emulates loss of signal or loss of framing on the link.
     The LosLof class encapsulates a required losLof resource which will be retrieved from the server every time the property is accessed.
     """
 
@@ -194,8 +194,8 @@ class LosLof(Base):
 
         Starts the impairments defined by user (traffic will be impaired).
 
-        start(async_operation=bool)
-        ---------------------------
+        DEPRECATED start(async_operation=bool)
+        --------------------------------------
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
@@ -216,8 +216,8 @@ class LosLof(Base):
 
         Stops the impairments defined by user (traffic will pass unimpaired).
 
-        stop(async_operation=bool)
-        --------------------------
+        DEPRECATED stop(async_operation=bool)
+        -------------------------------------
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises

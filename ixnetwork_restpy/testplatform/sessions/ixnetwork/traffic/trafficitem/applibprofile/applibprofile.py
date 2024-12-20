@@ -88,7 +88,7 @@ class AppLibProfile(Base):
         """
         Returns
         -------
-        - list(str[Bandwidth_HTTP | Bandwidth_Raw | BBC_iPlayer | BitTorrent_Cisco_EMIX | eDonkey_Data_Transfer | Evergreen_Web_ICQ_Jul_17_Send_Message | Facebook | Flash_Enterprise | HTTPS_Simulated_Enterprise]): (Read only) All available application library flows.
+        - list(str[]): (Read only) All available application library flows.
         """
         return self._get_attribute(self._SDM_ATT_MAP["AvailableFlows"])
 
@@ -98,7 +98,7 @@ class AppLibProfile(Base):
         """
         Returns
         -------
-        - list(str[Bandwidth_HTTP | Bandwidth_Raw | BBC_iPlayer | BitTorrent_Cisco_EMIX | eDonkey_Data_Transfer | Evergreen_Web_ICQ_Jul_17_Send_Message | Facebook | Flash_Enterprise | HTTPS_Simulated_Enterprise]): Configured application library flows within profile.
+        - list(str[]): Configured application library flows within profile.
         """
         return self._get_attribute(self._SDM_ATT_MAP["ConfiguredFlows"])
 
@@ -190,7 +190,7 @@ class AppLibProfile(Base):
 
         Args
         ----
-        - ConfiguredFlows (list(str[Bandwidth_HTTP | Bandwidth_Raw | BBC_iPlayer | BitTorrent_Cisco_EMIX | eDonkey_Data_Transfer | Evergreen_Web_ICQ_Jul_17_Send_Message | Facebook | Flash_Enterprise | HTTPS_Simulated_Enterprise])): Configured application library flows within profile.
+        - ConfiguredFlows (list(str[])): Configured application library flows within profile.
         - EnablePerIPStats (bool): Enable Per IP Stats. When true, the Per IP statistic drilldown is available.
         - ObjectiveDistribution (str(applyFullObjectiveToEachPort | splitObjectiveEvenlyAmongPorts)): Objective distribution value.
         - ObjectiveType (str(simulatedUsers | throughputGbps | throughputKbps | throughputMbps)): The objective type of the test. A Test Objective is the way the user sets the actual rate of the Application Library Traffic transmission.
@@ -215,7 +215,7 @@ class AppLibProfile(Base):
 
         Args
         ----
-        - ConfiguredFlows (list(str[Bandwidth_HTTP | Bandwidth_Raw | BBC_iPlayer | BitTorrent_Cisco_EMIX | eDonkey_Data_Transfer | Evergreen_Web_ICQ_Jul_17_Send_Message | Facebook | Flash_Enterprise | HTTPS_Simulated_Enterprise])): Configured application library flows within profile.
+        - ConfiguredFlows (list(str[])): Configured application library flows within profile.
         - EnablePerIPStats (bool): Enable Per IP Stats. When true, the Per IP statistic drilldown is available.
         - ObjectiveDistribution (str(applyFullObjectiveToEachPort | splitObjectiveEvenlyAmongPorts)): Objective distribution value.
         - ObjectiveType (str(simulatedUsers | throughputGbps | throughputKbps | throughputMbps)): The objective type of the test. A Test Objective is the way the user sets the actual rate of the Application Library Traffic transmission.
@@ -260,8 +260,8 @@ class AppLibProfile(Base):
 
         Args
         ----
-        - AvailableFlows (list(str[Bandwidth_HTTP | Bandwidth_Raw | BBC_iPlayer | BitTorrent_Cisco_EMIX | eDonkey_Data_Transfer | Evergreen_Web_ICQ_Jul_17_Send_Message | Facebook | Flash_Enterprise | HTTPS_Simulated_Enterprise])): (Read only) All available application library flows.
-        - ConfiguredFlows (list(str[Bandwidth_HTTP | Bandwidth_Raw | BBC_iPlayer | BitTorrent_Cisco_EMIX | eDonkey_Data_Transfer | Evergreen_Web_ICQ_Jul_17_Send_Message | Facebook | Flash_Enterprise | HTTPS_Simulated_Enterprise])): Configured application library flows within profile.
+        - AvailableFlows (list(str[])): (Read only) All available application library flows.
+        - ConfiguredFlows (list(str[])): Configured application library flows within profile.
         - EnablePerIPStats (bool): Enable Per IP Stats. When true, the Per IP statistic drilldown is available.
         - ObjectiveDistribution (str(applyFullObjectiveToEachPort | splitObjectiveEvenlyAmongPorts)): Objective distribution value.
         - ObjectiveType (str(simulatedUsers | throughputGbps | throughputKbps | throughputMbps)): The objective type of the test. A Test Objective is the way the user sets the actual rate of the Application Library Traffic transmission.
@@ -304,7 +304,7 @@ class AppLibProfile(Base):
 
         addAppLibraryFlow(Arg2=list, async_operation=bool)
         --------------------------------------------------
-        - Arg2 (list(str[Bandwidth_HTTP | Bandwidth_Raw | BBC_iPlayer | BitTorrent_Cisco_EMIX | eDonkey_Data_Transfer | Evergreen_Web_ICQ_Jul_17_Send_Message | Facebook | Flash_Enterprise | HTTPS_Simulated_Enterprise])): This object specifies the flow(s) to be added. User can provide a single flow or a list of flows to be added to the traffic profile. Valid list of flows should be a subset of the available or installed flows in the system. User must ensure to validate the argument flow list against the availableFlows attribute to avoid error conditions, before executing the addAppLibraryFlow api.
+        - Arg2 (list(str[])): This object specifies the flow(s) to be added. User can provide a single flow or a list of flows to be added to the traffic profile. Valid list of flows should be a subset of the available or installed flows in the system. User must ensure to validate the argument flow list against the availableFlows attribute to avoid error conditions, before executing the addAppLibraryFlow api.
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
@@ -376,7 +376,7 @@ class AppLibProfile(Base):
 
         removeAppLibraryFlow(Arg2=list, async_operation=bool)
         -----------------------------------------------------
-        - Arg2 (list(str[Bandwidth_HTTP | Bandwidth_Raw | BBC_iPlayer | BitTorrent_Cisco_EMIX | eDonkey_Data_Transfer | Evergreen_Web_ICQ_Jul_17_Send_Message | Facebook | Flash_Enterprise | HTTPS_Simulated_Enterprise])): This object specifies the flow(s) to be removed. User can provide a single flow or a list of flows to be removed from the traffic profile.
+        - Arg2 (list(str[])): This object specifies the flow(s) to be removed. User can provide a single flow or a list of flows to be removed from the traffic profile.
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises

@@ -75,13 +75,13 @@ class NetworkGroup(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpl3vpnrouteproperty_c9cef36b7ede3a928c467158048aea63.BgpL3VpnRouteProperty): An instance of the BgpL3VpnRouteProperty class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpl3vpnrouteproperty_0121fa1d5ce7c9e7b2322d08251bc55e.BgpL3VpnRouteProperty): An instance of the BgpL3VpnRouteProperty class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpl3vpnrouteproperty_c9cef36b7ede3a928c467158048aea63 import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpl3vpnrouteproperty_0121fa1d5ce7c9e7b2322d08251bc55e import (
             BgpL3VpnRouteProperty,
         )
 
@@ -195,13 +195,13 @@ class NetworkGroup(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpv6l3vpnrouteproperty_cc42767ded4b86e5bcc4c3b714278c16.BgpV6L3VpnRouteProperty): An instance of the BgpV6L3VpnRouteProperty class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpv6l3vpnrouteproperty_e3a4a83b28fd027145167d2d54c235a1.BgpV6L3VpnRouteProperty): An instance of the BgpV6L3VpnRouteProperty class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpv6l3vpnrouteproperty_cc42767ded4b86e5bcc4c3b714278c16 import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpv6l3vpnrouteproperty_e3a4a83b28fd027145167d2d54c235a1 import (
             BgpV6L3VpnRouteProperty,
         )
 

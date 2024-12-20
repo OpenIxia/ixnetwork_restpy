@@ -28,7 +28,7 @@ if sys.version_info >= (3, 5):
 
 
 class Impairment(Base):
-    """Allows the user to emulate WAN links with impairments such as packet delay and drop.
+    """DEPRECATED Allows the user to emulate WAN links with impairments such as packet delay and drop.
     The Impairment class encapsulates a required impairment resource which will be retrieved from the server every time the property is accessed.
     """
 
@@ -48,7 +48,7 @@ class Impairment(Base):
 
     @property
     def DefaultProfile(self):
-        """
+        """DEPRECATED
         Returns
         -------
         - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.impairment.defaultprofile.defaultprofile.DefaultProfile): An instance of the DefaultProfile class
@@ -68,7 +68,7 @@ class Impairment(Base):
 
     @property
     def Link(self):
-        """
+        """DEPRECATED
         Returns
         -------
         - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.impairment.link.link.Link): An instance of the Link class
@@ -88,7 +88,7 @@ class Impairment(Base):
 
     @property
     def Profile(self):
-        """
+        """DEPRECATED
         Returns
         -------
         - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.impairment.profile.profile.Profile): An instance of the Profile class
@@ -184,8 +184,8 @@ class Impairment(Base):
 
         Applies traffic impairments defined by user.
 
-        apply(async_operation=bool)
-        ---------------------------
+        DEPRECATED apply(async_operation=bool)
+        --------------------------------------
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises

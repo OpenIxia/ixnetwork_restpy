@@ -28,7 +28,7 @@ if sys.version_info >= (3, 5):
 
 
 class Link(Base):
-    """List of impairment links.  Each link consists of a pair of ports.
+    """DEPRECATED List of impairment links.  Each link consists of a pair of ports.
     The Link class encapsulates a list of link resources that are managed by the system.
     A list of resources can be retrieved from the server using the Link.find() method.
     """
@@ -48,7 +48,7 @@ class Link(Base):
 
     @property
     def LosLof(self):
-        """
+        """DEPRECATED
         Returns
         -------
         - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.impairment.link.loslof.loslof.LosLof): An instance of the LosLof class

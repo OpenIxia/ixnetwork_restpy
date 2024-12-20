@@ -82,7 +82,7 @@ class Ixnetwork(Base):
 
     @property
     def Impairment(self):
-        """
+        """DEPRECATED
         Returns
         -------
         - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.impairment.impairment.Impairment): An instance of the Impairment class
@@ -906,6 +906,33 @@ class Ixnetwork(Base):
             "fetchColDisplayNamesForProtocol", payload=payload, response_object=None
         )
 
+    def FetchObjectDetailsInBulk(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
+        """Executes the fetchObjectDetailsInBulk operation on the server.
+
+        This command fetches topology/port/lag/dg/ng names in bulk
+
+        fetchObjectDetailsInBulk(Arg1=enum, Arg2=string, async_operation=bool)string
+        ----------------------------------------------------------------------------
+        - Arg1 (str(dg | lag | ng | port | topology)):
+        - Arg2 (str):
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns str:
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "fetchObjectDetailsInBulk", payload=payload, response_object=None
+        )
+
     def FetchPropertyNameForDisplayName(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
         """Executes the fetchPropertyNameForDisplayName operation on the server.
@@ -1553,6 +1580,33 @@ class Ixnetwork(Base):
             payload[item[0]] = item[1]
         return self._execute(
             "getMemoryUsageInfo", payload=payload, response_object=None
+        )
+
+    def GetNamePatternPreview(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
+        """Executes the getNamePatternPreview operation on the server.
+
+        This command gets a preview for a pattern
+
+        getNamePatternPreview(Arg1=string, Arg2=number, async_operation=bool)string
+        ---------------------------------------------------------------------------
+        - Arg1 (str): pattern to be set
+        - Arg2 (number): count of values to return for the preview
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns str:
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getNamePatternPreview", payload=payload, response_object=None
         )
 
     def GetNetworkGroupSize(self, *args, **kwargs):
@@ -2584,6 +2638,78 @@ class Ixnetwork(Base):
         for item in kwargs.items():
             payload[item[0]] = item[1]
         return self._execute("setLoggingLevel", payload=payload, response_object=None)
+
+    def SetNamePattern(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
+        """Executes the setNamePattern operation on the server.
+
+        This command sets topology/port/lag/dg/ng names in bulk following a pattern
+
+        setNamePattern(Arg1=string, async_operation=bool)string
+        -------------------------------------------------------
+        - Arg1 (str): details to be SET. Format is json, expects the first value in the series
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns str:
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("setNamePattern", payload=payload, response_object=None)
+
+    def SetObjectInBulk(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
+        """Executes the setObjectInBulk operation on the server.
+
+        This command sets topology/port/lag/dg/ng names in bulk
+
+        setObjectInBulk(Arg1=string, async_operation=bool)string
+        --------------------------------------------------------
+        - Arg1 (str): details to be SET. Format is json
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns str:
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("setObjectInBulk", payload=payload, response_object=None)
+
+    def SetObjectInBulkV2(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
+        """Executes the setObjectInBulkV2 operation on the server.
+
+        This command sets topology/port/lag/dg/ng names in bulk
+
+        setObjectInBulkV2(Arg1=string, async_operation=bool)string
+        ----------------------------------------------------------
+        - Arg1 (str): details to be SET. Format is json, expects the first value in the series
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns str:
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("setObjectInBulkV2", payload=payload, response_object=None)
 
     def SetPortRpfTraceProperties(self, *args, **kwargs):
         # type: (*Any, **Any) -> None

@@ -625,13 +625,13 @@ class Topology(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ipv4.ipv4_d3982d161b434ec799d31ef7237a4b96.Ipv4): An instance of the Ipv4 class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ipv4.ipv4_9f2d3c4082b38a75137161eceb450ab1.Ipv4): An instance of the Ipv4 class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ipv4.ipv4_d3982d161b434ec799d31ef7237a4b96 import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.ipv4.ipv4_9f2d3c4082b38a75137161eceb450ab1 import (
             Ipv4,
         )
 
