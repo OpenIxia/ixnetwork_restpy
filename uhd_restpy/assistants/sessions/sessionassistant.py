@@ -9,12 +9,12 @@
     Get a StatViewAssistant instance
 """
 
-from ixnetwork_restpy.connection import Connection
-from ixnetwork_restpy.errors import *
-from ixnetwork_restpy.testplatform.testplatform import TestPlatform
-from ixnetwork_restpy.assistants.statistics.statviewassistant import StatViewAssistant
-from ixnetwork_restpy.assistants.ports.portmapassistant import PortMapAssistant
-from ixnetwork_restpy.assistants.watch.watchassistant import WatchAssistant
+from uhd_restpy.connection import Connection
+from uhd_restpy.errors import *
+from uhd_restpy.testplatform.testplatform import TestPlatform
+from uhd_restpy.assistants.statistics.statviewassistant import StatViewAssistant
+from uhd_restpy.assistants.ports.portmapassistant import PortMapAssistant
+from uhd_restpy.assistants.watch.watchassistant import WatchAssistant
 
 
 class SessionAssistant(object):

@@ -30,8 +30,8 @@ import pkg_resources
 from requests import Session, request, utils
 from requests.exceptions import ConnectTimeout
 from io import BufferedReader
-from ixnetwork_restpy.errors import *
-from ixnetwork_restpy.files import Files
+from uhd_restpy.errors import *
+from uhd_restpy.files import Files
 
 
 try:

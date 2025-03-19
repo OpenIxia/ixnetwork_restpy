@@ -1,7 +1,7 @@
 import time
 import os
 from inspect import getframeinfo, stack
-from ixnetwork_restpy.base import Base
+from uhd_restpy.base import Base
 
 
 class Timer(object):
@@ -10,11 +10,11 @@ class Timer(object):
 
         Args
         ----
-        - base (ixnetwork_restpy.base.Base): object that inherits from ixnetwork_restpy.base.Base
+        - base (uhd_restpy.base.Base): object that inherits from uhd_restpy.base.Base
         """
         if isinstance(base, Base) is False:
             raise Exception(
-                "The base object must be a valid instance of ixnetwork_restpy.base.Base"
+                "The base object must be a valid instance of uhd_restpy.base.Base"
             )
         self._caller = getframeinfo(stack()[1][0])
         self._base = base

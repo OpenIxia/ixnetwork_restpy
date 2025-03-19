@@ -59,11 +59,11 @@ class Sessions(Base):
         build_number = response["buildNumber"]
         if build_number not in self._build_numbers:
             user_name = response["username"]
-            from distutils.version import LooseVersion
+            from packaging.version import Version
 
             if len(build_number) == 0:
                 self.warn("Using DEBUG version of IxNetwork api server")
-            elif LooseVersion(build_number) < LooseVersion("8.52"):
+            elif Version(build_number) < Version("8.52"):
                 raise ValueError(
                     "IxNetwork api server version %s is not supported. The minimum version supported is 8.52"
                     % build_number

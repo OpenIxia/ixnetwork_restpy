@@ -26,7 +26,7 @@ import datetime
 import time
 import json
 import logging
-import pkg_resources
+from importlib.metadata import distribution
 from requests import Session, request, utils
 from requests.exceptions import ConnectTimeout
 from io import BufferedReader
@@ -109,7 +109,7 @@ class Connection(object):
             try:
                 logging.getLogger(__name__).info(
                     "using ixnetwork-restpy version %s"
-                    % pkg_resources.get_distribution("ixnetwork-restpy").version
+                    % distribution("ixnetwork-restpy").version
                 )
             except Exception as e:
                 logging.getLogger(__name__).warning(

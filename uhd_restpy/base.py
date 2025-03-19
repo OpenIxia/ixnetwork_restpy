@@ -22,8 +22,8 @@
 import sys
 import re
 from inspect import isclass, stack
-from ixnetwork_restpy.errors import NotFoundError
-from ixnetwork_restpy.files import Files
+from uhd_restpy.errors import NotFoundError
+from uhd_restpy.files import Files
 from requests import utils
 
 
@@ -271,7 +271,7 @@ class Base(object):
             dict: if there are items in the payload after processing of the locals_dict is complete
             None: if there are no items in the payload
         """
-        from ixnetwork_restpy.multivalue import Multivalue
+        from uhd_restpy.multivalue import Multivalue
 
         payload = {}
         python_method_name = method_name
@@ -365,7 +365,7 @@ class Base(object):
         return self
 
     def _set_properties(self, properties, clear=False):
-        from ixnetwork_restpy.multivalue import Multivalue
+        from uhd_restpy.multivalue import Multivalue
 
         if clear is True:
             self._clear()
@@ -595,7 +595,7 @@ class Base(object):
         """
         # setup the device id map
         topology_url = self.href[0 : self.href.index("deviceGroup") - 1]
-        from ixnetwork_restpy.select import Select
+        from uhd_restpy.select import Select
 
         topology_results = Select(
             self._connection,

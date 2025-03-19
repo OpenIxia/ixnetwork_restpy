@@ -1,8 +1,8 @@
 import time
 import json
 import inspect
-from ixnetwork_restpy.testplatform.sessions.ixnetwork.ixnetwork import Ixnetwork
-from ixnetwork_restpy.timer import Timer
+from uhd_restpy.testplatform.sessions.ixnetwork.ixnetwork import Ixnetwork
+from uhd_restpy.timer import Timer
 
 
 class Batch(object):

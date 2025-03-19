@@ -1,7 +1,7 @@
 """Rows class to simplify access to statistics views data
 """
 
-from ixnetwork_restpy.errors import *
+from uhd_restpy.errors import *
 import datetime
 
 

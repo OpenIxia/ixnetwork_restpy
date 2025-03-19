@@ -19,7 +19,7 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
-from ixnetwork_restpy.base import Base
+from uhd_restpy.base import Base
 
 
 class Multivalue(Base):
@@ -696,10 +696,10 @@ class Multivalue(Base):
 
         Returns
         -------
-        - obj(ixnetwork_restpy.steps.Steps): A multivalue step object
+        - obj(uhd_restpy.steps.Steps): A multivalue step object
         """
         self.Pattern
-        from ixnetwork_restpy.steps import Steps
+        from uhd_restpy.steps import Steps
 
         return Steps(self)._custom_select()
 

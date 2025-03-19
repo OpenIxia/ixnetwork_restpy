@@ -22,9 +22,9 @@
 import sys
 import time
 import logging
-from ixnetwork_restpy.base import Base
-from ixnetwork_restpy.connection import Connection
-from ixnetwork_restpy.errors import NotFoundError
+from uhd_restpy.base import Base
+from uhd_restpy.connection import Connection
+from uhd_restpy.errors import NotFoundError
 
 
 class TestPlatform(Base):
@@ -74,7 +74,7 @@ class TestPlatform(Base):
 
         Raises
         ------
-        - obj(ixnetwork_restpy.errors.ConnectionError)
+        - obj(uhd_restpy.errors.ConnectionError)
         """
         super(TestPlatform, self).__init__(None)
         self._connection = Connection(
@@ -221,8 +221,8 @@ class TestPlatform(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.sessions.Sessions): An instance of the Sessions class
+        - obj(uhd_restpy.testplatform.sessions.sessions.Sessions): An instance of the Sessions class
         """
-        from ixnetwork_restpy.testplatform.sessions.sessions import Sessions
+        from uhd_restpy.testplatform.sessions.sessions import Sessions
 
         return Sessions(self)

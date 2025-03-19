@@ -23,10 +23,10 @@ class BatchFind:
 
         Args
         ----
-        - root (ixnetwork_restpy.base.Base): An ixnetwork_restpy object that is the
+        - root (uhd_restpy.base.Base): An ixnetwork_restpy object that is the
           starting point in the hierarchy of the nested find statements.
         """
-        assert isinstance(root, ixnetwork_restpy.base.Base)
+        assert isinstance(root, uhd_restpy.base.Base)
         self._select_payload = {
             "from": root.href,
             "properties": [],
@@ -80,7 +80,7 @@ class BatchFind:
         )
         end = self._root.href.index("ixnetwork") + len("ixnetwork")
         url = self._root.href[0:end] + "/operations/select"
-        with ixnetwork_restpy.Timer(self._root) as t:
+        with uhd_restpy.Timer(self._root) as t:
             results = self._root._connection._execute(url, selects_payload)
             for result in results:
                 self._process_results(self._root, result)

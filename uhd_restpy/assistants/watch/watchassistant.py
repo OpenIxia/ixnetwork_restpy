@@ -22,13 +22,13 @@ class WatchAssistant(object):
 
         Args
         ----
-        - IxNetwork (obj (ixnetwork_restpy.testplatform.sessions.ixnetwork.Ixnetwork)): An Ixnetwork object
+        - IxNetwork (obj (uhd_restpy.testplatform.sessions.ixnetwork.Ixnetwork)): An Ixnetwork object
         - Callback (method(ws, message)): the callback that receives notification data.
             The message will be a json string and will need to be converted to a dict using json
             If no callback is provided then a default one will be assigned that
             prints received messages to the console
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.ixnetwork import Ixnetwork
+        from uhd_restpy.testplatform.sessions.ixnetwork.ixnetwork import Ixnetwork
 
         assert isinstance(IxNetwork, Ixnetwork)
         self._watch = IxNetwork.Watch

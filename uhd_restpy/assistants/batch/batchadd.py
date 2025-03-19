@@ -1,7 +1,7 @@
 import json
 import re
-from ixnetwork_restpy.base import Base
-from ixnetwork_restpy.timer import Timer
+from uhd_restpy.base import Base
+from uhd_restpy.timer import Timer
 
 
 class BatchAdd(object):
@@ -10,9 +10,9 @@ class BatchAdd(object):
 
         Args
         ----
-        - ixnetwork (ixnetwork_restpy.base.Base): the root ixnetwork object
+        - ixnetwork (uhd_restpy.base.Base): the root ixnetwork object
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.ixnetwork import Ixnetwork
+        from uhd_restpy.testplatform.sessions.ixnetwork.ixnetwork import Ixnetwork
 
         assert isinstance(ixnetwork, Ixnetwork)
         self._ixnetwork = ixnetwork

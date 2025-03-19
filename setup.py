@@ -63,7 +63,7 @@ setup(
     packages=['ixnetwork_restpy', 'uhd_restpy'],
     include_package_data=True,
     python_requires='>=2.7, <4',
-    install_requires=['requests', 'websocket-client', 'disutils', 'setuptools'],
+    install_requires=['requests', 'websocket-client', 'setuptools', "packaging"],
     tests_require=['mock'],
     test_suite='ixnetwork_restpy.tests'
 )

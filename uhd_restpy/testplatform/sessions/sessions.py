@@ -19,9 +19,9 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
-from ixnetwork_restpy.base import Base
-from ixnetwork_restpy.errors import IxNetworkError, BadRequestError
-from ixnetwork_restpy.multivalue import Multivalue
+from uhd_restpy.base import Base
+from uhd_restpy.errors import IxNetworkError, BadRequestError
+from uhd_restpy.multivalue import Multivalue
 import time
 
 
@@ -42,13 +42,13 @@ class Sessions(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.ixnetwork.Ixnetwork): An instance of the Ixnetwork class
+        - obj(uhd_restpy.testplatform.sessions.ixnetwork.ixnetwork.Ixnetwork): An instance of the Ixnetwork class
 
         Raises
         ------
         - ValueError: Version of IxNetwork server is not supported. Minimum version supported is 8.52.
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.ixnetwork import (
+        from uhd_restpy.testplatform.sessions.ixnetwork.ixnetwork import (
             Ixnetwork,
         )
 

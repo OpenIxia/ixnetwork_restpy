@@ -3,8 +3,8 @@
 
 import time
 import json
-from ixnetwork_restpy.select import Select
-from ixnetwork_restpy.assistants.statistics.statviewassistant import StatViewAssistant
+from uhd_restpy.select import Select
+from uhd_restpy.assistants.statistics.statviewassistant import StatViewAssistant
 
 
 try:
@@ -19,7 +19,7 @@ class PortMapAssistant(object):
 
         Args
         ----
-        - IxNetwork (obj (ixnetwork_restpy.testplatform.sessions.ixnetwork.Ixnetwork)): An Ixnetwork object
+        - IxNetwork (obj (uhd_restpy.testplatform.sessions.ixnetwork.Ixnetwork)): An Ixnetwork object
         """
         self._map = {}
         self._IxNetwork = IxNetwork
@@ -70,7 +70,7 @@ class PortMapAssistant(object):
 
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.vport.Vport): A Vport object
+        - obj(uhd_restpy.testplatform.sessions.ixnetwork.vport.vport.Vport): A Vport object
 
         Raises
         ------
@@ -127,8 +127,8 @@ class PortMapAssistant(object):
 
         Raises
         ------
-        - obj(ixnetwork_restpy.errors.NotFoundError): the HostReadyTimeout or LinkUpTimeout value has been exceeded
-        - obj(ixnetwork_restpy.errors.ServerError): an unexpected error occurred on the server
+        - obj(uhd_restpy.errors.NotFoundError): the HostReadyTimeout or LinkUpTimeout value has been exceeded
+        - obj(uhd_restpy.errors.ServerError): an unexpected error occurred on the server
         """
         start = time.time()
         self._add_hosts(HostReadyTimeout)

@@ -1,2 +1,2 @@
-from ixnetwork_restpy.assistants.statistics.statviewassistant import StatViewAssistant
-from ixnetwork_restpy.assistants.ports.portmapassistant import PortMapAssistant
+from uhd_restpy.assistants.statistics.statviewassistant import StatViewAssistant
+from uhd_restpy.assistants.ports.portmapassistant import PortMapAssistant

@@ -63,6 +63,26 @@ class BgpMVpnSenderSitesIpv6(Base):
         super(BgpMVpnSenderSitesIpv6, self).__init__(parent, list_op)
 
     @property
+    def BgpMVpnSenderSiteSpmsiV6(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpmvpnsendersitespmsiv6_2952dbb55deecb9e4187a6b85fc7807e.BgpMVpnSenderSiteSpmsiV6): An instance of the BgpMVpnSenderSiteSpmsiV6 class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpmvpnsendersitespmsiv6_2952dbb55deecb9e4187a6b85fc7807e import (
+            BgpMVpnSenderSiteSpmsiV6,
+        )
+
+        if len(self._object_properties) > 0:
+            if self._properties.get("BgpMVpnSenderSiteSpmsiV6", None) is not None:
+                return self._properties.get("BgpMVpnSenderSiteSpmsiV6")
+        return BgpMVpnSenderSiteSpmsiV6(self)
+
+    @property
     def CMacProperties(self):
         """
         Returns

@@ -131,6 +131,46 @@ class NetworkGroup(Base):
         return BgpMVpnReceiverSitesIpv6(self)
 
     @property
+    def BgpMVpnSenderSiteSpmsiV4(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpmvpnsendersitespmsiv4_4b13597607a662131f4202b2be10d840.BgpMVpnSenderSiteSpmsiV4): An instance of the BgpMVpnSenderSiteSpmsiV4 class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpmvpnsendersitespmsiv4_4b13597607a662131f4202b2be10d840 import (
+            BgpMVpnSenderSiteSpmsiV4,
+        )
+
+        if len(self._object_properties) > 0:
+            if self._properties.get("BgpMVpnSenderSiteSpmsiV4", None) is not None:
+                return self._properties.get("BgpMVpnSenderSiteSpmsiV4")
+        return BgpMVpnSenderSiteSpmsiV4(self)
+
+    @property
+    def BgpMVpnSenderSiteSpmsiV6(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpmvpnsendersitespmsiv6_2952dbb55deecb9e4187a6b85fc7807e.BgpMVpnSenderSiteSpmsiV6): An instance of the BgpMVpnSenderSiteSpmsiV6 class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpmvpnsendersitespmsiv6_2952dbb55deecb9e4187a6b85fc7807e import (
+            BgpMVpnSenderSiteSpmsiV6,
+        )
+
+        if len(self._object_properties) > 0:
+            if self._properties.get("BgpMVpnSenderSiteSpmsiV6", None) is not None:
+                return self._properties.get("BgpMVpnSenderSiteSpmsiV6")
+        return BgpMVpnSenderSiteSpmsiV6(self)
+
+    @property
     def BgpMVpnSenderSitesIpv4(self):
         """
         Returns
