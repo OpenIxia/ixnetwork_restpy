@@ -65,26 +65,6 @@ class AvailableHardware(Base):
         return Chassis(self)
 
     @property
-    def VirtualChassis(self):
-        """
-        Returns
-        -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.availablehardware.virtualchassis.virtualchassis.VirtualChassis): An instance of the VirtualChassis class
-
-        Raises
-        ------
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.availablehardware.virtualchassis.virtualchassis import (
-            VirtualChassis,
-        )
-
-        if len(self._object_properties) > 0:
-            if self._properties.get("VirtualChassis", None) is not None:
-                return self._properties.get("VirtualChassis")
-        return VirtualChassis(self)._select()
-
-    @property
     def IsLocked(self):
         # type: () -> bool
         """

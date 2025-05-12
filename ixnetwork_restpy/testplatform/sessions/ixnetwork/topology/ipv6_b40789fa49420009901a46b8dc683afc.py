@@ -505,13 +505,13 @@ class Ipv6(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ptp_c3eec87ebde27dac796b6c44a242310f.Ptp): An instance of the Ptp class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ptp_c1137d7a86f153ce202396614c8f5e6a.Ptp): An instance of the Ptp class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ptp_c3eec87ebde27dac796b6c44a242310f import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ptp_c1137d7a86f153ce202396614c8f5e6a import (
             Ptp,
         )
 
@@ -545,13 +545,13 @@ class Ipv6(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.roce6v2_c5bf003ba7756e74c6e5da9fd6ee6a9b.Roce6v2): An instance of the Roce6v2 class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.roce6v2_83f1997f122d7411e1eb202c07bfc537.Roce6v2): An instance of the Roce6v2 class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.roce6v2_c5bf003ba7756e74c6e5da9fd6ee6a9b import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.roce6v2_83f1997f122d7411e1eb202c07bfc537 import (
             Roce6v2,
         )
 
@@ -1168,9 +1168,10 @@ class Ipv6(Base):
         # type: (*Any, **Any) -> None
         """Executes the addDeleteTags operation on the server.
 
-        addDeleteTags(Arg2=bool, async_operation=bool)
-        ----------------------------------------------
+        addDeleteTags(Arg2=bool, Arg3=bool, async_operation=bool)
+        ---------------------------------------------------------
         - Arg2 (bool):
+        - Arg3 (bool):
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
@@ -1300,6 +1301,32 @@ class Ipv6(Base):
         for item in kwargs.items():
             payload[item[0]] = item[1]
         return self._execute("getNeighborInfo", payload=payload, response_object=None)
+
+    def PerformActionOnAllObjects(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
+        """Executes the performActionOnAllObjects operation on the server.
+
+        Action on All Objects
+
+        performActionOnAllObjects(Arg2=string, async_operation=bool)string
+        ------------------------------------------------------------------
+        - Arg2 (str): Action Name
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns str:
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "performActionOnAllObjects", payload=payload, response_object=None
+        )
 
     def PingStatus(self, *args, **kwargs):
         """Executes the pingStatus operation on the server.

@@ -82,6 +82,7 @@ class IsisL3(Base):
         "IncludeMaxSlMsd": "includeMaxSlMsd",
         "IncludeMaximumEndDMsd": "includeMaximumEndDMsd",
         "IncludeMaximumEndPopMsd": "includeMaximumEndPopMsd",
+        "IncludeMaximumHEncapMsd": "includeMaximumHEncapMsd",
         "IncludeMaximumTEncapMsd": "includeMaximumTEncapMsd",
         "IncludeMaximumTInsertMsd": "includeMaximumTInsertMsd",
         "InterfaceMetric": "interfaceMetric",
@@ -98,6 +99,7 @@ class IsisL3(Base):
         "LocalSystemID": "localSystemID",
         "MaxEndDMsd": "maxEndDMsd",
         "MaxEndPopMsd": "maxEndPopMsd",
+        "MaxHEncap": "maxHEncap",
         "MaxSlMsd": "maxSlMsd",
         "MaxTEncap": "maxTEncap",
         "MaxTInsertMsd": "maxTInsertMsd",
@@ -879,9 +881,23 @@ class IsisL3(Base):
         )
 
     @property
-    def IncludeMaximumTEncapMsd(self):
+    def IncludeMaximumHEncapMsd(self):
         # type: () -> 'Multivalue'
         """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): If set, then include Maximum H.Encap MSD in SRv6 capability
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["IncludeMaximumHEncapMsd"])
+        )
+
+    @property
+    def IncludeMaximumTEncapMsd(self):
+        # type: () -> 'Multivalue'
+        """DEPRECATED
         Returns
         -------
         - obj(ixnetwork_restpy.multivalue.Multivalue): If set, then include Maximum T.Encap MSD in SRv6 capability
@@ -1087,6 +1103,18 @@ class IsisL3(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["MaxEndPopMsd"]))
 
     @property
+    def MaxHEncap(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This field specifies the maximum number of SIDs that can be included as part of the H.Encap behavior. If this field is zero and the E flag is set, then the router can apply H.Encap by encapsulating the incoming packet in another IPv6 header without SRH, it is the same way IPinIP encapsulation is performed. If the E flag is clear, then this field SHOULD be transmitted as zero and MUST be ignored on receipt.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["MaxHEncap"]))
+
+    @property
     def MaxSlMsd(self):
         # type: () -> 'Multivalue'
         """
@@ -1101,7 +1129,7 @@ class IsisL3(Base):
     @property
     def MaxTEncap(self):
         # type: () -> 'Multivalue'
-        """
+        """DEPRECATED
         Returns
         -------
         - obj(ixnetwork_restpy.multivalue.Multivalue): This field specifies the maximum number of SIDs that can be included as part of the T.Encap behavior. If this field is zero and the E flag is set, then the router can apply T.Encap by encapsulating the incoming packet in another IPv6 header without SRH, it is the same way IPinIP encapsulation is performed. If the E flag is clear, then this field SHOULD be transmitted as zero and MUST be ignored on receipt.
@@ -1611,9 +1639,10 @@ class IsisL3(Base):
         # type: (*Any, **Any) -> None
         """Executes the addDeleteTags operation on the server.
 
-        addDeleteTags(Arg2=bool, async_operation=bool)
-        ----------------------------------------------
+        addDeleteTags(Arg2=bool, Arg3=bool, async_operation=bool)
+        ---------------------------------------------------------
         - Arg2 (bool):
+        - Arg3 (bool):
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
@@ -1799,6 +1828,32 @@ class IsisL3(Base):
         for item in kwargs.items():
             payload[item[0]] = item[1]
         return self._execute("isisStopInterface", payload=payload, response_object=None)
+
+    def PerformActionOnAllObjects(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
+        """Executes the performActionOnAllObjects operation on the server.
+
+        Action on All Objects
+
+        performActionOnAllObjects(Arg2=string, async_operation=bool)string
+        ------------------------------------------------------------------
+        - Arg2 (str): Action Name
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns str:
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "performActionOnAllObjects", payload=payload, response_object=None
+        )
 
     def RestartDown(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -2060,6 +2115,7 @@ class IsisL3(Base):
         IncludeMaxSlMsd=None,
         IncludeMaximumEndDMsd=None,
         IncludeMaximumEndPopMsd=None,
+        IncludeMaximumHEncapMsd=None,
         IncludeMaximumTEncapMsd=None,
         IncludeMaximumTInsertMsd=None,
         InterfaceMetric=None,
@@ -2075,6 +2131,7 @@ class IsisL3(Base):
         LevelType=None,
         MaxEndDMsd=None,
         MaxEndPopMsd=None,
+        MaxHEncap=None,
         MaxSlMsd=None,
         MaxTEncap=None,
         MaxTInsertMsd=None,
@@ -2137,6 +2194,7 @@ class IsisL3(Base):
         - IncludeMaxSlMsd (str): optional regex of includeMaxSlMsd
         - IncludeMaximumEndDMsd (str): optional regex of includeMaximumEndDMsd
         - IncludeMaximumEndPopMsd (str): optional regex of includeMaximumEndPopMsd
+        - IncludeMaximumHEncapMsd (str): optional regex of includeMaximumHEncapMsd
         - IncludeMaximumTEncapMsd (str): optional regex of includeMaximumTEncapMsd
         - IncludeMaximumTInsertMsd (str): optional regex of includeMaximumTInsertMsd
         - InterfaceMetric (str): optional regex of interfaceMetric
@@ -2152,6 +2210,7 @@ class IsisL3(Base):
         - LevelType (str): optional regex of levelType
         - MaxEndDMsd (str): optional regex of maxEndDMsd
         - MaxEndPopMsd (str): optional regex of maxEndPopMsd
+        - MaxHEncap (str): optional regex of maxHEncap
         - MaxSlMsd (str): optional regex of maxSlMsd
         - MaxTEncap (str): optional regex of maxTEncap
         - MaxTInsertMsd (str): optional regex of maxTInsertMsd

@@ -467,32 +467,6 @@ class Ixnetwork(Base):
             "clearAppLibraryStats", payload=payload, response_object=None
         )
 
-    def ClearCardOwnershipById(self, *args, **kwargs):
-        # type: (*Any, **Any) -> Union[int, None]
-        """Executes the clearCardOwnershipById operation on the server.
-
-        Clear ownership on all ports from the given IxVM card.
-
-        clearCardOwnershipById(Arg1=string, async_operation=bool)number
-        ---------------------------------------------------------------
-        - Arg1 (str): The card ID.
-        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
-        - Returns number: Returns the card ID.
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = {}
-        for i in range(len(args)):
-            payload["Arg%s" % (i + 1)] = args[i]
-        for item in kwargs.items():
-            payload[item[0]] = item[1]
-        return self._execute(
-            "clearCardOwnershipById", payload=payload, response_object=None
-        )
-
     def ClearCPDPStats(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
         """Executes the clearCPDPStats operation on the server.
@@ -662,7 +636,7 @@ class Ixnetwork(Base):
         - Arg1 (obj(ixnetwork_restpy.files.Files)): A valid output file handle from the ixNet writeTo command
         - Arg2 (list(str[currentInstance | specificProfile])): CollectLogOptions enum: provide currentInstance or specificProfile
         - Arg3 (str): Desired Profile names in case CollectLogOption is specificProfile. Options are: All-Profiles, Analyzer, Impairment, StatViewer-Reporter, IxLoad Lite, StackManager, MiddleWare, QuickTests, AES, HLAPI
-        - Arg4 (str): Start Date in format yyyy-M-d H:mm (2019-01-01 00:00)
+        - Arg4 (str): Start Date in format yyyy-M-d H:mm (2025-01-01 00:00)
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns str: No return value.
 
@@ -671,23 +645,23 @@ class Ixnetwork(Base):
         - Arg1 (obj(ixnetwork_restpy.files.Files)): A valid output file handle from the ixNet writeTo command
         - Arg2 (list(str[currentInstance | specificProfile])): CollectLogOptions enum: provide currentInstance or specificProfile
         - Arg3 (str): Desired Profile names in case CollectLogOption is specificProfile. Options are: All-Profiles, Analyzer, Impairment, StatViewer-Reporter, IxLoad Lite, StackManager, MiddleWare, QuickTests, AES, HLAPI
-        - Arg4 (str): Start Date in format yyyy-M-d H:mm (2019-01-01 00:00)
-        - Arg5 (str): End Date in format yyyy-M-d H:mm (2019-01-01 00:00)
+        - Arg4 (str): Start Date in format yyyy-M-d H:mm (2025-01-01 00:00)
+        - Arg5 (str): End Date in format yyyy-M-d H:mm (2025-01-01 00:00)
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns str: No return value.
 
         collectLogs(Arg1=href, Arg2=string, async_operation=bool)string
         ---------------------------------------------------------------
         - Arg1 (obj(ixnetwork_restpy.files.Files)): A valid output file handle from the ixNet writeTo command
-        - Arg2 (str): A string value.
+        - Arg2 (str): Start Date in format yyyy-M-d H:mm (2025-01-01 00:00)
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns str: No return value.
 
         collectLogs(Arg1=href, Arg2=string, Arg3=string, async_operation=bool)string
         ----------------------------------------------------------------------------
         - Arg1 (obj(ixnetwork_restpy.files.Files)): A valid output file handle from the ixNet writeTo command
-        - Arg2 (str): A string value.
-        - Arg3 (str): A string value.
+        - Arg2 (str): Start Date in format yyyy-M-d H:mm (2025-01-01 00:00)
+        - Arg3 (str): End Date in format yyyy-M-d H:mm (2025-01-01 00:00)
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns str: No return value.
 
@@ -732,53 +706,6 @@ class Ixnetwork(Base):
         return self._execute(
             "configureCustomGraphWebUI", payload=payload, response_object=None
         )
-
-    def ConnectCardById(self, *args, **kwargs):
-        # type: (*Any, **Any) -> Union[int, None]
-        """Executes the connectCardById operation on the server.
-
-        Establish connection to the IxVM card.
-
-        connectCardById(Arg1=string, async_operation=bool)number
-        --------------------------------------------------------
-        - Arg1 (str): Card ID to which connection is required.
-        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
-        - Returns number: Returns the connected card ID or error, if any.
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = {}
-        for i in range(len(args)):
-            payload["Arg%s" % (i + 1)] = args[i]
-        for item in kwargs.items():
-            payload[item[0]] = item[1]
-        return self._execute("connectCardById", payload=payload, response_object=None)
-
-    def ConnectToChassis(self, *args, **kwargs):
-        # type: (*Any, **Any) -> None
-        """Executes the connectToChassis operation on the server.
-
-        Connect to a virtual chassis.
-
-        connectToChassis(Arg1=string, async_operation=bool)
-        ---------------------------------------------------
-        - Arg1 (str): The hostname or IP address of the chassis.
-        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = {}
-        for i in range(len(args)):
-            payload["Arg%s" % (i + 1)] = args[i]
-        for item in kwargs.items():
-            payload[item[0]] = item[1]
-        return self._execute("connectToChassis", payload=payload, response_object=None)
 
     def ConvertToNgpf(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -853,32 +780,6 @@ class Ixnetwork(Base):
         for item in kwargs.items():
             payload[item[0]] = item[1]
         return self._execute("createFDWebUIView", payload=payload, response_object=None)
-
-    def DisconnectCardById(self, *args, **kwargs):
-        # type: (*Any, **Any) -> Union[int, None]
-        """Executes the disconnectCardById operation on the server.
-
-        Close connection to the IxVM card.
-
-        disconnectCardById(Arg1=string, async_operation=bool)number
-        -----------------------------------------------------------
-        - Arg1 (str): The card ID.
-        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
-        - Returns number: Returns the card ID.
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = {}
-        for i in range(len(args)):
-            payload["Arg%s" % (i + 1)] = args[i]
-        for item in kwargs.items():
-            payload[item[0]] = item[1]
-        return self._execute(
-            "disconnectCardById", payload=payload, response_object=None
-        )
 
     def FetchColDisplayNamesForProtocol(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[str], None]
@@ -1312,6 +1213,56 @@ class Ixnetwork(Base):
             payload[item[0]] = item[1]
         return self._execute("getChassisMode", payload=payload, response_object=None)
 
+    def GetConfigSummary(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
+        """Executes the getConfigSummary operation on the server.
+
+        This command gets the summary of an ixncfg config file
+
+        getConfigSummary(Arg1=string, async_operation=bool)string
+        ---------------------------------------------------------
+        - Arg1 (str): path of the file
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns str:
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("getConfigSummary", payload=payload, response_object=None)
+
+    def GetConfigSummaryForWeb(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
+        """Executes the getConfigSummaryForWeb operation on the server.
+
+        This command gets the summary of an ixncfg config file. This is to be used by Web UI interface only
+
+        getConfigSummaryForWeb(Arg1=string, async_operation=bool)string
+        ---------------------------------------------------------------
+        - Arg1 (str): path of the file
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns str:
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getConfigSummaryForWeb", payload=payload, response_object=None
+        )
+
     def GetConfiguredProtocols(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
         """Executes the getConfiguredProtocols operation on the server.
@@ -1511,30 +1462,6 @@ class Ixnetwork(Base):
         return self._execute(
             "getIntersectionPortsForProtocols", payload=payload, response_object=None
         )
-
-    def GetIxVmCardByIp(self, *args, **kwargs):
-        # type: (*Any, **Any) -> Union[int, None]
-        """Executes the getIxVmCardByIp operation on the server.
-
-        Obtain IxVM card ID by providing management IP address.
-
-        getIxVmCardByIp(Arg1=string, async_operation=bool)number
-        --------------------------------------------------------
-        - Arg1 (str): Management IP address of the card.
-        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
-        - Returns number: Returns the card ID which has corresponding IP address on the management interface.
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = {}
-        for i in range(len(args)):
-            payload["Arg%s" % (i + 1)] = args[i]
-        for item in kwargs.items():
-            payload[item[0]] = item[1]
-        return self._execute("getIxVmCardByIp", payload=payload, response_object=None)
 
     def GetLicenseSummary(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -1956,30 +1883,6 @@ class Ixnetwork(Base):
             "getUnionPortsForProtocols", payload=payload, response_object=None
         )
 
-    def HwRebootCardByIDs(self, *args, **kwargs):
-        # type: (*Any, **Any) -> Union[bool, None]
-        """Executes the hwRebootCardByIDs operation on the server.
-
-        Perform hard reboot on virtual cards.
-
-        hwRebootCardByIDs(Arg1=list, async_operation=bool)bool
-        ------------------------------------------------------
-        - Arg1 (list(number)): An array of card IDs.
-        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
-        - Returns bool: Returns whether or not the command is successful.
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = {}
-        for i in range(len(args)):
-            payload["Arg%s" % (i + 1)] = args[i]
-        for item in kwargs.items():
-            payload[item[0]] = item[1]
-        return self._execute("hwRebootCardByIDs", payload=payload, response_object=None)
-
     def IgmpJoin(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
         """Executes the igmpJoin operation on the server.
@@ -2088,30 +1991,6 @@ class Ixnetwork(Base):
             payload[item[0]] = item[1]
         return self._execute("loadConfig", payload=payload, response_object=None)
 
-    def LoadTopology(self, *args, **kwargs):
-        # type: (*Any, **Any) -> Union[str, None]
-        """Executes the loadTopology operation on the server.
-
-        Load a chassis topology from file.
-
-        loadTopology(Arg1=string, async_operation=bool)string
-        -----------------------------------------------------
-        - Arg1 (str): Path to the CSV configuration file.
-        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
-        - Returns str: Returns an array of objects containing information about each port from the loaded chassis topology.
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = {}
-        for i in range(len(args)):
-            payload["Arg%s" % (i + 1)] = args[i]
-        for item in kwargs.items():
-            payload[item[0]] = item[1]
-        return self._execute("loadTopology", payload=payload, response_object=None)
-
     def MergeCapture(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
         """Executes the mergeCapture operation on the server.
@@ -2169,82 +2048,6 @@ class Ixnetwork(Base):
             payload[item[0]] = item[1]
         return self._execute("newConfig", payload=payload, response_object=None)
 
-    def RebootVirtualChassis(self, *args, **kwargs):
-        # type: (*Any, **Any) -> None
-        """Executes the rebootVirtualChassis operation on the server.
-
-        Perform hard reboot on the connected virtual chassis.
-
-        rebootVirtualChassis(async_operation=bool)
-        ------------------------------------------
-        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = {}
-        for i in range(len(args)):
-            payload["Arg%s" % (i + 1)] = args[i]
-        for item in kwargs.items():
-            payload[item[0]] = item[1]
-        return self._execute(
-            "rebootVirtualChassis", payload=payload, response_object=None
-        )
-
-    def RebuildChassisTopology(self, *args, **kwargs):
-        # type: (*Any, **Any) -> None
-        """Executes the rebuildChassisTopology operation on the server.
-
-        Rebuild the chassis topology using automatically discovered appliances.
-
-        rebuildChassisTopology(Arg1=string, Arg2=bool, Arg3=bool, async_operation=bool)
-        -------------------------------------------------------------------------------
-        - Arg1 (str): IxNetwork version that should be used to filter appliances.
-        - Arg2 (bool): Flag that enables reconfiguration on the same slots for the previous cards.
-        - Arg3 (bool): Promiscuous mode.
-        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = {}
-        for i in range(len(args)):
-            payload["Arg%s" % (i + 1)] = args[i]
-        for item in kwargs.items():
-            payload[item[0]] = item[1]
-        return self._execute(
-            "rebuildChassisTopology", payload=payload, response_object=None
-        )
-
-    def RediscoverAppliances(self, *args, **kwargs):
-        # type: (*Any, **Any) -> Union[str, None]
-        """Executes the rediscoverAppliances operation on the server.
-
-        Return a list of discovered machines after performing rediscovery on all systems.
-
-        rediscoverAppliances(async_operation=bool)string
-        ------------------------------------------------
-        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
-        - Returns str: Returns a list of discovered machines in XML format.
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = {}
-        for i in range(len(args)):
-            payload["Arg%s" % (i + 1)] = args[i]
-        for item in kwargs.items():
-            payload[item[0]] = item[1]
-        return self._execute(
-            "rediscoverAppliances", payload=payload, response_object=None
-        )
-
     def Refresh(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
         """Executes the refresh operation on the server.
@@ -2267,31 +2070,6 @@ class Ixnetwork(Base):
         for item in kwargs.items():
             payload[item[0]] = item[1]
         return self._execute("refresh", payload=payload, response_object=None)
-
-    def RefreshChassisTopology(self, *args, **kwargs):
-        # type: (*Any, **Any) -> Union[str, None]
-        """Executes the refreshChassisTopology operation on the server.
-
-        Obtain updated configuration of the chassis topology.
-
-        refreshChassisTopology(async_operation=bool)string
-        --------------------------------------------------
-        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
-        - Returns str: Returns an array of objects containing information about each port from the new chassis topology.
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        payload = {}
-        for i in range(len(args)):
-            payload["Arg%s" % (i + 1)] = args[i]
-        for item in kwargs.items():
-            payload[item[0]] = item[1]
-        return self._execute(
-            "refreshChassisTopology", payload=payload, response_object=None
-        )
 
     def RemoveAllTclViews(self, *args, **kwargs):
         # type: (*Any, **Any) -> None

@@ -47,6 +47,7 @@ class Pcc(Base):
         "LspDelegationDelay": "lspDelegationDelay",
         "Name": "name",
         "PathSetupTypeForSRv6": "pathSetupTypeForSRv6",
+        "PcReqlspDistributionDelay": "pcReqlspDistributionDelay",
         "PcePathComputationMode": "pcePathComputationMode",
         "RowNames": "rowNames",
         "Srv6EROSubobjectType": "srv6EROSubobjectType",
@@ -287,6 +288,21 @@ class Pcc(Base):
         self._set_attribute(self._SDM_ATT_MAP["PathSetupTypeForSRv6"], value)
 
     @property
+    def PcReqlspDistributionDelay(self):
+        # type: () -> int
+        """
+        Returns
+        -------
+        - number: Time in seconds before PCC distributes PCReq LSP at startup.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["PcReqlspDistributionDelay"])
+
+    @PcReqlspDistributionDelay.setter
+    def PcReqlspDistributionDelay(self, value):
+        # type: (int) -> None
+        self._set_attribute(self._SDM_ATT_MAP["PcReqlspDistributionDelay"], value)
+
+    @property
     def PcePathComputationMode(self):
         # type: () -> 'Multivalue'
         """
@@ -364,11 +380,12 @@ class Pcc(Base):
         ErrorValueSIDAndNAIAbsentInSRv6RROSubobject=None,
         Name=None,
         PathSetupTypeForSRv6=None,
+        PcReqlspDistributionDelay=None,
         Srv6EROSubobjectType=None,
         Srv6PceCapabilitySubTLVType=None,
         Srv6RROSubobjectType=None,
     ):
-        # type: (int, int, int, int, int, str, int, int, int, int) -> Pcc
+        # type: (int, int, int, int, int, str, int, int, int, int, int) -> Pcc
         """Updates pcc resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -383,6 +400,7 @@ class Pcc(Base):
         - ErrorValueSIDAndNAIAbsentInSRv6RROSubobject (number): This error value is sent when a PCEP speaker receives an SRv6-RRO subobject where both SRv6 SID and NAI are absent.
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
         - PathSetupTypeForSRv6 (number): SRv6 Path Setup Type specifies PCE's capability of interpreting this type of Path.
+        - PcReqlspDistributionDelay (number): Time in seconds before PCC distributes PCReq LSP at startup.
         - Srv6EROSubobjectType (number): Code Point For SRv6 ERO Subobject Type.
         - Srv6PceCapabilitySubTLVType (number): SRv6 PCE Capability Sub-TLV Type specifies PCE's capability of interpreting this type of sub-TLV.
         - Srv6RROSubobjectType (number): Code Point For SRv6 RRO Subobject Type.
@@ -404,12 +422,13 @@ class Pcc(Base):
         ErrorValueSIDAndNAIAbsentInSRv6RROSubobject=None,
         Name=None,
         PathSetupTypeForSRv6=None,
+        PcReqlspDistributionDelay=None,
         RowNames=None,
         Srv6EROSubobjectType=None,
         Srv6PceCapabilitySubTLVType=None,
         Srv6RROSubobjectType=None,
     ):
-        # type: (int, str, int, int, int, int, int, str, int, List[str], int, int, int) -> Pcc
+        # type: (int, str, int, int, int, int, int, str, int, int, List[str], int, int, int) -> Pcc
         """Finds and retrieves pcc resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve pcc resources from the server.
@@ -427,6 +446,7 @@ class Pcc(Base):
         - ErrorValueSIDAndNAIAbsentInSRv6RROSubobject (number): This error value is sent when a PCEP speaker receives an SRv6-RRO subobject where both SRv6 SID and NAI are absent.
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
         - PathSetupTypeForSRv6 (number): SRv6 Path Setup Type specifies PCE's capability of interpreting this type of Path.
+        - PcReqlspDistributionDelay (number): Time in seconds before PCC distributes PCReq LSP at startup.
         - RowNames (list(str)): Name of rows
         - Srv6EROSubobjectType (number): Code Point For SRv6 ERO Subobject Type.
         - Srv6PceCapabilitySubTLVType (number): SRv6 PCE Capability Sub-TLV Type specifies PCE's capability of interpreting this type of sub-TLV.

@@ -670,7 +670,7 @@ class Traffic(Base):
     @property
     def EnablePortLevelMisdirectedRoCEv2(self):
         # type: () -> bool
-        """
+        """DEPRECATED
         Returns
         -------
         - bool: Check this option to enable port level misdirection handling for RoCEv2 traffic

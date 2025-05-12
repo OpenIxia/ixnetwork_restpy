@@ -6003,6 +6003,20 @@ class Stack(Base):
         return NFapiPayloadMarker(self)
 
     @property
+    def Nsh(self):
+        """
+        valid only with Batch Add
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.nsh_template.Nsh): An instance of the Nsh traffic stack
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.nsh_template import (
+            Nsh,
+        )
+
+        return Nsh(self)
+
+    @property
     def Tcp(self):
         """
         valid only with Batch Add

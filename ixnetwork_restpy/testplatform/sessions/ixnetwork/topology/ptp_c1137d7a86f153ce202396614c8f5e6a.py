@@ -160,6 +160,7 @@ class Ptp(Base):
         "Priority2": "priority2",
         "Profile": "profile",
         "PtpState": "ptpState",
+        "PtpTimestampOffsetPattern": "ptpTimestampOffsetPattern",
         "RenewalInvited": "renewalInvited",
         "RequestAttempts": "requestAttempts",
         "RequestHolddown": "requestHolddown",
@@ -1961,6 +1962,20 @@ class Ptp(Base):
         return self._get_attribute(self._SDM_ATT_MAP["PtpState"])
 
     @property
+    def PtpTimestampOffsetPattern(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): For Increment, Epoch Time will be shifted backwards by Timestamp Offset field value For Decrement, Epoch Time will be shifted forwards by Timestamp Offset field value
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["PtpTimestampOffsetPattern"])
+        )
+
+    @property
     def RenewalInvited(self):
         # type: () -> 'Multivalue'
         """
@@ -2573,7 +2588,7 @@ class Ptp(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): The initial offset added to the local clock when starting the session
+        - obj(ixnetwork_restpy.multivalue.Multivalue): The value will be used to manipulate the epoch as per the Timestamp Offset Pattern field.
         """
         from ixnetwork_restpy.multivalue import Multivalue
 
@@ -2930,9 +2945,10 @@ class Ptp(Base):
         # type: (*Any, **Any) -> None
         """Executes the addDeleteTags operation on the server.
 
-        addDeleteTags(Arg2=bool, async_operation=bool)
-        ----------------------------------------------
+        addDeleteTags(Arg2=bool, Arg3=bool, async_operation=bool)
+        ---------------------------------------------------------
         - Arg2 (bool):
+        - Arg3 (bool):
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
@@ -3021,6 +3037,32 @@ class Ptp(Base):
         for item in kwargs.items():
             payload[item[0]] = item[1]
         return self._execute("gPtpSendSignaling", payload=payload, response_object=None)
+
+    def PerformActionOnAllObjects(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
+        """Executes the performActionOnAllObjects operation on the server.
+
+        Action on All Objects
+
+        performActionOnAllObjects(Arg2=string, async_operation=bool)string
+        ------------------------------------------------------------------
+        - Arg2 (str): Action Name
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns str:
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "performActionOnAllObjects", payload=payload, response_object=None
+        )
 
     def RestartDown(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -3320,6 +3362,7 @@ class Ptp(Base):
         Priority1=None,
         Priority2=None,
         Profile=None,
+        PtpTimestampOffsetPattern=None,
         RenewalInvited=None,
         RequestAttempts=None,
         RequestHolddown=None,
@@ -3480,6 +3523,7 @@ class Ptp(Base):
         - Priority1 (str): optional regex of priority1
         - Priority2 (str): optional regex of priority2
         - Profile (str): optional regex of profile
+        - PtpTimestampOffsetPattern (str): optional regex of ptpTimestampOffsetPattern
         - RenewalInvited (str): optional regex of renewalInvited
         - RequestAttempts (str): optional regex of requestAttempts
         - RequestHolddown (str): optional regex of requestHolddown

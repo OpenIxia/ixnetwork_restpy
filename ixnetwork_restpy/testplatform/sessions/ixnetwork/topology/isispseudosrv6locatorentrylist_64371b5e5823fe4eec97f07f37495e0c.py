@@ -41,6 +41,18 @@ class IsisPseudoSRv6LocatorEntryList(Base):
         "Count": "count",
         "DBit": "dBit",
         "DescriptiveName": "descriptiveName",
+        "Enable": "enable",
+        "EnableBit4": "enableBit4",
+        "EnableBit5": "enableBit5",
+        "EnableBit6": "enableBit6",
+        "EnableBit7": "enableBit7",
+        "EnableBit8": "enableBit8",
+        "EnableNFlag": "enableNFlag",
+        "EnableRFlag": "enableRFlag",
+        "EnableXFlag": "enableXFlag",
+        "IPv6SourceRouterID": "iPv6SourceRouterID",
+        "IncludeSourceRouterID": "includeSourceRouterID",
+        "Ipv4SourceRouterID": "ipv4SourceRouterID",
         "Locator": "locator",
         "LocatorName": "locatorName",
         "LocatorSize": "locatorSize",
@@ -149,6 +161,156 @@ class IsisPseudoSRv6LocatorEntryList(Base):
         - str: Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         """
         return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
+
+    @property
+    def Enable(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This,if enabled, sends the prefix attributes flags.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Enable"]))
+
+    @property
+    def EnableBit4(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This enables 4th bit of the byte representing the flag.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EnableBit4"]))
+
+    @property
+    def EnableBit5(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This enables 5th bit of the byte representing the flag.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EnableBit5"]))
+
+    @property
+    def EnableBit6(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This enables 6th bit of the byte representing the flag.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EnableBit6"]))
+
+    @property
+    def EnableBit7(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This enables 7th bit of the byte representing the flag.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EnableBit7"]))
+
+    @property
+    def EnableBit8(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This enables 8th bit of the byte representing the flag.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EnableBit8"]))
+
+    @property
+    def EnableNFlag(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This enables node flag.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EnableNFlag"]))
+
+    @property
+    def EnableRFlag(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This enables redistribution flag.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EnableRFlag"]))
+
+    @property
+    def EnableXFlag(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This enables external flag.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["EnableXFlag"]))
+
+    @property
+    def IPv6SourceRouterID(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This takes the value of the ipv6 source router id.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["IPv6SourceRouterID"])
+        )
+
+    @property
+    def IncludeSourceRouterID(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This drop box is provided to select ipv4 or ipv6 source id or none of them.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["IncludeSourceRouterID"])
+        )
+
+    @property
+    def Ipv4SourceRouterID(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This takes the value of the ipv4 source router id.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Ipv4SourceRouterID"])
+        )
 
     @property
     def Locator(self):
@@ -404,9 +566,10 @@ class IsisPseudoSRv6LocatorEntryList(Base):
         # type: (*Any, **Any) -> None
         """Executes the addDeleteTags operation on the server.
 
-        addDeleteTags(Arg2=bool, async_operation=bool)
-        ----------------------------------------------
+        addDeleteTags(Arg2=bool, Arg3=bool, async_operation=bool)
+        ---------------------------------------------------------
         - Arg2 (bool):
+        - Arg3 (bool):
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
@@ -420,6 +583,32 @@ class IsisPseudoSRv6LocatorEntryList(Base):
         for item in kwargs.items():
             payload[item[0]] = item[1]
         return self._execute("addDeleteTags", payload=payload, response_object=None)
+
+    def PerformActionOnAllObjects(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
+        """Executes the performActionOnAllObjects operation on the server.
+
+        Action on All Objects
+
+        performActionOnAllObjects(Arg2=string, async_operation=bool)string
+        ------------------------------------------------------------------
+        - Arg2 (str): Action Name
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns str:
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "performActionOnAllObjects", payload=payload, response_object=None
+        )
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -472,6 +661,18 @@ class IsisPseudoSRv6LocatorEntryList(Base):
         AdvertiseLocatorAsPrefix=None,
         Algorithm=None,
         DBit=None,
+        Enable=None,
+        EnableBit4=None,
+        EnableBit5=None,
+        EnableBit6=None,
+        EnableBit7=None,
+        EnableBit8=None,
+        EnableNFlag=None,
+        EnableRFlag=None,
+        EnableXFlag=None,
+        IPv6SourceRouterID=None,
+        IncludeSourceRouterID=None,
+        Ipv4SourceRouterID=None,
         Locator=None,
         LocatorName=None,
         LocatorSize=None,
@@ -495,6 +696,18 @@ class IsisPseudoSRv6LocatorEntryList(Base):
         - AdvertiseLocatorAsPrefix (str): optional regex of advertiseLocatorAsPrefix
         - Algorithm (str): optional regex of algorithm
         - DBit (str): optional regex of dBit
+        - Enable (str): optional regex of enable
+        - EnableBit4 (str): optional regex of enableBit4
+        - EnableBit5 (str): optional regex of enableBit5
+        - EnableBit6 (str): optional regex of enableBit6
+        - EnableBit7 (str): optional regex of enableBit7
+        - EnableBit8 (str): optional regex of enableBit8
+        - EnableNFlag (str): optional regex of enableNFlag
+        - EnableRFlag (str): optional regex of enableRFlag
+        - EnableXFlag (str): optional regex of enableXFlag
+        - IPv6SourceRouterID (str): optional regex of iPv6SourceRouterID
+        - IncludeSourceRouterID (str): optional regex of includeSourceRouterID
+        - Ipv4SourceRouterID (str): optional regex of ipv4SourceRouterID
         - Locator (str): optional regex of locator
         - LocatorName (str): optional regex of locatorName
         - LocatorSize (str): optional regex of locatorSize

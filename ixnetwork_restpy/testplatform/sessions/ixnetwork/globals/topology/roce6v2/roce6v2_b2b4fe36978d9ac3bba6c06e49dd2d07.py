@@ -27,27 +27,30 @@ if sys.version_info >= (3, 5):
     from typing import List, Any, Union
 
 
-class Rocev2(Base):
+class Roce6v2(Base):
     """RoCEv2 Port Specific Data
-    The Rocev2 class encapsulates a required rocev2 resource which will be retrieved from the server every time the property is accessed.
+    The Roce6v2 class encapsulates a required roce6v2 resource which will be retrieved from the server every time the property is accessed.
     """
 
     __slots__ = ()
-    _SDM_NAME = "rocev2"
+    _SDM_NAME = "roce6v2"
     _SDM_ATT_MAP = {
         "AckEcnVal": "ackEcnVal",
         "AckPriorityType": "ackPriorityType",
         "AckPriorityValue": "ackPriorityValue",
+        "AckTimeout": "ackTimeout",
         "CnpDelayTimer": "cnpDelayTimer",
         "CnpEcnVal": "cnpEcnVal",
         "CnpPriorityType": "cnpPriorityType",
         "CnpPriorityValue": "cnpPriorityValue",
         "Count": "count",
         "DescriptiveName": "descriptiveName",
+        "EnableACKTimeout": "enableACKTimeout",
         "NakEcnVal": "nakEcnVal",
         "NakPriorityType": "nakPriorityType",
         "NakPriorityValue": "nakPriorityValue",
         "Name": "name",
+        "RetransRetryCount": "retransRetryCount",
         "RoceDGCount": "roceDGCount",
         "RowNames": "rowNames",
         "SuppressHandshakeWithNoDataXchg": "suppressHandshakeWithNoDataXchg",
@@ -55,7 +58,7 @@ class Rocev2(Base):
     _SDM_ENUM_MAP = {}
 
     def __init__(self, parent, list_op=False):
-        super(Rocev2, self).__init__(parent, list_op)
+        super(Roce6v2, self).__init__(parent, list_op)
 
     @property
     def StartRate(self):
@@ -138,6 +141,18 @@ class Rocev2(Base):
         )
 
     @property
+    def AckTimeout(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Amount of time to wait before attempting to retransmit on non receipt of ACK.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["AckTimeout"]))
+
+    @property
     def CnpDelayTimer(self):
         # type: () -> 'Multivalue'
         """
@@ -210,6 +225,20 @@ class Rocev2(Base):
         return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
+    def EnableACKTimeout(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Enable Retransmission on ACK Timeout.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["EnableACKTimeout"])
+        )
+
+    @property
     def NakEcnVal(self):
         # type: () -> 'Multivalue'
         """
@@ -265,6 +294,20 @@ class Rocev2(Base):
         self._set_attribute(self._SDM_ATT_MAP["Name"], value)
 
     @property
+    def RetransRetryCount(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Number of times to retry retransmission before giving up on non receipt of ACK.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["RetransRetryCount"])
+        )
+
+    @property
     def RoceDGCount(self):
         # type: () -> int
         """
@@ -305,8 +348,8 @@ class Rocev2(Base):
         )
 
     def update(self, Name=None, RoceDGCount=None):
-        # type: (str, int) -> Rocev2
-        """Updates rocev2 resource on the server.
+        # type: (str, int) -> Roce6v2
+        """Updates roce6v2 resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
         The Multivalue class has documentation that details the possible values for those named parameters.
@@ -330,12 +373,12 @@ class Rocev2(Base):
         RoceDGCount=None,
         RowNames=None,
     ):
-        # type: (int, str, str, int, List[str]) -> Rocev2
-        """Finds and retrieves rocev2 resources from the server.
+        # type: (int, str, str, int, List[str]) -> Roce6v2
+        """Finds and retrieves roce6v2 resources from the server.
 
-        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve rocev2 resources from the server.
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve roce6v2 resources from the server.
         To retrieve an exact match ensure the parameter value starts with ^ and ends with $
-        By default the find method takes no parameters and will retrieve all rocev2 resources from the server.
+        By default the find method takes no parameters and will retrieve all roce6v2 resources from the server.
 
         Args
         ----
@@ -347,7 +390,7 @@ class Rocev2(Base):
 
         Returns
         -------
-        - self: This instance with matching rocev2 resources retrieved from the server available through an iterator or index
+        - self: This instance with matching roce6v2 resources retrieved from the server available through an iterator or index
 
         Raises
         ------
@@ -356,7 +399,7 @@ class Rocev2(Base):
         return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def read(self, href):
-        """Retrieves a single instance of rocev2 data from the server.
+        """Retrieves a single instance of roce6v2 data from the server.
 
         Args
         ----
@@ -364,7 +407,7 @@ class Rocev2(Base):
 
         Returns
         -------
-        - self: This instance with the rocev2 resources from the server available through an iterator or index
+        - self: This instance with the roce6v2 resources from the server available through an iterator or index
 
         Raises
         ------
@@ -379,16 +422,19 @@ class Rocev2(Base):
         AckEcnVal=None,
         AckPriorityType=None,
         AckPriorityValue=None,
+        AckTimeout=None,
         CnpDelayTimer=None,
         CnpEcnVal=None,
         CnpPriorityType=None,
         CnpPriorityValue=None,
+        EnableACKTimeout=None,
         NakEcnVal=None,
         NakPriorityType=None,
         NakPriorityValue=None,
+        RetransRetryCount=None,
         SuppressHandshakeWithNoDataXchg=None,
     ):
-        """Base class infrastructure that gets a list of rocev2 device ids encapsulated by this object.
+        """Base class infrastructure that gets a list of roce6v2 device ids encapsulated by this object.
 
         Use the optional regex parameters in the method to refine the list of device ids encapsulated by this object.
 
@@ -398,13 +444,16 @@ class Rocev2(Base):
         - AckEcnVal (str): optional regex of ackEcnVal
         - AckPriorityType (str): optional regex of ackPriorityType
         - AckPriorityValue (str): optional regex of ackPriorityValue
+        - AckTimeout (str): optional regex of ackTimeout
         - CnpDelayTimer (str): optional regex of cnpDelayTimer
         - CnpEcnVal (str): optional regex of cnpEcnVal
         - CnpPriorityType (str): optional regex of cnpPriorityType
         - CnpPriorityValue (str): optional regex of cnpPriorityValue
+        - EnableACKTimeout (str): optional regex of enableACKTimeout
         - NakEcnVal (str): optional regex of nakEcnVal
         - NakPriorityType (str): optional regex of nakPriorityType
         - NakPriorityValue (str): optional regex of nakPriorityValue
+        - RetransRetryCount (str): optional regex of retransRetryCount
         - SuppressHandshakeWithNoDataXchg (str): optional regex of suppressHandshakeWithNoDataXchg
 
         Returns

@@ -103,6 +103,7 @@ class IsisL3Router(Base):
         "IncludeMaximumEndDSrhTLV": "includeMaximumEndDSrhTLV",
         "IncludeMaximumEndPopMsd": "includeMaximumEndPopMsd",
         "IncludeMaximumEndPopSrhTLV": "includeMaximumEndPopSrhTLV",
+        "IncludeMaximumHEncapMsd": "includeMaximumHEncapMsd",
         "IncludeMaximumSLTLV": "includeMaximumSLTLV",
         "IncludeMaximumTEncapMsd": "includeMaximumTEncapMsd",
         "IncludeMaximumTEncapSrhTLV": "includeMaximumTEncapSrhTLV",
@@ -129,6 +130,7 @@ class IsisL3Router(Base):
         "MaxEndDMsd": "maxEndDMsd",
         "MaxEndPopMsd": "maxEndPopMsd",
         "MaxEndPopSrh": "maxEndPopSrh",
+        "MaxHEncapMsd": "maxHEncapMsd",
         "MaxLSPSize": "maxLSPSize",
         "MaxLSPsOrMGroupPDUsPerBurst": "maxLSPsOrMGroupPDUsPerBurst",
         "MaxSL": "maxSL",
@@ -387,13 +389,13 @@ class IsisL3Router(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isissrv6locatorentrylist_5ee5b2e2a8030f335563cdbbee99f17a.IsisSRv6LocatorEntryList): An instance of the IsisSRv6LocatorEntryList class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isissrv6locatorentrylist_965cfb223e730eee317d21e8ffbbfe07.IsisSRv6LocatorEntryList): An instance of the IsisSRv6LocatorEntryList class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isissrv6locatorentrylist_5ee5b2e2a8030f335563cdbbee99f17a import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isissrv6locatorentrylist_965cfb223e730eee317d21e8ffbbfe07 import (
             IsisSRv6LocatorEntryList,
         )
 
@@ -1290,6 +1292,20 @@ class IsisL3Router(Base):
         )
 
     @property
+    def IncludeMaximumHEncapMsd(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): If set, then include Maximum H.Encap MSD in SRv6 capability
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["IncludeMaximumHEncapMsd"])
+        )
+
+    @property
     def IncludeMaximumSLTLV(self):
         # type: () -> 'Multivalue'
         """DEPRECATED
@@ -1306,7 +1322,7 @@ class IsisL3Router(Base):
     @property
     def IncludeMaximumTEncapMsd(self):
         # type: () -> 'Multivalue'
-        """
+        """DEPRECATED
         Returns
         -------
         - obj(ixnetwork_restpy.multivalue.Multivalue): If set, then include Maximum T.Encap MSD in SRv6 capability
@@ -1632,6 +1648,18 @@ class IsisL3Router(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["MaxEndPopSrh"]))
 
     @property
+    def MaxHEncapMsd(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): This field specifies the maximum number of SIDs that can be included as part of the H.Encap behavior. If this field is zero and the E flag is set, then the router can apply H.Encap by encapsulating the incoming packet in another IPv6 header without SRH, it is the same way IPinIP encapsulation is performed. If the E flag is clear, then this field SHOULD be transmitted as zero and MUST be ignored on receipt.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["MaxHEncapMsd"]))
+
+    @property
     def MaxLSPSize(self):
         # type: () -> 'Multivalue'
         """
@@ -1696,7 +1724,7 @@ class IsisL3Router(Base):
     @property
     def MaxTEncapMsd(self):
         # type: () -> 'Multivalue'
-        """
+        """DEPRECATED
         Returns
         -------
         - obj(ixnetwork_restpy.multivalue.Multivalue): This field specifies the maximum number of SIDs that can be included as part of the T.Encap behavior. If this field is zero and the E flag is set, then the router can apply T.Encap by encapsulating the incoming packet in another IPv6 header without SRH, it is the same way IPinIP encapsulation is performed. If the E flag is clear, then this field SHOULD be transmitted as zero and MUST be ignored on receipt.
@@ -2593,9 +2621,10 @@ class IsisL3Router(Base):
         # type: (*Any, **Any) -> None
         """Executes the addDeleteTags operation on the server.
 
-        addDeleteTags(Arg2=bool, async_operation=bool)
-        ----------------------------------------------
+        addDeleteTags(Arg2=bool, Arg3=bool, async_operation=bool)
+        ---------------------------------------------------------
         - Arg2 (bool):
+        - Arg3 (bool):
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
@@ -2677,6 +2706,32 @@ class IsisL3Router(Base):
         for item in kwargs.items():
             payload[item[0]] = item[1]
         return self._execute("isisStopRouter", payload=payload, response_object=None)
+
+    def PerformActionOnAllObjects(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
+        """Executes the performActionOnAllObjects operation on the server.
+
+        Action on All Objects
+
+        performActionOnAllObjects(Arg2=string, async_operation=bool)string
+        ------------------------------------------------------------------
+        - Arg2 (str): Action Name
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns str:
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "performActionOnAllObjects", payload=payload, response_object=None
+        )
 
     def RestartDown(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -2844,6 +2899,7 @@ class IsisL3Router(Base):
         IncludeMaximumEndDSrhTLV=None,
         IncludeMaximumEndPopMsd=None,
         IncludeMaximumEndPopSrhTLV=None,
+        IncludeMaximumHEncapMsd=None,
         IncludeMaximumSLTLV=None,
         IncludeMaximumTEncapMsd=None,
         IncludeMaximumTEncapSrhTLV=None,
@@ -2868,6 +2924,7 @@ class IsisL3Router(Base):
         MaxEndDMsd=None,
         MaxEndPopMsd=None,
         MaxEndPopSrh=None,
+        MaxHEncapMsd=None,
         MaxLSPSize=None,
         MaxLSPsOrMGroupPDUsPerBurst=None,
         MaxSL=None,
@@ -2979,6 +3036,7 @@ class IsisL3Router(Base):
         - IncludeMaximumEndDSrhTLV (str): optional regex of includeMaximumEndDSrhTLV
         - IncludeMaximumEndPopMsd (str): optional regex of includeMaximumEndPopMsd
         - IncludeMaximumEndPopSrhTLV (str): optional regex of includeMaximumEndPopSrhTLV
+        - IncludeMaximumHEncapMsd (str): optional regex of includeMaximumHEncapMsd
         - IncludeMaximumSLTLV (str): optional regex of includeMaximumSLTLV
         - IncludeMaximumTEncapMsd (str): optional regex of includeMaximumTEncapMsd
         - IncludeMaximumTEncapSrhTLV (str): optional regex of includeMaximumTEncapSrhTLV
@@ -3003,6 +3061,7 @@ class IsisL3Router(Base):
         - MaxEndDMsd (str): optional regex of maxEndDMsd
         - MaxEndPopMsd (str): optional regex of maxEndPopMsd
         - MaxEndPopSrh (str): optional regex of maxEndPopSrh
+        - MaxHEncapMsd (str): optional regex of maxHEncapMsd
         - MaxLSPSize (str): optional regex of maxLSPSize
         - MaxLSPsOrMGroupPDUsPerBurst (str): optional regex of maxLSPsOrMGroupPDUsPerBurst
         - MaxSL (str): optional regex of maxSL

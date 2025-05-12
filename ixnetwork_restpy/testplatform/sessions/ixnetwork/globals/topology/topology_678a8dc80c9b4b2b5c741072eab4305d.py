@@ -225,13 +225,13 @@ class Topology(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.dhcpv4client.dhcpv4client_177a83e0b1208125d8f1210a0eeccf9e.Dhcpv4client): An instance of the Dhcpv4client class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.dhcpv4client.dhcpv4client_45649a094e4d647bf77b8b0cfbe14533.Dhcpv4client): An instance of the Dhcpv4client class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.dhcpv4client.dhcpv4client_177a83e0b1208125d8f1210a0eeccf9e import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.dhcpv4client.dhcpv4client_45649a094e4d647bf77b8b0cfbe14533 import (
             Dhcpv4client,
         )
 
@@ -1265,13 +1265,13 @@ class Topology(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.pcc.pcc_b9da1d5a5cf31906067f29bdfc78e860.Pcc): An instance of the Pcc class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.pcc.pcc_04766fba7bfd193aa67ecd7c9c1faaee.Pcc): An instance of the Pcc class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.pcc.pcc_b9da1d5a5cf31906067f29bdfc78e860 import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.pcc.pcc_04766fba7bfd193aa67ecd7c9c1faaee import (
             Pcc,
         )
 
@@ -1405,13 +1405,13 @@ class Topology(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.roce6v2.roce6v2_c10c727ab6238f40d0d75af5804e65fd.Roce6v2): An instance of the Roce6v2 class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.roce6v2.roce6v2_b2b4fe36978d9ac3bba6c06e49dd2d07.Roce6v2): An instance of the Roce6v2 class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.roce6v2.roce6v2_c10c727ab6238f40d0d75af5804e65fd import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.roce6v2.roce6v2_b2b4fe36978d9ac3bba6c06e49dd2d07 import (
             Roce6v2,
         )
 
@@ -1425,13 +1425,13 @@ class Topology(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.rocev2.rocev2_16221c79cb9987f68933e5578c282eb6.Rocev2): An instance of the Rocev2 class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.rocev2.rocev2_5cf15ed95e83f4104dcae1f0409bf70c.Rocev2): An instance of the Rocev2 class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.rocev2.rocev2_16221c79cb9987f68933e5578c282eb6 import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.rocev2.rocev2_5cf15ed95e83f4104dcae1f0409bf70c import (
             Rocev2,
         )
 
@@ -1892,6 +1892,57 @@ class Topology(Base):
             "fetchAndUpdateConfigFromCloud", payload=payload, response_object=None
         )
 
+    def FetchConnectableProtocols(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
+        """Executes the fetchConnectableProtocols operation on the server.
+
+        Fetch Connectable Protocols from all the DGs
+
+        fetchConnectableProtocols(async_operation=bool)string
+        -----------------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns str:
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "fetchConnectableProtocols", payload=payload, response_object=None
+        )
+
+    def FetchConnectorDetails(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
+        """Executes the fetchConnectorDetails operation on the server.
+
+        Fetch Connector details for the NGs
+
+        fetchConnectorDetails(Arg2=list, async_operation=bool)string
+        ------------------------------------------------------------
+        - Arg2 (list(str[None | /api/v1/sessions/1/ixnetwork/topology/.../networkGroup])): List of valid object reference for Network Groups
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns str:
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "fetchConnectorDetails", payload=payload, response_object=None
+        )
+
     def FetchDeviceGroupCount(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[int, None]
         """Executes the fetchDeviceGroupCount operation on the server.
@@ -1915,6 +1966,31 @@ class Topology(Base):
             payload[item[0]] = item[1]
         return self._execute(
             "fetchDeviceGroupCount", payload=payload, response_object=None
+        )
+
+    def FetchNetworkGroupCount(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[int, None]
+        """Executes the fetchNetworkGroupCount operation on the server.
+
+        Get Network Group Count for the Entire Scenario
+
+        fetchNetworkGroupCount(async_operation=bool)number
+        --------------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns number: Network Group Count for the Entire Scenario
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "fetchNetworkGroupCount", payload=payload, response_object=None
         )
 
     def FetchScenarioObjectsShortenedNames(self, *args, **kwargs):

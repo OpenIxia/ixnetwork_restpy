@@ -65,6 +65,7 @@ class PccGroup(Base):
         "PcePpagTLVType": "pcePpagTLVType",
         "PceTEPathBindingTLVType": "pceTEPathBindingTLVType",
         "RateControl": "rateControl",
+        "SendPCEOverloadNotificationOnSessionUp": "sendPCEOverloadNotificationOnSessionUp",
         "SessionStatus": "sessionStatus",
         "SpeakerEntityID": "speakerEntityID",
         "SrPceCapability": "srPceCapability",
@@ -605,6 +606,23 @@ class PccGroup(Base):
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["RateControl"]))
 
     @property
+    def SendPCEOverloadNotificationOnSessionUp(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): If enabled, the server will send Overload Notification right after session establishment.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["SendPCEOverloadNotificationOnSessionUp"]
+            ),
+        )
+
+    @property
     def SessionStatus(self):
         # type: () -> List[str]
         """
@@ -883,9 +901,10 @@ class PccGroup(Base):
         # type: (*Any, **Any) -> None
         """Executes the addDeleteTags operation on the server.
 
-        addDeleteTags(Arg2=bool, async_operation=bool)
-        ----------------------------------------------
+        addDeleteTags(Arg2=bool, Arg3=bool, async_operation=bool)
+        ---------------------------------------------------------
         - Arg2 (bool):
+        - Arg3 (bool):
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
@@ -1984,6 +2003,32 @@ class PccGroup(Base):
             response_object=None,
         )
 
+    def PerformActionOnAllObjects(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
+        """Executes the performActionOnAllObjects operation on the server.
+
+        Action on All Objects
+
+        performActionOnAllObjects(Arg2=string, async_operation=bool)string
+        ------------------------------------------------------------------
+        - Arg2 (str): Action Name
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns str:
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "performActionOnAllObjects", payload=payload, response_object=None
+        )
+
     def RestartDown(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
         """Executes the restartDown operation on the server.
@@ -2017,6 +2062,39 @@ class PccGroup(Base):
         for item in kwargs.items():
             payload[item[0]] = item[1]
         return self._execute("restartDown", payload=payload, response_object=None)
+
+    def SendPCENotification(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the sendPCENotification operation on the server.
+
+        Send PCE Notification message to PCC.
+
+        sendPCENotification(Arg2=list, Arg3=enum, Arg4=enum, Arg5=enum, Arg6=enum, Arg7=number, Arg8=number, Arg9=number, async_operation=bool)list
+        -------------------------------------------------------------------------------------------------------------------------------------------
+        - Arg2 (list(number)): List of indices into the protocol plugin. An empty list indicates all instances in the plugin.
+        - Arg3 (str(custom | pendingReqCancelled | overloadedPCE)): Notification Type
+        - Arg4 (str(pCCCancelsSetOfPendingReq | pCECancelsSetOfPendingReq)): Notification Value For Cancel Request
+        - Arg5 (str(pCEOverload | pCEReadyToTakePathCompReq)): Notification Value for PCE Overload
+        - Arg6 (str(tLVDisable | tLVEnable)): Enable OVERLOADED-DURATION TLV
+        - Arg7 (number): Overloaded Duration (seconds)
+        - Arg8 (number): Custom Notification Type
+        - Arg9 (number): Custom Notification Value
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): ID to associate each async action invocation
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "sendPCENotification", payload=payload, response_object=None
+        )
 
     def Start(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
@@ -2108,6 +2186,7 @@ class PccGroup(Base):
         PcePpagTLVType=None,
         PceTEPathBindingTLVType=None,
         RateControl=None,
+        SendPCEOverloadNotificationOnSessionUp=None,
         SpeakerEntityID=None,
         SrPceCapability=None,
         Srv6PceCapability=None,
@@ -2139,6 +2218,7 @@ class PccGroup(Base):
         - PcePpagTLVType (str): optional regex of pcePpagTLVType
         - PceTEPathBindingTLVType (str): optional regex of pceTEPathBindingTLVType
         - RateControl (str): optional regex of rateControl
+        - SendPCEOverloadNotificationOnSessionUp (str): optional regex of sendPCEOverloadNotificationOnSessionUp
         - SpeakerEntityID (str): optional regex of speakerEntityID
         - SrPceCapability (str): optional regex of srPceCapability
         - Srv6PceCapability (str): optional regex of srv6PceCapability

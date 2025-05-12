@@ -49,6 +49,7 @@ class Rocev2(Base):
         "MvPeerSetGroup": "mvPeerSetGroup",
         "Name": "name",
         "NumberOfExternalEndpoint": "numberOfExternalEndpoint",
+        "PeerIPList": "peerIPList",
         "QPAllocated": "qPAllocated",
         "QpCount": "qpCount",
         "SessionStatus": "sessionStatus",
@@ -309,6 +310,21 @@ class Rocev2(Base):
         self._set_attribute(self._SDM_ATT_MAP["NumberOfExternalEndpoint"], value)
 
     @property
+    def PeerIPList(self):
+        # type: () -> List[str]
+        """
+        Returns
+        -------
+        - list(str): Peer IP.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["PeerIPList"])
+
+    @PeerIPList.setter
+    def PeerIPList(self, value):
+        # type: (List[str]) -> None
+        self._set_attribute(self._SDM_ATT_MAP["PeerIPList"], value)
+
+    @property
     def QPAllocated(self):
         # type: () -> List[str]
         """
@@ -385,10 +401,11 @@ class Rocev2(Base):
         Multiplier=None,
         Name=None,
         NumberOfExternalEndpoint=None,
+        PeerIPList=None,
         QpCount=None,
         StackedLayers=None,
     ):
-        # type: (List[str], bool, bool, int, str, int, int, List[str]) -> Rocev2
+        # type: (List[str], bool, bool, int, str, int, List[str], int, List[str]) -> Rocev2
         """Updates rocev2 resource on the server.
 
         This method has some named parameters with a type: obj (Multivalue).
@@ -402,6 +419,7 @@ class Rocev2(Base):
         - Multiplier (number): Number of layer instances per parent instance (multiplier)
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
         - NumberOfExternalEndpoint (number): Number of Non Keysight NICs
+        - PeerIPList (list(str)): Peer IP.
         - QpCount (number): Number of QPs configured for this Device Group when communicating with Keysight Endpoints
         - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology])): List of secondary (many to one) child layer protocols
 
@@ -419,10 +437,11 @@ class Rocev2(Base):
         Multiplier=None,
         Name=None,
         NumberOfExternalEndpoint=None,
+        PeerIPList=None,
         QpCount=None,
         StackedLayers=None,
     ):
-        # type: (List[str], bool, bool, int, str, int, int, List[str]) -> Rocev2
+        # type: (List[str], bool, bool, int, str, int, List[str], int, List[str]) -> Rocev2
         """Adds a new rocev2 resource on the server and adds it to the container.
 
         Args
@@ -433,6 +452,7 @@ class Rocev2(Base):
         - Multiplier (number): Number of layer instances per parent instance (multiplier)
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
         - NumberOfExternalEndpoint (number): Number of Non Keysight NICs
+        - PeerIPList (list(str)): Peer IP.
         - QpCount (number): Number of QPs configured for this Device Group when communicating with Keysight Endpoints
         - StackedLayers (list(str[None | /api/v1/sessions/1/ixnetwork/topology])): List of secondary (many to one) child layer protocols
 
@@ -467,6 +487,7 @@ class Rocev2(Base):
         Multiplier=None,
         Name=None,
         NumberOfExternalEndpoint=None,
+        PeerIPList=None,
         QPAllocated=None,
         QpCount=None,
         SessionStatus=None,
@@ -491,6 +512,7 @@ class Rocev2(Base):
         - Multiplier (number): Number of layer instances per parent instance (multiplier)
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
         - NumberOfExternalEndpoint (number): Number of Non Keysight NICs
+        - PeerIPList (list(str)): Peer IP.
         - QPAllocated (list(str)): Per Device QP Share when Keysight Endpoints are selected.
         - QpCount (number): Number of QPs configured for this Device Group when communicating with Keysight Endpoints
         - SessionStatus (list(str[down | notStarted | up])): Current state of protocol session: Not Started - session negotiation not started, the session is not active yet. Down - actively trying to bring up a protocol session, but negotiation is didn't successfully complete (yet). Up - session came up successfully.
@@ -564,9 +586,10 @@ class Rocev2(Base):
         # type: (*Any, **Any) -> None
         """Executes the addDeleteTags operation on the server.
 
-        addDeleteTags(Arg2=bool, async_operation=bool)
-        ----------------------------------------------
+        addDeleteTags(Arg2=bool, Arg3=bool, async_operation=bool)
+        ---------------------------------------------------------
         - Arg2 (bool):
+        - Arg3 (bool):
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
@@ -628,6 +651,32 @@ class Rocev2(Base):
             payload[item[0]] = item[1]
         return self._execute(
             "addFlowsForAllDestinations", payload=payload, response_object=None
+        )
+
+    def PerformActionOnAllObjects(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
+        """Executes the performActionOnAllObjects operation on the server.
+
+        Action on All Objects
+
+        performActionOnAllObjects(Arg2=string, async_operation=bool)string
+        ------------------------------------------------------------------
+        - Arg2 (str): Action Name
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns str:
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "performActionOnAllObjects", payload=payload, response_object=None
         )
 
     def RemoveDestinationPeers(self, *args, **kwargs):

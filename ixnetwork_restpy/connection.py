@@ -26,12 +26,16 @@ import datetime
 import time
 import json
 import logging
-from importlib.metadata import distribution
 from requests import Session, request, utils
 from requests.exceptions import ConnectTimeout
 from io import BufferedReader
 from ixnetwork_restpy.errors import *
 from ixnetwork_restpy.files import Files
+
+if sys.version_info < (3, 8):
+    from importlib_metadata import distribution
+else:
+    from importlib.metadata import distribution
 
 
 try:

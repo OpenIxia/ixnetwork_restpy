@@ -1,4 +1,7 @@
 # Release Notes
+### May 2025
+* 1.7.0
+  * support for ixnetwork version 11.00.2504.10 (11.00 EA)
 ### December 2024
 * 1.6.1
   * fix issue where bgpMVpnSenderSiteSpmsiV4 nodes were not being generated

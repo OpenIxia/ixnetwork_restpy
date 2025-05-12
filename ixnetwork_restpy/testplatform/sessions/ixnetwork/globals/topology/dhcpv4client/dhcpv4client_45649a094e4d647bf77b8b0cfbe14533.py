@@ -37,10 +37,15 @@ class Dhcpv4client(Base):
     _SDM_ATT_MAP = {
         "Count": "count",
         "DescriptiveName": "descriptiveName",
+        "Dhcp4AnnounceWait": "dhcp4AnnounceWait",
         "Dhcp4ArpGw": "dhcp4ArpGw",
+        "Dhcp4ArpProbe": "dhcp4ArpProbe",
         "Dhcp4ClientPort": "dhcp4ClientPort",
         "Dhcp4MaxDiscoverTimeout": "dhcp4MaxDiscoverTimeout",
         "Dhcp4NumRetry": "dhcp4NumRetry",
+        "Dhcp4ProbeMax": "dhcp4ProbeMax",
+        "Dhcp4ProbeMin": "dhcp4ProbeMin",
+        "Dhcp4ProbeNum": "dhcp4ProbeNum",
         "Dhcp4ResponseTimeout": "dhcp4ResponseTimeout",
         "Dhcp4ResponseTimeoutFactor": "dhcp4ResponseTimeoutFactor",
         "Dhcp4ServerPort": "dhcp4ServerPort",
@@ -155,6 +160,20 @@ class Dhcpv4client(Base):
         return self._get_attribute(self._SDM_ATT_MAP["DescriptiveName"])
 
     @property
+    def Dhcp4AnnounceWait(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): If, by ANNOUNCE WAIT seconds after the transmission of the last ARP Probe no conflicting ARP Reply has been received, then the client will successfully determine that the address is unique.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["Dhcp4AnnounceWait"])
+        )
+
+    @property
     def Dhcp4ArpGw(self):
         # type: () -> 'Multivalue'
         """
@@ -165,6 +184,18 @@ class Dhcpv4client(Base):
         from ixnetwork_restpy.multivalue import Multivalue
 
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Dhcp4ArpGw"]))
+
+    @property
+    def Dhcp4ArpProbe(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): If enabled, DHCP clients will send ARP Probe to detect duplicate address received from the server.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Dhcp4ArpProbe"]))
 
     @property
     def Dhcp4ClientPort(self):
@@ -205,6 +236,42 @@ class Dhcpv4client(Base):
         from ixnetwork_restpy.multivalue import Multivalue
 
         return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Dhcp4NumRetry"]))
+
+    @property
+    def Dhcp4ProbeMax(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Maximum delay in secs until repeated probe.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Dhcp4ProbeMax"]))
+
+    @property
+    def Dhcp4ProbeMin(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Minimum delay in secs until repeated probe.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Dhcp4ProbeMin"]))
+
+    @property
+    def Dhcp4ProbeNum(self):
+        # type: () -> 'Multivalue'
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Number of ARP Probe Packets.
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Dhcp4ProbeNum"]))
 
     @property
     def Dhcp4ResponseTimeout(self):
@@ -362,10 +429,15 @@ class Dhcpv4client(Base):
     def get_device_ids(
         self,
         PortNames=None,
+        Dhcp4AnnounceWait=None,
         Dhcp4ArpGw=None,
+        Dhcp4ArpProbe=None,
         Dhcp4ClientPort=None,
         Dhcp4MaxDiscoverTimeout=None,
         Dhcp4NumRetry=None,
+        Dhcp4ProbeMax=None,
+        Dhcp4ProbeMin=None,
+        Dhcp4ProbeNum=None,
         Dhcp4ResponseTimeout=None,
         Dhcp4ResponseTimeoutFactor=None,
         Dhcp4ServerPort=None,
@@ -379,10 +451,15 @@ class Dhcpv4client(Base):
         Args
         ----
         - PortNames (str): optional regex of port names
+        - Dhcp4AnnounceWait (str): optional regex of dhcp4AnnounceWait
         - Dhcp4ArpGw (str): optional regex of dhcp4ArpGw
+        - Dhcp4ArpProbe (str): optional regex of dhcp4ArpProbe
         - Dhcp4ClientPort (str): optional regex of dhcp4ClientPort
         - Dhcp4MaxDiscoverTimeout (str): optional regex of dhcp4MaxDiscoverTimeout
         - Dhcp4NumRetry (str): optional regex of dhcp4NumRetry
+        - Dhcp4ProbeMax (str): optional regex of dhcp4ProbeMax
+        - Dhcp4ProbeMin (str): optional regex of dhcp4ProbeMin
+        - Dhcp4ProbeNum (str): optional regex of dhcp4ProbeNum
         - Dhcp4ResponseTimeout (str): optional regex of dhcp4ResponseTimeout
         - Dhcp4ResponseTimeoutFactor (str): optional regex of dhcp4ResponseTimeoutFactor
         - Dhcp4ServerPort (str): optional regex of dhcp4ServerPort

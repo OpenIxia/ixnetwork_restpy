@@ -38,12 +38,14 @@ class Plca(Base):
         "BurstCount": "burstCount",
         "BurstTimer": "burstTimer",
         "Enable": "enable",
+        "MacTimestampMode": "macTimestampMode",
         "NodeCount": "nodeCount",
         "NodeId": "nodeId",
         "NodeType": "nodeType",
         "TransmitOpportunityTimer": "transmitOpportunityTimer",
     }
     _SDM_ENUM_MAP = {
+        "macTimestampMode": ["latencyMode", "throughputMode"],
         "nodeType": ["coordinator", "follower"],
     }
 
@@ -94,6 +96,21 @@ class Plca(Base):
     def Enable(self, value):
         # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP["Enable"], value)
+
+    @property
+    def MacTimestampMode(self):
+        # type: () -> str
+        """
+        Returns
+        -------
+        - str(latencyMode | throughputMode): Enable MAC Timestamp mode on the PHY to achieve consistent latency variation.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["MacTimestampMode"])
+
+    @MacTimestampMode.setter
+    def MacTimestampMode(self, value):
+        # type: (str) -> None
+        self._set_attribute(self._SDM_ATT_MAP["MacTimestampMode"], value)
 
     @property
     def NodeCount(self):
@@ -155,11 +172,12 @@ class Plca(Base):
         BurstCount=None,
         BurstTimer=None,
         Enable=None,
+        MacTimestampMode=None,
         NodeCount=None,
         NodeId=None,
         TransmitOpportunityTimer=None,
     ):
-        # type: (int, int, bool, int, int, int) -> Plca
+        # type: (int, int, bool, str, int, int, int) -> Plca
         """Updates plca resource on the server.
 
         Args
@@ -167,6 +185,7 @@ class Plca(Base):
         - BurstCount (number): Maximum number of additional packets allowed to be transmitted in a single transmit opportunity window.
         - BurstTimer (number): Maximum number of bit-times the PLCA network waits for a new packet before yielding the transmit opportunity window. Each increment in this field represents 100ns i.e. the value 2 represents 200 ns, and so on.
         - Enable (bool): Enable Physical Layer Collision Avoidance(PLCA).
+        - MacTimestampMode (str(latencyMode | throughputMode)): Enable MAC Timestamp mode on the PHY to achieve consistent latency variation.
         - NodeCount (number): Number of nodes on the PLCA network.
         - NodeId (number): ID of the local node on the PLCA network.
         - TransmitOpportunityTimer (number): Transmit opportunity timer is used to establish Transmit Opportunities(TOs) for each node in the PLCA network.
@@ -182,12 +201,13 @@ class Plca(Base):
         BurstCount=None,
         BurstTimer=None,
         Enable=None,
+        MacTimestampMode=None,
         NodeCount=None,
         NodeId=None,
         NodeType=None,
         TransmitOpportunityTimer=None,
     ):
-        # type: (int, int, bool, int, int, str, int) -> Plca
+        # type: (int, int, bool, str, int, int, str, int) -> Plca
         """Finds and retrieves plca resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve plca resources from the server.
@@ -199,6 +219,7 @@ class Plca(Base):
         - BurstCount (number): Maximum number of additional packets allowed to be transmitted in a single transmit opportunity window.
         - BurstTimer (number): Maximum number of bit-times the PLCA network waits for a new packet before yielding the transmit opportunity window. Each increment in this field represents 100ns i.e. the value 2 represents 200 ns, and so on.
         - Enable (bool): Enable Physical Layer Collision Avoidance(PLCA).
+        - MacTimestampMode (str(latencyMode | throughputMode)): Enable MAC Timestamp mode on the PHY to achieve consistent latency variation.
         - NodeCount (number): Number of nodes on the PLCA network.
         - NodeId (number): ID of the local node on the PLCA network.
         - NodeType (str(coordinator | follower)): Node can be a coordinator(nodeId= 0) or follower(nodeId= 1 to 254).
