@@ -513,13 +513,13 @@ class Pppoxserver(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pcc_f8f4f7c4bc41b0a9d3332c9aa5dc3ef6.Pcc): An instance of the Pcc class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pcc_e1c8db119217efd34775e25895f592f4.Pcc): An instance of the Pcc class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pcc_f8f4f7c4bc41b0a9d3332c9aa5dc3ef6 import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pcc_e1c8db119217efd34775e25895f592f4 import (
             Pcc,
         )
 

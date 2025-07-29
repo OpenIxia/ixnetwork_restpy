@@ -341,13 +341,13 @@ class Mpls(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisl3_2363095cfa8b9b40d7599187bf96b549.IsisL3): An instance of the IsisL3 class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisl3_fc556e45abed3a66fda411498eb8b6a4.IsisL3): An instance of the IsisL3 class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisl3_2363095cfa8b9b40d7599187bf96b549 import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isisl3_fc556e45abed3a66fda411498eb8b6a4 import (
             IsisL3,
         )
 

@@ -38,6 +38,7 @@ class FrameRate(Base):
         "BitRateUnitsType": "bitRateUnitsType",
         "EnforceMinimumInterPacketGap": "enforceMinimumInterPacketGap",
         "InterPacketGapUnitsType": "interPacketGapUnitsType",
+        "PacketPeriodUnitsType": "packetPeriodUnitsType",
         "Rate": "rate",
         "Type": "type",
     }
@@ -57,10 +58,18 @@ class FrameRate(Base):
             "nanoseconds",
             "seconds",
         ],
+        "packetPeriodUnitsType": [
+            "bytes",
+            "microseconds",
+            "milliseconds",
+            "nanoseconds",
+            "seconds",
+        ],
         "type": [
             "bitsPerSecond",
             "framesPerSecond",
             "interPacketGap",
+            "packetPeriod",
             "percentLineRate",
         ],
     }
@@ -114,6 +123,21 @@ class FrameRate(Base):
         self._set_attribute(self._SDM_ATT_MAP["InterPacketGapUnitsType"], value)
 
     @property
+    def PacketPeriodUnitsType(self):
+        # type: () -> str
+        """
+        Returns
+        -------
+        - str(bytes | microseconds | milliseconds | nanoseconds | seconds): The inter-packet gap expressed in units.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["PacketPeriodUnitsType"])
+
+    @PacketPeriodUnitsType.setter
+    def PacketPeriodUnitsType(self, value):
+        # type: (str) -> None
+        self._set_attribute(self._SDM_ATT_MAP["PacketPeriodUnitsType"], value)
+
+    @property
     def Rate(self):
         # type: () -> int
         """
@@ -134,7 +158,7 @@ class FrameRate(Base):
         """
         Returns
         -------
-        - str(bitsPerSecond | framesPerSecond | interPacketGap | percentLineRate): Sets the frame rate types.
+        - str(bitsPerSecond | framesPerSecond | interPacketGap | packetPeriod | percentLineRate): Sets the frame rate types.
         """
         return self._get_attribute(self._SDM_ATT_MAP["Type"])
 
@@ -148,10 +172,11 @@ class FrameRate(Base):
         BitRateUnitsType=None,
         EnforceMinimumInterPacketGap=None,
         InterPacketGapUnitsType=None,
+        PacketPeriodUnitsType=None,
         Rate=None,
         Type=None,
     ):
-        # type: (str, int, str, int, str) -> FrameRate
+        # type: (str, int, str, str, int, str) -> FrameRate
         """Updates frameRate resource on the server.
 
         Args
@@ -159,8 +184,9 @@ class FrameRate(Base):
         - BitRateUnitsType (str(bitsPerSec | bytesPerSec | kbitsPerSec | kbytesPerSec | mbitsPerSec | mbytesPerSec)): The rate units for transmitting packet.
         - EnforceMinimumInterPacketGap (number): Sets the minimum inter-packet gap allowed for Ethernet ports only. The default is 12 bytes.
         - InterPacketGapUnitsType (str(bytes | microseconds | milliseconds | nanoseconds | seconds)): The inter-packet gap expressed in units.
+        - PacketPeriodUnitsType (str(bytes | microseconds | milliseconds | nanoseconds | seconds)): The inter-packet gap expressed in units.
         - Rate (number): The rate at which packet is transmitted.
-        - Type (str(bitsPerSecond | framesPerSecond | interPacketGap | percentLineRate)): Sets the frame rate types.
+        - Type (str(bitsPerSecond | framesPerSecond | interPacketGap | packetPeriod | percentLineRate)): Sets the frame rate types.
 
         Raises
         ------
@@ -173,10 +199,11 @@ class FrameRate(Base):
         BitRateUnitsType=None,
         EnforceMinimumInterPacketGap=None,
         InterPacketGapUnitsType=None,
+        PacketPeriodUnitsType=None,
         Rate=None,
         Type=None,
     ):
-        # type: (str, int, str, int, str) -> FrameRate
+        # type: (str, int, str, str, int, str) -> FrameRate
         """Finds and retrieves frameRate resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve frameRate resources from the server.
@@ -188,8 +215,9 @@ class FrameRate(Base):
         - BitRateUnitsType (str(bitsPerSec | bytesPerSec | kbitsPerSec | kbytesPerSec | mbitsPerSec | mbytesPerSec)): The rate units for transmitting packet.
         - EnforceMinimumInterPacketGap (number): Sets the minimum inter-packet gap allowed for Ethernet ports only. The default is 12 bytes.
         - InterPacketGapUnitsType (str(bytes | microseconds | milliseconds | nanoseconds | seconds)): The inter-packet gap expressed in units.
+        - PacketPeriodUnitsType (str(bytes | microseconds | milliseconds | nanoseconds | seconds)): The inter-packet gap expressed in units.
         - Rate (number): The rate at which packet is transmitted.
-        - Type (str(bitsPerSecond | framesPerSecond | interPacketGap | percentLineRate)): Sets the frame rate types.
+        - Type (str(bitsPerSecond | framesPerSecond | interPacketGap | packetPeriod | percentLineRate)): Sets the frame rate types.
 
         Returns
         -------

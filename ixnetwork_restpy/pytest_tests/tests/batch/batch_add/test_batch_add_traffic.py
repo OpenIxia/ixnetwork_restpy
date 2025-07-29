@@ -313,5 +313,127 @@ def test_batch_add_traffic_for_non_active_fields(ixnetwork):
             assert field.SingleValue == "1.1.1.1"
 
 
+def test_add_multiple_same_traffic_stacks(ixnetwork):
+    with BatchAdd(ixnetwork):
+        vport = ixnetwork.Vport.add().add()
+        vport[0].Name = "myVport_1"
+        vport[0].RxMode = "captureAndMeasure"
+        vport[1].Name = "myVport_2"
+        traffic = ixnetwork.Traffic.TrafficItem
+        tr1 = traffic.add(
+            Name="RAW TCP",
+            BiDirectional=False,
+            TrafficType="raw",
+            TrafficItemType="l2L3",
+        )
+        tr1.EndpointSet.add(
+            Sources=vport[0].Protocols.add(), Destinations=vport[1].Protocols.add()
+        )
+
+        stack = tr1.ConfigElement.add().Stack.add()
+        eth_st = stack.Ethernet.add()
+        eth_st.SourceAddress.Single("00:11:00:00:22:00")
+        eth_st.DestinationAddress.Single("00:33:00:11:22:00")
+
+        vlan_st = stack.Vlan.add()
+        vlan_st.VlanTagVlanID.Single(2)
+        vlan_st.VlanTagVlanUserPriority.Single(7)
+        vlan_st.VlanTagCfi.Single(1)
+
+        vlan_st2 = stack.Vlan.add()[-1]
+        vlan_st2.VlanTagVlanID.Single(1)
+        vlan_st2.VlanTagVlanUserPriority.Single(5)
+        vlan_st2.VlanTagCfi.Single(0)
+
+        ipv4_st = stack.Ipv4.add()
+        ipv4_st.SrcIp.Increment("1.1.1.1", "0.1.1.1", 3)
+
+        tcp_st = stack.Tcp.add()
+        tcp_st.Reserved.Single(1)
+
+        ipv4_st2 = stack.Ipv4.add()[-1]
+        ipv4_st2.Ttl.Decrement("60", "1", 5)
+
+    # finding all stacks now
+    stacks = ixnetwork.Traffic.TrafficItem.find().ConfigElement.find().Stack.find()
+    assert len(stacks) == 7
+    assert stacks[0].StackTypeId == "ethernet"
+    assert stacks[1].StackTypeId == "vlan"
+    assert stacks[2].StackTypeId == "vlan"
+    assert stacks[3].StackTypeId == "ipv4"
+    assert stacks[5].StackTypeId == "ipv4"
+
+    p1 = stacks[1].Field.find(FieldTypeId="^vlan.header.vlanTag.vlanUserPriority$")
+    p2 = stacks[2].Field.find(FieldTypeId="^vlan.header.vlanTag.vlanUserPriority$")
+    p3 = stacks[3].Field.find(FieldTypeId="^ipv4.header.srcIp$")
+    p4 = stacks[5].Field.find(FieldTypeId="^ipv4.header.ttl$")
+    assert p1.SingleValue == "7"
+    assert p2.SingleValue == "5"
+    assert p3.ValueType == "increment"
+    assert p3.StartValue == "1.1.1.1"
+    assert p3.StepValue == "0.1.1.1"
+    assert p3.CountValue == "3"
+    assert p4.ValueType == "decrement"
+    assert p4.StartValue == "60"
+    assert p4.StepValue == "1"
+    assert p4.CountValue == "5"
+
+
+def test_add_multiple_custom_traffic_stacks(ixnetwork):
+    with BatchAdd(ixnetwork):
+        vport = ixnetwork.Vport.add().add()
+        vport[0].Name = "myVport_1"
+        vport[0].RxMode = "captureAndMeasure"
+        vport[1].Name = "myVport_2"
+        traffic = ixnetwork.Traffic.TrafficItem
+        tr1 = traffic.add(
+            Name="RAW TCP",
+            BiDirectional=False,
+            TrafficType="raw",
+            TrafficItemType="l2L3",
+        )
+        tr1.EndpointSet.add(
+            Sources=vport[0].Protocols.add(), Destinations=vport[1].Protocols.add()
+        )
+
+        stack = tr1.ConfigElement.add().Stack.add()
+        eth_st = stack.Ethernet.add()
+        eth_st.SourceAddress.Single("00:11:00:00:22:00")
+        eth_st.DestinationAddress.Single("00:33:00:11:22:00")
+
+        custom1 = stack.Custom.add()
+        custom1.HeaderLength.Single(20)
+        custom1.HeaderData.Single("a")
+
+        custom2 = stack.Customv2.add()
+        custom2.HeaderLength.Single(20)
+        custom2.HeaderData.Single("4aec")
+
+        custom3 = stack.Custom.add()[-1]
+        custom3.HeaderLength.Single(20)
+        custom3.HeaderData.Single("5ecff")
+
+        custom4 = stack.Customv2.add()[-1]
+        custom4.HeaderLength.Single(20)
+        custom4.HeaderData.Single("abc")
+
+    stacks = ixnetwork.Traffic.TrafficItem.find().ConfigElement.find().Stack.find()
+    assert len(stacks) == 6
+    assert stacks[0].StackTypeId == "ethernet"
+    assert stacks[1].StackTypeId == "custom"
+    assert stacks[2].StackTypeId == "custom_v2"
+    assert stacks[3].StackTypeId == "custom"
+    assert stacks[4].StackTypeId == "custom_v2"
+
+    p1 = stacks[1].Field.find(FieldTypeId="^custom.header.data$")
+    p2 = stacks[2].Field.find(FieldTypeId="^custom_v2.header.data$")
+    p3 = stacks[3].Field.find(FieldTypeId="^custom.header.data$")
+    p4 = stacks[4].Field.find(FieldTypeId="^custom_v2.header.data$")
+    assert p1.SingleValue == "a"
+    assert p2.SingleValue == "4AEC"
+    assert p3.SingleValue == "5ecff"
+    assert p4.SingleValue == "0ABC"
+
+
 if __name__ == "__main__":
     pytest.main(["-v", "-s", "--server", "localhost:11009:windows", __file__])

@@ -36,8 +36,11 @@ class PortTestOptions(Base):
     _SDM_NAME = "portTestOptions"
     _SDM_ATT_MAP = {
         "EnableDpdkPerformanceAcceleration": "enableDpdkPerformanceAcceleration",
+        "PortLldpOperation": "portLldpOperation",
     }
-    _SDM_ENUM_MAP = {}
+    _SDM_ENUM_MAP = {
+        "portLldpOperation": ["noOp", "enablePortLldp", "disablePortLldp"],
+    }
 
     def __init__(self, parent, list_op=False):
         super(PortTestOptions, self).__init__(parent, list_op)
@@ -61,13 +64,29 @@ class PortTestOptions(Base):
             self._SDM_ATT_MAP["EnableDpdkPerformanceAcceleration"], value
         )
 
-    def update(self, EnableDpdkPerformanceAcceleration=None):
-        # type: (bool) -> PortTestOptions
+    @property
+    def PortLldpOperation(self):
+        # type: () -> str
+        """
+        Returns
+        -------
+        - str(noOp | enablePortLldp | disablePortLldp): Port LLDP operation performed during port connect/reboot. Please reconnect or reboot the port(s) for this to take effect.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["PortLldpOperation"])
+
+    @PortLldpOperation.setter
+    def PortLldpOperation(self, value):
+        # type: (str) -> None
+        self._set_attribute(self._SDM_ATT_MAP["PortLldpOperation"], value)
+
+    def update(self, EnableDpdkPerformanceAcceleration=None, PortLldpOperation=None):
+        # type: (bool, str) -> PortTestOptions
         """Updates portTestOptions resource on the server.
 
         Args
         ----
         - EnableDpdkPerformanceAcceleration (bool): Enable DPDK traffic engine mode for performance acceleration in data plane.
+        - PortLldpOperation (str(noOp | enablePortLldp | disablePortLldp)): Port LLDP operation performed during port connect/reboot. Please reconnect or reboot the port(s) for this to take effect.
 
         Raises
         ------
@@ -75,8 +94,8 @@ class PortTestOptions(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, EnableDpdkPerformanceAcceleration=None):
-        # type: (bool) -> PortTestOptions
+    def find(self, EnableDpdkPerformanceAcceleration=None, PortLldpOperation=None):
+        # type: (bool, str) -> PortTestOptions
         """Finds and retrieves portTestOptions resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve portTestOptions resources from the server.
@@ -86,6 +105,7 @@ class PortTestOptions(Base):
         Args
         ----
         - EnableDpdkPerformanceAcceleration (bool): Enable DPDK traffic engine mode for performance acceleration in data plane.
+        - PortLldpOperation (str(noOp | enablePortLldp | disablePortLldp)): Port LLDP operation performed during port connect/reboot. Please reconnect or reboot the port(s) for this to take effect.
 
         Returns
         -------

@@ -1,4 +1,7 @@
 # Release Notes
+### July 2025
+* 1.8.0
+  * support for ixnetwork version 11.00.2407.67 (11.00 Update-1)
 ### May 2025
 * 1.7.0
   * support for ixnetwork version 11.00.2504.10 (11.00 EA)

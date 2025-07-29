@@ -38,6 +38,7 @@ class EgressOnlyTracking(Base):
     _SDM_NAME = "egressOnlyTracking"
     _SDM_ATT_MAP = {
         "Egress": "egress",
+        "EgressV2": "egressV2",
         "Enabled": "enabled",
         "Port": "port",
         "QbvSettings": "qbvSettings",
@@ -65,6 +66,19 @@ class EgressOnlyTracking(Base):
     @Egress.setter
     def Egress(self, value):
         self._set_attribute(self._SDM_ATT_MAP["Egress"], value)
+
+    @property
+    def EgressV2(self):
+        """
+        Returns
+        -------
+        - list(dict(arg1:number,arg2:str,arg3:number)): The list of structures containing Egress Mask ,Offset and Tx Offset Adjustment to be placed in the packet. There can be at most 3 Egress values on a port and Egress Offset values should be always even.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["EgressV2"])
+
+    @EgressV2.setter
+    def EgressV2(self, value):
+        self._set_attribute(self._SDM_ATT_MAP["EgressV2"], value)
 
     @property
     def Enabled(self):
@@ -172,6 +186,7 @@ class EgressOnlyTracking(Base):
     def update(
         self,
         Egress=None,
+        EgressV2=None,
         Enabled=None,
         Port=None,
         QbvSettings=None,
@@ -185,6 +200,7 @@ class EgressOnlyTracking(Base):
         Args
         ----
         - Egress (list(dict(arg1:number,arg2:str))): The list of structures containing Egress Mask and Offset to be placed in the packet. There can be at most 3 Egress values on a port and Egress Offset values should be always even.
+        - EgressV2 (list(dict(arg1:number,arg2:str,arg3:number))): The list of structures containing Egress Mask ,Offset and Tx Offset Adjustment to be placed in the packet. There can be at most 3 Egress values on a port and Egress Offset values should be always even.
         - Enabled (bool): Enables the egress only tracking for the given port.
         - Port (str(None | /api/v1/sessions/1/ixnetwork/lag | /api/v1/sessions/1/ixnetwork/vport)): Sets the port on which Egress Tracking is enabled.
         - QbvSettings (list(dict(arg1:bool,arg2:number,arg3:bool,arg4:str))): Structure contains a mapping between the gate and the field value in the packet pointed to by egress offset. Besides, it also denotes if an entry is enabled and the gate number is to be treated as the default gate.
@@ -202,6 +218,7 @@ class EgressOnlyTracking(Base):
     def add(
         self,
         Egress=None,
+        EgressV2=None,
         Enabled=None,
         Port=None,
         QbvSettings=None,
@@ -215,6 +232,7 @@ class EgressOnlyTracking(Base):
         Args
         ----
         - Egress (list(dict(arg1:number,arg2:str))): The list of structures containing Egress Mask and Offset to be placed in the packet. There can be at most 3 Egress values on a port and Egress Offset values should be always even.
+        - EgressV2 (list(dict(arg1:number,arg2:str,arg3:number))): The list of structures containing Egress Mask ,Offset and Tx Offset Adjustment to be placed in the packet. There can be at most 3 Egress values on a port and Egress Offset values should be always even.
         - Enabled (bool): Enables the egress only tracking for the given port.
         - Port (str(None | /api/v1/sessions/1/ixnetwork/lag | /api/v1/sessions/1/ixnetwork/vport)): Sets the port on which Egress Tracking is enabled.
         - QbvSettings (list(dict(arg1:bool,arg2:number,arg3:bool,arg4:str))): Structure contains a mapping between the gate and the field value in the packet pointed to by egress offset. Besides, it also denotes if an entry is enabled and the gate number is to be treated as the default gate.
@@ -246,6 +264,7 @@ class EgressOnlyTracking(Base):
     def find(
         self,
         Egress=None,
+        EgressV2=None,
         Enabled=None,
         Port=None,
         QbvSettings=None,
@@ -263,6 +282,7 @@ class EgressOnlyTracking(Base):
         Args
         ----
         - Egress (list(dict(arg1:number,arg2:str))): The list of structures containing Egress Mask and Offset to be placed in the packet. There can be at most 3 Egress values on a port and Egress Offset values should be always even.
+        - EgressV2 (list(dict(arg1:number,arg2:str,arg3:number))): The list of structures containing Egress Mask ,Offset and Tx Offset Adjustment to be placed in the packet. There can be at most 3 Egress values on a port and Egress Offset values should be always even.
         - Enabled (bool): Enables the egress only tracking for the given port.
         - Port (str(None | /api/v1/sessions/1/ixnetwork/lag | /api/v1/sessions/1/ixnetwork/vport)): Sets the port on which Egress Tracking is enabled.
         - QbvSettings (list(dict(arg1:bool,arg2:number,arg3:bool,arg4:str))): Structure contains a mapping between the gate and the field value in the packet pointed to by egress offset. Besides, it also denotes if an entry is enabled and the gate number is to be treated as the default gate.
@@ -305,11 +325,21 @@ class EgressOnlyTracking(Base):
 
         Update Egress settings
 
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
         updateEgressSettings(Arg2=number, Arg3=number, Arg4=string, async_operation=bool)
         ---------------------------------------------------------------------------------
         - Arg2 (number): Integer indicating egress number - 0/1/2
         - Arg3 (number): Integer indicating offset
         - Arg4 (str): String indicating mask
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        updateEgressSettings(Arg2=number, Arg3=number, Arg4=string, Arg5=number, async_operation=bool)
+        ----------------------------------------------------------------------------------------------
+        - Arg2 (number): Integer indicating egress number - 0/1/2
+        - Arg3 (number): Integer indicating offset
+        - Arg4 (str): String indicating mask
+        - Arg5 (number): Tx Offset Adjustment
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises

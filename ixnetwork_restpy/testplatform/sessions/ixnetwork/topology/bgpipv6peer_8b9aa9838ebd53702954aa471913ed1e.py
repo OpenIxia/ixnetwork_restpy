@@ -220,6 +220,7 @@ class BgpIpv6Peer(Base):
             "interfaceLess",
             "interfacefullWithCorefacingIRB",
             "interfacefullWithUnnumberedCorefacingIRB",
+            "interfaceLessWithMultihoming",
         ],
         "status": [
             "configured",
@@ -301,13 +302,13 @@ class BgpIpv6Peer(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpethernetsegmentv6_58e9b55555c9ee871244737f09405ae0.BgpEthernetSegmentV6): An instance of the BgpEthernetSegmentV6 class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpethernetsegmentv6_a782fc9bd071258ebb6d44a8c06ee527.BgpEthernetSegmentV6): An instance of the BgpEthernetSegmentV6 class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpethernetsegmentv6_58e9b55555c9ee871244737f09405ae0 import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpethernetsegmentv6_a782fc9bd071258ebb6d44a8c06ee527 import (
             BgpEthernetSegmentV6,
         )
 
@@ -381,13 +382,13 @@ class BgpIpv6Peer(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv6evpnevi_7c0bb620c8b4c2fccbb4102758771ea6.BgpIPv6EvpnEvi): An instance of the BgpIPv6EvpnEvi class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv6evpnevi_86d71957e959724b4667b24e7e4b4e26.BgpIPv6EvpnEvi): An instance of the BgpIPv6EvpnEvi class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv6evpnevi_7c0bb620c8b4c2fccbb4102758771ea6 import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv6evpnevi_86d71957e959724b4667b24e7e4b4e26 import (
             BgpIPv6EvpnEvi,
         )
 
@@ -401,13 +402,13 @@ class BgpIpv6Peer(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv6evpnpbb_7e3d31c960a96c76772f39596f4e0b6c.BgpIPv6EvpnPbb): An instance of the BgpIPv6EvpnPbb class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv6evpnpbb_0c8917c5258bb534df8b29eec2e038b8.BgpIPv6EvpnPbb): An instance of the BgpIPv6EvpnPbb class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv6evpnpbb_7e3d31c960a96c76772f39596f4e0b6c import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv6evpnpbb_0c8917c5258bb534df8b29eec2e038b8 import (
             BgpIPv6EvpnPbb,
         )
 
@@ -421,13 +422,13 @@ class BgpIpv6Peer(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv6evpnvxlan_1a74cee0f392d412526e30bcedb3e032.BgpIPv6EvpnVXLAN): An instance of the BgpIPv6EvpnVXLAN class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv6evpnvxlan_3386affe0872bce6e1536564df55791f.BgpIPv6EvpnVXLAN): An instance of the BgpIPv6EvpnVXLAN class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv6evpnvxlan_1a74cee0f392d412526e30bcedb3e032 import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv6evpnvxlan_3386affe0872bce6e1536564df55791f import (
             BgpIPv6EvpnVXLAN,
         )
 
@@ -441,13 +442,13 @@ class BgpIpv6Peer(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv6evpnvxlanvpws_4fb221f4b88d4df5dde7203f6194f25d.BgpIPv6EvpnVXLANVpws): An instance of the BgpIPv6EvpnVXLANVpws class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv6evpnvxlanvpws_9fd55425e420de00883e373a55377836.BgpIPv6EvpnVXLANVpws): An instance of the BgpIPv6EvpnVXLANVpws class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv6evpnvxlanvpws_4fb221f4b88d4df5dde7203f6194f25d import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv6evpnvxlanvpws_9fd55425e420de00883e373a55377836 import (
             BgpIPv6EvpnVXLANVpws,
         )
 
@@ -461,13 +462,13 @@ class BgpIpv6Peer(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv6evpnvpws_7e7a3dec141df7b1c974f723df7f4814.BgpIPv6EvpnVpws): An instance of the BgpIPv6EvpnVpws class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv6evpnvpws_859de91b8ddd2d58d37b7694a8837e67.BgpIPv6EvpnVpws): An instance of the BgpIPv6EvpnVpws class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv6evpnvpws_7e7a3dec141df7b1c974f723df7f4814 import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv6evpnvpws_859de91b8ddd2d58d37b7694a8837e67 import (
             BgpIPv6EvpnVpws,
         )
 
@@ -2109,7 +2110,7 @@ class BgpIpv6Peer(Base):
         """
         Returns
         -------
-        - str(interfaceLess | interfacefullWithCorefacingIRB | interfacefullWithUnnumberedCorefacingIRB): IP-VRF-to-IP-VRF Model Type
+        - str(interfaceLess | interfacefullWithCorefacingIRB | interfacefullWithUnnumberedCorefacingIRB | interfaceLessWithMultihoming): These are IP-VRF to IP-VRF models as described in RFC9136. In addition, there is support for interface less multihoming.
         """
         return self._get_attribute(self._SDM_ATT_MAP["IpVrfToIpVrfType"])
 
@@ -3272,7 +3273,7 @@ class BgpIpv6Peer(Base):
         - EnableReducedEncapsulation (bool): Enable Reduced Encapsulation in Data-Plane for SRv6
         - EnableSRv6OAMService (bool): If enabled then SRv6 SID advertised to OAM
         - EthernetSegmentsCountV6 (number): Number of Ethernet Segments
-        - IpVrfToIpVrfType (str(interfaceLess | interfacefullWithCorefacingIRB | interfacefullWithUnnumberedCorefacingIRB)): IP-VRF-to-IP-VRF Model Type
+        - IpVrfToIpVrfType (str(interfaceLess | interfacefullWithCorefacingIRB | interfacefullWithUnnumberedCorefacingIRB | interfaceLessWithMultihoming)): These are IP-VRF to IP-VRF models as described in RFC9136. In addition, there is support for interface less multihoming.
         - Ipv4MplsCapability (bool): IPv4 MPLS Capability: AFI=1, SAFI=4
         - Ipv4MultipleMplsLabelsCapability (bool): IPv4 Multiple MPLS Labels Capability: AFI=1, SAFI=4
         - Ipv6MplsCapability (bool): IPv6 MPLS Capability: AFI=2, SAFI=4
@@ -3375,7 +3376,7 @@ class BgpIpv6Peer(Base):
         - EnableReducedEncapsulation (bool): Enable Reduced Encapsulation in Data-Plane for SRv6
         - EnableSRv6OAMService (bool): If enabled then SRv6 SID advertised to OAM
         - EthernetSegmentsCountV6 (number): Number of Ethernet Segments
-        - IpVrfToIpVrfType (str(interfaceLess | interfacefullWithCorefacingIRB | interfacefullWithUnnumberedCorefacingIRB)): IP-VRF-to-IP-VRF Model Type
+        - IpVrfToIpVrfType (str(interfaceLess | interfacefullWithCorefacingIRB | interfacefullWithUnnumberedCorefacingIRB | interfaceLessWithMultihoming)): These are IP-VRF to IP-VRF models as described in RFC9136. In addition, there is support for interface less multihoming.
         - Ipv4MplsCapability (bool): IPv4 MPLS Capability: AFI=1, SAFI=4
         - Ipv4MultipleMplsLabelsCapability (bool): IPv4 Multiple MPLS Labels Capability: AFI=1, SAFI=4
         - Ipv6MplsCapability (bool): IPv6 MPLS Capability: AFI=2, SAFI=4
@@ -3511,7 +3512,7 @@ class BgpIpv6Peer(Base):
         - EnableSRv6OAMService (bool): If enabled then SRv6 SID advertised to OAM
         - Errors (list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork/],arg2:list[str]))): A list of errors that have occurred
         - EthernetSegmentsCountV6 (number): Number of Ethernet Segments
-        - IpVrfToIpVrfType (str(interfaceLess | interfacefullWithCorefacingIRB | interfacefullWithUnnumberedCorefacingIRB)): IP-VRF-to-IP-VRF Model Type
+        - IpVrfToIpVrfType (str(interfaceLess | interfacefullWithCorefacingIRB | interfacefullWithUnnumberedCorefacingIRB | interfaceLessWithMultihoming)): These are IP-VRF to IP-VRF models as described in RFC9136. In addition, there is support for interface less multihoming.
         - Ipv4MplsCapability (bool): IPv4 MPLS Capability: AFI=1, SAFI=4
         - Ipv4MultipleMplsLabelsCapability (bool): IPv4 Multiple MPLS Labels Capability: AFI=1, SAFI=4
         - Ipv6MplsCapability (bool): IPv6 MPLS Capability: AFI=2, SAFI=4

@@ -78,6 +78,9 @@ class Stack(Base):
             SourcePacketHeader,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("SourcePacketHeader", None) is not None:
+                return self._properties.get("SourcePacketHeader")
         return SourcePacketHeader(self)
 
     @property
@@ -92,6 +95,9 @@ class Stack(Base):
             Iec61883624BitData,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("Iec61883624BitData", None) is not None:
+                return self._properties.get("Iec61883624BitData")
         return Iec61883624BitData(self)
 
     @property
@@ -106,6 +112,12 @@ class Stack(Base):
             RealTimeTransportControlProtocol,
         )
 
+        if len(self._object_properties) > 0:
+            if (
+                self._properties.get("RealTimeTransportControlProtocol", None)
+                is not None
+            ):
+                return self._properties.get("RealTimeTransportControlProtocol")
         return RealTimeTransportControlProtocol(self)
 
     @property
@@ -120,6 +132,9 @@ class Stack(Base):
             Iec618831,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("Iec618831", None) is not None:
+                return self._properties.get("Iec618831")
         return Iec618831(self)
 
     @property
@@ -134,6 +149,9 @@ class Stack(Base):
             H264csrc,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("H264csrc", None) is not None:
+                return self._properties.get("H264csrc")
         return H264csrc(self)
 
     @property
@@ -148,6 +166,9 @@ class Stack(Base):
             H264SH,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("H264SH", None) is not None:
+                return self._properties.get("H264SH")
         return H264SH(self)
 
     @property
@@ -162,6 +183,9 @@ class Stack(Base):
             Avtpdu,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("Avtpdu", None) is not None:
+                return self._properties.get("Avtpdu")
         return Avtpdu(self)
 
     @property
@@ -176,6 +200,9 @@ class Stack(Base):
             H264,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("H264", None) is not None:
+                return self._properties.get("H264")
         return H264(self)
 
     @property
@@ -190,6 +217,9 @@ class Stack(Base):
             Jpeg2000VideoFormat,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("Jpeg2000VideoFormat", None) is not None:
+                return self._properties.get("Jpeg2000VideoFormat")
         return Jpeg2000VideoFormat(self)
 
     @property
@@ -204,6 +234,9 @@ class Stack(Base):
             JpegVideoFormat,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("JpegVideoFormat", None) is not None:
+                return self._properties.get("JpegVideoFormat")
         return JpegVideoFormat(self)
 
     @property
@@ -218,6 +251,9 @@ class Stack(Base):
             SdiVideoFormat,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("SdiVideoFormat", None) is not None:
+                return self._properties.get("SdiVideoFormat")
         return SdiVideoFormat(self)
 
     @property
@@ -232,6 +268,9 @@ class Stack(Base):
             MpegtsPayload,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("MpegtsPayload", None) is not None:
+                return self._properties.get("MpegtsPayload")
         return MpegtsPayload(self)
 
     @property
@@ -246,6 +285,9 @@ class Stack(Base):
             MmaDataPayload,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("MmaDataPayload", None) is not None:
+                return self._properties.get("MmaDataPayload")
         return MmaDataPayload(self)
 
     @property
@@ -260,6 +302,9 @@ class Stack(Base):
             G723SidMode,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("G723SidMode", None) is not None:
+                return self._properties.get("G723SidMode")
         return G723SidMode(self)
 
     @property
@@ -274,6 +319,9 @@ class Stack(Base):
             G723Framepacking,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("G723Framepacking", None) is not None:
+                return self._properties.get("G723Framepacking")
         return G723Framepacking(self)
 
     @property
@@ -288,6 +336,9 @@ class Stack(Base):
             G723Framepacking53,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("G723Framepacking53", None) is not None:
+                return self._properties.get("G723Framepacking53")
         return G723Framepacking53(self)
 
     @property
@@ -302,6 +353,9 @@ class Stack(Base):
             CN,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("CN", None) is not None:
+                return self._properties.get("CN")
         return CN(self)
 
     @property
@@ -316,6 +370,12 @@ class Stack(Base):
             RealTimeTransportControlProtocol1733,
         )
 
+        if len(self._object_properties) > 0:
+            if (
+                self._properties.get("RealTimeTransportControlProtocol1733", None)
+                is not None
+            ):
+                return self._properties.get("RealTimeTransportControlProtocol1733")
         return RealTimeTransportControlProtocol1733(self)
 
     @property
@@ -330,6 +390,9 @@ class Stack(Base):
             Aal5,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("Aal5", None) is not None:
+                return self._properties.get("Aal5")
         return Aal5(self)
 
     @property
@@ -344,6 +407,9 @@ class Stack(Base):
             AtmCell,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("AtmCell", None) is not None:
+                return self._properties.get("AtmCell")
         return AtmCell(self)
 
     @property
@@ -358,6 +424,9 @@ class Stack(Base):
             AtmAAL5Frame,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("AtmAAL5Frame", None) is not None:
+                return self._properties.get("AtmAAL5Frame")
         return AtmAAL5Frame(self)
 
     @property
@@ -372,6 +441,9 @@ class Stack(Base):
             EthernetARP,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("EthernetARP", None) is not None:
+                return self._properties.get("EthernetARP")
         return EthernetARP(self)
 
     @property
@@ -386,6 +458,9 @@ class Stack(Base):
             CiscoHDLC,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("CiscoHDLC", None) is not None:
+                return self._properties.get("CiscoHDLC")
         return CiscoHDLC(self)
 
     @property
@@ -400,6 +475,9 @@ class Stack(Base):
             CiscoISL,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("CiscoISL", None) is not None:
+                return self._properties.get("CiscoISL")
         return CiscoISL(self)
 
     @property
@@ -414,6 +492,9 @@ class Stack(Base):
             CiscoFrameRelay,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("CiscoFrameRelay", None) is not None:
+                return self._properties.get("CiscoFrameRelay")
         return CiscoFrameRelay(self)
 
     @property
@@ -428,6 +509,9 @@ class Stack(Base):
             Ethernet,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("Ethernet", None) is not None:
+                return self._properties.get("Ethernet")
         return Ethernet(self)
 
     @property
@@ -442,6 +526,9 @@ class Stack(Base):
             EthernetNoFCS,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("EthernetNoFCS", None) is not None:
+                return self._properties.get("EthernetNoFCS")
         return EthernetNoFCS(self)
 
     @property
@@ -456,6 +543,9 @@ class Stack(Base):
             FrameRelay,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FrameRelay", None) is not None:
+                return self._properties.get("FrameRelay")
         return FrameRelay(self)
 
     @property
@@ -470,6 +560,9 @@ class Stack(Base):
             PppIPCP,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("PppIPCP", None) is not None:
+                return self._properties.get("PppIPCP")
         return PppIPCP(self)
 
     @property
@@ -484,6 +577,9 @@ class Stack(Base):
             PppIPv6CP,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("PppIPv6CP", None) is not None:
+                return self._properties.get("PppIPv6CP")
         return PppIPv6CP(self)
 
     @property
@@ -498,6 +594,9 @@ class Stack(Base):
             Lacp,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("Lacp", None) is not None:
+                return self._properties.get("Lacp")
         return Lacp(self)
 
     @property
@@ -512,6 +611,9 @@ class Stack(Base):
             LacpWithoutEthernet,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("LacpWithoutEthernet", None) is not None:
+                return self._properties.get("LacpWithoutEthernet")
         return LacpWithoutEthernet(self)
 
     @property
@@ -526,6 +628,9 @@ class Stack(Base):
             LlcPPP,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("LlcPPP", None) is not None:
+                return self._properties.get("LlcPPP")
         return LlcPPP(self)
 
     @property
@@ -540,6 +645,9 @@ class Stack(Base):
             Cfm,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("Cfm", None) is not None:
+                return self._properties.get("Cfm")
         return Cfm(self)
 
     @property
@@ -554,6 +662,9 @@ class Stack(Base):
             LinkOAM,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("LinkOAM", None) is not None:
+                return self._properties.get("LinkOAM")
         return LinkOAM(self)
 
     @property
@@ -568,6 +679,9 @@ class Stack(Base):
             Elmi,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("Elmi", None) is not None:
+                return self._properties.get("Elmi")
         return Elmi(self)
 
     @property
@@ -582,6 +696,9 @@ class Stack(Base):
             LlcBridgedEthernet,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("LlcBridgedEthernet", None) is not None:
+                return self._properties.get("LlcBridgedEthernet")
         return LlcBridgedEthernet(self)
 
     @property
@@ -596,6 +713,9 @@ class Stack(Base):
             Llc,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("Llc", None) is not None:
+                return self._properties.get("Llc")
         return Llc(self)
 
     @property
@@ -610,6 +730,9 @@ class Stack(Base):
             L2VPNATMCellCW,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("L2VPNATMCellCW", None) is not None:
+                return self._properties.get("L2VPNATMCellCW")
         return L2VPNATMCellCW(self)
 
     @property
@@ -624,6 +747,9 @@ class Stack(Base):
             L2VPNATMCWFrame,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("L2VPNATMCWFrame", None) is not None:
+                return self._properties.get("L2VPNATMCWFrame")
         return L2VPNATMCWFrame(self)
 
     @property
@@ -638,6 +764,9 @@ class Stack(Base):
             L2VPNEthernetFrame,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("L2VPNEthernetFrame", None) is not None:
+                return self._properties.get("L2VPNEthernetFrame")
         return L2VPNEthernetFrame(self)
 
     @property
@@ -652,6 +781,9 @@ class Stack(Base):
             L2VPNFrameRelayCW,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("L2VPNFrameRelayCW", None) is not None:
+                return self._properties.get("L2VPNFrameRelayCW")
         return L2VPNFrameRelayCW(self)
 
     @property
@@ -666,6 +798,9 @@ class Stack(Base):
             L2VPNFrameRelayRFC4619CW,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("L2VPNFrameRelayRFC4619CW", None) is not None:
+                return self._properties.get("L2VPNFrameRelayRFC4619CW")
         return L2VPNFrameRelayRFC4619CW(self)
 
     @property
@@ -680,6 +815,9 @@ class Stack(Base):
             L2VPNFrameRelay,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("L2VPNFrameRelay", None) is not None:
+                return self._properties.get("L2VPNFrameRelay")
         return L2VPNFrameRelay(self)
 
     @property
@@ -694,6 +832,9 @@ class Stack(Base):
             L2VPNPPPHDLC,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("L2VPNPPPHDLC", None) is not None:
+                return self._properties.get("L2VPNPPPHDLC")
         return L2VPNPPPHDLC(self)
 
     @property
@@ -708,6 +849,9 @@ class Stack(Base):
             L2VPNHDLC,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("L2VPNHDLC", None) is not None:
+                return self._properties.get("L2VPNHDLC")
         return L2VPNHDLC(self)
 
     @property
@@ -722,6 +866,9 @@ class Stack(Base):
             L2VPNPPP,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("L2VPNPPP", None) is not None:
+                return self._properties.get("L2VPNPPP")
         return L2VPNPPP(self)
 
     @property
@@ -736,6 +883,9 @@ class Stack(Base):
             L2VPNVCTypeIPCW,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("L2VPNVCTypeIPCW", None) is not None:
+                return self._properties.get("L2VPNVCTypeIPCW")
         return L2VPNVCTypeIPCW(self)
 
     @property
@@ -750,6 +900,9 @@ class Stack(Base):
             MacInMAC,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("MacInMAC", None) is not None:
+                return self._properties.get("MacInMAC")
         return MacInMAC(self)
 
     @property
@@ -764,6 +917,9 @@ class Stack(Base):
             MacInMACNoFcs,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("MacInMACNoFcs", None) is not None:
+                return self._properties.get("MacInMACNoFcs")
         return MacInMACNoFcs(self)
 
     @property
@@ -778,6 +934,9 @@ class Stack(Base):
             MarkerPDU,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("MarkerPDU", None) is not None:
+                return self._properties.get("MarkerPDU")
         return MarkerPDU(self)
 
     @property
@@ -792,6 +951,9 @@ class Stack(Base):
             Mpls,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("Mpls", None) is not None:
+                return self._properties.get("Mpls")
         return Mpls(self)
 
     @property
@@ -806,6 +968,9 @@ class Stack(Base):
             Mplsenull,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("Mplsenull", None) is not None:
+                return self._properties.get("Mplsenull")
         return Mplsenull(self)
 
     @property
@@ -820,6 +985,9 @@ class Stack(Base):
             MstpBPDU,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("MstpBPDU", None) is not None:
+                return self._properties.get("MstpBPDU")
         return MstpBPDU(self)
 
     @property
@@ -834,6 +1002,9 @@ class Stack(Base):
             MPLSTPEthernetFrame,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("MPLSTPEthernetFrame", None) is not None:
+                return self._properties.get("MPLSTPEthernetFrame")
         return MPLSTPEthernetFrame(self)
 
     @property
@@ -848,6 +1019,9 @@ class Stack(Base):
             OamCCM,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("OamCCM", None) is not None:
+                return self._properties.get("OamCCM")
         return OamCCM(self)
 
     @property
@@ -862,6 +1036,9 @@ class Stack(Base):
             Ppp,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("Ppp", None) is not None:
+                return self._properties.get("Ppp")
         return Ppp(self)
 
     @property
@@ -876,6 +1053,9 @@ class Stack(Base):
             Pppnohdlc,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("Pppnohdlc", None) is not None:
+                return self._properties.get("Pppnohdlc")
         return Pppnohdlc(self)
 
     @property
@@ -890,6 +1070,9 @@ class Stack(Base):
             PppLCP,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("PppLCP", None) is not None:
+                return self._properties.get("PppLCP")
         return PppLCP(self)
 
     @property
@@ -904,6 +1087,9 @@ class Stack(Base):
             PppPAPCHAP,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("PppPAPCHAP", None) is not None:
+                return self._properties.get("PppPAPCHAP")
         return PppPAPCHAP(self)
 
     @property
@@ -918,6 +1104,9 @@ class Stack(Base):
             PppoEDiscovery,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("PppoEDiscovery", None) is not None:
+                return self._properties.get("PppoEDiscovery")
         return PppoEDiscovery(self)
 
     @property
@@ -932,6 +1121,9 @@ class Stack(Base):
             PppoESession,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("PppoESession", None) is not None:
+                return self._properties.get("PppoESession")
         return PppoESession(self)
 
     @property
@@ -946,6 +1138,9 @@ class Stack(Base):
             PTPv2,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("PTPv2", None) is not None:
+                return self._properties.get("PTPv2")
         return PTPv2(self)
 
     @property
@@ -960,6 +1155,9 @@ class Stack(Base):
             EthernetRARP,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("EthernetRARP", None) is not None:
+                return self._properties.get("EthernetRARP")
         return EthernetRARP(self)
 
     @property
@@ -974,6 +1172,9 @@ class Stack(Base):
             RstpBPDU,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("RstpBPDU", None) is not None:
+                return self._properties.get("RstpBPDU")
         return RstpBPDU(self)
 
     @property
@@ -988,6 +1189,9 @@ class Stack(Base):
             LlcSNAP,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("LlcSNAP", None) is not None:
+                return self._properties.get("LlcSNAP")
         return LlcSNAP(self)
 
     @property
@@ -1002,6 +1206,9 @@ class Stack(Base):
             Snap,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("Snap", None) is not None:
+                return self._properties.get("Snap")
         return Snap(self)
 
     @property
@@ -1016,6 +1223,9 @@ class Stack(Base):
             StpCfgBPDU,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("StpCfgBPDU", None) is not None:
+                return self._properties.get("StpCfgBPDU")
         return StpCfgBPDU(self)
 
     @property
@@ -1030,6 +1240,9 @@ class Stack(Base):
             StpTCNBPDU,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("StpTCNBPDU", None) is not None:
+                return self._properties.get("StpTCNBPDU")
         return StpTCNBPDU(self)
 
     @property
@@ -1044,6 +1257,9 @@ class Stack(Base):
             VcMuxBridgedEthernet,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("VcMuxBridgedEthernet", None) is not None:
+                return self._properties.get("VcMuxBridgedEthernet")
         return VcMuxBridgedEthernet(self)
 
     @property
@@ -1058,6 +1274,9 @@ class Stack(Base):
             VcMuxPPP,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("VcMuxPPP", None) is not None:
+                return self._properties.get("VcMuxPPP")
         return VcMuxPPP(self)
 
     @property
@@ -1072,6 +1291,9 @@ class Stack(Base):
             Vlan,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("Vlan", None) is not None:
+                return self._properties.get("Vlan")
         return Vlan(self)
 
     @property
@@ -1086,6 +1308,9 @@ class Stack(Base):
             Vntag,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("Vntag", None) is not None:
+                return self._properties.get("Vntag")
         return Vntag(self)
 
     @property
@@ -1100,6 +1325,9 @@ class Stack(Base):
             Vic,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("Vic", None) is not None:
+                return self._properties.get("Vic")
         return Vic(self)
 
     @property
@@ -1114,6 +1342,9 @@ class Stack(Base):
             VplsEthernet,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("VplsEthernet", None) is not None:
+                return self._properties.get("VplsEthernet")
         return VplsEthernet(self)
 
     @property
@@ -1128,6 +1359,9 @@ class Stack(Base):
             FcoE,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FcoE", None) is not None:
+                return self._properties.get("FcoE")
         return FcoE(self)
 
     @property
@@ -1142,6 +1376,9 @@ class Stack(Base):
             FCoEFabricLogo,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCoEFabricLogo", None) is not None:
+                return self._properties.get("FCoEFabricLogo")
         return FCoEFabricLogo(self)
 
     @property
@@ -1156,6 +1393,9 @@ class Stack(Base):
             FCoEFabricLogoLsAcc,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCoEFabricLogoLsAcc", None) is not None:
+                return self._properties.get("FCoEFabricLogoLsAcc")
         return FCoEFabricLogoLsAcc(self)
 
     @property
@@ -1170,6 +1410,9 @@ class Stack(Base):
             FCoEFabricLogoLsRjt,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCoEFabricLogoLsRjt", None) is not None:
+                return self._properties.get("FCoEFabricLogoLsRjt")
         return FCoEFabricLogoLsRjt(self)
 
     @property
@@ -1184,6 +1427,9 @@ class Stack(Base):
             FCoEFlogiLsAcc,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCoEFlogiLsAcc", None) is not None:
+                return self._properties.get("FCoEFlogiLsAcc")
         return FCoEFlogiLsAcc(self)
 
     @property
@@ -1198,6 +1444,9 @@ class Stack(Base):
             FCoEFlogiLsRjt,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCoEFlogiLsRjt", None) is not None:
+                return self._properties.get("FCoEFlogiLsRjt")
         return FCoEFlogiLsRjt(self)
 
     @property
@@ -1212,6 +1461,9 @@ class Stack(Base):
             FCoEFlogiRequest,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCoEFlogiRequest", None) is not None:
+                return self._properties.get("FCoEFlogiRequest")
         return FCoEFlogiRequest(self)
 
     @property
@@ -1226,6 +1478,9 @@ class Stack(Base):
             FCoEPlogiLsAcc,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCoEPlogiLsAcc", None) is not None:
+                return self._properties.get("FCoEPlogiLsAcc")
         return FCoEPlogiLsAcc(self)
 
     @property
@@ -1240,6 +1495,9 @@ class Stack(Base):
             FCoEPlogiLsRjt,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCoEPlogiLsRjt", None) is not None:
+                return self._properties.get("FCoEPlogiLsRjt")
         return FCoEPlogiLsRjt(self)
 
     @property
@@ -1254,6 +1512,9 @@ class Stack(Base):
             FCoEPlogiRequest,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCoEPlogiRequest", None) is not None:
+                return self._properties.get("FCoEPlogiRequest")
         return FCoEPlogiRequest(self)
 
     @property
@@ -1268,6 +1529,9 @@ class Stack(Base):
             FCoENpivFdicsLsAcc,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCoENpivFdicsLsAcc", None) is not None:
+                return self._properties.get("FCoENpivFdicsLsAcc")
         return FCoENpivFdicsLsAcc(self)
 
     @property
@@ -1282,6 +1546,9 @@ class Stack(Base):
             FCoENpivFdiscLsRjt,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCoENpivFdiscLsRjt", None) is not None:
+                return self._properties.get("FCoENpivFdiscLsRjt")
         return FCoENpivFdiscLsRjt(self)
 
     @property
@@ -1296,6 +1563,9 @@ class Stack(Base):
             FCoENpivFdiscRequest,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCoENpivFdiscRequest", None) is not None:
+                return self._properties.get("FCoENpivFdiscRequest")
         return FCoENpivFdiscRequest(self)
 
     @property
@@ -1310,6 +1580,9 @@ class Stack(Base):
             FCoERscn,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCoERscn", None) is not None:
+                return self._properties.get("FCoERscn")
         return FCoERscn(self)
 
     @property
@@ -1324,6 +1597,9 @@ class Stack(Base):
             FCoEScrRequest,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCoEScrRequest", None) is not None:
+                return self._properties.get("FCoEScrRequest")
         return FCoEScrRequest(self)
 
     @property
@@ -1338,6 +1614,9 @@ class Stack(Base):
             FCoEGCSID,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCoEGCSID", None) is not None:
+                return self._properties.get("FCoEGCSID")
         return FCoEGCSID(self)
 
     @property
@@ -1352,6 +1631,9 @@ class Stack(Base):
             FCoEGANXT,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCoEGANXT", None) is not None:
+                return self._properties.get("FCoEGANXT")
         return FCoEGANXT(self)
 
     @property
@@ -1366,6 +1648,9 @@ class Stack(Base):
             FCoEGIEIL,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCoEGIEIL", None) is not None:
+                return self._properties.get("FCoEGIEIL")
         return FCoEGIEIL(self)
 
     @property
@@ -1380,6 +1665,9 @@ class Stack(Base):
             FCoEGIDPN,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCoEGIDPN", None) is not None:
+                return self._properties.get("FCoEGIDPN")
         return FCoEGIDPN(self)
 
     @property
@@ -1394,6 +1682,9 @@ class Stack(Base):
             FCoEGFPNID,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCoEGFPNID", None) is not None:
+                return self._properties.get("FCoEGFPNID")
         return FCoEGFPNID(self)
 
     @property
@@ -1408,6 +1699,9 @@ class Stack(Base):
             FCoEGPSC,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCoEGPSC", None) is not None:
+                return self._properties.get("FCoEGPSC")
         return FCoEGPSC(self)
 
     @property
@@ -1422,6 +1716,9 @@ class Stack(Base):
             FCoEGSES,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCoEGSES", None) is not None:
+                return self._properties.get("FCoEGSES")
         return FCoEGSES(self)
 
     @property
@@ -1436,6 +1733,9 @@ class Stack(Base):
             FCoEGPNFT,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCoEGPNFT", None) is not None:
+                return self._properties.get("FCoEGPNFT")
         return FCoEGPNFT(self)
 
     @property
@@ -1450,6 +1750,9 @@ class Stack(Base):
             FCoEGIEILN,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCoEGIEILN", None) is not None:
+                return self._properties.get("FCoEGIEILN")
         return FCoEGIEILN(self)
 
     @property
@@ -1464,6 +1767,9 @@ class Stack(Base):
             FCoEGAPNL,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCoEGAPNL", None) is not None:
+                return self._properties.get("FCoEGAPNL")
         return FCoEGAPNL(self)
 
     @property
@@ -1478,6 +1784,9 @@ class Stack(Base):
             FCoEGSPNID,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCoEGSPNID", None) is not None:
+                return self._properties.get("FCoEGSPNID")
         return FCoEGSPNID(self)
 
     @property
@@ -1492,6 +1801,9 @@ class Stack(Base):
             FCoERSNNNN,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCoERSNNNN", None) is not None:
+                return self._properties.get("FCoERSNNNN")
         return FCoERSNNNN(self)
 
     @property
@@ -1506,6 +1818,9 @@ class Stack(Base):
             FCoEGNPL,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCoEGNPL", None) is not None:
+                return self._properties.get("FCoEGNPL")
         return FCoEGNPL(self)
 
     @property
@@ -1520,6 +1835,9 @@ class Stack(Base):
             FCoEGPL,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCoEGPL", None) is not None:
+                return self._properties.get("FCoEGPL")
         return FCoEGPL(self)
 
     @property
@@ -1534,6 +1852,9 @@ class Stack(Base):
             FCoEGNID,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCoEGNID", None) is not None:
+                return self._properties.get("FCoEGNID")
         return FCoEGNID(self)
 
     @property
@@ -1548,6 +1869,9 @@ class Stack(Base):
             FCoERPLT,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCoERPLT", None) is not None:
+                return self._properties.get("FCoERPLT")
         return FCoERPLT(self)
 
     @property
@@ -1562,6 +1886,9 @@ class Stack(Base):
             FCoERIELN,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCoERIELN", None) is not None:
+                return self._properties.get("FCoERIELN")
         return FCoERIELN(self)
 
     @property
@@ -1576,6 +1903,9 @@ class Stack(Base):
             FCoEGPNL,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCoEGPNL", None) is not None:
+                return self._properties.get("FCoEGPNL")
         return FCoEGPNL(self)
 
     @property
@@ -1590,6 +1920,9 @@ class Stack(Base):
             FCoEGNNFT,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCoEGNNFT", None) is not None:
+                return self._properties.get("FCoEGNNFT")
         return FCoEGNNFT(self)
 
     @property
@@ -1604,6 +1937,9 @@ class Stack(Base):
             FCoEGPLNL,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCoEGPLNL", None) is not None:
+                return self._properties.get("FCoEGPLNL")
         return FCoEGPLNL(self)
 
     @property
@@ -1618,6 +1954,9 @@ class Stack(Base):
             FCoERFTID,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCoERFTID", None) is not None:
+                return self._properties.get("FCoERFTID")
         return FCoERFTID(self)
 
     @property
@@ -1632,6 +1971,9 @@ class Stack(Base):
             FCoEGPLML,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCoEGPLML", None) is not None:
+                return self._properties.get("FCoEGPLML")
         return FCoEGPLML(self)
 
     @property
@@ -1646,6 +1988,9 @@ class Stack(Base):
             FCoEGPS,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCoEGPS", None) is not None:
+                return self._properties.get("FCoEGPS")
         return FCoEGPS(self)
 
     @property
@@ -1660,6 +2005,9 @@ class Stack(Base):
             FCoERCSID,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCoERCSID", None) is not None:
+                return self._properties.get("FCoERCSID")
         return FCoERCSID(self)
 
     @property
@@ -1674,6 +2022,9 @@ class Stack(Base):
             FCoEGSNNNN,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCoEGSNNNN", None) is not None:
+                return self._properties.get("FCoEGSNNNN")
         return FCoEGSNNNN(self)
 
     @property
@@ -1688,6 +2039,9 @@ class Stack(Base):
             FCoEGNNID,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCoEGNNID", None) is not None:
+                return self._properties.get("FCoEGNNID")
         return FCoEGNNID(self)
 
     @property
@@ -1702,6 +2056,9 @@ class Stack(Base):
             FCoEGMID,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCoEGMID", None) is not None:
+                return self._properties.get("FCoEGMID")
         return FCoEGMID(self)
 
     @property
@@ -1716,6 +2073,9 @@ class Stack(Base):
             FCoEGIET,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCoEGIET", None) is not None:
+                return self._properties.get("FCoEGIET")
         return FCoEGIET(self)
 
     @property
@@ -1730,6 +2090,9 @@ class Stack(Base):
             FCoERPLM,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCoERPLM", None) is not None:
+                return self._properties.get("FCoERPLM")
         return FCoERPLM(self)
 
     @property
@@ -1744,6 +2107,9 @@ class Stack(Base):
             FCoEGPAB,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCoEGPAB", None) is not None:
+                return self._properties.get("FCoEGPAB")
         return FCoEGPAB(self)
 
     @property
@@ -1758,6 +2124,9 @@ class Stack(Base):
             FCoEGIEAG,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCoEGIEAG", None) is not None:
+                return self._properties.get("FCoEGIEAG")
         return FCoEGIEAG(self)
 
     @property
@@ -1772,6 +2141,9 @@ class Stack(Base):
             FCoEGIEL,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCoEGIEL", None) is not None:
+                return self._properties.get("FCoEGIEL")
         return FCoEGIEL(self)
 
     @property
@@ -1786,6 +2158,9 @@ class Stack(Base):
             FCoEGPAG,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCoEGPAG", None) is not None:
+                return self._properties.get("FCoEGPAG")
         return FCoEGPAG(self)
 
     @property
@@ -1800,6 +2175,9 @@ class Stack(Base):
             FCoEGIDFT,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCoEGIDFT", None) is not None:
+                return self._properties.get("FCoEGIDFT")
         return FCoEGIDFT(self)
 
     @property
@@ -1814,6 +2192,9 @@ class Stack(Base):
             FCoEGFFID,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCoEGFFID", None) is not None:
+                return self._properties.get("FCoEGFFID")
         return FCoEGFFID(self)
 
     @property
@@ -1828,6 +2209,9 @@ class Stack(Base):
             FCoEGMAL,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCoEGMAL", None) is not None:
+                return self._properties.get("FCoEGMAL")
         return FCoEGMAL(self)
 
     @property
@@ -1842,6 +2226,9 @@ class Stack(Base):
             FCoEGPT,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCoEGPT", None) is not None:
+                return self._properties.get("FCoEGPT")
         return FCoEGPT(self)
 
     @property
@@ -1856,6 +2243,9 @@ class Stack(Base):
             FCoEGPTID,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCoEGPTID", None) is not None:
+                return self._properties.get("FCoEGPTID")
         return FCoEGPTID(self)
 
     @property
@@ -1870,6 +2260,9 @@ class Stack(Base):
             FCoEGATIN,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCoEGATIN", None) is not None:
+                return self._properties.get("FCoEGATIN")
         return FCoEGATIN(self)
 
     @property
@@ -1884,6 +2277,9 @@ class Stack(Base):
             FCoERFFID,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCoERFFID", None) is not None:
+                return self._properties.get("FCoERFFID")
         return FCoERFFID(self)
 
     @property
@@ -1898,6 +2294,9 @@ class Stack(Base):
             FCoERPNL,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCoERPNL", None) is not None:
+                return self._properties.get("FCoERPNL")
         return FCoERPNL(self)
 
     @property
@@ -1912,6 +2311,9 @@ class Stack(Base):
             FCoEGDID,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCoEGDID", None) is not None:
+                return self._properties.get("FCoEGDID")
         return FCoEGDID(self)
 
     @property
@@ -1926,6 +2328,9 @@ class Stack(Base):
             FCoEGTIN,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCoEGTIN", None) is not None:
+                return self._properties.get("FCoEGTIN")
         return FCoEGTIN(self)
 
     @property
@@ -1940,6 +2345,9 @@ class Stack(Base):
             FCoERPL,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCoERPL", None) is not None:
+                return self._properties.get("FCoERPL")
         return FCoERPL(self)
 
     @property
@@ -1954,6 +2362,9 @@ class Stack(Base):
             FCoEGPLT,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCoEGPLT", None) is not None:
+                return self._properties.get("FCoEGPLT")
         return FCoEGPLT(self)
 
     @property
@@ -1968,6 +2379,9 @@ class Stack(Base):
             FCoERNNID,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCoERNNID", None) is not None:
+                return self._properties.get("FCoERNNID")
         return FCoERNNID(self)
 
     @property
@@ -1982,6 +2396,9 @@ class Stack(Base):
             FCoEGPPN,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCoEGPPN", None) is not None:
+                return self._properties.get("FCoEGPPN")
         return FCoEGPPN(self)
 
     @property
@@ -1996,6 +2413,9 @@ class Stack(Base):
             FCoEGPFCP,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCoEGPFCP", None) is not None:
+                return self._properties.get("FCoEGPFCP")
         return FCoEGPFCP(self)
 
     @property
@@ -2010,6 +2430,9 @@ class Stack(Base):
             FCoEGPLI,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCoEGPLI", None) is not None:
+                return self._properties.get("FCoEGPLI")
         return FCoEGPLI(self)
 
     @property
@@ -2024,6 +2447,9 @@ class Stack(Base):
             FCoEGFN,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCoEGFN", None) is not None:
+                return self._properties.get("FCoEGFN")
         return FCoEGFN(self)
 
     @property
@@ -2038,6 +2464,9 @@ class Stack(Base):
             FCoERPAB,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCoERPAB", None) is not None:
+                return self._properties.get("FCoERPAB")
         return FCoERPAB(self)
 
     @property
@@ -2052,6 +2481,9 @@ class Stack(Base):
             FCoEGFTID,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCoEGFTID", None) is not None:
+                return self._properties.get("FCoEGFTID")
         return FCoEGFTID(self)
 
     @property
@@ -2066,6 +2498,9 @@ class Stack(Base):
             FCoERSPNID,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCoERSPNID", None) is not None:
+                return self._properties.get("FCoERSPNID")
         return FCoERSPNID(self)
 
     @property
@@ -2080,6 +2515,9 @@ class Stack(Base):
             FCoEGIDNN,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCoEGIDNN", None) is not None:
+                return self._properties.get("FCoEGIDNN")
         return FCoEGIDNN(self)
 
     @property
@@ -2094,6 +2532,9 @@ class Stack(Base):
             FCoEGPNID,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCoEGPNID", None) is not None:
+                return self._properties.get("FCoEGPNID")
         return FCoEGPNID(self)
 
     @property
@@ -2108,6 +2549,9 @@ class Stack(Base):
             FCoEEFPSWRJT,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCoEEFPSWRJT", None) is not None:
+                return self._properties.get("FCoEEFPSWRJT")
         return FCoEEFPSWRJT(self)
 
     @property
@@ -2122,6 +2566,9 @@ class Stack(Base):
             FCoEEFPSWACC,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCoEEFPSWACC", None) is not None:
+                return self._properties.get("FCoEEFPSWACC")
         return FCoEEFPSWACC(self)
 
     @property
@@ -2136,6 +2583,9 @@ class Stack(Base):
             FCoEESCSWACC,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCoEESCSWACC", None) is not None:
+                return self._properties.get("FCoEESCSWACC")
         return FCoEESCSWACC(self)
 
     @property
@@ -2150,6 +2600,9 @@ class Stack(Base):
             FCoERDISWRJT,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCoERDISWRJT", None) is not None:
+                return self._properties.get("FCoERDISWRJT")
         return FCoERDISWRJT(self)
 
     @property
@@ -2164,6 +2617,9 @@ class Stack(Base):
             FCoEMRRequest,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCoEMRRequest", None) is not None:
+                return self._properties.get("FCoEMRRequest")
         return FCoEMRRequest(self)
 
     @property
@@ -2178,6 +2634,9 @@ class Stack(Base):
             FCoELSARequest,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCoELSARequest", None) is not None:
+                return self._properties.get("FCoELSARequest")
         return FCoELSARequest(self)
 
     @property
@@ -2192,6 +2651,9 @@ class Stack(Base):
             FCoEDIASWRJT,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCoEDIASWRJT", None) is not None:
+                return self._properties.get("FCoEDIASWRJT")
         return FCoEDIASWRJT(self)
 
     @property
@@ -2206,6 +2668,9 @@ class Stack(Base):
             FCoEMRSWRJT,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCoEMRSWRJT", None) is not None:
+                return self._properties.get("FCoEMRSWRJT")
         return FCoEMRSWRJT(self)
 
     @property
@@ -2220,6 +2685,9 @@ class Stack(Base):
             FCoEDIASWACC,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCoEDIASWACC", None) is not None:
+                return self._properties.get("FCoEDIASWACC")
         return FCoEDIASWACC(self)
 
     @property
@@ -2234,6 +2702,9 @@ class Stack(Base):
             FCoERDISWACC,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCoERDISWACC", None) is not None:
+                return self._properties.get("FCoERDISWACC")
         return FCoERDISWACC(self)
 
     @property
@@ -2248,6 +2719,9 @@ class Stack(Base):
             FCoEESCSWRJT,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCoEESCSWRJT", None) is not None:
+                return self._properties.get("FCoEESCSWRJT")
         return FCoEESCSWRJT(self)
 
     @property
@@ -2262,6 +2736,9 @@ class Stack(Base):
             FCoELSURequest,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCoELSURequest", None) is not None:
+                return self._properties.get("FCoELSURequest")
         return FCoELSURequest(self)
 
     @property
@@ -2276,6 +2753,9 @@ class Stack(Base):
             FCoEESCRequest,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCoEESCRequest", None) is not None:
+                return self._properties.get("FCoEESCRequest")
         return FCoEESCRequest(self)
 
     @property
@@ -2290,6 +2770,9 @@ class Stack(Base):
             FCoEELPSWACC,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCoEELPSWACC", None) is not None:
+                return self._properties.get("FCoEELPSWACC")
         return FCoEELPSWACC(self)
 
     @property
@@ -2304,6 +2787,9 @@ class Stack(Base):
             FCoEELPSWRJT,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCoEELPSWRJT", None) is not None:
+                return self._properties.get("FCoEELPSWRJT")
         return FCoEELPSWRJT(self)
 
     @property
@@ -2318,6 +2804,9 @@ class Stack(Base):
             FCoEMRSWACC,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCoEMRSWACC", None) is not None:
+                return self._properties.get("FCoEMRSWACC")
         return FCoEMRSWACC(self)
 
     @property
@@ -2332,6 +2821,9 @@ class Stack(Base):
             FCoEELPRequest,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCoEELPRequest", None) is not None:
+                return self._properties.get("FCoEELPRequest")
         return FCoEELPRequest(self)
 
     @property
@@ -2346,6 +2838,9 @@ class Stack(Base):
             FCoEDIARequest,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCoEDIARequest", None) is not None:
+                return self._properties.get("FCoEDIARequest")
         return FCoEDIARequest(self)
 
     @property
@@ -2360,6 +2855,9 @@ class Stack(Base):
             FCoERDIRequest,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCoERDIRequest", None) is not None:
+                return self._properties.get("FCoERDIRequest")
         return FCoERDIRequest(self)
 
     @property
@@ -2374,6 +2872,9 @@ class Stack(Base):
             FCoEHLORequest,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCoEHLORequest", None) is not None:
+                return self._properties.get("FCoEHLORequest")
         return FCoEHLORequest(self)
 
     @property
@@ -2388,6 +2889,9 @@ class Stack(Base):
             FCoEEFPRequest,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCoEEFPRequest", None) is not None:
+                return self._properties.get("FCoEEFPRequest")
         return FCoEEFPRequest(self)
 
     @property
@@ -2402,6 +2906,9 @@ class Stack(Base):
             Fip,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("Fip", None) is not None:
+                return self._properties.get("Fip")
         return Fip(self)
 
     @property
@@ -2416,6 +2923,9 @@ class Stack(Base):
             FipClearVirtualLinksFcf,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FipClearVirtualLinksFcf", None) is not None:
+                return self._properties.get("FipClearVirtualLinksFcf")
         return FipClearVirtualLinksFcf(self)
 
     @property
@@ -2430,6 +2940,9 @@ class Stack(Base):
             FipDiscoveryAdvertisementFcf,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FipDiscoveryAdvertisementFcf", None) is not None:
+                return self._properties.get("FipDiscoveryAdvertisementFcf")
         return FipDiscoveryAdvertisementFcf(self)
 
     @property
@@ -2444,6 +2957,9 @@ class Stack(Base):
             FipDiscoverySolicitationEnode,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FipDiscoverySolicitationEnode", None) is not None:
+                return self._properties.get("FipDiscoverySolicitationEnode")
         return FipDiscoverySolicitationEnode(self)
 
     @property
@@ -2458,6 +2974,9 @@ class Stack(Base):
             FipDiscoverySolicitationFcf,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FipDiscoverySolicitationFcf", None) is not None:
+                return self._properties.get("FipDiscoverySolicitationFcf")
         return FipDiscoverySolicitationFcf(self)
 
     @property
@@ -2472,6 +2991,9 @@ class Stack(Base):
             FipElpRequestFcf,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FipElpRequestFcf", None) is not None:
+                return self._properties.get("FipElpRequestFcf")
         return FipElpRequestFcf(self)
 
     @property
@@ -2486,6 +3008,9 @@ class Stack(Base):
             FipElpSwAccFcf,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FipElpSwAccFcf", None) is not None:
+                return self._properties.get("FipElpSwAccFcf")
         return FipElpSwAccFcf(self)
 
     @property
@@ -2500,6 +3025,9 @@ class Stack(Base):
             FipElpSwRjtFcf,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FipElpSwRjtFcf", None) is not None:
+                return self._properties.get("FipElpSwRjtFcf")
         return FipElpSwRjtFcf(self)
 
     @property
@@ -2514,6 +3042,9 @@ class Stack(Base):
             FipFabricLogoEnode,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FipFabricLogoEnode", None) is not None:
+                return self._properties.get("FipFabricLogoEnode")
         return FipFabricLogoEnode(self)
 
     @property
@@ -2528,6 +3059,9 @@ class Stack(Base):
             FipFabricLogoLsAccFcf,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FipFabricLogoLsAccFcf", None) is not None:
+                return self._properties.get("FipFabricLogoLsAccFcf")
         return FipFabricLogoLsAccFcf(self)
 
     @property
@@ -2542,6 +3076,9 @@ class Stack(Base):
             FipFabricLogoLsRjtFcf,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FipFabricLogoLsRjtFcf", None) is not None:
+                return self._properties.get("FipFabricLogoLsRjtFcf")
         return FipFabricLogoLsRjtFcf(self)
 
     @property
@@ -2556,6 +3093,9 @@ class Stack(Base):
             FipFlogiLsAccFcf,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FipFlogiLsAccFcf", None) is not None:
+                return self._properties.get("FipFlogiLsAccFcf")
         return FipFlogiLsAccFcf(self)
 
     @property
@@ -2570,6 +3110,9 @@ class Stack(Base):
             FipFlogiLsRjtFcf,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FipFlogiLsRjtFcf", None) is not None:
+                return self._properties.get("FipFlogiLsRjtFcf")
         return FipFlogiLsRjtFcf(self)
 
     @property
@@ -2584,6 +3127,9 @@ class Stack(Base):
             FipFlogiRequestEnode,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FipFlogiRequestEnode", None) is not None:
+                return self._properties.get("FipFlogiRequestEnode")
         return FipFlogiRequestEnode(self)
 
     @property
@@ -2598,6 +3144,9 @@ class Stack(Base):
             FipKeepAliveEnode,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FipKeepAliveEnode", None) is not None:
+                return self._properties.get("FipKeepAliveEnode")
         return FipKeepAliveEnode(self)
 
     @property
@@ -2612,6 +3161,9 @@ class Stack(Base):
             FipKeepAliveVnport,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FipKeepAliveVnport", None) is not None:
+                return self._properties.get("FipKeepAliveVnport")
         return FipKeepAliveVnport(self)
 
     @property
@@ -2626,6 +3178,9 @@ class Stack(Base):
             FipNpivFdicsLsAccFcf,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FipNpivFdicsLsAccFcf", None) is not None:
+                return self._properties.get("FipNpivFdicsLsAccFcf")
         return FipNpivFdicsLsAccFcf(self)
 
     @property
@@ -2640,6 +3195,9 @@ class Stack(Base):
             FipNpivFdiscLsRjtFcf,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FipNpivFdiscLsRjtFcf", None) is not None:
+                return self._properties.get("FipNpivFdiscLsRjtFcf")
         return FipNpivFdiscLsRjtFcf(self)
 
     @property
@@ -2654,6 +3212,9 @@ class Stack(Base):
             FipNpivFdiscRequestEnode,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FipNpivFdiscRequestEnode", None) is not None:
+                return self._properties.get("FipNpivFdiscRequestEnode")
         return FipNpivFdiscRequestEnode(self)
 
     @property
@@ -2668,6 +3229,9 @@ class Stack(Base):
             FipVendorSpecific,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FipVendorSpecific", None) is not None:
+                return self._properties.get("FipVendorSpecific")
         return FipVendorSpecific(self)
 
     @property
@@ -2682,6 +3246,9 @@ class Stack(Base):
             FipVlanNotificationFcf,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FipVlanNotificationFcf", None) is not None:
+                return self._properties.get("FipVlanNotificationFcf")
         return FipVlanNotificationFcf(self)
 
     @property
@@ -2696,6 +3263,9 @@ class Stack(Base):
             FipVlanRequest,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FipVlanRequest", None) is not None:
+                return self._properties.get("FipVlanRequest")
         return FipVlanRequest(self)
 
     @property
@@ -2710,6 +3280,9 @@ class Stack(Base):
             FcFabricLogoEnode,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FcFabricLogoEnode", None) is not None:
+                return self._properties.get("FcFabricLogoEnode")
         return FcFabricLogoEnode(self)
 
     @property
@@ -2724,6 +3297,9 @@ class Stack(Base):
             FcFabricLogoLsAcc,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FcFabricLogoLsAcc", None) is not None:
+                return self._properties.get("FcFabricLogoLsAcc")
         return FcFabricLogoLsAcc(self)
 
     @property
@@ -2738,6 +3314,9 @@ class Stack(Base):
             FcFabricLogoLsRjt,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FcFabricLogoLsRjt", None) is not None:
+                return self._properties.get("FcFabricLogoLsRjt")
         return FcFabricLogoLsRjt(self)
 
     @property
@@ -2752,6 +3331,9 @@ class Stack(Base):
             FcFlogiLsAcc,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FcFlogiLsAcc", None) is not None:
+                return self._properties.get("FcFlogiLsAcc")
         return FcFlogiLsAcc(self)
 
     @property
@@ -2766,6 +3348,9 @@ class Stack(Base):
             FcFlogiLsRjt,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FcFlogiLsRjt", None) is not None:
+                return self._properties.get("FcFlogiLsRjt")
         return FcFlogiLsRjt(self)
 
     @property
@@ -2780,6 +3365,9 @@ class Stack(Base):
             FcFlogiRequest,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FcFlogiRequest", None) is not None:
+                return self._properties.get("FcFlogiRequest")
         return FcFlogiRequest(self)
 
     @property
@@ -2794,6 +3382,9 @@ class Stack(Base):
             FcPlogiLsAcc,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FcPlogiLsAcc", None) is not None:
+                return self._properties.get("FcPlogiLsAcc")
         return FcPlogiLsAcc(self)
 
     @property
@@ -2808,6 +3399,9 @@ class Stack(Base):
             FcPlogiLsRjt,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FcPlogiLsRjt", None) is not None:
+                return self._properties.get("FcPlogiLsRjt")
         return FcPlogiLsRjt(self)
 
     @property
@@ -2822,6 +3416,9 @@ class Stack(Base):
             FcPlogiRequest,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FcPlogiRequest", None) is not None:
+                return self._properties.get("FcPlogiRequest")
         return FcPlogiRequest(self)
 
     @property
@@ -2836,6 +3433,9 @@ class Stack(Base):
             FcNpivFdicsLsAcc,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FcNpivFdicsLsAcc", None) is not None:
+                return self._properties.get("FcNpivFdicsLsAcc")
         return FcNpivFdicsLsAcc(self)
 
     @property
@@ -2850,6 +3450,9 @@ class Stack(Base):
             FcNpivFdiscLsRjt,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FcNpivFdiscLsRjt", None) is not None:
+                return self._properties.get("FcNpivFdiscLsRjt")
         return FcNpivFdiscLsRjt(self)
 
     @property
@@ -2864,6 +3467,9 @@ class Stack(Base):
             FcNpivFdiscRequest,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FcNpivFdiscRequest", None) is not None:
+                return self._properties.get("FcNpivFdiscRequest")
         return FcNpivFdiscRequest(self)
 
     @property
@@ -2878,6 +3484,9 @@ class Stack(Base):
             FcScrRequest,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FcScrRequest", None) is not None:
+                return self._properties.get("FcScrRequest")
         return FcScrRequest(self)
 
     @property
@@ -2892,6 +3501,9 @@ class Stack(Base):
             FcRscn,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FcRscn", None) is not None:
+                return self._properties.get("FcRscn")
         return FcRscn(self)
 
     @property
@@ -2906,6 +3518,9 @@ class Stack(Base):
             FCGCSID,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCGCSID", None) is not None:
+                return self._properties.get("FCGCSID")
         return FCGCSID(self)
 
     @property
@@ -2920,6 +3535,9 @@ class Stack(Base):
             FCGANXT,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCGANXT", None) is not None:
+                return self._properties.get("FCGANXT")
         return FCGANXT(self)
 
     @property
@@ -2934,6 +3552,9 @@ class Stack(Base):
             FCGIEIL,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCGIEIL", None) is not None:
+                return self._properties.get("FCGIEIL")
         return FCGIEIL(self)
 
     @property
@@ -2948,6 +3569,9 @@ class Stack(Base):
             FCGIDPN,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCGIDPN", None) is not None:
+                return self._properties.get("FCGIDPN")
         return FCGIDPN(self)
 
     @property
@@ -2962,6 +3586,9 @@ class Stack(Base):
             FCGFPNID,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCGFPNID", None) is not None:
+                return self._properties.get("FCGFPNID")
         return FCGFPNID(self)
 
     @property
@@ -2976,6 +3603,9 @@ class Stack(Base):
             FCGPSC,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCGPSC", None) is not None:
+                return self._properties.get("FCGPSC")
         return FCGPSC(self)
 
     @property
@@ -2990,6 +3620,9 @@ class Stack(Base):
             FCGSES,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCGSES", None) is not None:
+                return self._properties.get("FCGSES")
         return FCGSES(self)
 
     @property
@@ -3004,6 +3637,9 @@ class Stack(Base):
             FCGPNFT,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCGPNFT", None) is not None:
+                return self._properties.get("FCGPNFT")
         return FCGPNFT(self)
 
     @property
@@ -3018,6 +3654,9 @@ class Stack(Base):
             FCGIEILN,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCGIEILN", None) is not None:
+                return self._properties.get("FCGIEILN")
         return FCGIEILN(self)
 
     @property
@@ -3032,6 +3671,9 @@ class Stack(Base):
             FCGAPNL,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCGAPNL", None) is not None:
+                return self._properties.get("FCGAPNL")
         return FCGAPNL(self)
 
     @property
@@ -3046,6 +3688,9 @@ class Stack(Base):
             FCGSPNID,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCGSPNID", None) is not None:
+                return self._properties.get("FCGSPNID")
         return FCGSPNID(self)
 
     @property
@@ -3060,6 +3705,9 @@ class Stack(Base):
             FCRSNNNN,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCRSNNNN", None) is not None:
+                return self._properties.get("FCRSNNNN")
         return FCRSNNNN(self)
 
     @property
@@ -3074,6 +3722,9 @@ class Stack(Base):
             FCGNPL,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCGNPL", None) is not None:
+                return self._properties.get("FCGNPL")
         return FCGNPL(self)
 
     @property
@@ -3088,6 +3739,9 @@ class Stack(Base):
             FCGPL,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCGPL", None) is not None:
+                return self._properties.get("FCGPL")
         return FCGPL(self)
 
     @property
@@ -3102,6 +3756,9 @@ class Stack(Base):
             FCGNID,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCGNID", None) is not None:
+                return self._properties.get("FCGNID")
         return FCGNID(self)
 
     @property
@@ -3116,6 +3773,9 @@ class Stack(Base):
             FCRPLT,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCRPLT", None) is not None:
+                return self._properties.get("FCRPLT")
         return FCRPLT(self)
 
     @property
@@ -3130,6 +3790,9 @@ class Stack(Base):
             FCRIELN,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCRIELN", None) is not None:
+                return self._properties.get("FCRIELN")
         return FCRIELN(self)
 
     @property
@@ -3144,6 +3807,9 @@ class Stack(Base):
             FCGPNL,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCGPNL", None) is not None:
+                return self._properties.get("FCGPNL")
         return FCGPNL(self)
 
     @property
@@ -3158,6 +3824,9 @@ class Stack(Base):
             FCGNNFT,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCGNNFT", None) is not None:
+                return self._properties.get("FCGNNFT")
         return FCGNNFT(self)
 
     @property
@@ -3172,6 +3841,9 @@ class Stack(Base):
             FCGPLNL,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCGPLNL", None) is not None:
+                return self._properties.get("FCGPLNL")
         return FCGPLNL(self)
 
     @property
@@ -3186,6 +3858,9 @@ class Stack(Base):
             FCRFTID,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCRFTID", None) is not None:
+                return self._properties.get("FCRFTID")
         return FCRFTID(self)
 
     @property
@@ -3200,6 +3875,9 @@ class Stack(Base):
             FCGPLML,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCGPLML", None) is not None:
+                return self._properties.get("FCGPLML")
         return FCGPLML(self)
 
     @property
@@ -3214,6 +3892,9 @@ class Stack(Base):
             FCGPS,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCGPS", None) is not None:
+                return self._properties.get("FCGPS")
         return FCGPS(self)
 
     @property
@@ -3228,6 +3909,9 @@ class Stack(Base):
             FCRCSID,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCRCSID", None) is not None:
+                return self._properties.get("FCRCSID")
         return FCRCSID(self)
 
     @property
@@ -3242,6 +3926,9 @@ class Stack(Base):
             FCGSNNNN,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCGSNNNN", None) is not None:
+                return self._properties.get("FCGSNNNN")
         return FCGSNNNN(self)
 
     @property
@@ -3256,6 +3943,9 @@ class Stack(Base):
             FCGNNID,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCGNNID", None) is not None:
+                return self._properties.get("FCGNNID")
         return FCGNNID(self)
 
     @property
@@ -3270,6 +3960,9 @@ class Stack(Base):
             FCGMID,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCGMID", None) is not None:
+                return self._properties.get("FCGMID")
         return FCGMID(self)
 
     @property
@@ -3284,6 +3977,9 @@ class Stack(Base):
             FCGIET,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCGIET", None) is not None:
+                return self._properties.get("FCGIET")
         return FCGIET(self)
 
     @property
@@ -3298,6 +3994,9 @@ class Stack(Base):
             FCRPLM,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCRPLM", None) is not None:
+                return self._properties.get("FCRPLM")
         return FCRPLM(self)
 
     @property
@@ -3312,6 +4011,9 @@ class Stack(Base):
             FCGPAB,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCGPAB", None) is not None:
+                return self._properties.get("FCGPAB")
         return FCGPAB(self)
 
     @property
@@ -3326,6 +4028,9 @@ class Stack(Base):
             FCGIEAG,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCGIEAG", None) is not None:
+                return self._properties.get("FCGIEAG")
         return FCGIEAG(self)
 
     @property
@@ -3340,6 +4045,9 @@ class Stack(Base):
             FCGIEL,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCGIEL", None) is not None:
+                return self._properties.get("FCGIEL")
         return FCGIEL(self)
 
     @property
@@ -3354,6 +4062,9 @@ class Stack(Base):
             FCGPAG,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCGPAG", None) is not None:
+                return self._properties.get("FCGPAG")
         return FCGPAG(self)
 
     @property
@@ -3368,6 +4079,9 @@ class Stack(Base):
             FCGIDFT,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCGIDFT", None) is not None:
+                return self._properties.get("FCGIDFT")
         return FCGIDFT(self)
 
     @property
@@ -3382,6 +4096,9 @@ class Stack(Base):
             FCGFFID,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCGFFID", None) is not None:
+                return self._properties.get("FCGFFID")
         return FCGFFID(self)
 
     @property
@@ -3396,6 +4113,9 @@ class Stack(Base):
             FCGMAL,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCGMAL", None) is not None:
+                return self._properties.get("FCGMAL")
         return FCGMAL(self)
 
     @property
@@ -3410,6 +4130,9 @@ class Stack(Base):
             FCGPT,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCGPT", None) is not None:
+                return self._properties.get("FCGPT")
         return FCGPT(self)
 
     @property
@@ -3424,6 +4147,9 @@ class Stack(Base):
             FCGPTID,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCGPTID", None) is not None:
+                return self._properties.get("FCGPTID")
         return FCGPTID(self)
 
     @property
@@ -3438,6 +4164,9 @@ class Stack(Base):
             FCGATIN,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCGATIN", None) is not None:
+                return self._properties.get("FCGATIN")
         return FCGATIN(self)
 
     @property
@@ -3452,6 +4181,9 @@ class Stack(Base):
             FCRFFID,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCRFFID", None) is not None:
+                return self._properties.get("FCRFFID")
         return FCRFFID(self)
 
     @property
@@ -3466,6 +4198,9 @@ class Stack(Base):
             FCRPNL,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCRPNL", None) is not None:
+                return self._properties.get("FCRPNL")
         return FCRPNL(self)
 
     @property
@@ -3480,6 +4215,9 @@ class Stack(Base):
             FCGDID,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCGDID", None) is not None:
+                return self._properties.get("FCGDID")
         return FCGDID(self)
 
     @property
@@ -3494,6 +4232,9 @@ class Stack(Base):
             FCGTIN,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCGTIN", None) is not None:
+                return self._properties.get("FCGTIN")
         return FCGTIN(self)
 
     @property
@@ -3508,6 +4249,9 @@ class Stack(Base):
             FCRPL,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCRPL", None) is not None:
+                return self._properties.get("FCRPL")
         return FCRPL(self)
 
     @property
@@ -3522,6 +4266,9 @@ class Stack(Base):
             FCGPLT,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCGPLT", None) is not None:
+                return self._properties.get("FCGPLT")
         return FCGPLT(self)
 
     @property
@@ -3536,6 +4283,9 @@ class Stack(Base):
             FCRNNID,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCRNNID", None) is not None:
+                return self._properties.get("FCRNNID")
         return FCRNNID(self)
 
     @property
@@ -3550,6 +4300,9 @@ class Stack(Base):
             FCGPPN,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCGPPN", None) is not None:
+                return self._properties.get("FCGPPN")
         return FCGPPN(self)
 
     @property
@@ -3564,6 +4317,9 @@ class Stack(Base):
             FCGPFCP,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCGPFCP", None) is not None:
+                return self._properties.get("FCGPFCP")
         return FCGPFCP(self)
 
     @property
@@ -3578,6 +4334,9 @@ class Stack(Base):
             FCGPLI,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCGPLI", None) is not None:
+                return self._properties.get("FCGPLI")
         return FCGPLI(self)
 
     @property
@@ -3592,6 +4351,9 @@ class Stack(Base):
             FCGFN,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCGFN", None) is not None:
+                return self._properties.get("FCGFN")
         return FCGFN(self)
 
     @property
@@ -3606,6 +4368,9 @@ class Stack(Base):
             FCDAID,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCDAID", None) is not None:
+                return self._properties.get("FCDAID")
         return FCDAID(self)
 
     @property
@@ -3620,6 +4385,9 @@ class Stack(Base):
             FCRPAB,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCRPAB", None) is not None:
+                return self._properties.get("FCRPAB")
         return FCRPAB(self)
 
     @property
@@ -3634,6 +4402,9 @@ class Stack(Base):
             FCGFTID,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCGFTID", None) is not None:
+                return self._properties.get("FCGFTID")
         return FCGFTID(self)
 
     @property
@@ -3648,6 +4419,9 @@ class Stack(Base):
             FCRSPNID,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCRSPNID", None) is not None:
+                return self._properties.get("FCRSPNID")
         return FCRSPNID(self)
 
     @property
@@ -3662,6 +4436,9 @@ class Stack(Base):
             FCGIDNN,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCGIDNN", None) is not None:
+                return self._properties.get("FCGIDNN")
         return FCGIDNN(self)
 
     @property
@@ -3676,6 +4453,9 @@ class Stack(Base):
             FCGPNID,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FCGPNID", None) is not None:
+                return self._properties.get("FCGPNID")
         return FCGPNID(self)
 
     @property
@@ -3690,6 +4470,9 @@ class Stack(Base):
             FcEFPSWRJT,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FcEFPSWRJT", None) is not None:
+                return self._properties.get("FcEFPSWRJT")
         return FcEFPSWRJT(self)
 
     @property
@@ -3704,6 +4487,9 @@ class Stack(Base):
             FcEFPSWACC,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FcEFPSWACC", None) is not None:
+                return self._properties.get("FcEFPSWACC")
         return FcEFPSWACC(self)
 
     @property
@@ -3718,6 +4504,9 @@ class Stack(Base):
             FcESCSWACC,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FcESCSWACC", None) is not None:
+                return self._properties.get("FcESCSWACC")
         return FcESCSWACC(self)
 
     @property
@@ -3732,6 +4521,9 @@ class Stack(Base):
             FcRDISWRJT,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FcRDISWRJT", None) is not None:
+                return self._properties.get("FcRDISWRJT")
         return FcRDISWRJT(self)
 
     @property
@@ -3746,6 +4538,9 @@ class Stack(Base):
             FcMRRequest,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FcMRRequest", None) is not None:
+                return self._properties.get("FcMRRequest")
         return FcMRRequest(self)
 
     @property
@@ -3760,6 +4555,9 @@ class Stack(Base):
             FcLSARequest,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FcLSARequest", None) is not None:
+                return self._properties.get("FcLSARequest")
         return FcLSARequest(self)
 
     @property
@@ -3774,6 +4572,9 @@ class Stack(Base):
             FcDIASWRJT,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FcDIASWRJT", None) is not None:
+                return self._properties.get("FcDIASWRJT")
         return FcDIASWRJT(self)
 
     @property
@@ -3788,6 +4589,9 @@ class Stack(Base):
             FcMRSWRJT,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FcMRSWRJT", None) is not None:
+                return self._properties.get("FcMRSWRJT")
         return FcMRSWRJT(self)
 
     @property
@@ -3802,6 +4606,9 @@ class Stack(Base):
             FcDIASWACC,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FcDIASWACC", None) is not None:
+                return self._properties.get("FcDIASWACC")
         return FcDIASWACC(self)
 
     @property
@@ -3816,6 +4623,9 @@ class Stack(Base):
             FcRDISWACC,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FcRDISWACC", None) is not None:
+                return self._properties.get("FcRDISWACC")
         return FcRDISWACC(self)
 
     @property
@@ -3830,6 +4640,9 @@ class Stack(Base):
             FcESCSWRJT,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FcESCSWRJT", None) is not None:
+                return self._properties.get("FcESCSWRJT")
         return FcESCSWRJT(self)
 
     @property
@@ -3844,6 +4657,9 @@ class Stack(Base):
             FcLSURequest,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FcLSURequest", None) is not None:
+                return self._properties.get("FcLSURequest")
         return FcLSURequest(self)
 
     @property
@@ -3858,6 +4674,9 @@ class Stack(Base):
             FcESCRequest,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FcESCRequest", None) is not None:
+                return self._properties.get("FcESCRequest")
         return FcESCRequest(self)
 
     @property
@@ -3872,6 +4691,9 @@ class Stack(Base):
             FcELPSWACC,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FcELPSWACC", None) is not None:
+                return self._properties.get("FcELPSWACC")
         return FcELPSWACC(self)
 
     @property
@@ -3886,6 +4708,9 @@ class Stack(Base):
             FcELPSWRJT,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FcELPSWRJT", None) is not None:
+                return self._properties.get("FcELPSWRJT")
         return FcELPSWRJT(self)
 
     @property
@@ -3900,6 +4725,9 @@ class Stack(Base):
             FcMRSWACC,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FcMRSWACC", None) is not None:
+                return self._properties.get("FcMRSWACC")
         return FcMRSWACC(self)
 
     @property
@@ -3914,6 +4742,9 @@ class Stack(Base):
             FcELPRequest,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FcELPRequest", None) is not None:
+                return self._properties.get("FcELPRequest")
         return FcELPRequest(self)
 
     @property
@@ -3928,6 +4759,9 @@ class Stack(Base):
             FcDIARequest,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FcDIARequest", None) is not None:
+                return self._properties.get("FcDIARequest")
         return FcDIARequest(self)
 
     @property
@@ -3942,6 +4776,9 @@ class Stack(Base):
             FcRDIRequest,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FcRDIRequest", None) is not None:
+                return self._properties.get("FcRDIRequest")
         return FcRDIRequest(self)
 
     @property
@@ -3956,6 +4793,9 @@ class Stack(Base):
             FcHLORequest,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FcHLORequest", None) is not None:
+                return self._properties.get("FcHLORequest")
         return FcHLORequest(self)
 
     @property
@@ -3970,6 +4810,9 @@ class Stack(Base):
             FcEFPRequest,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("FcEFPRequest", None) is not None:
+                return self._properties.get("FcEFPRequest")
         return FcEFPRequest(self)
 
     @property
@@ -3984,6 +4827,9 @@ class Stack(Base):
             MacInMACv42,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("MacInMACv42", None) is not None:
+                return self._properties.get("MacInMACv42")
         return MacInMACv42(self)
 
     @property
@@ -3998,6 +4844,9 @@ class Stack(Base):
             PfcPause,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("PfcPause", None) is not None:
+                return self._properties.get("PfcPause")
         return PfcPause(self)
 
     @property
@@ -4012,6 +4861,9 @@ class Stack(Base):
             Tmpls,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("Tmpls", None) is not None:
+                return self._properties.get("Tmpls")
         return Tmpls(self)
 
     @property
@@ -4026,6 +4878,9 @@ class Stack(Base):
             Lldp,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("Lldp", None) is not None:
+                return self._properties.get("Lldp")
         return Lldp(self)
 
     @property
@@ -4040,6 +4895,9 @@ class Stack(Base):
             Ecp,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("Ecp", None) is not None:
+                return self._properties.get("Ecp")
         return Ecp(self)
 
     @property
@@ -4054,6 +4912,9 @@ class Stack(Base):
             Esmc,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("Esmc", None) is not None:
+                return self._properties.get("Esmc")
         return Esmc(self)
 
     @property
@@ -4068,6 +4929,9 @@ class Stack(Base):
             Trill,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("Trill", None) is not None:
+                return self._properties.get("Trill")
         return Trill(self)
 
     @property
@@ -4082,6 +4946,9 @@ class Stack(Base):
             Trillrbchannel,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("Trillrbchannel", None) is not None:
+                return self._properties.get("Trillrbchannel")
         return Trillrbchannel(self)
 
     @property
@@ -4096,6 +4963,9 @@ class Stack(Base):
             Trilloamechoreq,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("Trilloamechoreq", None) is not None:
+                return self._properties.get("Trilloamechoreq")
         return Trilloamechoreq(self)
 
     @property
@@ -4110,6 +4980,9 @@ class Stack(Base):
             Trilloamechoreply,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("Trilloamechoreply", None) is not None:
+                return self._properties.get("Trilloamechoreply")
         return Trilloamechoreply(self)
 
     @property
@@ -4124,6 +4997,9 @@ class Stack(Base):
             Fabricpath,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("Fabricpath", None) is not None:
+                return self._properties.get("Fabricpath")
         return Fabricpath(self)
 
     @property
@@ -4138,6 +5014,9 @@ class Stack(Base):
             Pbb,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("Pbb", None) is not None:
+                return self._properties.get("Pbb")
         return Pbb(self)
 
     @property
@@ -4152,6 +5031,9 @@ class Stack(Base):
             Avtp,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("Avtp", None) is not None:
+                return self._properties.get("Avtp")
         return Avtp(self)
 
     @property
@@ -4166,6 +5048,9 @@ class Stack(Base):
             MaapHeader,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("MaapHeader", None) is not None:
+                return self._properties.get("MaapHeader")
         return MaapHeader(self)
 
     @property
@@ -4180,6 +5065,9 @@ class Stack(Base):
             MsrpMessage,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("MsrpMessage", None) is not None:
+                return self._properties.get("MsrpMessage")
         return MsrpMessage(self)
 
     @property
@@ -4194,6 +5082,9 @@ class Stack(Base):
             MsrpVectorAttribute,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("MsrpVectorAttribute", None) is not None:
+                return self._properties.get("MsrpVectorAttribute")
         return MsrpVectorAttribute(self)
 
     @property
@@ -4208,6 +5099,9 @@ class Stack(Base):
             MmrpMessage,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("MmrpMessage", None) is not None:
+                return self._properties.get("MmrpMessage")
         return MmrpMessage(self)
 
     @property
@@ -4222,6 +5116,9 @@ class Stack(Base):
             MmrpVectorAttribute,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("MmrpVectorAttribute", None) is not None:
+                return self._properties.get("MmrpVectorAttribute")
         return MmrpVectorAttribute(self)
 
     @property
@@ -4236,6 +5133,9 @@ class Stack(Base):
             MvrpMessage,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("MvrpMessage", None) is not None:
+                return self._properties.get("MvrpMessage")
         return MvrpMessage(self)
 
     @property
@@ -4250,6 +5150,9 @@ class Stack(Base):
             MvrpVectorAttribute,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("MvrpVectorAttribute", None) is not None:
+                return self._properties.get("MvrpVectorAttribute")
         return MvrpVectorAttribute(self)
 
     @property
@@ -4264,6 +5167,9 @@ class Stack(Base):
             MrpThreePackedEvent,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("MrpThreePackedEvent", None) is not None:
+                return self._properties.get("MrpThreePackedEvent")
         return MrpThreePackedEvent(self)
 
     @property
@@ -4278,6 +5184,9 @@ class Stack(Base):
             MrpFourPackedEvent,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("MrpFourPackedEvent", None) is not None:
+                return self._properties.get("MrpFourPackedEvent")
         return MrpFourPackedEvent(self)
 
     @property
@@ -4292,6 +5201,9 @@ class Stack(Base):
             EndMark,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("EndMark", None) is not None:
+                return self._properties.get("EndMark")
         return EndMark(self)
 
     @property
@@ -4306,6 +5218,9 @@ class Stack(Base):
             BMacHeader,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("BMacHeader", None) is not None:
+                return self._properties.get("BMacHeader")
         return BMacHeader(self)
 
     @property
@@ -4320,6 +5235,9 @@ class Stack(Base):
             BVlanHeader,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("BVlanHeader", None) is not None:
+                return self._properties.get("BVlanHeader")
         return BVlanHeader(self)
 
     @property
@@ -4334,6 +5252,9 @@ class Stack(Base):
             ITagHeader,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("ITagHeader", None) is not None:
+                return self._properties.get("ITagHeader")
         return ITagHeader(self)
 
     @property
@@ -4348,6 +5269,9 @@ class Stack(Base):
             PreferedPwMPlsCw,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("PreferedPwMPlsCw", None) is not None:
+                return self._properties.get("PreferedPwMPlsCw")
         return PreferedPwMPlsCw(self)
 
     @property
@@ -4362,6 +5286,9 @@ class Stack(Base):
             RTag,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("RTag", None) is not None:
+                return self._properties.get("RTag")
         return RTag(self)
 
     @property
@@ -4376,6 +5303,9 @@ class Stack(Base):
             Macsec,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("Macsec", None) is not None:
+                return self._properties.get("Macsec")
         return Macsec(self)
 
     @property
@@ -4390,6 +5320,9 @@ class Stack(Base):
             MacsecHw,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("MacsecHw", None) is not None:
+                return self._properties.get("MacsecHw")
         return MacsecHw(self)
 
     @property
@@ -4404,6 +5337,9 @@ class Stack(Base):
             PayloadProtocolType,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("PayloadProtocolType", None) is not None:
+                return self._properties.get("PayloadProtocolType")
         return PayloadProtocolType(self)
 
     @property
@@ -4418,6 +5354,9 @@ class Stack(Base):
             GlobalPause,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("GlobalPause", None) is not None:
+                return self._properties.get("GlobalPause")
         return GlobalPause(self)
 
     @property
@@ -4432,6 +5371,9 @@ class Stack(Base):
             InfiniBandBaseTransportHeader,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("InfiniBandBaseTransportHeader", None) is not None:
+                return self._properties.get("InfiniBandBaseTransportHeader")
         return InfiniBandBaseTransportHeader(self)
 
     @property
@@ -4446,6 +5388,16 @@ class Stack(Base):
             InfiniBandReliableDatagramExtendedTransportHeader,
         )
 
+        if len(self._object_properties) > 0:
+            if (
+                self._properties.get(
+                    "InfiniBandReliableDatagramExtendedTransportHeader", None
+                )
+                is not None
+            ):
+                return self._properties.get(
+                    "InfiniBandReliableDatagramExtendedTransportHeader"
+                )
         return InfiniBandReliableDatagramExtendedTransportHeader(self)
 
     @property
@@ -4460,6 +5412,12 @@ class Stack(Base):
             InfiniBandRdmaExtendedTransportHeader,
         )
 
+        if len(self._object_properties) > 0:
+            if (
+                self._properties.get("InfiniBandRdmaExtendedTransportHeader", None)
+                is not None
+            ):
+                return self._properties.get("InfiniBandRdmaExtendedTransportHeader")
         return InfiniBandRdmaExtendedTransportHeader(self)
 
     @property
@@ -4474,6 +5432,12 @@ class Stack(Base):
             InfiniBandAtomicExtendedTransportHeader,
         )
 
+        if len(self._object_properties) > 0:
+            if (
+                self._properties.get("InfiniBandAtomicExtendedTransportHeader", None)
+                is not None
+            ):
+                return self._properties.get("InfiniBandAtomicExtendedTransportHeader")
         return InfiniBandAtomicExtendedTransportHeader(self)
 
     @property
@@ -4488,6 +5452,12 @@ class Stack(Base):
             InfiniBandAckExtendedTransportHeader,
         )
 
+        if len(self._object_properties) > 0:
+            if (
+                self._properties.get("InfiniBandAckExtendedTransportHeader", None)
+                is not None
+            ):
+                return self._properties.get("InfiniBandAckExtendedTransportHeader")
         return InfiniBandAckExtendedTransportHeader(self)
 
     @property
@@ -4502,6 +5472,9 @@ class Stack(Base):
             Amt,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("Amt", None) is not None:
+                return self._properties.get("Amt")
         return Amt(self)
 
     @property
@@ -4516,6 +5489,9 @@ class Stack(Base):
             Cgmp,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("Cgmp", None) is not None:
+                return self._properties.get("Cgmp")
         return Cgmp(self)
 
     @property
@@ -4530,6 +5506,9 @@ class Stack(Base):
             Ddp,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("Ddp", None) is not None:
+                return self._properties.get("Ddp")
         return Ddp(self)
 
     @property
@@ -4544,6 +5523,9 @@ class Stack(Base):
             IsisL1CSNPDU,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("IsisL1CSNPDU", None) is not None:
+                return self._properties.get("IsisL1CSNPDU")
         return IsisL1CSNPDU(self)
 
     @property
@@ -4558,6 +5540,9 @@ class Stack(Base):
             IsisLevel1LANHelloPDU,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("IsisLevel1LANHelloPDU", None) is not None:
+                return self._properties.get("IsisLevel1LANHelloPDU")
         return IsisLevel1LANHelloPDU(self)
 
     @property
@@ -4572,6 +5557,9 @@ class Stack(Base):
             IsisLevel1LinkStatePDU,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("IsisLevel1LinkStatePDU", None) is not None:
+                return self._properties.get("IsisLevel1LinkStatePDU")
         return IsisLevel1LinkStatePDU(self)
 
     @property
@@ -4586,6 +5574,9 @@ class Stack(Base):
             IsisL1PSNPDU,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("IsisL1PSNPDU", None) is not None:
+                return self._properties.get("IsisL1PSNPDU")
         return IsisL1PSNPDU(self)
 
     @property
@@ -4600,6 +5591,9 @@ class Stack(Base):
             IsisL2CSNPDU,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("IsisL2CSNPDU", None) is not None:
+                return self._properties.get("IsisL2CSNPDU")
         return IsisL2CSNPDU(self)
 
     @property
@@ -4614,6 +5608,9 @@ class Stack(Base):
             IsisLevel2LANHelloPDU,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("IsisLevel2LANHelloPDU", None) is not None:
+                return self._properties.get("IsisLevel2LANHelloPDU")
         return IsisLevel2LANHelloPDU(self)
 
     @property
@@ -4628,6 +5625,9 @@ class Stack(Base):
             IsisLevel2LinkStatePDU,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("IsisLevel2LinkStatePDU", None) is not None:
+                return self._properties.get("IsisLevel2LinkStatePDU")
         return IsisLevel2LinkStatePDU(self)
 
     @property
@@ -4642,6 +5642,9 @@ class Stack(Base):
             IsisL2PSNPDU,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("IsisL2PSNPDU", None) is not None:
+                return self._properties.get("IsisL2PSNPDU")
         return IsisL2PSNPDU(self)
 
     @property
@@ -4656,6 +5659,9 @@ class Stack(Base):
             IsisPointToPointHelloPDU,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("IsisPointToPointHelloPDU", None) is not None:
+                return self._properties.get("IsisPointToPointHelloPDU")
         return IsisPointToPointHelloPDU(self)
 
     @property
@@ -4670,6 +5676,9 @@ class Stack(Base):
             IsisL1McastCSNPDU,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("IsisL1McastCSNPDU", None) is not None:
+                return self._properties.get("IsisL1McastCSNPDU")
         return IsisL1McastCSNPDU(self)
 
     @property
@@ -4684,6 +5693,9 @@ class Stack(Base):
             IsisL1McastLinkStatePDU,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("IsisL1McastLinkStatePDU", None) is not None:
+                return self._properties.get("IsisL1McastLinkStatePDU")
         return IsisL1McastLinkStatePDU(self)
 
     @property
@@ -4698,6 +5710,9 @@ class Stack(Base):
             IsisL1McastPSNPDU,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("IsisL1McastPSNPDU", None) is not None:
+                return self._properties.get("IsisL1McastPSNPDU")
         return IsisL1McastPSNPDU(self)
 
     @property
@@ -4712,6 +5727,9 @@ class Stack(Base):
             Ipv6Authentication,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("Ipv6Authentication", None) is not None:
+                return self._properties.get("Ipv6Authentication")
         return Ipv6Authentication(self)
 
     @property
@@ -4726,6 +5744,9 @@ class Stack(Base):
             Ipv6Encapsulation,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("Ipv6Encapsulation", None) is not None:
+                return self._properties.get("Ipv6Encapsulation")
         return Ipv6Encapsulation(self)
 
     @property
@@ -4740,6 +5761,9 @@ class Stack(Base):
             Ipv6Pseudo,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("Ipv6Pseudo", None) is not None:
+                return self._properties.get("Ipv6Pseudo")
         return Ipv6Pseudo(self)
 
     @property
@@ -4754,6 +5778,9 @@ class Stack(Base):
             Ipv6Routing,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("Ipv6Routing", None) is not None:
+                return self._properties.get("Ipv6Routing")
         return Ipv6Routing(self)
 
     @property
@@ -4768,6 +5795,9 @@ class Stack(Base):
             Ipv6RoutingType0,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("Ipv6RoutingType0", None) is not None:
+                return self._properties.get("Ipv6RoutingType0")
         return Ipv6RoutingType0(self)
 
     @property
@@ -4782,6 +5812,9 @@ class Stack(Base):
             Ipv6RoutingType2,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("Ipv6RoutingType2", None) is not None:
+                return self._properties.get("Ipv6RoutingType2")
         return Ipv6RoutingType2(self)
 
     @property
@@ -4796,6 +5829,9 @@ class Stack(Base):
             Ipv6RoutingType4,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("Ipv6RoutingType4", None) is not None:
+                return self._properties.get("Ipv6RoutingType4")
         return Ipv6RoutingType4(self)
 
     @property
@@ -4810,6 +5846,9 @@ class Stack(Base):
             Ipv6GSRHType4,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("Ipv6GSRHType4", None) is not None:
+                return self._properties.get("Ipv6GSRHType4")
         return Ipv6GSRHType4(self)
 
     @property
@@ -4824,6 +5863,9 @@ class Stack(Base):
             Ipv4,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("Ipv4", None) is not None:
+                return self._properties.get("Ipv4")
         return Ipv4(self)
 
     @property
@@ -4838,6 +5880,9 @@ class Stack(Base):
             Ipv6,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("Ipv6", None) is not None:
+                return self._properties.get("Ipv6")
         return Ipv6(self)
 
     @property
@@ -4852,6 +5897,9 @@ class Stack(Base):
             Ipv6GSRH,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("Ipv6GSRH", None) is not None:
+                return self._properties.get("Ipv6GSRH")
         return Ipv6GSRH(self)
 
     @property
@@ -4866,6 +5914,9 @@ class Stack(Base):
             Ipv6Fragment,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("Ipv6Fragment", None) is not None:
+                return self._properties.get("Ipv6Fragment")
         return Ipv6Fragment(self)
 
     @property
@@ -4880,6 +5931,9 @@ class Stack(Base):
             Ipv6HopByHopOptions,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("Ipv6HopByHopOptions", None) is not None:
+                return self._properties.get("Ipv6HopByHopOptions")
         return Ipv6HopByHopOptions(self)
 
     @property
@@ -4894,6 +5948,9 @@ class Stack(Base):
             Ipv6HopByHopOptionsWithIOAM,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("Ipv6HopByHopOptionsWithIOAM", None) is not None:
+                return self._properties.get("Ipv6HopByHopOptionsWithIOAM")
         return Ipv6HopByHopOptionsWithIOAM(self)
 
     @property
@@ -4908,6 +5965,9 @@ class Stack(Base):
             Ipv6DestinationOptions,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("Ipv6DestinationOptions", None) is not None:
+                return self._properties.get("Ipv6DestinationOptions")
         return Ipv6DestinationOptions(self)
 
     @property
@@ -4922,6 +5982,9 @@ class Stack(Base):
             Icmpv1,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("Icmpv1", None) is not None:
+                return self._properties.get("Icmpv1")
         return Icmpv1(self)
 
     @property
@@ -4936,6 +5999,9 @@ class Stack(Base):
             Icmpv2,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("Icmpv2", None) is not None:
+                return self._properties.get("Icmpv2")
         return Icmpv2(self)
 
     @property
@@ -4950,6 +6016,9 @@ class Stack(Base):
             Icmpv9,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("Icmpv9", None) is not None:
+                return self._properties.get("Icmpv9")
         return Icmpv9(self)
 
     @property
@@ -4964,6 +6033,9 @@ class Stack(Base):
             Icmpv6,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("Icmpv6", None) is not None:
+                return self._properties.get("Icmpv6")
         return Icmpv6(self)
 
     @property
@@ -4978,6 +6050,9 @@ class Stack(Base):
             Igmpv1,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("Igmpv1", None) is not None:
+                return self._properties.get("Igmpv1")
         return Igmpv1(self)
 
     @property
@@ -4992,6 +6067,9 @@ class Stack(Base):
             Igmpv2,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("Igmpv2", None) is not None:
+                return self._properties.get("Igmpv2")
         return Igmpv2(self)
 
     @property
@@ -5006,6 +6084,9 @@ class Stack(Base):
             Igmpv3MembershipQuery,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("Igmpv3MembershipQuery", None) is not None:
+                return self._properties.get("Igmpv3MembershipQuery")
         return Igmpv3MembershipQuery(self)
 
     @property
@@ -5020,6 +6101,9 @@ class Stack(Base):
             Igmpv3MembershipReport,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("Igmpv3MembershipReport", None) is not None:
+                return self._properties.get("Igmpv3MembershipReport")
         return Igmpv3MembershipReport(self)
 
     @property
@@ -5034,6 +6118,9 @@ class Stack(Base):
             Ipx,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("Ipx", None) is not None:
+                return self._properties.get("Ipx")
         return Ipx(self)
 
     @property
@@ -5048,6 +6135,9 @@ class Stack(Base):
             Gre,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("Gre", None) is not None:
+                return self._properties.get("Gre")
         return Gre(self)
 
     @property
@@ -5062,6 +6152,9 @@ class Stack(Base):
             GTPuOptionalFields,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("GTPuOptionalFields", None) is not None:
+                return self._properties.get("GTPuOptionalFields")
         return GTPuOptionalFields(self)
 
     @property
@@ -5076,6 +6169,9 @@ class Stack(Base):
             Gtpu,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("Gtpu", None) is not None:
+                return self._properties.get("Gtpu")
         return Gtpu(self)
 
     @property
@@ -5090,6 +6186,9 @@ class Stack(Base):
             L2TPv3ControlIP,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("L2TPv3ControlIP", None) is not None:
+                return self._properties.get("L2TPv3ControlIP")
         return L2TPv3ControlIP(self)
 
     @property
@@ -5104,6 +6203,9 @@ class Stack(Base):
             L2TPv3DataIP,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("L2TPv3DataIP", None) is not None:
+                return self._properties.get("L2TPv3DataIP")
         return L2TPv3DataIP(self)
 
     @property
@@ -5118,6 +6220,9 @@ class Stack(Base):
             MinimalIP,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("MinimalIP", None) is not None:
+                return self._properties.get("MinimalIP")
         return MinimalIP(self)
 
     @property
@@ -5132,6 +6237,9 @@ class Stack(Base):
             Mldv1,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("Mldv1", None) is not None:
+                return self._properties.get("Mldv1")
         return Mldv1(self)
 
     @property
@@ -5146,6 +6254,9 @@ class Stack(Base):
             Mldv2Query,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("Mldv2Query", None) is not None:
+                return self._properties.get("Mldv2Query")
         return Mldv2Query(self)
 
     @property
@@ -5160,6 +6271,9 @@ class Stack(Base):
             Mldv2Report,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("Mldv2Report", None) is not None:
+                return self._properties.get("Mldv2Report")
         return Mldv2Report(self)
 
     @property
@@ -5174,6 +6288,9 @@ class Stack(Base):
             MobileIPv6,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("MobileIPv6", None) is not None:
+                return self._properties.get("MobileIPv6")
         return MobileIPv6(self)
 
     @property
@@ -5188,6 +6305,9 @@ class Stack(Base):
             Nvgre,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("Nvgre", None) is not None:
+                return self._properties.get("Nvgre")
         return Nvgre(self)
 
     @property
@@ -5202,6 +6322,9 @@ class Stack(Base):
             Ospfv2Hello,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("Ospfv2Hello", None) is not None:
+                return self._properties.get("Ospfv2Hello")
         return Ospfv2Hello(self)
 
     @property
@@ -5216,6 +6339,9 @@ class Stack(Base):
             Ospfv2DatabaseDescription,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("Ospfv2DatabaseDescription", None) is not None:
+                return self._properties.get("Ospfv2DatabaseDescription")
         return Ospfv2DatabaseDescription(self)
 
     @property
@@ -5230,6 +6356,9 @@ class Stack(Base):
             Ospfv2LSAAcknowledgement,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("Ospfv2LSAAcknowledgement", None) is not None:
+                return self._properties.get("Ospfv2LSAAcknowledgement")
         return Ospfv2LSAAcknowledgement(self)
 
     @property
@@ -5244,6 +6373,9 @@ class Stack(Base):
             Ospfv2LSARequest,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("Ospfv2LSARequest", None) is not None:
+                return self._properties.get("Ospfv2LSARequest")
         return Ospfv2LSARequest(self)
 
     @property
@@ -5258,6 +6390,9 @@ class Stack(Base):
             Ospfv2LSAUpdate,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("Ospfv2LSAUpdate", None) is not None:
+                return self._properties.get("Ospfv2LSAUpdate")
         return Ospfv2LSAUpdate(self)
 
     @property
@@ -5272,6 +6407,9 @@ class Stack(Base):
             Ospfv3Hello,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("Ospfv3Hello", None) is not None:
+                return self._properties.get("Ospfv3Hello")
         return Ospfv3Hello(self)
 
     @property
@@ -5286,6 +6424,9 @@ class Stack(Base):
             Ospfv3DatabaseDescription,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("Ospfv3DatabaseDescription", None) is not None:
+                return self._properties.get("Ospfv3DatabaseDescription")
         return Ospfv3DatabaseDescription(self)
 
     @property
@@ -5300,6 +6441,9 @@ class Stack(Base):
             Ospfv3LSAAcknowledgement,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("Ospfv3LSAAcknowledgement", None) is not None:
+                return self._properties.get("Ospfv3LSAAcknowledgement")
         return Ospfv3LSAAcknowledgement(self)
 
     @property
@@ -5314,6 +6458,9 @@ class Stack(Base):
             Ospfv3LSARequest,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("Ospfv3LSARequest", None) is not None:
+                return self._properties.get("Ospfv3LSARequest")
         return Ospfv3LSARequest(self)
 
     @property
@@ -5328,6 +6475,9 @@ class Stack(Base):
             Ospfv3LSAUpdate,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("Ospfv3LSAUpdate", None) is not None:
+                return self._properties.get("Ospfv3LSAUpdate")
         return Ospfv3LSAUpdate(self)
 
     @property
@@ -5342,6 +6492,9 @@ class Stack(Base):
             PimdmAssertMessage,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("PimdmAssertMessage", None) is not None:
+                return self._properties.get("PimdmAssertMessage")
         return PimdmAssertMessage(self)
 
     @property
@@ -5356,6 +6509,9 @@ class Stack(Base):
             PimdmGraftGraftAckMessage,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("PimdmGraftGraftAckMessage", None) is not None:
+                return self._properties.get("PimdmGraftGraftAckMessage")
         return PimdmGraftGraftAckMessage(self)
 
     @property
@@ -5370,6 +6526,9 @@ class Stack(Base):
             PimdmHelloMessage,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("PimdmHelloMessage", None) is not None:
+                return self._properties.get("PimdmHelloMessage")
         return PimdmHelloMessage(self)
 
     @property
@@ -5384,6 +6543,9 @@ class Stack(Base):
             PimdmJoinPruneMessage,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("PimdmJoinPruneMessage", None) is not None:
+                return self._properties.get("PimdmJoinPruneMessage")
         return PimdmJoinPruneMessage(self)
 
     @property
@@ -5398,6 +6560,9 @@ class Stack(Base):
             PimdmStateRefreshMessage,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("PimdmStateRefreshMessage", None) is not None:
+                return self._properties.get("PimdmStateRefreshMessage")
         return PimdmStateRefreshMessage(self)
 
     @property
@@ -5412,6 +6577,9 @@ class Stack(Base):
             PimAssertMessage,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("PimAssertMessage", None) is not None:
+                return self._properties.get("PimAssertMessage")
         return PimAssertMessage(self)
 
     @property
@@ -5426,6 +6594,9 @@ class Stack(Base):
             PimBootstrapMessage,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("PimBootstrapMessage", None) is not None:
+                return self._properties.get("PimBootstrapMessage")
         return PimBootstrapMessage(self)
 
     @property
@@ -5440,6 +6611,9 @@ class Stack(Base):
             PimCandidateRPAdvMessage,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("PimCandidateRPAdvMessage", None) is not None:
+                return self._properties.get("PimCandidateRPAdvMessage")
         return PimCandidateRPAdvMessage(self)
 
     @property
@@ -5454,6 +6628,9 @@ class Stack(Base):
             PimHelloMessage,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("PimHelloMessage", None) is not None:
+                return self._properties.get("PimHelloMessage")
         return PimHelloMessage(self)
 
     @property
@@ -5468,6 +6645,9 @@ class Stack(Base):
             PimJoinPruneMessage,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("PimJoinPruneMessage", None) is not None:
+                return self._properties.get("PimJoinPruneMessage")
         return PimJoinPruneMessage(self)
 
     @property
@@ -5482,6 +6662,9 @@ class Stack(Base):
             PimRegister,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("PimRegister", None) is not None:
+                return self._properties.get("PimRegister")
         return PimRegister(self)
 
     @property
@@ -5496,6 +6679,9 @@ class Stack(Base):
             PimRegisterStopMessage,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("PimRegisterStopMessage", None) is not None:
+                return self._properties.get("PimRegisterStopMessage")
         return PimRegisterStopMessage(self)
 
     @property
@@ -5510,6 +6696,9 @@ class Stack(Base):
             Rsvp,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("Rsvp", None) is not None:
+                return self._properties.get("Rsvp")
         return Rsvp(self)
 
     @property
@@ -5524,6 +6713,9 @@ class Stack(Base):
             Rgmp,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("Rgmp", None) is not None:
+                return self._properties.get("Rgmp")
         return Rgmp(self)
 
     @property
@@ -5538,6 +6730,9 @@ class Stack(Base):
             Rtmp,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("Rtmp", None) is not None:
+                return self._properties.get("Rtmp")
         return Rtmp(self)
 
     @property
@@ -5552,6 +6747,9 @@ class Stack(Base):
             Vxlan,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("Vxlan", None) is not None:
+                return self._properties.get("Vxlan")
         return Vxlan(self)
 
     @property
@@ -5566,6 +6764,9 @@ class Stack(Base):
             Vxlangpe,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("Vxlangpe", None) is not None:
+                return self._properties.get("Vxlangpe")
         return Vxlangpe(self)
 
     @property
@@ -5580,6 +6781,9 @@ class Stack(Base):
             Geneve,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("Geneve", None) is not None:
+                return self._properties.get("Geneve")
         return Geneve(self)
 
     @property
@@ -5594,6 +6798,9 @@ class Stack(Base):
             Genevewithtelemetry,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("Genevewithtelemetry", None) is not None:
+                return self._properties.get("Genevewithtelemetry")
         return Genevewithtelemetry(self)
 
     @property
@@ -5608,6 +6815,9 @@ class Stack(Base):
             GeneveWithIntMdv21,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("GeneveWithIntMdv21", None) is not None:
+                return self._properties.get("GeneveWithIntMdv21")
         return GeneveWithIntMdv21(self)
 
     @property
@@ -5622,6 +6832,9 @@ class Stack(Base):
             GeneveWithIntMxv21,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("GeneveWithIntMxv21", None) is not None:
+                return self._properties.get("GeneveWithIntMxv21")
         return GeneveWithIntMxv21(self)
 
     @property
@@ -5636,6 +6849,9 @@ class Stack(Base):
             Intmetadata,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("Intmetadata", None) is not None:
+                return self._properties.get("Intmetadata")
         return Intmetadata(self)
 
     @property
@@ -5650,6 +6866,9 @@ class Stack(Base):
             IntMdMetadatav21,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("IntMdMetadatav21", None) is not None:
+                return self._properties.get("IntMdMetadatav21")
         return IntMdMetadatav21(self)
 
     @property
@@ -5664,6 +6883,9 @@ class Stack(Base):
             IntMxMetadatav21,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("IntMxMetadatav21", None) is not None:
+                return self._properties.get("IntMxMetadatav21")
         return IntMxMetadatav21(self)
 
     @property
@@ -5678,6 +6900,9 @@ class Stack(Base):
             Intshimheader,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("Intshimheader", None) is not None:
+                return self._properties.get("Intshimheader")
         return Intshimheader(self)
 
     @property
@@ -5692,6 +6917,9 @@ class Stack(Base):
             IntShimHeaderv21,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("IntShimHeaderv21", None) is not None:
+                return self._properties.get("IntShimHeaderv21")
         return IntShimHeaderv21(self)
 
     @property
@@ -5706,6 +6934,9 @@ class Stack(Base):
             IntShimHeaderVxlangpe,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("IntShimHeaderVxlangpe", None) is not None:
+                return self._properties.get("IntShimHeaderVxlangpe")
         return IntShimHeaderVxlangpe(self)
 
     @property
@@ -5720,6 +6951,9 @@ class Stack(Base):
             Probemarker,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("Probemarker", None) is not None:
+                return self._properties.get("Probemarker")
         return Probemarker(self)
 
     @property
@@ -5734,6 +6968,9 @@ class Stack(Base):
             Bier,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("Bier", None) is not None:
+                return self._properties.get("Bier")
         return Bier(self)
 
     @property
@@ -5748,6 +6985,9 @@ class Stack(Base):
             ECpri,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("ECpri", None) is not None:
+                return self._properties.get("ECpri")
         return ECpri(self)
 
     @property
@@ -5762,6 +7002,9 @@ class Stack(Base):
             ECpriMsgType0,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("ECpriMsgType0", None) is not None:
+                return self._properties.get("ECpriMsgType0")
         return ECpriMsgType0(self)
 
     @property
@@ -5776,6 +7019,9 @@ class Stack(Base):
             ECpriMsgType1,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("ECpriMsgType1", None) is not None:
+                return self._properties.get("ECpriMsgType1")
         return ECpriMsgType1(self)
 
     @property
@@ -5790,6 +7036,9 @@ class Stack(Base):
             ECpriMsgType2,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("ECpriMsgType2", None) is not None:
+                return self._properties.get("ECpriMsgType2")
         return ECpriMsgType2(self)
 
     @property
@@ -5804,6 +7053,9 @@ class Stack(Base):
             ECpriMsgType3,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("ECpriMsgType3", None) is not None:
+                return self._properties.get("ECpriMsgType3")
         return ECpriMsgType3(self)
 
     @property
@@ -5818,6 +7070,9 @@ class Stack(Base):
             ECpriMsgType4,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("ECpriMsgType4", None) is not None:
+                return self._properties.get("ECpriMsgType4")
         return ECpriMsgType4(self)
 
     @property
@@ -5832,6 +7087,9 @@ class Stack(Base):
             ECpriMsgType5,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("ECpriMsgType5", None) is not None:
+                return self._properties.get("ECpriMsgType5")
         return ECpriMsgType5(self)
 
     @property
@@ -5846,6 +7104,9 @@ class Stack(Base):
             ECpriMsgType6,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("ECpriMsgType6", None) is not None:
+                return self._properties.get("ECpriMsgType6")
         return ECpriMsgType6(self)
 
     @property
@@ -5860,6 +7121,9 @@ class Stack(Base):
             ECpriMsgType7,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("ECpriMsgType7", None) is not None:
+                return self._properties.get("ECpriMsgType7")
         return ECpriMsgType7(self)
 
     @property
@@ -5874,6 +7138,9 @@ class Stack(Base):
             ECpriFaultNotify,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("ECpriFaultNotify", None) is not None:
+                return self._properties.get("ECpriFaultNotify")
         return ECpriFaultNotify(self)
 
     @property
@@ -5888,6 +7155,9 @@ class Stack(Base):
             ECpriUserData,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("ECpriUserData", None) is not None:
+                return self._properties.get("ECpriUserData")
         return ECpriUserData(self)
 
     @property
@@ -5902,6 +7172,9 @@ class Stack(Base):
             EcpriOranMsgs,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("EcpriOranMsgs", None) is not None:
+                return self._properties.get("EcpriOranMsgs")
         return EcpriOranMsgs(self)
 
     @property
@@ -5916,6 +7189,9 @@ class Stack(Base):
             OranCtlrMsgs,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("OranCtlrMsgs", None) is not None:
+                return self._properties.get("OranCtlrMsgs")
         return OranCtlrMsgs(self)
 
     @property
@@ -5930,6 +7206,9 @@ class Stack(Base):
             OranDataMsgs,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("OranDataMsgs", None) is not None:
+                return self._properties.get("OranDataMsgs")
         return OranDataMsgs(self)
 
     @property
@@ -5944,6 +7223,9 @@ class Stack(Base):
             IpEncapsulatingSecurityPayload,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("IpEncapsulatingSecurityPayload", None) is not None:
+                return self._properties.get("IpEncapsulatingSecurityPayload")
         return IpEncapsulatingSecurityPayload(self)
 
     @property
@@ -5958,6 +7240,9 @@ class Stack(Base):
             IpAuthenticationHeader,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("IpAuthenticationHeader", None) is not None:
+                return self._properties.get("IpAuthenticationHeader")
         return IpAuthenticationHeader(self)
 
     @property
@@ -5972,6 +7257,9 @@ class Stack(Base):
             IpEspOverMACsec,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("IpEspOverMACsec", None) is not None:
+                return self._properties.get("IpEspOverMACsec")
         return IpEspOverMACsec(self)
 
     @property
@@ -5986,6 +7274,9 @@ class Stack(Base):
             NFapiP7P19sHeader,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("NFapiP7P19sHeader", None) is not None:
+                return self._properties.get("NFapiP7P19sHeader")
         return NFapiP7P19sHeader(self)
 
     @property
@@ -6000,6 +7291,9 @@ class Stack(Base):
             NFapiPayloadMarker,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("NFapiPayloadMarker", None) is not None:
+                return self._properties.get("NFapiPayloadMarker")
         return NFapiPayloadMarker(self)
 
     @property
@@ -6014,6 +7308,9 @@ class Stack(Base):
             Nsh,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("Nsh", None) is not None:
+                return self._properties.get("Nsh")
         return Nsh(self)
 
     @property
@@ -6028,6 +7325,9 @@ class Stack(Base):
             Tcp,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("Tcp", None) is not None:
+                return self._properties.get("Tcp")
         return Tcp(self)
 
     @property
@@ -6042,6 +7342,9 @@ class Stack(Base):
             Udp,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("Udp", None) is not None:
+                return self._properties.get("Udp")
         return Udp(self)
 
     @property
@@ -6056,6 +7359,9 @@ class Stack(Base):
             Guedata,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("Guedata", None) is not None:
+                return self._properties.get("Guedata")
         return Guedata(self)
 
     @property
@@ -6070,6 +7376,9 @@ class Stack(Base):
             Bfd,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("Bfd", None) is not None:
+                return self._properties.get("Bfd")
         return Bfd(self)
 
     @property
@@ -6084,6 +7393,9 @@ class Stack(Base):
             LISPMapRegister,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("LISPMapRegister", None) is not None:
+                return self._properties.get("LISPMapRegister")
         return LISPMapRegister(self)
 
     @property
@@ -6098,6 +7410,9 @@ class Stack(Base):
             LISPMapRequest,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("LISPMapRequest", None) is not None:
+                return self._properties.get("LISPMapRequest")
         return LISPMapRequest(self)
 
     @property
@@ -6112,6 +7427,9 @@ class Stack(Base):
             LISPMapReply,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("LISPMapReply", None) is not None:
+                return self._properties.get("LISPMapReply")
         return LISPMapReply(self)
 
     @property
@@ -6126,6 +7444,9 @@ class Stack(Base):
             LISPEncapsulatedControlMessage,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("LISPEncapsulatedControlMessage", None) is not None:
+                return self._properties.get("LISPEncapsulatedControlMessage")
         return LISPEncapsulatedControlMessage(self)
 
     @property
@@ -6140,6 +7461,9 @@ class Stack(Base):
             LISPMapNotify,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("LISPMapNotify", None) is not None:
+                return self._properties.get("LISPMapNotify")
         return LISPMapNotify(self)
 
     @property
@@ -6154,6 +7478,9 @@ class Stack(Base):
             LISP,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("LISP", None) is not None:
+                return self._properties.get("LISP")
         return LISP(self)
 
     @property
@@ -6168,6 +7495,9 @@ class Stack(Base):
             Dhcp,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("Dhcp", None) is not None:
+                return self._properties.get("Dhcp")
         return Dhcp(self)
 
     @property
@@ -6182,6 +7512,9 @@ class Stack(Base):
             Dnsquery,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("Dnsquery", None) is not None:
+                return self._properties.get("Dnsquery")
         return Dnsquery(self)
 
     @property
@@ -6196,6 +7529,9 @@ class Stack(Base):
             Dnsresponse,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("Dnsresponse", None) is not None:
+                return self._properties.get("Dnsresponse")
         return Dnsresponse(self)
 
     @property
@@ -6210,6 +7546,9 @@ class Stack(Base):
             DhcpWithPadding,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("DhcpWithPadding", None) is not None:
+                return self._properties.get("DhcpWithPadding")
         return DhcpWithPadding(self)
 
     @property
@@ -6224,6 +7563,9 @@ class Stack(Base):
             Dhcpv6ClientServer,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("Dhcpv6ClientServer", None) is not None:
+                return self._properties.get("Dhcpv6ClientServer")
         return Dhcpv6ClientServer(self)
 
     @property
@@ -6238,6 +7580,9 @@ class Stack(Base):
             Dhcpv6Relay,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("Dhcpv6Relay", None) is not None:
+                return self._properties.get("Dhcpv6Relay")
         return Dhcpv6Relay(self)
 
     @property
@@ -6252,6 +7597,9 @@ class Stack(Base):
             LdpNotification,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("LdpNotification", None) is not None:
+                return self._properties.get("LdpNotification")
         return LdpNotification(self)
 
     @property
@@ -6266,6 +7614,9 @@ class Stack(Base):
             LdpHello,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("LdpHello", None) is not None:
+                return self._properties.get("LdpHello")
         return LdpHello(self)
 
     @property
@@ -6280,6 +7631,9 @@ class Stack(Base):
             LdpInitialization,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("LdpInitialization", None) is not None:
+                return self._properties.get("LdpInitialization")
         return LdpInitialization(self)
 
     @property
@@ -6294,6 +7648,9 @@ class Stack(Base):
             LdpKeepAlive,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("LdpKeepAlive", None) is not None:
+                return self._properties.get("LdpKeepAlive")
         return LdpKeepAlive(self)
 
     @property
@@ -6308,6 +7665,9 @@ class Stack(Base):
             LdpAddress,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("LdpAddress", None) is not None:
+                return self._properties.get("LdpAddress")
         return LdpAddress(self)
 
     @property
@@ -6322,6 +7682,9 @@ class Stack(Base):
             LdpAddressWithdraw,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("LdpAddressWithdraw", None) is not None:
+                return self._properties.get("LdpAddressWithdraw")
         return LdpAddressWithdraw(self)
 
     @property
@@ -6336,6 +7699,9 @@ class Stack(Base):
             LdpLabelMapping,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("LdpLabelMapping", None) is not None:
+                return self._properties.get("LdpLabelMapping")
         return LdpLabelMapping(self)
 
     @property
@@ -6350,6 +7716,9 @@ class Stack(Base):
             LdpLabelRequest,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("LdpLabelRequest", None) is not None:
+                return self._properties.get("LdpLabelRequest")
         return LdpLabelRequest(self)
 
     @property
@@ -6364,6 +7733,9 @@ class Stack(Base):
             LdpLabelAbortRequest,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("LdpLabelAbortRequest", None) is not None:
+                return self._properties.get("LdpLabelAbortRequest")
         return LdpLabelAbortRequest(self)
 
     @property
@@ -6378,6 +7750,9 @@ class Stack(Base):
             LdpLabelWithdraw,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("LdpLabelWithdraw", None) is not None:
+                return self._properties.get("LdpLabelWithdraw")
         return LdpLabelWithdraw(self)
 
     @property
@@ -6392,6 +7767,9 @@ class Stack(Base):
             LdpLabelRelease,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("LdpLabelRelease", None) is not None:
+                return self._properties.get("LdpLabelRelease")
         return LdpLabelRelease(self)
 
     @property
@@ -6406,6 +7784,9 @@ class Stack(Base):
             L2TPv2Control,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("L2TPv2Control", None) is not None:
+                return self._properties.get("L2TPv2Control")
         return L2TPv2Control(self)
 
     @property
@@ -6420,6 +7801,9 @@ class Stack(Base):
             L2TPv2Data,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("L2TPv2Data", None) is not None:
+                return self._properties.get("L2TPv2Data")
         return L2TPv2Data(self)
 
     @property
@@ -6434,6 +7818,9 @@ class Stack(Base):
             L2TPv3ControlUDP,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("L2TPv3ControlUDP", None) is not None:
+                return self._properties.get("L2TPv3ControlUDP")
         return L2TPv3ControlUDP(self)
 
     @property
@@ -6448,6 +7835,9 @@ class Stack(Base):
             L2TPv3DataUDP,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("L2TPv3DataUDP", None) is not None:
+                return self._properties.get("L2TPv3DataUDP")
         return L2TPv3DataUDP(self)
 
     @property
@@ -6462,6 +7852,9 @@ class Stack(Base):
             MobileIP,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("MobileIP", None) is not None:
+                return self._properties.get("MobileIP")
         return MobileIP(self)
 
     @property
@@ -6476,6 +7869,9 @@ class Stack(Base):
             Msdp,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("Msdp", None) is not None:
+                return self._properties.get("Msdp")
         return Msdp(self)
 
     @property
@@ -6490,6 +7886,9 @@ class Stack(Base):
             PTPv2udp,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("PTPv2udp", None) is not None:
+                return self._properties.get("PTPv2udp")
         return PTPv2udp(self)
 
     @property
@@ -6504,6 +7903,9 @@ class Stack(Base):
             Rip1,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("Rip1", None) is not None:
+                return self._properties.get("Rip1")
         return Rip1(self)
 
     @property
@@ -6518,6 +7920,9 @@ class Stack(Base):
             Rip2,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("Rip2", None) is not None:
+                return self._properties.get("Rip2")
         return Rip2(self)
 
     @property
@@ -6532,6 +7937,9 @@ class Stack(Base):
             Ripng,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("Ripng", None) is not None:
+                return self._properties.get("Ripng")
         return Ripng(self)
 
     @property
@@ -6546,6 +7954,9 @@ class Stack(Base):
             Rtp,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("Rtp", None) is not None:
+                return self._properties.get("Rtp")
         return Rtp(self)
 
     @property
@@ -6560,6 +7971,9 @@ class Stack(Base):
             HTTPGET,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("HTTPGET", None) is not None:
+                return self._properties.get("HTTPGET")
         return HTTPGET(self)
 
     @property
@@ -6574,6 +7988,9 @@ class Stack(Base):
             HTTP200OK,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("HTTP200OK", None) is not None:
+                return self._properties.get("HTTP200OK")
         return HTTP200OK(self)
 
     @property
@@ -6588,6 +8005,9 @@ class Stack(Base):
             RTSPDESCRIBE,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("RTSPDESCRIBE", None) is not None:
+                return self._properties.get("RTSPDESCRIBE")
         return RTSPDESCRIBE(self)
 
     @property
@@ -6602,6 +8022,9 @@ class Stack(Base):
             RTSPReply,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("RTSPReply", None) is not None:
+                return self._properties.get("RTSPReply")
         return RTSPReply(self)
 
     @property
@@ -6616,6 +8039,9 @@ class Stack(Base):
             IMAPRequestCapability,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("IMAPRequestCapability", None) is not None:
+                return self._properties.get("IMAPRequestCapability")
         return IMAPRequestCapability(self)
 
     @property
@@ -6630,6 +8056,9 @@ class Stack(Base):
             IMAPResponseCapabilityOK,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("IMAPResponseCapabilityOK", None) is not None:
+                return self._properties.get("IMAPResponseCapabilityOK")
         return IMAPResponseCapabilityOK(self)
 
     @property
@@ -6644,6 +8073,9 @@ class Stack(Base):
             POPRETR1,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("POPRETR1", None) is not None:
+                return self._properties.get("POPRETR1")
         return POPRETR1(self)
 
     @property
@@ -6658,6 +8090,9 @@ class Stack(Base):
             POPOK,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("POPOK", None) is not None:
+                return self._properties.get("POPOK")
         return POPOK(self)
 
     @property
@@ -6672,6 +8107,9 @@ class Stack(Base):
             SMTPMAILFROM,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("SMTPMAILFROM", None) is not None:
+                return self._properties.get("SMTPMAILFROM")
         return SMTPMAILFROM(self)
 
     @property
@@ -6686,6 +8124,9 @@ class Stack(Base):
             SMTP250OK,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("SMTP250OK", None) is not None:
+                return self._properties.get("SMTP250OK")
         return SMTP250OK(self)
 
     @property
@@ -6700,6 +8141,9 @@ class Stack(Base):
             TDSRemoteProcedureCall,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("TDSRemoteProcedureCall", None) is not None:
+                return self._properties.get("TDSRemoteProcedureCall")
         return TDSRemoteProcedureCall(self)
 
     @property
@@ -6714,6 +8158,9 @@ class Stack(Base):
             TDSResponse,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("TDSResponse", None) is not None:
+                return self._properties.get("TDSResponse")
         return TDSResponse(self)
 
     @property
@@ -6728,6 +8175,9 @@ class Stack(Base):
             ISCSIDataOut,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("ISCSIDataOut", None) is not None:
+                return self._properties.get("ISCSIDataOut")
         return ISCSIDataOut(self)
 
     @property
@@ -6742,6 +8192,9 @@ class Stack(Base):
             ISCSIDataIn,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("ISCSIDataIn", None) is not None:
+                return self._properties.get("ISCSIDataIn")
         return ISCSIDataIn(self)
 
     @property
@@ -6756,6 +8209,9 @@ class Stack(Base):
             Ntp,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("Ntp", None) is not None:
+                return self._properties.get("Ntp")
         return Ntp(self)
 
     @property
@@ -6770,6 +8226,9 @@ class Stack(Base):
             Roe,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("Roe", None) is not None:
+                return self._properties.get("Roe")
         return Roe(self)
 
     @property
@@ -6784,6 +8243,9 @@ class Stack(Base):
             Custom,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("Custom", None) is not None:
+                return self._properties.get("Custom")
         return Custom(self)
 
     @property
@@ -6798,6 +8260,9 @@ class Stack(Base):
             Customv2,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("Customv2", None) is not None:
+                return self._properties.get("Customv2")
         return Customv2(self)
 
     @property
@@ -6812,6 +8277,9 @@ class Stack(Base):
             Fc,
         )
 
+        if len(self._object_properties) > 0:
+            if self._properties.get("Fc", None) is not None:
+                return self._properties.get("Fc")
         return Fc(self)
 
     @property

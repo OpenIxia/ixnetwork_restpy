@@ -287,6 +287,8 @@ class BatchAdd(object):
                             xpath_dict["stepValue"] = pattern[3]
                         else:
                             xpath_dict["step"] = pattern[3]
+                    if packet_field and len(pattern) == 5:
+                        xpath_dict["countValue"] = pattern[4]
                 elif multivalue_name == "repeatableRandomRange":
                     if pattern[1] is not None:
                         xpath_dict["min"] = pattern[1]
@@ -384,6 +386,7 @@ class BatchAdd(object):
     def _commit(self):
         with Timer(self._ixnetwork) as timer:
             self._process_cached_objects()
+            self._sort_traffic_fields()
             errs = self._ixnetwork.ResourceManager.ImportConfig(
                 json.dumps(self._config), False
             )
@@ -529,3 +532,19 @@ class BatchAdd(object):
             for key in obj.keys():
                 if isinstance(obj[key], Base):
                     self.__recursively_fill_hrefs(href_dict, obj[key], ignore_list)
+
+    def _sort_traffic_fields(self):
+        tr_fields = {}
+        for item in self._config[::-1]:
+            if "stack[@alias" in item["xpath"]:
+                if len(item.keys()) > 1:
+                    tr_fields[item["xpath"]] = item
+                self._config.remove(item)
+        sorted_values = [
+            it[1]
+            for it in sorted(
+                tr_fields.items(),
+                key=lambda item: tuple(map(int, re.findall(r"-(\d+)", item[0]))),
+            )
+        ]
+        self._config += sorted_values

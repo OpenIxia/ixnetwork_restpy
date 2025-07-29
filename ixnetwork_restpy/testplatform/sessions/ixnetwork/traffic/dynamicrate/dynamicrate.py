@@ -41,6 +41,7 @@ class DynamicRate(Base):
         "HighLevelStreamName": "highLevelStreamName",
         "InterPacketGapUnitsType": "interPacketGapUnitsType",
         "OverSubscribed": "overSubscribed",
+        "PacketPeriodUnitsType": "packetPeriodUnitsType",
         "Rate": "rate",
         "RateType": "rateType",
         "TrafficItemName": "trafficItemName",
@@ -62,10 +63,18 @@ class DynamicRate(Base):
             "nanoseconds",
             "seconds",
         ],
+        "packetPeriodUnitsType": [
+            "bytes",
+            "microseconds",
+            "milliseconds",
+            "nanoseconds",
+            "seconds",
+        ],
         "rateType": [
             "bitsPerSecond",
             "framesPerSecond",
             "interPacketGap",
+            "packetPeriod",
             "percentLineRate",
         ],
     }
@@ -139,6 +148,21 @@ class DynamicRate(Base):
         return self._get_attribute(self._SDM_ATT_MAP["OverSubscribed"])
 
     @property
+    def PacketPeriodUnitsType(self):
+        # type: () -> str
+        """
+        Returns
+        -------
+        - str(bytes | microseconds | milliseconds | nanoseconds | seconds): The inter-packet gap expressed in units of time. Available units of time: bytes, nanoseconds, microseconds, milliseconds, seconds.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["PacketPeriodUnitsType"])
+
+    @PacketPeriodUnitsType.setter
+    def PacketPeriodUnitsType(self, value):
+        # type: (str) -> None
+        self._set_attribute(self._SDM_ATT_MAP["PacketPeriodUnitsType"], value)
+
+    @property
     def Rate(self):
         # type: () -> int
         """
@@ -159,7 +183,7 @@ class DynamicRate(Base):
         """
         Returns
         -------
-        - str(bitsPerSecond | framesPerSecond | interPacketGap | percentLineRate): The type of packet rate transmission.
+        - str(bitsPerSecond | framesPerSecond | interPacketGap | packetPeriod | percentLineRate): The type of packet rate transmission.
         """
         return self._get_attribute(self._SDM_ATT_MAP["RateType"])
 
@@ -193,10 +217,11 @@ class DynamicRate(Base):
         BitRateUnitsType=None,
         EnforceMinimumInterPacketGap=None,
         InterPacketGapUnitsType=None,
+        PacketPeriodUnitsType=None,
         Rate=None,
         RateType=None,
     ):
-        # type: (str, int, str, int, str) -> DynamicRate
+        # type: (str, int, str, str, int, str) -> DynamicRate
         """Updates dynamicRate resource on the server.
 
         Args
@@ -204,8 +229,9 @@ class DynamicRate(Base):
         - BitRateUnitsType (str(bitsPerSec | bytesPerSec | kbitsPerSec | kbytesPerSec | mbitsPerSec | mbytesPerSec)): The unit of rate for transmitting packet.
         - EnforceMinimumInterPacketGap (number): Sets the minimum inter-packet gap allowed for Ethernet ports only. The default is 12 bytes.
         - InterPacketGapUnitsType (str(bytes | microseconds | milliseconds | nanoseconds | seconds)): The inter-packet gap expressed in units of time. Available units of time: bytes, nanoseconds, microseconds, milliseconds, seconds.
+        - PacketPeriodUnitsType (str(bytes | microseconds | milliseconds | nanoseconds | seconds)): The inter-packet gap expressed in units of time. Available units of time: bytes, nanoseconds, microseconds, milliseconds, seconds.
         - Rate (number): The rate at which packet is transmitted.
-        - RateType (str(bitsPerSecond | framesPerSecond | interPacketGap | percentLineRate)): The type of packet rate transmission.
+        - RateType (str(bitsPerSecond | framesPerSecond | interPacketGap | packetPeriod | percentLineRate)): The type of packet rate transmission.
 
         Raises
         ------
@@ -218,10 +244,11 @@ class DynamicRate(Base):
         BitRateUnitsType=None,
         EnforceMinimumInterPacketGap=None,
         InterPacketGapUnitsType=None,
+        PacketPeriodUnitsType=None,
         Rate=None,
         RateType=None,
     ):
-        # type: (str, int, str, int, str) -> DynamicRate
+        # type: (str, int, str, str, int, str) -> DynamicRate
         """Adds a new dynamicRate resource on the json, only valid with batch add utility
 
         Args
@@ -229,8 +256,9 @@ class DynamicRate(Base):
         - BitRateUnitsType (str(bitsPerSec | bytesPerSec | kbitsPerSec | kbytesPerSec | mbitsPerSec | mbytesPerSec)): The unit of rate for transmitting packet.
         - EnforceMinimumInterPacketGap (number): Sets the minimum inter-packet gap allowed for Ethernet ports only. The default is 12 bytes.
         - InterPacketGapUnitsType (str(bytes | microseconds | milliseconds | nanoseconds | seconds)): The inter-packet gap expressed in units of time. Available units of time: bytes, nanoseconds, microseconds, milliseconds, seconds.
+        - PacketPeriodUnitsType (str(bytes | microseconds | milliseconds | nanoseconds | seconds)): The inter-packet gap expressed in units of time. Available units of time: bytes, nanoseconds, microseconds, milliseconds, seconds.
         - Rate (number): The rate at which packet is transmitted.
-        - RateType (str(bitsPerSecond | framesPerSecond | interPacketGap | percentLineRate)): The type of packet rate transmission.
+        - RateType (str(bitsPerSecond | framesPerSecond | interPacketGap | packetPeriod | percentLineRate)): The type of packet rate transmission.
 
         Returns
         -------
@@ -249,12 +277,13 @@ class DynamicRate(Base):
         HighLevelStreamName=None,
         InterPacketGapUnitsType=None,
         OverSubscribed=None,
+        PacketPeriodUnitsType=None,
         Rate=None,
         RateType=None,
         TrafficItemName=None,
         TxPort=None,
     ):
-        # type: (str, int, str, str, bool, int, str, str, int) -> DynamicRate
+        # type: (str, int, str, str, bool, str, int, str, str, int) -> DynamicRate
         """Finds and retrieves dynamicRate resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve dynamicRate resources from the server.
@@ -268,8 +297,9 @@ class DynamicRate(Base):
         - HighLevelStreamName (str): The name of the high level stream.
         - InterPacketGapUnitsType (str(bytes | microseconds | milliseconds | nanoseconds | seconds)): The inter-packet gap expressed in units of time. Available units of time: bytes, nanoseconds, microseconds, milliseconds, seconds.
         - OverSubscribed (bool): Determines whether the packet transmission rate is oversubscribed.
+        - PacketPeriodUnitsType (str(bytes | microseconds | milliseconds | nanoseconds | seconds)): The inter-packet gap expressed in units of time. Available units of time: bytes, nanoseconds, microseconds, milliseconds, seconds.
         - Rate (number): The rate at which packet is transmitted.
-        - RateType (str(bitsPerSecond | framesPerSecond | interPacketGap | percentLineRate)): The type of packet rate transmission.
+        - RateType (str(bitsPerSecond | framesPerSecond | interPacketGap | packetPeriod | percentLineRate)): The type of packet rate transmission.
         - TrafficItemName (str): The name of the parent traffic item.
         - TxPort (number): Returns the transmitting (Tx) port, the port sending the data.
 

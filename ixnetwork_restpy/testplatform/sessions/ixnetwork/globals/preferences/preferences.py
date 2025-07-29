@@ -69,6 +69,7 @@ class Preferences(Base):
         "ScriptgenTextEditorPath": "scriptgenTextEditorPath",
         "SelectDGOnCreation": "selectDGOnCreation",
         "SequenceCheckingWhenNoTxRxSync": "sequenceCheckingWhenNoTxRxSync",
+        "SharePatternBehaviour": "sharePatternBehaviour",
         "ShortenScenarioObjectNameInMiddle": "shortenScenarioObjectNameInMiddle",
         "StreamLogsToSyslogServer": "streamLogsToSyslogServer",
         "SyslogHost": "syslogHost",
@@ -86,6 +87,7 @@ class Preferences(Base):
         "phyMode": ["copper", "fiber"],
         "protocolGridSortingOrder": ["CreationTime", "TopologyName"],
         "receiveMode": ["capturePackets", "measureTrafficFlow"],
+        "sharePatternBehaviour": ["CopyPattern", "SharePattern"],
         "topologyTreeSortingMode": ["Number", "String"],
         "transmitMode": ["interleavedStreams", "sequentialStreams"],
     }
@@ -639,6 +641,21 @@ class Preferences(Base):
         self._set_attribute(self._SDM_ATT_MAP["SequenceCheckingWhenNoTxRxSync"], value)
 
     @property
+    def SharePatternBehaviour(self):
+        # type: () -> str
+        """
+        Returns
+        -------
+        - str(CopyPattern | SharePattern): Set the Share Pattern Behaviour in UI Action
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["SharePatternBehaviour"])
+
+    @SharePatternBehaviour.setter
+    def SharePatternBehaviour(self, value):
+        # type: (str) -> None
+        self._set_attribute(self._SDM_ATT_MAP["SharePatternBehaviour"], value)
+
+    @property
     def ShortenScenarioObjectNameInMiddle(self):
         # type: () -> bool
         """
@@ -782,6 +799,7 @@ class Preferences(Base):
         ScriptgenTextEditorPath=None,
         SelectDGOnCreation=None,
         SequenceCheckingWhenNoTxRxSync=None,
+        SharePatternBehaviour=None,
         ShortenScenarioObjectNameInMiddle=None,
         StreamLogsToSyslogServer=None,
         SyslogHost=None,
@@ -790,7 +808,7 @@ class Preferences(Base):
         TransmitMode=None,
         UseNewApiBrowser=None,
     ):
-        # type: (bool, bool, int, str, str, str, bool, int, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, int, int, str, bool, bool, str, bool, bool, str, List[str], str, str, bool, bool, bool, bool, str, int, str, str, bool) -> Preferences
+        # type: (bool, bool, int, str, str, str, bool, int, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, int, int, str, bool, bool, str, bool, bool, str, List[str], str, str, bool, bool, str, bool, bool, str, int, str, str, bool) -> Preferences
         """Updates preferences resource on the server.
 
         Args
@@ -828,6 +846,7 @@ class Preferences(Base):
         - ScriptgenTextEditorPath (str): Set the text editor path for Scriptgen
         - SelectDGOnCreation (bool): When true, Device Group will be auto selected in Scenario on a new Topology creation
         - SequenceCheckingWhenNoTxRxSync (bool): When true, advanced sequence checking is preferred if Tx-Rx Sync is unavailable on any port.
+        - SharePatternBehaviour (str(CopyPattern | SharePattern)): Set the Share Pattern Behaviour in UI Action
         - ShortenScenarioObjectNameInMiddle (bool): Shorten Topology/DG/NG names in the middle. If this is true, Topology/Device Group/Network Group names are shortened in the middle (with .), otherwise at the end
         - StreamLogsToSyslogServer (bool): Enables streaming Logs To Syslog Server
         - SyslogHost (str): syslog host
@@ -878,6 +897,7 @@ class Preferences(Base):
         ScriptgenTextEditorPath=None,
         SelectDGOnCreation=None,
         SequenceCheckingWhenNoTxRxSync=None,
+        SharePatternBehaviour=None,
         ShortenScenarioObjectNameInMiddle=None,
         StreamLogsToSyslogServer=None,
         SyslogHost=None,
@@ -886,7 +906,7 @@ class Preferences(Base):
         TransmitMode=None,
         UseNewApiBrowser=None,
     ):
-        # type: (bool, bool, int, str, str, str, bool, int, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, int, int, str, bool, bool, str, bool, bool, str, List[str], List[str], str, str, bool, bool, bool, bool, str, int, str, str, bool) -> Preferences
+        # type: (bool, bool, int, str, str, str, bool, int, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, int, int, str, bool, bool, str, bool, bool, str, List[str], List[str], str, str, bool, bool, str, bool, bool, str, int, str, str, bool) -> Preferences
         """Finds and retrieves preferences resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve preferences resources from the server.
@@ -929,6 +949,7 @@ class Preferences(Base):
         - ScriptgenTextEditorPath (str): Set the text editor path for Scriptgen
         - SelectDGOnCreation (bool): When true, Device Group will be auto selected in Scenario on a new Topology creation
         - SequenceCheckingWhenNoTxRxSync (bool): When true, advanced sequence checking is preferred if Tx-Rx Sync is unavailable on any port.
+        - SharePatternBehaviour (str(CopyPattern | SharePattern)): Set the Share Pattern Behaviour in UI Action
         - ShortenScenarioObjectNameInMiddle (bool): Shorten Topology/DG/NG names in the middle. If this is true, Topology/Device Group/Network Group names are shortened in the middle (with .), otherwise at the end
         - StreamLogsToSyslogServer (bool): Enables streaming Logs To Syslog Server
         - SyslogHost (str): syslog host

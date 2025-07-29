@@ -314,42 +314,29 @@ class Multivalue(Base):
         else:
             self._set_pattern("alternate", {"value": alternating_value})
 
-    def Increment(self, start_value=None, step_value=None):
+    def Increment(self, start_value=None, step_value=None, count_value=None):
         """Sets the multivalue to an incrementing pattern
 
         Args
         ----
         - start_value (str): The value at which to begin incrementing
         - step_value (str): The value to increment by
+        - count_value (str): The number of values after which the patter will .
+                             Please note count_value is only valid when used for traffic field in batch add mode.
         """
         if self._parent._mode[0] == "config":
-            # multivalue_dict = dict()
-            # if 'stack' in self._parent._properties['xpath']:
-            #     multivalue_dict['xpath'] = self._get_field_multivalue_xpath(self._href)
-            #     multivalue_dict['valueType'] = 'increment'
-            #     multivalue_dict['auto'] = False
-            #     multivalue_dict['optionalEnabled'] = True
-            #     if start_value is not None:
-            #         multivalue_dict['startValue'] = start_value
-            #     if step_value is not None:
-            #         multivalue_dict['stepValue'] = step_value
-            # else:
-            #     multivalue_dict['xpath'] = self._get_multivalue_xpath(self._href, 'counter')
-            #     multivalue_dict['direction'] = 'increment'
-            #     if start_value is not None:
-            #         multivalue_dict['start'] = start_value
-            #     if step_value is not None:
-            #         multivalue_dict['step'] = step_value
-            #
-            # self._xpathObj._config.append(multivalue_dict)
             attr_list = ["counter", "increment", start_value, step_value]
             if "stack_index" in self._parent._properties:
                 attr_list = ["field"] + attr_list
+                if count_value:
+                    attr_list.append(count_value)
             if self._dirty:
                 self._multiValueObj["multiValue"].append({self._href: attr_list})
             else:
                 self._parent._properties["multiValue"].append({self._href: attr_list})
         else:
+            if count_value is not None:
+                raise Exception("count_value is not valid when used without batch add")
             payload = {"direction": "increment"}
             if start_value is not None:
                 payload["start"] = start_value
@@ -357,39 +344,26 @@ class Multivalue(Base):
                 payload["step"] = step_value
             self._set_pattern("counter", payload)
 
-    def Decrement(self, start_value=None, step_value=None):
+    def Decrement(self, start_value=None, step_value=None, count_value=None):
         """Sets the multivalue to a decrementing pattern
 
         Args
         ----
         - start_value (str): The value at which to begin decrementing
         - step_value (str): The value to decrement by
+        - count_value (str): The number of values after which the patter will .
+                             Please note count_value is only valid when used for traffic field in batch add mode.
         """
         if self._parent._mode[0] == "config":
-            # multivalue_dict = dict()
-            # if 'stack' in self._parent._properties['xpath']:
-            #     multivalue_dict['xpath'] = self._get_field_multivalue_xpath(self._href)
-            #     multivalue_dict['valueType'] = 'decrement'
-            #     multivalue_dict['auto'] = False
-            #     multivalue_dict['optionalEnabled'] = True
-            #     if start_value is not None:
-            #         multivalue_dict['startValue'] = start_value
-            #     if step_value is not None:
-            #         multivalue_dict['stepValue'] = step_value
-            # else:
-            #     multivalue_dict['xpath'] = self._get_multivalue_xpath(self._href, 'counter')
-            #     multivalue_dict['direction'] = 'decrement'
-            #     if start_value is not None:
-            #         multivalue_dict['start'] = start_value
-            #     if step_value is not None:
-            #         multivalue_dict['step'] = step_value
-            #
-            # self._xpathObj._config.append(multivalue_dict)
             attr_list = ["counter", "decrement", start_value, step_value]
             if "stack_index" in self._parent._properties:
                 attr_list = ["field"] + attr_list
+                if count_value:
+                    attr_list.append(count_value)
             self._parent._properties["multiValue"].append({self._href: attr_list})
         else:
+            if count_value is not None:
+                raise Exception("count_value is not valid when used without batch add")
             payload = {"direction": "decrement"}
             if start_value is not None:
                 payload["start"] = start_value
