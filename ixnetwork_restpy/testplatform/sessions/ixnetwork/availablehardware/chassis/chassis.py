@@ -61,7 +61,7 @@ class Chassis(Base):
         "StateV2": "stateV2",
     }
     _SDM_ENUM_MAP = {
-        "chainTopology": ["daisy", "none", "star"],
+        "chainTopology": ["daisy", "none", "ptp", "star"],
         "chassisOSType": ["linux", "unknown", "windows"],
         "errorState": [
             "ConnectError",
@@ -129,7 +129,7 @@ class Chassis(Base):
         """
         Returns
         -------
-        - str(daisy | none | star): The chain topology type. This must be defined on the primary chassis. It must be defined only after the chassis host name has been specified and applied on the current chassis. For legacy chassis chains, the daisy chainTopology should be indicated.
+        - str(daisy | none | ptp | star): The chain topology type. This must be defined on the primary chassis. It must be defined only after the chassis host name has been specified and applied on the current chassis. For legacy chassis chains, the daisy chainTopology should be indicated.
         """
         return self._get_attribute(self._SDM_ATT_MAP["ChainTopology"])
 
@@ -373,7 +373,7 @@ class Chassis(Base):
         Args
         ----
         - CableLength (number): Specifies the length of the cable between two adjacent chassis. Must be set only after the chassis hostname has been set and committed on the current chassis.
-        - ChainTopology (str(daisy | none | star)): The chain topology type. This must be defined on the primary chassis. It must be defined only after the chassis host name has been specified and applied on the current chassis. For legacy chassis chains, the daisy chainTopology should be indicated.
+        - ChainTopology (str(daisy | none | ptp | star)): The chain topology type. This must be defined on the primary chassis. It must be defined only after the chassis host name has been specified and applied on the current chassis. For legacy chassis chains, the daisy chainTopology should be indicated.
         - Hostname (str): The IP address associated with the chassis.
         - MasterChassis (str): Specify the hostname of the primary chassis on a secondary chassis. Must be left blank on primary. Must be set only after the chassis hostname has been set and committed on the current chassis.
         - PrimaryChassis (str): Specify the hostname of the primary chassis on a secondary chassis. Must be left blank on primary. Must be set only after the chassis hostname has been set and committed on the current chassis.
@@ -400,7 +400,7 @@ class Chassis(Base):
         Args
         ----
         - CableLength (number): Specifies the length of the cable between two adjacent chassis. Must be set only after the chassis hostname has been set and committed on the current chassis.
-        - ChainTopology (str(daisy | none | star)): The chain topology type. This must be defined on the primary chassis. It must be defined only after the chassis host name has been specified and applied on the current chassis. For legacy chassis chains, the daisy chainTopology should be indicated.
+        - ChainTopology (str(daisy | none | ptp | star)): The chain topology type. This must be defined on the primary chassis. It must be defined only after the chassis host name has been specified and applied on the current chassis. For legacy chassis chains, the daisy chainTopology should be indicated.
         - Hostname (str): The IP address associated with the chassis.
         - MasterChassis (str): Specify the hostname of the primary chassis on a secondary chassis. Must be left blank on primary. Must be set only after the chassis hostname has been set and committed on the current chassis.
         - PrimaryChassis (str): Specify the hostname of the primary chassis on a secondary chassis. Must be left blank on primary. Must be set only after the chassis hostname has been set and committed on the current chassis.
@@ -461,7 +461,7 @@ class Chassis(Base):
         Args
         ----
         - CableLength (number): Specifies the length of the cable between two adjacent chassis. Must be set only after the chassis hostname has been set and committed on the current chassis.
-        - ChainTopology (str(daisy | none | star)): The chain topology type. This must be defined on the primary chassis. It must be defined only after the chassis host name has been specified and applied on the current chassis. For legacy chassis chains, the daisy chainTopology should be indicated.
+        - ChainTopology (str(daisy | none | ptp | star)): The chain topology type. This must be defined on the primary chassis. It must be defined only after the chassis host name has been specified and applied on the current chassis. For legacy chassis chains, the daisy chainTopology should be indicated.
         - ChassisOSType (str(linux | unknown | windows)):
         - ChassisType (str): The type of chassis.
         - ChassisVersion (str): The version of the Chassis in use.

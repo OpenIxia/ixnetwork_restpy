@@ -1298,6 +1298,31 @@ class TrafficItem(Base):
             "resolveAptixiaEndpoints", payload=payload, response_object=None
         )
 
+    def StartApplicationTraffic(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
+        """Executes the startApplicationTraffic operation on the server.
+
+        Start particular AppLib Traffic Item.
+
+        startApplicationTraffic(async_operation=bool)string
+        ---------------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns str:
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "startApplicationTraffic", payload=payload, response_object=None
+        )
+
     def StartDefaultLearning(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
         """Executes the startDefaultLearning operation on the server.
@@ -1423,6 +1448,31 @@ class TrafficItem(Base):
             payload[item[0]] = item[1]
         return self._execute(
             "startStatelessTrafficBlocking", payload=payload, response_object=None
+        )
+
+    def StopApplicationTraffic(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
+        """Executes the stopApplicationTraffic operation on the server.
+
+        Stop particular AppLib Traffic Item.
+
+        stopApplicationTraffic(async_operation=bool)string
+        --------------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns str:
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "stopApplicationTraffic", payload=payload, response_object=None
         )
 
     def StopStatelessTraffic(self, *args, **kwargs):

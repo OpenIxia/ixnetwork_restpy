@@ -137,7 +137,7 @@ class TestConfig(Base):
             "mBpsRate",
             "percentMaxRate",
         ],
-        "binarySearchType": ["linear", "perFlow", "perPort"],
+        "binarySearchType": ["linear", "perPort"],
         "comboFrameLossUnit": ["%", "frames"],
         "comboLoadUnit": [
             "bpsRate",
@@ -265,7 +265,7 @@ class TestConfig(Base):
         """
         Returns
         -------
-        - str(linear | perFlow | perPort): NOT DEFINED
+        - str(linear | perPort): NOT DEFINED
         """
         return self._get_attribute(self._SDM_ATT_MAP["BinarySearchType"])
 
@@ -1623,7 +1623,7 @@ class TestConfig(Base):
         - BinaryFrameLossUnit (str(% | frames)): NOT DEFINED
         - BinaryLoadUnit (str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate)): NOT DEFINED
         - BinaryResolution (number): NOT DEFINED
-        - BinarySearchType (str(linear | perFlow | perPort)): NOT DEFINED
+        - BinarySearchType (str(linear | perPort)): NOT DEFINED
         - BinaryTolerance (number): NOT DEFINED
         - BurstSize (number): NOT DEFINED
         - CalculateJitter (bool): NOT DEFINED
@@ -1818,7 +1818,7 @@ class TestConfig(Base):
         - BinaryFrameLossUnit (str(% | frames)): NOT DEFINED
         - BinaryLoadUnit (str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate)): NOT DEFINED
         - BinaryResolution (number): NOT DEFINED
-        - BinarySearchType (str(linear | perFlow | perPort)): NOT DEFINED
+        - BinarySearchType (str(linear | perPort)): NOT DEFINED
         - BinaryTolerance (number): NOT DEFINED
         - BurstSize (number): NOT DEFINED
         - CalculateJitter (bool): NOT DEFINED

@@ -489,6 +489,31 @@ class Ixnetwork(Base):
             payload[item[0]] = item[1]
         return self._execute("clearCPDPStats", payload=payload, response_object=None)
 
+    def ClearLogsInPublisher(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the clearLogsInPublisher operation on the server.
+
+        This command clears RPF/IxNetwork logs from the publisher. This does not clear/remove any files.
+
+        clearLogsInPublisher(Arg1=string, async_operation=bool)
+        -------------------------------------------------------
+        - Arg1 (str): Type of logs (RPF/IxNetwork)
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "clearLogsInPublisher", payload=payload, response_object=None
+        )
+
     def ClearPortsAndTrafficStats(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
         """Executes the clearPortsAndTrafficStats operation on the server.
@@ -815,7 +840,7 @@ class Ixnetwork(Base):
 
         fetchObjectDetailsInBulk(Arg1=enum, Arg2=string, async_operation=bool)string
         ----------------------------------------------------------------------------
-        - Arg1 (str(dg | lag | ng | port | topology)):
+        - Arg1 (str(dg | lag | ng | port | prefixpool | topology)):
         - Arg2 (str):
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
         - Returns str:
@@ -987,6 +1012,31 @@ class Ixnetwork(Base):
             payload[item[0]] = item[1]
         return self._execute(
             "getAggregatedDeviceGroupStatus", payload=payload, response_object=None
+        )
+
+    def GetAggregatedTrafficStatus(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
+        """Executes the getAggregatedTrafficStatus operation on the server.
+
+        Fetches L23 and L47 Traffic running state and running time(sec) etc
+
+        getAggregatedTrafficStatus(async_operation=bool)string
+        ------------------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns str:
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getAggregatedTrafficStatus", payload=payload, response_object=None
         )
 
     def GetAllPorts(self, *args, **kwargs):
@@ -1386,6 +1436,57 @@ class Ixnetwork(Base):
             "GetDefaultSnapshotSettings", payload=payload, response_object=None
         )
 
+    def GetDelayStartTransmitTime(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
+        """Executes the getDelayStartTransmitTime operation on the server.
+
+        Returns the delay start transmit time.
+
+        getDelayStartTransmitTime(Arg1=string, async_operation=bool)string
+        ------------------------------------------------------------------
+        - Arg1 (str): Chassis dns or ip address
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns str: The delay start transmit time value.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getDelayStartTransmitTime", payload=payload, response_object=None
+        )
+
+    def GetExtDeviceSources(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the getExtDeviceSources operation on the server.
+
+        obtains protocol candidate to be IxN source for external device
+
+        getExtDeviceSources(async_operation=bool)list
+        ---------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): list of candidates
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getExtDeviceSources", payload=payload, response_object=None
+        )
+
     def GetFDViewEnabledObjects(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
         """Executes the getFDViewEnabledObjects operation on the server.
@@ -1409,6 +1510,81 @@ class Ixnetwork(Base):
             payload[item[0]] = item[1]
         return self._execute(
             "getFDViewEnabledObjects", payload=payload, response_object=None
+        )
+
+    def GetGlobalConfigElementsCount(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
+        """Executes the getGlobalConfigElementsCount operation on the server.
+
+        Fetches Ports, Topology, Device Group, Network Group, TI, EgressOnly TI etc count
+
+        getGlobalConfigElementsCount(async_operation=bool)string
+        --------------------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns str:
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getGlobalConfigElementsCount", payload=payload, response_object=None
+        )
+
+    def GetGlobalPortAggregatedStatus(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
+        """Executes the getGlobalPortAggregatedStatus operation on the server.
+
+        Fetches global aggregated Port status - calculating from all Ports
+
+        getGlobalPortAggregatedStatus(async_operation=bool)string
+        ---------------------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns str:
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getGlobalPortAggregatedStatus", payload=payload, response_object=None
+        )
+
+    def GetGlobalProtocolAggregatedStatus(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
+        """Executes the getGlobalProtocolAggregatedStatus operation on the server.
+
+        Fetches global aggregated Protocol status - calculating from all protocols
+
+        getGlobalProtocolAggregatedStatus(async_operation=bool)string
+        -------------------------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns str:
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "getGlobalProtocolAggregatedStatus", payload=payload, response_object=None
         )
 
     def GetInstalledSlotLicenseCount(self, *args, **kwargs):
@@ -1462,6 +1638,29 @@ class Ixnetwork(Base):
         return self._execute(
             "getIntersectionPortsForProtocols", payload=payload, response_object=None
         )
+
+    def GetIxNetworkLogs(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
+        """Executes the getIxNetworkLogs operation on the server.
+
+        This command fetches latest IxNetwork logs (latest 1000 lines)
+
+        getIxNetworkLogs(async_operation=bool)string
+        --------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns str:
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("getIxNetworkLogs", payload=payload, response_object=None)
 
     def GetLicenseSummary(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
@@ -1738,6 +1937,29 @@ class Ixnetwork(Base):
         for item in kwargs.items():
             payload[item[0]] = item[1]
         return self._execute("getRpfLogForPort", payload=payload, response_object=None)
+
+    def GetRpfLogs(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
+        """Executes the getRpfLogs operation on the server.
+
+        This command fetches latest RPF Logs (latest 300 lines)
+
+        getRpfLogs(async_operation=bool)string
+        --------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns str:
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("getRpfLogs", payload=payload, response_object=None)
 
     def GetSlotLicenseInUse(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[int], None]
@@ -2370,6 +2592,33 @@ class Ixnetwork(Base):
         for item in kwargs.items():
             payload[item[0]] = item[1]
         return self._execute("setChassisMode", payload=payload, response_object=None)
+
+    def SetDelayStartTransmitTime(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
+        """Executes the setDelayStartTransmitTime operation on the server.
+
+        Configures the delay start transmit time.
+
+        setDelayStartTransmitTime(Arg1=string, Arg2=number, async_operation=bool)string
+        -------------------------------------------------------------------------------
+        - Arg1 (str): Chassis dns or ip address
+        - Arg2 (number): Delay start transmit time value. Transmit Delay is a chassis chain time delay that is added to the Start Transmit and Clear Timestamp actions. This value is a global value for the entire virtual chassis chain.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns str:
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "setDelayStartTransmitTime", payload=payload, response_object=None
+        )
 
     def SetGuardRailVersion(self, *args, **kwargs):
         # type: (*Any, **Any) -> None

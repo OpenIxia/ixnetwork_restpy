@@ -270,13 +270,13 @@ class Ipv6Loopback(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfv3_3fea0f5606ed503cbf2020d4f305b6fa.Ospfv3): An instance of the Ospfv3 class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfv3_358e2976ca35efa16623749aaa5af06b.Ospfv3): An instance of the Ospfv3 class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfv3_3fea0f5606ed503cbf2020d4f305b6fa import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfv3_358e2976ca35efa16623749aaa5af06b import (
             Ospfv3,
         )
 
@@ -370,13 +370,13 @@ class Ipv6Loopback(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.roce6v2_83f1997f122d7411e1eb202c07bfc537.Roce6v2): An instance of the Roce6v2 class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.roce6v2_3aaac5ab2662e2f15f3454c8e6a4e1bf.Roce6v2): An instance of the Roce6v2 class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.roce6v2_83f1997f122d7411e1eb202c07bfc537 import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.roce6v2_3aaac5ab2662e2f15f3454c8e6a4e1bf import (
             Roce6v2,
         )
 

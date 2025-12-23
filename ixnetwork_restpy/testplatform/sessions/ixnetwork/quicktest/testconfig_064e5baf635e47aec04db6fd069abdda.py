@@ -134,7 +134,7 @@ class TestConfig(Base):
             "mBpsRate",
             "percentMaxRate",
         ],
-        "binarySearchType": ["linear", "perFlow", "perPort"],
+        "binarySearchType": ["linear", "perPort"],
         "comboFrameLossUnit": ["%", "frames"],
         "comboLoadUnit": [
             "bpsRate",
@@ -260,7 +260,7 @@ class TestConfig(Base):
         """
         Returns
         -------
-        - str(linear | perFlow | perPort): The binary search type value.
+        - str(linear | perPort): The binary search type value.
         """
         return self._get_attribute(self._SDM_ATT_MAP["BinarySearchType"])
 
@@ -1570,7 +1570,7 @@ class TestConfig(Base):
         - BinaryFrameLossUnit (str(% | frames)): The binary frame loss unit.
         - BinaryLoadUnit (str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate)): Specifies the binary load unit.
         - BinaryResolution (number): The resolution of the iteration during a binary search.
-        - BinarySearchType (str(linear | perFlow | perPort)): The binary search type value.
+        - BinarySearchType (str(linear | perPort)): The binary search type value.
         - BinaryTolerance (number): The percentage of frame loss that is acceptable in order for an iteration to be considered successful during a binary search.
         - CalculateJitter (bool): If true, calculates jitter.
         - CalculateLatency (bool): If true, calculates the latency.
@@ -1759,7 +1759,7 @@ class TestConfig(Base):
         - BinaryFrameLossUnit (str(% | frames)): The binary frame loss unit.
         - BinaryLoadUnit (str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate)): Specifies the binary load unit.
         - BinaryResolution (number): The resolution of the iteration during a binary search.
-        - BinarySearchType (str(linear | perFlow | perPort)): The binary search type value.
+        - BinarySearchType (str(linear | perPort)): The binary search type value.
         - BinaryTolerance (number): The percentage of frame loss that is acceptable in order for an iteration to be considered successful during a binary search.
         - CalculateJitter (bool): If true, calculates jitter.
         - CalculateLatency (bool): If true, calculates the latency.

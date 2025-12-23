@@ -60,12 +60,14 @@ class Locations(Base):
         "PeerDeviceRouterEnabled": "peerDeviceRouterEnabled",
         "PrimaryDevice": "primaryDevice",
         "ProtocolBuildNumber": "protocolBuildNumber",
+        "PtpSyncLockStatus": "ptpSyncLockStatus",
+        "PtpSyncLossCount": "ptpSyncLossCount",
         "SequenceId": "sequenceId",
         "State": "state",
         "StateV2": "stateV2",
     }
     _SDM_ENUM_MAP = {
-        "chainTopology": ["daisy", "none", "star"],
+        "chainTopology": ["daisy", "none", "ptp", "star"],
         "errorState": [
             "ConnectError",
             "DuplicateChassis",
@@ -153,7 +155,7 @@ class Locations(Base):
         """
         Returns
         -------
-        - str(daisy | none | star): The chain topology type. This must be defined on the primary device. It must be defined only after the device host name has been specified and applied on the current device. For legacy device chains, the daisy chainTopology should be indicated.
+        - str(daisy | none | ptp | star): The chain topology type. This must be defined on the primary device. It must be defined only after the device host name has been specified and applied on the current device. For legacy device chains, the daisy chainTopology should be indicated.
         """
         return self._get_attribute(self._SDM_ATT_MAP["ChainTopology"])
 
@@ -388,6 +390,26 @@ class Locations(Base):
         return self._get_attribute(self._SDM_ATT_MAP["ProtocolBuildNumber"])
 
     @property
+    def PtpSyncLockStatus(self):
+        # type: () -> str
+        """
+        Returns
+        -------
+        - str: Indicates the PTP lock status.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["PtpSyncLockStatus"])
+
+    @property
+    def PtpSyncLossCount(self):
+        # type: () -> int
+        """
+        Returns
+        -------
+        - number: Gives the PTP sync loss count.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["PtpSyncLossCount"])
+
+    @property
     def SequenceId(self):
         # type: () -> int
         """
@@ -437,7 +459,7 @@ class Locations(Base):
         Args
         ----
         - CableLength (number): Specifies the length of the cable between two adjacent devices. Must be set only after the device hostname has been set and committed on the current device.
-        - ChainTopology (str(daisy | none | star)): The chain topology type. This must be defined on the primary device. It must be defined only after the device host name has been specified and applied on the current device. For legacy device chains, the daisy chainTopology should be indicated.
+        - ChainTopology (str(daisy | none | ptp | star)): The chain topology type. This must be defined on the primary device. It must be defined only after the device host name has been specified and applied on the current device. For legacy device chains, the daisy chainTopology should be indicated.
         - Hostname (str): The hostname or IP address associated with the device.
         - MasterDevice (str): Specify the hostname of the primary device on a secondary device. Must be left blank on primary. Must be set only after the device hostname has been set and committed on the current device.
         - PrimaryDevice (str): Specify the hostname of the primary chassis on a secondary chassis. Must be left blank on primary. Must be set only after the chassis hostname has been set and committed on the current chassis.
@@ -464,7 +486,7 @@ class Locations(Base):
         Args
         ----
         - CableLength (number): Specifies the length of the cable between two adjacent devices. Must be set only after the device hostname has been set and committed on the current device.
-        - ChainTopology (str(daisy | none | star)): The chain topology type. This must be defined on the primary device. It must be defined only after the device host name has been specified and applied on the current device. For legacy device chains, the daisy chainTopology should be indicated.
+        - ChainTopology (str(daisy | none | ptp | star)): The chain topology type. This must be defined on the primary device. It must be defined only after the device host name has been specified and applied on the current device. For legacy device chains, the daisy chainTopology should be indicated.
         - Hostname (str): The hostname or IP address associated with the device.
         - MasterDevice (str): Specify the hostname of the primary device on a secondary device. Must be left blank on primary. Must be set only after the device hostname has been set and committed on the current device.
         - PrimaryDevice (str): Specify the hostname of the primary chassis on a secondary chassis. Must be left blank on primary. Must be set only after the chassis hostname has been set and committed on the current chassis.
@@ -515,11 +537,13 @@ class Locations(Base):
         PeerDeviceRouterEnabled=None,
         PrimaryDevice=None,
         ProtocolBuildNumber=None,
+        PtpSyncLockStatus=None,
+        PtpSyncLossCount=None,
         SequenceId=None,
         State=None,
         StateV2=None,
     ):
-        # type: (int, str, int, str, str, str, str, str, bool, bool, str, str, List[str], str, str, str, str, str, str, str, str, str, str, int, str, str) -> Locations
+        # type: (int, str, int, str, str, str, str, str, bool, bool, str, str, List[str], str, str, str, str, str, str, str, str, str, str, str, int, int, str, str) -> Locations
         """Finds and retrieves locations resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve locations resources from the server.
@@ -529,7 +553,7 @@ class Locations(Base):
         Args
         ----
         - CableLength (number): Specifies the length of the cable between two adjacent devices. Must be set only after the device hostname has been set and committed on the current device.
-        - ChainTopology (str(daisy | none | star)): The chain topology type. This must be defined on the primary device. It must be defined only after the device host name has been specified and applied on the current device. For legacy device chains, the daisy chainTopology should be indicated.
+        - ChainTopology (str(daisy | none | ptp | star)): The chain topology type. This must be defined on the primary device. It must be defined only after the device host name has been specified and applied on the current device. For legacy device chains, the daisy chainTopology should be indicated.
         - ConnectRetries (number): The number of time the client attempted to re-connect with the device. (read only)
         - DeviceType (str): The type of device.
         - ErrorDescription (str): Connection error description.
@@ -551,6 +575,8 @@ class Locations(Base):
         - PeerDeviceRouterEnabled (str): Router enabled status of discovered peer device.
         - PrimaryDevice (str): Specify the hostname of the primary chassis on a secondary chassis. Must be left blank on primary. Must be set only after the chassis hostname has been set and committed on the current chassis.
         - ProtocolBuildNumber (str): The Protocols version of the device in use.
+        - PtpSyncLockStatus (str): Indicates the PTP lock status.
+        - PtpSyncLossCount (number): Gives the PTP sync loss count.
         - SequenceId (number): Indicates the order at which the device in a chain are pulsed by IxOS. Star topology chains are automatically setting this value. Must be set only after the device hostname has been set and committed on the current device.
         - State (str(down | down | polling | polling | polling | ready)): The following states can be read from the port: polling, ready, and down.
         - StateV2 (str(connectError | down | notConnected | polling | pollingWait | ready)): The following states can be read from the port: polling, notConnected, pollingWait, ready, down, and connectError.

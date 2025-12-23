@@ -154,13 +154,13 @@ class Ethernet(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcpv6client_64480d87e9c578f0a0b7d3415d792d7e.Dhcpv6client): An instance of the Dhcpv6client class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcpv6client_013bec83057bfd70c03ca07e38de40af.Dhcpv6client): An instance of the Dhcpv6client class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcpv6client_64480d87e9c578f0a0b7d3415d792d7e import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcpv6client_013bec83057bfd70c03ca07e38de40af import (
             Dhcpv6client,
         )
 
@@ -714,13 +714,13 @@ class Ethernet(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pppoxclient_f43b198156c11196dbbd8c4dbee2af9d.Pppoxclient): An instance of the Pppoxclient class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pppoxclient_dce24a1334d4199ce3f023a81b533727.Pppoxclient): An instance of the Pppoxclient class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pppoxclient_f43b198156c11196dbbd8c4dbee2af9d import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.pppoxclient_dce24a1334d4199ce3f023a81b533727 import (
             Pppoxclient,
         )
 
@@ -754,13 +754,13 @@ class Ethernet(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ptp_c1137d7a86f153ce202396614c8f5e6a.Ptp): An instance of the Ptp class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ptp_c1d1ba7e04a80ea0e4a51508329a61fb.Ptp): An instance of the Ptp class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ptp_c1137d7a86f153ce202396614c8f5e6a import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ptp_c1d1ba7e04a80ea0e4a51508329a61fb import (
             Ptp,
         )
 

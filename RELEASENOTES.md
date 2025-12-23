@@ -1,4 +1,8 @@
 # Release Notes
+### December 2025
+* 1.9.0
+  * support for ixnetwork version 26.0.2601.6 (26.0.0)
+  * new option LogOnlyToFile exposed in SessionAssistant which only saves log to file without any logging in console.
 ### July 2025
 * 1.8.0
   * support for ixnetwork version 11.00.2407.67 (11.00 Update-1)

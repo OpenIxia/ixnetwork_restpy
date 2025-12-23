@@ -46,7 +46,7 @@ class Novusminipro(Base):
     }
     _SDM_ENUM_MAP = {
         "autoInstrumentation": ["endOfFrame", "floating"],
-        "speed": ["speed1000", "speed100fd", "speed10fd", "speed2.5g"],
+        "speed": ["speed1000", "speed100fd", "speed10fd", "speed10hd", "speed2.5g"],
     }
 
     def __init__(self, parent, list_op=False):
@@ -73,7 +73,7 @@ class Novusminipro(Base):
         """
         Returns
         -------
-        - list(str[speed10fd | speed100fd | speed1000 | speed2.5g]): Which speeds are available for the current media and AN settings.
+        - list(str[speed10fd | speed10hd | speed100fd | speed1000 | speed2.5g]): Which speeds are available for the current media and AN settings.
         """
         return self._get_attribute(self._SDM_ATT_MAP["AvailableSpeeds"])
 
@@ -128,7 +128,7 @@ class Novusminipro(Base):
         """
         Returns
         -------
-        - list(str[speed10fd | speed100fd | speed1000 | speed2.5g]): Which speeds are selected for the current media and AN settings.
+        - list(str[speed10fd | speed10hd | speed100fd | speed1000 | speed2.5g]): Which speeds are selected for the current media and AN settings.
         """
         return self._get_attribute(self._SDM_ATT_MAP["SelectedSpeeds"])
 
@@ -143,7 +143,7 @@ class Novusminipro(Base):
         """
         Returns
         -------
-        - str(speed1000 | speed100fd | speed10fd | speed2.5g): Select one of the enums to set the speed of the port.
+        - str(speed1000 | speed100fd | speed10fd | speed10hd | speed2.5g): Select one of the enums to set the speed of the port.
         """
         return self._get_attribute(self._SDM_ATT_MAP["Speed"])
 
@@ -162,8 +162,8 @@ class Novusminipro(Base):
         ----
         - AutoInstrumentation (str(endOfFrame | floating)): The auto instrumentation mode.
         - Mtu (number):
-        - SelectedSpeeds (list(str[speed10fd | speed100fd | speed1000 | speed2.5g])): Which speeds are selected for the current media and AN settings.
-        - Speed (str(speed1000 | speed100fd | speed10fd | speed2.5g)): Select one of the enums to set the speed of the port.
+        - SelectedSpeeds (list(str[speed10fd | speed10hd | speed100fd | speed1000 | speed2.5g])): Which speeds are selected for the current media and AN settings.
+        - Speed (str(speed1000 | speed100fd | speed10fd | speed10hd | speed2.5g)): Select one of the enums to set the speed of the port.
 
         Raises
         ------
@@ -192,13 +192,13 @@ class Novusminipro(Base):
         Args
         ----
         - AutoInstrumentation (str(endOfFrame | floating)): The auto instrumentation mode.
-        - AvailableSpeeds (list(str[speed10fd | speed100fd | speed1000 | speed2.5g])): Which speeds are available for the current media and AN settings.
+        - AvailableSpeeds (list(str[speed10fd | speed10hd | speed100fd | speed1000 | speed2.5g])): Which speeds are available for the current media and AN settings.
         - CanModifySpeed (bool): Returns true/false depending upon if the port can change speed for the current media and AN settings.
         - CanSetMultipleSpeeds (bool): Can this port selectmultiple speeds for the current media and AN settings.
         - Loopback (bool): If enabled, the port is set to internally loopback from transmit to receive.
         - Mtu (number):
-        - SelectedSpeeds (list(str[speed10fd | speed100fd | speed1000 | speed2.5g])): Which speeds are selected for the current media and AN settings.
-        - Speed (str(speed1000 | speed100fd | speed10fd | speed2.5g)): Select one of the enums to set the speed of the port.
+        - SelectedSpeeds (list(str[speed10fd | speed10hd | speed100fd | speed1000 | speed2.5g])): Which speeds are selected for the current media and AN settings.
+        - Speed (str(speed1000 | speed100fd | speed10fd | speed10hd | speed2.5g)): Select one of the enums to set the speed of the port.
 
         Returns
         -------

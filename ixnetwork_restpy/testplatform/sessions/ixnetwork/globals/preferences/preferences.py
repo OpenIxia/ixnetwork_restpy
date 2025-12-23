@@ -49,11 +49,14 @@ class Preferences(Base):
         "EnableAutoSave": "enableAutoSave",
         "EnableCloudTools": "enableCloudTools",
         "EnableDpdkForNewConfig": "enableDpdkForNewConfig",
+        "EnableLMServerConnectionViaIxProxy": "enableLMServerConnectionViaIxProxy",
         "EnablePCPUGuardRail": "enablePCPUGuardRail",
         "EnableScriptWatch": "enableScriptWatch",
+        "EnableStatsConnectionViaIxProxy": "enableStatsConnectionViaIxProxy",
         "ForceLegacyPortNameInStats": "forceLegacyPortNameInStats",
         "IncludeTroubleshootingComments": "includeTroubleshootingComments",
         "LatestConfigInDiagEnabled": "latestConfigInDiagEnabled",
+        "NgpfExecTimeout": "ngpfExecTimeout",
         "PcpuGuardRailCriticalThreshold": "pcpuGuardRailCriticalThreshold",
         "PcpuGuardRailWarningThreshold": "pcpuGuardRailWarningThreshold",
         "PhyMode": "phyMode",
@@ -346,6 +349,25 @@ class Preferences(Base):
         self._set_attribute(self._SDM_ATT_MAP["EnableDpdkForNewConfig"], value)
 
     @property
+    def EnableLMServerConnectionViaIxProxy(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: EnableLMServerConnectionViaIxProxy
+        """
+        return self._get_attribute(
+            self._SDM_ATT_MAP["EnableLMServerConnectionViaIxProxy"]
+        )
+
+    @EnableLMServerConnectionViaIxProxy.setter
+    def EnableLMServerConnectionViaIxProxy(self, value):
+        # type: (bool) -> None
+        self._set_attribute(
+            self._SDM_ATT_MAP["EnableLMServerConnectionViaIxProxy"], value
+        )
+
+    @property
     def EnablePCPUGuardRail(self):
         # type: () -> bool
         """
@@ -374,6 +396,21 @@ class Preferences(Base):
     def EnableScriptWatch(self, value):
         # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP["EnableScriptWatch"], value)
+
+    @property
+    def EnableStatsConnectionViaIxProxy(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: EnableStatsConnectionViaIxProxy
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["EnableStatsConnectionViaIxProxy"])
+
+    @EnableStatsConnectionViaIxProxy.setter
+    def EnableStatsConnectionViaIxProxy(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["EnableStatsConnectionViaIxProxy"], value)
 
     @property
     def ForceLegacyPortNameInStats(self):
@@ -419,6 +456,21 @@ class Preferences(Base):
     def LatestConfigInDiagEnabled(self, value):
         # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP["LatestConfigInDiagEnabled"], value)
+
+    @property
+    def NgpfExecTimeout(self):
+        # type: () -> int
+        """
+        Returns
+        -------
+        - number: Timeout (in sec) for NGPF Exec Actions
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["NgpfExecTimeout"])
+
+    @NgpfExecTimeout.setter
+    def NgpfExecTimeout(self, value):
+        # type: (int) -> None
+        self._set_attribute(self._SDM_ATT_MAP["NgpfExecTimeout"], value)
 
     @property
     def PcpuGuardRailCriticalThreshold(self):
@@ -780,11 +832,14 @@ class Preferences(Base):
         EnableAutoSave=None,
         EnableCloudTools=None,
         EnableDpdkForNewConfig=None,
+        EnableLMServerConnectionViaIxProxy=None,
         EnablePCPUGuardRail=None,
         EnableScriptWatch=None,
+        EnableStatsConnectionViaIxProxy=None,
         ForceLegacyPortNameInStats=None,
         IncludeTroubleshootingComments=None,
         LatestConfigInDiagEnabled=None,
+        NgpfExecTimeout=None,
         PcpuGuardRailCriticalThreshold=None,
         PcpuGuardRailWarningThreshold=None,
         PhyMode=None,
@@ -808,7 +863,7 @@ class Preferences(Base):
         TransmitMode=None,
         UseNewApiBrowser=None,
     ):
-        # type: (bool, bool, int, str, str, str, bool, int, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, int, int, str, bool, bool, str, bool, bool, str, List[str], str, str, bool, bool, str, bool, bool, str, int, str, str, bool) -> Preferences
+        # type: (bool, bool, int, str, str, str, bool, int, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, int, int, int, str, bool, bool, str, bool, bool, str, List[str], str, str, bool, bool, str, bool, bool, str, int, str, str, bool) -> Preferences
         """Updates preferences resource on the server.
 
         Args
@@ -827,11 +882,14 @@ class Preferences(Base):
         - EnableAutoSave (bool): If true,saves the configuration automatically. IxNetwork wont prompt to open the auto backup file when running in TCL Server mode. For performance reasons users additionally have to add a decimal registry key ForceAutoSave in Computer/HKEY_CURRENT_USER/Software/Ixia Communications/IxNetwork/Debug to do the auto save. Doesnt work yet on Linux
         - EnableCloudTools (bool): Controls whether Cloud Tool options will be enabled or not. This is related to learning MAC / IP address for a topology running on VM ports, deployed in AWS
         - EnableDpdkForNewConfig (bool): Sets the default DPDK enable/disable state when a new config is created.
+        - EnableLMServerConnectionViaIxProxy (bool): EnableLMServerConnectionViaIxProxy
         - EnablePCPUGuardRail (bool): enable pcpu guardrail
         - EnableScriptWatch (bool): Controls script watch.
+        - EnableStatsConnectionViaIxProxy (bool): EnableStatsConnectionViaIxProxy
         - ForceLegacyPortNameInStats (bool): When false, IxNetwork statistics show port name in <Chassis/Front Panel Port Number> format. When true, it is in <Chassis/Card/Port> format
         - IncludeTroubleshootingComments (bool): Includes troubleshooting comments in the script
         - LatestConfigInDiagEnabled (bool):
+        - NgpfExecTimeout (number): Timeout (in sec) for NGPF Exec Actions
         - PcpuGuardRailCriticalThreshold (number): pcpu guardrail critical threshold
         - PcpuGuardRailWarningThreshold (number): pcpu guardrail warning threshold
         - PhyMode (str(copper | fiber)): Set the media in Default Port Settings
@@ -877,11 +935,14 @@ class Preferences(Base):
         EnableAutoSave=None,
         EnableCloudTools=None,
         EnableDpdkForNewConfig=None,
+        EnableLMServerConnectionViaIxProxy=None,
         EnablePCPUGuardRail=None,
         EnableScriptWatch=None,
+        EnableStatsConnectionViaIxProxy=None,
         ForceLegacyPortNameInStats=None,
         IncludeTroubleshootingComments=None,
         LatestConfigInDiagEnabled=None,
+        NgpfExecTimeout=None,
         PcpuGuardRailCriticalThreshold=None,
         PcpuGuardRailWarningThreshold=None,
         PhyMode=None,
@@ -906,7 +967,7 @@ class Preferences(Base):
         TransmitMode=None,
         UseNewApiBrowser=None,
     ):
-        # type: (bool, bool, int, str, str, str, bool, int, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, int, int, str, bool, bool, str, bool, bool, str, List[str], List[str], str, str, bool, bool, str, bool, bool, str, int, str, str, bool) -> Preferences
+        # type: (bool, bool, int, str, str, str, bool, int, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, int, int, int, str, bool, bool, str, bool, bool, str, List[str], List[str], str, str, bool, bool, str, bool, bool, str, int, str, str, bool) -> Preferences
         """Finds and retrieves preferences resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve preferences resources from the server.
@@ -929,11 +990,14 @@ class Preferences(Base):
         - EnableAutoSave (bool): If true,saves the configuration automatically. IxNetwork wont prompt to open the auto backup file when running in TCL Server mode. For performance reasons users additionally have to add a decimal registry key ForceAutoSave in Computer/HKEY_CURRENT_USER/Software/Ixia Communications/IxNetwork/Debug to do the auto save. Doesnt work yet on Linux
         - EnableCloudTools (bool): Controls whether Cloud Tool options will be enabled or not. This is related to learning MAC / IP address for a topology running on VM ports, deployed in AWS
         - EnableDpdkForNewConfig (bool): Sets the default DPDK enable/disable state when a new config is created.
+        - EnableLMServerConnectionViaIxProxy (bool): EnableLMServerConnectionViaIxProxy
         - EnablePCPUGuardRail (bool): enable pcpu guardrail
         - EnableScriptWatch (bool): Controls script watch.
+        - EnableStatsConnectionViaIxProxy (bool): EnableStatsConnectionViaIxProxy
         - ForceLegacyPortNameInStats (bool): When false, IxNetwork statistics show port name in <Chassis/Front Panel Port Number> format. When true, it is in <Chassis/Card/Port> format
         - IncludeTroubleshootingComments (bool): Includes troubleshooting comments in the script
         - LatestConfigInDiagEnabled (bool):
+        - NgpfExecTimeout (number): Timeout (in sec) for NGPF Exec Actions
         - PcpuGuardRailCriticalThreshold (number): pcpu guardrail critical threshold
         - PcpuGuardRailWarningThreshold (number): pcpu guardrail warning threshold
         - PhyMode (str(copper | fiber)): Set the media in Default Port Settings

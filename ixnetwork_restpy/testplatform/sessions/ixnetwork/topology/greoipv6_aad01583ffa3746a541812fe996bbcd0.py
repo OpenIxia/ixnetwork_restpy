@@ -155,13 +155,13 @@ class Greoipv6(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcpv6client_64480d87e9c578f0a0b7d3415d792d7e.Dhcpv6client): An instance of the Dhcpv6client class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcpv6client_013bec83057bfd70c03ca07e38de40af.Dhcpv6client): An instance of the Dhcpv6client class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcpv6client_64480d87e9c578f0a0b7d3415d792d7e import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.dhcpv6client_013bec83057bfd70c03ca07e38de40af import (
             Dhcpv6client,
         )
 

@@ -65,7 +65,7 @@ class Ipv6(Base):
         "UseCustomLinkLocalAddress": "useCustomLinkLocalAddress",
     }
     _SDM_ENUM_MAP = {
-        "gatewayDiscoveryOpt": ["ra", "nsNa"],
+        "gatewayDiscoveryOpt": ["ra", "nsNa", "ospfv3"],
         "status": [
             "configured",
             "error",
@@ -425,13 +425,13 @@ class Ipv6(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfv3_3fea0f5606ed503cbf2020d4f305b6fa.Ospfv3): An instance of the Ospfv3 class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfv3_358e2976ca35efa16623749aaa5af06b.Ospfv3): An instance of the Ospfv3 class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfv3_3fea0f5606ed503cbf2020d4f305b6fa import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ospfv3_358e2976ca35efa16623749aaa5af06b import (
             Ospfv3,
         )
 
@@ -505,13 +505,13 @@ class Ipv6(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ptp_c1137d7a86f153ce202396614c8f5e6a.Ptp): An instance of the Ptp class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ptp_c1d1ba7e04a80ea0e4a51508329a61fb.Ptp): An instance of the Ptp class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ptp_c1137d7a86f153ce202396614c8f5e6a import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ptp_c1d1ba7e04a80ea0e4a51508329a61fb import (
             Ptp,
         )
 
@@ -545,13 +545,13 @@ class Ipv6(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.roce6v2_83f1997f122d7411e1eb202c07bfc537.Roce6v2): An instance of the Roce6v2 class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.roce6v2_3aaac5ab2662e2f15f3454c8e6a4e1bf.Roce6v2): An instance of the Roce6v2 class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.roce6v2_83f1997f122d7411e1eb202c07bfc537 import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.roce6v2_3aaac5ab2662e2f15f3454c8e6a4e1bf import (
             Roce6v2,
         )
 
@@ -760,7 +760,7 @@ class Ipv6(Base):
         """
         Returns
         -------
-        - str(ra | nsNa): Options to discover the gateway IP.
+        - str(ra | nsNa | ospfv3): Options to discover the gateway IP.
         """
         return self._get_attribute(self._SDM_ATT_MAP["GatewayDiscoveryOpt"])
 
@@ -1000,7 +1000,7 @@ class Ipv6(Base):
         Args
         ----
         - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology])): List of layers this layer is used to connect with to the wire.
-        - GatewayDiscoveryOpt (str(ra | nsNa)): Options to discover the gateway IP.
+        - GatewayDiscoveryOpt (str(ra | nsNa | ospfv3)): Options to discover the gateway IP.
         - LearnNeighbors (bool): Enable or disable the discover or learn neighbor(s) option.
         - Multiplier (number): Number of layer instances per parent instance (multiplier)
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
@@ -1029,7 +1029,7 @@ class Ipv6(Base):
         Args
         ----
         - ConnectedVia (list(str[None | /api/v1/sessions/1/ixnetwork/topology])): List of layers this layer is used to connect with to the wire.
-        - GatewayDiscoveryOpt (str(ra | nsNa)): Options to discover the gateway IP.
+        - GatewayDiscoveryOpt (str(ra | nsNa | ospfv3)): Options to discover the gateway IP.
         - LearnNeighbors (bool): Enable or disable the discover or learn neighbor(s) option.
         - Multiplier (number): Number of layer instances per parent instance (multiplier)
         - Name (str): Name of NGPF element, guaranteed to be unique in Scenario
@@ -1089,7 +1089,7 @@ class Ipv6(Base):
         - DescriptiveName (str): Longer, more descriptive name for element. It's not guaranteed to be unique like -name-, but may offer more context.
         - DiscoveredGatewayIp (list(str)): The discovered gateway IP addresses.
         - Errors (list(dict(arg1:str[None | /api/v1/sessions/1/ixnetwork/],arg2:list[str]))): A list of errors that have occurred
-        - GatewayDiscoveryOpt (str(ra | nsNa)): Options to discover the gateway IP.
+        - GatewayDiscoveryOpt (str(ra | nsNa | ospfv3)): Options to discover the gateway IP.
         - LearnNeighbors (bool): Enable or disable the discover or learn neighbor(s) option.
         - LinkLocalAddress (list(str)): Attribute to retrieve the configured Link Local Address(s).
         - Multiplier (number): Number of layer instances per parent instance (multiplier)

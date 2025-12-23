@@ -83,6 +83,7 @@ class Connection(object):
         trace="none",
         script_watch=True,
         url_prefix=None,
+        log_only_to_file=False,
     ):
         """Set the connection parameters to a rest server
 
@@ -95,10 +96,19 @@ class Connection(object):
             verify_cert (bool):
             script_watch (bool):
             url_prefix (str): the prefix that needs to added in the rest url
+            log_only_to_file (bool): By default False, if enabled the logs will be redirected to only files and not to the console.
         """
         self.trace = trace
+        # we can only show logs after the logger is initialised , so therefore having a flag to display the warning.
+        display_log_warning = False
+        if log_only_to_file and log_file_name is None:
+            log_only_to_file = False
+            display_log_warning = True
         if len(logging.getLogger(__name__).handlers) == 0:
-            handlers = [logging.StreamHandler(sys.stdout)]
+            handlers = []
+            # only add stdout if the log_only_to_file is not set
+            if not log_only_to_file:
+                handlers = [logging.StreamHandler(sys.stdout)]
             if log_file_name is not None:
                 handlers.append(logging.FileHandler(log_file_name, mode="w"))
             formatter = logging.Formatter(
@@ -109,6 +119,11 @@ class Connection(object):
             for handler in handlers:
                 handler.setFormatter(formatter)
                 logging.getLogger(__name__).addHandler(handler)
+            # display the log anomaly warning.
+            if display_log_warning:
+                logging.getLogger(__name__).warning(
+                    "log_only_to_file was set to True and log_file_name was not provided, so ignoring the attribute"
+                )
             logging.getLogger(__name__).info("using python version %s" % sys.version)
             try:
                 logging.getLogger(__name__).info(

@@ -59,6 +59,12 @@ class Trigger(Base):
             "errDataIntegrityError",
             "errAnyIpTcpUdpChecksumError",
             "errInvalidFcoeFrame",
+            "errRoCEv2OutOfOrderSequence",
+            "errRoCEv2DuplicateSequence",
+            "errRoCEv2ReorderedPacket",
+            "errRoCEv2SendWritePacket",
+            "errRoCEv2AckNakCnpPacket",
+            "errRoCEv2iCRCError",
         ],
         "captureTriggerPattern": [
             "anyPattern",
@@ -110,7 +116,7 @@ class Trigger(Base):
         """
         Returns
         -------
-        - str(errAnyFrame | errBadCRC | errGoodFrame | errBadFrame | errAnySequencekError | errBigSequenceError | errSmallSequenceError | errReverseSequenceError | errDataIntegrityError | errAnyIpTcpUdpChecksumError | errInvalidFcoeFrame): Applicable only when captureTriggerEnable is set to true.
+        - str(errAnyFrame | errBadCRC | errGoodFrame | errBadFrame | errAnySequencekError | errBigSequenceError | errSmallSequenceError | errReverseSequenceError | errDataIntegrityError | errAnyIpTcpUdpChecksumError | errInvalidFcoeFrame | errRoCEv2OutOfOrderSequence | errRoCEv2DuplicateSequence | errRoCEv2ReorderedPacket | errRoCEv2SendWritePacket | errRoCEv2AckNakCnpPacket | errRoCEv2iCRCError): Applicable only when captureTriggerEnable is set to true.
         """
         return self._get_attribute(self._SDM_ATT_MAP["CaptureTriggerError"])
 
@@ -228,7 +234,7 @@ class Trigger(Base):
         ----
         - CaptureTriggerDA (str(addr1 | addr2 | anyAddr | notAddr1 | notAddr2)): One of two available destination MAC addresses to filter on. Applicable only when captureTriggerEnable is set to true.
         - CaptureTriggerEnable (bool): Enables or disables the capture trigger.
-        - CaptureTriggerError (str(errAnyFrame | errBadCRC | errGoodFrame | errBadFrame | errAnySequencekError | errBigSequenceError | errSmallSequenceError | errReverseSequenceError | errDataIntegrityError | errAnyIpTcpUdpChecksumError | errInvalidFcoeFrame)): Applicable only when captureTriggerEnable is set to true.
+        - CaptureTriggerError (str(errAnyFrame | errBadCRC | errGoodFrame | errBadFrame | errAnySequencekError | errBigSequenceError | errSmallSequenceError | errReverseSequenceError | errDataIntegrityError | errAnyIpTcpUdpChecksumError | errInvalidFcoeFrame | errRoCEv2OutOfOrderSequence | errRoCEv2DuplicateSequence | errRoCEv2ReorderedPacket | errRoCEv2SendWritePacket | errRoCEv2AckNakCnpPacket | errRoCEv2iCRCError)): Applicable only when captureTriggerEnable is set to true.
         - CaptureTriggerExpressionString (str): String composed of SA1, DA1, P1, P2, optionally negated with '!', and connected with operators 'and', 'or', 'xor', 'nand' or 'nor'. (Eg: {DA1 and SA1 or !P1 and P2} ). NOTE: The 'or', 'xor', 'nand' and 'nor' operators are available only on the following load modules: XMVDC, NGY, XMSP12, LAVA(MK), Xcellon AP, Xcellon NP.
         - CaptureTriggerFrameSizeEnable (bool): Enables or disables the frame size constraint which specifies a range of frame.
         - CaptureTriggerFrameSizeFrom (number): Applicable only when captureTriggerFrameSizeEnable is enabled. The minimum range of the size of frame to be triggered.
@@ -265,7 +271,7 @@ class Trigger(Base):
         ----
         - CaptureTriggerDA (str(addr1 | addr2 | anyAddr | notAddr1 | notAddr2)): One of two available destination MAC addresses to filter on. Applicable only when captureTriggerEnable is set to true.
         - CaptureTriggerEnable (bool): Enables or disables the capture trigger.
-        - CaptureTriggerError (str(errAnyFrame | errBadCRC | errGoodFrame | errBadFrame | errAnySequencekError | errBigSequenceError | errSmallSequenceError | errReverseSequenceError | errDataIntegrityError | errAnyIpTcpUdpChecksumError | errInvalidFcoeFrame)): Applicable only when captureTriggerEnable is set to true.
+        - CaptureTriggerError (str(errAnyFrame | errBadCRC | errGoodFrame | errBadFrame | errAnySequencekError | errBigSequenceError | errSmallSequenceError | errReverseSequenceError | errDataIntegrityError | errAnyIpTcpUdpChecksumError | errInvalidFcoeFrame | errRoCEv2OutOfOrderSequence | errRoCEv2DuplicateSequence | errRoCEv2ReorderedPacket | errRoCEv2SendWritePacket | errRoCEv2AckNakCnpPacket | errRoCEv2iCRCError)): Applicable only when captureTriggerEnable is set to true.
         - CaptureTriggerExpressionString (str): String composed of SA1, DA1, P1, P2, optionally negated with '!', and connected with operators 'and', 'or', 'xor', 'nand' or 'nor'. (Eg: {DA1 and SA1 or !P1 and P2} ). NOTE: The 'or', 'xor', 'nand' and 'nor' operators are available only on the following load modules: XMVDC, NGY, XMSP12, LAVA(MK), Xcellon AP, Xcellon NP.
         - CaptureTriggerFrameSizeEnable (bool): Enables or disables the frame size constraint which specifies a range of frame.
         - CaptureTriggerFrameSizeFrom (number): Applicable only when captureTriggerFrameSizeEnable is enabled. The minimum range of the size of frame to be triggered.

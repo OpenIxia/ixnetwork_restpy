@@ -250,13 +250,13 @@ class BgpIpv4Peer(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpethernetsegmentv4_513557993dd06f40d06cc7ef2541e725.BgpEthernetSegmentV4): An instance of the BgpEthernetSegmentV4 class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpethernetsegmentv4_f1ed59346f873a89da7263863e819227.BgpEthernetSegmentV4): An instance of the BgpEthernetSegmentV4 class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpethernetsegmentv4_513557993dd06f40d06cc7ef2541e725 import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpethernetsegmentv4_f1ed59346f873a89da7263863e819227 import (
             BgpEthernetSegmentV4,
         )
 

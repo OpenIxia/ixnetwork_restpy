@@ -234,13 +234,13 @@ class IsisL3PseudoInterface(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isispseudoappspecsrlglist_16c6e7265cceee1929bab1415b66b941.IsisPseudoAppSpecSrlgList): An instance of the IsisPseudoAppSpecSrlgList class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isispseudoappspecsrlglist_a8a550f096e7570fc6966f4c63163d0e.IsisPseudoAppSpecSrlgList): An instance of the IsisPseudoAppSpecSrlgList class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isispseudoappspecsrlglist_16c6e7265cceee1929bab1415b66b941 import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.isispseudoappspecsrlglist_a8a550f096e7570fc6966f4c63163d0e import (
             IsisPseudoAppSpecSrlgList,
         )
 
@@ -675,7 +675,7 @@ class IsisL3PseudoInterface(Base):
     @property
     def EnableAppSpecSrlg(self):
         # type: () -> 'Multivalue'
-        """
+        """DEPRECATED
         Returns
         -------
         - obj(ixnetwork_restpy.multivalue.Multivalue): This enables Application Specific SRLG on the ISIS link between two mentioned interfaces.

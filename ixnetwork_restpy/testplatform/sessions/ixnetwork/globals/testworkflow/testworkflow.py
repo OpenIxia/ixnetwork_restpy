@@ -41,12 +41,14 @@ class Testworkflow(Base):
     }
     _SDM_ENUM_MAP = {
         "currentState": [
+            "kApplyL47Traffic",
             "kApplyTraffic",
             "kConnectPorts",
             "kError",
             "kGenerateTraffic",
             "kIdle",
             "kReleaseCrashedPorts",
+            "kStartL47Traffic",
             "kStartLAG",
             "kStartProtocols",
             "kStartTopology",
@@ -80,7 +82,7 @@ class Testworkflow(Base):
         """
         Returns
         -------
-        - str(kApplyTraffic | kConnectPorts | kError | kGenerateTraffic | kIdle | kReleaseCrashedPorts | kStartLAG | kStartProtocols | kStartTopology | kStartTraffic | kStopLAG | kStopProtocols | kStopTraffic | kWaitForChassisUp | kWaitForLicenseBroadcast | kWaitForPortsUp | kWaitForProtocolsUp):
+        - str(kApplyL47Traffic | kApplyTraffic | kConnectPorts | kError | kGenerateTraffic | kIdle | kReleaseCrashedPorts | kStartL47Traffic | kStartLAG | kStartProtocols | kStartTopology | kStartTraffic | kStopLAG | kStopProtocols | kStopTraffic | kWaitForChassisUp | kWaitForLicenseBroadcast | kWaitForPortsUp | kWaitForProtocolsUp):
         """
         return self._get_attribute(self._SDM_ATT_MAP["CurrentState"])
 
@@ -105,7 +107,7 @@ class Testworkflow(Base):
         Args
         ----
         - CurrentDescription (str):
-        - CurrentState (str(kApplyTraffic | kConnectPorts | kError | kGenerateTraffic | kIdle | kReleaseCrashedPorts | kStartLAG | kStartProtocols | kStartTopology | kStartTraffic | kStopLAG | kStopProtocols | kStopTraffic | kWaitForChassisUp | kWaitForLicenseBroadcast | kWaitForPortsUp | kWaitForProtocolsUp)):
+        - CurrentState (str(kApplyL47Traffic | kApplyTraffic | kConnectPorts | kError | kGenerateTraffic | kIdle | kReleaseCrashedPorts | kStartL47Traffic | kStartLAG | kStartProtocols | kStartTopology | kStartTraffic | kStopLAG | kStopProtocols | kStopTraffic | kWaitForChassisUp | kWaitForLicenseBroadcast | kWaitForPortsUp | kWaitForProtocolsUp)):
         - IsCaptureRunning (bool): Indicates whether capture is running on any port in config.
 
         Returns

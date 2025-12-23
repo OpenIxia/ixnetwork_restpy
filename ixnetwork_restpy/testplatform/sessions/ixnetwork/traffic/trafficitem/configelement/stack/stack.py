@@ -7314,6 +7314,176 @@ class Stack(Base):
         return Nsh(self)
 
     @property
+    def UetEntropy(self):
+        """
+        valid only with Batch Add
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.uetEntropy_template.UetEntropy): An instance of the UetEntropy traffic stack
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.uetEntropy_template import (
+            UetEntropy,
+        )
+
+        if len(self._object_properties) > 0:
+            if self._properties.get("UetEntropy", None) is not None:
+                return self._properties.get("UetEntropy")
+        return UetEntropy(self)
+
+    @property
+    def UetPdsSesRequestStandard(self):
+        """
+        valid only with Batch Add
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.uetPdsSesRequestStandard_template.UetPdsSesRequestStandard): An instance of the UetPdsSesRequestStandard traffic stack
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.uetPdsSesRequestStandard_template import (
+            UetPdsSesRequestStandard,
+        )
+
+        if len(self._object_properties) > 0:
+            if self._properties.get("UetPdsSesRequestStandard", None) is not None:
+                return self._properties.get("UetPdsSesRequestStandard")
+        return UetPdsSesRequestStandard(self)
+
+    @property
+    def UetPdsRudRodSRequest(self):
+        """
+        valid only with Batch Add
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.uetPdsRudRodSRequest_template.UetPdsRudRodSRequest): An instance of the UetPdsRudRodSRequest traffic stack
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.uetPdsRudRodSRequest_template import (
+            UetPdsRudRodSRequest,
+        )
+
+        if len(self._object_properties) > 0:
+            if self._properties.get("UetPdsRudRodSRequest", None) is not None:
+                return self._properties.get("UetPdsRudRodSRequest")
+        return UetPdsRudRodSRequest(self)
+
+    @property
+    def UetPdsRudiRequestResponse(self):
+        """
+        valid only with Batch Add
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.uetPdsRudiRequestResponse_template.UetPdsRudiRequestResponse): An instance of the UetPdsRudiRequestResponse traffic stack
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.uetPdsRudiRequestResponse_template import (
+            UetPdsRudiRequestResponse,
+        )
+
+        if len(self._object_properties) > 0:
+            if self._properties.get("UetPdsRudiRequestResponse", None) is not None:
+                return self._properties.get("UetPdsRudiRequestResponse")
+        return UetPdsRudiRequestResponse(self)
+
+    @property
+    def UetPdsRudRodCP(self):
+        """
+        valid only with Batch Add
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.uetPdsRudRodCP_template.UetPdsRudRodCP): An instance of the UetPdsRudRodCP traffic stack
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.uetPdsRudRodCP_template import (
+            UetPdsRudRodCP,
+        )
+
+        if len(self._object_properties) > 0:
+            if self._properties.get("UetPdsRudRodCP", None) is not None:
+                return self._properties.get("UetPdsRudRodCP")
+        return UetPdsRudRodCP(self)
+
+    @property
+    def UetPdsUudRequest(self):
+        """
+        valid only with Batch Add
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.uetPdsUudRequest_template.UetPdsUudRequest): An instance of the UetPdsUudRequest traffic stack
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.uetPdsUudRequest_template import (
+            UetPdsUudRequest,
+        )
+
+        if len(self._object_properties) > 0:
+            if self._properties.get("UetPdsUudRequest", None) is not None:
+                return self._properties.get("UetPdsUudRequest")
+        return UetPdsUudRequest(self)
+
+    @property
+    def UetPdsRudRodAck(self):
+        """
+        valid only with Batch Add
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.uetPdsRudRodAck_template.UetPdsRudRodAck): An instance of the UetPdsRudRodAck traffic stack
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.uetPdsRudRodAck_template import (
+            UetPdsRudRodAck,
+        )
+
+        if len(self._object_properties) > 0:
+            if self._properties.get("UetPdsRudRodAck", None) is not None:
+                return self._properties.get("UetPdsRudRodAck")
+        return UetPdsRudRodAck(self)
+
+    @property
+    def UetPdsNack(self):
+        """
+        valid only with Batch Add
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.uetPdsNack_template.UetPdsNack): An instance of the UetPdsNack traffic stack
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.uetPdsNack_template import (
+            UetPdsNack,
+        )
+
+        if len(self._object_properties) > 0:
+            if self._properties.get("UetPdsNack", None) is not None:
+                return self._properties.get("UetPdsNack")
+        return UetPdsNack(self)
+
+    @property
+    def UetSesRequestStandard(self):
+        """
+        valid only with Batch Add
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.uetSesRequestStandard_template.UetSesRequestStandard): An instance of the UetSesRequestStandard traffic stack
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.uetSesRequestStandard_template import (
+            UetSesRequestStandard,
+        )
+
+        if len(self._object_properties) > 0:
+            if self._properties.get("UetSesRequestStandard", None) is not None:
+                return self._properties.get("UetSesRequestStandard")
+        return UetSesRequestStandard(self)
+
+    @property
+    def UetSesResponse(self):
+        """
+        valid only with Batch Add
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.uetSesResponse_template.UetSesResponse): An instance of the UetSesResponse traffic stack
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.uetSesResponse_template import (
+            UetSesResponse,
+        )
+
+        if len(self._object_properties) > 0:
+            if self._properties.get("UetSesResponse", None) is not None:
+                return self._properties.get("UetSesResponse")
+        return UetSesResponse(self)
+
+    @property
     def Tcp(self):
         """
         valid only with Batch Add

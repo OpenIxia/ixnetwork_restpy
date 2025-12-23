@@ -697,13 +697,13 @@ class Ipv4(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ptp_c1137d7a86f153ce202396614c8f5e6a.Ptp): An instance of the Ptp class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ptp_c1d1ba7e04a80ea0e4a51508329a61fb.Ptp): An instance of the Ptp class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ptp_c1137d7a86f153ce202396614c8f5e6a import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.ptp_c1d1ba7e04a80ea0e4a51508329a61fb import (
             Ptp,
         )
 
@@ -717,13 +717,13 @@ class Ipv4(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.rocev2_3883e4f280637a1371754ae1ceccefc3.Rocev2): An instance of the Rocev2 class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.rocev2_5908e261287b1e6f76aaaf05f5c0a878.Rocev2): An instance of the Rocev2 class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.rocev2_3883e4f280637a1371754ae1ceccefc3 import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.rocev2_5908e261287b1e6f76aaaf05f5c0a878 import (
             Rocev2,
         )
 

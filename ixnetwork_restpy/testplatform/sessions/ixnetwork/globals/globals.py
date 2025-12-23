@@ -156,6 +156,26 @@ class Globals(Base):
         return Licensing(self)._select()
 
     @property
+    def Meshing(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.meshing.meshing.Meshing): An instance of the Meshing class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.meshing.meshing import (
+            Meshing,
+        )
+
+        if len(self._object_properties) > 0:
+            if self._properties.get("Meshing", None) is not None:
+                return self._properties.get("Meshing")
+        return Meshing(self)._select()
+
+    @property
     def PortTestOptions(self):
         """
         Returns

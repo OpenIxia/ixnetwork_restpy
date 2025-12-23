@@ -141,7 +141,7 @@ class TestConfig(Base):
             "mBpsRate",
             "percentMaxRate",
         ],
-        "binarySearchType": ["linear", "perFlow", "perPort"],
+        "binarySearchType": ["linear", "perPort"],
         "comboFrameLossUnit": ["%", "frames"],
         "comboLoadUnit": [
             "bpsRate",
@@ -269,7 +269,7 @@ class TestConfig(Base):
         """
         Returns
         -------
-        - str(linear | perFlow | perPort): The binary search type.
+        - str(linear | perPort): The binary search type.
         """
         return self._get_attribute(self._SDM_ATT_MAP["BinarySearchType"])
 
@@ -1627,7 +1627,7 @@ class TestConfig(Base):
         - BinaryFrameLossUnit (str(% | frames)): The binary frame loss unit.
         - BinaryLoadUnit (str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate)): The binary load unit.
         - BinaryResolution (number): The resolution of the iteration during a binary search.
-        - BinarySearchType (str(linear | perFlow | perPort)): The binary search type.
+        - BinarySearchType (str(linear | perPort)): The binary search type.
         - BinaryTolerance (number): The percentage of frame loss that is acceptable in order for an iteration to be considered successful during a binary search.
         - BurstSize (number): It signifies the burst size of the protocol.
         - CalculateJitter (bool): If true, enables jitter calculation.
@@ -1822,7 +1822,7 @@ class TestConfig(Base):
         - BinaryFrameLossUnit (str(% | frames)): The binary frame loss unit.
         - BinaryLoadUnit (str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate)): The binary load unit.
         - BinaryResolution (number): The resolution of the iteration during a binary search.
-        - BinarySearchType (str(linear | perFlow | perPort)): The binary search type.
+        - BinarySearchType (str(linear | perPort)): The binary search type.
         - BinaryTolerance (number): The percentage of frame loss that is acceptable in order for an iteration to be considered successful during a binary search.
         - BurstSize (number): It signifies the burst size of the protocol.
         - CalculateJitter (bool): If true, enables jitter calculation.

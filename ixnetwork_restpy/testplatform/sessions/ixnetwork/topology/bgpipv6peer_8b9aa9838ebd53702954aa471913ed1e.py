@@ -302,13 +302,13 @@ class BgpIpv6Peer(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpethernetsegmentv6_a782fc9bd071258ebb6d44a8c06ee527.BgpEthernetSegmentV6): An instance of the BgpEthernetSegmentV6 class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpethernetsegmentv6_dd6a5ff42522a9a58db13e59e5f705ea.BgpEthernetSegmentV6): An instance of the BgpEthernetSegmentV6 class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpethernetsegmentv6_a782fc9bd071258ebb6d44a8c06ee527 import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpethernetsegmentv6_dd6a5ff42522a9a58db13e59e5f705ea import (
             BgpEthernetSegmentV6,
         )
 

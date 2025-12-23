@@ -137,7 +137,7 @@ class TestConfig(Base):
             "mBpsRate",
             "percentMaxRate",
         ],
-        "binarySearchType": ["linear", "perFlow", "perPort"],
+        "binarySearchType": ["linear", "perPort"],
         "comboFrameLossUnit": ["%", "frames"],
         "comboLoadUnit": [
             "bpsRate",
@@ -265,7 +265,7 @@ class TestConfig(Base):
         """
         Returns
         -------
-        - str(linear | perFlow | perPort): The binary search type value.
+        - str(linear | perPort): The binary search type value.
         """
         return self._get_attribute(self._SDM_ATT_MAP["BinarySearchType"])
 
@@ -1623,7 +1623,7 @@ class TestConfig(Base):
         - BinaryFrameLossUnit (str(% | frames)): The frame loss unit for traffic.
         - BinaryLoadUnit (str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate)): Specifies the binary load unit.
         - BinaryResolution (number): Specifies the resolution of the iteration. The difference between the real rate transmission in two consecutive iterations, expressed as a percentage, is compared with the resolution value. When the difference is smaller than the value specified for the resolution, the test stops.
-        - BinarySearchType (str(linear | perFlow | perPort)): The binary search type value.
+        - BinarySearchType (str(linear | perPort)): The binary search type value.
         - BinaryTolerance (number): The binary tolerance level.
         - BurstSize (number): The number of packets that are sent in a burst.
         - CalculateJitter (bool): If true, the jitter is calculated.
@@ -1818,7 +1818,7 @@ class TestConfig(Base):
         - BinaryFrameLossUnit (str(% | frames)): The frame loss unit for traffic.
         - BinaryLoadUnit (str(bpsRate | fpsRate | gbpsRate | gBpsRate | kbpsRate | kBpsRate | mbpsRate | mBpsRate | percentMaxRate)): Specifies the binary load unit.
         - BinaryResolution (number): Specifies the resolution of the iteration. The difference between the real rate transmission in two consecutive iterations, expressed as a percentage, is compared with the resolution value. When the difference is smaller than the value specified for the resolution, the test stops.
-        - BinarySearchType (str(linear | perFlow | perPort)): The binary search type value.
+        - BinarySearchType (str(linear | perPort)): The binary search type value.
         - BinaryTolerance (number): The binary tolerance level.
         - BurstSize (number): The number of packets that are sent in a burst.
         - CalculateJitter (bool): If true, the jitter is calculated.

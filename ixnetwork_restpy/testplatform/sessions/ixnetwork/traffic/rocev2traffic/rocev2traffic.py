@@ -36,6 +36,9 @@ class RoceV2Traffic(Base):
     _SDM_NAME = "roceV2Traffic"
     _SDM_ATT_MAP = {
         "Enabled": "enabled",
+        "StartStreamIndexForPaging": "startStreamIndexForPaging",
+        "StreamCountForPaging": "streamCountForPaging",
+        "StreamPagingEnabled": "streamPagingEnabled",
     }
     _SDM_ENUM_MAP = {}
 
@@ -83,6 +86,26 @@ class RoceV2Traffic(Base):
         return RoceV2Stream(self)
 
     @property
+    def RoceV2TestConfig(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.rocev2traffic.rocev2testconfig.rocev2testconfig.RoceV2TestConfig): An instance of the RoceV2TestConfig class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.rocev2traffic.rocev2testconfig.rocev2testconfig import (
+            RoceV2TestConfig,
+        )
+
+        if len(self._object_properties) > 0:
+            if self._properties.get("RoceV2TestConfig", None) is not None:
+                return self._properties.get("RoceV2TestConfig")
+        return RoceV2TestConfig(self)
+
+    @property
     def Enabled(self):
         # type: () -> bool
         """
@@ -97,13 +120,67 @@ class RoceV2Traffic(Base):
         # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP["Enabled"], value)
 
-    def update(self, Enabled=None):
-        # type: (bool) -> RoceV2Traffic
+    @property
+    def StartStreamIndexForPaging(self):
+        # type: () -> int
+        """
+        Returns
+        -------
+        - number: Paging support with high stream count. First stream in the config to be retrieved. Index starts from 0.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["StartStreamIndexForPaging"])
+
+    @StartStreamIndexForPaging.setter
+    def StartStreamIndexForPaging(self, value):
+        # type: (int) -> None
+        self._set_attribute(self._SDM_ATT_MAP["StartStreamIndexForPaging"], value)
+
+    @property
+    def StreamCountForPaging(self):
+        # type: () -> int
+        """
+        Returns
+        -------
+        - number: Paging support with high stream count. Max number of streams to be retrieved.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["StreamCountForPaging"])
+
+    @StreamCountForPaging.setter
+    def StreamCountForPaging(self, value):
+        # type: (int) -> None
+        self._set_attribute(self._SDM_ATT_MAP["StreamCountForPaging"], value)
+
+    @property
+    def StreamPagingEnabled(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: roceV2Stream is limited to a subset of streams instead of all streams in the configuration.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["StreamPagingEnabled"])
+
+    @StreamPagingEnabled.setter
+    def StreamPagingEnabled(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["StreamPagingEnabled"], value)
+
+    def update(
+        self,
+        Enabled=None,
+        StartStreamIndexForPaging=None,
+        StreamCountForPaging=None,
+        StreamPagingEnabled=None,
+    ):
+        # type: (bool, int, int, bool) -> RoceV2Traffic
         """Updates roceV2Traffic resource on the server.
 
         Args
         ----
         - Enabled (bool): If true, this enables the selected RoCEv2 traffic item.
+        - StartStreamIndexForPaging (number): Paging support with high stream count. First stream in the config to be retrieved. Index starts from 0.
+        - StreamCountForPaging (number): Paging support with high stream count. Max number of streams to be retrieved.
+        - StreamPagingEnabled (bool): roceV2Stream is limited to a subset of streams instead of all streams in the configuration.
 
         Raises
         ------
@@ -111,8 +188,14 @@ class RoceV2Traffic(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, Enabled=None):
-        # type: (bool) -> RoceV2Traffic
+    def find(
+        self,
+        Enabled=None,
+        StartStreamIndexForPaging=None,
+        StreamCountForPaging=None,
+        StreamPagingEnabled=None,
+    ):
+        # type: (bool, int, int, bool) -> RoceV2Traffic
         """Finds and retrieves roceV2Traffic resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve roceV2Traffic resources from the server.
@@ -122,6 +205,9 @@ class RoceV2Traffic(Base):
         Args
         ----
         - Enabled (bool): If true, this enables the selected RoCEv2 traffic item.
+        - StartStreamIndexForPaging (number): Paging support with high stream count. First stream in the config to be retrieved. Index starts from 0.
+        - StreamCountForPaging (number): Paging support with high stream count. Max number of streams to be retrieved.
+        - StreamPagingEnabled (bool): roceV2Stream is limited to a subset of streams instead of all streams in the configuration.
 
         Returns
         -------

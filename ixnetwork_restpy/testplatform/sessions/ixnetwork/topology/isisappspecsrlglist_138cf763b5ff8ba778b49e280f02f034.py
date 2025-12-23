@@ -152,7 +152,7 @@ class IsisAppSpecSrlgList(Base):
     @property
     def IpV6InterfaceAddr(self):
         # type: () -> 'Multivalue'
-        """
+        """DEPRECATED
         Returns
         -------
         - obj(ixnetwork_restpy.multivalue.Multivalue): IPv6 Interface Address
@@ -166,7 +166,7 @@ class IsisAppSpecSrlgList(Base):
     @property
     def IpV6NeighborAddr(self):
         # type: () -> 'Multivalue'
-        """
+        """DEPRECATED
         Returns
         -------
         - obj(ixnetwork_restpy.multivalue.Multivalue): IPv6 Neighbor Address

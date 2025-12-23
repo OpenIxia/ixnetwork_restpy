@@ -1612,7 +1612,7 @@ class BgpIPRouteProperty(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.multivalue.Multivalue): Identifer for the route range on which traceroute was initiated. Supports upto 127 bytes.
+        - obj(ixnetwork_restpy.multivalue.Multivalue): Identifier for the route range on which the traceroute was initiated. Supports upto 127 bytes.
         """
         from ixnetwork_restpy.multivalue import Multivalue
 

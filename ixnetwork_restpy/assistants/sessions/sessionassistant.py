@@ -44,6 +44,7 @@ class SessionAssistant(object):
         ClearConfig=False,
         UrlPrefix=None,
         IgnoreStrongPasswordPolicy=True,
+        LogOnlyToFile=False,
     ):
         """Create a session or connect to an existing session.
         Provides access to the TestPlatform, Sessions, Ixnetwork, PortMapAssistant and StatViewAssistant classes.
@@ -73,6 +74,7 @@ class SessionAssistant(object):
         - ClearConfig (bool): Clear the current configuration
         - UrlPrefix (str): Some appliances (like novus-mini) needs url prefix in their rest url nomenclature
         - IgnoreStrongPasswordPolicy (bool): By default True, it rejects authentication with server if password is weak.
+        - LogOnlyToFile (bool): By default False, if enabled the logs will be redirected to only files and not to the console.
 
         Raises
         ------
@@ -89,6 +91,7 @@ class SessionAssistant(object):
             verify_cert=VerifyCertificates,
             trace=LogLevel,
             url_prefix=UrlPrefix,
+            log_only_to_file=LogOnlyToFile,
         )
         if ApiKey is not None:
             testplatform.ApiKey = ApiKey

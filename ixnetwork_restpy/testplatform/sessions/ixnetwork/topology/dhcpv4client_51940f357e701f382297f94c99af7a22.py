@@ -361,13 +361,13 @@ class Dhcpv4client(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.rocev2_3883e4f280637a1371754ae1ceccefc3.Rocev2): An instance of the Rocev2 class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.rocev2_5908e261287b1e6f76aaaf05f5c0a878.Rocev2): An instance of the Rocev2 class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.rocev2_3883e4f280637a1371754ae1ceccefc3 import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.rocev2_5908e261287b1e6f76aaaf05f5c0a878 import (
             Rocev2,
         )
 

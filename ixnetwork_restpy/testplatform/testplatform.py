@@ -53,6 +53,7 @@ class TestPlatform(Base):
         trace=TRACE_NONE,
         script_watch=True,
         url_prefix=None,
+        log_only_to_file=False,
     ):
         """Establishes an initial connection to an IxNetwork test tool platform.
         Currently supported platforms are Linux API Server, Windows GUI and ConnectionManager.
@@ -71,6 +72,7 @@ class TestPlatform(Base):
         - trace (str(none|info|warning|request|request_response|all)): set the tracing level of requests and responses.
         - script_watch (bool): disable this to not have REST API requests logged with the server script watch
         - url_prefix (str): Some appliances (like novus-mini) needs url prefix in their rest url nomenclature
+        - log_only_to_file (bool): By default False, if enabled the logs will be redirected to only files and not to the console.
 
         Raises
         ------
@@ -87,6 +89,7 @@ class TestPlatform(Base):
             trace,
             script_watch,
             url_prefix,
+            log_only_to_file,
         )
         self._uid = ""
         self._set_default_href()

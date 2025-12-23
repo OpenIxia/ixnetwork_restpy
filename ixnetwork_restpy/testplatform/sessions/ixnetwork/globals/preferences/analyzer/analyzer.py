@@ -35,13 +35,31 @@ class Analyzer(Base):
     __slots__ = ()
     _SDM_NAME = "analyzer"
     _SDM_ATT_MAP = {
+        "CaptureFileFormat": "captureFileFormat",
         "EnablePacketLatency": "enablePacketLatency",
         "ReleaseHwCaptureOwnership": "releaseHwCaptureOwnership",
     }
-    _SDM_ENUM_MAP = {}
+    _SDM_ENUM_MAP = {
+        "captureFileFormat": ["cap", "pcapng"],
+    }
 
     def __init__(self, parent, list_op=False):
         super(Analyzer, self).__init__(parent, list_op)
+
+    @property
+    def CaptureFileFormat(self):
+        # type: () -> str
+        """
+        Returns
+        -------
+        - str(cap | pcapng): Sets the capture filename extension for IxNetwork Linux API Server
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["CaptureFileFormat"])
+
+    @CaptureFileFormat.setter
+    def CaptureFileFormat(self, value):
+        # type: (str) -> None
+        self._set_attribute(self._SDM_ATT_MAP["CaptureFileFormat"], value)
 
     @property
     def EnablePacketLatency(self):
@@ -73,12 +91,18 @@ class Analyzer(Base):
         # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP["ReleaseHwCaptureOwnership"], value)
 
-    def update(self, EnablePacketLatency=None, ReleaseHwCaptureOwnership=None):
-        # type: (bool, bool) -> Analyzer
+    def update(
+        self,
+        CaptureFileFormat=None,
+        EnablePacketLatency=None,
+        ReleaseHwCaptureOwnership=None,
+    ):
+        # type: (str, bool, bool) -> Analyzer
         """Updates analyzer resource on the server.
 
         Args
         ----
+        - CaptureFileFormat (str(cap | pcapng)): Sets the capture filename extension for IxNetwork Linux API Server
         - EnablePacketLatency (bool): Compute per packet latency for Traffic packets
         - ReleaseHwCaptureOwnership (bool): Release HW Capture ownership when capture stops
 
@@ -88,8 +112,13 @@ class Analyzer(Base):
         """
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
-    def find(self, EnablePacketLatency=None, ReleaseHwCaptureOwnership=None):
-        # type: (bool, bool) -> Analyzer
+    def find(
+        self,
+        CaptureFileFormat=None,
+        EnablePacketLatency=None,
+        ReleaseHwCaptureOwnership=None,
+    ):
+        # type: (str, bool, bool) -> Analyzer
         """Finds and retrieves analyzer resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve analyzer resources from the server.
@@ -98,6 +127,7 @@ class Analyzer(Base):
 
         Args
         ----
+        - CaptureFileFormat (str(cap | pcapng)): Sets the capture filename extension for IxNetwork Linux API Server
         - EnablePacketLatency (bool): Compute per packet latency for Traffic packets
         - ReleaseHwCaptureOwnership (bool): Release HW Capture ownership when capture stops
 

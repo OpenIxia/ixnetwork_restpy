@@ -48,6 +48,7 @@ class Traffic(Base):
         "DisablePortLevelMisdirected": "disablePortLevelMisdirected",
         "DisplayMplsCurrentLabelValue": "displayMplsCurrentLabelValue",
         "EgressOnlyTrafficItemName": "egressOnlyTrafficItemName",
+        "ElapsedL47TrafficTransmitTime": "elapsedL47TrafficTransmitTime",
         "ElapsedTransmitTime": "elapsedTransmitTime",
         "EnableDataIntegrityCheck": "enableDataIntegrityCheck",
         "EnableDestMacRetry": "enableDestMacRetry",
@@ -492,6 +493,16 @@ class Traffic(Base):
     def EgressOnlyTrafficItemName(self, value):
         # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP["EgressOnlyTrafficItemName"], value)
+
+    @property
+    def ElapsedL47TrafficTransmitTime(self):
+        # type: () -> int
+        """
+        Returns
+        -------
+        - number: Specifies the amount of time ApplicationTraffic traffic is running in milliseconds. If the traffic state is unapplied or errored then the transmit time will be 0.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["ElapsedL47TrafficTransmitTime"])
 
     @property
     def ElapsedTransmitTime(self):
@@ -1208,6 +1219,7 @@ class Traffic(Base):
         DisablePortLevelMisdirected=None,
         DisplayMplsCurrentLabelValue=None,
         EgressOnlyTrafficItemName=None,
+        ElapsedL47TrafficTransmitTime=None,
         ElapsedTransmitTime=None,
         EnableDataIntegrityCheck=None,
         EnableDestMacRetry=None,
@@ -1250,7 +1262,7 @@ class Traffic(Base):
         UseTxRxSync=None,
         WaitTime=None,
     ):
-        # type: (bool, int, str, int, str, str, int, int, int, bool, bool, bool, str, int, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, str, str, int, bool, bool, bool, int, int, int, int, bool, int, int, int, int, bool, bool, str, int, bool, bool, bool, int) -> Traffic
+        # type: (bool, int, str, int, str, str, int, int, int, bool, bool, bool, str, int, int, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, str, str, int, bool, bool, bool, int, int, int, int, bool, int, int, int, int, bool, bool, str, int, bool, bool, bool, int) -> Traffic
         """Finds and retrieves traffic resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve traffic resources from the server.
@@ -1272,6 +1284,7 @@ class Traffic(Base):
         - DisablePortLevelMisdirected (bool):
         - DisplayMplsCurrentLabelValue (bool): Displays current label value for LSP Endpoints.
         - EgressOnlyTrafficItemName (str): Traffic Item name for egress only flows in statistics.
+        - ElapsedL47TrafficTransmitTime (number): Specifies the amount of time ApplicationTraffic traffic is running in milliseconds. If the traffic state is unapplied or errored then the transmit time will be 0.
         - ElapsedTransmitTime (number): Specifies the amount of time traffic is running in milliseconds. If the traffic state is unapplied or errored then the transmit time will be 0.
         - EnableDataIntegrityCheck (bool): If true, enable data integrity check.
         - EnableDestMacRetry (bool): If true, enables the destination MAC address retry function.
@@ -1486,6 +1499,31 @@ class Traffic(Base):
             "applyStatefulTraffic", payload=payload, response_object=None
         )
 
+    def FetchAllNgpfFilters(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
+        """Executes the fetchAllNgpfFilters operation on the server.
+
+        Fetches All NGPF Tags/Filters.
+
+        fetchAllNgpfFilters(async_operation=bool)string
+        -----------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns str: All NGPF Tags/Filters.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "fetchAllNgpfFilters", payload=payload, response_object=None
+        )
+
     def GetFrameCountForDuration(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[List[int], None]
         """Executes the getFrameCountForDuration operation on the server.
@@ -1627,6 +1665,31 @@ class Traffic(Base):
             payload[item[0]] = item[1]
         return self._execute(
             "startApplicationTraffic", payload=payload, response_object=None
+        )
+
+    def StartApplicationTrafficV2(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
+        """Executes the startApplicationTrafficV2 operation on the server.
+
+        Start particular AppLib Traffic Item.
+
+        startApplicationTrafficV2(async_operation=bool)string
+        -----------------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns str:
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "startApplicationTrafficV2", payload=payload, response_object=None
         )
 
     def StartStatefulTraffic(self, *args, **kwargs):

@@ -1405,13 +1405,13 @@ class Topology(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.roce6v2.roce6v2_b2b4fe36978d9ac3bba6c06e49dd2d07.Roce6v2): An instance of the Roce6v2 class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.roce6v2.roce6v2_0f894ab37237810d5524bc70671d3957.Roce6v2): An instance of the Roce6v2 class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.roce6v2.roce6v2_b2b4fe36978d9ac3bba6c06e49dd2d07 import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.roce6v2.roce6v2_0f894ab37237810d5524bc70671d3957 import (
             Roce6v2,
         )
 
@@ -1425,13 +1425,13 @@ class Topology(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.rocev2.rocev2_5cf15ed95e83f4104dcae1f0409bf70c.Rocev2): An instance of the Rocev2 class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.rocev2.rocev2_a99c477364d3dd0b26b7d89ba8fd815d.Rocev2): An instance of the Rocev2 class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.rocev2.rocev2_5cf15ed95e83f4104dcae1f0409bf70c import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.globals.topology.rocev2.rocev2_a99c477364d3dd0b26b7d89ba8fd815d import (
             Rocev2,
         )
 
@@ -2020,6 +2020,35 @@ class Topology(Base):
             "fetchScenarioObjectsShortenedNames", payload=payload, response_object=None
         )
 
+    def PerformColumnOperation(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
+        """Executes the performColumnOperation operation on the server.
+
+        Performs Col Operation
+
+        performColumnOperation(ColumnOpeation=enum, PropertyName=string, SourceObject=href, DestinationObjects=list, async_operation=bool)string
+        ----------------------------------------------------------------------------------------------------------------------------------------
+        - ColumnOpeation (str(decrement | increment | same)): Column Operation Name
+        - PropertyName (str): property name
+        - SourceObject (str(None)): Source Object
+        - DestinationObjects (list(str[None])): Destination Objects array
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns str:
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "performColumnOperation", payload=payload, response_object=None
+        )
+
     def SendArpGlobal(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
         """Executes the sendArpGlobal operation on the server.
@@ -2065,3 +2094,32 @@ class Topology(Base):
         for item in kwargs.items():
             payload[item[0]] = item[1]
         return self._execute("sendNsGlobal", payload=payload, response_object=None)
+
+    def SetPortsInWizardGeneratedConfig(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
+        """Executes the setPortsInWizardGeneratedConfig operation on the server.
+
+        This API sets ports to wizard generated Topologies. Please note this API expects the Chassis is already added in IxNetwork before calling this API.
+
+        setPortsInWizardGeneratedConfig(Arg2=string, Arg3=string, Arg4=number, Arg5=string, async_operation=bool)string
+        ---------------------------------------------------------------------------------------------------------------
+        - Arg2 (str): List of Topology HREFs separated by comma (,) like /topology:1, /topology:2
+        - Arg3 (str): List of vport unique-id separated by comma (,) like 10.39.51.183;4;3, 10.39.51.183;4;4
+        - Arg4 (number): number indicating how many ports to be assigned to each Topology (min/default is 1)
+        - Arg5 (str): List of Topology Categories separated by comma (,) like Sender,Receiver (needed only for ASSymmetrical port assigment)
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns str:
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "setPortsInWizardGeneratedConfig", payload=payload, response_object=None
+        )
