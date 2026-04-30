@@ -171,11 +171,62 @@ class Connection(object):
         self._url_prefix = url_prefix
         if ":" in self._hostname and "[" not in self._hostname:
             self._hostname = "[%s]" % self._hostname
-        self._rest_port = rest_port
+        self._rest_port = self._validate_and_normalize_port(rest_port)
         self._scheme = "https"
+        if self._rest_port is not None:
+            if self._rest_port == 443:
+                self._scheme = "https"  # Force HTTPS for port 443
+            elif self._rest_port == 80:
+                self._scheme = "http"   # Force HTTP for port 80
+
         self._log_file_name = log_file_name
         self._session = Session()
         self._scheme = self._determine_test_tool_platform(platform)
+
+    def _validate_and_normalize_port(self, port):
+        """Validate and normalize the rest_port parameter.
+        Args:
+            port: Port number as int, str, or None
+        Returns:
+            int or None: Normalized port number
+        Raises:
+            ValueError: If port is invalid
+        """
+        if port is None:
+            return None
+
+        if isinstance(port, str):
+            try:
+                port = int(port)
+            except ValueError:
+                raise ValueError(f"Invalid port '{port}': must be a valid integer")
+
+        if not isinstance(port, int):
+            raise ValueError(f"Invalid port type '{type(port).__name__}': must be int, str, or None")
+
+        if not (1 <= port <= 65535):
+            raise ValueError(f"Invalid port {port}: must be between 1 and 65535")
+
+        return port
+
+    def _validate_scheme_port_combination(self, scheme, port):
+        """Validate that scheme and port combination is allowed.
+        Args:
+            scheme (str): The scheme ('http' or 'https')
+            port (int or None): The port number
+        Raises:
+            ValueError: If combination is not allowed
+        """
+        if port is None:
+            return
+
+        # Port 443 must use HTTPS
+        if port == 443 and scheme != "https":
+            raise ValueError(f"Port 443 requires HTTPS scheme, got '{scheme}'")
+
+        # Port 80 must use HTTP
+        if port == 80 and scheme != "http":
+            raise ValueError(f"Port 80 requires HTTP scheme, got '{scheme}'")
 
     def _determine_test_tool_platform(self, platform):
         self._info(
@@ -194,7 +245,15 @@ class Connection(object):
                 rest_ports.remove(self._rest_port)
             rest_ports.insert(0, self._rest_port)
         for rest_port in rest_ports:
-            for scheme in ["http", "https"]:
+            # Determine which schemes to try based on port restrictions
+            if rest_port == 443:
+                schemes_to_try = ["https"]  # Port 443 only supports HTTPS
+            elif rest_port == 80:
+                schemes_to_try = ["http"]  # Port 80 only supports HTTP
+            else:
+                schemes_to_try = ["http", "https"]  # Other ports can try both
+
+            for scheme in schemes_to_try:
                 try:
                     if self._url_prefix is not None:
                         url = "%s://%s:%s/%s/api/v1/auth/session" % (
