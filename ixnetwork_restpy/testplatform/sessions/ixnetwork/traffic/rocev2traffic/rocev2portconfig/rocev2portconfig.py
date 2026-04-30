@@ -36,6 +36,7 @@ class RoceV2PortConfig(Base):
     __slots__ = ()
     _SDM_NAME = "roceV2PortConfig"
     _SDM_ATT_MAP = {
+        "EnableBurst": "enableBurst",
         "InterBatchPeriodUnits": "interBatchPeriodUnits",
         "InterBatchPeriodValue": "interBatchPeriodValue",
         "TargetLineRateInPercent": "targetLineRateInPercent",
@@ -74,6 +75,21 @@ class RoceV2PortConfig(Base):
             if self._properties.get("RoceV2DcqcnParams", None) is not None:
                 return self._properties.get("RoceV2DcqcnParams")
         return RoceV2DcqcnParams(self)._select()
+
+    @property
+    def EnableBurst(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: Enable Burst
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["EnableBurst"])
+
+    @EnableBurst.setter
+    def EnableBurst(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["EnableBurst"], value)
 
     @property
     def InterBatchPeriodUnits(self):
@@ -147,16 +163,18 @@ class RoceV2PortConfig(Base):
 
     def update(
         self,
+        EnableBurst=None,
         InterBatchPeriodUnits=None,
         InterBatchPeriodValue=None,
         TargetLineRateInPercent=None,
         TxCtrlParam=None,
     ):
-        # type: (str, int, int, str) -> RoceV2PortConfig
+        # type: (bool, str, int, int, str) -> RoceV2PortConfig
         """Updates roceV2PortConfig resource on the server.
 
         Args
         ----
+        - EnableBurst (bool): Enable Burst
         - InterBatchPeriodUnits (str(microseconds | milliseconds | nanoseconds | seconds)): Specifies the unit for Inter Batch Period while transmitting batches.
         - InterBatchPeriodValue (number): Inter Batch Period between batch transmit, unit is to be set
         - TargetLineRateInPercent (number): Target Line Rate In Percent.
@@ -170,16 +188,18 @@ class RoceV2PortConfig(Base):
 
     def add(
         self,
+        EnableBurst=None,
         InterBatchPeriodUnits=None,
         InterBatchPeriodValue=None,
         TargetLineRateInPercent=None,
         TxCtrlParam=None,
     ):
-        # type: (str, int, int, str) -> RoceV2PortConfig
+        # type: (bool, str, int, int, str) -> RoceV2PortConfig
         """Adds a new roceV2PortConfig resource on the json, only valid with batch add utility
 
         Args
         ----
+        - EnableBurst (bool): Enable Burst
         - InterBatchPeriodUnits (str(microseconds | milliseconds | nanoseconds | seconds)): Specifies the unit for Inter Batch Period while transmitting batches.
         - InterBatchPeriodValue (number): Inter Batch Period between batch transmit, unit is to be set
         - TargetLineRateInPercent (number): Target Line Rate In Percent.
@@ -197,13 +217,14 @@ class RoceV2PortConfig(Base):
 
     def find(
         self,
+        EnableBurst=None,
         InterBatchPeriodUnits=None,
         InterBatchPeriodValue=None,
         TargetLineRateInPercent=None,
         TxCtrlParam=None,
         TxPort=None,
     ):
-        # type: (str, int, int, str, str) -> RoceV2PortConfig
+        # type: (bool, str, int, int, str, str) -> RoceV2PortConfig
         """Finds and retrieves roceV2PortConfig resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve roceV2PortConfig resources from the server.
@@ -212,6 +233,7 @@ class RoceV2PortConfig(Base):
 
         Args
         ----
+        - EnableBurst (bool): Enable Burst
         - InterBatchPeriodUnits (str(microseconds | milliseconds | nanoseconds | seconds)): Specifies the unit for Inter Batch Period while transmitting batches.
         - InterBatchPeriodValue (number): Inter Batch Period between batch transmit, unit is to be set
         - TargetLineRateInPercent (number): Target Line Rate In Percent.

@@ -41,6 +41,7 @@ class Vport(Base):
         "AdminMode": "adminMode",
         "AssignedTo": "assignedTo",
         "AssignedToDisplayName": "assignedToDisplayName",
+        "BasebandMedium": "basebandMedium",
         "CaptureSupported": "captureSupported",
         "ConnectedTo": "connectedTo",
         "ConnectionInfo": "connectionInfo",
@@ -392,6 +393,16 @@ class Vport(Base):
         - str:
         """
         return self._get_attribute(self._SDM_ATT_MAP["AssignedToDisplayName"])
+
+    @property
+    def BasebandMedium(self):
+        # type: () -> str
+        """
+        Returns
+        -------
+        - str: Port baseband medium.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["BasebandMedium"])
 
     @property
     def CaptureSupported(self):
@@ -941,6 +952,7 @@ class Vport(Base):
         AdminMode=None,
         AssignedTo=None,
         AssignedToDisplayName=None,
+        BasebandMedium=None,
         CaptureSupported=None,
         ConnectedTo=None,
         ConnectionInfo=None,
@@ -979,7 +991,7 @@ class Vport(Base):
         UseGlobalSettings=None,
         ValidTxModes=None,
     ):
-        # type: (int, str, str, str, str, str, str, str, str, str, str, str, int, bool, bool, bool, bool, bool, bool, str, str, str, str, str, str, bool, str, str, str, str, str, str, bool, str, str, bool, str, str, str, bool, List[str]) -> Vport
+        # type: (int, str, str, str, str, str, str, str, str, str, str, str, str, int, bool, bool, bool, bool, bool, bool, str, str, str, str, str, str, bool, str, str, str, str, str, str, bool, str, str, bool, str, str, str, bool, List[str]) -> Vport
         """Finds and retrieves vport resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve vport resources from the server.
@@ -992,6 +1004,7 @@ class Vport(Base):
         - AdminMode (str):
         - AssignedTo (str): (Deprecated, Read Only) A new port is assigned with this option.
         - AssignedToDisplayName (str):
+        - BasebandMedium (str): Port baseband medium.
         - CaptureSupported (str(data | control | dataAndControl | none)):
         - ConnectedTo (str(None | /api/v1/sessions/1/ixnetwork/availableHardware/chassis/card/port)): The physical port to which the unassigned port is assigned.
         - ConnectionInfo (str): Detailed information about location of the physical port that is assigned to this port configuration.
@@ -2211,6 +2224,50 @@ class Vport(Base):
         for item in kwargs.items():
             payload[item[0]] = item[1]
         return self._execute("switchMode", payload=payload, response_object=None)
+
+    def Tc10SendSleep(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the tc10SendSleep operation on the server.
+
+        Send Sleep for TC10.
+
+        tc10SendSleep(async_operation=bool)
+        -----------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("tc10SendSleep", payload=payload, response_object=None)
+
+    def Tc10SendWake(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the tc10SendWake operation on the server.
+
+        Send Wake for TC10.
+
+        tc10SendWake(async_operation=bool)
+        ----------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("tc10SendWake", payload=payload, response_object=None)
 
     def UnassignPorts(self, *args, **kwargs):
         # type: (*Any, **Any) -> None

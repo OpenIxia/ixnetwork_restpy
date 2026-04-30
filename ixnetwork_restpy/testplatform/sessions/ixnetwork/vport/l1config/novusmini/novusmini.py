@@ -36,16 +36,20 @@ class Novusmini(Base):
     _SDM_NAME = "novusmini"
     _SDM_ATT_MAP = {
         "AutoInstrumentation": "autoInstrumentation",
+        "AutoNegotiateSpeed": "autoNegotiateSpeed",
         "AvailableSpeeds": "availableSpeeds",
         "CanModifySpeed": "canModifySpeed",
         "CanSetMultipleSpeeds": "canSetMultipleSpeeds",
         "Loopback": "loopback",
         "Mtu": "mtu",
+        "NegotiatePrimarySecondary": "negotiatePrimarySecondary",
+        "PrimarySecondaryMode": "primarySecondaryMode",
         "SelectedSpeeds": "selectedSpeeds",
         "Speed": "speed",
     }
     _SDM_ENUM_MAP = {
         "autoInstrumentation": ["endOfFrame", "floating"],
+        "primarySecondaryMode": ["primary", "secondary"],
         "speed": ["speed1000", "speed100fd", "speed10fd", "speed10hd", "speed2.5g"],
     }
 
@@ -66,6 +70,21 @@ class Novusmini(Base):
     def AutoInstrumentation(self, value):
         # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP["AutoInstrumentation"], value)
+
+    @property
+    def AutoNegotiateSpeed(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: If enabled, allows auto-negotiation between ports for speed.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["AutoNegotiateSpeed"])
+
+    @AutoNegotiateSpeed.setter
+    def AutoNegotiateSpeed(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["AutoNegotiateSpeed"], value)
 
     @property
     def AvailableSpeeds(self):
@@ -123,6 +142,36 @@ class Novusmini(Base):
         self._set_attribute(self._SDM_ATT_MAP["Mtu"], value)
 
     @property
+    def NegotiatePrimarySecondary(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool:
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["NegotiatePrimarySecondary"])
+
+    @NegotiatePrimarySecondary.setter
+    def NegotiatePrimarySecondary(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["NegotiatePrimarySecondary"], value)
+
+    @property
+    def PrimarySecondaryMode(self):
+        # type: () -> str
+        """
+        Returns
+        -------
+        - str(primary | secondary):
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["PrimarySecondaryMode"])
+
+    @PrimarySecondaryMode.setter
+    def PrimarySecondaryMode(self, value):
+        # type: (str) -> None
+        self._set_attribute(self._SDM_ATT_MAP["PrimarySecondaryMode"], value)
+
+    @property
     def SelectedSpeeds(self):
         # type: () -> List[str]
         """
@@ -153,15 +202,25 @@ class Novusmini(Base):
         self._set_attribute(self._SDM_ATT_MAP["Speed"], value)
 
     def update(
-        self, AutoInstrumentation=None, Mtu=None, SelectedSpeeds=None, Speed=None
+        self,
+        AutoInstrumentation=None,
+        AutoNegotiateSpeed=None,
+        Mtu=None,
+        NegotiatePrimarySecondary=None,
+        PrimarySecondaryMode=None,
+        SelectedSpeeds=None,
+        Speed=None,
     ):
-        # type: (str, int, List[str], str) -> Novusmini
+        # type: (str, bool, int, bool, str, List[str], str) -> Novusmini
         """Updates novusmini resource on the server.
 
         Args
         ----
         - AutoInstrumentation (str(endOfFrame | floating)): The auto instrumentation mode.
+        - AutoNegotiateSpeed (bool): If enabled, allows auto-negotiation between ports for speed.
         - Mtu (number):
+        - NegotiatePrimarySecondary (bool):
+        - PrimarySecondaryMode (str(primary | secondary)):
         - SelectedSpeeds (list(str[speed10fd | speed10hd | speed100fd | speed1000 | speed2.5g])): Which speeds are selected for the current media and AN settings.
         - Speed (str(speed1000 | speed100fd | speed10fd | speed10hd | speed2.5g)): Select one of the enums to set the speed of the port.
 
@@ -174,15 +233,18 @@ class Novusmini(Base):
     def find(
         self,
         AutoInstrumentation=None,
+        AutoNegotiateSpeed=None,
         AvailableSpeeds=None,
         CanModifySpeed=None,
         CanSetMultipleSpeeds=None,
         Loopback=None,
         Mtu=None,
+        NegotiatePrimarySecondary=None,
+        PrimarySecondaryMode=None,
         SelectedSpeeds=None,
         Speed=None,
     ):
-        # type: (str, List[str], bool, bool, bool, int, List[str], str) -> Novusmini
+        # type: (str, bool, List[str], bool, bool, bool, int, bool, str, List[str], str) -> Novusmini
         """Finds and retrieves novusmini resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve novusmini resources from the server.
@@ -192,11 +254,14 @@ class Novusmini(Base):
         Args
         ----
         - AutoInstrumentation (str(endOfFrame | floating)): The auto instrumentation mode.
+        - AutoNegotiateSpeed (bool): If enabled, allows auto-negotiation between ports for speed.
         - AvailableSpeeds (list(str[speed10fd | speed10hd | speed100fd | speed1000 | speed2.5g])): Which speeds are available for the current media and AN settings.
         - CanModifySpeed (bool): Returns true/false depending upon if the port can change speed for the current media and AN settings.
         - CanSetMultipleSpeeds (bool): Can this port selectmultiple speeds for the current media and AN settings.
         - Loopback (bool): If enabled, the port is set to internally loopback from transmit to receive.
         - Mtu (number):
+        - NegotiatePrimarySecondary (bool):
+        - PrimarySecondaryMode (str(primary | secondary)):
         - SelectedSpeeds (list(str[speed10fd | speed10hd | speed100fd | speed1000 | speed2.5g])): Which speeds are selected for the current media and AN settings.
         - Speed (str(speed1000 | speed100fd | speed10fd | speed10hd | speed2.5g)): Select one of the enums to set the speed of the port.
 

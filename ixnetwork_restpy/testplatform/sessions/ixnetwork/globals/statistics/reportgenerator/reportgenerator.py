@@ -35,10 +35,14 @@ class ReportGenerator(Base):
     __slots__ = ()
     _SDM_NAME = "reportGenerator"
     _SDM_ATT_MAP = {
+        "CompanyName": "companyName",
+        "CustomCompanyLogoFileName": "customCompanyLogoFileName",
+        "CustomCoverPicFileName": "customCoverPicFileName",
         "DutHwVersion": "dutHwVersion",
         "DutName": "dutName",
         "DutSerialNo": "dutSerialNo",
         "DutSwVersion": "dutSwVersion",
+        "ImageUploadPath": "imageUploadPath",
         "IncludeCustomViews": "includeCustomViews",
         "IncludePortProtocolSummary": "includePortProtocolSummary",
         "IncludeProtocolStats": "includeProtocolStats",
@@ -49,7 +53,9 @@ class ReportGenerator(Base):
         "IncludeTrafficL23Summary": "includeTrafficL23Summary",
         "IncludeTrafficWorstFlows": "includeTrafficWorstFlows",
         "IxNetworkVersion": "ixNetworkVersion",
+        "ProtocolsToInclude": "protocolsToInclude",
         "ReportType": "reportType",
+        "ShowCustomViewOption": "showCustomViewOption",
         "TestCategory": "testCategory",
         "TestHighlights": "testHighlights",
         "TestName": "testName",
@@ -62,6 +68,51 @@ class ReportGenerator(Base):
 
     def __init__(self, parent, list_op=False):
         super(ReportGenerator, self).__init__(parent, list_op)
+
+    @property
+    def CompanyName(self):
+        # type: () -> str
+        """
+        Returns
+        -------
+        - str: This is used in the report header
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["CompanyName"])
+
+    @CompanyName.setter
+    def CompanyName(self, value):
+        # type: (str) -> None
+        self._set_attribute(self._SDM_ATT_MAP["CompanyName"], value)
+
+    @property
+    def CustomCompanyLogoFileName(self):
+        # type: () -> str
+        """
+        Returns
+        -------
+        - str: This is used in the report
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["CustomCompanyLogoFileName"])
+
+    @CustomCompanyLogoFileName.setter
+    def CustomCompanyLogoFileName(self, value):
+        # type: (str) -> None
+        self._set_attribute(self._SDM_ATT_MAP["CustomCompanyLogoFileName"], value)
+
+    @property
+    def CustomCoverPicFileName(self):
+        # type: () -> str
+        """
+        Returns
+        -------
+        - str: This is used in the report
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["CustomCoverPicFileName"])
+
+    @CustomCoverPicFileName.setter
+    def CustomCoverPicFileName(self, value):
+        # type: (str) -> None
+        self._set_attribute(self._SDM_ATT_MAP["CustomCoverPicFileName"], value)
 
     @property
     def DutHwVersion(self):
@@ -122,6 +173,16 @@ class ReportGenerator(Base):
     def DutSwVersion(self, value):
         # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP["DutSwVersion"], value)
+
+    @property
+    def ImageUploadPath(self):
+        # type: () -> str
+        """
+        Returns
+        -------
+        - str: Path where the report images are kept
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["ImageUploadPath"])
 
     @property
     def IncludeCustomViews(self):
@@ -269,6 +330,21 @@ class ReportGenerator(Base):
         return self._get_attribute(self._SDM_ATT_MAP["IxNetworkVersion"])
 
     @property
+    def ProtocolsToInclude(self):
+        # type: () -> str
+        """
+        Returns
+        -------
+        - str: Comma separate names of Protocols to be included in Report. Empty means everything is included
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["ProtocolsToInclude"])
+
+    @ProtocolsToInclude.setter
+    def ProtocolsToInclude(self, value):
+        # type: (str) -> None
+        self._set_attribute(self._SDM_ATT_MAP["ProtocolsToInclude"], value)
+
+    @property
     def ReportType(self):
         # type: () -> str
         """
@@ -282,6 +358,16 @@ class ReportGenerator(Base):
     def ReportType(self, value):
         # type: (str) -> None
         self._set_attribute(self._SDM_ATT_MAP["ReportType"], value)
+
+    @property
+    def ShowCustomViewOption(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool:
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["ShowCustomViewOption"])
 
     @property
     def TestCategory(self):
@@ -360,6 +446,9 @@ class ReportGenerator(Base):
 
     def update(
         self,
+        CompanyName=None,
+        CustomCompanyLogoFileName=None,
+        CustomCoverPicFileName=None,
         DutHwVersion=None,
         DutName=None,
         DutSerialNo=None,
@@ -373,6 +462,7 @@ class ReportGenerator(Base):
         IncludeTrafficItemStats=None,
         IncludeTrafficL23Summary=None,
         IncludeTrafficWorstFlows=None,
+        ProtocolsToInclude=None,
         ReportType=None,
         TestCategory=None,
         TestHighlights=None,
@@ -380,11 +470,14 @@ class ReportGenerator(Base):
         TestObjectives=None,
         TesterName=None,
     ):
-        # type: (str, str, str, str, bool, bool, bool, bool, bool, bool, bool, bool, bool, str, str, str, str, str, str) -> ReportGenerator
+        # type: (str, str, str, str, str, str, str, bool, bool, bool, bool, bool, bool, bool, bool, bool, str, str, str, str, str, str, str) -> ReportGenerator
         """Updates reportGenerator resource on the server.
 
         Args
         ----
+        - CompanyName (str): This is used in the report header
+        - CustomCompanyLogoFileName (str): This is used in the report
+        - CustomCoverPicFileName (str): This is used in the report
         - DutHwVersion (str):
         - DutName (str):
         - DutSerialNo (str):
@@ -398,6 +491,7 @@ class ReportGenerator(Base):
         - IncludeTrafficItemStats (bool):
         - IncludeTrafficL23Summary (bool):
         - IncludeTrafficWorstFlows (bool):
+        - ProtocolsToInclude (str): Comma separate names of Protocols to be included in Report. Empty means everything is included
         - ReportType (str(kNGPF | kNone | kTraffic | kTrafficAndNGPF)):
         - TestCategory (str):
         - TestHighlights (str):
@@ -413,10 +507,14 @@ class ReportGenerator(Base):
 
     def find(
         self,
+        CompanyName=None,
+        CustomCompanyLogoFileName=None,
+        CustomCoverPicFileName=None,
         DutHwVersion=None,
         DutName=None,
         DutSerialNo=None,
         DutSwVersion=None,
+        ImageUploadPath=None,
         IncludeCustomViews=None,
         IncludePortProtocolSummary=None,
         IncludeProtocolStats=None,
@@ -427,14 +525,16 @@ class ReportGenerator(Base):
         IncludeTrafficL23Summary=None,
         IncludeTrafficWorstFlows=None,
         IxNetworkVersion=None,
+        ProtocolsToInclude=None,
         ReportType=None,
+        ShowCustomViewOption=None,
         TestCategory=None,
         TestHighlights=None,
         TestName=None,
         TestObjectives=None,
         TesterName=None,
     ):
-        # type: (str, str, str, str, bool, bool, bool, bool, bool, bool, bool, bool, bool, str, str, str, str, str, str, str) -> ReportGenerator
+        # type: (str, str, str, str, str, str, str, str, bool, bool, bool, bool, bool, bool, bool, bool, bool, str, str, str, bool, str, str, str, str, str) -> ReportGenerator
         """Finds and retrieves reportGenerator resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve reportGenerator resources from the server.
@@ -443,10 +543,14 @@ class ReportGenerator(Base):
 
         Args
         ----
+        - CompanyName (str): This is used in the report header
+        - CustomCompanyLogoFileName (str): This is used in the report
+        - CustomCoverPicFileName (str): This is used in the report
         - DutHwVersion (str):
         - DutName (str):
         - DutSerialNo (str):
         - DutSwVersion (str):
+        - ImageUploadPath (str): Path where the report images are kept
         - IncludeCustomViews (bool):
         - IncludePortProtocolSummary (bool):
         - IncludeProtocolStats (bool):
@@ -457,7 +561,9 @@ class ReportGenerator(Base):
         - IncludeTrafficL23Summary (bool):
         - IncludeTrafficWorstFlows (bool):
         - IxNetworkVersion (str):
+        - ProtocolsToInclude (str): Comma separate names of Protocols to be included in Report. Empty means everything is included
         - ReportType (str(kNGPF | kNone | kTraffic | kTrafficAndNGPF)):
+        - ShowCustomViewOption (bool):
         - TestCategory (str):
         - TestHighlights (str):
         - TestName (str):
@@ -541,4 +647,30 @@ class ReportGenerator(Base):
             payload[item[0]] = item[1]
         return self._execute(
             "getCustomGraphData", payload=payload, response_object=None
+        )
+
+    def ProcessUploadedCustomImage(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the processUploadedCustomImage operation on the server.
+
+        processs the uploaded customer image for Cover Pic/Company Logo
+
+        processUploadedCustomImage(Arg2=string, Arg3=string, async_operation=bool)
+        --------------------------------------------------------------------------
+        - Arg2 (str): CoverPic/CompanyLogo
+        - Arg3 (str): name of the file
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "processUploadedCustomImage", payload=payload, response_object=None
         )

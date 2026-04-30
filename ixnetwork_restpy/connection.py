@@ -32,12 +32,6 @@ from io import BufferedReader
 from ixnetwork_restpy.errors import *
 from ixnetwork_restpy.files import Files
 
-if sys.version_info < (3, 8):
-    from importlib_metadata import distribution
-else:
-    from importlib.metadata import distribution
-
-
 try:
     basestring
 except NameError:
@@ -125,15 +119,33 @@ class Connection(object):
                     "log_only_to_file was set to True and log_file_name was not provided, so ignoring the attribute"
                 )
             logging.getLogger(__name__).info("using python version %s" % sys.version)
-            try:
-                logging.getLogger(__name__).info(
-                    "using ixnetwork-restpy version %s"
-                    % distribution("ixnetwork-restpy").version
-                )
-            except Exception as e:
-                logging.getLogger(__name__).warning(
-                    "ixnetwork-restpy not installed using pip, unable to determine version"
-                )
+
+            if sys.version_info < (3, 0):
+                import pkg_resources
+
+                try:
+                    logging.getLogger(__name__).info(
+                        "using ixnetwork-restpy version %s"
+                        % pkg_resources.get_distribution("ixnetwork-restpy").version
+                    )
+                except Exception as e:
+                    logging.getLogger(__name__).warning(
+                        "ixnetwork-restpy not installed using pip, unable to determine version"
+                    )
+            else:
+                if sys.version_info < (3, 8):
+                    from importlib_metadata import distribution
+                else:
+                    from importlib.metadata import distribution
+                try:
+                    logging.getLogger(__name__).info(
+                        "using ixnetwork-restpy version %s"
+                        % distribution("ixnetwork-restpy").version
+                    )
+                except Exception as e:
+                    logging.getLogger(__name__).warning(
+                        "ixnetwork-restpy not installed using pip, unable to determine version"
+                    )
         self._verify_cert = verify_cert
         if self._verify_cert is False:
             self._warn("Verification of certificates is disabled")

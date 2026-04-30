@@ -1,0 +1,453 @@
+# MIT LICENSE
+#
+# Copyright 1997 - 2020 by IXIA Keysight
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"),
+# to deal in the Software without restriction, including without limitation
+# the rights to use, copy, modify, merge, publish, distribute, sublicense,
+# and/or sell copies of the Software, and to permit persons to whom the
+# Software is furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in
+# all copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+# THE SOFTWARE.
+import sys
+from ixnetwork_restpy.base import Base
+from ixnetwork_restpy.files import Files
+
+if sys.version_info >= (3, 5):
+    from typing import List, Any, Union
+
+
+class Pfc(Base):
+    """It signifies the policy feature card.
+    The Pfc class encapsulates a required pfc resource which will be retrieved from the server every time the property is accessed.
+    """
+
+    __slots__ = ()
+    _SDM_NAME = "pfc"
+    _SDM_ATT_MAP = {
+        "EnablePauseFrames": "enablePauseFrames",
+        "FcoePfcIncrement": "fcoePfcIncrement",
+        "FcoePfcQueue": "fcoePfcQueue",
+        "MulticastPfcIncrement": "multicastPfcIncrement",
+        "MulticastPfcQueue": "multicastPfcQueue",
+        "UnicastPfcIncrement": "unicastPfcIncrement",
+        "UnicastPfcQueue": "unicastPfcQueue",
+    }
+    _SDM_ENUM_MAP = {}
+
+    def __init__(self, parent, list_op=False):
+        super(Pfc, self).__init__(parent, list_op)
+
+    @property
+    def EnablePauseFrames(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: If enabled, it pauses the frames of unicast.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["EnablePauseFrames"])
+
+    @EnablePauseFrames.setter
+    def EnablePauseFrames(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["EnablePauseFrames"], value)
+
+    @property
+    def FcoePfcIncrement(self):
+        # type: () -> int
+        """
+        Returns
+        -------
+        - number: It signifies the increment value for policy feature card for FCoE.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["FcoePfcIncrement"])
+
+    @FcoePfcIncrement.setter
+    def FcoePfcIncrement(self, value):
+        # type: (int) -> None
+        self._set_attribute(self._SDM_ATT_MAP["FcoePfcIncrement"], value)
+
+    @property
+    def FcoePfcQueue(self):
+        # type: () -> str
+        """
+        Returns
+        -------
+        - str: It signifies the queue of policy feature card for fibre channel over ethernet.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["FcoePfcQueue"])
+
+    @FcoePfcQueue.setter
+    def FcoePfcQueue(self, value):
+        # type: (str) -> None
+        self._set_attribute(self._SDM_ATT_MAP["FcoePfcQueue"], value)
+
+    @property
+    def MulticastPfcIncrement(self):
+        # type: () -> int
+        """
+        Returns
+        -------
+        - number: It signifies the increment value for PFC for multicast.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["MulticastPfcIncrement"])
+
+    @MulticastPfcIncrement.setter
+    def MulticastPfcIncrement(self, value):
+        # type: (int) -> None
+        self._set_attribute(self._SDM_ATT_MAP["MulticastPfcIncrement"], value)
+
+    @property
+    def MulticastPfcQueue(self):
+        # type: () -> str
+        """
+        Returns
+        -------
+        - str: It signifies the queue value of PFC for unicast.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["MulticastPfcQueue"])
+
+    @MulticastPfcQueue.setter
+    def MulticastPfcQueue(self, value):
+        # type: (str) -> None
+        self._set_attribute(self._SDM_ATT_MAP["MulticastPfcQueue"], value)
+
+    @property
+    def UnicastPfcIncrement(self):
+        # type: () -> int
+        """
+        Returns
+        -------
+        - number: It signifies the increment value for PFC for unicast.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["UnicastPfcIncrement"])
+
+    @UnicastPfcIncrement.setter
+    def UnicastPfcIncrement(self, value):
+        # type: (int) -> None
+        self._set_attribute(self._SDM_ATT_MAP["UnicastPfcIncrement"], value)
+
+    @property
+    def UnicastPfcQueue(self):
+        # type: () -> str
+        """
+        Returns
+        -------
+        - str: It signifies the queue value of PFC for unicast.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["UnicastPfcQueue"])
+
+    @UnicastPfcQueue.setter
+    def UnicastPfcQueue(self, value):
+        # type: (str) -> None
+        self._set_attribute(self._SDM_ATT_MAP["UnicastPfcQueue"], value)
+
+    def update(
+        self,
+        EnablePauseFrames=None,
+        FcoePfcIncrement=None,
+        FcoePfcQueue=None,
+        MulticastPfcIncrement=None,
+        MulticastPfcQueue=None,
+        UnicastPfcIncrement=None,
+        UnicastPfcQueue=None,
+    ):
+        # type: (bool, int, str, int, str, int, str) -> Pfc
+        """Updates pfc resource on the server.
+
+        Args
+        ----
+        - EnablePauseFrames (bool): If enabled, it pauses the frames of unicast.
+        - FcoePfcIncrement (number): It signifies the increment value for policy feature card for FCoE.
+        - FcoePfcQueue (str): It signifies the queue of policy feature card for fibre channel over ethernet.
+        - MulticastPfcIncrement (number): It signifies the increment value for PFC for multicast.
+        - MulticastPfcQueue (str): It signifies the queue value of PFC for unicast.
+        - UnicastPfcIncrement (number): It signifies the increment value for PFC for unicast.
+        - UnicastPfcQueue (str): It signifies the queue value of PFC for unicast.
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def find(
+        self,
+        EnablePauseFrames=None,
+        FcoePfcIncrement=None,
+        FcoePfcQueue=None,
+        MulticastPfcIncrement=None,
+        MulticastPfcQueue=None,
+        UnicastPfcIncrement=None,
+        UnicastPfcQueue=None,
+    ):
+        # type: (bool, int, str, int, str, int, str) -> Pfc
+        """Finds and retrieves pfc resources from the server.
+
+        All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve pfc resources from the server.
+        To retrieve an exact match ensure the parameter value starts with ^ and ends with $
+        By default the find method takes no parameters and will retrieve all pfc resources from the server.
+
+        Args
+        ----
+        - EnablePauseFrames (bool): If enabled, it pauses the frames of unicast.
+        - FcoePfcIncrement (number): It signifies the increment value for policy feature card for FCoE.
+        - FcoePfcQueue (str): It signifies the queue of policy feature card for fibre channel over ethernet.
+        - MulticastPfcIncrement (number): It signifies the increment value for PFC for multicast.
+        - MulticastPfcQueue (str): It signifies the queue value of PFC for unicast.
+        - UnicastPfcIncrement (number): It signifies the increment value for PFC for unicast.
+        - UnicastPfcQueue (str): It signifies the queue value of PFC for unicast.
+
+        Returns
+        -------
+        - self: This instance with matching pfc resources retrieved from the server available through an iterator or index
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._select(self._map_locals(self._SDM_ATT_MAP, locals()))
+
+    def read(self, href):
+        """Retrieves a single instance of pfc data from the server.
+
+        Args
+        ----
+        - href (str): An href to the instance to be retrieved
+
+        Returns
+        -------
+        - self: This instance with the pfc resources from the server available through an iterator or index
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        return self._read(href)
+
+    def Apply(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the apply operation on the server.
+
+        Applies the specified Quick Test.
+
+        apply(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("apply", payload=payload, response_object=None)
+
+    def ApplyAsync(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the applyAsync operation on the server.
+
+        applyAsync(async_operation=bool)
+        --------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("applyAsync", payload=payload, response_object=None)
+
+    def ApplyAsyncResult(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[bool, None]
+        """Executes the applyAsyncResult operation on the server.
+
+        applyAsyncResult(async_operation=bool)bool
+        ------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns bool:
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("applyAsyncResult", payload=payload, response_object=None)
+
+    def ApplyITWizardConfiguration(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the applyITWizardConfiguration operation on the server.
+
+        Applies the specified Quick Test.
+
+        applyITWizardConfiguration(async_operation=bool)
+        ------------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "applyITWizardConfiguration", payload=payload, response_object=None
+        )
+
+    def GenerateReport(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
+        """Executes the generateReport operation on the server.
+
+        Generate a PDF report for the last succesfull test run.
+
+        generateReport(async_operation=bool)string
+        ------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns str: This method is asynchronous and has no return value.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("generateReport", payload=payload, response_object=None)
+
+    def Run(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the run operation on the server.
+
+        Starts the specified Quick Test and waits for its execution to finish.
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        run(async_operation=bool)list
+        -----------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): This method is synchronous and returns the result of the test.
+
+        run(InputParameters=string, async_operation=bool)list
+        -----------------------------------------------------
+        - InputParameters (str): The input arguments of the test.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): This method is synchronous and returns the result of the test.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("run", payload=payload, response_object=None)
+
+    def Start(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the start operation on the server.
+
+        Starts the specified Quick Test.
+
+        The IxNetwork model allows for multiple method Signatures with the same name while python does not.
+
+        start(async_operation=bool)
+        ---------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        start(InputParameters=string, async_operation=bool)
+        ---------------------------------------------------
+        - InputParameters (str): The input arguments of the test.
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("start", payload=payload, response_object=None)
+
+    def Stop(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the stop operation on the server.
+
+        Stops the currently running Quick Test.
+
+        stop(async_operation=bool)
+        --------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stop", payload=payload, response_object=None)
+
+    def WaitForTest(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the waitForTest operation on the server.
+
+        Waits for the execution of the specified Quick Test to be completed.
+
+        waitForTest(async_operation=bool)list
+        -------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str): This method is synchronous and returns the result of the test.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("waitForTest", payload=payload, response_object=None)

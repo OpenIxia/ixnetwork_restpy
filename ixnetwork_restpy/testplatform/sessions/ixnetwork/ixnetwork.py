@@ -832,6 +832,30 @@ class Ixnetwork(Base):
             "fetchColDisplayNamesForProtocol", payload=payload, response_object=None
         )
 
+    def FetchFolderSize(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[int, None]
+        """Executes the fetchFolderSize operation on the server.
+
+        This command fetches size of the folders in IxN Linux API Server (in GB)
+
+        fetchFolderSize(Arg1=enum, async_operation=bool)number
+        ------------------------------------------------------
+        - Arg1 (str(diag | log)):
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns number:
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("fetchFolderSize", payload=payload, response_object=None)
+
     def FetchObjectDetailsInBulk(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
         """Executes the fetchObjectDetailsInBulk operation on the server.
@@ -2189,6 +2213,31 @@ class Ixnetwork(Base):
         for item in kwargs.items():
             payload[item[0]] = item[1]
         return self._execute("import", payload=payload, response_object=None)
+
+    def IsAnyPortRebooting(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
+        """Executes the isAnyPortRebooting operation on the server.
+
+        This command fetches whether any port is rebooting
+
+        isAnyPortRebooting(async_operation=bool)string
+        ----------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns str:
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 1)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "isAnyPortRebooting", payload=payload, response_object=None
+        )
 
     def LoadConfig(self, *args, **kwargs):
         # type: (*Any, **Any) -> None

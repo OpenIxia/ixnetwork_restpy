@@ -29,9 +29,8 @@ if sys.version_info >= (3, 5):
 
 class BgpIPRouteProperty(Base):
     """BGP Non-VPN IPv4/v6 Route Range Properties
-    The BgpIPRouteProperty class encapsulates a list of bgpIPRouteProperty resources that are managed by the user.
+    The BgpIPRouteProperty class encapsulates a list of bgpIPRouteProperty resources that are managed by the system.
     A list of resources can be retrieved from the server using the BgpIPRouteProperty.find() method.
-    The list can be managed by using the BgpIPRouteProperty.add() and BgpIPRouteProperty.remove() methods.
     """
 
     __slots__ = ()
@@ -1722,7 +1721,7 @@ class BgpIPRouteProperty(Base):
         NoOfTlvs=None,
     ):
         # type: (bool, bool, bool, bool, str, int, int, int, int, int, int, int, int, int) -> BgpIPRouteProperty
-        """Adds a new bgpIPRouteProperty resource on the server and adds it to the container.
+        """Adds a new bgpIPRouteProperty resource on the json, only valid with batch add utility
 
         Args
         ----
@@ -1747,19 +1746,9 @@ class BgpIPRouteProperty(Base):
 
         Raises
         ------
-        - ServerError: The server has encountered an uncategorized error condition
+        - Exception: if this function is not being used with config assistance
         """
-        return self._create(self._map_locals(self._SDM_ATT_MAP, locals()))
-
-    def remove(self):
-        """Deletes all the contained bgpIPRouteProperty resources in this instance from the server.
-
-        Raises
-        ------
-        - NotFoundError: The requested resource does not exist on the server
-        - ServerError: The server has encountered an uncategorized error condition
-        """
-        self._delete()
+        return self._add_xpath(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def find(
         self,

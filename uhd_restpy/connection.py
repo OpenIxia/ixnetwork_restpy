@@ -26,13 +26,11 @@ import datetime
 import time
 import json
 import logging
-import pkg_resources
 from requests import Session, request, utils
 from requests.exceptions import ConnectTimeout
 from io import BufferedReader
-from uhd_restpy.errors import *
-from uhd_restpy.files import Files
-
+from ixnetwork_restpy.errors import *
+from ixnetwork_restpy.files import Files
 
 try:
     basestring
@@ -79,6 +77,7 @@ class Connection(object):
         trace="none",
         script_watch=True,
         url_prefix=None,
+        log_only_to_file=False,
     ):
         """Set the connection parameters to a rest server
 
@@ -91,10 +90,19 @@ class Connection(object):
             verify_cert (bool):
             script_watch (bool):
             url_prefix (str): the prefix that needs to added in the rest url
+            log_only_to_file (bool): By default False, if enabled the logs will be redirected to only files and not to the console.
         """
         self.trace = trace
+        # we can only show logs after the logger is initialised , so therefore having a flag to display the warning.
+        display_log_warning = False
+        if log_only_to_file and log_file_name is None:
+            log_only_to_file = False
+            display_log_warning = True
         if len(logging.getLogger(__name__).handlers) == 0:
-            handlers = [logging.StreamHandler(sys.stdout)]
+            handlers = []
+            # only add stdout if the log_only_to_file is not set
+            if not log_only_to_file:
+                handlers = [logging.StreamHandler(sys.stdout)]
             if log_file_name is not None:
                 handlers.append(logging.FileHandler(log_file_name, mode="w"))
             formatter = logging.Formatter(
@@ -105,16 +113,39 @@ class Connection(object):
             for handler in handlers:
                 handler.setFormatter(formatter)
                 logging.getLogger(__name__).addHandler(handler)
-            logging.getLogger(__name__).info("using python version %s" % sys.version)
-            try:
-                logging.getLogger(__name__).info(
-                    "using ixnetwork-restpy version %s"
-                    % pkg_resources.get_distribution("ixnetwork-restpy").version
-                )
-            except Exception as e:
+            # display the log anomaly warning.
+            if display_log_warning:
                 logging.getLogger(__name__).warning(
-                    "ixnetwork-restpy not installed using pip, unable to determine version"
+                    "log_only_to_file was set to True and log_file_name was not provided, so ignoring the attribute"
                 )
+            logging.getLogger(__name__).info("using python version %s" % sys.version)
+
+            if sys.version_info < (3, 0):
+                import pkg_resources
+
+                try:
+                    logging.getLogger(__name__).info(
+                        "using ixnetwork-restpy version %s"
+                        % pkg_resources.get_distribution("ixnetwork-restpy").version
+                    )
+                except Exception as e:
+                    logging.getLogger(__name__).warning(
+                        "ixnetwork-restpy not installed using pip, unable to determine version"
+                    )
+            else:
+                if sys.version_info < (3, 8):
+                    from importlib_metadata import distribution
+                else:
+                    from importlib.metadata import distribution
+                try:
+                    logging.getLogger(__name__).info(
+                        "using ixnetwork-restpy version %s"
+                        % distribution("ixnetwork-restpy").version
+                    )
+                except Exception as e:
+                    logging.getLogger(__name__).warning(
+                        "ixnetwork-restpy not installed using pip, unable to determine version"
+                    )
         self._verify_cert = verify_cert
         if self._verify_cert is False:
             self._warn("Verification of certificates is disabled")

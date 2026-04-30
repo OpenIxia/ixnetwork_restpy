@@ -1,4 +1,8 @@
 # Release Notes
+### April 2026
+* 1.10.0
+  * support for ixnetwork version 26.1.2651.21 (26.1.0)
+  * we are now generating mos the qt nodes (to support qt operations)
 ### December 2025
 * 1.9.0
   * support for ixnetwork version 26.0.2601.6 (26.0.0)
