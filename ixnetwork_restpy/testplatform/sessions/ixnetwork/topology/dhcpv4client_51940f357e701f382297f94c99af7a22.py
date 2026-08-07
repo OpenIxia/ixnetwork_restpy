@@ -101,13 +101,13 @@ class Dhcpv4client(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv4peer_6f0423477064be24e0493341e399bee9.BgpIpv4Peer): An instance of the BgpIpv4Peer class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv4peer_e2fb4c8202e0fb0638da5d5e5e63ca6f.BgpIpv4Peer): An instance of the BgpIpv4Peer class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv4peer_6f0423477064be24e0493341e399bee9 import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv4peer_e2fb4c8202e0fb0638da5d5e5e63ca6f import (
             BgpIpv4Peer,
         )
 
@@ -361,13 +361,13 @@ class Dhcpv4client(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.rocev2_5908e261287b1e6f76aaaf05f5c0a878.Rocev2): An instance of the Rocev2 class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.rocev2_77e05423803b2f40049c9cb67bd2be18.Rocev2): An instance of the Rocev2 class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.rocev2_5908e261287b1e6f76aaaf05f5c0a878 import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.rocev2_77e05423803b2f40049c9cb67bd2be18 import (
             Rocev2,
         )
 

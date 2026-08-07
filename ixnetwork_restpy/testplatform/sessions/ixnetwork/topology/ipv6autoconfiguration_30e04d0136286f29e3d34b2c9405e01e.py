@@ -94,13 +94,13 @@ class Ipv6Autoconfiguration(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv6peer_8b9aa9838ebd53702954aa471913ed1e.BgpIpv6Peer): An instance of the BgpIpv6Peer class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv6peer_a694a7d5a34a173f8506f998534564ea.BgpIpv6Peer): An instance of the BgpIpv6Peer class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv6peer_8b9aa9838ebd53702954aa471913ed1e import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.bgpipv6peer_a694a7d5a34a173f8506f998534564ea import (
             BgpIpv6Peer,
         )
 
@@ -294,13 +294,13 @@ class Ipv6Autoconfiguration(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.roce6v2_3aaac5ab2662e2f15f3454c8e6a4e1bf.Roce6v2): An instance of the Roce6v2 class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.roce6v2_40ec4727a1fb8756316c92c61a1fae58.Roce6v2): An instance of the Roce6v2 class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.roce6v2_3aaac5ab2662e2f15f3454c8e6a4e1bf import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.roce6v2_40ec4727a1fb8756316c92c61a1fae58 import (
             Roce6v2,
         )
 

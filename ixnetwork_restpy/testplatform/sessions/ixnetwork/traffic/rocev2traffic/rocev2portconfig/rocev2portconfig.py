@@ -28,7 +28,7 @@ if sys.version_info >= (3, 5):
 
 
 class RoceV2PortConfig(Base):
-    """RoCEv2 Port Configurations which effects all the RoCEv2 Flowgroups for Tx Port Configuration.
+    """RoCEv2 Port Configurations which affects all the RoCEv2 Flowgroups for Tx Port Configuration.
     The RoceV2PortConfig class encapsulates a list of roceV2PortConfig resources that are managed by the system.
     A list of resources can be retrieved from the server using the RoceV2PortConfig.find() method.
     """

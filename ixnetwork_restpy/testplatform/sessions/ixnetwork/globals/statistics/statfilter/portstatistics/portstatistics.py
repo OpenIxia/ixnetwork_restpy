@@ -84,29 +84,6 @@ class PortStatistics(Base):
         "CaptureFilterUDS4Rate": "captureFilterUDS4Rate",
         "CaptureTriggerUDS3": "captureTriggerUDS3",
         "CaptureTriggerUDS3Rate": "captureTriggerUDS3Rate",
-        "CbfcCFUpdateDropped": "cbfcCFUpdateDropped",
-        "CbfcCFUpdateDroppedRate": "cbfcCFUpdateDroppedRate",
-        "CbfcRxCCUpdateSpacingMax": "cbfcRxCCUpdateSpacingMax",
-        "CbfcRxCCUpdateSpacingMaxError": "cbfcRxCCUpdateSpacingMaxError",
-        "CbfcRxCCUpdateSpacingMaxErrorRate": "cbfcRxCCUpdateSpacingMaxErrorRate",
-        "CbfcRxCCUpdateSpacingMin": "cbfcRxCCUpdateSpacingMin",
-        "CbfcRxCCUpdateSpacingMinError": "cbfcRxCCUpdateSpacingMinError",
-        "CbfcRxCCUpdateSpacingMinErrorRate": "cbfcRxCCUpdateSpacingMinErrorRate",
-        "CbfcRxCCUpdateType1": "cbfcRxCCUpdateType1",
-        "CbfcRxCCUpdateType1Rate": "cbfcRxCCUpdateType1Rate",
-        "CbfcRxCCUpdateType2": "cbfcRxCCUpdateType2",
-        "CbfcRxCCUpdateType2Rate": "cbfcRxCCUpdateType2Rate",
-        "CbfcRxCFUpdateCtlOS": "cbfcRxCFUpdateCtlOS",
-        "CbfcRxCFUpdateCtlOSRate": "cbfcRxCFUpdateCtlOSRate",
-        "CbfcRxCFUpdateCtlOSSpacingError": "cbfcRxCFUpdateCtlOSSpacingError",
-        "CbfcRxCFUpdateCtlOSSpacingErrorRate": "cbfcRxCFUpdateCtlOSSpacingErrorRate",
-        "CbfcRxCFUpdateCtlOSSpacingMin": "cbfcRxCFUpdateCtlOSSpacingMin",
-        "CbfcTxCCUpdateType1": "cbfcTxCCUpdateType1",
-        "CbfcTxCCUpdateType1Rate": "cbfcTxCCUpdateType1Rate",
-        "CbfcTxCCUpdateType2": "cbfcTxCCUpdateType2",
-        "CbfcTxCCUpdateType2Rate": "cbfcTxCCUpdateType2Rate",
-        "CbfcTxCFUpdateCtlOS": "cbfcTxCFUpdateCtlOS",
-        "CbfcTxCFUpdateCtlOSRate": "cbfcTxCFUpdateCtlOSRate",
         "CentralChipTemperatureC": "centralChipTemperatureC",
         "CodeError": "codeError",
         "CodeErrorRate": "codeErrorRate",
@@ -348,23 +325,37 @@ class PortStatistics(Base):
         "LlrACKNACKCtlOSSpacingErrorRate": "llrACKNACKCtlOSSpacingErrorRate",
         "LlrACKNACKCtlOSSpacingMin": "llrACKNACKCtlOSSpacingMin",
         "LlrACKNACKTransmitState": "llrACKNACKTransmitState",
+        "LlrFlushDataAgeTimerExpired": "llrFlushDataAgeTimerExpired",
+        "LlrFlushDataAgeTimerExpiredRate": "llrFlushDataAgeTimerExpiredRate",
+        "LlrFlushMaxReplayCountExpired": "llrFlushMaxReplayCountExpired",
+        "LlrFlushMaxReplayCountExpiredRate": "llrFlushMaxReplayCountExpiredRate",
+        "LlrFlushPCSTimerExpired": "llrFlushPCSTimerExpired",
+        "LlrFlushPCSTimerExpiredRate": "llrFlushPCSTimerExpiredRate",
         "LlrINITCtlOSSpacingError": "llrINITCtlOSSpacingError",
         "LlrINITCtlOSSpacingErrorRate": "llrINITCtlOSSpacingErrorRate",
         "LlrINITCtlOSSpacingMin": "llrINITCtlOSSpacingMin",
         "LlrINITECHOInitSeqMismatch": "llrINITECHOInitSeqMismatch",
         "LlrINITECHOInitSeqMismatchRate": "llrINITECHOInitSeqMismatchRate",
+        "LlrInitComplete": "llrInitComplete",
+        "LlrInitCompleteRate": "llrInitCompleteRate",
         "LlrModeLocal": "llrModeLocal",
         "LlrModeRemote": "llrModeRemote",
-        "LlrReplayedByte": "llrReplayedByte",
-        "LlrReplayedByteRate": "llrReplayedByteRate",
-        "LlrReplayedPacket": "llrReplayedPacket",
-        "LlrReplayedPacketRate": "llrReplayedPacketRate",
+        "LlrReinitFromFlush": "llrReinitFromFlush",
+        "LlrReinitFromFlushRate": "llrReinitFromFlushRate",
+        "LlrReplayFrame": "llrReplayFrame",
+        "LlrReplayFrameRate": "llrReplayFrameRate",
+        "LlrReplayTimerExpired": "llrReplayTimerExpired",
+        "LlrReplayTimerExpiredRate": "llrReplayTimerExpiredRate",
+        "LlrReplayedNACK": "llrReplayedNACK",
+        "LlrReplayedNACKRate": "llrReplayedNACKRate",
         "LlrRxACKCtlOS": "llrRxACKCtlOS",
         "LlrRxACKCtlOSDropped": "llrRxACKCtlOSDropped",
         "LlrRxACKCtlOSDroppedRate": "llrRxACKCtlOSDroppedRate",
         "LlrRxACKCtlOSRate": "llrRxACKCtlOSRate",
         "LlrRxACKNACKSeqError": "llrRxACKNACKSeqError",
         "LlrRxACKNACKSeqErrorRate": "llrRxACKNACKSeqErrorRate",
+        "LlrRxACKSequence": "llrRxACKSequence",
+        "LlrRxACKTimestamp": "llrRxACKTimestamp",
         "LlrRxBad": "llrRxBad",
         "LlrRxBadRate": "llrRxBadRate",
         "LlrRxDuplicateSeq": "llrRxDuplicateSeq",
@@ -383,12 +374,18 @@ class PortStatistics(Base):
         "LlrRxINITECHOCtlOSDropped": "llrRxINITECHOCtlOSDropped",
         "LlrRxINITECHOCtlOSDroppedRate": "llrRxINITECHOCtlOSDroppedRate",
         "LlrRxINITECHOCtlOSRate": "llrRxINITECHOCtlOSRate",
+        "LlrRxINITECHOSequence": "llrRxINITECHOSequence",
+        "LlrRxINITECHOTimestamp": "llrRxINITECHOTimestamp",
+        "LlrRxINITSequence": "llrRxINITSequence",
+        "LlrRxINITTimestamp": "llrRxINITTimestamp",
         "LlrRxMissingSeq": "llrRxMissingSeq",
         "LlrRxMissingSeqRate": "llrRxMissingSeqRate",
         "LlrRxNACKCtlOS": "llrRxNACKCtlOS",
         "LlrRxNACKCtlOSDropped": "llrRxNACKCtlOSDropped",
         "LlrRxNACKCtlOSDroppedRate": "llrRxNACKCtlOSDroppedRate",
         "LlrRxNACKCtlOSRate": "llrRxNACKCtlOSRate",
+        "LlrRxNACKSequence": "llrRxNACKSequence",
+        "LlrRxNACKTimestamp": "llrRxNACKTimestamp",
         "LlrRxNextSeq": "llrRxNextSeq",
         "LlrRxOK": "llrRxOK",
         "LlrRxOKRate": "llrRxOKRate",
@@ -398,15 +395,27 @@ class PortStatistics(Base):
         "LlrRxReplayRate": "llrRxReplayRate",
         "LlrTransmitState": "llrTransmitState",
         "LlrTxACKCtlOS": "llrTxACKCtlOS",
+        "LlrTxACKCtlOSDropped": "llrTxACKCtlOSDropped",
+        "LlrTxACKCtlOSDroppedRate": "llrTxACKCtlOSDroppedRate",
         "LlrTxACKCtlOSRate": "llrTxACKCtlOSRate",
+        "LlrTxACKLastSeq": "llrTxACKLastSeq",
         "LlrTxDiscard": "llrTxDiscard",
         "LlrTxDiscardRate": "llrTxDiscardRate",
         "LlrTxINITCtlOS": "llrTxINITCtlOS",
+        "LlrTxINITCtlOSDropped": "llrTxINITCtlOSDropped",
+        "LlrTxINITCtlOSDroppedRate": "llrTxINITCtlOSDroppedRate",
         "LlrTxINITCtlOSRate": "llrTxINITCtlOSRate",
         "LlrTxINITECHOCtlOS": "llrTxINITECHOCtlOS",
+        "LlrTxINITECHOCtlOSDropped": "llrTxINITECHOCtlOSDropped",
+        "LlrTxINITECHOCtlOSDroppedRate": "llrTxINITECHOCtlOSDroppedRate",
         "LlrTxINITECHOCtlOSRate": "llrTxINITECHOCtlOSRate",
+        "LlrTxINITECHOLastSeq": "llrTxINITECHOLastSeq",
+        "LlrTxINITLastSeq": "llrTxINITLastSeq",
         "LlrTxNACKCtlOS": "llrTxNACKCtlOS",
+        "LlrTxNACKCtlOSDropped": "llrTxNACKCtlOSDropped",
+        "LlrTxNACKCtlOSDroppedRate": "llrTxNACKCtlOSDroppedRate",
         "LlrTxNACKCtlOSRate": "llrTxNACKCtlOSRate",
+        "LlrTxNACKLastSeq": "llrTxNACKLastSeq",
         "LlrTxOK": "llrTxOK",
         "LlrTxOKRate": "llrTxOKRate",
         "LlrTxOutstandingSeq": "llrTxOutstandingSeq",
@@ -415,7 +424,13 @@ class PortStatistics(Base):
         "LlrTxPoisonedRate": "llrTxPoisonedRate",
         "LlrTxReplayEvent": "llrTxReplayEvent",
         "LlrTxReplayEventRate": "llrTxReplayEventRate",
+        "LlrTxReplayedBytes": "llrTxReplayedBytes",
+        "LlrTxReplayedBytesRate": "llrTxReplayedBytesRate",
+        "LlrTxReplayedFrames": "llrTxReplayedFrames",
+        "LlrTxReplayedFramesRate": "llrTxReplayedFramesRate",
         "LlrTxSeq": "llrTxSeq",
+        "LlrWindowError": "llrWindowError",
+        "LlrWindowErrorRate": "llrWindowErrorRate",
         "LocalFaults": "localFaults",
         "LocalOrderedSetsReceived": "localOrderedSetsReceived",
         "LocalOrderedSetsReceivedRate": "localOrderedSetsReceivedRate",
@@ -589,7 +604,6 @@ class PortStatistics(Base):
         "PrbsFramesReceivedRate": "prbsFramesReceivedRate",
         "PrbsFramesWithHeaderError": "prbsFramesWithHeaderError",
         "PrbsFramesWithHeaderErrorRate": "prbsFramesWithHeaderErrorRate",
-        "PreFECBitErrorRate": "preFECBitErrorRate",
         "PreFECBitErrorRatio": "preFECBitErrorRatio",
         "ProtectedByteRx": "protectedByteRx",
         "ProtectedByteTx": "protectedByteTx",
@@ -756,6 +770,8 @@ class PortStatistics(Base):
         "RxRoCEOpcodeErrorCountRate": "rxRoCEOpcodeErrorCountRate",
         "RxRoCEPrePFCCNPFrameCount": "rxRoCEPrePFCCNPFrameCount",
         "RxRoCEPrePFCCNPFrameCountRate": "rxRoCEPrePFCCNPFrameCountRate",
+        "RxRoCERNRNAKFrameCount": "rxRoCERNRNAKFrameCount",
+        "RxRoCERNRNAKFrameCountRate": "rxRoCERNRNAKFrameCountRate",
         "RxRoCEiCRCErrorCountRate": "rxRoCEiCRCErrorCountRate",
         "RxSharedStat1": "rxSharedStat1",
         "RxSharedStat1Rate": "rxSharedStat1Rate",
@@ -777,6 +793,7 @@ class PortStatistics(Base):
         "ScheduledTxRoCECNPFrameCountRate": "scheduledTxRoCECNPFrameCountRate",
         "ScheduledTxRoCENAKFrameCount": "scheduledTxRoCENAKFrameCount",
         "ScheduledTxRoCENAKFrameCountRate": "scheduledTxRoCENAKFrameCountRate",
+        "ScheduledTxRoCEPauseFrameCountRate": "scheduledTxRoCEPauseFrameCountRate",
         "SchedulerChipTemperatureC": "schedulerChipTemperatureC",
         "SectionBIPB1": "sectionBIPB1",
         "SectionBIPB1Rate": "sectionBIPB1Rate",
@@ -865,8 +882,8 @@ class PortStatistics(Base):
         "UeCtlOSSpacingError": "ueCtlOSSpacingError",
         "UeCtlOSSpacingErrorRate": "ueCtlOSSpacingErrorRate",
         "UeCtlOSSpacingMin": "ueCtlOSSpacingMin",
-        "UeRxCtlOSFrameHeaderError": "ueRxCtlOSFrameHeaderError",
         "UeRxCtlOSFrameHeaderErrorRate": "ueRxCtlOSFrameHeaderErrorRate",
+        "UeRxCtlOSFrameHeaderSpacingError": "ueRxCtlOSFrameHeaderSpacingError",
         "UeRxCtlOSIntraFrameSpacingError": "ueRxCtlOSIntraFrameSpacingError",
         "UeRxCtlOSIntraFrameSpacingErrorRate": "ueRxCtlOSIntraFrameSpacingErrorRate",
         "UnavailableSeconds": "unavailableSeconds",
@@ -1641,363 +1658,6 @@ class PortStatistics(Base):
     def CaptureTriggerUDS3Rate(self, value):
         # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP["CaptureTriggerUDS3Rate"], value)
-
-    @property
-    def CbfcCFUpdateDropped(self):
-        # type: () -> bool
-        """
-        Returns
-        -------
-        - bool: CBFC CF_Update Dropped
-        """
-        return self._get_attribute(self._SDM_ATT_MAP["CbfcCFUpdateDropped"])
-
-    @CbfcCFUpdateDropped.setter
-    def CbfcCFUpdateDropped(self, value):
-        # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP["CbfcCFUpdateDropped"], value)
-
-    @property
-    def CbfcCFUpdateDroppedRate(self):
-        # type: () -> bool
-        """
-        Returns
-        -------
-        - bool: CBFC CF_Update Dropped Rate
-        """
-        return self._get_attribute(self._SDM_ATT_MAP["CbfcCFUpdateDroppedRate"])
-
-    @CbfcCFUpdateDroppedRate.setter
-    def CbfcCFUpdateDroppedRate(self, value):
-        # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP["CbfcCFUpdateDroppedRate"], value)
-
-    @property
-    def CbfcRxCCUpdateSpacingMax(self):
-        # type: () -> bool
-        """
-        Returns
-        -------
-        - bool: CBFC Rx CC_Update Spacing Max
-        """
-        return self._get_attribute(self._SDM_ATT_MAP["CbfcRxCCUpdateSpacingMax"])
-
-    @CbfcRxCCUpdateSpacingMax.setter
-    def CbfcRxCCUpdateSpacingMax(self, value):
-        # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP["CbfcRxCCUpdateSpacingMax"], value)
-
-    @property
-    def CbfcRxCCUpdateSpacingMaxError(self):
-        # type: () -> bool
-        """
-        Returns
-        -------
-        - bool: CBFC Rx CC_Update Spacing Max Error
-        """
-        return self._get_attribute(self._SDM_ATT_MAP["CbfcRxCCUpdateSpacingMaxError"])
-
-    @CbfcRxCCUpdateSpacingMaxError.setter
-    def CbfcRxCCUpdateSpacingMaxError(self, value):
-        # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP["CbfcRxCCUpdateSpacingMaxError"], value)
-
-    @property
-    def CbfcRxCCUpdateSpacingMaxErrorRate(self):
-        # type: () -> bool
-        """
-        Returns
-        -------
-        - bool: CBFC Rx CC_Update Spacing Max Error Rate
-        """
-        return self._get_attribute(
-            self._SDM_ATT_MAP["CbfcRxCCUpdateSpacingMaxErrorRate"]
-        )
-
-    @CbfcRxCCUpdateSpacingMaxErrorRate.setter
-    def CbfcRxCCUpdateSpacingMaxErrorRate(self, value):
-        # type: (bool) -> None
-        self._set_attribute(
-            self._SDM_ATT_MAP["CbfcRxCCUpdateSpacingMaxErrorRate"], value
-        )
-
-    @property
-    def CbfcRxCCUpdateSpacingMin(self):
-        # type: () -> bool
-        """
-        Returns
-        -------
-        - bool: CBFC Rx CC_Update Spacing Min
-        """
-        return self._get_attribute(self._SDM_ATT_MAP["CbfcRxCCUpdateSpacingMin"])
-
-    @CbfcRxCCUpdateSpacingMin.setter
-    def CbfcRxCCUpdateSpacingMin(self, value):
-        # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP["CbfcRxCCUpdateSpacingMin"], value)
-
-    @property
-    def CbfcRxCCUpdateSpacingMinError(self):
-        # type: () -> bool
-        """
-        Returns
-        -------
-        - bool: CBFC Rx CC_Update Spacing Min Error
-        """
-        return self._get_attribute(self._SDM_ATT_MAP["CbfcRxCCUpdateSpacingMinError"])
-
-    @CbfcRxCCUpdateSpacingMinError.setter
-    def CbfcRxCCUpdateSpacingMinError(self, value):
-        # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP["CbfcRxCCUpdateSpacingMinError"], value)
-
-    @property
-    def CbfcRxCCUpdateSpacingMinErrorRate(self):
-        # type: () -> bool
-        """
-        Returns
-        -------
-        - bool: CBFC Rx CC_Update Spacing Min Error Rate
-        """
-        return self._get_attribute(
-            self._SDM_ATT_MAP["CbfcRxCCUpdateSpacingMinErrorRate"]
-        )
-
-    @CbfcRxCCUpdateSpacingMinErrorRate.setter
-    def CbfcRxCCUpdateSpacingMinErrorRate(self, value):
-        # type: (bool) -> None
-        self._set_attribute(
-            self._SDM_ATT_MAP["CbfcRxCCUpdateSpacingMinErrorRate"], value
-        )
-
-    @property
-    def CbfcRxCCUpdateType1(self):
-        # type: () -> bool
-        """
-        Returns
-        -------
-        - bool: CBFC Rx CC_Update Type 1
-        """
-        return self._get_attribute(self._SDM_ATT_MAP["CbfcRxCCUpdateType1"])
-
-    @CbfcRxCCUpdateType1.setter
-    def CbfcRxCCUpdateType1(self, value):
-        # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP["CbfcRxCCUpdateType1"], value)
-
-    @property
-    def CbfcRxCCUpdateType1Rate(self):
-        # type: () -> bool
-        """
-        Returns
-        -------
-        - bool: CBFC Rx CC_Update Type 1 Rate
-        """
-        return self._get_attribute(self._SDM_ATT_MAP["CbfcRxCCUpdateType1Rate"])
-
-    @CbfcRxCCUpdateType1Rate.setter
-    def CbfcRxCCUpdateType1Rate(self, value):
-        # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP["CbfcRxCCUpdateType1Rate"], value)
-
-    @property
-    def CbfcRxCCUpdateType2(self):
-        # type: () -> bool
-        """
-        Returns
-        -------
-        - bool: CBFC Rx CC_Update Type 2
-        """
-        return self._get_attribute(self._SDM_ATT_MAP["CbfcRxCCUpdateType2"])
-
-    @CbfcRxCCUpdateType2.setter
-    def CbfcRxCCUpdateType2(self, value):
-        # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP["CbfcRxCCUpdateType2"], value)
-
-    @property
-    def CbfcRxCCUpdateType2Rate(self):
-        # type: () -> bool
-        """
-        Returns
-        -------
-        - bool: CBFC Rx CC_Update Type 2 Rate
-        """
-        return self._get_attribute(self._SDM_ATT_MAP["CbfcRxCCUpdateType2Rate"])
-
-    @CbfcRxCCUpdateType2Rate.setter
-    def CbfcRxCCUpdateType2Rate(self, value):
-        # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP["CbfcRxCCUpdateType2Rate"], value)
-
-    @property
-    def CbfcRxCFUpdateCtlOS(self):
-        # type: () -> bool
-        """
-        Returns
-        -------
-        - bool: CBFC Rx CF_Update CtlOS
-        """
-        return self._get_attribute(self._SDM_ATT_MAP["CbfcRxCFUpdateCtlOS"])
-
-    @CbfcRxCFUpdateCtlOS.setter
-    def CbfcRxCFUpdateCtlOS(self, value):
-        # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP["CbfcRxCFUpdateCtlOS"], value)
-
-    @property
-    def CbfcRxCFUpdateCtlOSRate(self):
-        # type: () -> bool
-        """
-        Returns
-        -------
-        - bool: CBFC Rx CF_Update CtlOS Rate
-        """
-        return self._get_attribute(self._SDM_ATT_MAP["CbfcRxCFUpdateCtlOSRate"])
-
-    @CbfcRxCFUpdateCtlOSRate.setter
-    def CbfcRxCFUpdateCtlOSRate(self, value):
-        # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP["CbfcRxCFUpdateCtlOSRate"], value)
-
-    @property
-    def CbfcRxCFUpdateCtlOSSpacingError(self):
-        # type: () -> bool
-        """
-        Returns
-        -------
-        - bool: CBFC Rx CF_Update CtlOS Spacing Error
-        """
-        return self._get_attribute(self._SDM_ATT_MAP["CbfcRxCFUpdateCtlOSSpacingError"])
-
-    @CbfcRxCFUpdateCtlOSSpacingError.setter
-    def CbfcRxCFUpdateCtlOSSpacingError(self, value):
-        # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP["CbfcRxCFUpdateCtlOSSpacingError"], value)
-
-    @property
-    def CbfcRxCFUpdateCtlOSSpacingErrorRate(self):
-        # type: () -> bool
-        """
-        Returns
-        -------
-        - bool: CBFC Rx CF_Update CtlOS Spacing Error Rate
-        """
-        return self._get_attribute(
-            self._SDM_ATT_MAP["CbfcRxCFUpdateCtlOSSpacingErrorRate"]
-        )
-
-    @CbfcRxCFUpdateCtlOSSpacingErrorRate.setter
-    def CbfcRxCFUpdateCtlOSSpacingErrorRate(self, value):
-        # type: (bool) -> None
-        self._set_attribute(
-            self._SDM_ATT_MAP["CbfcRxCFUpdateCtlOSSpacingErrorRate"], value
-        )
-
-    @property
-    def CbfcRxCFUpdateCtlOSSpacingMin(self):
-        # type: () -> bool
-        """
-        Returns
-        -------
-        - bool: CBFC Rx CF_Update CtlOS Spacing Min
-        """
-        return self._get_attribute(self._SDM_ATT_MAP["CbfcRxCFUpdateCtlOSSpacingMin"])
-
-    @CbfcRxCFUpdateCtlOSSpacingMin.setter
-    def CbfcRxCFUpdateCtlOSSpacingMin(self, value):
-        # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP["CbfcRxCFUpdateCtlOSSpacingMin"], value)
-
-    @property
-    def CbfcTxCCUpdateType1(self):
-        # type: () -> bool
-        """
-        Returns
-        -------
-        - bool: CBFC Tx CC_Update Type 1
-        """
-        return self._get_attribute(self._SDM_ATT_MAP["CbfcTxCCUpdateType1"])
-
-    @CbfcTxCCUpdateType1.setter
-    def CbfcTxCCUpdateType1(self, value):
-        # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP["CbfcTxCCUpdateType1"], value)
-
-    @property
-    def CbfcTxCCUpdateType1Rate(self):
-        # type: () -> bool
-        """
-        Returns
-        -------
-        - bool: CBFC Tx CC_Update Type 1 Rate
-        """
-        return self._get_attribute(self._SDM_ATT_MAP["CbfcTxCCUpdateType1Rate"])
-
-    @CbfcTxCCUpdateType1Rate.setter
-    def CbfcTxCCUpdateType1Rate(self, value):
-        # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP["CbfcTxCCUpdateType1Rate"], value)
-
-    @property
-    def CbfcTxCCUpdateType2(self):
-        # type: () -> bool
-        """
-        Returns
-        -------
-        - bool: CBFC Tx CC_Update Type 2
-        """
-        return self._get_attribute(self._SDM_ATT_MAP["CbfcTxCCUpdateType2"])
-
-    @CbfcTxCCUpdateType2.setter
-    def CbfcTxCCUpdateType2(self, value):
-        # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP["CbfcTxCCUpdateType2"], value)
-
-    @property
-    def CbfcTxCCUpdateType2Rate(self):
-        # type: () -> bool
-        """
-        Returns
-        -------
-        - bool: CBFC Tx CC_Update Type 2 Rate
-        """
-        return self._get_attribute(self._SDM_ATT_MAP["CbfcTxCCUpdateType2Rate"])
-
-    @CbfcTxCCUpdateType2Rate.setter
-    def CbfcTxCCUpdateType2Rate(self, value):
-        # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP["CbfcTxCCUpdateType2Rate"], value)
-
-    @property
-    def CbfcTxCFUpdateCtlOS(self):
-        # type: () -> bool
-        """
-        Returns
-        -------
-        - bool: CBFC Tx CF_Update CtlOS
-        """
-        return self._get_attribute(self._SDM_ATT_MAP["CbfcTxCFUpdateCtlOS"])
-
-    @CbfcTxCFUpdateCtlOS.setter
-    def CbfcTxCFUpdateCtlOS(self, value):
-        # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP["CbfcTxCFUpdateCtlOS"], value)
-
-    @property
-    def CbfcTxCFUpdateCtlOSRate(self):
-        # type: () -> bool
-        """
-        Returns
-        -------
-        - bool: CBFC Tx CF_Update CtlOS Rate
-        """
-        return self._get_attribute(self._SDM_ATT_MAP["CbfcTxCFUpdateCtlOSRate"])
-
-    @CbfcTxCFUpdateCtlOSRate.setter
-    def CbfcTxCFUpdateCtlOSRate(self, value):
-        # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP["CbfcTxCFUpdateCtlOSRate"], value)
 
     @property
     def CentralChipTemperatureC(self):
@@ -5675,6 +5335,100 @@ class PortStatistics(Base):
         self._set_attribute(self._SDM_ATT_MAP["LlrACKNACKTransmitState"], value)
 
     @property
+    def LlrFlushDataAgeTimerExpired(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: LLR Flush Data Age Timer Expired
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["LlrFlushDataAgeTimerExpired"])
+
+    @LlrFlushDataAgeTimerExpired.setter
+    def LlrFlushDataAgeTimerExpired(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["LlrFlushDataAgeTimerExpired"], value)
+
+    @property
+    def LlrFlushDataAgeTimerExpiredRate(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: LLR Flush Data Age Timer Expired Rate
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["LlrFlushDataAgeTimerExpiredRate"])
+
+    @LlrFlushDataAgeTimerExpiredRate.setter
+    def LlrFlushDataAgeTimerExpiredRate(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["LlrFlushDataAgeTimerExpiredRate"], value)
+
+    @property
+    def LlrFlushMaxReplayCountExpired(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: LLR Flush Max Replay Count Expired
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["LlrFlushMaxReplayCountExpired"])
+
+    @LlrFlushMaxReplayCountExpired.setter
+    def LlrFlushMaxReplayCountExpired(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["LlrFlushMaxReplayCountExpired"], value)
+
+    @property
+    def LlrFlushMaxReplayCountExpiredRate(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: LLR Flush Max Replay Count Expired Rate
+        """
+        return self._get_attribute(
+            self._SDM_ATT_MAP["LlrFlushMaxReplayCountExpiredRate"]
+        )
+
+    @LlrFlushMaxReplayCountExpiredRate.setter
+    def LlrFlushMaxReplayCountExpiredRate(self, value):
+        # type: (bool) -> None
+        self._set_attribute(
+            self._SDM_ATT_MAP["LlrFlushMaxReplayCountExpiredRate"], value
+        )
+
+    @property
+    def LlrFlushPCSTimerExpired(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: LLR Flush PCS Timer Expired
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["LlrFlushPCSTimerExpired"])
+
+    @LlrFlushPCSTimerExpired.setter
+    def LlrFlushPCSTimerExpired(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["LlrFlushPCSTimerExpired"], value)
+
+    @property
+    def LlrFlushPCSTimerExpiredRate(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: LLR Flush PCS Timer Expired Rate
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["LlrFlushPCSTimerExpiredRate"])
+
+    @LlrFlushPCSTimerExpiredRate.setter
+    def LlrFlushPCSTimerExpiredRate(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["LlrFlushPCSTimerExpiredRate"], value)
+
+    @property
     def LlrINITCtlOSSpacingError(self):
         # type: () -> bool
         """
@@ -5750,6 +5504,36 @@ class PortStatistics(Base):
         self._set_attribute(self._SDM_ATT_MAP["LlrINITECHOInitSeqMismatchRate"], value)
 
     @property
+    def LlrInitComplete(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: LLR Init Complete
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["LlrInitComplete"])
+
+    @LlrInitComplete.setter
+    def LlrInitComplete(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["LlrInitComplete"], value)
+
+    @property
+    def LlrInitCompleteRate(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: LLR Init Complete Rate
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["LlrInitCompleteRate"])
+
+    @LlrInitCompleteRate.setter
+    def LlrInitCompleteRate(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["LlrInitCompleteRate"], value)
+
+    @property
     def LlrModeLocal(self):
         # type: () -> bool
         """
@@ -5780,64 +5564,124 @@ class PortStatistics(Base):
         self._set_attribute(self._SDM_ATT_MAP["LlrModeRemote"], value)
 
     @property
-    def LlrReplayedByte(self):
+    def LlrReinitFromFlush(self):
         # type: () -> bool
         """
         Returns
         -------
-        - bool: LLR Replayed Byte
+        - bool: LLR Reinit From Flush
         """
-        return self._get_attribute(self._SDM_ATT_MAP["LlrReplayedByte"])
+        return self._get_attribute(self._SDM_ATT_MAP["LlrReinitFromFlush"])
 
-    @LlrReplayedByte.setter
-    def LlrReplayedByte(self, value):
+    @LlrReinitFromFlush.setter
+    def LlrReinitFromFlush(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP["LlrReplayedByte"], value)
+        self._set_attribute(self._SDM_ATT_MAP["LlrReinitFromFlush"], value)
 
     @property
-    def LlrReplayedByteRate(self):
+    def LlrReinitFromFlushRate(self):
         # type: () -> bool
         """
         Returns
         -------
-        - bool: LLR Replayed Byte Rate
+        - bool: LLR Reinit From Flush Rate
         """
-        return self._get_attribute(self._SDM_ATT_MAP["LlrReplayedByteRate"])
+        return self._get_attribute(self._SDM_ATT_MAP["LlrReinitFromFlushRate"])
 
-    @LlrReplayedByteRate.setter
-    def LlrReplayedByteRate(self, value):
+    @LlrReinitFromFlushRate.setter
+    def LlrReinitFromFlushRate(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP["LlrReplayedByteRate"], value)
+        self._set_attribute(self._SDM_ATT_MAP["LlrReinitFromFlushRate"], value)
 
     @property
-    def LlrReplayedPacket(self):
+    def LlrReplayFrame(self):
         # type: () -> bool
         """
         Returns
         -------
-        - bool: LLR Replayed Packet
+        - bool: LLR Replay Frame
         """
-        return self._get_attribute(self._SDM_ATT_MAP["LlrReplayedPacket"])
+        return self._get_attribute(self._SDM_ATT_MAP["LlrReplayFrame"])
 
-    @LlrReplayedPacket.setter
-    def LlrReplayedPacket(self, value):
+    @LlrReplayFrame.setter
+    def LlrReplayFrame(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP["LlrReplayedPacket"], value)
+        self._set_attribute(self._SDM_ATT_MAP["LlrReplayFrame"], value)
 
     @property
-    def LlrReplayedPacketRate(self):
+    def LlrReplayFrameRate(self):
         # type: () -> bool
         """
         Returns
         -------
-        - bool: LLR Replayed Packet Rate
+        - bool: LLR Replay Frame Rate
         """
-        return self._get_attribute(self._SDM_ATT_MAP["LlrReplayedPacketRate"])
+        return self._get_attribute(self._SDM_ATT_MAP["LlrReplayFrameRate"])
 
-    @LlrReplayedPacketRate.setter
-    def LlrReplayedPacketRate(self, value):
+    @LlrReplayFrameRate.setter
+    def LlrReplayFrameRate(self, value):
         # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP["LlrReplayedPacketRate"], value)
+        self._set_attribute(self._SDM_ATT_MAP["LlrReplayFrameRate"], value)
+
+    @property
+    def LlrReplayTimerExpired(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: LLR Replay Timer Expired
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["LlrReplayTimerExpired"])
+
+    @LlrReplayTimerExpired.setter
+    def LlrReplayTimerExpired(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["LlrReplayTimerExpired"], value)
+
+    @property
+    def LlrReplayTimerExpiredRate(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: LLR Replay Timer Expired Rate
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["LlrReplayTimerExpiredRate"])
+
+    @LlrReplayTimerExpiredRate.setter
+    def LlrReplayTimerExpiredRate(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["LlrReplayTimerExpiredRate"], value)
+
+    @property
+    def LlrReplayedNACK(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: LLR Replayed NACK
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["LlrReplayedNACK"])
+
+    @LlrReplayedNACK.setter
+    def LlrReplayedNACK(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["LlrReplayedNACK"], value)
+
+    @property
+    def LlrReplayedNACKRate(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: LLR Replayed NACK Rate
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["LlrReplayedNACKRate"])
+
+    @LlrReplayedNACKRate.setter
+    def LlrReplayedNACKRate(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["LlrReplayedNACKRate"], value)
 
     @property
     def LlrRxACKCtlOS(self):
@@ -5928,6 +5772,36 @@ class PortStatistics(Base):
     def LlrRxACKNACKSeqErrorRate(self, value):
         # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP["LlrRxACKNACKSeqErrorRate"], value)
+
+    @property
+    def LlrRxACKSequence(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: LLR Rx ACK Sequence
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["LlrRxACKSequence"])
+
+    @LlrRxACKSequence.setter
+    def LlrRxACKSequence(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["LlrRxACKSequence"], value)
+
+    @property
+    def LlrRxACKTimestamp(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: LLR Rx ACK Timestamp
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["LlrRxACKTimestamp"])
+
+    @LlrRxACKTimestamp.setter
+    def LlrRxACKTimestamp(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["LlrRxACKTimestamp"], value)
 
     @property
     def LlrRxBad(self):
@@ -6200,6 +6074,66 @@ class PortStatistics(Base):
         self._set_attribute(self._SDM_ATT_MAP["LlrRxINITECHOCtlOSRate"], value)
 
     @property
+    def LlrRxINITECHOSequence(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: LLR Rx INIT_ECHO Sequence
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["LlrRxINITECHOSequence"])
+
+    @LlrRxINITECHOSequence.setter
+    def LlrRxINITECHOSequence(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["LlrRxINITECHOSequence"], value)
+
+    @property
+    def LlrRxINITECHOTimestamp(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: LLR Rx INIT_ECHO Timestamp
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["LlrRxINITECHOTimestamp"])
+
+    @LlrRxINITECHOTimestamp.setter
+    def LlrRxINITECHOTimestamp(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["LlrRxINITECHOTimestamp"], value)
+
+    @property
+    def LlrRxINITSequence(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: LLR Rx INIT Sequence
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["LlrRxINITSequence"])
+
+    @LlrRxINITSequence.setter
+    def LlrRxINITSequence(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["LlrRxINITSequence"], value)
+
+    @property
+    def LlrRxINITTimestamp(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: LLR Rx INIT Timestamp
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["LlrRxINITTimestamp"])
+
+    @LlrRxINITTimestamp.setter
+    def LlrRxINITTimestamp(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["LlrRxINITTimestamp"], value)
+
+    @property
     def LlrRxMissingSeq(self):
         # type: () -> bool
         """
@@ -6288,6 +6222,36 @@ class PortStatistics(Base):
     def LlrRxNACKCtlOSRate(self, value):
         # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP["LlrRxNACKCtlOSRate"], value)
+
+    @property
+    def LlrRxNACKSequence(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: LLR Rx NACK Sequence
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["LlrRxNACKSequence"])
+
+    @LlrRxNACKSequence.setter
+    def LlrRxNACKSequence(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["LlrRxNACKSequence"], value)
+
+    @property
+    def LlrRxNACKTimestamp(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: LLR Rx NACK Timestamp
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["LlrRxNACKTimestamp"])
+
+    @LlrRxNACKTimestamp.setter
+    def LlrRxNACKTimestamp(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["LlrRxNACKTimestamp"], value)
 
     @property
     def LlrRxNextSeq(self):
@@ -6425,6 +6389,36 @@ class PortStatistics(Base):
         self._set_attribute(self._SDM_ATT_MAP["LlrTxACKCtlOS"], value)
 
     @property
+    def LlrTxACKCtlOSDropped(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: LLR Tx ACK CtlOS Dropped
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["LlrTxACKCtlOSDropped"])
+
+    @LlrTxACKCtlOSDropped.setter
+    def LlrTxACKCtlOSDropped(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["LlrTxACKCtlOSDropped"], value)
+
+    @property
+    def LlrTxACKCtlOSDroppedRate(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: LLR Tx ACK CtlOS Dropped Rate
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["LlrTxACKCtlOSDroppedRate"])
+
+    @LlrTxACKCtlOSDroppedRate.setter
+    def LlrTxACKCtlOSDroppedRate(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["LlrTxACKCtlOSDroppedRate"], value)
+
+    @property
     def LlrTxACKCtlOSRate(self):
         # type: () -> bool
         """
@@ -6438,6 +6432,21 @@ class PortStatistics(Base):
     def LlrTxACKCtlOSRate(self, value):
         # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP["LlrTxACKCtlOSRate"], value)
+
+    @property
+    def LlrTxACKLastSeq(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: LLR Tx ACK Last Seq
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["LlrTxACKLastSeq"])
+
+    @LlrTxACKLastSeq.setter
+    def LlrTxACKLastSeq(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["LlrTxACKLastSeq"], value)
 
     @property
     def LlrTxDiscard(self):
@@ -6485,6 +6494,36 @@ class PortStatistics(Base):
         self._set_attribute(self._SDM_ATT_MAP["LlrTxINITCtlOS"], value)
 
     @property
+    def LlrTxINITCtlOSDropped(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: LLR Tx INIT CtlOS Dropped
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["LlrTxINITCtlOSDropped"])
+
+    @LlrTxINITCtlOSDropped.setter
+    def LlrTxINITCtlOSDropped(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["LlrTxINITCtlOSDropped"], value)
+
+    @property
+    def LlrTxINITCtlOSDroppedRate(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: LLR Tx INIT CtlOS Dropped Rate
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["LlrTxINITCtlOSDroppedRate"])
+
+    @LlrTxINITCtlOSDroppedRate.setter
+    def LlrTxINITCtlOSDroppedRate(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["LlrTxINITCtlOSDroppedRate"], value)
+
+    @property
     def LlrTxINITCtlOSRate(self):
         # type: () -> bool
         """
@@ -6515,6 +6554,36 @@ class PortStatistics(Base):
         self._set_attribute(self._SDM_ATT_MAP["LlrTxINITECHOCtlOS"], value)
 
     @property
+    def LlrTxINITECHOCtlOSDropped(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: LLR Tx INIT_ECHO CtlOS Dropped
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["LlrTxINITECHOCtlOSDropped"])
+
+    @LlrTxINITECHOCtlOSDropped.setter
+    def LlrTxINITECHOCtlOSDropped(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["LlrTxINITECHOCtlOSDropped"], value)
+
+    @property
+    def LlrTxINITECHOCtlOSDroppedRate(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: LLR Tx INIT_ECHO CtlOS Dropped Rate
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["LlrTxINITECHOCtlOSDroppedRate"])
+
+    @LlrTxINITECHOCtlOSDroppedRate.setter
+    def LlrTxINITECHOCtlOSDroppedRate(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["LlrTxINITECHOCtlOSDroppedRate"], value)
+
+    @property
     def LlrTxINITECHOCtlOSRate(self):
         # type: () -> bool
         """
@@ -6528,6 +6597,36 @@ class PortStatistics(Base):
     def LlrTxINITECHOCtlOSRate(self, value):
         # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP["LlrTxINITECHOCtlOSRate"], value)
+
+    @property
+    def LlrTxINITECHOLastSeq(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: LLR Tx INIT_ECHO Last Seq
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["LlrTxINITECHOLastSeq"])
+
+    @LlrTxINITECHOLastSeq.setter
+    def LlrTxINITECHOLastSeq(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["LlrTxINITECHOLastSeq"], value)
+
+    @property
+    def LlrTxINITLastSeq(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: LLR Tx INIT Last Seq
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["LlrTxINITLastSeq"])
+
+    @LlrTxINITLastSeq.setter
+    def LlrTxINITLastSeq(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["LlrTxINITLastSeq"], value)
 
     @property
     def LlrTxNACKCtlOS(self):
@@ -6545,6 +6644,36 @@ class PortStatistics(Base):
         self._set_attribute(self._SDM_ATT_MAP["LlrTxNACKCtlOS"], value)
 
     @property
+    def LlrTxNACKCtlOSDropped(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: LLR Tx NACK CtlOS Dropped
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["LlrTxNACKCtlOSDropped"])
+
+    @LlrTxNACKCtlOSDropped.setter
+    def LlrTxNACKCtlOSDropped(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["LlrTxNACKCtlOSDropped"], value)
+
+    @property
+    def LlrTxNACKCtlOSDroppedRate(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: LLR Tx NACK CtlOS Dropped Rate
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["LlrTxNACKCtlOSDroppedRate"])
+
+    @LlrTxNACKCtlOSDroppedRate.setter
+    def LlrTxNACKCtlOSDroppedRate(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["LlrTxNACKCtlOSDroppedRate"], value)
+
+    @property
     def LlrTxNACKCtlOSRate(self):
         # type: () -> bool
         """
@@ -6558,6 +6687,21 @@ class PortStatistics(Base):
     def LlrTxNACKCtlOSRate(self, value):
         # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP["LlrTxNACKCtlOSRate"], value)
+
+    @property
+    def LlrTxNACKLastSeq(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: LLR Tx NACK Last Seq
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["LlrTxNACKLastSeq"])
+
+    @LlrTxNACKLastSeq.setter
+    def LlrTxNACKLastSeq(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["LlrTxNACKLastSeq"], value)
 
     @property
     def LlrTxOK(self):
@@ -6680,6 +6824,66 @@ class PortStatistics(Base):
         self._set_attribute(self._SDM_ATT_MAP["LlrTxReplayEventRate"], value)
 
     @property
+    def LlrTxReplayedBytes(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: LLR Tx Replayed Bytes
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["LlrTxReplayedBytes"])
+
+    @LlrTxReplayedBytes.setter
+    def LlrTxReplayedBytes(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["LlrTxReplayedBytes"], value)
+
+    @property
+    def LlrTxReplayedBytesRate(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: LLR Tx Replayed Bytes Rate
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["LlrTxReplayedBytesRate"])
+
+    @LlrTxReplayedBytesRate.setter
+    def LlrTxReplayedBytesRate(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["LlrTxReplayedBytesRate"], value)
+
+    @property
+    def LlrTxReplayedFrames(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: LLR Tx Replayed Frames
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["LlrTxReplayedFrames"])
+
+    @LlrTxReplayedFrames.setter
+    def LlrTxReplayedFrames(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["LlrTxReplayedFrames"], value)
+
+    @property
+    def LlrTxReplayedFramesRate(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: LLR Tx Replayed Frames Rate
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["LlrTxReplayedFramesRate"])
+
+    @LlrTxReplayedFramesRate.setter
+    def LlrTxReplayedFramesRate(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["LlrTxReplayedFramesRate"], value)
+
+    @property
     def LlrTxSeq(self):
         # type: () -> bool
         """
@@ -6693,6 +6897,36 @@ class PortStatistics(Base):
     def LlrTxSeq(self, value):
         # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP["LlrTxSeq"], value)
+
+    @property
+    def LlrWindowError(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: LLR Window Error
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["LlrWindowError"])
+
+    @LlrWindowError.setter
+    def LlrWindowError(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["LlrWindowError"], value)
+
+    @property
+    def LlrWindowErrorRate(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: LLR Window Error Rate
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["LlrWindowErrorRate"])
+
+    @LlrWindowErrorRate.setter
+    def LlrWindowErrorRate(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["LlrWindowErrorRate"], value)
 
     @property
     def LocalFaults(self):
@@ -9296,21 +9530,6 @@ class PortStatistics(Base):
     def PrbsFramesWithHeaderErrorRate(self, value):
         # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP["PrbsFramesWithHeaderErrorRate"], value)
-
-    @property
-    def PreFECBitErrorRate(self):
-        # type: () -> bool
-        """
-        Returns
-        -------
-        - bool: pre FEC Bit Error Rate
-        """
-        return self._get_attribute(self._SDM_ATT_MAP["PreFECBitErrorRate"])
-
-    @PreFECBitErrorRate.setter
-    def PreFECBitErrorRate(self, value):
-        # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP["PreFECBitErrorRate"], value)
 
     @property
     def PreFECBitErrorRatio(self):
@@ -11923,6 +12142,36 @@ class PortStatistics(Base):
         self._set_attribute(self._SDM_ATT_MAP["RxRoCEPrePFCCNPFrameCountRate"], value)
 
     @property
+    def RxRoCERNRNAKFrameCount(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: Rx RoCE RNR NAK Frame Count
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["RxRoCERNRNAKFrameCount"])
+
+    @RxRoCERNRNAKFrameCount.setter
+    def RxRoCERNRNAKFrameCount(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["RxRoCERNRNAKFrameCount"], value)
+
+    @property
+    def RxRoCERNRNAKFrameCountRate(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: Rx RoCE RNR NAK Frame Count Rate
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["RxRoCERNRNAKFrameCountRate"])
+
+    @RxRoCERNRNAKFrameCountRate.setter
+    def RxRoCERNRNAKFrameCountRate(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["RxRoCERNRNAKFrameCountRate"], value)
+
+    @property
     def RxRoCEiCRCErrorCountRate(self):
         # type: () -> bool
         """
@@ -12260,6 +12509,25 @@ class PortStatistics(Base):
         # type: (bool) -> None
         self._set_attribute(
             self._SDM_ATT_MAP["ScheduledTxRoCENAKFrameCountRate"], value
+        )
+
+    @property
+    def ScheduledTxRoCEPauseFrameCountRate(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: Scheduled Tx RoCE Pause Frame Count Rate
+        """
+        return self._get_attribute(
+            self._SDM_ATT_MAP["ScheduledTxRoCEPauseFrameCountRate"]
+        )
+
+    @ScheduledTxRoCEPauseFrameCountRate.setter
+    def ScheduledTxRoCEPauseFrameCountRate(self, value):
+        # type: (bool) -> None
+        self._set_attribute(
+            self._SDM_ATT_MAP["ScheduledTxRoCEPauseFrameCountRate"], value
         )
 
     @property
@@ -13591,21 +13859,6 @@ class PortStatistics(Base):
         self._set_attribute(self._SDM_ATT_MAP["UeCtlOSSpacingMin"], value)
 
     @property
-    def UeRxCtlOSFrameHeaderError(self):
-        # type: () -> bool
-        """
-        Returns
-        -------
-        - bool: UE Rx CtlOS Frame Header Error
-        """
-        return self._get_attribute(self._SDM_ATT_MAP["UeRxCtlOSFrameHeaderError"])
-
-    @UeRxCtlOSFrameHeaderError.setter
-    def UeRxCtlOSFrameHeaderError(self, value):
-        # type: (bool) -> None
-        self._set_attribute(self._SDM_ATT_MAP["UeRxCtlOSFrameHeaderError"], value)
-
-    @property
     def UeRxCtlOSFrameHeaderErrorRate(self):
         # type: () -> bool
         """
@@ -13619,6 +13872,25 @@ class PortStatistics(Base):
     def UeRxCtlOSFrameHeaderErrorRate(self, value):
         # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP["UeRxCtlOSFrameHeaderErrorRate"], value)
+
+    @property
+    def UeRxCtlOSFrameHeaderSpacingError(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: UE Rx CtlOS Frame Header Spacing Error
+        """
+        return self._get_attribute(
+            self._SDM_ATT_MAP["UeRxCtlOSFrameHeaderSpacingError"]
+        )
+
+    @UeRxCtlOSFrameHeaderSpacingError.setter
+    def UeRxCtlOSFrameHeaderSpacingError(self, value):
+        # type: (bool) -> None
+        self._set_attribute(
+            self._SDM_ATT_MAP["UeRxCtlOSFrameHeaderSpacingError"], value
+        )
 
     @property
     def UeRxCtlOSIntraFrameSpacingError(self):
@@ -14139,7 +14411,7 @@ class PortStatistics(Base):
         self._set_attribute(self._SDM_ATT_MAP["WindowViolationFrameCount"], value)
 
     def update(self, **kwargs):
-        # type: (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool) -> PortStatistics
+        # type: (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool) -> PortStatistics
         """Updates portStatistics resource on the server.
 
         Args
@@ -14193,29 +14465,6 @@ class PortStatistics(Base):
         - CaptureFilterUDS4Rate (bool): Capture Filter (UDS 4) Rate
         - CaptureTriggerUDS3 (bool): Capture Trigger (UDS 3)
         - CaptureTriggerUDS3Rate (bool): Capture Trigger (UDS 3) Rate
-        - CbfcCFUpdateDropped (bool): CBFC CF_Update Dropped
-        - CbfcCFUpdateDroppedRate (bool): CBFC CF_Update Dropped Rate
-        - CbfcRxCCUpdateSpacingMax (bool): CBFC Rx CC_Update Spacing Max
-        - CbfcRxCCUpdateSpacingMaxError (bool): CBFC Rx CC_Update Spacing Max Error
-        - CbfcRxCCUpdateSpacingMaxErrorRate (bool): CBFC Rx CC_Update Spacing Max Error Rate
-        - CbfcRxCCUpdateSpacingMin (bool): CBFC Rx CC_Update Spacing Min
-        - CbfcRxCCUpdateSpacingMinError (bool): CBFC Rx CC_Update Spacing Min Error
-        - CbfcRxCCUpdateSpacingMinErrorRate (bool): CBFC Rx CC_Update Spacing Min Error Rate
-        - CbfcRxCCUpdateType1 (bool): CBFC Rx CC_Update Type 1
-        - CbfcRxCCUpdateType1Rate (bool): CBFC Rx CC_Update Type 1 Rate
-        - CbfcRxCCUpdateType2 (bool): CBFC Rx CC_Update Type 2
-        - CbfcRxCCUpdateType2Rate (bool): CBFC Rx CC_Update Type 2 Rate
-        - CbfcRxCFUpdateCtlOS (bool): CBFC Rx CF_Update CtlOS
-        - CbfcRxCFUpdateCtlOSRate (bool): CBFC Rx CF_Update CtlOS Rate
-        - CbfcRxCFUpdateCtlOSSpacingError (bool): CBFC Rx CF_Update CtlOS Spacing Error
-        - CbfcRxCFUpdateCtlOSSpacingErrorRate (bool): CBFC Rx CF_Update CtlOS Spacing Error Rate
-        - CbfcRxCFUpdateCtlOSSpacingMin (bool): CBFC Rx CF_Update CtlOS Spacing Min
-        - CbfcTxCCUpdateType1 (bool): CBFC Tx CC_Update Type 1
-        - CbfcTxCCUpdateType1Rate (bool): CBFC Tx CC_Update Type 1 Rate
-        - CbfcTxCCUpdateType2 (bool): CBFC Tx CC_Update Type 2
-        - CbfcTxCCUpdateType2Rate (bool): CBFC Tx CC_Update Type 2 Rate
-        - CbfcTxCFUpdateCtlOS (bool): CBFC Tx CF_Update CtlOS
-        - CbfcTxCFUpdateCtlOSRate (bool): CBFC Tx CF_Update CtlOS Rate
         - CentralChipTemperatureC (bool): Central Chip Temperature(C)
         - CodeError (bool): Code Error
         - CodeErrorRate (bool): Code Error Rate
@@ -14457,23 +14706,37 @@ class PortStatistics(Base):
         - LlrACKNACKCtlOSSpacingErrorRate (bool): LLR ACK NACK CtlOS Spacing Error Rate
         - LlrACKNACKCtlOSSpacingMin (bool): LLR ACK NACK CtlOS Spacing Min
         - LlrACKNACKTransmitState (bool): LLR ACK/NACK Transmit State
+        - LlrFlushDataAgeTimerExpired (bool): LLR Flush Data Age Timer Expired
+        - LlrFlushDataAgeTimerExpiredRate (bool): LLR Flush Data Age Timer Expired Rate
+        - LlrFlushMaxReplayCountExpired (bool): LLR Flush Max Replay Count Expired
+        - LlrFlushMaxReplayCountExpiredRate (bool): LLR Flush Max Replay Count Expired Rate
+        - LlrFlushPCSTimerExpired (bool): LLR Flush PCS Timer Expired
+        - LlrFlushPCSTimerExpiredRate (bool): LLR Flush PCS Timer Expired Rate
         - LlrINITCtlOSSpacingError (bool): LLR INIT CtlOS Spacing Error
         - LlrINITCtlOSSpacingErrorRate (bool): LLR INIT CtlOS Spacing Error Rate
         - LlrINITCtlOSSpacingMin (bool): LLR INIT CtlOS Spacing Min
         - LlrINITECHOInitSeqMismatch (bool): LLR INIT_ECHO Init_Seq Mismatch
         - LlrINITECHOInitSeqMismatchRate (bool): LLR INIT_ECHO Init_Seq Mismatch Rate
+        - LlrInitComplete (bool): LLR Init Complete
+        - LlrInitCompleteRate (bool): LLR Init Complete Rate
         - LlrModeLocal (bool): LLR Mode Local
         - LlrModeRemote (bool): LLR Mode Remote
-        - LlrReplayedByte (bool): LLR Replayed Byte
-        - LlrReplayedByteRate (bool): LLR Replayed Byte Rate
-        - LlrReplayedPacket (bool): LLR Replayed Packet
-        - LlrReplayedPacketRate (bool): LLR Replayed Packet Rate
+        - LlrReinitFromFlush (bool): LLR Reinit From Flush
+        - LlrReinitFromFlushRate (bool): LLR Reinit From Flush Rate
+        - LlrReplayFrame (bool): LLR Replay Frame
+        - LlrReplayFrameRate (bool): LLR Replay Frame Rate
+        - LlrReplayTimerExpired (bool): LLR Replay Timer Expired
+        - LlrReplayTimerExpiredRate (bool): LLR Replay Timer Expired Rate
+        - LlrReplayedNACK (bool): LLR Replayed NACK
+        - LlrReplayedNACKRate (bool): LLR Replayed NACK Rate
         - LlrRxACKCtlOS (bool): LLR Rx ACK CtlOS
         - LlrRxACKCtlOSDropped (bool): LLR Rx ACK CtlOS Dropped
         - LlrRxACKCtlOSDroppedRate (bool): LLR Rx ACK CtlOS Dropped Rate
         - LlrRxACKCtlOSRate (bool): LLR Rx ACK CtlOS Rate
         - LlrRxACKNACKSeqError (bool): LLR Rx ACK NACK Seq Error
         - LlrRxACKNACKSeqErrorRate (bool): LLR Rx ACK NACK Seq Error Rate
+        - LlrRxACKSequence (bool): LLR Rx ACK Sequence
+        - LlrRxACKTimestamp (bool): LLR Rx ACK Timestamp
         - LlrRxBad (bool): LLR Rx Bad
         - LlrRxBadRate (bool): LLR Rx Bad Rate
         - LlrRxDuplicateSeq (bool): LLR Rx Duplicate Seq
@@ -14492,12 +14755,18 @@ class PortStatistics(Base):
         - LlrRxINITECHOCtlOSDropped (bool): LLR Rx INIT_ECHO CtlOS Dropped
         - LlrRxINITECHOCtlOSDroppedRate (bool): LLR Rx INIT_ECHO CtlOS Dropped Rate
         - LlrRxINITECHOCtlOSRate (bool): LLR Rx INIT_ECHO CtlOS Rate
+        - LlrRxINITECHOSequence (bool): LLR Rx INIT_ECHO Sequence
+        - LlrRxINITECHOTimestamp (bool): LLR Rx INIT_ECHO Timestamp
+        - LlrRxINITSequence (bool): LLR Rx INIT Sequence
+        - LlrRxINITTimestamp (bool): LLR Rx INIT Timestamp
         - LlrRxMissingSeq (bool): LLR Rx Missing Seq
         - LlrRxMissingSeqRate (bool): LLR Rx Missing Seq Rate
         - LlrRxNACKCtlOS (bool): LLR Rx NACK CtlOS
         - LlrRxNACKCtlOSDropped (bool): LLR Rx NACK CtlOS Dropped
         - LlrRxNACKCtlOSDroppedRate (bool): LLR Rx NACK CtlOS Dropped Rate
         - LlrRxNACKCtlOSRate (bool): LLR Rx NACK CtlOS Rate
+        - LlrRxNACKSequence (bool): LLR Rx NACK Sequence
+        - LlrRxNACKTimestamp (bool): LLR Rx NACK Timestamp
         - LlrRxNextSeq (bool): LLR Rx Next Seq
         - LlrRxOK (bool): LLR Rx OK
         - LlrRxOKRate (bool): LLR Rx OK Rate
@@ -14507,15 +14776,27 @@ class PortStatistics(Base):
         - LlrRxReplayRate (bool): LLR Rx Replay Rate
         - LlrTransmitState (bool): LLR Transmit State
         - LlrTxACKCtlOS (bool): LLR Tx ACK CtlOS
+        - LlrTxACKCtlOSDropped (bool): LLR Tx ACK CtlOS Dropped
+        - LlrTxACKCtlOSDroppedRate (bool): LLR Tx ACK CtlOS Dropped Rate
         - LlrTxACKCtlOSRate (bool): LLR Tx ACK CtlOS Rate
+        - LlrTxACKLastSeq (bool): LLR Tx ACK Last Seq
         - LlrTxDiscard (bool): LLR Tx Discard
         - LlrTxDiscardRate (bool): LLR Tx Discard Rate
         - LlrTxINITCtlOS (bool): LLR Tx INIT CtlOS
+        - LlrTxINITCtlOSDropped (bool): LLR Tx INIT CtlOS Dropped
+        - LlrTxINITCtlOSDroppedRate (bool): LLR Tx INIT CtlOS Dropped Rate
         - LlrTxINITCtlOSRate (bool): LLR Tx INIT CtlOS Rate
         - LlrTxINITECHOCtlOS (bool): LLR Tx INIT_ECHO CtlOS
+        - LlrTxINITECHOCtlOSDropped (bool): LLR Tx INIT_ECHO CtlOS Dropped
+        - LlrTxINITECHOCtlOSDroppedRate (bool): LLR Tx INIT_ECHO CtlOS Dropped Rate
         - LlrTxINITECHOCtlOSRate (bool): LLR Tx INIT_ECHO CtlOS Rate
+        - LlrTxINITECHOLastSeq (bool): LLR Tx INIT_ECHO Last Seq
+        - LlrTxINITLastSeq (bool): LLR Tx INIT Last Seq
         - LlrTxNACKCtlOS (bool): LLR Tx NACK CtlOS
+        - LlrTxNACKCtlOSDropped (bool): LLR Tx NACK CtlOS Dropped
+        - LlrTxNACKCtlOSDroppedRate (bool): LLR Tx NACK CtlOS Dropped Rate
         - LlrTxNACKCtlOSRate (bool): LLR Tx NACK CtlOS Rate
+        - LlrTxNACKLastSeq (bool): LLR Tx NACK Last Seq
         - LlrTxOK (bool): LLR Tx OK
         - LlrTxOKRate (bool): LLR Tx OK Rate
         - LlrTxOutstandingSeq (bool): LLR Tx Outstanding Seq
@@ -14524,7 +14805,13 @@ class PortStatistics(Base):
         - LlrTxPoisonedRate (bool): LLR Tx Poisoned Rate
         - LlrTxReplayEvent (bool): LLR Tx Replay Event
         - LlrTxReplayEventRate (bool): LLR Tx Replay Event Rate
+        - LlrTxReplayedBytes (bool): LLR Tx Replayed Bytes
+        - LlrTxReplayedBytesRate (bool): LLR Tx Replayed Bytes Rate
+        - LlrTxReplayedFrames (bool): LLR Tx Replayed Frames
+        - LlrTxReplayedFramesRate (bool): LLR Tx Replayed Frames Rate
         - LlrTxSeq (bool): LLR Tx Seq
+        - LlrWindowError (bool): LLR Window Error
+        - LlrWindowErrorRate (bool): LLR Window Error Rate
         - LocalFaults (bool): Local Faults
         - LocalOrderedSetsReceived (bool): Local Ordered Sets Received
         - LocalOrderedSetsReceivedRate (bool): Local Ordered Sets Received Rate
@@ -14698,7 +14985,6 @@ class PortStatistics(Base):
         - PrbsFramesReceivedRate (bool): Prbs Frames Received Rate
         - PrbsFramesWithHeaderError (bool): Prbs Frames With Header Error
         - PrbsFramesWithHeaderErrorRate (bool): Prbs Frames With Header Error Rate
-        - PreFECBitErrorRate (bool): pre FEC Bit Error Rate
         - PreFECBitErrorRatio (bool): pre FEC Bit Error Ratio
         - ProtectedByteRx (bool): Protected Byte Rx
         - ProtectedByteTx (bool): Protected Byte Tx
@@ -14865,6 +15151,8 @@ class PortStatistics(Base):
         - RxRoCEOpcodeErrorCountRate (bool): Rx RoCE Opcode Error Count Rate
         - RxRoCEPrePFCCNPFrameCount (bool): Rx RoCE Pre-PFC CNP Frame Count
         - RxRoCEPrePFCCNPFrameCountRate (bool): Rx RoCE Pre-PFC CNP Frame Count Rate
+        - RxRoCERNRNAKFrameCount (bool): Rx RoCE RNR NAK Frame Count
+        - RxRoCERNRNAKFrameCountRate (bool): Rx RoCE RNR NAK Frame Count Rate
         - RxRoCEiCRCErrorCountRate (bool): Rx RoCE iCRC Error Count Rate
         - RxSharedStat1 (bool): Rx Shared Stat 1
         - RxSharedStat1Rate (bool): Rx Shared Stat 1 Rate
@@ -14886,6 +15174,7 @@ class PortStatistics(Base):
         - ScheduledTxRoCECNPFrameCountRate (bool): Scheduled Tx RoCE CNP Frame Count Rate
         - ScheduledTxRoCENAKFrameCount (bool): Scheduled Tx RoCE NAK Frame Count
         - ScheduledTxRoCENAKFrameCountRate (bool): Scheduled Tx RoCE NAK Frame Count Rate
+        - ScheduledTxRoCEPauseFrameCountRate (bool): Scheduled Tx RoCE Pause Frame Count Rate
         - SchedulerChipTemperatureC (bool): Scheduler Chip Temperature(C)
         - SectionBIPB1 (bool): Section BIP (B1)
         - SectionBIPB1Rate (bool): Section BIP (B1) Rate
@@ -14974,8 +15263,8 @@ class PortStatistics(Base):
         - UeCtlOSSpacingError (bool): UE CtlOS Spacing Error
         - UeCtlOSSpacingErrorRate (bool): UE CtlOS Spacing Error Rate
         - UeCtlOSSpacingMin (bool): UE CtlOS Spacing Min
-        - UeRxCtlOSFrameHeaderError (bool): UE Rx CtlOS Frame Header Error
         - UeRxCtlOSFrameHeaderErrorRate (bool): UE Rx CtlOS Frame Header Error Rate
+        - UeRxCtlOSFrameHeaderSpacingError (bool): UE Rx CtlOS Frame Header Spacing Error
         - UeRxCtlOSIntraFrameSpacingError (bool): UE Rx CtlOS Intra-Frame Spacing Error
         - UeRxCtlOSIntraFrameSpacingErrorRate (bool): UE Rx CtlOS Intra-Frame Spacing Error Rate
         - UnavailableSeconds (bool): Unavailable Seconds
@@ -15018,7 +15307,7 @@ class PortStatistics(Base):
         return self._update(self._map_locals(self._SDM_ATT_MAP, locals()))
 
     def find(self, **kwargs):
-        # type: (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool) -> PortStatistics
+        # type: (bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool) -> PortStatistics
         """Finds and retrieves portStatistics resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve portStatistics resources from the server.
@@ -15076,29 +15365,6 @@ class PortStatistics(Base):
         - CaptureFilterUDS4Rate (bool): Capture Filter (UDS 4) Rate
         - CaptureTriggerUDS3 (bool): Capture Trigger (UDS 3)
         - CaptureTriggerUDS3Rate (bool): Capture Trigger (UDS 3) Rate
-        - CbfcCFUpdateDropped (bool): CBFC CF_Update Dropped
-        - CbfcCFUpdateDroppedRate (bool): CBFC CF_Update Dropped Rate
-        - CbfcRxCCUpdateSpacingMax (bool): CBFC Rx CC_Update Spacing Max
-        - CbfcRxCCUpdateSpacingMaxError (bool): CBFC Rx CC_Update Spacing Max Error
-        - CbfcRxCCUpdateSpacingMaxErrorRate (bool): CBFC Rx CC_Update Spacing Max Error Rate
-        - CbfcRxCCUpdateSpacingMin (bool): CBFC Rx CC_Update Spacing Min
-        - CbfcRxCCUpdateSpacingMinError (bool): CBFC Rx CC_Update Spacing Min Error
-        - CbfcRxCCUpdateSpacingMinErrorRate (bool): CBFC Rx CC_Update Spacing Min Error Rate
-        - CbfcRxCCUpdateType1 (bool): CBFC Rx CC_Update Type 1
-        - CbfcRxCCUpdateType1Rate (bool): CBFC Rx CC_Update Type 1 Rate
-        - CbfcRxCCUpdateType2 (bool): CBFC Rx CC_Update Type 2
-        - CbfcRxCCUpdateType2Rate (bool): CBFC Rx CC_Update Type 2 Rate
-        - CbfcRxCFUpdateCtlOS (bool): CBFC Rx CF_Update CtlOS
-        - CbfcRxCFUpdateCtlOSRate (bool): CBFC Rx CF_Update CtlOS Rate
-        - CbfcRxCFUpdateCtlOSSpacingError (bool): CBFC Rx CF_Update CtlOS Spacing Error
-        - CbfcRxCFUpdateCtlOSSpacingErrorRate (bool): CBFC Rx CF_Update CtlOS Spacing Error Rate
-        - CbfcRxCFUpdateCtlOSSpacingMin (bool): CBFC Rx CF_Update CtlOS Spacing Min
-        - CbfcTxCCUpdateType1 (bool): CBFC Tx CC_Update Type 1
-        - CbfcTxCCUpdateType1Rate (bool): CBFC Tx CC_Update Type 1 Rate
-        - CbfcTxCCUpdateType2 (bool): CBFC Tx CC_Update Type 2
-        - CbfcTxCCUpdateType2Rate (bool): CBFC Tx CC_Update Type 2 Rate
-        - CbfcTxCFUpdateCtlOS (bool): CBFC Tx CF_Update CtlOS
-        - CbfcTxCFUpdateCtlOSRate (bool): CBFC Tx CF_Update CtlOS Rate
         - CentralChipTemperatureC (bool): Central Chip Temperature(C)
         - CodeError (bool): Code Error
         - CodeErrorRate (bool): Code Error Rate
@@ -15340,23 +15606,37 @@ class PortStatistics(Base):
         - LlrACKNACKCtlOSSpacingErrorRate (bool): LLR ACK NACK CtlOS Spacing Error Rate
         - LlrACKNACKCtlOSSpacingMin (bool): LLR ACK NACK CtlOS Spacing Min
         - LlrACKNACKTransmitState (bool): LLR ACK/NACK Transmit State
+        - LlrFlushDataAgeTimerExpired (bool): LLR Flush Data Age Timer Expired
+        - LlrFlushDataAgeTimerExpiredRate (bool): LLR Flush Data Age Timer Expired Rate
+        - LlrFlushMaxReplayCountExpired (bool): LLR Flush Max Replay Count Expired
+        - LlrFlushMaxReplayCountExpiredRate (bool): LLR Flush Max Replay Count Expired Rate
+        - LlrFlushPCSTimerExpired (bool): LLR Flush PCS Timer Expired
+        - LlrFlushPCSTimerExpiredRate (bool): LLR Flush PCS Timer Expired Rate
         - LlrINITCtlOSSpacingError (bool): LLR INIT CtlOS Spacing Error
         - LlrINITCtlOSSpacingErrorRate (bool): LLR INIT CtlOS Spacing Error Rate
         - LlrINITCtlOSSpacingMin (bool): LLR INIT CtlOS Spacing Min
         - LlrINITECHOInitSeqMismatch (bool): LLR INIT_ECHO Init_Seq Mismatch
         - LlrINITECHOInitSeqMismatchRate (bool): LLR INIT_ECHO Init_Seq Mismatch Rate
+        - LlrInitComplete (bool): LLR Init Complete
+        - LlrInitCompleteRate (bool): LLR Init Complete Rate
         - LlrModeLocal (bool): LLR Mode Local
         - LlrModeRemote (bool): LLR Mode Remote
-        - LlrReplayedByte (bool): LLR Replayed Byte
-        - LlrReplayedByteRate (bool): LLR Replayed Byte Rate
-        - LlrReplayedPacket (bool): LLR Replayed Packet
-        - LlrReplayedPacketRate (bool): LLR Replayed Packet Rate
+        - LlrReinitFromFlush (bool): LLR Reinit From Flush
+        - LlrReinitFromFlushRate (bool): LLR Reinit From Flush Rate
+        - LlrReplayFrame (bool): LLR Replay Frame
+        - LlrReplayFrameRate (bool): LLR Replay Frame Rate
+        - LlrReplayTimerExpired (bool): LLR Replay Timer Expired
+        - LlrReplayTimerExpiredRate (bool): LLR Replay Timer Expired Rate
+        - LlrReplayedNACK (bool): LLR Replayed NACK
+        - LlrReplayedNACKRate (bool): LLR Replayed NACK Rate
         - LlrRxACKCtlOS (bool): LLR Rx ACK CtlOS
         - LlrRxACKCtlOSDropped (bool): LLR Rx ACK CtlOS Dropped
         - LlrRxACKCtlOSDroppedRate (bool): LLR Rx ACK CtlOS Dropped Rate
         - LlrRxACKCtlOSRate (bool): LLR Rx ACK CtlOS Rate
         - LlrRxACKNACKSeqError (bool): LLR Rx ACK NACK Seq Error
         - LlrRxACKNACKSeqErrorRate (bool): LLR Rx ACK NACK Seq Error Rate
+        - LlrRxACKSequence (bool): LLR Rx ACK Sequence
+        - LlrRxACKTimestamp (bool): LLR Rx ACK Timestamp
         - LlrRxBad (bool): LLR Rx Bad
         - LlrRxBadRate (bool): LLR Rx Bad Rate
         - LlrRxDuplicateSeq (bool): LLR Rx Duplicate Seq
@@ -15375,12 +15655,18 @@ class PortStatistics(Base):
         - LlrRxINITECHOCtlOSDropped (bool): LLR Rx INIT_ECHO CtlOS Dropped
         - LlrRxINITECHOCtlOSDroppedRate (bool): LLR Rx INIT_ECHO CtlOS Dropped Rate
         - LlrRxINITECHOCtlOSRate (bool): LLR Rx INIT_ECHO CtlOS Rate
+        - LlrRxINITECHOSequence (bool): LLR Rx INIT_ECHO Sequence
+        - LlrRxINITECHOTimestamp (bool): LLR Rx INIT_ECHO Timestamp
+        - LlrRxINITSequence (bool): LLR Rx INIT Sequence
+        - LlrRxINITTimestamp (bool): LLR Rx INIT Timestamp
         - LlrRxMissingSeq (bool): LLR Rx Missing Seq
         - LlrRxMissingSeqRate (bool): LLR Rx Missing Seq Rate
         - LlrRxNACKCtlOS (bool): LLR Rx NACK CtlOS
         - LlrRxNACKCtlOSDropped (bool): LLR Rx NACK CtlOS Dropped
         - LlrRxNACKCtlOSDroppedRate (bool): LLR Rx NACK CtlOS Dropped Rate
         - LlrRxNACKCtlOSRate (bool): LLR Rx NACK CtlOS Rate
+        - LlrRxNACKSequence (bool): LLR Rx NACK Sequence
+        - LlrRxNACKTimestamp (bool): LLR Rx NACK Timestamp
         - LlrRxNextSeq (bool): LLR Rx Next Seq
         - LlrRxOK (bool): LLR Rx OK
         - LlrRxOKRate (bool): LLR Rx OK Rate
@@ -15390,15 +15676,27 @@ class PortStatistics(Base):
         - LlrRxReplayRate (bool): LLR Rx Replay Rate
         - LlrTransmitState (bool): LLR Transmit State
         - LlrTxACKCtlOS (bool): LLR Tx ACK CtlOS
+        - LlrTxACKCtlOSDropped (bool): LLR Tx ACK CtlOS Dropped
+        - LlrTxACKCtlOSDroppedRate (bool): LLR Tx ACK CtlOS Dropped Rate
         - LlrTxACKCtlOSRate (bool): LLR Tx ACK CtlOS Rate
+        - LlrTxACKLastSeq (bool): LLR Tx ACK Last Seq
         - LlrTxDiscard (bool): LLR Tx Discard
         - LlrTxDiscardRate (bool): LLR Tx Discard Rate
         - LlrTxINITCtlOS (bool): LLR Tx INIT CtlOS
+        - LlrTxINITCtlOSDropped (bool): LLR Tx INIT CtlOS Dropped
+        - LlrTxINITCtlOSDroppedRate (bool): LLR Tx INIT CtlOS Dropped Rate
         - LlrTxINITCtlOSRate (bool): LLR Tx INIT CtlOS Rate
         - LlrTxINITECHOCtlOS (bool): LLR Tx INIT_ECHO CtlOS
+        - LlrTxINITECHOCtlOSDropped (bool): LLR Tx INIT_ECHO CtlOS Dropped
+        - LlrTxINITECHOCtlOSDroppedRate (bool): LLR Tx INIT_ECHO CtlOS Dropped Rate
         - LlrTxINITECHOCtlOSRate (bool): LLR Tx INIT_ECHO CtlOS Rate
+        - LlrTxINITECHOLastSeq (bool): LLR Tx INIT_ECHO Last Seq
+        - LlrTxINITLastSeq (bool): LLR Tx INIT Last Seq
         - LlrTxNACKCtlOS (bool): LLR Tx NACK CtlOS
+        - LlrTxNACKCtlOSDropped (bool): LLR Tx NACK CtlOS Dropped
+        - LlrTxNACKCtlOSDroppedRate (bool): LLR Tx NACK CtlOS Dropped Rate
         - LlrTxNACKCtlOSRate (bool): LLR Tx NACK CtlOS Rate
+        - LlrTxNACKLastSeq (bool): LLR Tx NACK Last Seq
         - LlrTxOK (bool): LLR Tx OK
         - LlrTxOKRate (bool): LLR Tx OK Rate
         - LlrTxOutstandingSeq (bool): LLR Tx Outstanding Seq
@@ -15407,7 +15705,13 @@ class PortStatistics(Base):
         - LlrTxPoisonedRate (bool): LLR Tx Poisoned Rate
         - LlrTxReplayEvent (bool): LLR Tx Replay Event
         - LlrTxReplayEventRate (bool): LLR Tx Replay Event Rate
+        - LlrTxReplayedBytes (bool): LLR Tx Replayed Bytes
+        - LlrTxReplayedBytesRate (bool): LLR Tx Replayed Bytes Rate
+        - LlrTxReplayedFrames (bool): LLR Tx Replayed Frames
+        - LlrTxReplayedFramesRate (bool): LLR Tx Replayed Frames Rate
         - LlrTxSeq (bool): LLR Tx Seq
+        - LlrWindowError (bool): LLR Window Error
+        - LlrWindowErrorRate (bool): LLR Window Error Rate
         - LocalFaults (bool): Local Faults
         - LocalOrderedSetsReceived (bool): Local Ordered Sets Received
         - LocalOrderedSetsReceivedRate (bool): Local Ordered Sets Received Rate
@@ -15581,7 +15885,6 @@ class PortStatistics(Base):
         - PrbsFramesReceivedRate (bool): Prbs Frames Received Rate
         - PrbsFramesWithHeaderError (bool): Prbs Frames With Header Error
         - PrbsFramesWithHeaderErrorRate (bool): Prbs Frames With Header Error Rate
-        - PreFECBitErrorRate (bool): pre FEC Bit Error Rate
         - PreFECBitErrorRatio (bool): pre FEC Bit Error Ratio
         - ProtectedByteRx (bool): Protected Byte Rx
         - ProtectedByteTx (bool): Protected Byte Tx
@@ -15748,6 +16051,8 @@ class PortStatistics(Base):
         - RxRoCEOpcodeErrorCountRate (bool): Rx RoCE Opcode Error Count Rate
         - RxRoCEPrePFCCNPFrameCount (bool): Rx RoCE Pre-PFC CNP Frame Count
         - RxRoCEPrePFCCNPFrameCountRate (bool): Rx RoCE Pre-PFC CNP Frame Count Rate
+        - RxRoCERNRNAKFrameCount (bool): Rx RoCE RNR NAK Frame Count
+        - RxRoCERNRNAKFrameCountRate (bool): Rx RoCE RNR NAK Frame Count Rate
         - RxRoCEiCRCErrorCountRate (bool): Rx RoCE iCRC Error Count Rate
         - RxSharedStat1 (bool): Rx Shared Stat 1
         - RxSharedStat1Rate (bool): Rx Shared Stat 1 Rate
@@ -15769,6 +16074,7 @@ class PortStatistics(Base):
         - ScheduledTxRoCECNPFrameCountRate (bool): Scheduled Tx RoCE CNP Frame Count Rate
         - ScheduledTxRoCENAKFrameCount (bool): Scheduled Tx RoCE NAK Frame Count
         - ScheduledTxRoCENAKFrameCountRate (bool): Scheduled Tx RoCE NAK Frame Count Rate
+        - ScheduledTxRoCEPauseFrameCountRate (bool): Scheduled Tx RoCE Pause Frame Count Rate
         - SchedulerChipTemperatureC (bool): Scheduler Chip Temperature(C)
         - SectionBIPB1 (bool): Section BIP (B1)
         - SectionBIPB1Rate (bool): Section BIP (B1) Rate
@@ -15857,8 +16163,8 @@ class PortStatistics(Base):
         - UeCtlOSSpacingError (bool): UE CtlOS Spacing Error
         - UeCtlOSSpacingErrorRate (bool): UE CtlOS Spacing Error Rate
         - UeCtlOSSpacingMin (bool): UE CtlOS Spacing Min
-        - UeRxCtlOSFrameHeaderError (bool): UE Rx CtlOS Frame Header Error
         - UeRxCtlOSFrameHeaderErrorRate (bool): UE Rx CtlOS Frame Header Error Rate
+        - UeRxCtlOSFrameHeaderSpacingError (bool): UE Rx CtlOS Frame Header Spacing Error
         - UeRxCtlOSIntraFrameSpacingError (bool): UE Rx CtlOS Intra-Frame Spacing Error
         - UeRxCtlOSIntraFrameSpacingErrorRate (bool): UE Rx CtlOS Intra-Frame Spacing Error Rate
         - UnavailableSeconds (bool): Unavailable Seconds

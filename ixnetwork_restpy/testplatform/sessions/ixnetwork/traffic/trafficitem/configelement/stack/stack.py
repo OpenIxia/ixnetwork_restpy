@@ -1297,6 +1297,23 @@ class Stack(Base):
         return Vlan(self)
 
     @property
+    def Csig(self):
+        """
+        valid only with Batch Add
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.csig_template.Csig): An instance of the Csig traffic stack
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.csig_template import (
+            Csig,
+        )
+
+        if len(self._object_properties) > 0:
+            if self._properties.get("Csig", None) is not None:
+                return self._properties.get("Csig")
+        return Csig(self)
+
+    @property
     def Vntag(self):
         """
         valid only with Batch Add
@@ -5461,6 +5478,257 @@ class Stack(Base):
         return InfiniBandAckExtendedTransportHeader(self)
 
     @property
+    def MrcBaseTransportHeader(self):
+        """
+        valid only with Batch Add
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.mrcBaseTransportHeader_template.MrcBaseTransportHeader): An instance of the MrcBaseTransportHeader traffic stack
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.mrcBaseTransportHeader_template import (
+            MrcBaseTransportHeader,
+        )
+
+        if len(self._object_properties) > 0:
+            if self._properties.get("MrcBaseTransportHeader", None) is not None:
+                return self._properties.get("MrcBaseTransportHeader")
+        return MrcBaseTransportHeader(self)
+
+    @property
+    def MrcAckExtendedTransportHeader(self):
+        """
+        valid only with Batch Add
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.mrcAckExtendedTransportHeader_template.MrcAckExtendedTransportHeader): An instance of the MrcAckExtendedTransportHeader traffic stack
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.mrcAckExtendedTransportHeader_template import (
+            MrcAckExtendedTransportHeader,
+        )
+
+        if len(self._object_properties) > 0:
+            if self._properties.get("MrcAckExtendedTransportHeader", None) is not None:
+                return self._properties.get("MrcAckExtendedTransportHeader")
+        return MrcAckExtendedTransportHeader(self)
+
+    @property
+    def MrcEndpointResponseHeader(self):
+        """
+        valid only with Batch Add
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.mrcEndpointResponseHeader_template.MrcEndpointResponseHeader): An instance of the MrcEndpointResponseHeader traffic stack
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.mrcEndpointResponseHeader_template import (
+            MrcEndpointResponseHeader,
+        )
+
+        if len(self._object_properties) > 0:
+            if self._properties.get("MrcEndpointResponseHeader", None) is not None:
+                return self._properties.get("MrcEndpointResponseHeader")
+        return MrcEndpointResponseHeader(self)
+
+    @property
+    def MrcEndpointRequestHeader(self):
+        """
+        valid only with Batch Add
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.mrcEndpointRequestHeader_template.MrcEndpointRequestHeader): An instance of the MrcEndpointRequestHeader traffic stack
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.mrcEndpointRequestHeader_template import (
+            MrcEndpointRequestHeader,
+        )
+
+        if len(self._object_properties) > 0:
+            if self._properties.get("MrcEndpointRequestHeader", None) is not None:
+                return self._properties.get("MrcEndpointRequestHeader")
+        return MrcEndpointRequestHeader(self)
+
+    @property
+    def MrcMessageExtendedTransportHeader(self):
+        """
+        valid only with Batch Add
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.mrcMessageExtendedTransportHeader_template.MrcMessageExtendedTransportHeader): An instance of the MrcMessageExtendedTransportHeader traffic stack
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.mrcMessageExtendedTransportHeader_template import (
+            MrcMessageExtendedTransportHeader,
+        )
+
+        if len(self._object_properties) > 0:
+            if (
+                self._properties.get("MrcMessageExtendedTransportHeader", None)
+                is not None
+            ):
+                return self._properties.get("MrcMessageExtendedTransportHeader")
+        return MrcMessageExtendedTransportHeader(self)
+
+    @property
+    def MrcReliabilityNackHeader(self):
+        """
+        valid only with Batch Add
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.mrcReliabilityNackHeader_template.MrcReliabilityNackHeader): An instance of the MrcReliabilityNackHeader traffic stack
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.mrcReliabilityNackHeader_template import (
+            MrcReliabilityNackHeader,
+        )
+
+        if len(self._object_properties) > 0:
+            if self._properties.get("MrcReliabilityNackHeader", None) is not None:
+                return self._properties.get("MrcReliabilityNackHeader")
+        return MrcReliabilityNackHeader(self)
+
+    @property
+    def MrcReliabilityProbeRequestHeader(self):
+        """
+        valid only with Batch Add
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.mrcReliabilityProbeRequestHeader_template.MrcReliabilityProbeRequestHeader): An instance of the MrcReliabilityProbeRequestHeader traffic stack
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.mrcReliabilityProbeRequestHeader_template import (
+            MrcReliabilityProbeRequestHeader,
+        )
+
+        if len(self._object_properties) > 0:
+            if (
+                self._properties.get("MrcReliabilityProbeRequestHeader", None)
+                is not None
+            ):
+                return self._properties.get("MrcReliabilityProbeRequestHeader")
+        return MrcReliabilityProbeRequestHeader(self)
+
+    @property
+    def MrcRdmaExtendedTransportHeader(self):
+        """
+        valid only with Batch Add
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.mrcRdmaExtendedTransportHeader_template.MrcRdmaExtendedTransportHeader): An instance of the MrcRdmaExtendedTransportHeader traffic stack
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.mrcRdmaExtendedTransportHeader_template import (
+            MrcRdmaExtendedTransportHeader,
+        )
+
+        if len(self._object_properties) > 0:
+            if self._properties.get("MrcRdmaExtendedTransportHeader", None) is not None:
+                return self._properties.get("MrcRdmaExtendedTransportHeader")
+        return MrcRdmaExtendedTransportHeader(self)
+
+    @property
+    def MrcReliabilitySackHeader(self):
+        """
+        valid only with Batch Add
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.mrcReliabilitySackHeader_template.MrcReliabilitySackHeader): An instance of the MrcReliabilitySackHeader traffic stack
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.mrcReliabilitySackHeader_template import (
+            MrcReliabilitySackHeader,
+        )
+
+        if len(self._object_properties) > 0:
+            if self._properties.get("MrcReliabilitySackHeader", None) is not None:
+                return self._properties.get("MrcReliabilitySackHeader")
+        return MrcReliabilitySackHeader(self)
+
+    @property
+    def MrcRequestorTimestampExtendedTransportHeader(self):
+        """
+        valid only with Batch Add
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.mrcRequestorTimestampExtendedTransportHeader_template.MrcRequestorTimestampExtendedTransportHeader): An instance of the MrcRequestorTimestampExtendedTransportHeader traffic stack
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.mrcRequestorTimestampExtendedTransportHeader_template import (
+            MrcRequestorTimestampExtendedTransportHeader,
+        )
+
+        if len(self._object_properties) > 0:
+            if (
+                self._properties.get(
+                    "MrcRequestorTimestampExtendedTransportHeader", None
+                )
+                is not None
+            ):
+                return self._properties.get(
+                    "MrcRequestorTimestampExtendedTransportHeader"
+                )
+        return MrcRequestorTimestampExtendedTransportHeader(self)
+
+    @property
+    def ESUN(self):
+        """
+        valid only with Batch Add
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.ESUN_template.ESUN): An instance of the ESUN traffic stack
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.ESUN_template import (
+            ESUN,
+        )
+
+        if len(self._object_properties) > 0:
+            if self._properties.get("ESUN", None) is not None:
+                return self._properties.get("ESUN")
+        return ESUN(self)
+
+    @property
+    def SueAFHGEN1(self):
+        """
+        valid only with Batch Add
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.sueAFHGEN1_template.SueAFHGEN1): An instance of the SueAFHGEN1 traffic stack
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.sueAFHGEN1_template import (
+            SueAFHGEN1,
+        )
+
+        if len(self._object_properties) > 0:
+            if self._properties.get("SueAFHGEN1", None) is not None:
+                return self._properties.get("SueAFHGEN1")
+        return SueAFHGEN1(self)
+
+    @property
+    def SueAFHGEN2Compressed(self):
+        """
+        valid only with Batch Add
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.sueAFHGEN2Compressed_template.SueAFHGEN2Compressed): An instance of the SueAFHGEN2Compressed traffic stack
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.sueAFHGEN2Compressed_template import (
+            SueAFHGEN2Compressed,
+        )
+
+        if len(self._object_properties) > 0:
+            if self._properties.get("SueAFHGEN2Compressed", None) is not None:
+                return self._properties.get("SueAFHGEN2Compressed")
+        return SueAFHGEN2Compressed(self)
+
+    @property
+    def SueAFHGEN2Normal(self):
+        """
+        valid only with Batch Add
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.sueAFHGEN2Normal_template.SueAFHGEN2Normal): An instance of the SueAFHGEN2Normal traffic stack
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.sueAFHGEN2Normal_template import (
+            SueAFHGEN2Normal,
+        )
+
+        if len(self._object_properties) > 0:
+            if self._properties.get("SueAFHGEN2Normal", None) is not None:
+                return self._properties.get("SueAFHGEN2Normal")
+        return SueAFHGEN2Normal(self)
+
+    @property
     def Amt(self):
         """
         valid only with Batch Add
@@ -5835,6 +6103,23 @@ class Stack(Base):
         return Ipv6RoutingType4(self)
 
     @property
+    def Ipv6RoutingType4SRv6Usid(self):
+        """
+        valid only with Batch Add
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.ipv6RoutingType4SRv6Usid_template.Ipv6RoutingType4SRv6Usid): An instance of the Ipv6RoutingType4SRv6Usid traffic stack
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.ipv6RoutingType4SRv6Usid_template import (
+            Ipv6RoutingType4SRv6Usid,
+        )
+
+        if len(self._object_properties) > 0:
+            if self._properties.get("Ipv6RoutingType4SRv6Usid", None) is not None:
+                return self._properties.get("Ipv6RoutingType4SRv6Usid")
+        return Ipv6RoutingType4SRv6Usid(self)
+
+    @property
     def Ipv6GSRHType4(self):
         """
         valid only with Batch Add
@@ -5884,6 +6169,23 @@ class Stack(Base):
             if self._properties.get("Ipv6", None) is not None:
                 return self._properties.get("Ipv6")
         return Ipv6(self)
+
+    @property
+    def Ipv6SRv6Usid(self):
+        """
+        valid only with Batch Add
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.ipv6SRv6Usid_template.Ipv6SRv6Usid): An instance of the Ipv6SRv6Usid traffic stack
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.stack.ipv6SRv6Usid_template import (
+            Ipv6SRv6Usid,
+        )
+
+        if len(self._object_properties) > 0:
+            if self._properties.get("Ipv6SRv6Usid", None) is not None:
+                return self._properties.get("Ipv6SRv6Usid")
+        return Ipv6SRv6Usid(self)
 
     @property
     def Ipv6GSRH(self):

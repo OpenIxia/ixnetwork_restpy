@@ -39,7 +39,12 @@ class PortTestOptions(Base):
         "PortLldpOperation": "portLldpOperation",
     }
     _SDM_ENUM_MAP = {
-        "portLldpOperation": ["noOp", "enablePortLldp", "disablePortLldp"],
+        "portLldpOperation": [
+            "noOp",
+            "enablePortLldp",
+            "enablePortLldpFQN",
+            "disablePortLldp",
+        ],
     }
 
     def __init__(self, parent, list_op=False):
@@ -70,7 +75,7 @@ class PortTestOptions(Base):
         """
         Returns
         -------
-        - str(noOp | enablePortLldp | disablePortLldp): Port LLDP operation performed during port connect/reboot. Please reconnect or reboot the port(s) for this to take effect.
+        - str(noOp | enablePortLldp | enablePortLldpFQN | disablePortLldp): Port LLDP operation performed during port connect/reboot. Please reconnect or reboot the port(s) for this to take effect.
         """
         return self._get_attribute(self._SDM_ATT_MAP["PortLldpOperation"])
 
@@ -86,7 +91,7 @@ class PortTestOptions(Base):
         Args
         ----
         - EnableDpdkPerformanceAcceleration (bool): Enable DPDK traffic engine mode for performance acceleration in data plane.
-        - PortLldpOperation (str(noOp | enablePortLldp | disablePortLldp)): Port LLDP operation performed during port connect/reboot. Please reconnect or reboot the port(s) for this to take effect.
+        - PortLldpOperation (str(noOp | enablePortLldp | enablePortLldpFQN | disablePortLldp)): Port LLDP operation performed during port connect/reboot. Please reconnect or reboot the port(s) for this to take effect.
 
         Raises
         ------
@@ -105,7 +110,7 @@ class PortTestOptions(Base):
         Args
         ----
         - EnableDpdkPerformanceAcceleration (bool): Enable DPDK traffic engine mode for performance acceleration in data plane.
-        - PortLldpOperation (str(noOp | enablePortLldp | disablePortLldp)): Port LLDP operation performed during port connect/reboot. Please reconnect or reboot the port(s) for this to take effect.
+        - PortLldpOperation (str(noOp | enablePortLldp | enablePortLldpFQN | disablePortLldp)): Port LLDP operation performed during port connect/reboot. Please reconnect or reboot the port(s) for this to take effect.
 
         Returns
         -------

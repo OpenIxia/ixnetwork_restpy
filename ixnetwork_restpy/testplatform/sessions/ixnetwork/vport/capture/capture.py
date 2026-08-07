@@ -70,6 +70,11 @@ class Capture(Base):
         "IsCaptureRunning": "isCaptureRunning",
         "IsControlCaptureRunning": "isControlCaptureRunning",
         "IsDataCaptureRunning": "isDataCaptureRunning",
+        "IsPcsCaptureRunning": "isPcsCaptureRunning",
+        "PcsEnabled": "pcsEnabled",
+        "PcsStoreFilterMatch": "pcsStoreFilterMatch",
+        "PcsTriggerPosition": "pcsTriggerPosition",
+        "PreambleCaptureEnabled": "preambleCaptureEnabled",
         "SliceSize": "sliceSize",
         "SoftwareEnabled": "softwareEnabled",
         "TriggerPosition": "triggerPosition",
@@ -161,6 +166,46 @@ class Capture(Base):
             if self._properties.get("FilterPallette", None) is not None:
                 return self._properties.get("FilterPallette")
         return FilterPallette(self)._select()
+
+    @property
+    def Pcsfilters(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.capture.pcsfilters.pcsfilters.Pcsfilters): An instance of the Pcsfilters class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.capture.pcsfilters.pcsfilters import (
+            Pcsfilters,
+        )
+
+        if len(self._object_properties) > 0:
+            if self._properties.get("Pcsfilters", None) is not None:
+                return self._properties.get("Pcsfilters")
+        return Pcsfilters(self)._select()
+
+    @property
+    def Pcstriggers(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.capture.pcstriggers.pcstriggers.Pcstriggers): An instance of the Pcstriggers class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.capture.pcstriggers.pcstriggers import (
+            Pcstriggers,
+        )
+
+        if len(self._object_properties) > 0:
+            if self._properties.get("Pcstriggers", None) is not None:
+                return self._properties.get("Pcstriggers")
+        return Pcstriggers(self)._select()
 
     @property
     def Trigger(self):
@@ -632,6 +677,76 @@ class Capture(Base):
         return self._get_attribute(self._SDM_ATT_MAP["IsDataCaptureRunning"])
 
     @property
+    def IsPcsCaptureRunning(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: Indicates if the PCS capture is running.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["IsPcsCaptureRunning"])
+
+    @property
+    def PcsEnabled(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: [UE] If true, enables the capture pcs lane data.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["PcsEnabled"])
+
+    @PcsEnabled.setter
+    def PcsEnabled(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["PcsEnabled"], value)
+
+    @property
+    def PcsStoreFilterMatch(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: [UE] When true, only PCS capture events matching the filter are stored in the capture buffer.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["PcsStoreFilterMatch"])
+
+    @PcsStoreFilterMatch.setter
+    def PcsStoreFilterMatch(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["PcsStoreFilterMatch"], value)
+
+    @property
+    def PcsTriggerPosition(self):
+        # type: () -> int
+        """
+        Returns
+        -------
+        - number: [UE] Controls where within the PCS capture buffer the trigger point is set.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["PcsTriggerPosition"])
+
+    @PcsTriggerPosition.setter
+    def PcsTriggerPosition(self, value):
+        # type: (int) -> None
+        self._set_attribute(self._SDM_ATT_MAP["PcsTriggerPosition"], value)
+
+    @property
+    def PreambleCaptureEnabled(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: If true, enables the capture of preamble in data plane capture.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["PreambleCaptureEnabled"])
+
+    @PreambleCaptureEnabled.setter
+    def PreambleCaptureEnabled(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["PreambleCaptureEnabled"], value)
+
+    @property
     def SliceSize(self):
         # type: () -> int
         """
@@ -697,11 +812,15 @@ class Capture(Base):
         DisplayFiltersControlCapture=None,
         DisplayFiltersDataCapture=None,
         HardwareEnabled=None,
+        PcsEnabled=None,
+        PcsStoreFilterMatch=None,
+        PcsTriggerPosition=None,
+        PreambleCaptureEnabled=None,
         SliceSize=None,
         SoftwareEnabled=None,
         TriggerPosition=None,
     ):
-        # type: (str, str, str, str, str, str, int, str, str, str, int, str, bool, int, int, str, str, str, bool, int, bool, int) -> Capture
+        # type: (str, str, str, str, str, str, int, str, str, str, int, str, bool, int, int, str, str, str, bool, bool, bool, int, bool, int, bool, int) -> Capture
         """Updates capture resource on the server.
 
         Args
@@ -725,6 +844,10 @@ class Capture(Base):
         - DisplayFiltersControlCapture (str): Displays the packet filter set inside the control capture that is used to filter the already captured packets
         - DisplayFiltersDataCapture (str): Displays the packet filter set inside the data capture that is used to filter the already captured packets
         - HardwareEnabled (bool): If true, enables the capture of data plane traffic. Note that in order for data traffic to be captured, the vport attritbute -rxMode must be set to capture.
+        - PcsEnabled (bool): [UE] If true, enables the capture pcs lane data.
+        - PcsStoreFilterMatch (bool): [UE] When true, only PCS capture events matching the filter are stored in the capture buffer.
+        - PcsTriggerPosition (number): [UE] Controls where within the PCS capture buffer the trigger point is set.
+        - PreambleCaptureEnabled (bool): If true, enables the capture of preamble in data plane capture.
         - SliceSize (number): The size of the capture slice.
         - SoftwareEnabled (bool): If true, enables the capture of control plane traffic. Note that in order for control traffic to be captured, the vport attritbute -rxMode must be set to capture.
         - TriggerPosition (number): Controls the dividing line within the capture buffer between before trigger data and post trigger data. This control is only useful in triggered mode.
@@ -772,11 +895,16 @@ class Capture(Base):
         IsCaptureRunning=None,
         IsControlCaptureRunning=None,
         IsDataCaptureRunning=None,
+        IsPcsCaptureRunning=None,
+        PcsEnabled=None,
+        PcsStoreFilterMatch=None,
+        PcsTriggerPosition=None,
+        PreambleCaptureEnabled=None,
         SliceSize=None,
         SoftwareEnabled=None,
         TriggerPosition=None,
     ):
-        # type: (str, str, str, str, str, str, int, str, str, str, int, str, str, str, int, int, str, bool, int, int, str, int, str, str, int, str, List[str], List[str], List[str], str, str, bool, bool, bool, bool, int, bool, int) -> Capture
+        # type: (str, str, str, str, str, str, int, str, str, str, int, str, str, str, int, int, str, bool, int, int, str, int, str, str, int, str, List[str], List[str], List[str], str, str, bool, bool, bool, bool, bool, bool, bool, int, bool, int, bool, int) -> Capture
         """Finds and retrieves capture resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve capture resources from the server.
@@ -820,6 +948,11 @@ class Capture(Base):
         - IsCaptureRunning (bool): Indicates if the capture is running.
         - IsControlCaptureRunning (bool): Indicates if the control capture is running.
         - IsDataCaptureRunning (bool): Indicates if the data capture is running.
+        - IsPcsCaptureRunning (bool): Indicates if the PCS capture is running.
+        - PcsEnabled (bool): [UE] If true, enables the capture pcs lane data.
+        - PcsStoreFilterMatch (bool): [UE] When true, only PCS capture events matching the filter are stored in the capture buffer.
+        - PcsTriggerPosition (number): [UE] Controls where within the PCS capture buffer the trigger point is set.
+        - PreambleCaptureEnabled (bool): If true, enables the capture of preamble in data plane capture.
         - SliceSize (number): The size of the capture slice.
         - SoftwareEnabled (bool): If true, enables the capture of control plane traffic. Note that in order for control traffic to be captured, the vport attritbute -rxMode must be set to capture.
         - TriggerPosition (number): Controls the dividing line within the capture buffer between before trigger data and post trigger data. This control is only useful in triggered mode.
@@ -862,7 +995,7 @@ class Capture(Base):
 
         decodeAsApply(Arg2=enum, Arg3=enum, Arg4=number, Arg5=string, async_operation=bool)
         -----------------------------------------------------------------------------------
-        - Arg2 (str(control | data)): The capture type, could be either control or data.
+        - Arg2 (str(control | data | pcs)): The capture type, could be either control or data.
         - Arg3 (str(link | network | transport)): Specifies the network layer at witch the command should take place.
         - Arg4 (number): Could be the TCP port for Transport layer (either source or destination), IP protocol for Network layer or Ethertype for Link layer.
         - Arg5 (str): The protocol name to re-dissect as.
@@ -870,7 +1003,7 @@ class Capture(Base):
 
         decodeAsApply(Arg2=enum, Arg3=enum, Arg4=number, Arg5=enum, Arg6=number, Arg7=string, async_operation=bool)
         -----------------------------------------------------------------------------------------------------------
-        - Arg2 (str(control | data)): The capture type, could be either control or data.
+        - Arg2 (str(control | data | pcs)): The capture type, could be either control or data.
         - Arg3 (str(transport)): The transport layer.
         - Arg4 (number): The TCP source port.
         - Arg5 (str(transport)): The transport layer.
@@ -898,7 +1031,7 @@ class Capture(Base):
 
         decodeAsClear(Arg2=enum, async_operation=bool)
         ----------------------------------------------
-        - Arg2 (str(control | data)): The capture type, could be either control or data
+        - Arg2 (str(control | data | pcs)): The capture type, could be either control or data
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
@@ -923,15 +1056,15 @@ class Capture(Base):
 
         mergeCapture(Arg2=enum, Arg3=href, Arg4=enum, Arg5=string, async_operation=bool)
         --------------------------------------------------------------------------------
-        - Arg2 (str(control | data)): The type of the capture, either data or control.
+        - Arg2 (str(control | data | pcs)): The type of the capture, either data or control.
         - Arg3 (str(None | /api/v1/sessions/1/ixnetwork/vport/capture)): The capture object of a port.
-        - Arg4 (str(control | data)): The type of the capture, either data or control.
+        - Arg4 (str(control | data | pcs)): The type of the capture, either data or control.
         - Arg5 (str): The full path where the resulted merged capture will be saved, the result capture name needs to contain extension also.
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         mergeCapture(Arg2=enum, Arg3=string, Arg4=string, async_operation=bool)
         -----------------------------------------------------------------------
-        - Arg2 (str(control | data)): The type of the capture, either data or control.
+        - Arg2 (str(control | data | pcs)): The type of the capture, either data or control.
         - Arg3 (str): The full path of the offline capture.
         - Arg4 (str): The full path where the resulted merged capture will be saved, the result capture name needs to contain extension also.
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
@@ -962,7 +1095,7 @@ class Capture(Base):
 
         start(Arg2=enum, async_operation=bool)
         --------------------------------------
-        - Arg2 (str(allTraffic | controlTraffic | dataTraffic)): The type of the capture that should be started.
+        - Arg2 (str(allTraffic | controlTraffic | dataTraffic | pcsTraffic)):
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises
@@ -991,7 +1124,7 @@ class Capture(Base):
 
         stop(Arg2=enum, async_operation=bool)
         -------------------------------------
-        - Arg2 (str(allTraffic | controlTraffic | dataTraffic)): The capture type.
+        - Arg2 (str(allTraffic | controlTraffic | dataTraffic | pcsTraffic)):
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 
         Raises

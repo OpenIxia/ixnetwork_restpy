@@ -49,7 +49,7 @@ class ConfigElement(Base):
         "PreambleFrameSizeMode": "preambleFrameSizeMode",
     }
     _SDM_ENUM_MAP = {
-        "crc": ["badCrc", "goodCrc"],
+        "crc": ["badCrc", "goodCrc", "poisonedCrc"],
         "destinationMacMode": ["arp", "manual"],
         "preambleFrameSizeMode": ["auto", "custom", "customBytes"],
     }
@@ -218,12 +218,32 @@ class ConfigElement(Base):
         return TransmissionDistribution(self)
 
     @property
+    def Ue(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.ue.ue.Ue): An instance of the Ue class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.configelement.ue.ue import (
+            Ue,
+        )
+
+        if len(self._object_properties) > 0:
+            if self._properties.get("Ue", None) is not None:
+                return self._properties.get("Ue")
+        return Ue(self)._select()
+
+    @property
     def Crc(self):
         # type: () -> str
         """
         Returns
         -------
-        - str(badCrc | goodCrc): The Cyclic Redundancy Check frame of the configured encapsulation set.
+        - str(badCrc | goodCrc | poisonedCrc): The Cyclic Redundancy Check frame of the configured encapsulation set.
         """
         return self._get_attribute(self._SDM_ATT_MAP["Crc"])
 
@@ -371,7 +391,7 @@ class ConfigElement(Base):
 
         Args
         ----
-        - Crc (str(badCrc | goodCrc)): The Cyclic Redundancy Check frame of the configured encapsulation set.
+        - Crc (str(badCrc | goodCrc | poisonedCrc)): The Cyclic Redundancy Check frame of the configured encapsulation set.
         - DestinationMacMode (str(arp | manual)): The destination MAC address that is to be configured.
         - EnableDisparityError (bool): If true, enables disparity error
         - PreambleCustomData (number): Indicates the customized preamble of the frame. Provide space separated hexadecimal bytes.
@@ -398,7 +418,7 @@ class ConfigElement(Base):
 
         Args
         ----
-        - Crc (str(badCrc | goodCrc)): The Cyclic Redundancy Check frame of the configured encapsulation set.
+        - Crc (str(badCrc | goodCrc | poisonedCrc)): The Cyclic Redundancy Check frame of the configured encapsulation set.
         - DestinationMacMode (str(arp | manual)): The destination MAC address that is to be configured.
         - EnableDisparityError (bool): If true, enables disparity error
         - PreambleCustomData (number): Indicates the customized preamble of the frame. Provide space separated hexadecimal bytes.
@@ -438,7 +458,7 @@ class ConfigElement(Base):
 
         Args
         ----
-        - Crc (str(badCrc | goodCrc)): The Cyclic Redundancy Check frame of the configured encapsulation set.
+        - Crc (str(badCrc | goodCrc | poisonedCrc)): The Cyclic Redundancy Check frame of the configured encapsulation set.
         - DestinationMacMode (str(arp | manual)): The destination MAC address that is to be configured.
         - EnableDisparityError (bool): If true, enables disparity error
         - EncapsulationName (str): Indicates the name of the encapsulation set.

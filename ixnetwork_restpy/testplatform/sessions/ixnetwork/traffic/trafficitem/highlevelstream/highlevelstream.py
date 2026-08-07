@@ -60,7 +60,7 @@ class HighLevelStream(Base):
         "TxPortName": "txPortName",
     }
     _SDM_ENUM_MAP = {
-        "crc": ["badCrc", "goodCrc"],
+        "crc": ["badCrc", "goodCrc", "poisonedCrc"],
         "destinationMacMode": ["arp", "manual"],
         "preambleFrameSizeMode": ["auto", "custom", "customBytes"],
     }
@@ -249,6 +249,26 @@ class HighLevelStream(Base):
         return Udf(self)
 
     @property
+    def Ue(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.highlevelstream.ue.ue.Ue): An instance of the Ue class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.traffic.trafficitem.highlevelstream.ue.ue import (
+            Ue,
+        )
+
+        if len(self._object_properties) > 0:
+            if self._properties.get("Ue", None) is not None:
+                return self._properties.get("Ue")
+        return Ue(self)._select()
+
+    @property
     def AppliedFrameRate(self):
         # type: () -> str
         """
@@ -284,7 +304,7 @@ class HighLevelStream(Base):
         """
         Returns
         -------
-        - str(badCrc | goodCrc): The Cyclic Redundancy Check frame of the configured high level stream.
+        - str(badCrc | goodCrc | poisonedCrc): The Cyclic Redundancy Check frame of the configured high level stream.
         """
         return self._get_attribute(self._SDM_ATT_MAP["Crc"])
 
@@ -541,7 +561,7 @@ class HighLevelStream(Base):
 
         Args
         ----
-        - Crc (str(badCrc | goodCrc)): The Cyclic Redundancy Check frame of the configured high level stream.
+        - Crc (str(badCrc | goodCrc | poisonedCrc)): The Cyclic Redundancy Check frame of the configured high level stream.
         - DestinationMacMode (str(arp | manual)): The mode in which the Destination MAC Address is configured, either manual or ARP.
         - Enabled (bool):
         - Name (str): An alphanumeric string that returns the name of the field.
@@ -578,7 +598,7 @@ class HighLevelStream(Base):
 
         Args
         ----
-        - Crc (str(badCrc | goodCrc)): The Cyclic Redundancy Check frame of the configured high level stream.
+        - Crc (str(badCrc | goodCrc | poisonedCrc)): The Cyclic Redundancy Check frame of the configured high level stream.
         - DestinationMacMode (str(arp | manual)): The mode in which the Destination MAC Address is configured, either manual or ARP.
         - Enabled (bool):
         - Name (str): An alphanumeric string that returns the name of the field.
@@ -636,7 +656,7 @@ class HighLevelStream(Base):
         - AppliedFrameRate (str):
         - AppliedFrameSize (str): (Read only) Indicates the applied frame size of the high level stream.
         - AppliedPacketCount (number): (Read only) Indicates the aplied packet count of the high level stream.
-        - Crc (str(badCrc | goodCrc)): The Cyclic Redundancy Check frame of the configured high level stream.
+        - Crc (str(badCrc | goodCrc | poisonedCrc)): The Cyclic Redundancy Check frame of the configured high level stream.
         - CurrentPacketCount (number): (Read only) Denotes the number of packets.
         - DestinationMacMode (str(arp | manual)): The mode in which the Destination MAC Address is configured, either manual or ARP.
         - Distributions (list(dict(arg1:str,arg2:str))): Denotes the distribution of the high level stream.

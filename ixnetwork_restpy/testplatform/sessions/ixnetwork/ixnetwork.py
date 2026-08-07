@@ -245,13 +245,13 @@ class Ixnetwork(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.topology_9d0fe0bb2c064aa7010adbdb6cf68958.Topology): An instance of the Topology class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.topology_77ec9aaf06a075bbf9c8d348d6369654.Topology): An instance of the Topology class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.topology_9d0fe0bb2c064aa7010adbdb6cf68958 import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.topology_77ec9aaf06a075bbf9c8d348d6369654 import (
             Topology,
         )
 
@@ -2274,7 +2274,7 @@ class Ixnetwork(Base):
         ----------------------------------------------------------------------------------
         - Arg1 (str): Full path to the capture file.
         - Arg2 (str(None | /api/v1/sessions/1/ixnetwork/vport/capture)): The port capture object.
-        - Arg3 (str(control | data)): The type of the capture, either data or control.
+        - Arg3 (str(control | data | pcs)): The type of the capture, either data or control.
         - Arg4 (str): The full path where the resulted merged capture will be saved, the result capture name needs to contain extension also.
         - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
 

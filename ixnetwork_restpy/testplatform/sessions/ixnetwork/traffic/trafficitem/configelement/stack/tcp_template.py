@@ -88,7 +88,10 @@ class Tcp(Base):
         "Rfc3692StypeExperiment2Kind": "tcp.header.options.option.type.rfc3692StypeExperiment2.kind-80",
         "Rfc3692StypeExperiment2Length": "tcp.header.options.option.type.rfc3692StypeExperiment2.length-81",
         "Rfc3692StypeExperiment2Data": "tcp.header.options.option.type.rfc3692StypeExperiment2.data-82",
-        "OptionsPad": "tcp.header.options.pad-83",
+        "CsigReflectionHeaderKind": "tcp.header.options.option.type.csigReflectionHeader.kind-83",
+        "CsigReflectionHeaderLength": "tcp.header.options.option.type.csigReflectionHeader.length-84",
+        "CsigReflectionHeaderCsigData": "tcp.header.options.option.type.csigReflectionHeader.csigData-85",
+        "OptionsPad": "tcp.header.options.pad-86",
     }
 
     def __init__(self, parent, list_op=False):
@@ -1112,6 +1115,45 @@ class Tcp(Base):
 
         return Multivalue(
             self, self._get_attribute(self._SDM_ATT_MAP["Rfc3692StypeExperiment2Data"])
+        )
+
+    @property
+    def CsigReflectionHeaderKind(self):
+        """
+        Display Name: Kind
+        Default Value: 0
+        Value Format: decimal
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["CsigReflectionHeaderKind"])
+        )
+
+    @property
+    def CsigReflectionHeaderLength(self):
+        """
+        Display Name: Length
+        Default Value: 4
+        Value Format: decimal
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["CsigReflectionHeaderLength"])
+        )
+
+    @property
+    def CsigReflectionHeaderCsigData(self):
+        """
+        Display Name: CSIG Data
+        Default Value: 0
+        Value Format: hex
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["CsigReflectionHeaderCsigData"])
         )
 
     @property

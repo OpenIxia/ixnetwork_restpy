@@ -222,3 +222,54 @@ class Statistics(Base):
         - ServerError: The server has encountered an uncategorized error condition
         """
         return self._read(href)
+
+    def DeleteStatEngineLogs(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the deleteStatEngineLogs operation on the server.
+
+        Delete StatEngine Log files
+
+        deleteStatEngineLogs(async_operation=bool)
+        ------------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "deleteStatEngineLogs", payload=payload, response_object=None
+        )
+
+    def StartStopStatEngineLogging(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[str, None]
+        """Executes the startStopStatEngineLogging operation on the server.
+
+        Start/Stop StatEngine Logging for desired modules
+
+        startStopStatEngineLogging(Arg2=bool, Arg3=enum, async_operation=bool)string
+        ----------------------------------------------------------------------------
+        - Arg2 (bool): boolean indicating start/stop
+        - Arg3 (str(all | port | traffic)): enum indicating which modules to log
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns str: status
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "startStopStatEngineLogging", payload=payload, response_object=None
+        )

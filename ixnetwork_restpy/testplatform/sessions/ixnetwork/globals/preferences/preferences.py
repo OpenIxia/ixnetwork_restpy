@@ -52,6 +52,7 @@ class Preferences(Base):
         "EnableLMServerConnectionViaIxProxy": "enableLMServerConnectionViaIxProxy",
         "EnablePCPUGuardRail": "enablePCPUGuardRail",
         "EnableScriptWatch": "enableScriptWatch",
+        "EnableStartTransmitDelay": "enableStartTransmitDelay",
         "EnableStatsConnectionViaIxProxy": "enableStatsConnectionViaIxProxy",
         "ForceLegacyPortNameInStats": "forceLegacyPortNameInStats",
         "IncludeTroubleshootingComments": "includeTroubleshootingComments",
@@ -74,6 +75,7 @@ class Preferences(Base):
         "SequenceCheckingWhenNoTxRxSync": "sequenceCheckingWhenNoTxRxSync",
         "SharePatternBehaviour": "sharePatternBehaviour",
         "ShortenScenarioObjectNameInMiddle": "shortenScenarioObjectNameInMiddle",
+        "StartTransmitDelayValueInSec": "startTransmitDelayValueInSec",
         "StreamLogsToSyslogServer": "streamLogsToSyslogServer",
         "SyslogHost": "syslogHost",
         "SyslogPort": "syslogPort",
@@ -396,6 +398,21 @@ class Preferences(Base):
     def EnableScriptWatch(self, value):
         # type: (bool) -> None
         self._set_attribute(self._SDM_ATT_MAP["EnableScriptWatch"], value)
+
+    @property
+    def EnableStartTransmitDelay(self):
+        # type: () -> bool
+        """
+        Returns
+        -------
+        - bool: If true, IxNetwork would apply the configured amount of delay before every start transmit operation.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["EnableStartTransmitDelay"])
+
+    @EnableStartTransmitDelay.setter
+    def EnableStartTransmitDelay(self, value):
+        # type: (bool) -> None
+        self._set_attribute(self._SDM_ATT_MAP["EnableStartTransmitDelay"], value)
 
     @property
     def EnableStatsConnectionViaIxProxy(self):
@@ -727,6 +744,21 @@ class Preferences(Base):
         )
 
     @property
+    def StartTransmitDelayValueInSec(self):
+        # type: () -> int
+        """
+        Returns
+        -------
+        - number: Configures the amount of delay in seconds before every start transmit operation. This value is applicable to all PTP synced chassis.
+        """
+        return self._get_attribute(self._SDM_ATT_MAP["StartTransmitDelayValueInSec"])
+
+    @StartTransmitDelayValueInSec.setter
+    def StartTransmitDelayValueInSec(self, value):
+        # type: (int) -> None
+        self._set_attribute(self._SDM_ATT_MAP["StartTransmitDelayValueInSec"], value)
+
+    @property
     def StreamLogsToSyslogServer(self):
         # type: () -> bool
         """
@@ -835,6 +867,7 @@ class Preferences(Base):
         EnableLMServerConnectionViaIxProxy=None,
         EnablePCPUGuardRail=None,
         EnableScriptWatch=None,
+        EnableStartTransmitDelay=None,
         EnableStatsConnectionViaIxProxy=None,
         ForceLegacyPortNameInStats=None,
         IncludeTroubleshootingComments=None,
@@ -856,6 +889,7 @@ class Preferences(Base):
         SequenceCheckingWhenNoTxRxSync=None,
         SharePatternBehaviour=None,
         ShortenScenarioObjectNameInMiddle=None,
+        StartTransmitDelayValueInSec=None,
         StreamLogsToSyslogServer=None,
         SyslogHost=None,
         SyslogPort=None,
@@ -863,7 +897,7 @@ class Preferences(Base):
         TransmitMode=None,
         UseNewApiBrowser=None,
     ):
-        # type: (bool, bool, int, str, str, str, bool, int, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, int, int, int, str, bool, bool, str, bool, bool, str, List[str], str, str, bool, bool, str, bool, bool, str, int, str, str, bool) -> Preferences
+        # type: (bool, bool, int, str, str, str, bool, int, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, int, int, int, str, bool, bool, str, bool, bool, str, List[str], str, str, bool, bool, str, bool, int, bool, str, int, str, str, bool) -> Preferences
         """Updates preferences resource on the server.
 
         Args
@@ -885,6 +919,7 @@ class Preferences(Base):
         - EnableLMServerConnectionViaIxProxy (bool): EnableLMServerConnectionViaIxProxy
         - EnablePCPUGuardRail (bool): enable pcpu guardrail
         - EnableScriptWatch (bool): Controls script watch.
+        - EnableStartTransmitDelay (bool): If true, IxNetwork would apply the configured amount of delay before every start transmit operation.
         - EnableStatsConnectionViaIxProxy (bool): EnableStatsConnectionViaIxProxy
         - ForceLegacyPortNameInStats (bool): When false, IxNetwork statistics show port name in <Chassis/Front Panel Port Number> format. When true, it is in <Chassis/Card/Port> format
         - IncludeTroubleshootingComments (bool): Includes troubleshooting comments in the script
@@ -906,6 +941,7 @@ class Preferences(Base):
         - SequenceCheckingWhenNoTxRxSync (bool): When true, advanced sequence checking is preferred if Tx-Rx Sync is unavailable on any port.
         - SharePatternBehaviour (str(CopyPattern | SharePattern)): Set the Share Pattern Behaviour in UI Action
         - ShortenScenarioObjectNameInMiddle (bool): Shorten Topology/DG/NG names in the middle. If this is true, Topology/Device Group/Network Group names are shortened in the middle (with .), otherwise at the end
+        - StartTransmitDelayValueInSec (number): Configures the amount of delay in seconds before every start transmit operation. This value is applicable to all PTP synced chassis.
         - StreamLogsToSyslogServer (bool): Enables streaming Logs To Syslog Server
         - SyslogHost (str): syslog host
         - SyslogPort (number): syslog Port
@@ -938,6 +974,7 @@ class Preferences(Base):
         EnableLMServerConnectionViaIxProxy=None,
         EnablePCPUGuardRail=None,
         EnableScriptWatch=None,
+        EnableStartTransmitDelay=None,
         EnableStatsConnectionViaIxProxy=None,
         ForceLegacyPortNameInStats=None,
         IncludeTroubleshootingComments=None,
@@ -960,6 +997,7 @@ class Preferences(Base):
         SequenceCheckingWhenNoTxRxSync=None,
         SharePatternBehaviour=None,
         ShortenScenarioObjectNameInMiddle=None,
+        StartTransmitDelayValueInSec=None,
         StreamLogsToSyslogServer=None,
         SyslogHost=None,
         SyslogPort=None,
@@ -967,7 +1005,7 @@ class Preferences(Base):
         TransmitMode=None,
         UseNewApiBrowser=None,
     ):
-        # type: (bool, bool, int, str, str, str, bool, int, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, int, int, int, str, bool, bool, str, bool, bool, str, List[str], List[str], str, str, bool, bool, str, bool, bool, str, int, str, str, bool) -> Preferences
+        # type: (bool, bool, int, str, str, str, bool, int, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, bool, int, int, int, str, bool, bool, str, bool, bool, str, List[str], List[str], str, str, bool, bool, str, bool, int, bool, str, int, str, str, bool) -> Preferences
         """Finds and retrieves preferences resources from the server.
 
         All named parameters are evaluated on the server using regex. The named parameters can be used to selectively retrieve preferences resources from the server.
@@ -993,6 +1031,7 @@ class Preferences(Base):
         - EnableLMServerConnectionViaIxProxy (bool): EnableLMServerConnectionViaIxProxy
         - EnablePCPUGuardRail (bool): enable pcpu guardrail
         - EnableScriptWatch (bool): Controls script watch.
+        - EnableStartTransmitDelay (bool): If true, IxNetwork would apply the configured amount of delay before every start transmit operation.
         - EnableStatsConnectionViaIxProxy (bool): EnableStatsConnectionViaIxProxy
         - ForceLegacyPortNameInStats (bool): When false, IxNetwork statistics show port name in <Chassis/Front Panel Port Number> format. When true, it is in <Chassis/Card/Port> format
         - IncludeTroubleshootingComments (bool): Includes troubleshooting comments in the script
@@ -1015,6 +1054,7 @@ class Preferences(Base):
         - SequenceCheckingWhenNoTxRxSync (bool): When true, advanced sequence checking is preferred if Tx-Rx Sync is unavailable on any port.
         - SharePatternBehaviour (str(CopyPattern | SharePattern)): Set the Share Pattern Behaviour in UI Action
         - ShortenScenarioObjectNameInMiddle (bool): Shorten Topology/DG/NG names in the middle. If this is true, Topology/Device Group/Network Group names are shortened in the middle (with .), otherwise at the end
+        - StartTransmitDelayValueInSec (number): Configures the amount of delay in seconds before every start transmit operation. This value is applicable to all PTP synced chassis.
         - StreamLogsToSyslogServer (bool): Enables streaming Logs To Syslog Server
         - SyslogHost (str): syslog host
         - SyslogPort (number): syslog Port

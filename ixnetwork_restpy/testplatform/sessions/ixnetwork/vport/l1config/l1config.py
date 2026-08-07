@@ -68,6 +68,8 @@ class L1Config(Base):
             "aresOneFourHundredGigLan",
             "aresOneFourHundredGigLanFcoe",
             "uhdOneHundredGigLan",
+            "ethernetixverify",
+            "ethernetixverifyFcoe",
             "novus5GTenTwentyFiveGigLan",
             "novus5GTenTwentyFiveGigLanFcoe",
             "starFourHundredGigLan",
@@ -87,6 +89,12 @@ class L1Config(Base):
             "inpt1600GFcoe",
             "aresOne1600G",
             "aresOne1600GFcoe",
+            "sert1600G",
+            "sert1600GFcoe",
+            "inpt1600G-C",
+            "inpt1600G-C-Fcoe",
+            "aresOne1600G-C",
+            "aresOne1600G-C-Fcoe",
         ],
     }
 
@@ -132,6 +140,26 @@ class L1Config(Base):
             if self._properties.get("AresOne1600G", None) is not None:
                 return self._properties.get("AresOne1600G")
         return AresOne1600G(self)._select()
+
+    @property
+    def AresOne1600GC(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.aresone1600gc.aresone1600gc.AresOne1600GC): An instance of the AresOne1600GC class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.aresone1600gc.aresone1600gc import (
+            AresOne1600GC,
+        )
+
+        if len(self._object_properties) > 0:
+            if self._properties.get("AresOne1600GC", None) is not None:
+                return self._properties.get("AresOne1600GC")
+        return AresOne1600GC(self)._select()
 
     @property
     def AresOneEightHundredGigLanOsfpC(self):
@@ -314,6 +342,26 @@ class L1Config(Base):
         return Ethernetcm(self)._select()
 
     @property
+    def Ethernetixverify(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.ethernetixverify.ethernetixverify.Ethernetixverify): An instance of the Ethernetixverify class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.ethernetixverify.ethernetixverify import (
+            Ethernetixverify,
+        )
+
+        if len(self._object_properties) > 0:
+            if self._properties.get("Ethernetixverify", None) is not None:
+                return self._properties.get("Ethernetixverify")
+        return Ethernetixverify(self)._select()
+
+    @property
     def Ethernetvm(self):
         """
         Returns
@@ -452,6 +500,26 @@ class L1Config(Base):
             if self._properties.get("Inpt1600G", None) is not None:
                 return self._properties.get("Inpt1600G")
         return Inpt1600G(self)._select()
+
+    @property
+    def Inpt1600GC(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.inpt1600gc.inpt1600gc.Inpt1600GC): An instance of the Inpt1600GC class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.inpt1600gc.inpt1600gc import (
+            Inpt1600GC,
+        )
+
+        if len(self._object_properties) > 0:
+            if self._properties.get("Inpt1600GC", None) is not None:
+                return self._properties.get("Inpt1600GC")
+        return Inpt1600GC(self)._select()
 
     @property
     def Inpt800G(self):
@@ -714,6 +782,26 @@ class L1Config(Base):
         return RxFilters(self)._select()
 
     @property
+    def Sert1600G(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.sert1600g.sert1600g.Sert1600G): An instance of the Sert1600G class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.l1config.sert1600g.sert1600g import (
+            Sert1600G,
+        )
+
+        if len(self._object_properties) > 0:
+            if self._properties.get("Sert1600G", None) is not None:
+                return self._properties.get("Sert1600G")
+        return Sert1600G(self)._select()
+
+    @property
     def SertHundredGigLan(self):
         """
         Returns
@@ -839,7 +927,7 @@ class L1Config(Base):
         """
         Returns
         -------
-        - str(ethernet | ethernetvm | ethernetcm | novusmini | novusminipro | ethernetFcoe | atm | pos | tenGigLan | tenGigLanFcoe | fortyGigLan | fortyGigLanFcoe | tenGigWan | tenGigWanFcoe | hundredGigLan | hundredGigLanFcoe | tenFortyHundredGigLan | tenFortyHundredGigLanFcoe | fc | ethernetImpairment | novusHundredGigLan | novusHundredGigLanFcoe | novusTenGigLan | novusTenGigLanFcoe | krakenFourHundredGigLan | krakenFourHundredGigLanFcoe | aresOneFourHundredGigLan | aresOneFourHundredGigLanFcoe | uhdOneHundredGigLan | novus5GTenTwentyFiveGigLan | novus5GTenTwentyFiveGigLanFcoe | starFourHundredGigLan | starFourHundredGigLanFcoe | ravenEightHundredGigLan | ravenEightHundredGigLanFcoe | aresOneEightHundredGigLanQddC | aresOneEightHundredGigLanQddCFcoe | sertHundredGigLan | aresOneEightHundredGigLanOsfpC | aresOneEightHundredGigLanOsfpCFcoe | aresOneM | aresOneMFcoe | inpt800G | inpt800GFcoe | inpt1600G | inpt1600GFcoe | aresOne1600G | aresOne1600GFcoe): Indicates the types of ports for configuration to choose from.
+        - str(ethernet | ethernetvm | ethernetcm | novusmini | novusminipro | ethernetFcoe | atm | pos | tenGigLan | tenGigLanFcoe | fortyGigLan | fortyGigLanFcoe | tenGigWan | tenGigWanFcoe | hundredGigLan | hundredGigLanFcoe | tenFortyHundredGigLan | tenFortyHundredGigLanFcoe | fc | ethernetImpairment | novusHundredGigLan | novusHundredGigLanFcoe | novusTenGigLan | novusTenGigLanFcoe | krakenFourHundredGigLan | krakenFourHundredGigLanFcoe | aresOneFourHundredGigLan | aresOneFourHundredGigLanFcoe | uhdOneHundredGigLan | ethernetixverify | ethernetixverifyFcoe | novus5GTenTwentyFiveGigLan | novus5GTenTwentyFiveGigLanFcoe | starFourHundredGigLan | starFourHundredGigLanFcoe | ravenEightHundredGigLan | ravenEightHundredGigLanFcoe | aresOneEightHundredGigLanQddC | aresOneEightHundredGigLanQddCFcoe | sertHundredGigLan | aresOneEightHundredGigLanOsfpC | aresOneEightHundredGigLanOsfpCFcoe | aresOneM | aresOneMFcoe | inpt800G | inpt800GFcoe | inpt1600G | inpt1600GFcoe | aresOne1600G | aresOne1600GFcoe | sert1600G | sert1600GFcoe | inpt1600G-C | inpt1600G-C-Fcoe | aresOne1600G-C | aresOne1600G-C-Fcoe): Indicates the types of ports for configuration to choose from.
         """
         return self._get_attribute(self._SDM_ATT_MAP["CurrentType"])
 
@@ -854,7 +942,7 @@ class L1Config(Base):
 
         Args
         ----
-        - CurrentType (str(ethernet | ethernetvm | ethernetcm | novusmini | novusminipro | ethernetFcoe | atm | pos | tenGigLan | tenGigLanFcoe | fortyGigLan | fortyGigLanFcoe | tenGigWan | tenGigWanFcoe | hundredGigLan | hundredGigLanFcoe | tenFortyHundredGigLan | tenFortyHundredGigLanFcoe | fc | ethernetImpairment | novusHundredGigLan | novusHundredGigLanFcoe | novusTenGigLan | novusTenGigLanFcoe | krakenFourHundredGigLan | krakenFourHundredGigLanFcoe | aresOneFourHundredGigLan | aresOneFourHundredGigLanFcoe | uhdOneHundredGigLan | novus5GTenTwentyFiveGigLan | novus5GTenTwentyFiveGigLanFcoe | starFourHundredGigLan | starFourHundredGigLanFcoe | ravenEightHundredGigLan | ravenEightHundredGigLanFcoe | aresOneEightHundredGigLanQddC | aresOneEightHundredGigLanQddCFcoe | sertHundredGigLan | aresOneEightHundredGigLanOsfpC | aresOneEightHundredGigLanOsfpCFcoe | aresOneM | aresOneMFcoe | inpt800G | inpt800GFcoe | inpt1600G | inpt1600GFcoe | aresOne1600G | aresOne1600GFcoe)): Indicates the types of ports for configuration to choose from.
+        - CurrentType (str(ethernet | ethernetvm | ethernetcm | novusmini | novusminipro | ethernetFcoe | atm | pos | tenGigLan | tenGigLanFcoe | fortyGigLan | fortyGigLanFcoe | tenGigWan | tenGigWanFcoe | hundredGigLan | hundredGigLanFcoe | tenFortyHundredGigLan | tenFortyHundredGigLanFcoe | fc | ethernetImpairment | novusHundredGigLan | novusHundredGigLanFcoe | novusTenGigLan | novusTenGigLanFcoe | krakenFourHundredGigLan | krakenFourHundredGigLanFcoe | aresOneFourHundredGigLan | aresOneFourHundredGigLanFcoe | uhdOneHundredGigLan | ethernetixverify | ethernetixverifyFcoe | novus5GTenTwentyFiveGigLan | novus5GTenTwentyFiveGigLanFcoe | starFourHundredGigLan | starFourHundredGigLanFcoe | ravenEightHundredGigLan | ravenEightHundredGigLanFcoe | aresOneEightHundredGigLanQddC | aresOneEightHundredGigLanQddCFcoe | sertHundredGigLan | aresOneEightHundredGigLanOsfpC | aresOneEightHundredGigLanOsfpCFcoe | aresOneM | aresOneMFcoe | inpt800G | inpt800GFcoe | inpt1600G | inpt1600GFcoe | aresOne1600G | aresOne1600GFcoe | sert1600G | sert1600GFcoe | inpt1600G-C | inpt1600G-C-Fcoe | aresOne1600G-C | aresOne1600G-C-Fcoe)): Indicates the types of ports for configuration to choose from.
 
         Raises
         ------
@@ -872,7 +960,7 @@ class L1Config(Base):
 
         Args
         ----
-        - CurrentType (str(ethernet | ethernetvm | ethernetcm | novusmini | novusminipro | ethernetFcoe | atm | pos | tenGigLan | tenGigLanFcoe | fortyGigLan | fortyGigLanFcoe | tenGigWan | tenGigWanFcoe | hundredGigLan | hundredGigLanFcoe | tenFortyHundredGigLan | tenFortyHundredGigLanFcoe | fc | ethernetImpairment | novusHundredGigLan | novusHundredGigLanFcoe | novusTenGigLan | novusTenGigLanFcoe | krakenFourHundredGigLan | krakenFourHundredGigLanFcoe | aresOneFourHundredGigLan | aresOneFourHundredGigLanFcoe | uhdOneHundredGigLan | novus5GTenTwentyFiveGigLan | novus5GTenTwentyFiveGigLanFcoe | starFourHundredGigLan | starFourHundredGigLanFcoe | ravenEightHundredGigLan | ravenEightHundredGigLanFcoe | aresOneEightHundredGigLanQddC | aresOneEightHundredGigLanQddCFcoe | sertHundredGigLan | aresOneEightHundredGigLanOsfpC | aresOneEightHundredGigLanOsfpCFcoe | aresOneM | aresOneMFcoe | inpt800G | inpt800GFcoe | inpt1600G | inpt1600GFcoe | aresOne1600G | aresOne1600GFcoe)): Indicates the types of ports for configuration to choose from.
+        - CurrentType (str(ethernet | ethernetvm | ethernetcm | novusmini | novusminipro | ethernetFcoe | atm | pos | tenGigLan | tenGigLanFcoe | fortyGigLan | fortyGigLanFcoe | tenGigWan | tenGigWanFcoe | hundredGigLan | hundredGigLanFcoe | tenFortyHundredGigLan | tenFortyHundredGigLanFcoe | fc | ethernetImpairment | novusHundredGigLan | novusHundredGigLanFcoe | novusTenGigLan | novusTenGigLanFcoe | krakenFourHundredGigLan | krakenFourHundredGigLanFcoe | aresOneFourHundredGigLan | aresOneFourHundredGigLanFcoe | uhdOneHundredGigLan | ethernetixverify | ethernetixverifyFcoe | novus5GTenTwentyFiveGigLan | novus5GTenTwentyFiveGigLanFcoe | starFourHundredGigLan | starFourHundredGigLanFcoe | ravenEightHundredGigLan | ravenEightHundredGigLanFcoe | aresOneEightHundredGigLanQddC | aresOneEightHundredGigLanQddCFcoe | sertHundredGigLan | aresOneEightHundredGigLanOsfpC | aresOneEightHundredGigLanOsfpCFcoe | aresOneM | aresOneMFcoe | inpt800G | inpt800GFcoe | inpt1600G | inpt1600GFcoe | aresOne1600G | aresOne1600GFcoe | sert1600G | sert1600GFcoe | inpt1600G-C | inpt1600G-C-Fcoe | aresOne1600G-C | aresOne1600G-C-Fcoe)): Indicates the types of ports for configuration to choose from.
 
         Returns
         -------

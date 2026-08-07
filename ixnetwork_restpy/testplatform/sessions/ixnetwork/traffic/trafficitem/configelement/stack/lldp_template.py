@@ -481,8 +481,28 @@ class Lldp(Base):
         "AppPriorityTableReserved": "lldp.header.organizationalTlvs.tlvs.dot1qaz.tlvs.applicationPriorityTlv.appPriorityTable.reserved-473",
         "AppPriorityTableSel": "lldp.header.organizationalTlvs.tlvs.dot1qaz.tlvs.applicationPriorityTlv.appPriorityTable.sel-474",
         "AppPriorityTableProtocolId": "lldp.header.organizationalTlvs.tlvs.dot1qaz.tlvs.applicationPriorityTlv.appPriorityTable.protocolId-475",
-        "EndLldpTlvType": "lldp.header.endLldpTlv.type-476",
-        "EndLldpTlvLength": "lldp.header.endLldpTlv.length-477",
+        "UeLinkNegotiationOptionsTlvType": "lldp.header.organizationalTlvs.tlvs.ueLinkNegotiationOptionsTlv.type-476",
+        "UeLinkNegotiationOptionsTlvLength": "lldp.header.organizationalTlvs.tlvs.ueLinkNegotiationOptionsTlv.length-477",
+        "UeLinkNegotiationOptionsTlvCid": "lldp.header.organizationalTlvs.tlvs.ueLinkNegotiationOptionsTlv.cid-478",
+        "UeLinkNegotiationOptionsTlvVersion": "lldp.header.organizationalTlvs.tlvs.ueLinkNegotiationOptionsTlv.version-479",
+        "UeLinkNegotiationOptionsTlvSubtype": "lldp.header.organizationalTlvs.tlvs.ueLinkNegotiationOptionsTlv.subtype-480",
+        "LinkOptionsResv1": "lldp.header.organizationalTlvs.tlvs.ueLinkNegotiationOptionsTlv.linkOptions.resv1-481",
+        "LinkOptionsUfhC": "lldp.header.organizationalTlvs.tlvs.ueLinkNegotiationOptionsTlv.linkOptions.ufhC-482",
+        "LinkOptionsCsigC": "lldp.header.organizationalTlvs.tlvs.ueLinkNegotiationOptionsTlv.linkOptions.csigC-483",
+        "LinkOptionsIpgrC": "lldp.header.organizationalTlvs.tlvs.ueLinkNegotiationOptionsTlv.linkOptions.ipgrC-484",
+        "LinkOptionsLlrW": "lldp.header.organizationalTlvs.tlvs.ueLinkNegotiationOptionsTlv.linkOptions.llrW-485",
+        "LinkOptionsResv": "lldp.header.organizationalTlvs.tlvs.ueLinkNegotiationOptionsTlv.linkOptions.resv-486",
+        "LinkOptionsUfhS": "lldp.header.organizationalTlvs.tlvs.ueLinkNegotiationOptionsTlv.linkOptions.ufhS-487",
+        "LinkOptionsLlrE": "lldp.header.organizationalTlvs.tlvs.ueLinkNegotiationOptionsTlv.linkOptions.llrE-488",
+        "Ufh32CfgV32": "lldp.header.organizationalTlvs.tlvs.ueLinkNegotiationOptionsTlv.ufh32Cfg.v32-489",
+        "Ufh32CfgRr32": "lldp.header.organizationalTlvs.tlvs.ueLinkNegotiationOptionsTlv.ufh32Cfg.rr32-490",
+        "Ufh32CfgUfh32": "lldp.header.organizationalTlvs.tlvs.ueLinkNegotiationOptionsTlv.ufh32Cfg.ufh32-491",
+        "Ufh32CfgV16": "lldp.header.organizationalTlvs.tlvs.ueLinkNegotiationOptionsTlv.ufh32Cfg.v16-492",
+        "Ufh32CfgRr16": "lldp.header.organizationalTlvs.tlvs.ueLinkNegotiationOptionsTlv.ufh32Cfg.rr16-493",
+        "Ufh32CfgResv3": "lldp.header.organizationalTlvs.tlvs.ueLinkNegotiationOptionsTlv.ufh32Cfg.resv3-494",
+        "Ufh32CfgUfh16": "lldp.header.organizationalTlvs.tlvs.ueLinkNegotiationOptionsTlv.ufh32Cfg.ufh16-495",
+        "EndLldpTlvType": "lldp.header.endLldpTlv.type-496",
+        "EndLldpTlvLength": "lldp.header.endLldpTlv.length-497",
     }
 
     def __init__(self, parent, list_op=False):
@@ -6604,6 +6624,262 @@ class Lldp(Base):
         return Multivalue(
             self, self._get_attribute(self._SDM_ATT_MAP["AppPriorityTableProtocolId"])
         )
+
+    @property
+    def UeLinkNegotiationOptionsTlvType(self):
+        """
+        Display Name: Type
+        Default Value: 127
+        Value Format: decimal
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["UeLinkNegotiationOptionsTlvType"]),
+        )
+
+    @property
+    def UeLinkNegotiationOptionsTlvLength(self):
+        """
+        Display Name: Length
+        Default Value: 8
+        Value Format: decimal
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["UeLinkNegotiationOptionsTlvLength"]),
+        )
+
+    @property
+    def UeLinkNegotiationOptionsTlvCid(self):
+        """
+        Display Name: CID
+        Default Value: 0xFA7ACB
+        Value Format: hex
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self,
+            self._get_attribute(self._SDM_ATT_MAP["UeLinkNegotiationOptionsTlvCid"]),
+        )
+
+    @property
+    def UeLinkNegotiationOptionsTlvVersion(self):
+        """
+        Display Name: Version
+        Default Value: 1
+        Value Format: decimal
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["UeLinkNegotiationOptionsTlvVersion"]
+            ),
+        )
+
+    @property
+    def UeLinkNegotiationOptionsTlvSubtype(self):
+        """
+        Display Name: Subtype
+        Default Value: 0
+        Value Format: decimal
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self,
+            self._get_attribute(
+                self._SDM_ATT_MAP["UeLinkNegotiationOptionsTlvSubtype"]
+            ),
+        )
+
+    @property
+    def LinkOptionsResv1(self):
+        """
+        Display Name: RESV1
+        Default Value: 0
+        Value Format: decimal
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LinkOptionsResv1"])
+        )
+
+    @property
+    def LinkOptionsUfhC(self):
+        """
+        Display Name: UFH-C
+        Default Value: 0
+        Value Format: decimal
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LinkOptionsUfhC"])
+        )
+
+    @property
+    def LinkOptionsCsigC(self):
+        """
+        Display Name: CSIG-C
+        Default Value: 0
+        Value Format: decimal
+        Available enum values: No CSIG, 0, CSIG Compact, 1, CSIG Compact+Wide, 2, Reserved, 3
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LinkOptionsCsigC"])
+        )
+
+    @property
+    def LinkOptionsIpgrC(self):
+        """
+        Display Name: IPGR-C
+        Default Value: 0
+        Value Format: decimal
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LinkOptionsIpgrC"])
+        )
+
+    @property
+    def LinkOptionsLlrW(self):
+        """
+        Display Name: LLR-W
+        Default Value: 0
+        Value Format: decimal
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LinkOptionsLlrW"])
+        )
+
+    @property
+    def LinkOptionsResv(self):
+        """
+        Display Name: RESV2
+        Default Value: 0
+        Value Format: decimal
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LinkOptionsResv"])
+        )
+
+    @property
+    def LinkOptionsUfhS(self):
+        """
+        Display Name: UFH-S
+        Default Value: 0
+        Value Format: decimal
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LinkOptionsUfhS"])
+        )
+
+    @property
+    def LinkOptionsLlrE(self):
+        """
+        Display Name: LLR-E
+        Default Value: 0
+        Value Format: decimal
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(
+            self, self._get_attribute(self._SDM_ATT_MAP["LinkOptionsLlrE"])
+        )
+
+    @property
+    def Ufh32CfgV32(self):
+        """
+        Display Name: V32
+        Default Value: 0
+        Value Format: decimal
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Ufh32CfgV32"]))
+
+    @property
+    def Ufh32CfgRr32(self):
+        """
+        Display Name: RR32
+        Default Value: 0
+        Value Format: decimal
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Ufh32CfgRr32"]))
+
+    @property
+    def Ufh32CfgUfh32(self):
+        """
+        Display Name: UFH_32
+        Default Value: 0
+        Value Format: decimal
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Ufh32CfgUfh32"]))
+
+    @property
+    def Ufh32CfgV16(self):
+        """
+        Display Name: V16
+        Default Value: 0
+        Value Format: decimal
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Ufh32CfgV16"]))
+
+    @property
+    def Ufh32CfgRr16(self):
+        """
+        Display Name: RR16
+        Default Value: 0
+        Value Format: decimal
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Ufh32CfgRr16"]))
+
+    @property
+    def Ufh32CfgResv3(self):
+        """
+        Display Name: RESV3
+        Default Value: 0
+        Value Format: decimal
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Ufh32CfgResv3"]))
+
+    @property
+    def Ufh32CfgUfh16(self):
+        """
+        Display Name: UFH_16
+        Default Value: 0
+        Value Format: decimal
+        """
+        from ixnetwork_restpy.multivalue import Multivalue
+
+        return Multivalue(self, self._get_attribute(self._SDM_ATT_MAP["Ufh32CfgUfh16"]))
 
     @property
     def EndLldpTlvType(self):

@@ -149,6 +149,8 @@ class Vport(Base):
             "aresOneFourHundredGigLan",
             "aresOneFourHundredGigLanFcoe",
             "uhdOneHundredGigLan",
+            "ethernetixverify",
+            "ethernetixverifyFcoe",
             "novus5GTenTwentyFiveGigLan",
             "novus5GTenTwentyFiveGigLanFcoe",
             "starFourHundredGigLan",
@@ -168,6 +170,12 @@ class Vport(Base):
             "inpt1600GFcoe",
             "aresOne1600G",
             "aresOne1600GFcoe",
+            "sert1600G",
+            "sert1600GFcoe",
+            "inpt1600G-C",
+            "inpt1600G-C-Fcoe",
+            "aresOne1600G-C",
+            "aresOne1600G-C-Fcoe",
         ],
     }
 
@@ -353,6 +361,26 @@ class Vport(Base):
             if self._properties.get("TapSettings", None) is not None:
                 return self._properties.get("TapSettings")
         return TapSettings(self)
+
+    @property
+    def UltraEthernet(self):
+        """
+        Returns
+        -------
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.ultraethernet.ultraethernet.UltraEthernet): An instance of the UltraEthernet class
+
+        Raises
+        ------
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.vport.ultraethernet.ultraethernet import (
+            UltraEthernet,
+        )
+
+        if len(self._object_properties) > 0:
+            if self._properties.get("UltraEthernet", None) is not None:
+                return self._properties.get("UltraEthernet")
+        return UltraEthernet(self)
 
     @property
     def ActualSpeed(self):
@@ -812,7 +840,7 @@ class Vport(Base):
         """
         Returns
         -------
-        - str(ethernet | ethernetvm | ethernetcm | novusmini | novusminipro | ethernetFcoe | atm | pos | tenGigLan | tenGigLanFcoe | fortyGigLan | fortyGigLanFcoe | tenGigWan | tenGigWanFcoe | hundredGigLan | hundredGigLanFcoe | tenFortyHundredGigLan | tenFortyHundredGigLanFcoe | fc | ethernetImpairment | novusHundredGigLan | novusHundredGigLanFcoe | novusTenGigLan | novusTenGigLanFcoe | krakenFourHundredGigLan | krakenFourHundredGigLanFcoe | aresOneFourHundredGigLan | aresOneFourHundredGigLanFcoe | uhdOneHundredGigLan | novus5GTenTwentyFiveGigLan | novus5GTenTwentyFiveGigLanFcoe | starFourHundredGigLan | starFourHundredGigLanFcoe | ravenEightHundredGigLan | ravenEightHundredGigLanFcoe | aresOneEightHundredGigLanQddC | aresOneEightHundredGigLanQddCFcoe | sertHundredGigLan | aresOneEightHundredGigLanOsfpC | aresOneEightHundredGigLanOsfpCFcoe | aresOneM | aresOneMFcoe | inpt800G | inpt800GFcoe | inpt1600G | inpt1600GFcoe | aresOne1600G | aresOne1600GFcoe): The type of port selection.
+        - str(ethernet | ethernetvm | ethernetcm | novusmini | novusminipro | ethernetFcoe | atm | pos | tenGigLan | tenGigLanFcoe | fortyGigLan | fortyGigLanFcoe | tenGigWan | tenGigWanFcoe | hundredGigLan | hundredGigLanFcoe | tenFortyHundredGigLan | tenFortyHundredGigLanFcoe | fc | ethernetImpairment | novusHundredGigLan | novusHundredGigLanFcoe | novusTenGigLan | novusTenGigLanFcoe | krakenFourHundredGigLan | krakenFourHundredGigLanFcoe | aresOneFourHundredGigLan | aresOneFourHundredGigLanFcoe | uhdOneHundredGigLan | ethernetixverify | ethernetixverifyFcoe | novus5GTenTwentyFiveGigLan | novus5GTenTwentyFiveGigLanFcoe | starFourHundredGigLan | starFourHundredGigLanFcoe | ravenEightHundredGigLan | ravenEightHundredGigLanFcoe | aresOneEightHundredGigLanQddC | aresOneEightHundredGigLanQddCFcoe | sertHundredGigLan | aresOneEightHundredGigLanOsfpC | aresOneEightHundredGigLanOsfpCFcoe | aresOneM | aresOneMFcoe | inpt800G | inpt800GFcoe | inpt1600G | inpt1600GFcoe | aresOne1600G | aresOne1600GFcoe | sert1600G | sert1600GFcoe | inpt1600G-C | inpt1600G-C-Fcoe | aresOne1600G-C | aresOne1600G-C-Fcoe): The type of port selection.
         """
         return self._get_attribute(self._SDM_ATT_MAP["Type"])
 
@@ -880,7 +908,7 @@ class Vport(Base):
         - TransmitIgnoreLinkStatus (bool): If true, the port ingores the link status when transmitting data.
         - TxGapControlMode (str(fixedMode | averageMode)): This object controls the Gap Control mode of the port.
         - TxMode (str(sequential | interleaved | sequentialCoarse | interleavedCoarse | packetImpairment)): The transmit mode.
-        - Type (str(ethernet | ethernetvm | ethernetcm | novusmini | novusminipro | ethernetFcoe | atm | pos | tenGigLan | tenGigLanFcoe | fortyGigLan | fortyGigLanFcoe | tenGigWan | tenGigWanFcoe | hundredGigLan | hundredGigLanFcoe | tenFortyHundredGigLan | tenFortyHundredGigLanFcoe | fc | ethernetImpairment | novusHundredGigLan | novusHundredGigLanFcoe | novusTenGigLan | novusTenGigLanFcoe | krakenFourHundredGigLan | krakenFourHundredGigLanFcoe | aresOneFourHundredGigLan | aresOneFourHundredGigLanFcoe | uhdOneHundredGigLan | novus5GTenTwentyFiveGigLan | novus5GTenTwentyFiveGigLanFcoe | starFourHundredGigLan | starFourHundredGigLanFcoe | ravenEightHundredGigLan | ravenEightHundredGigLanFcoe | aresOneEightHundredGigLanQddC | aresOneEightHundredGigLanQddCFcoe | sertHundredGigLan | aresOneEightHundredGigLanOsfpC | aresOneEightHundredGigLanOsfpCFcoe | aresOneM | aresOneMFcoe | inpt800G | inpt800GFcoe | inpt1600G | inpt1600GFcoe | aresOne1600G | aresOne1600GFcoe)): The type of port selection.
+        - Type (str(ethernet | ethernetvm | ethernetcm | novusmini | novusminipro | ethernetFcoe | atm | pos | tenGigLan | tenGigLanFcoe | fortyGigLan | fortyGigLanFcoe | tenGigWan | tenGigWanFcoe | hundredGigLan | hundredGigLanFcoe | tenFortyHundredGigLan | tenFortyHundredGigLanFcoe | fc | ethernetImpairment | novusHundredGigLan | novusHundredGigLanFcoe | novusTenGigLan | novusTenGigLanFcoe | krakenFourHundredGigLan | krakenFourHundredGigLanFcoe | aresOneFourHundredGigLan | aresOneFourHundredGigLanFcoe | uhdOneHundredGigLan | ethernetixverify | ethernetixverifyFcoe | novus5GTenTwentyFiveGigLan | novus5GTenTwentyFiveGigLanFcoe | starFourHundredGigLan | starFourHundredGigLanFcoe | ravenEightHundredGigLan | ravenEightHundredGigLanFcoe | aresOneEightHundredGigLanQddC | aresOneEightHundredGigLanQddCFcoe | sertHundredGigLan | aresOneEightHundredGigLanOsfpC | aresOneEightHundredGigLanOsfpCFcoe | aresOneM | aresOneMFcoe | inpt800G | inpt800GFcoe | inpt1600G | inpt1600GFcoe | aresOne1600G | aresOne1600GFcoe | sert1600G | sert1600GFcoe | inpt1600G-C | inpt1600G-C-Fcoe | aresOne1600G-C | aresOne1600G-C-Fcoe)): The type of port selection.
         - UseGlobalSettings (bool): Enables/Disables use of global settings instead of local settings on port
 
         Raises
@@ -923,7 +951,7 @@ class Vport(Base):
         - TransmitIgnoreLinkStatus (bool): If true, the port ingores the link status when transmitting data.
         - TxGapControlMode (str(fixedMode | averageMode)): This object controls the Gap Control mode of the port.
         - TxMode (str(sequential | interleaved | sequentialCoarse | interleavedCoarse | packetImpairment)): The transmit mode.
-        - Type (str(ethernet | ethernetvm | ethernetcm | novusmini | novusminipro | ethernetFcoe | atm | pos | tenGigLan | tenGigLanFcoe | fortyGigLan | fortyGigLanFcoe | tenGigWan | tenGigWanFcoe | hundredGigLan | hundredGigLanFcoe | tenFortyHundredGigLan | tenFortyHundredGigLanFcoe | fc | ethernetImpairment | novusHundredGigLan | novusHundredGigLanFcoe | novusTenGigLan | novusTenGigLanFcoe | krakenFourHundredGigLan | krakenFourHundredGigLanFcoe | aresOneFourHundredGigLan | aresOneFourHundredGigLanFcoe | uhdOneHundredGigLan | novus5GTenTwentyFiveGigLan | novus5GTenTwentyFiveGigLanFcoe | starFourHundredGigLan | starFourHundredGigLanFcoe | ravenEightHundredGigLan | ravenEightHundredGigLanFcoe | aresOneEightHundredGigLanQddC | aresOneEightHundredGigLanQddCFcoe | sertHundredGigLan | aresOneEightHundredGigLanOsfpC | aresOneEightHundredGigLanOsfpCFcoe | aresOneM | aresOneMFcoe | inpt800G | inpt800GFcoe | inpt1600G | inpt1600GFcoe | aresOne1600G | aresOne1600GFcoe)): The type of port selection.
+        - Type (str(ethernet | ethernetvm | ethernetcm | novusmini | novusminipro | ethernetFcoe | atm | pos | tenGigLan | tenGigLanFcoe | fortyGigLan | fortyGigLanFcoe | tenGigWan | tenGigWanFcoe | hundredGigLan | hundredGigLanFcoe | tenFortyHundredGigLan | tenFortyHundredGigLanFcoe | fc | ethernetImpairment | novusHundredGigLan | novusHundredGigLanFcoe | novusTenGigLan | novusTenGigLanFcoe | krakenFourHundredGigLan | krakenFourHundredGigLanFcoe | aresOneFourHundredGigLan | aresOneFourHundredGigLanFcoe | uhdOneHundredGigLan | ethernetixverify | ethernetixverifyFcoe | novus5GTenTwentyFiveGigLan | novus5GTenTwentyFiveGigLanFcoe | starFourHundredGigLan | starFourHundredGigLanFcoe | ravenEightHundredGigLan | ravenEightHundredGigLanFcoe | aresOneEightHundredGigLanQddC | aresOneEightHundredGigLanQddCFcoe | sertHundredGigLan | aresOneEightHundredGigLanOsfpC | aresOneEightHundredGigLanOsfpCFcoe | aresOneM | aresOneMFcoe | inpt800G | inpt800GFcoe | inpt1600G | inpt1600GFcoe | aresOne1600G | aresOne1600GFcoe | sert1600G | sert1600GFcoe | inpt1600G-C | inpt1600G-C-Fcoe | aresOne1600G-C | aresOne1600G-C-Fcoe)): The type of port selection.
         - UseGlobalSettings (bool): Enables/Disables use of global settings instead of local settings on port
 
         Returns
@@ -1039,7 +1067,7 @@ class Vport(Base):
         - TransmitIgnoreLinkStatus (bool): If true, the port ingores the link status when transmitting data.
         - TxGapControlMode (str(fixedMode | averageMode)): This object controls the Gap Control mode of the port.
         - TxMode (str(sequential | interleaved | sequentialCoarse | interleavedCoarse | packetImpairment)): The transmit mode.
-        - Type (str(ethernet | ethernetvm | ethernetcm | novusmini | novusminipro | ethernetFcoe | atm | pos | tenGigLan | tenGigLanFcoe | fortyGigLan | fortyGigLanFcoe | tenGigWan | tenGigWanFcoe | hundredGigLan | hundredGigLanFcoe | tenFortyHundredGigLan | tenFortyHundredGigLanFcoe | fc | ethernetImpairment | novusHundredGigLan | novusHundredGigLanFcoe | novusTenGigLan | novusTenGigLanFcoe | krakenFourHundredGigLan | krakenFourHundredGigLanFcoe | aresOneFourHundredGigLan | aresOneFourHundredGigLanFcoe | uhdOneHundredGigLan | novus5GTenTwentyFiveGigLan | novus5GTenTwentyFiveGigLanFcoe | starFourHundredGigLan | starFourHundredGigLanFcoe | ravenEightHundredGigLan | ravenEightHundredGigLanFcoe | aresOneEightHundredGigLanQddC | aresOneEightHundredGigLanQddCFcoe | sertHundredGigLan | aresOneEightHundredGigLanOsfpC | aresOneEightHundredGigLanOsfpCFcoe | aresOneM | aresOneMFcoe | inpt800G | inpt800GFcoe | inpt1600G | inpt1600GFcoe | aresOne1600G | aresOne1600GFcoe)): The type of port selection.
+        - Type (str(ethernet | ethernetvm | ethernetcm | novusmini | novusminipro | ethernetFcoe | atm | pos | tenGigLan | tenGigLanFcoe | fortyGigLan | fortyGigLanFcoe | tenGigWan | tenGigWanFcoe | hundredGigLan | hundredGigLanFcoe | tenFortyHundredGigLan | tenFortyHundredGigLanFcoe | fc | ethernetImpairment | novusHundredGigLan | novusHundredGigLanFcoe | novusTenGigLan | novusTenGigLanFcoe | krakenFourHundredGigLan | krakenFourHundredGigLanFcoe | aresOneFourHundredGigLan | aresOneFourHundredGigLanFcoe | uhdOneHundredGigLan | ethernetixverify | ethernetixverifyFcoe | novus5GTenTwentyFiveGigLan | novus5GTenTwentyFiveGigLanFcoe | starFourHundredGigLan | starFourHundredGigLanFcoe | ravenEightHundredGigLan | ravenEightHundredGigLanFcoe | aresOneEightHundredGigLanQddC | aresOneEightHundredGigLanQddCFcoe | sertHundredGigLan | aresOneEightHundredGigLanOsfpC | aresOneEightHundredGigLanOsfpCFcoe | aresOneM | aresOneMFcoe | inpt800G | inpt800GFcoe | inpt1600G | inpt1600GFcoe | aresOne1600G | aresOne1600GFcoe | sert1600G | sert1600GFcoe | inpt1600G-C | inpt1600G-C-Fcoe | aresOne1600G-C | aresOne1600G-C-Fcoe)): The type of port selection.
         - UseGlobalSettings (bool): Enables/Disables use of global settings instead of local settings on port
         - ValidTxModes (list(str[interleaved | interleavedCoarse | packetImpairment | sequential | sequentialCoarse])):
 
@@ -2104,6 +2132,49 @@ class Vport(Base):
             "startStatelessTrafficBlocking", payload=payload, response_object=None
         )
 
+    def StartUeImpairment(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the startUeImpairment operation on the server.
+
+        startUeImpairment(Arg2=enum, async_operation=bool)
+        --------------------------------------------------
+        - Arg2 (str(llrFrameSeqJump | llrFrameCrcError | llrFramePoisonedCrc | llrInitEchoError | llrRxFrameDrop | llrAckNackSequence | llrAckSequenceFreeze | llrTxForceReplay | txCtlOSDrop | rxCtlOSDrop | txCtlOSDelay)):
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("startUeImpairment", payload=payload, response_object=None)
+
+    def StopAllUeImpairment(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the stopAllUeImpairment operation on the server.
+
+        stopAllUeImpairment(async_operation=bool)
+        -----------------------------------------
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute(
+            "stopAllUeImpairment", payload=payload, response_object=None
+        )
+
     def StopFecErrorInsertion(self, *args, **kwargs):
         # type: (*Any, **Any) -> None
         """Executes the stopFecErrorInsertion operation on the server.
@@ -2199,6 +2270,27 @@ class Vport(Base):
         return self._execute(
             "stopStatelessTrafficBlocking", payload=payload, response_object=None
         )
+
+    def StopUeImpairment(self, *args, **kwargs):
+        # type: (*Any, **Any) -> None
+        """Executes the stopUeImpairment operation on the server.
+
+        stopUeImpairment(Arg2=enum, async_operation=bool)
+        -------------------------------------------------
+        - Arg2 (str(llrFrameSeqJump | llrFrameCrcError | llrFramePoisonedCrc | llrInitEchoError | llrRxFrameDrop | llrAckNackSequence | llrAckSequenceFreeze | llrTxForceReplay | txCtlOSDrop | rxCtlOSDrop | txCtlOSDelay)):
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {"Arg1": self}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("stopUeImpairment", payload=payload, response_object=None)
 
     def SwitchMode(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]

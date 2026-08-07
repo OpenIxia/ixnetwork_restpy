@@ -1,4 +1,7 @@
 # Release Notes
+### August 2026
+* 1.11.0
+  * support for ixnetwork version 26.5.2644.8 (26.5.0)
 ### April 2026
 * 1.10.0
   * support for ixnetwork version 26.1.2651.21 (26.1.0)

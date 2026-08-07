@@ -54,6 +54,7 @@ class Ethernetvm(Base):
             "speed1000",
             "speed100g",
             "speed10g",
+            "speed1600g",
             "speed2000",
             "speed200g",
             "speed20g",
@@ -70,6 +71,7 @@ class Ethernetvm(Base):
             "speed7000",
             "speed70g",
             "speed8000",
+            "speed800g",
             "speed80g",
             "speed9000",
             "speed90g",
@@ -100,7 +102,7 @@ class Ethernetvm(Base):
         """
         Returns
         -------
-        - list(str[speed100g | speed25g | speed50g | speed200g | speed400g | speed1000 | speed2000 | speed3000 | speed4000 | speed5000 | speed6000 | speed7000 | speed8000 | speed9000 | speed10g | speed20g | speed30g | speed40g | speed100 | speed60g | speed70g | speed80g | speed90g]): Which speeds are available for the current media and AN settings.
+        - list(str[speed100g | speed25g | speed50g | speed200g | speed400g | speed1000 | speed2000 | speed3000 | speed4000 | speed5000 | speed6000 | speed7000 | speed8000 | speed9000 | speed10g | speed20g | speed30g | speed40g | speed100 | speed60g | speed70g | speed80g | speed90g | speed800g | speed1600g]): Which speeds are available for the current media and AN settings.
         """
         return self._get_attribute(self._SDM_ATT_MAP["AvailableSpeeds"])
 
@@ -195,7 +197,7 @@ class Ethernetvm(Base):
         """
         Returns
         -------
-        - list(str[speed100g | speed25g | speed50g | speed200g | speed400g | speed1000 | speed2000 | speed3000 | speed4000 | speed5000 | speed6000 | speed7000 | speed8000 | speed9000 | speed10g | speed20g | speed30g | speed40g | speed100 | speed60g | speed70g | speed80g | speed90g]): Which speeds are selected for the current media and AN settings.
+        - list(str[speed100g | speed25g | speed50g | speed200g | speed400g | speed1000 | speed2000 | speed3000 | speed4000 | speed5000 | speed6000 | speed7000 | speed8000 | speed9000 | speed10g | speed20g | speed30g | speed40g | speed100 | speed60g | speed70g | speed80g | speed90g | speed800g | speed1600g]): Which speeds are selected for the current media and AN settings.
         """
         return self._get_attribute(self._SDM_ATT_MAP["SelectedSpeeds"])
 
@@ -210,7 +212,7 @@ class Ethernetvm(Base):
         """
         Returns
         -------
-        - str(speed100 | speed1000 | speed100g | speed10g | speed2000 | speed200g | speed20g | speed25g | speed3000 | speed30g | speed4000 | speed400g | speed40g | speed5000 | speed50g | speed6000 | speed60g | speed7000 | speed70g | speed8000 | speed80g | speed9000 | speed90g): Select one of the enums to set the speed of the ethernet vm
+        - str(speed100 | speed1000 | speed100g | speed10g | speed1600g | speed2000 | speed200g | speed20g | speed25g | speed3000 | speed30g | speed4000 | speed400g | speed40g | speed5000 | speed50g | speed6000 | speed60g | speed7000 | speed70g | speed8000 | speed800g | speed80g | speed9000 | speed90g): Select one of the enums to set the speed of the ethernet vm
         """
         return self._get_attribute(self._SDM_ATT_MAP["Speed"])
 
@@ -237,8 +239,8 @@ class Ethernetvm(Base):
         - Loopback (bool): If true, the port is set to internally loopback from transmit to receive.
         - Mtu (number):
         - PromiscuousMode (bool):
-        - SelectedSpeeds (list(str[speed100g | speed25g | speed50g | speed200g | speed400g | speed1000 | speed2000 | speed3000 | speed4000 | speed5000 | speed6000 | speed7000 | speed8000 | speed9000 | speed10g | speed20g | speed30g | speed40g | speed100 | speed60g | speed70g | speed80g | speed90g])): Which speeds are selected for the current media and AN settings.
-        - Speed (str(speed100 | speed1000 | speed100g | speed10g | speed2000 | speed200g | speed20g | speed25g | speed3000 | speed30g | speed4000 | speed400g | speed40g | speed5000 | speed50g | speed6000 | speed60g | speed7000 | speed70g | speed8000 | speed80g | speed9000 | speed90g)): Select one of the enums to set the speed of the ethernet vm
+        - SelectedSpeeds (list(str[speed100g | speed25g | speed50g | speed200g | speed400g | speed1000 | speed2000 | speed3000 | speed4000 | speed5000 | speed6000 | speed7000 | speed8000 | speed9000 | speed10g | speed20g | speed30g | speed40g | speed100 | speed60g | speed70g | speed80g | speed90g | speed800g | speed1600g])): Which speeds are selected for the current media and AN settings.
+        - Speed (str(speed100 | speed1000 | speed100g | speed10g | speed1600g | speed2000 | speed200g | speed20g | speed25g | speed3000 | speed30g | speed4000 | speed400g | speed40g | speed5000 | speed50g | speed6000 | speed60g | speed7000 | speed70g | speed8000 | speed800g | speed80g | speed9000 | speed90g)): Select one of the enums to set the speed of the ethernet vm
 
         Raises
         ------
@@ -270,7 +272,7 @@ class Ethernetvm(Base):
         Args
         ----
         - AutoInstrumentation (str(endOfFrame | floating)): The auto instrumentation mode.
-        - AvailableSpeeds (list(str[speed100g | speed25g | speed50g | speed200g | speed400g | speed1000 | speed2000 | speed3000 | speed4000 | speed5000 | speed6000 | speed7000 | speed8000 | speed9000 | speed10g | speed20g | speed30g | speed40g | speed100 | speed60g | speed70g | speed80g | speed90g])): Which speeds are available for the current media and AN settings.
+        - AvailableSpeeds (list(str[speed100g | speed25g | speed50g | speed200g | speed400g | speed1000 | speed2000 | speed3000 | speed4000 | speed5000 | speed6000 | speed7000 | speed8000 | speed9000 | speed10g | speed20g | speed30g | speed40g | speed100 | speed60g | speed70g | speed80g | speed90g | speed800g | speed1600g])): Which speeds are available for the current media and AN settings.
         - CanModifySpeed (bool): Returns true/false depending upon if the port can change speed for the current media and AN settings.
         - CanSetMultipleSpeeds (bool): Can this port selectmultiple speeds for the current media and AN settings.
         - EnablePPM (bool): If true, enables the portsppm.
@@ -278,8 +280,8 @@ class Ethernetvm(Base):
         - Mtu (number):
         - Ppm (number): Indicates the value that needs to be adjusted for the line transmit frequency.
         - PromiscuousMode (bool):
-        - SelectedSpeeds (list(str[speed100g | speed25g | speed50g | speed200g | speed400g | speed1000 | speed2000 | speed3000 | speed4000 | speed5000 | speed6000 | speed7000 | speed8000 | speed9000 | speed10g | speed20g | speed30g | speed40g | speed100 | speed60g | speed70g | speed80g | speed90g])): Which speeds are selected for the current media and AN settings.
-        - Speed (str(speed100 | speed1000 | speed100g | speed10g | speed2000 | speed200g | speed20g | speed25g | speed3000 | speed30g | speed4000 | speed400g | speed40g | speed5000 | speed50g | speed6000 | speed60g | speed7000 | speed70g | speed8000 | speed80g | speed9000 | speed90g)): Select one of the enums to set the speed of the ethernet vm
+        - SelectedSpeeds (list(str[speed100g | speed25g | speed50g | speed200g | speed400g | speed1000 | speed2000 | speed3000 | speed4000 | speed5000 | speed6000 | speed7000 | speed8000 | speed9000 | speed10g | speed20g | speed30g | speed40g | speed100 | speed60g | speed70g | speed80g | speed90g | speed800g | speed1600g])): Which speeds are selected for the current media and AN settings.
+        - Speed (str(speed100 | speed1000 | speed100g | speed10g | speed1600g | speed2000 | speed200g | speed20g | speed25g | speed3000 | speed30g | speed4000 | speed400g | speed40g | speed5000 | speed50g | speed6000 | speed60g | speed7000 | speed70g | speed8000 | speed800g | speed80g | speed9000 | speed90g)): Select one of the enums to set the speed of the ethernet vm
 
         Returns
         -------

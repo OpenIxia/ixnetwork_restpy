@@ -255,13 +255,13 @@ class NetworkGroup(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cmacproperties_ecb45bfaef4008cb27346c98c45748b2.CMacProperties): An instance of the CMacProperties class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cmacproperties_400bf7d1d314518c741d79cfefb21359.CMacProperties): An instance of the CMacProperties class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cmacproperties_ecb45bfaef4008cb27346c98c45748b2 import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.cmacproperties_400bf7d1d314518c741d79cfefb21359 import (
             CMacProperties,
         )
 
@@ -355,13 +355,13 @@ class NetworkGroup(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.evpnipv4prefixrange_f9fe868ed341d666199597001888e18d.EvpnIPv4PrefixRange): An instance of the EvpnIPv4PrefixRange class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.evpnipv4prefixrange_ddb65f8961d64b11c514cf67c70ccbf5.EvpnIPv4PrefixRange): An instance of the EvpnIPv4PrefixRange class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.evpnipv4prefixrange_f9fe868ed341d666199597001888e18d import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.evpnipv4prefixrange_ddb65f8961d64b11c514cf67c70ccbf5 import (
             EvpnIPv4PrefixRange,
         )
 
@@ -375,13 +375,13 @@ class NetworkGroup(Base):
         """
         Returns
         -------
-        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.evpnipv6prefixrange_907e82e321deae422b0ee1ed0f82f2f3.EvpnIPv6PrefixRange): An instance of the EvpnIPv6PrefixRange class
+        - obj(ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.evpnipv6prefixrange_119aa51cf700db4b8f73eb786149a1b0.EvpnIPv6PrefixRange): An instance of the EvpnIPv6PrefixRange class
 
         Raises
         ------
         - ServerError: The server has encountered an uncategorized error condition
         """
-        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.evpnipv6prefixrange_907e82e321deae422b0ee1ed0f82f2f3 import (
+        from ixnetwork_restpy.testplatform.sessions.ixnetwork.topology.evpnipv6prefixrange_119aa51cf700db4b8f73eb786149a1b0 import (
             EvpnIPv6PrefixRange,
         )
 
@@ -865,6 +865,30 @@ class NetworkGroup(Base):
         for item in kwargs.items():
             payload[item[0]] = item[1]
         return self._execute("addDeleteTags", payload=payload, response_object=None)
+
+    def CopyPaste(self, *args, **kwargs):
+        # type: (*Any, **Any) -> Union[List[str], None]
+        """Executes the copyPaste operation on the server.
+
+        Copy this node, paste it behind the destination node and return the newly copied node.
+
+        copyPaste(Arg2=href, async_operation=bool)list
+        ----------------------------------------------
+        - Arg2 (str(None | /api/v1/sessions/1/ixnetwork/)): The destination node below which the copied node will be pasted
+        - async_operation (bool=False): True to execute the operation asynchronously. Any subsequent rest api calls made through the Connection class will block until the operation is complete.
+        - Returns list(str[None | /api/v1/sessions/1/ixnetwork/]): The newly copied node.
+
+        Raises
+        ------
+        - NotFoundError: The requested resource does not exist on the server
+        - ServerError: The server has encountered an uncategorized error condition
+        """
+        payload = {"Arg1": self.href}
+        for i in range(len(args)):
+            payload["Arg%s" % (i + 2)] = args[i]
+        for item in kwargs.items():
+            payload[item[0]] = item[1]
+        return self._execute("copyPaste", payload=payload, response_object=None)
 
     def PerformActionOnAllObjects(self, *args, **kwargs):
         # type: (*Any, **Any) -> Union[str, None]
