@@ -1,4 +1,10 @@
 # Release Notes
+### September 2026
+* 1.12.1
+  * fixing incomplete SDK 
+### September 2026
+* 1.12.0
+  * support for ixnetwork version 26.5.2644.15 (26.5.1)
 ### August 2026
 * 1.11.0
   * support for ixnetwork version 26.5.2644.8 (26.5.0)

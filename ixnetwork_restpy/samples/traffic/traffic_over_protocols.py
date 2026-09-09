@@ -1,9 +1,6 @@
-"""Demonstrates creating a traffic item that uses ipv4 endpoints.
-
-"""
+"""Demonstrates creating a traffic item that uses ipv4 endpoints."""
 
 from ixnetwork_restpy import SessionAssistant
-
 
 session_assistant = SessionAssistant(
     IpAddress="127.0.0.1",

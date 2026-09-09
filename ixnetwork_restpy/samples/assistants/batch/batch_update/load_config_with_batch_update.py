@@ -5,26 +5,25 @@ load_config_with_batch_update.py:
     - Load a saved configuration
     - Find all the traffic items in the configuration
     - Update few attributes of all the traffic items & their config elements using BatchUpdate
-        
+
 Supports IxNetwork API servers:
    - Windows, Windows Connection Mgr and Linux
-   
+
 Requirements:
    - Minimum IxNetwork 9.20
    - Python 2.7 and 3+
    - pip install requests
    - pip install ixnetwork_restpy (minimum version 1.1.5)
-   
+
 RestPy Doc:
     https://openixia.github.io/ixnetwork_restpy/#/overview
 
 Usage:
    - Enter: python <script>
-   
+
 """
 
 from ixnetwork_restpy import SessionAssistant, BatchUpdate, Files
-
 
 # create a test tool session
 session_assistant = SessionAssistant(

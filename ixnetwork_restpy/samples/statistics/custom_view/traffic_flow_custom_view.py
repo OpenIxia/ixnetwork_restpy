@@ -17,7 +17,6 @@ Requirements:
 from time import sleep
 from ixnetwork_restpy import SessionAssistant
 
-
 session_assistant = SessionAssistant(
     IpAddress="127.0.0.1",
     UserName="admin",

@@ -1,4 +1,4 @@
-""" Sample that demonstrates how to enable CSV logging for a view
+"""Sample that demonstrates how to enable CSV logging for a view
 and download the resulting CSV log file once it is disabled.
 
 The sample operates under the following assumptions:

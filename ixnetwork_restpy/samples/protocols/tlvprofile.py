@@ -1,8 +1,6 @@
-"""Demonstrates creating and copying over tlv templates into a tlv profile
-"""
+"""Demonstrates creating and copying over tlv templates into a tlv profile"""
 
 from ixnetwork_restpy import SessionAssistant
-
 
 session = SessionAssistant(
     "127.0.0.1", LogLevel=SessionAssistant.LOGLEVEL_INFO, ClearConfig=True

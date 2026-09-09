@@ -9,26 +9,25 @@ traffic_with_batch_add.py:
         - Add endpoint set, config element and stack to it
         - Add Ethernet, DHCP, Ipv4 & Igmpv1 protocols to the stack
         - Update various attributes of each of these
-        
+
 Supports IxNetwork API servers:
    - Windows, Windows Connection Mgr and Linux
-   
+
 Requirements:
    - Minimum IxNetwork 9.10
    - Python 2.7 and 3+
    - pip install requests
    - pip install ixnetwork_restpy (minimum version 1.1.5)
-   
+
 RestPy Doc:
     https://openixia.github.io/ixnetwork_restpy/#/overview
 
 Usage:
    - Enter: python <script>
-   
+
 """
 
 from ixnetwork_restpy import SessionAssistant, BatchAdd
-
 
 # create a test tool session
 session_assistant = SessionAssistant(

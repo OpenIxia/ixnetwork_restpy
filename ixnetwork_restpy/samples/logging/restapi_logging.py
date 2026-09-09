@@ -1,6 +1,6 @@
 """The following demonstrates the logging features of this package
 
-The different trace options are meant to expose the details of the request and response messages. 
+The different trace options are meant to expose the details of the request and response messages.
 The default output is to sys.stdout
 To output to a log file, use the log_file_name param
 The trace level can be specified in the SessionAssistant constructor and subsequently modified using the TestPlatform.Trace property.
@@ -8,7 +8,6 @@ The default log level is SessionAssistant.LOGLEVEL_NONE which has a logging leve
 """
 
 from ixnetwork_restpy import SessionAssistant, TestPlatform
-
 
 session_assistant = SessionAssistant(
     IpAddress="127.0.0.1",

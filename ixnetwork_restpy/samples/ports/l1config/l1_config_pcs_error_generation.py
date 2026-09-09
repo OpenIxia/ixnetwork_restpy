@@ -3,28 +3,28 @@ l1_config_pcs_error_generation.py:
 
     - Connect to the API server
     - In this test, do the following:
-        - Add two real ports 
+        - Add two real ports
         - Add two vports
         - Assign two real ports in to vports
         - Find the pcsErrorGeneration from the l1Config
         - Update some attributes of pcsErrorGeneration
         - Verify the value of the attributes
-     
+
 Supports IxNetwork API servers:
    - Windows, Windows Connection Mgr and Linux
-   
+
 Requirements:
    - Minimum IxNetwork 9.30 Update 1
    - Python 2.7 and 3+
    - pip install requests
    - pip install ixnetwork_restpy (minimum version 1.1.9)
-   
+
 RestPy Doc:
     https://openixia.github.io/ixnetwork_restpy/#/overview
 
 Usage:
    - Enter: python <script>
-   
+
 """
 
 from ixnetwork_restpy import SessionAssistant

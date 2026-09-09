@@ -6,17 +6,16 @@ The container implements the following special method names to allow for iterati
     __len__, __getitem__, __iter__, __next__
 
 The benefit of a container object is that a single method call can act on many instances without having to pass arrays of references.
-For example if a container encapsulates 10 instances, the <container>.remove() method will delete all the encapsulated 
+For example if a container encapsulates 10 instances, the <container>.remove() method will delete all the encapsulated
 instances without having to add looping code
 
-For more information on containers read the following:  
+For more information on containers read the following:
   https://docs.python.org/2.7/reference/datamodel.html#emulating-container-types
   https://docs.python.org/2.7/library/stdtypes.html#typeiter
 
 """
 
 from ixnetwork_restpy import SessionAssistant
-
 
 session_assistant = SessionAssistant(
     IpAddress="127.0.0.1",

@@ -1,10 +1,9 @@
 """Demonstrates different types of patterns that can be set in
-	TestPlatform.Sessions.IxNetwork.Topology...Multivalue objects
+TestPlatform.Sessions.IxNetwork.Topology...Multivalue objects
 
 """
 
 from ixnetwork_restpy import SessionAssistant
-
 
 session_assistant = SessionAssistant(
     IpAddress="127.0.0.1",

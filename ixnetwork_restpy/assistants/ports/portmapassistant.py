@@ -1,11 +1,9 @@
-""" Assistant class to simplify the task of virtual ports to test ports connections
-"""
+"""Assistant class to simplify the task of virtual ports to test ports connections"""
 
 import time
 import json
 from ixnetwork_restpy.select import Select
 from ixnetwork_restpy.assistants.statistics.statviewassistant import StatViewAssistant
-
 
 try:
     basestring
@@ -79,7 +77,7 @@ class PortMapAssistant(object):
         - ServerError: an unexpected error occurred on the server
         """
         if Port is not None:
-            (IpAddress, CardId, PortId) = Port
+            IpAddress, CardId, PortId = Port
         if PortId is None:
             raise ValueError("A PortId must be provided")
         if Name is not None:
@@ -267,7 +265,7 @@ class PortMapAssistant(object):
                 vport["location"] = location
                 payload.append({"xpath": vport["xpath"], "location": location})
             else:
-                (hostname, cardid, portid) = location.split(";")
+                hostname, cardid, portid = location.split(";")
                 card_port = "/card/%s/port/%s" % (cardid, portid)
                 xpath = self._find_xpath(select["availableHardware"], card_port)
                 payload.append({"xpath": vport["xpath"], "connectedTo": xpath})

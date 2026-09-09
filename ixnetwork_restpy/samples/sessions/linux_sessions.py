@@ -1,8 +1,6 @@
-""" Demonstrates IxNetwork Linux API Server session management
-"""
+"""Demonstrates IxNetwork Linux API Server session management"""
 
 from ixnetwork_restpy.testplatform.testplatform import TestPlatform
-
 
 # setup the connection information for a windows gui test platform that has a default session of 1
 # platform='linux' forces the scheme to https

@@ -1,9 +1,6 @@
-"""Demonstrates some best practices for specifying device ids when executing ngpf operations
-
-"""
+"""Demonstrates some best practices for specifying device ids when executing ngpf operations"""
 
 from ixnetwork_restpy import SessionAssistant
-
 
 session_assistant = SessionAssistant(
     IpAddress="127.0.0.1",

@@ -9,22 +9,22 @@ l1_config_aresone_800g_tx_lane_and_skew_checking.py:
         - Find the AresOneEightHundredGigLanQddC from the l1Config
         - Update TxLane and Skew attributes of AresOneEightHundredGigLanQddC
         - Verify the value of the attributes
-     
+
 Supports IxNetwork API servers:
    - Windows, Windows Connection Mgr and Linux
-   
+
 Requirements:
    - Minimum IxNetwork 9.30 Update 1
    - Python 2.7 and 3+
    - pip install requests
    - pip install ixnetwork_restpy (minimum version 1.1.9)
-   
+
 RestPy Doc:
     https://openixia.github.io/ixnetwork_restpy/#/overview
 
 Usage:
    - Enter: python <script>
-   
+
 """
 
 from ixnetwork_restpy import SessionAssistant

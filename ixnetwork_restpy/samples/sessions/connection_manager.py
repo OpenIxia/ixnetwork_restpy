@@ -1,8 +1,6 @@
-""" Demonstrates IxNetwork Connection Manager session management
-"""
+"""Demonstrates IxNetwork Connection Manager session management"""
 
 from ixnetwork_restpy.testplatform.testplatform import TestPlatform
-
 
 # setup the connection information for a connection manager test platform
 test_platform = TestPlatform(

@@ -1,9 +1,6 @@
-"""Demonstrates collecting diagnostic logs 
-
-"""
+"""Demonstrates collecting diagnostic logs"""
 
 from ixnetwork_restpy import SessionAssistant, Files
-
 
 session_assistant = SessionAssistant(
     IpAddress="127.0.0.1",

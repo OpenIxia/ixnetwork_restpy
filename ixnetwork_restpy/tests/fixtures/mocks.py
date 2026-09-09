@@ -1,5 +1,4 @@
-"""Mocks all request/responses needed for unit tests
-"""
+"""Mocks all request/responses needed for unit tests"""
 
 import re
 

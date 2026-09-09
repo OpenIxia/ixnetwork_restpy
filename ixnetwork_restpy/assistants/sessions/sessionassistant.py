@@ -1,12 +1,12 @@
 """High level assistant class to consolidate and simplify the following:
 
-    Creating IxNetwork session or connecting to an IxNetwork session
-    Renaming an IxNetwork session
-    Get the TestPlatform instance
-    Get the Sessions instance
-    Get the Ixnetwork instance
-    Get a PortMapAssistant instance
-    Get a StatViewAssistant instance
+Creating IxNetwork session or connecting to an IxNetwork session
+Renaming an IxNetwork session
+Get the TestPlatform instance
+Get the Sessions instance
+Get the Ixnetwork instance
+Get a PortMapAssistant instance
+Get a StatViewAssistant instance
 """
 
 from ixnetwork_restpy.connection import Connection

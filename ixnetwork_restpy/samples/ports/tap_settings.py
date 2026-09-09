@@ -4,7 +4,6 @@ The test explains how we can configure tap settings for different ports
 
 from ixnetwork_restpy import SessionAssistant, BatchUpdate
 
-
 # create a test tool session
 session_assistant = SessionAssistant(
     IpAddress="127.0.0.1",

@@ -6,7 +6,6 @@ This sample requires an already loaded configuration with at least 2 connected v
 
 from ixnetwork_restpy import SessionAssistant, StatViewAssistant
 
-
 session_assistant = SessionAssistant(
     IpAddress="127.0.0.1",
     UserName="admin",

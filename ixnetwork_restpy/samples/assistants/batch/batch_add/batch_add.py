@@ -15,26 +15,25 @@ batch_add.py:
         - Add two more vports
         - Add two more topologies using these newly added vports
         - Add a device group in the last topology
-        
+
 Supports IxNetwork API servers:
    - Windows, Windows Connection Mgr and Linux
-   
+
 Requirements:
    - Minimum IxNetwork 9.10
    - Python 2.7 and 3+
    - pip install requests
    - pip install ixnetwork_restpy (minimum version 1.1.5)
-   
+
 RestPy Doc:
     https://openixia.github.io/ixnetwork_restpy/#/overview
 
 Usage:
    - Enter: python <script>
-   
+
 """
 
 from ixnetwork_restpy import SessionAssistant, BatchAdd
-
 
 # create a test tool session
 session_assistant = SessionAssistant(

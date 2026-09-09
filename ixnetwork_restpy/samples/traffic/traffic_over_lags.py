@@ -6,7 +6,6 @@ NOTE: due to current limitations either a Lagportlacp or Lagportstaticlag must b
 
 from ixnetwork_restpy import SessionAssistant
 
-
 session_assistant = SessionAssistant(
     IpAddress="127.0.0.1",
     UserName="admin",

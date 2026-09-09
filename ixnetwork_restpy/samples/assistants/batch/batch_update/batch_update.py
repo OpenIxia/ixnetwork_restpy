@@ -8,26 +8,25 @@ batch_update.py:
     - Add 5 device groups to this topology
     - Find the device groups
     - Update any multivalue attribute of the device groups using BatchUpdate
-        
+
 Supports IxNetwork API servers:
    - Windows, Windows Connection Mgr and Linux
-   
+
 Requirements:
    - Minimum IxNetwork 9.00
    - Python 2.7 and 3+
    - pip install requests
    - pip install ixnetwork_restpy (minimum version 1.1.5)
-   
+
 RestPy Doc:
     https://openixia.github.io/ixnetwork_restpy/#/overview
 
 Usage:
    - Enter: python <script>
-   
+
 """
 
 from ixnetwork_restpy import SessionAssistant, BatchUpdate
-
 
 # create a test tool session
 session_assistant = SessionAssistant(

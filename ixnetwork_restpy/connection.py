@@ -26,6 +26,7 @@ import datetime
 import time
 import json
 import logging
+import threading
 from requests import Session, request, utils
 from requests.exceptions import ConnectTimeout
 from io import BufferedReader
@@ -378,6 +379,9 @@ class Connection(object):
         url = "%s%s" % (url[0:path_start], url[path_start:].replace("//", "/"))
         return (connection, url)
 
+    def _set_thread_user_agent(self):
+        self._headers["User-Agent"] = "ixnetwork-restpy-%d" % threading.get_ident()
+
     def _get_file(
         self,
         url,
@@ -387,6 +391,7 @@ class Connection(object):
         local_directory=None,
         return_content=False,
     ):
+        self._set_thread_user_agent()
         headers = self._headers
         url = "%s/files?filename=%s" % (url, utils.quote(remote_filename))
         connection, url = self._normalize_url(url)
@@ -416,6 +421,7 @@ class Connection(object):
             self._process_response_status_code(url, headers, response)
 
     def _put_file(self, url, local_filename, remote_filename=None):
+        self._set_thread_user_agent()
         headers = self._headers
         headers["Content-Type"] = "application/octet-stream"
         if remote_filename is None:
@@ -433,6 +439,7 @@ class Connection(object):
             self._process_response_status_code(url, headers, response)
 
     def _delete_file(self, url, remote_filename):
+        self._set_thread_user_agent()
         headers = self._headers
         url = "%s/files?filename=%s" % (url, utils.quote(remote_filename))
         connection, url = self._normalize_url(url)
@@ -515,6 +522,7 @@ class Connection(object):
             raise ServerError(message, response.status_code)
 
     def _send_recv(self, method, url, payload=None):
+        self._set_thread_user_agent()
         headers = self._headers
         connection, url = self._normalize_url(url)
         self._check_async(url, payload)

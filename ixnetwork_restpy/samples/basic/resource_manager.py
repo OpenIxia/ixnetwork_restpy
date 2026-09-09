@@ -1,10 +1,7 @@
-"""Demonstrates some best practices for using resource manager to import and export the configuration as json
-
-"""
+"""Demonstrates some best practices for using resource manager to import and export the configuration as json"""
 
 import json
 from ixnetwork_restpy import SessionAssistant, Files
-
 
 # create a test tool session
 session_assistant = SessionAssistant(

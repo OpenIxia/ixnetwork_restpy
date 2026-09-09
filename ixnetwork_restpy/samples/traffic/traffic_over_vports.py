@@ -1,9 +1,6 @@
-"""Demonstrates creating a raw traffic item over vport endpoints.
-
-"""
+"""Demonstrates creating a raw traffic item over vport endpoints."""
 
 from ixnetwork_restpy import SessionAssistant
-
 
 session_assistant = SessionAssistant(
     IpAddress="127.0.0.1",

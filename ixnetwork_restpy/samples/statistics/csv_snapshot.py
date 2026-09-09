@@ -1,4 +1,4 @@
-""" Sample that demonstrates how to take a CSV snapshot of a statistics view
+"""Sample that demonstrates how to take a CSV snapshot of a statistics view
 
 The sample operates under the following assumptions:
     - it is for an established IxNetwork GUI session
@@ -20,15 +20,13 @@ ixnetwork = session_assistant.Ixnetwork
 session = session_assistant.Session
 file_name = "StatisticsSnapshot"
 
-ixnetwork.info(
-    """
+ixnetwork.info("""
 1) setup the csv snapshot parameters
 2) ensure the CsvName DOES NOT end with a .csv extension
 	the IxNetwork server will add a .csv extension to the final csv filename
 3) ensure the CsvLocation is a path on the IxNetwork server that the IxNetwork server has access to, 
 	the best practice is to use the Ixnetwork.Statistics.CsvFilePath location
-"""
-)
+""")
 statistics = ixnetwork.Statistics
 csvsnapshot = statistics.CsvSnapshot
 csvsnapshot.update(
@@ -41,20 +39,16 @@ csvsnapshot.update(
 
 ixnetwork.info(csvsnapshot)
 
-ixnetwork.info(
-    """
+ixnetwork.info("""
 4) take the csv snapshot
-"""
-)
+""")
 csvsnapshot.TakeCsvSnapshot()
 
-ixnetwork.info(
-    """
+ixnetwork.info("""
 5) the csv snapshot file is on the IxNetwork server and can be downloaded
 	The csv snapshot file name is the CsvLocation and CsvName and .csv extension
     The snapshot API will always add a .csv extension
-"""
-)
+""")
 file_name = file_name + ".csv"
 
 remote_filename = os.path.normpath(os.path.join(csvsnapshot.CsvLocation, file_name))

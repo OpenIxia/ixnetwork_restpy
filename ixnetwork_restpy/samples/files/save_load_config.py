@@ -1,14 +1,13 @@
 """Demonstrates file handling.
 
 The Files object determines how file content is uploaded.
-Prior to an operation if local_file=True is specified the content will be pushed to the server 
+Prior to an operation if local_file=True is specified the content will be pushed to the server
 if the content exists locally.
-If the file does not exist locally an empty file using only the file name will be created on the server. 
+If the file does not exist locally an empty file using only the file name will be created on the server.
 
 """
 
 from ixnetwork_restpy import SessionAssistant, Files
-
 
 session_assistant = SessionAssistant(
     IpAddress="127.0.0.1",

@@ -26,7 +26,6 @@ from ixnetwork_restpy.errors import NotFoundError
 from ixnetwork_restpy.files import Files
 from requests import utils
 
-
 try:
     basestring
 except NameError:

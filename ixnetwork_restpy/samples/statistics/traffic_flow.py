@@ -8,7 +8,6 @@ The last step prior to getting data should be to enable the view.
 from time import sleep
 from ixnetwork_restpy import SessionAssistant
 
-
 session_assistant = SessionAssistant(
     IpAddress="127.0.0.1",
     UserName="admin",

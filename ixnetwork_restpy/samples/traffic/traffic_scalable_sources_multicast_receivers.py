@@ -1,9 +1,6 @@
-"""Demonstrates creating a traffic item that uses scalable sources and igmp multicast receivers.
-
-"""
+"""Demonstrates creating a traffic item that uses scalable sources and igmp multicast receivers."""
 
 from ixnetwork_restpy import SessionAssistant
-
 
 session_assistant = SessionAssistant(
     IpAddress="127.0.0.1",

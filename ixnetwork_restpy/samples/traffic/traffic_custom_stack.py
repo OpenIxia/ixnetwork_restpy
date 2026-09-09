@@ -1,9 +1,6 @@
-"""This sample demonstrates customizing a traffic item stack.
-
-"""
+"""This sample demonstrates customizing a traffic item stack."""
 
 from ixnetwork_restpy import SessionAssistant
-
 
 session_assistant = SessionAssistant(
     IpAddress="127.0.0.1",

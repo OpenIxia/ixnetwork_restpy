@@ -1,5 +1,4 @@
-""" Assistant class to simplify access to statistics views
-"""
+"""Assistant class to simplify access to statistics views"""
 
 from ixnetwork_restpy.assistants.statistics.row import Row
 from ixnetwork_restpy.errors import *
@@ -9,7 +8,6 @@ import re
 import os
 import io
 import time
-
 
 try:
     basestring
