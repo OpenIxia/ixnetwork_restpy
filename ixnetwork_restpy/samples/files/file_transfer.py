@@ -1,6 +1,9 @@
-"""Demonstrates how to upload and download files to a remote server."""
+"""Demonstrates how to upload and download files to a remote server.
+
+"""
 
 from ixnetwork_restpy import SessionAssistant, Files
+
 
 session_assistant = SessionAssistant(
     IpAddress="127.0.0.1",

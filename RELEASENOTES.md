@@ -1,4 +1,8 @@
 # Release Notes
+### October 2026
+* 1.21.2
+  * fixing issue for custom multivalue in batch add
+  * fixing issue for overlay count in batch add
 ### September 2026
 * 1.12.1
   * fixing incomplete SDK 

@@ -1,6 +1,9 @@
-"""Demonstrates adding interfaces to virtual ports."""
+"""Demonstrates adding interfaces to virtual ports.
+
+"""
 
 from ixnetwork_restpy import SessionAssistant
+
 
 session_assistant = SessionAssistant(
     IpAddress="127.0.0.1",

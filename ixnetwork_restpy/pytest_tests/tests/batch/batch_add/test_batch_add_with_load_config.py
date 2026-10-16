@@ -43,7 +43,7 @@ def test_batch_add_with_multiple_nodes(ixnetwork):
     assert len(dgs[3].Ethernet.find().Ipv6.find()) == 1
     assert (
         dgs[3].Ethernet.find().Ipv6.find().href
-        == "/api/v1/sessions/1/ixnetwork/topology/2/deviceGroup/4/ethernet/1/ipv6/1"
+        == ixnetwork.href.rstrip("/") + "/topology/2/deviceGroup/4/ethernet/1/ipv6/1"
     )
 
 
@@ -97,8 +97,10 @@ def test_precedence_with_batch_add(ixnetwork):
         )
 
     end_point = ixnetwork.Traffic.TrafficItem.find().EndpointSet.find()
-    assert end_point.Sources[0] == "/api/v1/sessions/1/ixnetwork/vport/1/protocols"
-    assert end_point.Destinations[0] == "/api/v1/sessions/1/ixnetwork/vport/2/protocols"
+    assert end_point.Sources[0] == ixnetwork.href.rstrip("/") + "/vport/1/protocols"
+    assert (
+        end_point.Destinations[0] == ixnetwork.href.rstrip("/") + "/vport/2/protocols"
+    )
 
 
 if __name__ == "__main__":

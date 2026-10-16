@@ -23,7 +23,7 @@ def test_batch_add_with_traffic(ixnetwork):
             ScalableSources=[],
             ScalableDestinations=[],
         )
-    assert tr.href == "/api/v1/sessions/1/ixnetwork/traffic/trafficItem/1"
+    assert tr.href == ixnetwork.href.rstrip("/") + "/traffic/trafficItem/1"
     assert end.Sources[0] == "/vport[1]/protocols"
     assert end.Destinations[0] == "/vport[2]/protocols"
 
@@ -138,18 +138,20 @@ def test_batch_add_with_multicast_traffic(ixnetwork):
 
     assert (
         endpoint_set.href
-        == "/api/v1/sessions/1/ixnetwork/traffic/trafficItem/1/endpointSet/1"
+        == ixnetwork.href.rstrip("/") + "/traffic/trafficItem/1/endpointSet/1"
     )
     end_point = ixnetwork.Traffic.TrafficItem.find().EndpointSet.find()
     assert end_point.ScalableSources[0]["arg1"] == ipv4_2.href
     assert end_point.ScalableSources[1]["arg1"] == ipv4_2.href
     assert (
         end_point.MulticastReceivers[0]["arg1"]
-        == "/api/v1/sessions/1/ixnetwork/topology/1/deviceGroup/1/ethernet/1/ipv4/1/igmpHost/1/igmpMcastIPv4GroupList"
+        == ixnetwork.href.rstrip("/")
+        + "/topology/1/deviceGroup/1/ethernet/1/ipv4/1/igmpHost/1/igmpMcastIPv4GroupList"
     )
     assert (
         end_point.MulticastReceivers[2]["arg1"]
-        == "/api/v1/sessions/1/ixnetwork/topology/1/deviceGroup/1/ethernet/1/ipv4/1/igmpHost/1/igmpMcastIPv4GroupList"
+        == ixnetwork.href.rstrip("/")
+        + "/topology/1/deviceGroup/1/ethernet/1/ipv4/1/igmpHost/1/igmpMcastIPv4GroupList"
     )
 
 
@@ -249,7 +251,7 @@ def test_batch_add_with_traffic_having_href_objects(ixnetwork):
 
     assert (
         endpoint_set.href
-        == "/api/v1/sessions/1/ixnetwork/traffic/trafficItem/1/endpointSet/1"
+        == ixnetwork.href.rstrip("/") + "/traffic/trafficItem/1/endpointSet/1"
     )
     end_point = ixnetwork.Traffic.TrafficItem.find().EndpointSet.find()
     assert end_point.ScalableSources[0]["arg1"] == ipv4_2.href

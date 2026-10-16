@@ -1,4 +1,5 @@
-"""Tests to verify the async=True functionality of operations"""
+"""Tests to verify the async=True functionality of operations
+"""
 
 import pytest
 from ixnetwork_restpy import TestPlatform, BadRequestError

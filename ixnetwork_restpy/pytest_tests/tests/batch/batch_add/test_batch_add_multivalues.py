@@ -27,80 +27,105 @@ def test_batch_add_with_combination_of_multivalue_pattern(ixnetwork):
         )
 
         # testing out increment multivalue
-        eth1 = topo[0].DeviceGroup.add(Name="Increment", Multiplier="10").Ethernet.add()
-        eth1.Mac.Increment(
+        eth_inc = (
+            topo[0].DeviceGroup.add(Name="Increment", Multiplier="10").Ethernet.add()
+        )
+        eth_inc.Mac.Increment(
             start_value="00:11:22:33:44:55", step_value="00:11:01:00:00:01"
         )
-        eth1.Mtu.Single("1670")
-        ipv41 = eth1.Ipv4.add(Name="Ipv4 East")
-        ipv41.Address.Increment(start_value="1.1.1.1", step_value="0.1.0.0")
+        eth_inc.Mtu.Single("1670")
+        ipv4_inc = eth_inc.Ipv4.add(Name="Ipv4 East")
+        ipv4_inc.Address.Increment(start_value="1.1.1.1", step_value="0.1.0.0")
 
         # testing out decrement multivalue
-        eth2 = topo[0].DeviceGroup.add(Name="Decrement", Multiplier="10").Ethernet.add()
-        eth2.Mac.Decrement(
+        eth_dec = (
+            topo[0].DeviceGroup.add(Name="Decrement", Multiplier="10").Ethernet.add()
+        )
+        eth_dec.Mac.Decrement(
             start_value="22:11:22:33:44:55", step_value="00:11:01:00:00:01"
         )
-        eth2.Mtu.Single("1670")
-        ipv42 = eth2.Ipv4.add(Name="Ipv4 East")
-        ipv42.Address.Decrement(start_value="10.10.1.1", step_value="0.1.0.0")
+        eth_dec.Mtu.Single("1670")
+        ipv4_dec = eth_dec.Ipv4.add(Name="Ipv4 East")
+        ipv4_dec.Address.Decrement(start_value="10.10.1.1", step_value="0.1.0.0")
 
         # testing out valueList multivalue
-        eth3 = topo[0].DeviceGroup.add(Name="ValueList", Multiplier="4").Ethernet.add()
+        eth_vl = (
+            topo[0].DeviceGroup.add(Name="ValueList", Multiplier="4").Ethernet.add()
+        )
         eth_list = [
             "00:11:22:33:44:55",
             "00:00:22:33:44:55",
             "00:77:22:33:44:55",
             "00:aa:22:33:44:55",
         ]
-        eth3.Mac.ValueList(eth_list)
-        eth3.Mtu.Single("1670")
-        ipv43 = eth3.Ipv4.add(Name="Ipv4 East")
+        eth_vl.Mac.ValueList(eth_list)
+        eth_vl.Mtu.Single("1670")
+        ipv4_vl = eth_vl.Ipv4.add(Name="Ipv4 East")
         ip_list = ["1.1.1.1", "1.1.1.11", "1.1.11.1", "1.11.1.1"]
-        ipv43.Address.ValueList(ip_list)
+        ipv4_vl.Address.ValueList(ip_list)
 
         # testing out overlay multivalue
-        eth4 = topo[0].DeviceGroup.add(Name="Overlay", Multiplier="10").Ethernet.add()
-        eth4.Mac.Increment(
+        eth_ov = topo[0].DeviceGroup.add(Name="Overlay", Multiplier="10").Ethernet.add()
+        eth_ov.Mac.Increment(
             start_value="22:11:22:33:44:55", step_value="00:11:01:00:00:01"
         )
-        eth4.Mac.Overlay(4, "22:11:00:00:00:55")
-        eth4.Mac.Overlay(7, "00:11:00:00:00:55")
-        eth4.Mtu.Single("1670")
-        ipv44 = eth4.Ipv4.add(Name="Ipv4 East")
-        ipv44.Address.Increment(start_value="10.10.1.1", step_value="0.1.0.0")
-        ipv44.Address.Overlay(5, "4.4.4.4")
-        ipv44.Address.Overlay(7, "10.10.10.10")
-        ipv44.Address.Overlay(3, "99.33.66.77")
-        ipv44.Address.Overlay(9, "1.45.67.89")
+        eth_ov.Mac.Overlay(4, "22:11:00:00:00:55")
+        eth_ov.Mac.Overlay(7, "00:11:00:00:00:55")
+        eth_ov.Mtu.Single("1670")
+        ipv4_ov = eth_ov.Ipv4.add(Name="Ipv4 East")
+        ipv4_ov.Address.Increment(start_value="10.10.1.1", step_value="0.1.0.0")
+        ipv4_ov.Address.Overlay(5, "4.4.4.4")
+        ipv4_ov.Address.Overlay(7, "10.10.10.10")
+        ipv4_ov.Address.Overlay(3, "99.33.66.77")
+        ipv4_ov.Address.Overlay(9, "1.45.67.89")
+
+        # testing out overlay multivalue with count
+        eth_ovc = (
+            topo[0].DeviceGroup.add(Name="OverlayCount", Multiplier="10").Ethernet.add()
+        )
+        eth_ovc.Mac.Increment(
+            start_value="22:11:22:33:44:55", step_value="00:11:01:00:00:01"
+        )
+        eth_ovc.Mac.Overlay(2, "22:11:00:00:00:55", count=3)
+        eth_ovc.Mac.Overlay(8, "00:11:00:00:00:55", count=2)
+        eth_ovc.Mtu.Single("1670")
+        ipv4_ovc = eth_ovc.Ipv4.add(Name="Ipv4 East")
+        ipv4_ovc.Address.Increment(start_value="10.10.1.1", step_value="0.1.0.0")
+        ipv4_ovc.Address.Overlay(1, "4.4.4.4", count=2)
+        ipv4_ovc.Address.Overlay(6, "10.10.10.10", count=4)
 
         # testing alternate and string multivalue
-        eth1 = (
+        eth_alt = (
             topo[0]
             .DeviceGroup.add(Name="String/Alternate", Multiplier="10")
             .Ethernet.add()
         )
-        eth1.Mac.Increment(
+        eth_alt.Mac.Increment(
             start_value="00:11:22:33:44:55", step_value="00:11:01:00:00:01"
         )
-        eth1.Mtu.Single("1670")
-        ipv41 = eth1.Ipv4.add(Name="Ipv4 East")
-        ipv41.Address.Increment(start_value="1.1.1.1", step_value="0.1.0.0")
-        ipv41.ResolveGateway.Alternate(False)
-        ospf = ipv41.Ospfv2.add()
+        eth_alt.Mtu.Single("1670")
+        ipv4_alt = eth_alt.Ipv4.add(Name="Ipv4 East")
+        ipv4_alt.Address.Increment(start_value="1.1.1.1", step_value="0.1.0.0")
+        ipv4_alt.ResolveGateway.Alternate(False)
+        ospf = ipv4_alt.Ospfv2.add()
         ospf.AuthenticationPassword.String('{"ixia", "Keysight"}')
 
         # testing out random multivalue
-        eth1 = topo[1].DeviceGroup.add(Name="Random", Multiplier="10").Ethernet.add()
-        eth1.Mac.Random()
-        eth1.Mtu.Single("1670")
-        ipv41 = eth1.Ipv4.add(Name="Ipv4 East")
-        ipv41.Address.Random()
+        eth_rand = (
+            topo[1].DeviceGroup.add(Name="Random", Multiplier="10").Ethernet.add()
+        )
+        eth_rand.Mac.Random()
+        eth_rand.Mtu.Single("1670")
+        ipv4_rand = eth_rand.Ipv4.add(Name="Ipv4 East")
+        ipv4_rand.Address.Random()
 
         # testing out custom multivalue
-        eth2 = topo[1].DeviceGroup.add(Name="Custom", Multiplier="10").Ethernet.add()
-        eth2.Mac.Random()
-        eth2.Mtu.Single("1670")
-        ipv42 = eth2.Ipv4.add(Name="Ipv4 East")
+        eth_cust = (
+            topo[1].DeviceGroup.add(Name="Custom", Multiplier="10").Ethernet.add()
+        )
+        eth_cust.Mac.Random()
+        eth_cust.Mtu.Single("1670")
+        ipv4_cust = eth_cust.Ipv4.add(Name="Ipv4 East")
         increment = [
             (
                 "1.1.1.1",
@@ -109,18 +134,18 @@ def test_batch_add_with_combination_of_multivalue_pattern(ixnetwork):
             ),
             ("1.1.2.1", 5, [("1.1.4.1", 4, [("1.1.5.1", 4, [])])]),
         ]
-        ipv42.Address.Custom(
+        ipv4_cust.Address.Custom(
             start_value="0.0.1.1", step_value="1.0.1.0", increments=increment
         )
 
         # testing out distributed multivalue
-        eth3 = (
+        eth_dist = (
             topo[1].DeviceGroup.add(Name="Distributed", Multiplier="10").Ethernet.add()
         )
-        eth3.Mac.Random()
-        eth3.Mtu.Single("1670")
-        ipv43 = eth3.Ipv4.add(Name="Ipv4 East")
-        ipv43.Address.Distributed(
+        eth_dist.Mac.Random()
+        eth_dist.Mtu.Single("1670")
+        ipv4_dist = eth_dist.Ipv4.add(Name="Ipv4 East")
+        ipv4_dist.Address.Distributed(
             "percentage",
             "perTopology",
             [
@@ -134,24 +159,115 @@ def test_batch_add_with_combination_of_multivalue_pattern(ixnetwork):
         )
 
         # testing out RandomRange multivalue
-        eth4 = (
+        eth_rr = (
             topo[1].DeviceGroup.add(Name="RandomRange", Multiplier="10").Ethernet.add()
         )
-        eth4.Mac.RandomRange(
+        eth_rr.Mac.RandomRange(
             "00:01:02:00:00:00", "ff:ff:ff:ff:ff:ff", "00:00:00:00:00:01", 6
         )
-        eth4.Mtu.Single("1670")
-        ipv44 = eth4.Ipv4.add(Name="Ipv4 East")
-        ipv44.Address.RandomRange("1.2.3.4", "255.255.255.255", "0.1.3.0", 5)
+        eth_rr.Mtu.Single("1670")
+        ipv4_rr = eth_rr.Ipv4.add(Name="Ipv4 East")
+        ipv4_rr.Address.RandomRange("1.2.3.4", "255.255.255.255", "0.1.3.0", 5)
 
-        # testing out RandomRange multivalue
-        eth5 = (
+        # testing out RandomMask multivalue
+        eth_rm = (
             topo[1].DeviceGroup.add(Name="RandomMask", Multiplier="10").Ethernet.add()
         )
-        eth5.Mac.RandomMask("00:01:02:00:00:00", "00:00:ff:ff:ff:ff", 5, 55)
-        eth5.Mtu.Single("1670")
-        ipv45 = eth5.Ipv4.add(Name="Ipv4 East")
-        ipv45.Address.RandomMask("1.2.3.4", "0.255.255.255", 5, 55)
+        eth_rm.Mac.RandomMask("00:01:02:00:00:00", "00:00:ff:ff:ff:ff", 5, 55)
+        eth_rm.Mtu.Single("1670")
+        ipv4_rm = eth_rm.Ipv4.add(Name="Ipv4 East")
+        ipv4_rm.Address.RandomMask("1.2.3.4", "0.255.255.255", 5, 55)
+
+    # asserting the remaining multivalues
+    mac_list = [
+        "00:11:22:33:44:55",
+        "00:00:22:33:44:55",
+        "00:77:22:33:44:55",
+        "00:aa:22:33:44:55",
+    ]
+    inc = eth_inc.refresh()
+    assert inc.Mtu.Pattern == "1670"
+    assert inc.Mac.Pattern == "Inc: 00:11:22:33:44:55, 00:11:01:00:00:01"
+    assert ipv4_inc.refresh().Address.Pattern == "Inc: 1.1.1.1, 0.1.0.0"
+
+    dec = eth_dec.refresh()
+    assert dec.Mtu.Pattern == "1670"
+    assert dec.Mac.Pattern == "Dec: 22:11:22:33:44:55, 00:11:01:00:00:01"
+    assert ipv4_dec.refresh().Address.Pattern == "Dec: 10.10.1.1, 0.1.0.0"
+
+    vl = eth_vl.refresh()
+    assert vl.Mtu.Pattern == "1670"
+    assert vl.Mac.Pattern == "List: " + ", ".join(mac_list)
+    assert (
+        ipv4_vl.refresh().Address.Pattern
+        == "List: 1.1.1.1, 1.1.1.11, 1.1.11.1, 1.11.1.1"
+    )
+
+    alt = eth_alt.refresh()
+    assert alt.Mtu.Pattern == "1670"
+    assert alt.Mac.Pattern == "Inc: 00:11:22:33:44:55, 00:11:01:00:00:01"
+    assert ipv4_alt.refresh().Address.Pattern == "Inc: 1.1.1.1, 0.1.0.0"
+
+    rand = eth_rand.refresh()
+    assert rand.Mtu.Pattern == "1670"
+    assert rand.Mac.Pattern == "Rand"
+    assert ipv4_rand.refresh().Address.Pattern == "Rand"
+
+    cust = eth_cust.refresh()
+    assert cust.Mtu.Pattern == "1670"
+    assert cust.Mac.Pattern == "Rand"
+    assert (
+        ipv4_cust.refresh().Address.Pattern
+        == "Custom: 0.0.1.1, 1.0.1.0, [(1.1.1.1, 10, [(1.1.3.1, 3, []),(1.3.3.1, 2, []),(1.2.3.1, 1, [])]),(1.1.2.1, 5, [(1.1.4.1, 4, [(1.1.5.1, 4, [])])])]"
+    )
+
+    dist = eth_dist.refresh()
+    assert dist.Mtu.Pattern == "1670"
+    assert dist.Mac.Pattern == "Rand"
+    assert (
+        ipv4_dist.refresh().Address.Pattern
+        == "Dist: percentage, perTopology, [(1.0.0.0, 16.0),(0.0.0.1, 17.0),(0.0.1.0, 17.0),(0.1.0.0, 16.0),(2.0.0.0, 17.0),(0.0.0.2, 17.0)]"
+    )
+
+    rr = eth_rr.refresh()
+    assert rr.Mtu.Pattern == "1670"
+    assert (
+        rr.Mac.Pattern
+        == "Randr: 00:01:02:00:00:00, ff:ff:ff:ff:ff:ff, 00:00:00:00:00:01, 6"
+    )
+    assert ipv4_rr.refresh().Address.Pattern.startswith("Randr: 1.2.3.4")
+
+    rm = eth_rm.refresh()
+    assert rm.Mtu.Pattern == "1670"
+    assert rm.Mac.Pattern == "Randb: 00:01:02:00:00:00, 00:00:ff:ff:ff:ff, 5, 55"
+    assert ipv4_rm.refresh().Address.Pattern.startswith("Randb: 1.2.3.4")
+
+    # asserting overlay multivalues
+    mac = eth_ov.refresh().Mac
+    assert mac.Pattern == "Inc: 22:11:22:33:44:55, 00:11:01:00:00:01"
+    values = mac.Values
+    assert values[3] == "22:11:00:00:00:55"
+    assert values[6] == "00:11:00:00:00:55"
+    values = ipv4_ov.refresh().Address.Values
+    assert values[4] == "4.4.4.4"
+    assert values[6] == "10.10.10.10"
+    assert values[2] == "99.33.66.77"
+    assert values[8] == "1.45.67.89"
+
+    # asserting overlay multivalues with count
+    mac = eth_ovc.refresh().Mac
+    assert mac.Pattern == "Inc: 22:11:22:33:44:55, 00:11:01:00:00:01"
+    values = mac.Values
+    assert values[0] == "22:11:22:33:44:55"
+    assert values[1:4] == ["22:11:00:00:00:55"] * 3
+    assert values[4] != "22:11:00:00:00:55"
+    assert values[7:9] == ["00:11:00:00:00:55"] * 2
+    ip = ipv4_ovc.refresh().Address
+    assert ip.Pattern == "Inc: 10.10.1.1, 0.1.0.0"
+    values = ip.Values
+    assert values[0:2] == ["4.4.4.4"] * 2
+    assert values[2] != "4.4.4.4"
+    assert values[5:9] == ["10.10.10.10"] * 4
 
 
 def test_batch_add_with_single_multivalue_pattern(ixnetwork):
@@ -259,6 +375,29 @@ def test_batch_add_with_overlay_multivalue_pattern(ixnetwork):
     assert values[6] == "00:11:00:00:00:55"
 
 
+def test_batch_add_with_overlay_count_multivalue_pattern(ixnetwork):
+    with BatchAdd(ixnetwork):
+        vport = ixnetwork.Vport.add()
+        topo = ixnetwork.Topology.add(Name="Topology 1", Vports=vport[0])
+        eth = topo[0].DeviceGroup.add(Name="Single", Multiplier="10").Ethernet.add()
+        eth.Mac.Increment(
+            start_value="22:11:22:33:44:55", step_value="00:11:01:00:00:01"
+        )
+        eth.Mac.Overlay(2, "22:11:00:00:00:55", count=3)
+        eth.Mac.Overlay(8, "00:11:00:00:00:55", count=2)
+        # overlay as the first multivalue operation, without a preceding pattern
+        ipv4 = eth.Ipv4.add()
+        ipv4.Address.Overlay(5, "4.4.4.4", count=4)
+
+    assert eth.refresh().Mac.Pattern == "Inc: 22:11:22:33:44:55, 00:11:01:00:00:01"
+    values = eth.Mac.Values
+    assert values[1:4] == ["22:11:00:00:00:55"] * 3
+    assert values[7:9] == ["00:11:00:00:00:55"] * 2
+    assert values[0] == "22:11:22:33:44:55"
+    assert values[4] != "22:11:00:00:00:55"
+    assert ipv4.refresh().Address.Values[4:8] == ["4.4.4.4"] * 4
+
+
 def test_batch_add_with_custom_multivalue_pattern(ixnetwork):
     with BatchAdd(ixnetwork):
         vport = ixnetwork.Vport.add()
@@ -283,7 +422,7 @@ def test_batch_add_with_custom_multivalue_pattern(ixnetwork):
 
     assert (
         ip.refresh().Address.Pattern
-        == "Custom: 1.0.1.0, 1.0.1.0, [(1.1.1.1, 10, [(1.1.3.1, 3, []),(1.3.3.1, 2, []),(1.2.3.1, 1, [])]),(1.1.2.1, 5, [(1.1.4.1, 4, [(1.1.5.1, 4, [])])])]"
+        == "Custom: 0.0.1.1, 1.0.1.0, [(1.1.1.1, 10, [(1.1.3.1, 3, []),(1.3.3.1, 2, []),(1.2.3.1, 1, [])]),(1.1.2.1, 5, [(1.1.4.1, 4, [(1.1.5.1, 4, [])])])]"
     )
 
 

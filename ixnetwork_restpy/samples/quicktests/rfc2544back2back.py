@@ -1,6 +1,9 @@
-"""Demonstrates creating ospfv2 devices"""
+"""Demonstrates creating ospfv2 devices 
+
+"""
 
 from ixnetwork_restpy import SessionAssistant
+
 
 session_assistant = SessionAssistant(
     UserName="admin",

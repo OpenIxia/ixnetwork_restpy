@@ -32,17 +32,17 @@ def test_batch_add_with_dependent_attr(ixnetwork):
     assert vlan.parent.VlanCount == 3
     assert (
         vlan[0].href
-        == "/api/v1/sessions/1/ixnetwork/topology/1/deviceGroup/1/ethernet/1/vlan/1"
+        == ixnetwork.href.rstrip("/") + "/topology/1/deviceGroup/1/ethernet/1/vlan/1"
     )
     assert vlan[0].VlanId.Values[0] == "10"
     assert (
         vlan[1].href
-        == "/api/v1/sessions/1/ixnetwork/topology/1/deviceGroup/1/ethernet/1/vlan/2"
+        == ixnetwork.href.rstrip("/") + "/topology/1/deviceGroup/1/ethernet/1/vlan/2"
     )
     assert vlan[1].VlanId.Values[0] == "34"
     assert (
         vlan[2].href
-        == "/api/v1/sessions/1/ixnetwork/topology/1/deviceGroup/1/ethernet/1/vlan/3"
+        == ixnetwork.href.rstrip("/") + "/topology/1/deviceGroup/1/ethernet/1/vlan/3"
     )
     assert vlan[2].VlanId.Values[0] == "46"
 
@@ -61,19 +61,19 @@ def test_batch_add_with_classic_config(ixnetwork):
                 )
 
     interfaces = ixnetwork.Vport.find().Interface.find()
-    assert interfaces[2].href == "/api/v1/sessions/1/ixnetwork/vport/1/interface/3"
-    assert interfaces[3].href == "/api/v1/sessions/1/ixnetwork/vport/1/interface/4"
+    assert interfaces[2].href == ixnetwork.href.rstrip("/") + "/vport/1/interface/3"
+    assert interfaces[3].href == ixnetwork.href.rstrip("/") + "/vport/1/interface/4"
     bgp = ixnetwork.Vport.find().Protocols.find().Bgp.NeighborRange.find()
     assert (
         bgp[3].href
-        == "/api/v1/sessions/1/ixnetwork/vport/1/protocols/bgp/neighborRange/4"
+        == ixnetwork.href.rstrip("/") + "/vport/1/protocols/bgp/neighborRange/4"
     )
     assert (
         bgp[7].href
-        == "/api/v1/sessions/1/ixnetwork/vport/2/protocols/bgp/neighborRange/4"
+        == ixnetwork.href.rstrip("/") + "/vport/2/protocols/bgp/neighborRange/4"
     )
-    assert bgp[3].Interfaces == "/api/v1/sessions/1/ixnetwork/vport/1/interface/4"
-    assert bgp[7].Interfaces == "/api/v1/sessions/1/ixnetwork/vport/2/interface/4"
+    assert bgp[3].Interfaces == ixnetwork.href.rstrip("/") + "/vport/1/interface/4"
+    assert bgp[7].Interfaces == ixnetwork.href.rstrip("/") + "/vport/2/interface/4"
 
     with BatchAdd(ixnetwork):
         for bgp_peer in bgp:

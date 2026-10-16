@@ -630,7 +630,7 @@ class Multivalue(Base):
                 {
                     self._href: [
                         "custom",
-                        step_value,
+                        start_value,
                         step_value,
                         self._get_custom_increments(increments),
                     ]
@@ -743,16 +743,19 @@ class Multivalue(Base):
                     if "overlay" in multivaute_attr[self._href]:
                         overlay_index = multivaute_attr[self._href].index("overlay")
                         multivaute_attr[self._href][overlay_index + 1].append(
-                            [index, value]
+                            [index, value, count]
                         )
                     else:
-                        multivaute_attr[self._href] += ["overlay", [[index, value]]]
+                        multivaute_attr[self._href] += [
+                            "overlay",
+                            [[index, value, count]],
+                        ]
                     attribute_present = True
                     break
 
             if not attribute_present:
                 self.parent._properties["multiValue"].append(
-                    {self._href: ["overlay", [[index, value]]]}
+                    {self._href: ["overlay", [[index, value, count]]]}
                 )
         else:
             href = "%s/overlay" % (self._href)

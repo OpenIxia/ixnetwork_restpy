@@ -1,6 +1,9 @@
-"""Demonstrates how to create a Linux API Server QuickTest Web session"""
+""" Demonstrates how to create a Linux API Server QuickTest Web session
+
+"""
 
 from ixnetwork_restpy import SessionAssistant
+
 
 # create a linux api server quicktest session
 session_assistant = SessionAssistant(

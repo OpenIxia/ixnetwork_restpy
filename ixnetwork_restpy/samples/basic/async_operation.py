@@ -1,6 +1,7 @@
 import time
 from ixnetwork_restpy import SessionAssistant
 
+
 # create a test tool session
 session_assistant = SessionAssistant(
     IpAddress="127.0.0.1",

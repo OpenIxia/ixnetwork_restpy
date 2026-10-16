@@ -1,9 +1,10 @@
-"""Demonstrates an approach for clearing ownership on vports that are connected
+"""Demonstrates an approach for clearing ownership on vports that are connected 
 by using the Vport.ConnectedTo reference and obtaining the Port object which has the ClearOwnership method
 
 """
 
 from ixnetwork_restpy import SessionAssistant
+
 
 session_assistant = SessionAssistant(
     IpAddress="127.0.0.1",

@@ -1,6 +1,8 @@
-"""Demonstrates standalone IxNetwork Windows GUI session management"""
+""" Demonstrates standalone IxNetwork Windows GUI session management
+"""
 
 from ixnetwork_restpy import SessionAssistant
+
 
 session_assistant = SessionAssistant(
     IpAddress="127.0.0.1",

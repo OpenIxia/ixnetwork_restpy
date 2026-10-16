@@ -6,6 +6,7 @@ The TestPlatform.Sessions class has a helper method that assists in returning an
 
 from ixnetwork_restpy import SessionAssistant
 
+
 # create a test tool session
 session_assistant = SessionAssistant(
     IpAddress="127.0.0.1",

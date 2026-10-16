@@ -317,8 +317,8 @@ class BatchAdd(object):
                 elif multivalue_name == "custom":
                     if pattern[1] is not None:
                         xpath_dict["start"] = pattern[1]
-                    if pattern[1] is not None:
-                        xpath_dict["step"] = pattern[1]
+                    if pattern[2] is not None:
+                        xpath_dict["step"] = pattern[2]
                     if len(pattern[3]) > 0:
                         increments = pattern[3]
                         for increment in increments:
@@ -339,7 +339,7 @@ class BatchAdd(object):
                         overlay_xpath = multivalue_xpath + "[%s]" % (index + 1)
                         overlay_list.append(
                             {
-                                "count": 1,
+                                "count": overlays[2],
                                 "index": overlays[0],
                                 "indexStep": 1,
                                 "value": overlays[1],

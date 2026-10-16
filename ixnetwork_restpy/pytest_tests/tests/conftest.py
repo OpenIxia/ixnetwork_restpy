@@ -31,7 +31,7 @@ def test_platform(server):
     if platform == "windows":
         test_platform = TestPlatform(ip, rest_port=port)
     else:
-        test_platform = TestPlatform(ip)
+        test_platform = TestPlatform(ip, rest_port=port)
     return test_platform
 
 
